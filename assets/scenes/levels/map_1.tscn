@@ -9809,7 +9809,6 @@ position = Vector2(23.5, 0)
 shape = SubResource("RectangleShape2D_20iwf")
 
 [node name="FlyEnemy1" parent="Map_1/Map1" unique_id=1638441390 instance=ExtResource("ext_fly_enemy")]
-visible = false
 position = Vector2(472, -117)
 
 [node name="FlyEnemy2" parent="Map_1/Map1" unique_id=15248226 instance=ExtResource("ext_fly_enemy")]
@@ -10087,7 +10086,7 @@ position = Vector2(856, -121)
 texture = ExtResource("60_j8p8j")
 
 [node name="PlayerController" parent="Map_1" unique_id=494526030 instance=ExtResource("2_jm60u")]
-position = Vector2(-2475, -268)
+position = Vector2(-2342, -224)
 
 [node name="TeleporterToLevel2" parent="Map_1" unique_id=90962396 instance=ExtResource("ext_teleporter")]
 position = Vector2(807, -208)

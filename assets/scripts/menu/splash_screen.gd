@@ -1,17 +1,15 @@
 extends Control
 
 @export_file("*.tscn") var next_scene_path: String = "res://assets/scenes/menu/main_menu.tscn"
+@onready var background: TextureRect = $Background
 @onready var logo: TextureRect = $CenterContainer/Logo
-@onready var color_rect: ColorRect = $ColorRect
 
 var is_transitioning: bool = false
 
 
 func _ready() -> void:
-	# Khởi tạo logo ở độ mờ 0
-	if logo:
-		logo.modulate.a = 0.0
-	
+	# Khởi tạo toàn bộ màn hình ở độ mờ 0
+	modulate.a = 0.0
 	start_splash_sequence()
 
 
@@ -26,14 +24,14 @@ func start_splash_sequence() -> void:
 	is_transitioning = true
 	var tween = create_tween()
 	
-	# Fade In Logo (0.8 giây)
-	tween.tween_property(logo, "modulate:a", 1.0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# Fade In Splash Screen (0.8 giây)
+	tween.tween_property(self, "modulate:a", 1.0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
-	# Giữ logo hiển thị (1.0 giây)
-	tween.tween_interval(1.0)
+	# Giữ màn hình hiển thị (1.2 giây)
+	tween.tween_interval(1.2)
 	
-	# Fade Out Logo (0.6 giây)
-	tween.tween_property(logo, "modulate:a", 0.0, 0.6).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	# Fade Out Splash Screen (0.6 giây)
+	tween.tween_property(self, "modulate:a", 0.0, 0.6).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	
 	# Đợi hoàn tất và chuyển scene
 	await tween.finished
@@ -43,7 +41,7 @@ func start_splash_sequence() -> void:
 func skip_splash() -> void:
 	is_transitioning = true
 	var tween = create_tween()
-	tween.tween_property(logo, "modulate:a", 0.0, 0.25)
+	tween.tween_property(self, "modulate:a", 0.0, 0.25)
 	await tween.finished
 	go_to_main_menu()
 
