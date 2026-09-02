@@ -4,6 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://vifk6ci0p7un" path="res://assets/art/2d/silksong_full/Images/UI/atlas0 - Copy (3).png" id="3_v5xfo"]
 [ext_resource type="Texture2D" uid="uid://dqyd5q75xoei0" path="res://assets/art/2d/silksong_full/Images/UI/atlas0 - Copy.png" id="49_wyxo2"]
 [ext_resource type="Texture2D" uid="uid://bdbpg3v4ncrim" path="res://assets/art/2d/silksong_full/Images/UI/atlas0 - Copy (2).png" id="50_v5xfo"]
+[ext_resource type="Texture2D" uid="uid://b7jtdlodymi0m" path="res://assets/art/2d/silksong_full/Animations/UI/BloodLoad/0.png" id="bl_0"]
+[ext_resource type="Texture2D" uid="uid://cdyjtqn8rg7nu" path="res://assets/art/2d/silksong_full/Animations/UI/BloodLoad/1.png" id="bl_1"]
+[ext_resource type="Texture2D" uid="uid://bxdu7tpga76wr" path="res://assets/art/2d/silksong_full/Animations/UI/BloodLoad/2.png" id="bl_2"]
+[ext_resource type="Texture2D" uid="uid://tykte8y0i151" path="res://assets/art/2d/silksong_full/Animations/UI/BloodLoad/3.png" id="bl_3"]
+[ext_resource type="Texture2D" uid="uid://kml3nqy67dcg" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/0.png" id="bm_0"]
+[ext_resource type="Texture2D" uid="uid://bjitimx4f7gdq" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/1.png" id="bm_1"]
+[ext_resource type="Texture2D" uid="uid://bxycao3l6ij07" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/2.png" id="bm_2"]
+[ext_resource type="Texture2D" uid="uid://cioxf12abr8qd" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/3.png" id="bm_3"]
+[ext_resource type="Texture2D" uid="uid://d1k1h857o05dj" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/4.png" id="bm_4"]
+[ext_resource type="Texture2D" uid="uid://dmq7vlnbyquwr" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/5.png" id="bm_5"]
+[ext_resource type="Texture2D" uid="uid://bgar40tf1j68j" path="res://assets/art/2d/silksong_full/Animations/UI/BloodMinus/6.png" id="bm_6"]
 [ext_resource type="Texture2D" uid="uid://b2pyibyr2grn8" path="res://assets/art/2d/silksong_full/Animations/Player/Attack_0/0.png" id="h_attack_1"]
 [ext_resource type="Texture2D" uid="uid://o6hpgs4elnhe" path="res://assets/art/2d/silksong_full/Animations/Player/Attack_0/1.png" id="h_attack_2"]
 [ext_resource type="Texture2D" uid="uid://dnqvi1pkqg277" path="res://assets/art/2d/silksong_full/Animations/Player/Attack_0/2.png" id="h_attack_3"]
@@ -20,6 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://tbdbjlxnfl83" path="res://assets/art/2d/silksong_full/Animations/Player/AttackUp/2.png" id="h_attack_up_3"]
 [ext_resource type="Texture2D" uid="uid://b1j1wav0qwoql" path="res://assets/art/2d/silksong_full/Animations/Player/AttackUp/3.png" id="h_attack_up_4"]
 [ext_resource type="Texture2D" uid="uid://cjy2u1jujeboc" path="res://assets/art/2d/silksong_full/Animations/Player/AttackUp/4.png" id="h_attack_up_5"]
+[ext_resource type="Texture2D" uid="uid://dcmolmp2cl44d" path="res://assets/art/2d/silksong_full/Animations/Player/Die/0.png" id="h_die_1"]
+[ext_resource type="Texture2D" uid="uid://ddniid8h8aoax" path="res://assets/art/2d/silksong_full/Animations/Player/Die/1.png" id="h_die_2"]
+[ext_resource type="Texture2D" uid="uid://bjlbp7shcm2we" path="res://assets/art/2d/silksong_full/Animations/Player/Die/2.png" id="h_die_3"]
+[ext_resource type="Texture2D" uid="uid://coo3dcvqlhlc2" path="res://assets/art/2d/silksong_full/Animations/Player/Die/3.png" id="h_die_4"]
 [ext_resource type="Texture2D" uid="uid://dhr87qb7hy41w" path="res://assets/art/2d/silksong_full/Animations/Player/Fall/0.png" id="h_fall_1"]
 [ext_resource type="Texture2D" uid="uid://bs668uv77b017" path="res://assets/art/2d/silksong_full/Animations/Player/Fall/1.png" id="h_fall_2"]
 [ext_resource type="Texture2D" uid="uid://clkob1oftdoc0" path="res://assets/art/2d/silksong_full/Animations/Player/Fall/2.png" id="h_fall_3"]
@@ -51,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://c0snlnc7u7x3y" path="res://assets/art/2d/silksong_full/Animations/Player/Walk/5.png" id="h_walk_6"]
 [ext_resource type="Texture2D" uid="uid://d223uif5nsor6" path="res://assets/art/2d/silksong_full/Animations/Player/Walk/6.png" id="h_walk_7"]
 [ext_resource type="Texture2D" uid="uid://cxtg0xfvh37fd" path="res://assets/art/2d/silksong_full/Animations/Player/Walk/7.png" id="h_walk_8"]
+[ext_resource type="Texture2D" uid="uid://dyvysji0pjn6u" path="res://assets/art/2d/silksong_full/Images/UI/vignette_low_health.png" id="vignette_texture"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_player"]
 radius = 8.0
@@ -120,6 +136,23 @@ animations = [{
 "loop": 0,
 "name": &"attack_up",
 "speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_die_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_die_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_die_3")
+}, {
+"duration": 2.0,
+"texture": ExtResource("h_die_4")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -255,7 +288,54 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_blood"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("bl_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bl_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bl_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bl_3")
+}],
+"loop": 0,
+"name": &"blood_load",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("bm_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("bm_6")
+}],
+"loop": 0,
+"name": &"blood_minus",
+"speed": 14.0
+}]
+
 [node name="PlayerController" type="CharacterBody2D" unique_id=373544482]
+collision_layer = 4
 floor_snap_length = 10.0
 safe_margin = 0.2
 script = ExtResource("1_script")
@@ -279,7 +359,7 @@ autoplay = "idle"
 position = Vector2(0, -31)
 
 [node name="Camera2D" type="Camera2D" parent="CameraOffset" unique_id=208588032]
-zoom = Vector2(1.3, 1.3)
+zoom = Vector2(1.15, 1.15)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
@@ -352,6 +432,14 @@ scale = Vector2(5, 5)
 energy = 0.8
 texture = SubResource("GradientTexture2D_sh3le")
 
+[node name="DeathVignette" type="Sprite2D" parent="." unique_id=198273641]
+unique_name_in_owner = true
+visible = false
+z_index = 80
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("vignette_texture")
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=292455354]
 unique_name_in_owner = true
 
@@ -412,3 +500,11 @@ layout_mode = 2
 texture = ExtResource("50_v5xfo")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="BloodEffect" type="AnimatedSprite2D" parent="HUD" unique_id=983719283]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_blood")
+animation = &"blood_minus"

@@ -58,7 +58,11 @@ func _on_detection_body_exited(body: Node) -> void:
 		player = null
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	if body.has_method("take_damage") and not is_dead:
+	if is_dead:
+		return
+	if "is_invincible" in body and body.is_invincible:
+		return
+	if body.has_method("take_damage"):
 		body.take_damage(1)
 
 func take_damage(amount: int = 1) -> void:

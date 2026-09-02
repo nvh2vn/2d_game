@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://splash_screen_001"]
+
+[ext_resource type="Script" path="res://assets/scripts/menu/splash_screen.gd" id="1_splash_script"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/Menu/team_cherry_logo_main_menu.png" id="2_team_cherry_logo"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_splash_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.05, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+texture = ExtResource("2_team_cherry_logo")
+expand_mode = 1
+stretch_mode = 5

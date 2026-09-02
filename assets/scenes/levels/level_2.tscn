@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://f7s6bjy5vy30"]
+
+[ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://assets/scenes/levels/pixel_level.gd" id="1_level_script"]
+[ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://assets/prefabs/player/player_controller(pixel).tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/enemies/bug_enemy.tscn" id="3_bug_enemy"]
+[ext_resource type="Texture2D" uid="uid://cm2a7colwwojl" path="res://assets/art/2d/silksong_full/Images/BackGround/RuinHouse/room_ruin_house_FG.png" id="3_w5yq3"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/enemies/fly_enemy.tscn" id="4_fly_enemy"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/teleporter.tscn" id="5_teleporter"]
+[ext_resource type="Texture2D" uid="uid://d0vv4ogpmhcuk" path="res://assets/art/2d/silksong_full/Images/BackGround/MossHole/backboard.png" id="6_bg_backboard"]
+[ext_resource type="Texture2D" uid="uid://bmshfdk0cb851" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_0.png" id="8_floor_0"]
+[ext_resource type="Texture2D" uid="uid://lil1skxsaymm" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_1.png" id="9_floor_1"]
+[ext_resource type="Texture2D" uid="uid://lmwpa3ru1c0t" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_2.png" id="10_floor_2"]
+[ext_resource type="Texture2D" uid="uid://ntbamxepkkfk" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_wall_0.png" id="11_wall_0"]
+[ext_resource type="Texture2D" uid="uid://btjpkn1oc8qou" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_wall_1.png" id="12_wall_1"]
+[ext_resource type="Texture2D" uid="uid://d1s3g8kyjji4e" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_05.png" id="13_platform"]
+[ext_resource type="Texture2D" uid="uid://c3xiuomw1ro1f" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/fung_new_0143_Layer-225.png" id="14_deco_moss"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/animated_flower.tscn" id="ext_flower"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(80, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(500, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
+size = Vector2(180, 30)
+
+[node name="Level2" type="Node2D" unique_id=1855694474]
+script = ExtResource("1_level_script")
+
+[node name="CameraLimits" type="Node2D" parent="." unique_id=144386589]
+
+[node name="TopLeft" type="Marker2D" parent="CameraLimits" unique_id=1788123204]
+position = Vector2(-200, -500)
+gizmo_extents = 40.0
+
+[node name="BottomRight" type="Marker2D" parent="CameraLimits" unique_id=1959667819]
+position = Vector2(2400, 450)
+gizmo_extents = 40.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=595667548]
+
+[node name="ParallaxLayerBack" type="ParallaxLayer" parent="ParallaxBackground" unique_id=108603541]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerBack" unique_id=1182671947]
+position = Vector2(1000, 0)
+scale = Vector2(5, 3)
+texture = ExtResource("6_bg_backboard")
+
+[node name="ParallaxLayerMid" type="ParallaxLayer" parent="ParallaxBackground" unique_id=565986232]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerMid" unique_id=1284084700]
+visible = false
+position = Vector2(787, -47)
+scale = Vector2(2, 2)
+texture = ExtResource("3_w5yq3")
+
+[node name="Environment" type="Node2D" parent="." unique_id=812308939]
+
+[node name="LeftWall" type="StaticBody2D" parent="Environment" unique_id=1341909540]
+visible = false
+position = Vector2(-150, 0)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/LeftWall" unique_id=1079329566]
+texture = ExtResource("11_wall_0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LeftWall" unique_id=371606921]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="Environment" unique_id=1948572078]
+visible = false
+position = Vector2(2350, 0)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/RightWall" unique_id=1679818154]
+texture = ExtResource("12_wall_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightWall" unique_id=156918616]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="FloorSection1" type="StaticBody2D" parent="Environment" unique_id=1731773793]
+visible = false
+position = Vector2(150, 260)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/FloorSection1" unique_id=363796842]
+texture = ExtResource("8_floor_0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FloorSection1" unique_id=267701604]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="FloorSection2" type="StaticBody2D" parent="Environment" unique_id=1840886260]
+visible = false
+position = Vector2(650, 260)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/FloorSection2" unique_id=644643132]
+texture = ExtResource("9_floor_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FloorSection2" unique_id=124351328]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="FloorSection3" type="StaticBody2D" parent="Environment" unique_id=206862617]
+visible = false
+position = Vector2(1150, 260)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/FloorSection3" unique_id=2082476474]
+texture = ExtResource("10_floor_2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FloorSection3" unique_id=734918452]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="FloorSection4" type="StaticBody2D" parent="Environment" unique_id=217608133]
+visible = false
+position = Vector2(1650, 260)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/FloorSection4" unique_id=1651702629]
+texture = ExtResource("8_floor_0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FloorSection4" unique_id=1226940936]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="FloorSection5" type="StaticBody2D" parent="Environment" unique_id=447126292]
+visible = false
+position = Vector2(2150, 260)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/FloorSection5" unique_id=1884801799]
+texture = ExtResource("9_floor_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FloorSection5" unique_id=399828368]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="Platform1" type="StaticBody2D" parent="Environment" unique_id=864068243]
+visible = false
+position = Vector2(500, 100)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform1" unique_id=1207247553]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform1" unique_id=934413156]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform2" type="StaticBody2D" parent="Environment" unique_id=2138948352]
+visible = false
+position = Vector2(900, 20)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform2" unique_id=1578959098]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform2" unique_id=1312798982]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform3" type="StaticBody2D" parent="Environment" unique_id=2011975864]
+visible = false
+position = Vector2(1350, 80)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform3" unique_id=665114568]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform3" unique_id=882113937]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Deco" type="Sprite2D" parent="Environment" unique_id=440687606]
+visible = false
+position = Vector2(800, -150)
+texture = ExtResource("14_deco_moss")
+
+[node name="TeleporterToLevel1" parent="." unique_id=243633346 instance=ExtResource("5_teleporter")]
+position = Vector2(-20, 200)
+target_scene_path = "res://assets/scenes/levels/pixel_level.tscn"
+
+[node name="AnimatedFlower1" parent="." unique_id=249717736 instance=ExtResource("ext_flower")]
+position = Vector2(500, 75)
+
+[node name="AnimatedFlower2" parent="." unique_id=1023472697 instance=ExtResource("ext_flower")]
+position = Vector2(900, -5)
+
+[node name="AnimatedFlower3" parent="." unique_id=962236705 instance=ExtResource("ext_flower")]
+position = Vector2(1350, 55)
+
+[node name="BugEnemy1" parent="." unique_id=42851996 instance=ExtResource("3_bug_enemy")]
+position = Vector2(750, 210)
+
+[node name="BugEnemy2" parent="." unique_id=1552147743 instance=ExtResource("3_bug_enemy")]
+position = Vector2(1500, 210)
+initial_direction = -1
+
+[node name="FlyEnemy1" parent="." unique_id=962587438 instance=ExtResource("4_fly_enemy")]
+position = Vector2(1100, -20)
+
+[node name="PlayerController" parent="." unique_id=530549205 instance=ExtResource("2_player")]
+position = Vector2(80, 200)
+
+[editable path="TeleporterToLevel1"]

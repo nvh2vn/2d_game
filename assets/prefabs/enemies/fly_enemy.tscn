@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://fly_enemy_prefab_01"]
 
 [ext_resource type="Script" path="res://assets/scripts/enemies/fly_enemy.gd" id="1_fly_script"]
-[ext_resource type="Texture2D" uid="uid://fly_idle_1" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/0.png" id="fly_idle_1"]
-[ext_resource type="Texture2D" uid="uid://fly_idle_2" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/1.png" id="fly_idle_2"]
-[ext_resource type="Texture2D" uid="uid://fly_idle_3" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/2.png" id="fly_idle_3"]
-[ext_resource type="Texture2D" uid="uid://fly_idle_4" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/3.png" id="fly_idle_4"]
-[ext_resource type="Texture2D" uid="uid://fly_idle_5" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/4.png" id="fly_idle_5"]
-[ext_resource type="Texture2D" uid="uid://fly_start_chase_1" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/0.png" id="fly_start_chase_1"]
-[ext_resource type="Texture2D" uid="uid://fly_start_chase_2" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/1.png" id="fly_start_chase_2"]
-[ext_resource type="Texture2D" uid="uid://fly_start_chase_3" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/2.png" id="fly_start_chase_3"]
-[ext_resource type="Texture2D" uid="uid://fly_start_chase_4" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/3.png" id="fly_start_chase_4"]
-[ext_resource type="Texture2D" uid="uid://fly_chase_1" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/0.png" id="fly_chase_1"]
-[ext_resource type="Texture2D" uid="uid://fly_chase_2" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/1.png" id="fly_chase_2"]
-[ext_resource type="Texture2D" uid="uid://fly_chase_3" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/2.png" id="fly_chase_3"]
-[ext_resource type="Texture2D" uid="uid://fly_chase_4" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/3.png" id="fly_chase_4"]
-[ext_resource type="Texture2D" uid="uid://fly_die_1" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/0.png" id="fly_die_1"]
-[ext_resource type="Texture2D" uid="uid://fly_die_2" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/1.png" id="fly_die_2"]
-[ext_resource type="Texture2D" uid="uid://fly_die_3" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/2.png" id="fly_die_3"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/0.png" id="fly_idle_1"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/1.png" id="fly_idle_2"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/2.png" id="fly_idle_3"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/3.png" id="fly_idle_4"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Idle/4.png" id="fly_idle_5"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/0.png" id="fly_start_chase_1"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/1.png" id="fly_start_chase_2"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/2.png" id="fly_start_chase_3"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/StartChase/3.png" id="fly_start_chase_4"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/0.png" id="fly_chase_1"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/1.png" id="fly_chase_2"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/2.png" id="fly_chase_3"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Chase/3.png" id="fly_chase_4"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/0.png" id="fly_die_1"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/1.png" id="fly_die_2"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Animations/Enemy/Fly/Die/2.png" id="fly_die_3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fly_col"]
 radius = 16.0
@@ -117,6 +117,7 @@ autoplay = "idle"
 [node name="DetectionArea" type="Area2D" parent="." unique_id=83729104]
 unique_name_in_owner = true
 collision_layer = 0
+collision_mask = 5
 
 [node name="DetectionCollision" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_detection")
@@ -124,7 +125,7 @@ shape = SubResource("CircleShape2D_detection")
 [node name="Hitbox" type="Area2D" parent="." unique_id=74829102]
 unique_name_in_owner = true
 collision_layer = 2
-collision_mask = 1
+collision_mask = 5
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_hitbox")

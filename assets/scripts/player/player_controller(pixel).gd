@@ -15,6 +15,7 @@ enum STATE {
 	DASH,
 	TURNING,
 	ATTACK,
+	DIE,
 }
 
 @export_group("Map 1 Unlockable Abilities")
@@ -65,10 +66,13 @@ const SPRINT_ACCELERATION := 1800.0
 @onready var invincibility_timer: Timer = get_node_or_null("%InvincibilityTimer")
 @onready var hp_label: Label = get_node_or_null("%HPLabel")
 @onready var health_container: HBoxContainer = get_node_or_null("%HealthContainer")
+@onready var blood_effect: AnimatedSprite2D = get_node_or_null("%BloodEffect")
+@onready var death_vignette: Sprite2D = get_node_or_null("%DeathVignette")
 
 @export var active_mask_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Images/UI/mask_white.png")
 @export var lost_mask_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Images/UI/mask_black.png")
 
+var blink_tween: Tween
 var active_state := STATE.FALL
 var can_double_jump := false
 var facing_direction := 1.0
@@ -78,6 +82,7 @@ var dash_jump_buffer := false
 var is_sprinting := false
 
 func _ready() -> void:
+	add_to_group("player")
 	current_health = max_health
 	switch_state(active_state)
 	ledge_climb_ray_cast.add_exception(self)
@@ -87,7 +92,14 @@ func _ready() -> void:
 		invincibility_timer.timeout.connect(_on_invincibility_timer_timeout)
 	if attack_area:
 		attack_area.area_entered.connect(_on_attack_area_entered)
+	if blood_effect:
+		blood_effect.animation_finished.connect(_on_blood_effect_animation_finished)
 	update_hud()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_H:
+			heal(1)
 
 func _on_attack_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
@@ -116,35 +128,122 @@ func update_hud() -> void:
 			masks += "🩶 "
 		hp_label.text = ("MASK: " + masks).strip_edges()
 
-func take_damage(amount: int) -> void:
-	if is_invincible or current_health <= 0:
+func play_blood_minus_effect(mask_index: int) -> void:
+	if not blood_effect:
 		return
+	if health_container:
+		var masks = health_container.get_children()
+		if mask_index >= 0 and mask_index < masks.size():
+			var target_mask = masks[mask_index]
+			blood_effect.global_position = target_mask.global_position + target_mask.size * 0.5
+		else:
+			blood_effect.position = Vector2(80, 45)
+	else:
+		blood_effect.position = Vector2(80, 45)
+	blood_effect.visible = true
+	blood_effect.play("blood_minus")
+
+func heal(amount: int = 1) -> void:
+	if current_health >= max_health or active_state == STATE.DIE:
+		return
+	var restored_index = current_health
+	current_health = mini(current_health + amount, max_health)
+	play_blood_load_effect(restored_index)
+	update_hud()
+
+func play_blood_load_effect(mask_index: int) -> void:
+	if not blood_effect:
+		return
+	if health_container:
+		var masks = health_container.get_children()
+		if mask_index >= 0 and mask_index < masks.size():
+			var target_mask = masks[mask_index]
+			blood_effect.global_position = target_mask.global_position + target_mask.size * 0.5
+		else:
+			blood_effect.position = Vector2(80, 45)
+	else:
+		blood_effect.position = Vector2(80, 45)
+	blood_effect.visible = true
+	blood_effect.play("blood_load")
+
+func _on_blood_effect_animation_finished() -> void:
+	if blood_effect:
+		blood_effect.visible = false
+
+func take_damage(amount: int) -> void:
+	if is_invincible or current_health <= 0 or active_state == STATE.DIE:
+		return
+	var broken_index = current_health - 1
 	current_health -= amount
-	is_invincible = true
-	
-	if invincibility_timer:
-		invincibility_timer.start(1.0)
-		
-	# Red flash & blink during invincibility
-	if animated_sprite:
-		var tween := create_tween()
-		tween.tween_property(animated_sprite, "modulate", Color(1.0, 0.2, 0.2, 1.0), 0.15)
-		tween.tween_property(animated_sprite, "modulate", Color.WHITE, 0.15)
-		for i in range(3):
-			tween.tween_property(animated_sprite, "modulate:a", 0.3, 0.1)
-			tween.tween_property(animated_sprite, "modulate:a", 1.0, 0.1)
-			
+	play_blood_minus_effect(broken_index)
 	update_hud()
 	
 	if current_health <= 0:
-		game_over()
+		die()
+		return
+	
+	is_invincible = true
+	if invincibility_timer:
+		invincibility_timer.start(1.2)
+	
+	# Hiệu ứng nảy lùi nhẹ (Knockback)
+	velocity.y = -180.0
+	velocity.x = -facing_direction * 120.0
+		
+	# Hiệu ứng nhấp nháy mờ liên tục trong suốt thời gian bất tử (I-frames)
+	if blink_tween and blink_tween.is_valid():
+		blink_tween.kill()
+		
+	if animated_sprite:
+		animated_sprite.modulate = Color(2.5, 0.3, 0.3, 1.0)
+		blink_tween = create_tween().set_loops()
+		blink_tween.tween_property(animated_sprite, "modulate", Color(1.0, 1.0, 1.0, 0.25), 0.1)
+		blink_tween.tween_property(animated_sprite, "modulate", Color(1.0, 1.0, 1.0, 0.85), 0.1)
 
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
-	if animated_sprite:
+	if blink_tween and blink_tween.is_valid():
+		blink_tween.kill()
+	if animated_sprite and active_state != STATE.DIE:
 		animated_sprite.modulate = Color.WHITE
 
-func game_over() -> void:
+func die() -> void:
+	if blink_tween and blink_tween.is_valid():
+		blink_tween.kill()
+	switch_state(STATE.DIE)
+	if attack_area:
+		attack_area.monitoring = false
+	if attack_timer:
+		attack_timer.stop()
+	if invincibility_timer:
+		invincibility_timer.stop()
+	
+	# Vùng tối vignette bung tỏa rộng ra từ tâm người chơi
+	if death_vignette:
+		death_vignette.visible = true
+		death_vignette.modulate = Color(1.0, 1.0, 1.0, 0.0)
+		death_vignette.scale = Vector2(0.2, 0.2)
+		var tween_v = create_tween()
+		tween_v.tween_property(death_vignette, "modulate:a", 1.0, 0.25)
+		tween_v.parallel().tween_property(death_vignette, "scale", Vector2(3.5, 3.5), 0.7).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	
+	# Hiệu ứng nảy lùi nhẹ khi bị tiêu diệt
+	velocity.y = -220.0
+	velocity.x = -facing_direction * 100.0
+	
+	if animated_sprite:
+		animated_sprite.modulate = Color.WHITE
+		animated_sprite.play("die")
+	
+	# Chờ phát xong hoạt ảnh die và mờ dần màn hình
+	await get_tree().create_timer(1.2).timeout
+	if animated_sprite:
+		var tween = create_tween()
+		tween.tween_property(animated_sprite, "modulate:a", 0.0, 0.4)
+		if death_vignette:
+			tween.parallel().tween_property(death_vignette, "modulate:a", 0.0, 0.4)
+		await tween.finished
+	
 	get_tree().reload_current_scene()
 
 func _on_attack_timer_timeout() -> void:
@@ -459,6 +558,12 @@ func process_state(delta: float) -> void:
 			if is_sprinting:
 				move_speed = SPRINT_VELOCITY
 			handle_movement(0, move_speed)
+		
+		STATE.DIE:
+			if not is_on_floor():
+				velocity.y = move_toward(velocity.y, FALL_VELOCITY, FALL_GRAVITY * delta)
+			else:
+				velocity.x = move_toward(velocity.x, 0, 400.0 * delta)
 
 
 func handle_movement(input_direction: float = 0, horizontal_velocity: float = WALK_VELOCITY, step: float = WALK_VELOCITY) -> void:

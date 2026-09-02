@@ -11,10 +11,27 @@ extends Node2D
 @export var fallback_limit_bottom: int = 200
 
 
+@export_group("Background Motion")
+@export var auto_scroll_background: bool = true
+@export var auto_scroll_speed: float = 15.0
+
+@onready var parallax_bg: ParallaxBackground = find_child("ParallaxBackground", true, false)
+
+
 func _ready() -> void:
+	# Lưu lại màn chơi hiện tại cho tính năng CONTINUE
+	if scene_file_path != "":
+		SaveManager.save_last_level(scene_file_path)
+	
 	# Đợi 1 frame để Camera của Player khởi tạo hoàn tất
 	await get_tree().process_frame
 	update_camera_limits()
+
+
+func _process(delta: float) -> void:
+	# Cuộn nền tự động tạo chuyển động mượt mà liên tục (Slide 20_Module 4.1)
+	if auto_scroll_background and parallax_bg:
+		parallax_bg.scroll_offset.x += auto_scroll_speed * delta
 
 
 func update_camera_limits() -> void:
