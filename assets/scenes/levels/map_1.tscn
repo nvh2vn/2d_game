@@ -9673,6 +9673,7 @@ size = Vector2(373, 55)
 script = ExtResource("level_script")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1933497591]
+visible = false
 tile_set = SubResource("TileSet_83hjc")
 
 [node name="CameraLimits" type="Node2D" parent="." unique_id=892348123]
@@ -9685,409 +9686,461 @@ gizmo_extents = 30.0
 position = Vector2(2947, 282)
 gizmo_extents = 30.0
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=63083695]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1295451440]
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=317133483]
+position = Vector2(1256.4999, 75.99998)
+scale = Vector2(4.907591, 2.260355)
+texture = ExtResource("38_ucewk")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=881750017]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1151021486]
+position = Vector2(-40.00005, -31.000006)
+scale = Vector2(1.2454052, 1.5140188)
+texture = ExtResource("19_xyaht")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=475291156]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=665110536]
+position = Vector2(1214, -14.000001)
+scale = Vector2(3, 3)
+texture = ExtResource("35_c7l1x")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=728077831]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1985210128]
+position = Vector2(2413, -27)
+scale = Vector2(3, 3)
+texture = ExtResource("27_uewil")
+
 [node name="Map_1" type="Node2D" parent="." unique_id=1215312254]
 position = Vector2(2101, 287)
 
-[node name="Map1" type="Node2D" parent="Map_1" unique_id=126202008]
+[node name="Zone_1" type="Node2D" parent="Map_1" unique_id=126202008]
 position = Vector2(-2101, -287)
 
-[node name="Cage" type="Sprite2D" parent="Map_1/Map1" unique_id=1000843110]
-position = Vector2(2.0000305, 18)
-scale = Vector2(0.42446044, 0.44495413)
-texture = ExtResource("22_c7l1x")
+[node name="Enviroment" type="Node2D" parent="Map_1/Zone_1" unique_id=1147266587]
 
-[node name="4" type="Sprite2D" parent="Map_1/Map1" unique_id=386425135]
-position = Vector2(-532, 253)
-texture = ExtResource("20_qcjiv")
-
-[node name="2" type="Sprite2D" parent="Map_1/Map1" unique_id=1726310484]
-position = Vector2(-241, 251)
-texture = ExtResource("21_ucewk")
-
-[node name="3" type="Sprite2D" parent="Map_1/Map1" unique_id=779350868]
-position = Vector2(27, 273)
-texture = ExtResource("22_ywtvu")
-
-[node name="5" type="Sprite2D" parent="Map_1/Map1" unique_id=1378796627]
-position = Vector2(278, 273)
-texture = ExtResource("21_ucewk")
-
-[node name="6" type="Sprite2D" parent="Map_1/Map1" unique_id=1938203694]
-position = Vector2(549, 276)
-texture = ExtResource("22_ywtvu")
-
-[node name="FungNew0143Layer225" type="Sprite2D" parent="Map_1/Map1" unique_id=1024493492]
-position = Vector2(274, -72)
-texture = ExtResource("20_8drnq")
-
-[node name="FungNew0144Layer224" type="Sprite2D" parent="Map_1/Map1" unique_id=767172040]
-position = Vector2(-181, -72)
-texture = ExtResource("21_wcffe")
-
-[node name="FungBigRoof0000A" type="Sprite2D" parent="Map_1/Map1" unique_id=1807630762]
-position = Vector2(-192, -178)
-texture = ExtResource("23_uewil")
-
-[node name="FungFgSilhouettes0000Fb4" type="Sprite2D" parent="Map_1/Map1" unique_id=1832671534]
-position = Vector2(-644, -160)
-texture = ExtResource("24_x2sho")
-
-[node name="FungNew0104Layer254Copy3" type="Sprite2D" parent="Map_1/Map1" unique_id=605650346]
-position = Vector2(-585, -6)
-texture = ExtResource("25_hedow")
-
-[node name="FungNew0094Layer263" type="Sprite2D" parent="Map_1/Map1" unique_id=1642534248]
-position = Vector2(517.00006, -158)
-scale = Vector2(1.8085107, 1.6640625)
-texture = ExtResource("26_bbjfc")
-
-[node name="FungFgHanging01" type="Sprite2D" parent="Map_1/Map1" unique_id=845281398]
-position = Vector2(515, -248.99998)
-rotation = 0.010282755
-texture = ExtResource("27_et426")
-
-[node name="FungNew0116Layer266" type="Sprite2D" parent="Map_1/Map1" unique_id=904887681]
-position = Vector2(383, -129)
-texture = ExtResource("28_7jkol")
-
-[node name="Moss2" type="Sprite2D" parent="Map_1/Map1" unique_id=423868029]
-position = Vector2(-402, 64)
-texture = ExtResource("30_ewsil")
-
-[node name="Moss3" type="Sprite2D" parent="Map_1/Map1" unique_id=1632039948]
-position = Vector2(574, 85)
-texture = ExtResource("31_i28a7")
-
-[node name="MossholeGround0" type="Sprite2D" parent="Map_1/Map1" unique_id=265567588]
+[node name="MossholeGround0" type="Sprite2D" parent="Map_1/Zone_1/Enviroment" unique_id=265567588]
 position = Vector2(-272, 114)
 texture = ExtResource("32_j1bcu")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map1/MossholeGround0" unique_id=1669667324]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_1/Enviroment/MossholeGround0" unique_id=1669667324]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map1/MossholeGround0/StaticBody2D" unique_id=886507675]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_1/Enviroment/MossholeGround0/StaticBody2D" unique_id=886507675]
 position = Vector2(-1, 7.5)
 shape = SubResource("RectangleShape2D_td685")
 
-[node name="MossholeGround1" type="Sprite2D" parent="Map_1/Map1" unique_id=1163332429]
+[node name="MossholeGround1" type="Sprite2D" parent="Map_1/Zone_1/Enviroment" unique_id=1163332429]
 position = Vector2(235, 140)
 texture = ExtResource("33_1yevs")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map1/MossholeGround1" unique_id=2122241070]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_1/Enviroment/MossholeGround1" unique_id=2122241070]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map1/MossholeGround1/StaticBody2D" unique_id=522823164]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_1/Enviroment/MossholeGround1/StaticBody2D" unique_id=522823164]
 position = Vector2(2.5, 7.5)
 shape = SubResource("RectangleShape2D_nwb76")
 
-[node name="FungFgSilhouettes0000Fb5" type="Sprite2D" parent="Map_1/Map1" unique_id=2123545342]
-position = Vector2(331, -254)
-texture = ExtResource("24_x2sho")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Map_1/Map1" unique_id=961103532]
+[node name="TileMapLayer" type="TileMapLayer" parent="Map_1/Zone_1/Enviroment" unique_id=961103532]
 texture_filter = 1
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AABUAP7/DwAAAAAAAABUAP//DwAAAAEAAABUAAAADwAAAAIAAABUAAEADwAAAAMAAABUAAIADwAAAAQAAABVAP7/DwABAAAAAABVAP//DwABAAEAAABVAAAADwABAAIAAABVAAEADwABAAMAAABVAAIADwABAAQAAABWAP7/DwACAAAAAABWAP//DwACAAEAAABWAAAADwACAAIAAABWAAEADwACAAMAAABWAAIADwACAAQAAABXAP7/DwADAAAAAABXAP//DwADAAEAAABXAAAADwADAAIAAABXAAEADwADAAMAAABXAAIADwADAAQAAABYAP7/DwAEAAAAAABYAP//DwAEAAEAAABYAAAADwAEAAIAAABYAAEADwAEAAMAAABYAAIADwAEAAQAAABZAP7/DwAFAAAAAABZAP//DwAFAAEAAABZAAAADwAFAAIAAABZAAEADwAFAAMAAABZAAIADwAFAAQAAABaAP7/DwAGAAAAAABaAP//DwAGAAEAAABaAAAADwAGAAIAAABaAAEADwAGAAMAAABaAAIADwAGAAQAAABbAP7/DwAHAAAAAABbAP//DwAHAAEAAABbAAAADwAHAAIAAABbAAEADwAHAAMAAABbAAIADwAHAAQAAABcAP7/DwAIAAAAAABcAP//DwAIAAEAAABcAAAADwAIAAIAAABcAAEADwAIAAMAAABcAAIADwAIAAQAAABdAP7/DwAJAAAAAABdAP//DwAJAAEAAABdAAAADwAJAAIAAABdAAEADwAJAAMAAABdAAIADwAJAAQAAABeAP7/DwAKAAAAAABeAP//DwAKAAEAAABeAAAADwAKAAIAAABeAAEADwAKAAMAAABeAAIADwAKAAQAAABfAP7/DwALAAAAAABfAP//DwALAAEAAABfAAAADwALAAIAAABfAAEADwALAAMAAABfAAIADwALAAQAAABgAP7/DwAMAAAAAABgAP//DwAMAAEAAABgAAAADwAMAAIAAABgAAEADwAMAAMAAABgAAIADwAMAAQAAABhAP7/DwANAAAAAABhAP//DwANAAEAAABhAAAADwANAAIAAABhAAEADwANAAMAAABhAAIADwANAAQAAABiAP7/DwAOAAAAAABiAP//DwAOAAEAAABiAAAADwAOAAIAAABiAAEADwAOAAMAAABiAAIADwAOAAQAAABjAP7/DwAPAAAAAABjAP//DwAPAAEAAABjAAAADwAPAAIAAABjAAEADwAPAAMAAABjAAIADwAPAAQAAABkAP7/DwAQAAAAAABkAP//DwAQAAEAAABkAAAADwAQAAIAAABkAAEADwAQAAMAAABkAAIADwAQAAQAAABlAP7/DwARAAAAAABlAP//DwARAAEAAABlAAAADwARAAIAAABlAAEADwARAAMAAABlAAIADwARAAQAAABmAP7/DwASAAAAAABmAP//DwASAAEAAABmAAAADwASAAIAAABmAAEADwASAAMAAABmAAIADwASAAQAAABnAP7/DwATAAAAAABnAP//DwATAAEAAABnAAAADwATAAIAAABnAAEADwATAAMAAABnAAIADwATAAQAAABoAP7/DwAUAAAAAABoAP//DwAUAAEAAABoAAAADwAUAAIAAABoAAEADwAUAAMAAABoAAIADwAUAAQAAABpAP7/DwAVAAAAAABpAP//DwAVAAEAAABpAAAADwAVAAIAAABpAAEADwAVAAMAAABpAAIADwAVAAQAAABqAP7/DwAWAAAAAABqAP//DwAWAAEAAABqAAAADwAWAAIAAABqAAEADwAWAAMAAABqAAIADwAWAAQAAAAgAAUAAwAAAAEAAAAgAAYAAwAAAAIAAAAgAAcAAwAAAAMAAAAgAAgAAwAAAAQAAAAgAAkAAwAAAAUAAAAgAAoAAwAAAAYAAAAgAAsAAwAAAAcAAAAgAAwAAwAAAAgAAAAhAAQAAwABAAAAAAAhAAUAAwABAAEAAAAhAAYAAwABAAIAAAAhAAcAAwABAAMAAAAhAAgAAwABAAQAAAAhAAkAAwABAAUAAAAhAAoAAwABAAYAAAAhAAsAAwABAAcAAAAhAAwAAwABAAgAAAAhAA0AAwABAAkAAAAhAA4AAwABAAoAAAAhAA8AAwABAAsAAAAhABAAAwABAAwAAAAiAAQAAwACAAAAAAAiAAUAAwACAAEAAAAiAAYAAwACAAIAAAAiAAcAAwACAAMAAAAiAAgAAwACAAQAAAAiAAkAAwACAAUAAAAiAAoAAwACAAYAAAAiAAsAAwACAAcAAAAiAAwAAwACAAgAAAAiAA0AAwACAAkAAAAiAA4AAwACAAoAAAAiAA8AAwACAAsAAAAiABAAAwACAAwAAAAiABEAAwACAA0AAAAjAAQAAwADAAAAAAAjAAUAAwADAAEAAAAjAAYAAwADAAIAAAAjAAcAAwADAAMAAAAjAAgAAwADAAQAAAAjAAkAAwADAAUAAAAjAAoAAwADAAYAAAAjAAsAAwADAAcAAAAjAAwAAwADAAgAAAAjAA0AAwADAAkAAAAjAA4AAwADAAoAAAAjAA8AAwADAAsAAAAjABAAAwADAAwAAAAjABEAAwADAA0AAAAkAAQAAwAEAAAAAAAkAAUAAwAEAAEAAAAkAAYAAwAEAAIAAAAkAAcAAwAEAAMAAAAkAAgAAwAEAAQAAAAkAAkAAwAEAAUAAAAkAAoAAwAEAAYAAAAkAAsAAwAEAAcAAAAkAAwAAwAEAAgAAAAkAA0AAwAEAAkAAAAkAA4AAwAEAAoAAAAkAA8AAwAEAAsAAAAkABAAAwAEAAwAAAAkABEAAwAEAA0AAAAlAAQAAwAFAAAAAAAlAAUAAwAFAAEAAAAlAAYAAwAFAAIAAAAlAAcAAwAFAAMAAAAlAAgAAwAFAAQAAAAlAAkAAwAFAAUAAAAlAAoAAwAFAAYAAAAlAAsAAwAFAAcAAAAlAAwAAwAFAAgAAAAlAA0AAwAFAAkAAAAlAA4AAwAFAAoAAAAlAA8AAwAFAAsAAAAlABAAAwAFAAwAAAAlABEAAwAFAA0AAAAmAAQAAwAGAAAAAAAmAAUAAwAGAAEAAAAmAAYAAwAGAAIAAAAmAAcAAwAGAAMAAAAmAAgAAwAGAAQAAAAmAAkAAwAGAAUAAAAmAAoAAwAGAAYAAAAmAAsAAwAGAAcAAAAmAAwAAwAGAAgAAAAmAA0AAwAGAAkAAAAmAA4AAwAGAAoAAAAmAA8AAwAGAAsAAAAmABAAAwAGAAwAAAAnAAQAAwAHAAAAAAAnAAUAAwAHAAEAAAAnAAYAAwAHAAIAAAAnAAcAAwAHAAMAAAAnAAgAAwAHAAQAAAAnAAkAAwAHAAUAAAAnAAoAAwAHAAYAAAAnAAsAAwAHAAcAAAAnAAwAAwAHAAgAAAAnAA0AAwAHAAkAAAAnAA4AAwAHAAoAAAAnAA8AAwAHAAsAAAAnABAAAwAHAAwAAAAnABEAAwAHAA0AAAAoAAQAAwAIAAAAAAAoAAUAAwAIAAEAAAAoAAYAAwAIAAIAAAAoAAcAAwAIAAMAAAAoAAgAAwAIAAQAAAAoAAkAAwAIAAUAAAAoAAoAAwAIAAYAAAAoAAsAAwAIAAcAAAAoAAwAAwAIAAgAAAAoAA0AAwAIAAkAAAAoAA4AAwAIAAoAAAAoAA8AAwAIAAsAAAAoABAAAwAIAAwAAAApAAUAAwAJAAEAAAApAAYAAwAJAAIAAAApAAcAAwAJAAMAAAApAAgAAwAJAAQAAAApAAkAAwAJAAUAAAApAAoAAwAJAAYAAAApAAsAAwAJAAcAAAApAAwAAwAJAAgAAAApAA0AAwAJAAkAAAA5AP//BwAAAAAAAAA5AAAABwAAAAEAAAA5AAEABwAAAAIAAAA5AAIABwAAAAMAAAA5AAMABwAAAAQAAAA6AP//BwABAAAAAAA6AAAABwABAAEAAAA6AAEABwABAAIAAAA6AAIABwABAAMAAAA6AAMABwABAAQAAAA6AAQABwABAAUAAAA7AP//BwACAAAAAAA7AAAABwACAAEAAAA7AAEABwACAAIAAAA7AAIABwACAAMAAAA7AAMABwACAAQAAAA7AAQABwACAAUAAAA7AAUABwACAAYAAAA8AP//BwADAAAAAAA8AAAABwADAAEAAAA8AAEABwADAAIAAAA8AAIABwADAAMAAAA8AAMABwADAAQAAAA8AAQABwADAAUAAAA8AAUABwADAAYAAAA8AAYABwADAAcAAAA9AP//BwAEAAAAAAA9AAAABwAEAAEAAAA9AAEABwAEAAIAAAA9AAIABwAEAAMAAAA9AAMABwAEAAQAAAA9AAQABwAEAAUAAAA9AAUABwAEAAYAAAA9AAYABwAEAAcAAAA+AP//BwAFAAAAAAA+AAAABwAFAAEAAAA+AAEABwAFAAIAAAA+AAIABwAFAAMAAAA+AAMABwAFAAQAAAA+AAQABwAFAAUAAAA+AAUABwAFAAYAAAA/AP//BwAGAAAAAAA/AAAABwAGAAEAAAA/AAEABwAGAAIAAAA/AAIABwAGAAMAAAA/AAMABwAGAAQAAAA/AAQABwAGAAUAAAA/AAUABwAGAAYAAABAAP//BwAHAAAAAABAAAAABwAHAAEAAABAAAEABwAHAAIAAABAAAIABwAHAAMAAABAAAMABwAHAAQAAABAAAQABwAHAAUAAABAAAUABwAHAAYAAABAAAYABwAHAAcAAABBAP//BwAIAAAAAABBAAAABwAIAAEAAABBAAEABwAIAAIAAABBAAIABwAIAAMAAABBAAMABwAIAAQAAABBAAQABwAIAAUAAABBAAUABwAIAAYAAABBAAYABwAIAAcAAABCAP//BwAJAAAAAABCAAAABwAJAAEAAABCAAEABwAJAAIAAABCAAIABwAJAAMAAABCAAMABwAJAAQAAABCAAQABwAJAAUAAABCAAUABwAJAAYAAABDAP//BwAKAAAAAABDAAAABwAKAAEAAABDAAEABwAKAAIAAABDAAIABwAKAAMAAABDAAMABwAKAAQAAABDAAQABwAKAAUAAABDAAUABwAKAAYAAAA=")
 tile_set = SubResource("TileSet_83hjc")
 
-[node name="MossholeWall0" type="Sprite2D" parent="Map_1/Map1" unique_id=844848119]
+[node name="MossholeWall0" type="Sprite2D" parent="Map_1/Zone_1/Enviroment" unique_id=844848119]
 position = Vector2(-604, -108)
 texture = ExtResource("29_37hn7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map1/MossholeWall0" unique_id=1482179690]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_1/Enviroment/MossholeWall0" unique_id=1482179690]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map1/MossholeWall0/StaticBody2D" unique_id=99725962]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_1/Enviroment/MossholeWall0/StaticBody2D" unique_id=99725962]
 position = Vector2(24, -2)
 shape = SubResource("RectangleShape2D_rvq4s")
 
-[node name="MossholeWall1" type="Sprite2D" parent="Map_1/Map1" unique_id=377920188]
+[node name="MossholeWall1" type="Sprite2D" parent="Map_1/Zone_1/Enviroment" unique_id=377920188]
 position = Vector2(-596, 87)
 texture = ExtResource("34_whos2")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map1/MossholeWall1" unique_id=1680217252]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_1/Enviroment/MossholeWall1" unique_id=1680217252]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map1/MossholeWall1/StaticBody2D" unique_id=1429373079]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_1/Enviroment/MossholeWall1/StaticBody2D" unique_id=1429373079]
 position = Vector2(23.5, 0)
 shape = SubResource("RectangleShape2D_20iwf")
 
-[node name="FlyEnemy1" parent="Map_1/Map1" unique_id=1638441390 instance=ExtResource("ext_fly_enemy")]
+[node name="Enemies" type="Node2D" parent="Map_1/Zone_1" unique_id=813659041]
+
+[node name="FlyEnemy1" parent="Map_1/Zone_1/Enemies" unique_id=1638441390 instance=ExtResource("ext_fly_enemy")]
 position = Vector2(472, -117)
 
-[node name="FlyEnemy2" parent="Map_1/Map1" unique_id=15248226 instance=ExtResource("ext_fly_enemy")]
+[node name="FlyEnemy2" parent="Map_1/Zone_1/Enemies" unique_id=15248226 instance=ExtResource("ext_fly_enemy")]
 position = Vector2(140, -91)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Map_1/Map1" unique_id=63083695]
+[node name="Decoration" type="Node2D" parent="Map_1/Zone_1" unique_id=502415217]
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Map_1/Map1/ParallaxBackground" unique_id=1295451440]
+[node name="FungFgSilhouettes0000Fb5" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=2123545342]
+position = Vector2(331, -254)
+texture = ExtResource("24_x2sho")
 
-[node name="Sprite2D" type="Sprite2D" parent="Map_1/Map1/ParallaxBackground/ParallaxLayer4" unique_id=317133483]
-position = Vector2(1256.4999, 75.99998)
-scale = Vector2(4.907591, 2.260355)
-texture = ExtResource("38_ucewk")
+[node name="FungFgSilhouettes0000Fb4" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1832671534]
+position = Vector2(-644, -160)
+texture = ExtResource("24_x2sho")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Map_1/Map1/ParallaxBackground" unique_id=881750017]
+[node name="Moss3" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1632039948]
+z_index = -1
+position = Vector2(574, 85)
+texture = ExtResource("31_i28a7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Map_1/Map1/ParallaxBackground/ParallaxLayer" unique_id=1151021486]
-position = Vector2(-40.00005, -31.000006)
-scale = Vector2(1.2454052, 1.5140188)
-texture = ExtResource("19_xyaht")
+[node name="Moss2" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=423868029]
+z_index = -1
+position = Vector2(-402, 64)
+texture = ExtResource("30_ewsil")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Map_1/Map1/ParallaxBackground" unique_id=475291156]
+[node name="FungNew0116Layer266" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=904887681]
+z_index = -1
+position = Vector2(383, -129)
+texture = ExtResource("28_7jkol")
 
-[node name="Sprite2D" type="Sprite2D" parent="Map_1/Map1/ParallaxBackground/ParallaxLayer2" unique_id=665110536]
-position = Vector2(1214, -14.000001)
-scale = Vector2(3, 3)
-texture = ExtResource("35_c7l1x")
+[node name="FungNew0094Layer263" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1642534248]
+z_index = -1
+position = Vector2(517.00006, -158)
+scale = Vector2(1.8085107, 1.6640625)
+texture = ExtResource("26_bbjfc")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Map_1/Map1/ParallaxBackground" unique_id=728077831]
+[node name="FungFgHanging01" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=845281398]
+z_index = -1
+position = Vector2(515, -248.99998)
+rotation = 0.010282755
+texture = ExtResource("27_et426")
 
-[node name="Sprite2D" type="Sprite2D" parent="Map_1/Map1/ParallaxBackground/ParallaxLayer3" unique_id=1985210128]
-position = Vector2(2413, -27)
-scale = Vector2(3, 3)
-texture = ExtResource("27_uewil")
+[node name="Cage" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1000843110]
+z_index = -1
+position = Vector2(2.0000305, 18)
+scale = Vector2(0.42446044, 0.44495413)
+texture = ExtResource("22_c7l1x")
 
-[node name="Map2" type="Node2D" parent="Map_1" unique_id=962713529]
+[node name="4" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=386425135]
+z_index = -1
+position = Vector2(-532, 253)
+texture = ExtResource("20_qcjiv")
+
+[node name="2" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1726310484]
+z_index = -1
+position = Vector2(-241, 251)
+texture = ExtResource("21_ucewk")
+
+[node name="3" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=779350868]
+z_index = -1
+position = Vector2(27, 273)
+texture = ExtResource("22_ywtvu")
+
+[node name="5" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1378796627]
+z_index = -1
+position = Vector2(278, 273)
+texture = ExtResource("21_ucewk")
+
+[node name="6" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1938203694]
+z_index = -1
+position = Vector2(549, 276)
+texture = ExtResource("22_ywtvu")
+
+[node name="FungNew0143Layer225" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1024493492]
+z_index = -1
+position = Vector2(274, -72)
+texture = ExtResource("20_8drnq")
+
+[node name="FungNew0144Layer224" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=767172040]
+z_index = -1
+position = Vector2(-181, -72)
+texture = ExtResource("21_wcffe")
+
+[node name="FungBigRoof0000A" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=1807630762]
+z_index = 1
+position = Vector2(-192, -178)
+texture = ExtResource("23_uewil")
+
+[node name="FungNew0104Layer254Copy3" type="Sprite2D" parent="Map_1/Zone_1/Decoration" unique_id=605650346]
+z_index = -1
+position = Vector2(-585, -6)
+texture = ExtResource("25_hedow")
+
+[node name="Zone_2" type="Node2D" parent="Map_1" unique_id=962713529]
 position = Vector2(-144, -120)
 
-[node name="FungBigRoof0004A" type="Sprite2D" parent="Map_1/Map2" unique_id=185177551]
+[node name="Enviroment" type="Node2D" parent="Map_1/Zone_2" unique_id=881498731]
+
+[node name="MossholeBoneB" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=804167860]
+position = Vector2(-1265, 156)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB" unique_id=391939879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB/StaticBody2D" unique_id=201907005]
+position = Vector2(-3.5, -61.5)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="MossholeBoneB2" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=883699710]
+position = Vector2(-1114, 156)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB2" unique_id=770037114]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB2/StaticBody2D" unique_id=997259560]
+position = Vector2(-4, -62.5)
+shape = SubResource("RectangleShape2D_8ivnt")
+
+[node name="MossholeBoneB3" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=512031314]
+position = Vector2(-966, 154)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB3" unique_id=1750237660]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB3/StaticBody2D" unique_id=667645326]
+position = Vector2(-15.5, -60.5)
+shape = SubResource("RectangleShape2D_eamtk")
+
+[node name="MossholeBoneB4" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=1360619240]
+position = Vector2(-818, 154)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB4" unique_id=1979602923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB4/StaticBody2D" unique_id=2108113798]
+position = Vector2(-12.5, -60.5)
+shape = SubResource("RectangleShape2D_pd4xp")
+
+[node name="MossholeBoneB5" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=301112911]
+position = Vector2(-665, 151)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB5" unique_id=1065176860]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB5/StaticBody2D" unique_id=2137544617]
+position = Vector2(-4.5, -59)
+shape = SubResource("RectangleShape2D_p5gkr")
+
+[node name="MossholeBoneB6" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=1550439129]
+position = Vector2(-515, 151)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB6" unique_id=133372681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB6/StaticBody2D" unique_id=2050732539]
+position = Vector2(-5, -59)
+shape = SubResource("RectangleShape2D_nyao3")
+
+[node name="MossholeBoneB7" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=296081686]
+position = Vector2(-365, 151)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB7" unique_id=1624514448]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB7/StaticBody2D" unique_id=2044460700]
+position = Vector2(-7, -59)
+shape = SubResource("RectangleShape2D_urwgc")
+
+[node name="MossholeBoneB8" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=71161079]
+position = Vector2(-212, 154)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB8" unique_id=1118569939]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB8/StaticBody2D" unique_id=1311876665]
+position = Vector2(-8, -60.5)
+shape = SubResource("RectangleShape2D_dtxcv")
+
+[node name="MossholeBoneB9" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=1511910874]
+position = Vector2(-64, 154)
+texture = ExtResource("38_7jkol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB9" unique_id=649080838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeBoneB9/StaticBody2D" unique_id=1720614413]
+position = Vector2(-2, -59)
+shape = SubResource("RectangleShape2D_3eljy")
+
+[node name="MossholeFloor2" type="Sprite2D" parent="Map_1/Zone_2/Enviroment" unique_id=1936727249]
+texture = ExtResource("49_mkc3u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_2/Enviroment/MossholeFloor2" unique_id=508592943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_2/Enviroment/MossholeFloor2/StaticBody2D" unique_id=177398654]
+position = Vector2(4, -3.5)
+shape = SubResource("RectangleShape2D_t4w31")
+
+[node name="Enemies" type="Node2D" parent="Map_1/Zone_2" unique_id=934386779]
+
+[node name="BugEnemy1" parent="Map_1/Zone_2/Enemies" unique_id=987261521 instance=ExtResource("ext_bug_enemy")]
+position = Vector2(-1191, -15)
+scale = Vector2(1.5, 1.5)
+
+[node name="BugEnemy2" parent="Map_1/Zone_2/Enemies" unique_id=987261522 instance=ExtResource("ext_bug_enemy")]
+position = Vector2(-607, -13)
+scale = Vector2(1.5, 1.5)
+initial_direction = -1
+
+[node name="Decoration" type="Node2D" parent="Map_1/Zone_2" unique_id=128958049]
+
+[node name="FungBigRoof0004A" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=185177551]
+z_index = -1
 position = Vector2(-922, -273)
 texture = ExtResource("37_et426")
 
-[node name="FungFgSilhouettes0000Fb4" type="Sprite2D" parent="Map_1/Map2" unique_id=684738926]
+[node name="FungFgSilhouettes0000Fb4" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=684738926]
+z_index = -1
 position = Vector2(-46, -207)
 scale = Vector2(1.5882353, 1.328125)
 texture = ExtResource("24_x2sho")
 
-[node name="MossholeBoneB" type="Sprite2D" parent="Map_1/Map2" unique_id=804167860]
-position = Vector2(-1265, 156)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB" unique_id=391939879]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB/StaticBody2D" unique_id=201907005]
-position = Vector2(-3.5, -61.5)
-shape = SubResource("RectangleShape2D_vp2hk")
-
-[node name="MossholeBoneB2" type="Sprite2D" parent="Map_1/Map2" unique_id=883699710]
-position = Vector2(-1114, 156)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB2" unique_id=770037114]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB2/StaticBody2D" unique_id=997259560]
-position = Vector2(-4, -62.5)
-shape = SubResource("RectangleShape2D_8ivnt")
-
-[node name="MossholeBoneB3" type="Sprite2D" parent="Map_1/Map2" unique_id=512031314]
-position = Vector2(-966, 154)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB3" unique_id=1750237660]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB3/StaticBody2D" unique_id=667645326]
-position = Vector2(-15.5, -60.5)
-shape = SubResource("RectangleShape2D_eamtk")
-
-[node name="MossholeBoneB4" type="Sprite2D" parent="Map_1/Map2" unique_id=1360619240]
-position = Vector2(-818, 154)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB4" unique_id=1979602923]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB4/StaticBody2D" unique_id=2108113798]
-position = Vector2(-12.5, -60.5)
-shape = SubResource("RectangleShape2D_pd4xp")
-
-[node name="MossholeBoneB5" type="Sprite2D" parent="Map_1/Map2" unique_id=301112911]
-position = Vector2(-665, 151)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB5" unique_id=1065176860]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB5/StaticBody2D" unique_id=2137544617]
-position = Vector2(-4.5, -59)
-shape = SubResource("RectangleShape2D_p5gkr")
-
-[node name="MossholeBoneB6" type="Sprite2D" parent="Map_1/Map2" unique_id=1550439129]
-position = Vector2(-515, 151)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB6" unique_id=133372681]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB6/StaticBody2D" unique_id=2050732539]
-position = Vector2(-5, -59)
-shape = SubResource("RectangleShape2D_nyao3")
-
-[node name="MossholeBoneB7" type="Sprite2D" parent="Map_1/Map2" unique_id=296081686]
-position = Vector2(-365, 151)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB7" unique_id=1624514448]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB7/StaticBody2D" unique_id=2044460700]
-position = Vector2(-7, -59)
-shape = SubResource("RectangleShape2D_urwgc")
-
-[node name="MossholeBoneB8" type="Sprite2D" parent="Map_1/Map2" unique_id=71161079]
-position = Vector2(-212, 154)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB8" unique_id=1118569939]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB8/StaticBody2D" unique_id=1311876665]
-position = Vector2(-8, -60.5)
-shape = SubResource("RectangleShape2D_dtxcv")
-
-[node name="MossholeBoneB9" type="Sprite2D" parent="Map_1/Map2" unique_id=1511910874]
-position = Vector2(-64, 154)
-texture = ExtResource("38_7jkol")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeBoneB9" unique_id=649080838]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeBoneB9/StaticBody2D" unique_id=1720614413]
-position = Vector2(-2, -59)
-shape = SubResource("RectangleShape2D_3eljy")
-
-[node name="FungNew0104Layer254Copy3" type="Sprite2D" parent="Map_1/Map2" unique_id=214474336]
+[node name="FungNew0104Layer254Copy3" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=214474336]
+z_index = -1
 position = Vector2(-557, -116)
 texture = ExtResource("25_hedow")
 
-[node name="FungFgSilhouettes0004Fv5" type="Sprite2D" parent="Map_1/Map2" unique_id=1391056726]
+[node name="FungFgSilhouettes0004Fv5" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=1391056726]
+z_index = -1
 position = Vector2(-1260, -94)
 texture = ExtResource("39_vp0do")
 
-[node name="MossholeLeaf0" type="Sprite2D" parent="Map_1/Map2" unique_id=859832650]
+[node name="MossholeLeaf0" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=859832650]
+z_index = -1
 position = Vector2(-943, -73)
 texture = ExtResource("50_6ikf2")
 
-[node name="FungMask03" type="Sprite2D" parent="Map_1/Map2" unique_id=700600001]
+[node name="FungMask03" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=700600001]
+z_index = -1
 position = Vector2(-1408, -272)
 texture = ExtResource("44_joi6m")
 
-[node name="FungNew0096Layer261" type="Sprite2D" parent="Map_1/Map2" unique_id=946593654]
+[node name="FungNew0096Layer261" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=946593654]
+z_index = -1
 position = Vector2(-171, -101)
 texture = ExtResource("45_qcjiv")
 
-[node name="FungNew0095Layer262" type="Sprite2D" parent="Map_1/Map2" unique_id=1011447349]
+[node name="FungNew0095Layer262" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=1011447349]
+z_index = -1
 position = Vector2(-186, -302)
 texture = ExtResource("46_ucewk")
 
-[node name="DeepMsk" type="Sprite2D" parent="Map_1/Map2" unique_id=1786585636]
+[node name="DeepMsk" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=1786585636]
+z_index = -1
 position = Vector2(-226, -461)
 texture = ExtResource("47_ywtvu")
 
-[node name="FungBgRocksFull01" type="Sprite2D" parent="Map_1/Map2" unique_id=205241683]
+[node name="FungBgRocksFull01" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=205241683]
 position = Vector2(-525, -467)
 texture = ExtResource("48_3h6gp")
 
-[node name="LakeWater" type="Sprite2D" parent="Map_1/Map2" unique_id=1361144202]
+[node name="LakeWater" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=1361144202]
 modulate = Color(1, 1, 1, 0.14117648)
 z_index = 1
 position = Vector2(-734, 14)
 scale = Vector2(6.0624995, 0.3)
 texture = ExtResource("39_37hn7")
 
-[node name="LakeLight" type="Sprite2D" parent="Map_1/Map2" unique_id=126036354]
+[node name="LakeLight" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=126036354]
 position = Vector2(-740, -26)
 scale = Vector2(28.487804, 1)
 texture = ExtResource("40_ewsil")
 
-[node name="MossholeFloor2" type="Sprite2D" parent="Map_1/Map2" unique_id=1936727249]
-texture = ExtResource("49_mkc3u")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map2/MossholeFloor2" unique_id=508592943]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map2/MossholeFloor2/StaticBody2D" unique_id=177398654]
-position = Vector2(4, -3.5)
-shape = SubResource("RectangleShape2D_t4w31")
-
-[node name="FungFgHanging01" type="Sprite2D" parent="Map_1/Map2" unique_id=1241484504]
+[node name="FungFgHanging01" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=1241484504]
+z_index = -1
 position = Vector2(-309, -249)
 texture = ExtResource("27_et426")
 
-[node name="MossholeBoneA" type="Sprite2D" parent="Map_1/Map2" unique_id=291041571]
+[node name="MossholeBoneA" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=291041571]
 position = Vector2(-1344, 33)
 texture = ExtResource("52_wcffe")
 
-[node name="BugEnemy1" parent="Map_1/Map2" unique_id=987261521 instance=ExtResource("ext_bug_enemy")]
-position = Vector2(-1191, -15)
-scale = Vector2(1.5, 1.5)
+[node name="Zone_3" type="Node2D" parent="Map_1" unique_id=973986423]
 
-[node name="BugEnemy2" parent="Map_1/Map2" unique_id=987261522 instance=ExtResource("ext_bug_enemy")]
-position = Vector2(-607, -13)
-scale = Vector2(1.5, 1.5)
-initial_direction = -1
+[node name="Enviroment" type="Node2D" parent="Map_1/Zone_3" unique_id=96628865]
 
-[node name="Map3" type="Node2D" parent="Map_1" unique_id=973986423]
-
-[node name="FungNew0141Layer226" type="Sprite2D" parent="Map_1/Map3" unique_id=512122688]
-position = Vector2(-40, -295)
-texture = ExtResource("57_uxjm2")
-
-[node name="FungNew0144Layer224" type="Sprite2D" parent="Map_1/Map3" unique_id=1229278054]
-position = Vector2(522, -292)
-texture = ExtResource("21_wcffe")
-
-[node name="FungBigRoof0000A" type="Sprite2D" parent="Map_1/Map3" unique_id=1599125367]
-position = Vector2(368, -409)
-texture = ExtResource("23_uewil")
-
-[node name="MossholeBoneA" type="Sprite2D" parent="Map_1/Map3" unique_id=1168182599]
-position = Vector2(-57, -72)
-texture = ExtResource("58_uohhd")
-
-[node name="MossholeGround1" type="Sprite2D" parent="Map_1/Map3" unique_id=1801347043]
-position = Vector2(325, -55)
-texture = ExtResource("33_1yevs")
-
-[node name="MossholeGround2" type="Sprite2D" parent="Map_1/Map3" unique_id=1949083269]
-position = Vector2(759, -78)
-texture = ExtResource("59_3myim")
-
-[node name="Moss0" type="Sprite2D" parent="Map_1/Map3" unique_id=2120378391]
-position = Vector2(288, -161)
-texture = ExtResource("60_j8p8j")
-
-[node name="Moss3" type="Sprite2D" parent="Map_1/Map3" unique_id=1793472007]
-position = Vector2(807, -172)
-texture = ExtResource("31_i28a7")
-
-[node name="MossholeFloor1" type="Sprite2D" parent="Map_1/Map3" unique_id=1006635687]
+[node name="MossholeFloor1" type="Sprite2D" parent="Map_1/Zone_3/Enviroment" unique_id=1006635687]
 position = Vector2(143, -98)
 texture = ExtResource("61_563o8")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map3/MossholeFloor1" unique_id=222956616]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor1" unique_id=222956616]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map3/MossholeFloor1/StaticBody2D" unique_id=606127998]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor1/StaticBody2D" unique_id=606127998]
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_sh3le")
 
-[node name="MossholeFloor2" type="Sprite2D" parent="Map_1/Map3" unique_id=386254590]
+[node name="MossholeFloor2" type="Sprite2D" parent="Map_1/Zone_3/Enviroment" unique_id=386254590]
 position = Vector2(439, -81)
 texture = ExtResource("49_mkc3u")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map3/MossholeFloor2" unique_id=604768717]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor2" unique_id=604768717]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map3/MossholeFloor2/StaticBody2D" unique_id=862008946]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor2/StaticBody2D" unique_id=862008946]
 position = Vector2(-13.5, -16)
 shape = SubResource("RectangleShape2D_8xkvh")
 
-[node name="MossholeFloor0" type="Sprite2D" parent="Map_1/Map3" unique_id=744513637]
+[node name="MossholeFloor0" type="Sprite2D" parent="Map_1/Zone_3/Enviroment" unique_id=744513637]
 position = Vector2(722, -101)
 texture = ExtResource("62_fdn3g")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Map3/MossholeFloor0" unique_id=243364368]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor0" unique_id=243364368]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Map3/MossholeFloor0/StaticBody2D" unique_id=1098397539]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_3/Enviroment/MossholeFloor0/StaticBody2D" unique_id=1098397539]
 position = Vector2(45.5, 4.5)
 shape = SubResource("RectangleShape2D_o1om5")
 
-[node name="Moss1" type="Sprite2D" parent="Map_1/Map3" unique_id=1459757995]
+[node name="Enemies" type="Node2D" parent="Map_1/Zone_3" unique_id=301767714]
+
+[node name="Decoration" type="Node2D" parent="Map_1/Zone_3" unique_id=685320635]
+
+[node name="FungNew0141Layer226" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=512122688]
+z_index = -1
+position = Vector2(-40, -295)
+texture = ExtResource("57_uxjm2")
+
+[node name="FungNew0144Layer224" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1229278054]
+z_index = -1
+position = Vector2(522, -292)
+texture = ExtResource("21_wcffe")
+
+[node name="FungBigRoof0000A" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1599125367]
+z_index = -1
+position = Vector2(368, -409)
+texture = ExtResource("23_uewil")
+
+[node name="MossholeBoneA" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1168182599]
+z_index = -1
+position = Vector2(-57, -72)
+texture = ExtResource("58_uohhd")
+
+[node name="MossholeGround1" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1801347043]
+z_index = -1
+position = Vector2(325, -55)
+texture = ExtResource("33_1yevs")
+
+[node name="MossholeGround2" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1949083269]
+z_index = -1
+position = Vector2(759, -78)
+texture = ExtResource("59_3myim")
+
+[node name="Moss0" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=2120378391]
+z_index = -1
+position = Vector2(288, -161)
+texture = ExtResource("60_j8p8j")
+
+[node name="Moss3" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1793472007]
+z_index = -1
+position = Vector2(807, -172)
+texture = ExtResource("31_i28a7")
+
+[node name="Moss1" type="Sprite2D" parent="Map_1/Zone_3/Decoration" unique_id=1459757995]
 z_index = 1
 position = Vector2(856, -121)
 texture = ExtResource("60_j8p8j")
 
-[node name="PlayerController" parent="Map_1" unique_id=494526030 instance=ExtResource("2_jm60u")]
-position = Vector2(-2342, -224)
-
 [node name="TeleporterToLevel2" parent="Map_1" unique_id=90962396 instance=ExtResource("ext_teleporter")]
 position = Vector2(807, -208)
 target_scene_path = "res://assets/scenes/levels/map_2.tscn"
+
+[node name="PlayerController" parent="." unique_id=494526030 instance=ExtResource("2_jm60u")]
+position = Vector2(-241, 63)

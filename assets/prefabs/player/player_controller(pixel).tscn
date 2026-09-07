@@ -503,7 +503,6 @@ stretch_mode = 5
 
 [node name="BloodEffect" type="AnimatedSprite2D" parent="HUD" unique_id=983719283]
 unique_name_in_owner = true
-visible = false
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_blood")
