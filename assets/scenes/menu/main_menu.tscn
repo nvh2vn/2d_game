@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://u4q4086v2kkr"]
 
 [ext_resource type="Script" uid="uid://eh2llribhfvw" path="res://assets/scripts/menu/main_menu.gd" id="1_menu_script"]
+[ext_resource type="AudioStream" uid="uid://twa2meoe8yh8" path="res://assets/art/2d/silksong_full/Sounds/menu.mp3" id="2_3e0w2"]
 [ext_resource type="Texture2D" uid="uid://lrerukr11llw" path="res://assets/art/2d/silksong_full/Images/Menu/Voidheart_menu_BG.jpg" id="2_bg_texture"]
 [ext_resource type="Texture2D" uid="uid://bi6hbgptqdaey" path="res://assets/art/2d/silksong_full/Images/Menu/Main_Menu_GG_beam.png" id="3_beam_texture"]
 [ext_resource type="Texture2D" uid="uid://1wh7f253hyfa" path="res://assets/art/2d/silksong_full/Images/Menu/title.png" id="4_title_logo"]
@@ -92,6 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu_script")
+menu_bgm = ExtResource("2_3e0w2")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1622547135]
 layout_mode = 1
@@ -314,3 +316,6 @@ layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
 show_percentage = false
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=77889911]
+unique_name_in_owner = true

@@ -2,6 +2,11 @@ extends Control
 
 @export_file("*.tscn") var default_level_path: String = "res://assets/scenes/levels/map_1.tscn"
 
+@export_group("Background Music (BGM)")
+@export var menu_bgm: AudioStream
+@export var bgm_volume_db: float = 0.0
+@export var auto_play_bgm: bool = true
+
 @onready var play_button: Button = %PlayButton
 @onready var continue_button: Button = %ContinueButton
 @onready var settings_button: Button = %SettingsButton
@@ -20,12 +25,22 @@ extends Control
 
 @onready var beam_sprite: TextureRect = %BeamSprite
 @onready var game_logo: TextureRect = %GameLogo
+@onready var bgm_player: AudioStreamPlayer = get_node_or_null("%BGMPlayer")
 
 var is_loading: bool = false
 var target_scene_to_load: String = ""
 
 
 func _ready() -> void:
+	# Thiết lập và phát nhạc nền Menu
+	if bgm_player:
+		bgm_player.bus = &"Music"
+		if menu_bgm:
+			bgm_player.stream = menu_bgm
+			bgm_player.volume_db = bgm_volume_db
+			if auto_play_bgm and not bgm_player.playing:
+				bgm_player.play()
+
 	# Kết nối tín hiệu các nút menu chính
 	if play_button:
 		play_button.pressed.connect(_on_play_button_pressed)

@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="sOffGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0b8c8"/>
+      <stop offset="100%" stop-color="#808898"/>
+    </linearGradient>
+  </defs>
+  <!-- Speaker Body -->
+  <path d="M12 24 H22 L36 12 V52 L22 40 H12 Z" fill="url(#sOffGrad)" stroke="#111625" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Mute Cross / Slash -->
+  <line x1="43" y1="24" x2="55" y2="40" stroke="#ff5555" stroke-width="4" stroke-linecap="round"/>
+  <line x1="55" y1="24" x2="43" y2="40" stroke="#ff5555" stroke-width="4" stroke-linecap="round"/>
+</svg>

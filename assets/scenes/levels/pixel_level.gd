@@ -15,7 +15,13 @@ extends Node2D
 @export var auto_scroll_background: bool = true
 @export var auto_scroll_speed: float = 15.0
 
+@export_group("Background Music (BGM)")
+@export var level_bgm: AudioStream
+@export var bgm_volume_db: float = 0.0
+@export var auto_play_bgm: bool = true
+
 @onready var parallax_bg: ParallaxBackground = find_child("ParallaxBackground", true, false)
+var bgm_player: AudioStreamPlayer = null
 
 
 func _ready() -> void:
@@ -23,9 +29,26 @@ func _ready() -> void:
 	if scene_file_path != "":
 		SaveManager.save_last_level(scene_file_path)
 	
+	_setup_bgm()
+
 	# Đợi 1 frame để Camera của Player khởi tạo hoàn tất
 	await get_tree().process_frame
 	update_camera_limits()
+
+
+func _setup_bgm() -> void:
+	bgm_player = find_child("BGMPlayer", false, false)
+	if not bgm_player:
+		bgm_player = AudioStreamPlayer.new()
+		bgm_player.name = "BGMPlayer"
+		add_child(bgm_player)
+	bgm_player.bus = &"Music"
+	if level_bgm:
+		bgm_player.stream = level_bgm
+		bgm_player.volume_db = bgm_volume_db
+		if auto_play_bgm and not bgm_player.playing:
+			bgm_player.play()
+
 
 
 func _process(delta: float) -> void:

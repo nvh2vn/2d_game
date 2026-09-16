@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d1s3g8kyjji4e" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_05.png" id="13_platform"]
 [ext_resource type="Texture2D" uid="uid://c3xiuomw1ro1f" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/fung_new_0143_Layer-225.png" id="14_deco_moss"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/environment/animated_flower.tscn" id="ext_flower"]
+[ext_resource type="PackedScene" uid="uid://treasure_chest_prefab_01" path="res://assets/prefabs/items/treasure_chest.tscn" id="ext_chest"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(80, 600)
@@ -199,6 +200,12 @@ initial_direction = -1
 
 [node name="FlyEnemy1" parent="." unique_id=962587438 instance=ExtResource("4_fly_enemy")]
 position = Vector2(1100, -20)
+
+[node name="TreasureChest1" parent="." unique_id=990102050 instance=ExtResource("ext_chest")]
+position = Vector2(300, 210)
+
+[node name="TreasureChest2" parent="." unique_id=990102051 instance=ExtResource("ext_chest")]
+position = Vector2(1750, 210)
 
 [node name="PlayerController" parent="." unique_id=530549205 instance=ExtResource("2_player")]
 position = Vector2(80, 200)

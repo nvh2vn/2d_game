@@ -2,7 +2,6 @@ extends Control
 
 @export_file("*.tscn") var next_scene_path: String = "res://assets/scenes/menu/main_menu.tscn"
 @onready var background: TextureRect = $Background
-@onready var logo: TextureRect = $CenterContainer/Logo
 
 var is_transitioning: bool = false
 

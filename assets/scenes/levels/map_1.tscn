@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3rykii0l8pef" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_08.png" id="1_wl5pn"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://assets/prefabs/player/player_controller(pixel).tscn" id="2_jm60u"]
 [ext_resource type="Texture2D" uid="uid://chlxldvba628j" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_09.png" id="2_njlr7"]
+[ext_resource type="AudioStream" uid="uid://6cool0bam8n3" path="res://assets/art/2d/silksong_full/Sounds/mossgrotto.mp3" id="2_uy8wc"]
 [ext_resource type="Texture2D" uid="uid://dwbeyu5q0hrhs" path="res://assets/art/2d/silksong_full/Images/PlatForm/TearCity/Floor.png" id="3_h4idh"]
 [ext_resource type="Texture2D" uid="uid://bxdkbrtwbeeot" path="res://assets/art/2d/silksong_full/Images/PlatForm/TearCity/Floor_1.png" id="4_gh1cq"]
 [ext_resource type="Texture2D" uid="uid://dfjdrw87o5oxo" path="res://assets/art/2d/silksong_full/Images/PlatForm/TearCity/mage_lord_room_0002_floor.png" id="5_ds68d"]
@@ -61,7 +62,10 @@
 [ext_resource type="Texture2D" uid="uid://lil1skxsaymm" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_1.png" id="61_563o8"]
 [ext_resource type="Texture2D" uid="uid://bmshfdk0cb851" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_0.png" id="62_fdn3g"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/bug_enemy.tscn" id="ext_bug_enemy"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/items/treasure_chest.tscn" id="ext_chest"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/fly_enemy.tscn" id="ext_fly_enemy"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/poison_trap.tscn" id="ext_poison_trap"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/restricted_zone.tscn" id="ext_restricted_zone"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/environment/teleporter.tscn" id="ext_teleporter"]
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://assets/scenes/levels/pixel_level.gd" id="level_script"]
 
@@ -9671,6 +9675,7 @@ size = Vector2(373, 55)
 
 [node name="PixelLevel" type="Node2D" unique_id=1041841660]
 script = ExtResource("level_script")
+level_bgm = ExtResource("2_uy8wc")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1933497591]
 visible = false
@@ -9774,10 +9779,10 @@ shape = SubResource("RectangleShape2D_20iwf")
 [node name="Enemies" type="Node2D" parent="Map_1/Zone_1" unique_id=813659041]
 
 [node name="FlyEnemy1" parent="Map_1/Zone_1/Enemies" unique_id=1638441390 instance=ExtResource("ext_fly_enemy")]
-position = Vector2(472, -117)
+position = Vector2(615, -77)
 
 [node name="FlyEnemy2" parent="Map_1/Zone_1/Enemies" unique_id=15248226 instance=ExtResource("ext_fly_enemy")]
-position = Vector2(140, -91)
+position = Vector2(335, -78)
 
 [node name="Decoration" type="Node2D" parent="Map_1/Zone_1" unique_id=502415217]
 
@@ -9982,6 +9987,11 @@ position = Vector2(-607, -13)
 scale = Vector2(1.5, 1.5)
 initial_direction = -1
 
+[node name="RestrictedZone" parent="Map_1/Zone_2" unique_id=987261523 instance=ExtResource("ext_restricted_zone")]
+position = Vector2(-2227, -238)
+scale = Vector2(3, 3)
+zone_title = ""
+
 [node name="Decoration" type="Node2D" parent="Map_1/Zone_2" unique_id=128958049]
 
 [node name="FungBigRoof0004A" type="Sprite2D" parent="Map_1/Zone_2/Decoration" unique_id=185177551]
@@ -10142,5 +10152,17 @@ texture = ExtResource("60_j8p8j")
 position = Vector2(807, -208)
 target_scene_path = "res://assets/scenes/levels/map_2.tscn"
 
+[node name="TreasureChest1" parent="." unique_id=990102050 instance=ExtResource("ext_chest")]
+position = Vector2(1993, 116)
+
+[node name="TreasureChest2" parent="." unique_id=990102051 instance=ExtResource("ext_chest")]
+position = Vector2(501, 116)
+
 [node name="PlayerController" parent="." unique_id=494526030 instance=ExtResource("2_jm60u")]
 position = Vector2(-241, 63)
+
+[node name="PoisonTrap1" parent="." unique_id=990102060 instance=ExtResource("ext_poison_trap")]
+position = Vector2(669, 194)
+
+[node name="PoisonTrap2" parent="." unique_id=990102061 instance=ExtResource("ext_poison_trap")]
+position = Vector2(1451, 193)

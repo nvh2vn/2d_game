@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/bug_enemy.tscn" id="ext_bug_enemy"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/fly_enemy.tscn" id="ext_fly_enemy"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/environment/teleporter.tscn" id="ext_teleporter"]
+[ext_resource type="PackedScene" uid="uid://treasure_chest_prefab_01" path="res://assets/prefabs/items/treasure_chest.tscn" id="ext_chest"]
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://assets/scenes/levels/pixel_level.gd" id="level_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baaps"]
@@ -10085,6 +10086,12 @@ shape = SubResource("RectangleShape2D_o1om5")
 z_index = 1
 position = Vector2(856, -121)
 texture = ExtResource("60_j8p8j")
+
+[node name="TreasureChest1" parent="Map_1" unique_id=990102050 instance=ExtResource("ext_chest")]
+position = Vector2(-2300, -268)
+
+[node name="TreasureChest2" parent="Map_1" unique_id=990102051 instance=ExtResource("ext_chest")]
+position = Vector2(400, -80)
 
 [node name="PlayerController" parent="Map_1" unique_id=494526030 instance=ExtResource("2_jm60u")]
 position = Vector2(-2475, -268)
