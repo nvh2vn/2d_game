@@ -1,0 +1,428 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/menu/inventory_screen.gd" id="1_inv_script"]
+[ext_resource type="Texture2D" uid="uid://lrerukr11llw" path="res://assets/art/2d/silksong_full/Images/Menu/Voidheart_menu_BG.jpg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://bi6hbgptqdaey" path="res://assets/art/2d/silksong_full/Images/Menu/Main_Menu_GG_beam.png" id="3_beam"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="4_font"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Geo - HUD_coin_v020004.png" id="5_coin"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/UI/mask_white.png" id="6_mask"]
+[ext_resource type="Texture2D" uid="uid://cv7gj0netijef" path="res://assets/art/2d/silksong_full/Images/UI/ins_3.png" id="7_spool"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Inv_0015_dash-cloak.png" id="8_dash"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Spell, Shade Soul - Inv_0025_spell_fireball_01_level2.png" id="9_dart"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Spell, Howling Wraiths - Inv_0024_spell_scream_01.png" id="10_wave"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/nail_upgrade_0000_pure-nail.png" id="11_nail"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="12_border"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.06, 0.08, 0.12, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.65, 0.7, 0.85, 0.7)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_card"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.12, 0.15, 0.22, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.5, 0.65, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1, 0.13, 0.18, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.6, 0.75, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.22, 0.28, 0.38, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.9, 0.7, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="InventoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_inv_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BeamSprite" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_beam")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(860, 560)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -280.0
+offset_right = 430.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="BorderFrame" type="NinePatchRect" parent="MainPanel"]
+modulate = Color(1, 1, 1, 0.35)
+layout_mode = 2
+texture = ExtResource("12_border")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MainPanel/Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.95, 0.9, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 28
+text = "ITEM WAREHOUSE & PROGRESS"
+
+[node name="LastLevelLabel" type="Label" parent="MainPanel/Margin/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 14
+text = "LAST EXPLORED: MAP 1"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ContentHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="LeftCol" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Sec1" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "RESOURCES"
+
+[node name="GeoCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard/HBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("5_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GeoCountLabel" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 20
+text = "0 GEO"
+vertical_alignment = 1
+
+[node name="HealthCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard/HBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("6_mask")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard/HBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 16
+text = "5 / 5 MASKS"
+vertical_alignment = 1
+
+[node name="SilkCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard/HBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("7_spool")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard/HBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 16
+text = "6 SILK SPOOL"
+vertical_alignment = 1
+
+[node name="RightCol" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Sec2" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "UNLOCKED ABILITIES & GEAR"
+
+[node name="Grid" type="GridContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Ab1" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_dash")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox/VBox"]
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 14
+text = "MOTHWING DASH (L)"
+
+[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox/VBox"]
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Invincible forward dash"
+
+[node name="Ab2" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_dart")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox/VBox"]
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 14
+text = "SHADE SOUL (K)"
+
+[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox/VBox"]
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Ranged needle dart spell"
+
+[node name="Ab3" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_wave")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox/VBox"]
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 14
+text = "HOWLING STORM (X)"
+
+[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox/VBox"]
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "AoE silk explosion"
+
+[node name="Ab4" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("11_nail")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox/VBox"]
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 14
+text = "PURE NAIL (J / Z)"
+
+[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox/VBox"]
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Melee slashing weapon"
+
+[node name="ButtonsRow" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "BACK"
+
+[node name="MainMenuButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "MAIN MENU"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Music"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dby44eivs2jqd"
+path="res://.godot/imported/Grimmkin_big_attack_04.wav-52ebee927dd05897261094321cb5b769.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/Grimmkin_big_attack_04.wav"
+dest_files=["res://.godot/imported/Grimmkin_big_attack_04.wav-52ebee927dd05897261094321cb5b769.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

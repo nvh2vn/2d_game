@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdcfjwajuqbty"
+path="res://.godot/imported/hatchling_fly_loop_3.wav-6ef5a9b447b3007dc6838cb9cd4797fc.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Aspid Hatchling/hatchling_fly_loop_3.wav"
+dest_files=["res://.godot/imported/hatchling_fly_loop_3.wav-6ef5a9b447b3007dc6838cb9cd4797fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

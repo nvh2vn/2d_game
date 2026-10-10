@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbl1bucy8p7h3"
+path="res://.godot/imported/hatcher_give_birth.wav-03395c3d5d90b3c4580058d32802a5a0.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Carver Hatcher/hatcher_give_birth.wav"
+dest_files=["res://.godot/imported/hatcher_give_birth.wav-03395c3d5d90b3c4580058d32802a5a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

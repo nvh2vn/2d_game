@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhe454c3rv36a"
+path="res://.godot/imported/spitter_fly_loop.wav-28536482262f43887160bf56e46e96eb.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Aspid and Primal Aspid/spitter_fly_loop.wav"
+dest_files=["res://.godot/imported/spitter_fly_loop.wav-28536482262f43887160bf56e46e96eb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://geo_coin_prefab_01"]
 
 [ext_resource type="Script" path="res://assets/scripts/items/geo_coin.gd" id="1_geocoin_script"]
-[ext_resource type="Texture2D" uid="uid://1geo_img_res_id" path="res://assets/art/2d/silksong_full/Images/1Geo.png" id="2_geo1_tex"]
-[ext_resource type="AudioStream" uid="uid://sfx_geo_collect_0" path="res://assets/art/2d/silksong_full/Sounds/Geo/geo_collect_0.mp3" id="3_sfx_collect"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/1Geo.png" id="2_geo1_tex"]
+[ext_resource type="AudioStream" path="res://assets/art/2d/silksong_full/Sounds/Geo/geo_collect_0.mp3" id="3_sfx_collect"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_coin_body"]
 radius = 4.0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s8hq8h5hi25l"
+path="res://.godot/imported/blocker_open.wav-7bc650087c10c051b24c3e221ad90ee2.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Elder Baldur/blocker_open.wav"
+dest_files=["res://.godot/imported/blocker_open.wav-7bc650087c10c051b24c3e221ad90ee2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

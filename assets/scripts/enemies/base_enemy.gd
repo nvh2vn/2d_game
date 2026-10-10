@@ -13,9 +13,12 @@ extends CharacterBody2D
 @export var chance_5_geo: float = 0.0   # Tỷ lệ rơi 5Geo (0.0 -> 1.0)
 @export var chance_25_geo: float = 0.0  # Tỷ lệ rơi 25Geo (0.0 -> 1.0)
 
+@export var is_boss: bool = false
+
 var current_health: int = 2
 var is_dead: bool = false
 var knockback_timer: float = 0.0
+var spawn_position: Vector2 = Vector2.ZERO
 
 @onready var animated_sprite: AnimatedSprite2D = get_node_or_null("%AnimatedSprite")
 @onready var hitbox: Area2D = get_node_or_null("%Hitbox")
@@ -24,9 +27,27 @@ var knockback_timer: float = 0.0
 
 func _ready() -> void:
 	add_to_group("enemies")
+	spawn_position = global_position
 	current_health = max_health
 	_setup_combat_areas()
 	_on_enemy_ready()
+
+func reset_enemy() -> void:
+	if is_boss and is_dead:
+		return
+	is_dead = false
+	current_health = max_health
+	if spawn_position != Vector2.ZERO:
+		global_position = spawn_position
+	visible = true
+	if hitbox:
+		hitbox.set_deferred("monitoring", true)
+		hitbox.set_deferred("monitorable", true)
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", true)
+		hurtbox.set_deferred("monitorable", true)
+	if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("idle"):
+		animated_sprite.play("idle")
 
 
 ## Hook để quái vật con ghi đè logic khởi tạo riêng

@@ -1,4 +1,4 @@
-﻿extends Area2D
+extends Area2D
 
 @export var speed: float = 700.0
 @export var damage: int = 1
@@ -65,7 +65,7 @@ func _on_body_entered(body: Node) -> void:
 func _destroy() -> void:
 	is_destroyed = true
 	set_physics_process(false)
-	monitoring = false
+	set_deferred("monitoring", false)
 	if hit_sfx:
 		var audio = AudioStreamPlayer2D.new()
 		audio.bus = &"SFX"

@@ -1,0 +1,96 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/ui/boss_health_bar.gd" id="1_bhb_script"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.06, 0.08, 0.1, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.2, 0.2, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_damage_fill"]
+bg_color = Color(0.85, 0.5, 0.3, 0.9)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_fill"]
+bg_color = Color(0.9, 0.18, 0.18, 0.95)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="BossHealthBar" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_bhb_script")
+
+[node name="Container" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -25.0
+offset_right = 260.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="BossNameLabel" type="Label" parent="Container/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.9, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.7, 0.1, 0.1, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "NIGHTMARE KING"
+horizontal_alignment = 1
+
+[node name="BarCenter" type="CenterContainer" parent="Container/VBox"]
+layout_mode = 2
+
+[node name="DamageBar" type="ProgressBar" parent="Container/VBox/BarCenter"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 12)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_damage_fill")
+max_value = 40.0
+value = 40.0
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="Container/VBox/BarCenter"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 12)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
+max_value = 40.0
+value = 40.0
+show_percentage = false

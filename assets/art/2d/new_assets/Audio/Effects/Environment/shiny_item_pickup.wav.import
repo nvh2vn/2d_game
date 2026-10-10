@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsf38y1xbrc6e"
+path="res://.godot/imported/shiny_item_pickup.wav-af7f05ef574da7c89f56e3bde044ca0b.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/shiny_item_pickup.wav"
+dest_files=["res://.godot/imported/shiny_item_pickup.wav-af7f05ef574da7c89f56e3bde044ca0b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

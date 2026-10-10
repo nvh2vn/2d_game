@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0chnk84es18x"
+path="res://.godot/imported/spider_zombie_transform.wav-2924775fc0ee3c35e73df97c1efa20ca.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Corpse Creeper/spider_zombie_transform.wav"
+dest_files=["res://.godot/imported/spider_zombie_transform.wav-2924775fc0ee3c35e73df97c1efa20ca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

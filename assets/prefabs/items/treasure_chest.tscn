@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://treasure_chest_prefab_01"]
 
 [ext_resource type="Script" path="res://assets/scripts/items/treasure_chest.gd" id="1_chest_script"]
-[ext_resource type="Texture2D" uid="uid://chest_closed_tex" path="res://assets/art/2d/silksong_full/Images/Chest - atlas0 #087042(1).png" id="2_chest_closed"]
-[ext_resource type="Texture2D" uid="uid://chest_open_tex" path="res://assets/art/2d/silksong_full/Images/Chest - atlas0 #087042(2).png" id="3_chest_open"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/Chest - atlas0 #087042(1).png" id="2_chest_closed"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/Chest - atlas0 #087042(2).png" id="3_chest_open"]
 [ext_resource type="PackedScene" uid="uid://geo_coin_prefab_01" path="res://assets/prefabs/items/geo_coin.tscn" id="4_coin_scene"]
-[ext_resource type="AudioStream" uid="uid://sfx_chest_hit" path="res://assets/art/2d/silksong_full/Sounds/Geo/geo_rock_hit_0.mp3" id="5_sfx_hit"]
+[ext_resource type="AudioStream" path="res://assets/art/2d/silksong_full/Sounds/Geo/geo_rock_hit_0.mp3" id="5_sfx_hit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
 size = Vector2(36, 32)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt6d5gwgk8rfw"
+path="res://.godot/imported/grass_move_6.wav-7a430696c6a36a2a83f5c80c3175199c.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/grass_move_6.wav"
+dest_files=["res://.godot/imported/grass_move_6.wav-7a430696c6a36a2a83f5c80c3175199c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

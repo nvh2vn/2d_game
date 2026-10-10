@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjuti1rfckqle"
+path="res://.godot/imported/centipede_hatcher_fly_loop.wav-32312a0a0ced1dd00ae1906a49fb44f1.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Carver Hatcher/centipede_hatcher_fly_loop.wav"
+dest_files=["res://.godot/imported/centipede_hatcher_fly_loop.wav-32312a0a0ced1dd00ae1906a49fb44f1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

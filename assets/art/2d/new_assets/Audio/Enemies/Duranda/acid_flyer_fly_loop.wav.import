@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dl47qx7g50wvr"
+path="res://.godot/imported/acid_flyer_fly_loop.wav-bfb615727cba1a3d90f385cef0bfc17b.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Duranda/acid_flyer_fly_loop.wav"
+dest_files=["res://.godot/imported/acid_flyer_fly_loop.wav-bfb615727cba1a3d90f385cef0bfc17b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

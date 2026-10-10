@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7y46byo4ta4p"
+path="res://.godot/imported/flamebearer_dash_dash.wav-5ce1063806034d3baff18e086ee400bd.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/flamebearer_dash_dash.wav"
+dest_files=["res://.godot/imported/flamebearer_dash_dash.wav-5ce1063806034d3baff18e086ee400bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

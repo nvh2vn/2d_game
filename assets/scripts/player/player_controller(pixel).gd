@@ -21,6 +21,7 @@ enum STATE {
 	DEFEND,
 	DEFEND_END,
 	DEFEND_ATTACK,
+	FOCUS_HEAL,
 	DIE,
 }
 
@@ -29,7 +30,8 @@ enum STATE {
 @export var unlock_dash: bool = true
 @export var unlock_wall_climb: bool = false
 @export var unlock_float: bool = false
-@export var unlock_ledge_climb: bool = false
+@export var unlock_ledge_climb: bool = true
+var ledge_climb_timer: float = 0.0
 @export var unlock_attack: bool = true
 @export var unlock_shoot: bool = true
 @export var unlock_special_attack: bool = true
@@ -46,6 +48,15 @@ var defend_duration_timer: float = 0.0
 var defend_cooldown: float = 0.0
 var shoot_cooldown: float = 0.0
 var remote_skill_cooldown: float = 0.0
+
+@export_group("Hazard Reset Transition")
+@export var fade_duration: float = 0.2
+@export var black_hold_duration: float = 0.08
+@export var sit_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Animations/Player/SitDown.png")
+
+@export_group("Shade & Death Penalty System")
+@export var shade_scene: PackedScene = preload("res://assets/prefabs/enemies/shade.tscn")
+var is_silk_cracked: bool = false
 
 @export_group("Player Health & Combat")
 @export var fall_death_y: float = 600.0
@@ -76,7 +87,7 @@ const DASH_VELOCITY := 650.0
 const SPRINT_VELOCITY := 400.0
 const SPRINT_ACCELERATION := 1800.0
 
-@onready var animated_sprite: AnimatedSprite2D = get_node_or_null("%AnimatedSprite")
+@onready var animated_sprite: AnimatedSprite2D = get_node_or_null("AnimatedSprite") if get_node_or_null("AnimatedSprite") != null else get_node_or_null("%AnimatedSprite")
 @onready var counter_effect: AnimatedSprite2D = get_node_or_null("%CounterEffect")
 @onready var remote_skill_effect: AnimatedSprite2D = get_node_or_null("%RemoteSkillEffect")
 @onready var coyote_timer: Timer = get_node_or_null("%CoyoteTimer")
@@ -99,6 +110,9 @@ const SPRINT_ACCELERATION := 1800.0
 @onready var needle_silk_line: TextureProgressBar = get_node_or_null("%NeedleSilkLine")
 @onready var blood_effect: AnimatedSprite2D = get_node_or_null("%BloodEffect")
 @onready var death_vignette: Sprite2D = get_node_or_null("%DeathVignette")
+@onready var camera_2d: Camera2D = get_node_or_null("%Camera2D")
+@onready var fade_rect: ColorRect = get_node_or_null("%FadeRect")
+@export var game_over_scene: PackedScene = preload("res://assets/scenes/ui/game_over_screen.tscn")
 
 var geo_amount: int = 0
 
@@ -110,6 +124,9 @@ var geo_amount: int = 0
 @export var heal_silk_cost: int = 3         # Phím H: Hồi 1 MASK tốn 3 tơ
 @export var silk_gain_on_hit: int = 1       # Đánh thường trúng tích 1 tơ
 @export var soul_hit_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/soulhit.mp3")
+@export var sound_cure_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/sound_cure.mp3")
+@export var voice_cure_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/voice_cure.mp3")
+var focus_heal_timer: float = 0.0
 
 @export var active_mask_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Images/UI/mask_white.png")
 @export var lost_mask_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Images/UI/mask_black.png")
@@ -144,6 +161,12 @@ var active_state := STATE.FALL
 var can_double_jump := false
 var facing_direction := 1.0
 var saved_position := Vector2.ZERO
+var last_safe_position := Vector2.ZERO
+var safe_ground_time: float = 0.0
+var is_touching_hazard: bool = false
+var is_resetting_hazard: bool = false
+var is_sitting: bool = false
+var sit_cooldown: float = 0.0
 var can_dash := false
 var dash_jump_buffer := false
 var is_sprinting := false
@@ -151,6 +174,19 @@ var hurt_knockback_timer: float = 0.0
 
 func _ready() -> void:
 	add_to_group("player")
+	last_safe_position = global_position
+	_setup_fade_overlay()
+	
+	# Neu co Bench Checkpoint da luu thi hoi sinh / dat vi tri Player tai do
+	var checkpoint = SaveManager.get_bench_checkpoint()
+	if checkpoint and checkpoint.get("pos", Vector2.ZERO) != Vector2.ZERO:
+		var check_scene = checkpoint.get("scene", "")
+		if check_scene == "" or (get_tree().current_scene and check_scene == get_tree().current_scene.scene_file_path):
+			global_position = checkpoint["pos"]
+			last_safe_position = checkpoint["pos"]
+			
+	_check_teleport_marker()
+			
 	if sfx_player:
 		sfx_player.bus = &"SFX"
 	current_health = max_health
@@ -172,11 +208,12 @@ func _ready() -> void:
 		remote_skill_effect.animation_finished.connect(_on_remote_skill_effect_animation_finished)
 	_setup_audio_ui()
 	update_hud()
+	_check_and_spawn_shade()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_H:
-			heal(1)
+func trigger_hitstop(duration: float = 0.04) -> void:
+	Engine.time_scale = 0.05
+	await get_tree().create_timer(duration, true, false, true).timeout
+	Engine.time_scale = 1.0
 
 func _on_attack_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
@@ -184,24 +221,43 @@ func _on_attack_area_entered(area: Area2D) -> void:
 	if attack_dir == Vector2.ZERO:
 		attack_dir = Vector2(facing_direction, 0)
 	
-	# Hiệu ứng Pogo nảy lên khi chém xuống trúng quái vật trên không
-	if current_attack_dir == Vector2.DOWN and not is_on_floor():
-		velocity.y = -450.0
-		can_double_jump = true
-		can_dash = true
-	
+	var is_down_slash := (current_attack_dir == Vector2.DOWN or attack_dir == Vector2.DOWN)
+	var is_air := not is_on_floor()
+
 	var dmg = 2 if active_state == STATE.REMOTE_SKILL else 1
 	var did_hit = false
-	if target and target.has_method("take_damage"):
-		target.take_damage(dmg, attack_dir)
+	var hit_node: Node = null
+	
+	if area.has_method("take_damage"):
+		hit_node = area
+	elif target and target.has_method("take_damage"):
+		hit_node = target
+	elif area.owner and area.owner.has_method("take_damage"):
+		hit_node = area.owner
+
+	if hit_node:
+		hit_node.take_damage(dmg, attack_dir)
 		did_hit = true
-	elif area.has_method("take_damage"):
-		area.take_damage(dmg, attack_dir)
+	elif area.is_in_group("spikes") or area.is_in_group("hazards") or area.is_in_group("cocoon") or area.is_in_group("shade") or (target and (target.is_in_group("cocoon") or target.is_in_group("shade"))) or area is SpikesHazard or area is PoisonTrap or area.name.begins_with("Trap") or area.name.begins_with("Hazard") or area.name.begins_with("Spike"):
 		did_hit = true
-		
-	# Tích tơ khi đòn chém thường trúng mục tiêu (Quái vật hoặc Rương báu)
-	if did_hit and (active_state == STATE.ATTACK or active_state == STATE.DEFEND_ATTACK):
-		add_silk(silk_gain_on_hit)
+
+	if did_hit:
+		# Hiệu ứng Nail Pogo nảy lên khi chém xuống trúng Quái vật, Kén tơ (Cocoon), Bẫy gai hoặc Vật thể
+		if is_down_slash and is_air:
+			velocity.y = -480.0
+			can_double_jump = true
+			can_dash = true
+			trigger_hitstop(0.04)
+		elif not is_air and not is_down_slash:
+			# Recoil nảy giật lùi nhẹ khi chém trúng quái theo phương ngang
+			velocity.x = -facing_direction * 150.0
+			trigger_hitstop(0.04)
+
+		# Tích tơ & âm thanh trúng đòn (SOUL Gain SFX)
+		if active_state == STATE.ATTACK or active_state == STATE.DEFEND_ATTACK:
+			add_silk(silk_gain_on_hit)
+			if soul_hit_sfx:
+				play_sfx(soul_hit_sfx)
 
 func _on_animated_sprite_animation_finished() -> void:
 	match active_state:
@@ -212,7 +268,7 @@ func _on_animated_sprite_animation_finished() -> void:
 				switch_state(STATE.FALL)
 		STATE.REMOTE_SKILL:
 			if attack_area:
-				attack_area.monitoring = false
+				attack_area.set_deferred("monitoring", false)
 			if remote_skill_effect:
 				remote_skill_effect.visible = false
 			if is_on_floor():
@@ -231,7 +287,7 @@ func _on_animated_sprite_animation_finished() -> void:
 				switch_state(STATE.FALL)
 		STATE.DEFEND_ATTACK:
 			if attack_area:
-				attack_area.monitoring = false
+				attack_area.set_deferred("monitoring", false)
 			if is_on_floor():
 				switch_state(STATE.FLOOR)
 			else:
@@ -239,7 +295,7 @@ func _on_animated_sprite_animation_finished() -> void:
 		STATE.ATTACK:
 			current_attack_dir = Vector2.ZERO
 			if attack_area:
-				attack_area.monitoring = false
+				attack_area.set_deferred("monitoring", false)
 			if is_on_floor():
 				switch_state(STATE.FLOOR)
 			else:
@@ -316,15 +372,69 @@ func consume_silk(cost: int) -> bool:
 
 func update_silk_hud(punch_anim: bool = false) -> void:
 	if silk_spool_progress:
+		silk_spool_progress.max_value = float(max_silk)
 		var tw_val = create_tween()
 		tw_val.tween_property(silk_spool_progress, "value", float(current_silk), 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	if silk_spool_sprite:
 		var frame_idx = clampi(current_silk, 0, 6)
 		silk_spool_sprite.frame = frame_idx
+	if silk_meter:
+		if is_silk_cracked:
+			silk_meter.modulate = Color(0.65, 0.55, 0.8, 0.95)
+		else:
+			silk_meter.modulate = Color.WHITE
 	if punch_anim and silk_meter:
 		var tw = create_tween()
 		tw.tween_property(silk_meter, "scale", Vector2(1.08, 1.08), 0.06).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		tw.tween_property(silk_meter, "scale", Vector2.ONE, 0.08)
+
+func restore_max_silk() -> void:
+	is_silk_cracked = false
+	max_silk = 6
+	current_silk = max_silk
+	update_silk_hud()
+
+func _check_and_spawn_shade() -> void:
+	var shade_info = SaveManager.get_shade()
+	if shade_info.get("active", false):
+		is_silk_cracked = true
+		max_silk = 4
+		current_silk = mini(current_silk, max_silk)
+		update_silk_hud()
+		
+		var existing_shades = get_tree().get_nodes_in_group("shade")
+		if existing_shades.size() == 0 and shade_scene != null:
+			var shade_pos: Vector2 = shade_info.get("pos", Vector2.ZERO)
+			var shade_scene_path: String = shade_info.get("scene", "")
+			var cur_scene_path = get_tree().current_scene.scene_file_path if get_tree().current_scene else ""
+			if shade_pos != Vector2.ZERO and (shade_scene_path == "" or cur_scene_path == "" or shade_scene_path == cur_scene_path):
+				var shade_inst = shade_scene.instantiate()
+				if shade_inst.has_method("setup_shade"):
+					shade_inst.setup_shade(shade_info.get("geo", 0), shade_pos)
+				get_parent().call_deferred("add_child", shade_inst)
+
+func _check_teleport_marker() -> void:
+	var tm = get_node_or_null("/root/TeleportManager")
+	if tm and tm.target_waypoint_marker != "":
+		var target_marker = tm.target_waypoint_marker
+		var pillars = get_tree().get_nodes_in_group("waypoints")
+		var target_pillar: WaypointPillar = null
+		for p in pillars:
+			if p is WaypointPillar and p.marker_id == target_marker:
+				target_pillar = p
+				break
+				
+		if target_pillar:
+			var dest_pos = target_pillar.global_position
+			if target_pillar.spawn_point:
+				dest_pos = target_pillar.spawn_point.global_position
+			global_position = dest_pos
+			last_safe_position = dest_pos
+			velocity = Vector2.ZERO
+			if camera_2d and camera_2d.has_method("reset_smoothing"):
+				camera_2d.reset_smoothing()
+				
+		tm.target_waypoint_marker = ""
 
 func play_silk_warning() -> void:
 	if silk_meter:
@@ -548,6 +658,134 @@ func _on_invincibility_timer_timeout() -> void:
 		else:
 			animated_sprite.modulate = Color.WHITE
 
+func _setup_fade_overlay() -> void:
+	if fade_rect:
+		return
+	var canvas = get_node_or_null("TransitionCanvasLayer")
+	if not canvas:
+		canvas = CanvasLayer.new()
+		canvas.name = "TransitionCanvasLayer"
+		(canvas as CanvasLayer).layer = 100
+		add_child(canvas)
+		
+	fade_rect = canvas.get_node_or_null("FadeRect")
+	if not fade_rect:
+		fade_rect = ColorRect.new()
+		fade_rect.name = "FadeRect"
+		fade_rect.color = Color.BLACK
+		fade_rect.modulate.a = 0.0
+		fade_rect.visible = false
+		fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		fade_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+		canvas.add_child(fade_rect)
+
+func fade_to_black(duration: float = -1.0) -> void:
+	var d = fade_duration if duration <= 0.0 else duration
+	if not fade_rect:
+		_setup_fade_overlay()
+	if not fade_rect:
+		return
+	fade_rect.visible = true
+	fade_rect.mouse_filter = Control.MOUSE_FILTER_STOP
+	var tw = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tw.tween_property(fade_rect, "modulate:a", 1.0, d)
+	await tw.finished
+
+func fade_from_black(duration: float = -1.0) -> void:
+	var d = fade_duration if duration <= 0.0 else duration
+	if not fade_rect:
+		return
+	var tw = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tw.tween_property(fade_rect, "modulate:a", 0.0, d)
+	await tw.finished
+	fade_rect.visible = false
+	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func trigger_hazard_reset(amount: int = 2, source_pos: Vector2 = Vector2.ZERO) -> void:
+	if is_invincible or current_health <= 0 or active_state == STATE.DIE or is_resetting_hazard:
+		return
+		
+	is_resetting_hazard = true
+	
+	# 1. Trừ 2 máu theo hệ thống Health hiện có
+	take_damage(amount, source_pos)
+	
+	if current_health <= 0:
+		is_resetting_hazard = false
+		return
+		
+	# 2. Khóa điều khiển & Fade màn hình sang đen (~0.2s)
+	await fade_to_black(fade_duration)
+	
+	# 3. ĐỢI MÀN HÌNH ĐEN HOÀN TOÀN -> Dịch chuyển Player về vị trí an toàn cũ
+	if last_safe_position != Vector2.ZERO:
+		global_position = last_safe_position
+		
+	# Reset vận tốc rơi và knockback
+	velocity = Vector2.ZERO
+	hurt_knockback_timer = 0.0
+	
+	# Đặt lại vị trí Camera2D (reset_smoothing để camera không bị lia giật qua màn hình)
+	if camera_2d and camera_2d.has_method("reset_smoothing"):
+		camera_2d.reset_smoothing()
+	elif get_viewport() and get_viewport().get_camera_2d():
+		var cam = get_viewport().get_camera_2d()
+		if cam.has_method("reset_smoothing"):
+			cam.reset_smoothing()
+			
+	# 4. Giữ màn hình đen ngắn khoảng 0.05s - 0.1s
+	await get_tree().create_timer(black_hold_duration, true, false, true).timeout
+	
+	# 5. Màn hình sáng dần trở lại (~0.2s)
+	await fade_from_black(fade_duration)
+	
+	is_resetting_hazard = false
+
+func rest_at_bench(sit_pos: Vector2, face_right: bool = true) -> void:
+	is_sitting = true
+	sit_cooldown = 0.35
+	global_position = sit_pos
+	last_safe_position = sit_pos
+	velocity = Vector2.ZERO
+	hurt_knockback_timer = 0.0
+	
+	if animated_sprite == null:
+		animated_sprite = get_node_or_null("AnimatedSprite")
+		
+	if sit_texture == null:
+		sit_texture = load("res://assets/art/2d/silksong_full/Animations/Player/SitDown.png")
+		
+	facing_direction = 1.0 if face_right else -1.0
+	if animated_sprite:
+		animated_sprite.flip_h = not face_right
+		if sit_texture and animated_sprite.sprite_frames:
+			if not animated_sprite.sprite_frames.has_animation("sit"):
+				animated_sprite.sprite_frames = animated_sprite.sprite_frames.duplicate()
+				animated_sprite.sprite_frames.add_animation("sit")
+				animated_sprite.sprite_frames.add_frame("sit", sit_texture)
+			elif animated_sprite.sprite_frames.get_frame_count("sit") == 0:
+				animated_sprite.sprite_frames.add_frame("sit", sit_texture)
+			animated_sprite.play("sit")
+		elif animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("sit"):
+			animated_sprite.play("sit")
+		else:
+			animated_sprite.play("idle")
+			
+	# Hoi phuc toan bo Mua va Silk energy
+	current_health = max_health
+	current_silk = max_silk
+	update_hud()
+	
+	if camera_2d and camera_2d.has_method("reset_smoothing"):
+		camera_2d.reset_smoothing()
+
+func stand_up_from_bench() -> void:
+	if not is_sitting:
+		return
+	is_sitting = false
+	if animated_sprite:
+		animated_sprite.play("idle")
+
 func apply_slow(duration: float = 3.0, multiplier: float = 0.45) -> void:
 	slow_timer = maxf(slow_timer, duration)
 	speed_multiplier = multiplier
@@ -559,11 +797,46 @@ func die() -> void:
 		blink_tween.kill()
 	switch_state(STATE.DIE)
 	if attack_area:
-		attack_area.monitoring = false
+		attack_area.set_deferred("monitoring", false)
 	if attack_timer:
 		attack_timer.stop()
 	if invincibility_timer:
 		invincibility_timer.stop()
+		
+	# Store death data & lost geo for Shade / Cocoon System
+	var death_pos = global_position
+	var lost_geo = geo_amount
+	geo_amount = 0
+	SaveManager.save_geo(0)
+	
+	# Nếu chết ở bẫy gai (spikes/hazards), nâng vị trí của Cocoon lên trên gai để người chơi dễ tiếp cận
+	if is_touching_hazard or is_resetting_hazard:
+		if last_safe_position != Vector2.ZERO:
+			death_pos = last_safe_position + Vector2(0, -35.0)
+		else:
+			death_pos.y -= 55.0
+	else:
+		death_pos.y -= 15.0
+	
+	is_silk_cracked = true
+	max_silk = 4
+	current_silk = mini(current_silk, max_silk)
+	update_hud()
+	
+	# Clear existing Shade / Cocoon in level if player dies again (consecutive death penalty)
+	var existing_shades = get_tree().get_nodes_in_group("shade")
+	for s in existing_shades:
+		if is_instance_valid(s):
+			s.queue_free()
+			
+	var cur_scene_path = get_tree().current_scene.scene_file_path if get_tree().current_scene else ""
+	SaveManager.save_shade(death_pos, cur_scene_path, lost_geo)
+	
+	if shade_scene:
+		var new_shade = shade_scene.instantiate()
+		if new_shade.has_method("setup_shade"):
+			new_shade.setup_shade(lost_geo, death_pos)
+		get_parent().call_deferred("add_child", new_shade)
 	
 	# Vùng tối vignette bung tỏa rộng ra từ tâm người chơi
 	if death_vignette:
@@ -584,19 +857,33 @@ func die() -> void:
 	play_sfx(die_sfx)
 	
 	# Chờ phát xong hoạt ảnh die và mờ dần màn hình
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.0).timeout
 	if animated_sprite:
 		var tween = create_tween()
-		tween.tween_property(animated_sprite, "modulate:a", 0.0, 0.4)
+		tween.tween_property(animated_sprite, "modulate:a", 0.0, 0.3)
 		if death_vignette:
-			tween.parallel().tween_property(death_vignette, "modulate:a", 0.0, 0.4)
+			tween.parallel().tween_property(death_vignette, "modulate:a", 0.0, 0.3)
 		await tween.finished
 	
-	get_tree().reload_current_scene()
+	# Kích hoạt màn hình Game Over độc lập lúc chạy game (Dynamic Run-time Instantiate)
+	if game_over_scene:
+		var go_instance = game_over_scene.instantiate()
+		var hud = find_child("HUD", false, false)
+		if hud:
+			hud.add_child(go_instance)
+		else:
+			get_tree().current_scene.add_child(go_instance)
+		
+		if cur_scene_path == "":
+			if get_tree().current_scene and get_tree().current_scene.scene_file_path != "":
+				cur_scene_path = get_tree().current_scene.scene_file_path
+		go_instance.trigger_game_over(0, cur_scene_path)
+	else:
+		get_tree().reload_current_scene()
 
 func _on_attack_timer_timeout() -> void:
 	if attack_area:
-		attack_area.monitoring = false
+		attack_area.set_deferred("monitoring", false)
 	if active_state == STATE.DEFEND_ATTACK:
 		if Input.is_action_pressed("defend") or Input.is_key_pressed(KEY_C):
 			switch_state(STATE.DEFEND)
@@ -607,6 +894,23 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_sitting:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		
+		if sit_cooldown > 0.0:
+			sit_cooldown -= delta
+			return
+		
+		# Khi dang ngoi, bat ke nguoi choi an Trai, Phai, Len, Xuong (A, D, W, S hoac phim mui ten) hoac phim hanh dong deu se roi khoi ghe
+		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var is_key_dir: bool = Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_E) or Input.is_key_pressed(KEY_SPACE) or Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("dash")
+		
+		if input_dir.length() > 0.1 or is_key_dir:
+			stand_up_from_bench()
+			get_tree().call_group("benches", "_stop_rest")
+		return
+
 	if slow_timer > 0.0:
 		slow_timer -= delta
 		if slow_timer <= 0.0:
@@ -645,9 +949,19 @@ func _physics_process(delta: float) -> void:
 	process_state(delta)
 	move_and_slide()
 	
+	# Safe Ground Tracking liên tục khi đang đứng vững trên sàn không nguy hiểm
+	if is_on_floor() and active_state == STATE.FLOOR and not is_invincible and active_state != STATE.DIE and not is_touching_hazard:
+		safe_ground_time += delta
+		if safe_ground_time >= 0.15:
+			last_safe_position = global_position
+	else:
+		safe_ground_time = 0.0
+		
+	is_touching_hazard = false
+	
 	# Fall out of bounds death check
-	if global_position.y > fall_death_y and current_health > 0:
-		take_damage(max_health)
+	#if global_position.y > fall_death_y and current_health > 0:
+	#	take_damage(max_health) 
 
 
 func switch_state(to_state: STATE) -> void:
@@ -692,13 +1006,21 @@ func switch_state(to_state: STATE) -> void:
 			is_sprinting = false
 		
 		STATE.LEDGE_CLIMB:
-			animated_sprite.play("ledge_climb")
+			if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("ledge_climb"):
+				animated_sprite.play("ledge_climb")
+			elif animated_sprite:
+				animated_sprite.play("jump")
 			velocity = Vector2.ZERO
-			global_position.y = ledge_climb_ray_cast.get_collision_point().y
+			if ledge_climb_ray_cast and ledge_climb_ray_cast.is_colliding():
+				global_position.y = ledge_climb_ray_cast.get_collision_point().y
 			can_double_jump = true
+			ledge_climb_timer = 0.0
 		
 		STATE.LEDGE_JUMP:
-			animated_sprite.play("double_jump")
+			if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("ledge_jump"):
+				animated_sprite.play("ledge_jump")
+			elif animated_sprite:
+				animated_sprite.play("jump")
 			velocity.y = LEDGE_JUMP_VELOCITY
 			can_dash = true
 			is_sprinting = false
@@ -787,7 +1109,7 @@ func switch_state(to_state: STATE) -> void:
 					animated_sprite.play("attack")
 				
 			if attack_area:
-				attack_area.monitoring = true
+				attack_area.set_deferred("monitoring", true)
 			if attack_timer:
 				attack_timer.start(0.35)
 			play_sfx(slash_sfx)
@@ -819,7 +1141,7 @@ func switch_state(to_state: STATE) -> void:
 			current_attack_dir = Vector2(facing_direction, 0)
 			if attack_area:
 				attack_area.position = Vector2(50 * facing_direction, 0)
-				attack_area.monitoring = true
+				attack_area.set_deferred("monitoring", true)
 
 		STATE.DEFEND_START:
 			defend_duration_timer = max_defend_duration
@@ -854,7 +1176,7 @@ func switch_state(to_state: STATE) -> void:
 			# Kích hoạt vùng gây sát thương phản đòn
 			if attack_area:
 				attack_area.position = Vector2(45 * facing_direction, 0)
-				attack_area.monitoring = true
+				attack_area.set_deferred("monitoring", true)
 			
 			# Kích hoạt hiệu ứng CounterEffect chém lóe sáng
 			if counter_effect:
@@ -865,6 +1187,15 @@ func switch_state(to_state: STATE) -> void:
 			
 			if attack_timer:
 				attack_timer.start(0.35)
+
+		STATE.FOCUS_HEAL:
+			velocity = Vector2.ZERO
+			focus_heal_timer = 0.0
+			is_sprinting = false
+			if sound_cure_sfx:
+				play_sfx(sound_cure_sfx)
+			if voice_cure_sfx:
+				play_sfx(voice_cure_sfx)
 
 
 func is_dash_held() -> bool:
@@ -940,6 +1271,8 @@ func process_state(delta: float) -> void:
 				switch_state(STATE.FALL)
 			elif Input.is_action_just_pressed("jump"):
 				switch_state(STATE.JUMP)
+			elif (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)) and current_silk >= heal_silk_cost and current_health < max_health:
+				switch_state(STATE.FOCUS_HEAL)
 			elif (Input.is_action_just_pressed("dash") or Input.is_key_pressed(KEY_L) or Input.is_action_just_pressed("sprint")) and unlock_dash and (dash_cooldown == null or dash_cooldown.time_left <= 0.0):
 				switch_state(STATE.DASH)
 			elif is_sprinting and is_input_against_facing():
@@ -967,6 +1300,8 @@ func process_state(delta: float) -> void:
 				try_cast_shoot()
 			elif (Input.is_action_just_pressed("special_attack") or Input.is_key_pressed(KEY_X) or Input.is_key_pressed(KEY_V)):
 				try_cast_remote_skill()
+			elif is_ledge() and is_space() and unlock_ledge_climb:
+				switch_state(STATE.LEDGE_CLIMB)
 			elif Input.is_action_just_released("jump") or velocity.y >= 0:
 				velocity.y = 0
 				switch_state(STATE.FALL)
@@ -984,7 +1319,7 @@ func process_state(delta: float) -> void:
 			elif Input.is_action_just_released("jump"):
 				float_cooldown.start()
 				switch_state(STATE.FALL)
-			elif is_input_toward_facing() and is_ledge() and is_space():
+			elif is_ledge() and is_space() and unlock_ledge_climb:
 				switch_state(STATE.LEDGE_CLIMB)
 			elif is_input_toward_facing() and can_wall_slide():
 				switch_state(STATE.WALL_SLIDE)
@@ -992,19 +1327,57 @@ func process_state(delta: float) -> void:
 				switch_state(STATE.DASH)
 		
 		STATE.LEDGE_CLIMB:
+			velocity = Vector2.ZERO
 			is_sprinting = is_dash_held()
-			if not animated_sprite.is_playing():
-				animated_sprite.play("idle")
-				var offset := ledge_climb_offset()
-				offset.x *= facing_direction
-				position += offset
-				switch_state(STATE.FLOOR)
-			elif Input.is_action_just_pressed("jump"):
-				var progress := inverse_lerp(0, animated_sprite.sprite_frames.get_frame_count("ledge_climb"), animated_sprite.frame)
-				var offset := ledge_climb_offset()
-				offset.x *= facing_direction * progress
-				position += offset
+			
+			if Input.is_action_just_pressed("jump"):
 				switch_state(STATE.LEDGE_JUMP)
+			else:
+				ledge_climb_timer += delta
+				var step_ratio: float = clampf(ledge_climb_timer / 0.12, 0.0, 1.0)
+				var target_x: float = global_position.x + facing_direction * 22.0
+				var target_y: float = global_position.y - 18.0
+				if ledge_climb_ray_cast and ledge_climb_ray_cast.is_colliding():
+					target_y = ledge_climb_ray_cast.get_collision_point().y - 16.0
+				
+				global_position.x = move_toward(global_position.x, target_x, 160.0 * delta)
+				global_position.y = move_toward(global_position.y, target_y, 160.0 * delta)
+				
+				if step_ratio >= 1.0 or global_position.distance_to(Vector2(target_x, target_y)) < 3.0:
+					global_position = Vector2(target_x, target_y)
+					switch_state(STATE.FLOOR)
+
+		STATE.FOCUS_HEAL:
+			velocity = Vector2.ZERO
+			focus_heal_timer += delta
+			
+			if animated_sprite:
+				if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("defend"):
+					animated_sprite.play("defend")
+				else:
+					animated_sprite.play("idle")
+				var pulse = 1.0 + sin(focus_heal_timer * 18.0) * 0.35
+				animated_sprite.modulate = Color(1.3 * pulse, 1.2 * pulse, 0.85 * pulse, 1.0)
+			
+			if not (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)):
+				focus_heal_timer = 0.0
+				if animated_sprite:
+					animated_sprite.modulate = Color.WHITE
+				switch_state(STATE.FLOOR)
+			elif focus_heal_timer >= 0.6:
+				focus_heal_timer = 0.0
+				if current_silk >= heal_silk_cost and current_health < max_health:
+					current_silk -= heal_silk_cost
+					heal(1)
+					play_sfx(sound_cure_sfx if sound_cure_sfx else heal_sfx)
+					if voice_cure_sfx:
+						play_sfx(voice_cure_sfx)
+				if animated_sprite:
+					animated_sprite.modulate = Color.WHITE
+				if (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)) and current_silk >= heal_silk_cost and current_health < max_health:
+					focus_heal_timer = 0.0
+				else:
+					switch_state(STATE.FLOOR)
 		
 		STATE.WALL_SLIDE:
 			velocity.y = move_toward(velocity.y, WALL_SLIDE_VELOCITY, WALL_SLIDE_GRAVITY * delta)
@@ -1153,7 +1526,7 @@ func process_state(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("jump") and is_on_floor():
 				if attack_area:
-					attack_area.monitoring = false
+					attack_area.set_deferred("monitoring", false)
 				switch_state(STATE.JUMP)
 		
 		STATE.DIE:
@@ -1213,13 +1586,21 @@ func is_input_against_facing() -> bool:
 
 
 func is_ledge() -> bool:
-	return is_on_wall_only() and \
-	ledge_climb_ray_cast.is_colliding() and \
-	ledge_climb_ray_cast.get_collision_normal().is_equal_approx(Vector2.UP)
+	if not ledge_climb_ray_cast:
+		return false
+	ledge_climb_ray_cast.force_raycast_update()
+	if not ledge_climb_ray_cast.is_colliding():
+		return false
+	var norm := ledge_climb_ray_cast.get_collision_normal()
+	var hitting_top := norm.y < -0.5
+	var near_wall := is_on_wall() or (wall_slide_ray_cast and wall_slide_ray_cast.is_colliding()) or is_input_toward_facing()
+	return near_wall and hitting_top
 
 
 func is_space() -> bool:
-	ledge_space_ray_cast.global_position = ledge_climb_ray_cast.get_collision_point()
+	if not ledge_space_ray_cast or not ledge_climb_ray_cast or not ledge_climb_ray_cast.is_colliding():
+		return true
+	ledge_space_ray_cast.global_position = ledge_climb_ray_cast.get_collision_point() + Vector2(0, -10)
 	ledge_space_ray_cast.force_raycast_update()
 	return not ledge_space_ray_cast.is_colliding()
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://141v3vde14ax"
+path="res://.godot/imported/flamebearer_death_and_absorb.wav-d18d72451c982a7632ad0b3fb0fa3433.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/flamebearer_death_and_absorb.wav"
+dest_files=["res://.godot/imported/flamebearer_death_and_absorb.wav-d18d72451c982a7632ad0b3fb0fa3433.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

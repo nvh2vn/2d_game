@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgqidbrlset76"
+path="res://.godot/imported/blizzard_start.wav-9feeb41c6fa638ba58ee8aa5258e12af.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/blizzard_start.wav"
+dest_files=["res://.godot/imported/blizzard_start.wav-9feeb41c6fa638ba58ee8aa5258e12af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

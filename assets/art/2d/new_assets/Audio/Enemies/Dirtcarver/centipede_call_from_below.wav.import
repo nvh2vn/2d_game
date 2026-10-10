@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://o11nx4cqiehw"
+path="res://.godot/imported/centipede_call_from_below.wav-a3bd8a11a5713f0922e2d8b7f27526cc.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Dirtcarver/centipede_call_from_below.wav"
+dest_files=["res://.godot/imported/centipede_call_from_below.wav-a3bd8a11a5713f0922e2d8b7f27526cc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

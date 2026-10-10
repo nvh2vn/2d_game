@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6aa4sw5r4o3s"
+path="res://.godot/imported/dream_enter_pt_2.wav-ed380e3bfc297bbd2b11841ee23f8c9e.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_enter_pt_2.wav"
+dest_files=["res://.godot/imported/dream_enter_pt_2.wav-ed380e3bfc297bbd2b11841ee23f8c9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

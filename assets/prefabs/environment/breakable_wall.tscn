@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dhk3xxawcqmh6"]
+
+[ext_resource type="Script" uid="uid://dvfqgu6qj7nqo" path="res://assets/scripts/environment/breakable_wall.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ddto0eqkci6xq" path="res://assets/art/map_1/King_s Pass/tut_wall_l_0006_03.png" id="2_wall_intact"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(38, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(38, 127)
+
+[sub_resource type="Gradient" id="Gradient_debris"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(0.25, 0.25, 0.3, 1, 0.15, 0.15, 0.2, 0.9, 0.05, 0.05, 0.1, 0)
+
+[node name="BreakableWall" type="StaticBody2D" unique_id=1785755939]
+collision_mask = 0
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=684234273]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wall_intact")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=131171819]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=892745758]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=670230816]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=368403785]
+emitting = false
+amount = 25
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.9
+emission_shape = 3
+emission_rect_extents = Vector2(20, 70)
+direction = Vector2(0, -1)
+spread = 120.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 80.0
+initial_velocity_max = 220.0
+scale_amount_min = 3.0
+scale_amount_max = 7.0
+color_ramp = SubResource("Gradient_debris")

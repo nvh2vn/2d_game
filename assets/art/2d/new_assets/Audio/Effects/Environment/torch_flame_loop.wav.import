@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1ii0v7flok33"
+path="res://.godot/imported/torch_flame_loop.wav-b3704b7ac535b4b8566308b62e9d8f66.sample"
+
+[deps]
+
+source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/torch_flame_loop.wav"
+dest_files=["res://.godot/imported/torch_flame_loop.wav-b3704b7ac535b4b8566308b62e9d8f66.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

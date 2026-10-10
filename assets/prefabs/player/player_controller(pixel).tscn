@@ -739,6 +739,8 @@ animations = [{
 }]
 
 [node name="PlayerController" type="CharacterBody2D" unique_id=373544482]
+z_index = 1
+scale = Vector2(1.5, 1.5)
 collision_layer = 4
 floor_snap_length = 10.0
 safe_margin = 0.2
@@ -844,7 +846,7 @@ one_shot = true
 unique_name_in_owner = true
 position = Vector2(40, 0)
 collision_layer = 0
-collision_mask = 2
+collision_mask = 255
 monitoring = false
 
 [node name="AttackCollider" type="CollisionShape2D" parent="AttackArea" unique_id=137297146]
@@ -1115,3 +1117,18 @@ grow_vertical = 2
 texture_normal = ExtResource("ext_music_off")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="TransitionCanvasLayer" type="CanvasLayer" parent="." unique_id=990102099]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="TransitionCanvasLayer" unique_id=990102100]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

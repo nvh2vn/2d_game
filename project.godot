@@ -22,6 +22,7 @@ busses/default_bus_layout="res://default_bus_layout.tres"
 [autoload]
 
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+TeleportManager="*res://assets/scripts/core/teleport_manager.gd"
 
 [display]
 
