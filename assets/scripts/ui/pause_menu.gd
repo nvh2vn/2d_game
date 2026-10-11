@@ -66,6 +66,12 @@ func _on_pause_button_pressed() -> void:
 	pause_game()
 
 
+const COLOR_NORMAL := Color(0.66, 0.67, 0.7, 0.95)   # #a8abb3 xám mờ / bạc tối
+const COLOR_HOVER := Color(1.0, 1.0, 1.0, 1.0)       # #ffffff trắng sáng
+
+var active_hovered_btn: Button = null
+
+
 func pause_game() -> void:
 	if is_paused:
 		return
@@ -87,7 +93,7 @@ func pause_game() -> void:
 	if res_btn:
 		if is_inside_tree():
 			res_btn.grab_focus()
-		_move_pointer_to(res_btn)
+		_set_button_highlight(res_btn, true)
 
 
 func resume_game() -> void:
@@ -95,6 +101,10 @@ func resume_game() -> void:
 		return
 	is_paused = false
 	_play_confirm_sfx()
+	
+	for btn in [resume_button, restart_checkpoint_button, main_menu_button]:
+		if btn and is_instance_valid(btn):
+			_set_button_highlight(btn, false)
 	
 	var ptr = pause_pointer if pause_pointer else get_node_or_null("%PausePointer")
 	if ptr:
@@ -155,50 +165,124 @@ func _on_main_menu_pressed() -> void:
 
 
 func _setup_button_hover(btn: Button) -> void:
+	btn.flat = true
+	_ensure_button_pointers(btn)
+	
 	btn.mouse_entered.connect(func():
 		if not is_paused or btn.disabled:
 			return
-		_move_pointer_to(btn)
-		var tween = create_tween().set_parallel(true)
-		tween.tween_property(btn, "scale", Vector2(1.04, 1.04), 0.1)
-		tween.tween_property(btn, "modulate", Color(1.2, 1.2, 1.3, 1.0), 0.1)
+		_set_button_highlight(btn, true)
 	)
 	
 	btn.focus_entered.connect(func():
 		if not is_paused or btn.disabled:
 			return
-		_move_pointer_to(btn)
-		var tween = create_tween().set_parallel(true)
-		tween.tween_property(btn, "scale", Vector2(1.04, 1.04), 0.1)
+		_set_button_highlight(btn, true)
 	)
 	
 	btn.mouse_exited.connect(func():
-		var tween = create_tween().set_parallel(true)
-		tween.tween_property(btn, "scale", Vector2(1.0, 1.0), 0.1)
-		tween.tween_property(btn, "modulate", Color.WHITE, 0.1)
+		if not btn.has_focus():
+			_set_button_highlight(btn, false)
 	)
 	
 	btn.focus_exited.connect(func():
-		var tween = create_tween()
-		tween.tween_property(btn, "scale", Vector2(1.0, 1.0), 0.1)
+		_set_button_highlight(btn, false)
 	)
 
 
-func _move_pointer_to(btn: Button) -> void:
-	if not pause_pointer or not is_instance_valid(btn):
-		return
+func _ensure_button_pointers(btn: Button) -> void:
+	var ptr_tex = load("res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png")
 	
-	pause_pointer.visible = true
-	var target_y = btn.global_position.y + (btn.size.y - pause_pointer.size.y) * 0.5
-	var target_x = btn.global_position.x - pause_pointer.size.x - 12.0
-	
-	if pointer_tween and pointer_tween.is_running():
-		pointer_tween.kill()
+	var ptr_left: TextureRect = btn.get_node_or_null("PointerLeft")
+	if not ptr_left and ptr_tex:
+		ptr_left = TextureRect.new()
+		ptr_left.name = "PointerLeft"
+		ptr_left.layout_mode = 1
+		ptr_left.anchors_preset = Control.PRESET_CENTER_LEFT
+		ptr_left.anchor_top = 0.5
+		ptr_left.anchor_bottom = 0.5
+		ptr_left.offset_left = 6.0
+		ptr_left.offset_top = -12.0
+		ptr_left.offset_right = 30.0
+		ptr_left.offset_bottom = 12.0
+		ptr_left.grow_vertical = 2
+		ptr_left.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		ptr_left.texture = ptr_tex
+		ptr_left.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		ptr_left.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		ptr_left.modulate = Color(1, 1, 1, 0.0)
+		btn.add_child(ptr_left)
 		
-	pointer_tween = create_tween().set_parallel(true)
-	pointer_tween.tween_property(pause_pointer, "global_position:y", target_y, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	pointer_tween.tween_property(pause_pointer, "global_position:x", target_x, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	pointer_tween.tween_property(pause_pointer, "modulate:a", 1.0, 0.1)
+	var ptr_right: TextureRect = btn.get_node_or_null("PointerRight")
+	if not ptr_right and ptr_tex:
+		ptr_right = TextureRect.new()
+		ptr_right.name = "PointerRight"
+		ptr_right.layout_mode = 1
+		ptr_right.anchors_preset = Control.PRESET_CENTER_RIGHT
+		ptr_right.anchor_left = 1.0
+		ptr_right.anchor_right = 1.0
+		ptr_right.anchor_top = 0.5
+		ptr_right.anchor_bottom = 0.5
+		ptr_right.offset_left = -30.0
+		ptr_right.offset_top = -12.0
+		ptr_right.offset_right = -6.0
+		ptr_right.offset_bottom = 12.0
+		ptr_right.grow_horizontal = 0
+		ptr_right.grow_vertical = 2
+		ptr_right.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		ptr_right.texture = ptr_tex
+		ptr_right.flip_h = true
+		ptr_right.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		ptr_right.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		ptr_right.modulate = Color(1, 1, 1, 0.0)
+		btn.add_child(ptr_right)
+
+
+func _set_button_highlight(btn: Button, active: bool) -> void:
+	if not is_instance_valid(btn):
+		return
+		
+	var ptr_left: TextureRect = btn.get_node_or_null("PointerLeft")
+	var ptr_right: TextureRect = btn.get_node_or_null("PointerRight")
+	
+	if active:
+		active_hovered_btn = btn
+		_play_hover_sfx()
+		
+		btn.pivot_offset = btn.size * 0.5
+		var tw = create_tween().set_parallel(true)
+		tw.tween_property(btn, "theme_override_colors/font_color", COLOR_HOVER, 0.12)
+		tw.tween_property(btn, "scale", Vector2(1.05, 1.05), 0.12)
+		
+		if ptr_left:
+			ptr_left.visible = true
+			var tw_l = create_tween().set_parallel(true)
+			tw_l.tween_property(ptr_left, "modulate:a", 1.0, 0.15)
+			tw_l.tween_property(ptr_left, "position:x", 8.0, 0.15).from(0.0)
+		if ptr_right:
+			ptr_right.visible = true
+			var tw_r = create_tween().set_parallel(true)
+			tw_r.tween_property(ptr_right, "modulate:a", 1.0, 0.15)
+			tw_r.tween_property(ptr_right, "position:x", btn.size.x - 32.0, 0.15).from(btn.size.x - 24.0)
+	else:
+		if active_hovered_btn == btn:
+			active_hovered_btn = null
+			
+		btn.pivot_offset = btn.size * 0.5
+		var tw = create_tween().set_parallel(true)
+		tw.tween_property(btn, "theme_override_colors/font_color", COLOR_NORMAL, 0.15)
+		tw.tween_property(btn, "scale", Vector2.ONE, 0.15)
+		
+		if ptr_left:
+			var tw_l = create_tween()
+			tw_l.tween_property(ptr_left, "modulate:a", 0.0, 0.12)
+		if ptr_right:
+			var tw_r = create_tween()
+			tw_r.tween_property(ptr_right, "modulate:a", 0.0, 0.12)
+
+
+func _move_pointer_to(btn: Button) -> void:
+	_set_button_highlight(btn, true)
 	
 	_play_hover_sfx()
 

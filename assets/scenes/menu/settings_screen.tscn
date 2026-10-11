@@ -1,23 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://0jnp8mugq7b5"]
 
-[ext_resource type="Script" path="res://assets/scripts/menu/settings_screen.gd" id="1_settings_script"]
+[ext_resource type="Script" uid="uid://ditqcf55v0vrj" path="res://assets/scripts/menu/settings_screen.gd" id="1_settings_script"]
 [ext_resource type="Texture2D" uid="uid://lrerukr11llw" path="res://assets/art/2d/silksong_full/Images/Menu/Voidheart_menu_BG.jpg" id="2_bg"]
 [ext_resource type="Texture2D" uid="uid://bi6hbgptqdaey" path="res://assets/art/2d/silksong_full/Images/Menu/Main_Menu_GG_beam.png" id="3_beam"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="4_font"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.06, 0.08, 0.12, 0.94)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.65, 0.7, 0.85, 0.7)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(0, 0, 0, 0.6)
-shadow_size = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
 content_margin_left = 24.0
@@ -51,7 +37,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[node name="SettingsScreen" type="Control"]
+[node name="SettingsScreen" type="Control" unique_id=2075582081]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_settings_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=253899756]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,7 +57,7 @@ texture = ExtResource("2_bg")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="BeamSprite" type="TextureRect" parent="."]
+[node name="BeamSprite" type="TextureRect" parent="." unique_id=134205467]
 modulate = Color(1, 1, 1, 0.4)
 layout_mode = 1
 anchors_preset = 15
@@ -83,7 +69,7 @@ texture = ExtResource("3_beam")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="SettingsPanel" type="PanelContainer" parent="."]
+[node name="SettingsPanel" type="Control" parent="." unique_id=1015214192]
 custom_minimum_size = Vector2(580, 480)
 layout_mode = 1
 anchors_preset = 8
@@ -97,20 +83,21 @@ offset_right = 290.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Margin" type="MarginContainer" parent="SettingsPanel"]
-layout_mode = 2
+[node name="Margin" type="MarginContainer" parent="SettingsPanel" unique_id=1798727407]
+layout_mode = 0
+offset_right = 580.0
+offset_bottom = 480.0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 24
 
-[node name="VBox" type="VBoxContainer" parent="SettingsPanel/Margin"]
+[node name="VBox" type="VBoxContainer" parent="SettingsPanel/Margin" unique_id=93775627]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="SettingsPanel/Margin/VBox"]
+[node name="Title" type="Label" parent="SettingsPanel/Margin/VBox" unique_id=1977688002]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.9, 0.75, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
@@ -120,30 +107,29 @@ theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="SettingsPanel/Margin/VBox"]
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/Margin/VBox" unique_id=2043960990]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="MasterRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox"]
+[node name="MasterRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=1297853061]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/MasterRow"]
+[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/MasterRow" unique_id=2134846094]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
 text = "MASTER VOLUME"
 
-[node name="MasterSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/MasterRow"]
+[node name="MasterSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/MasterRow" unique_id=1297515206]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 100.0
 value = 100.0
 
-[node name="MasterValLabel" type="Label" parent="SettingsPanel/Margin/VBox/MasterRow"]
+[node name="MasterValLabel" type="Label" parent="SettingsPanel/Margin/VBox/MasterRow" unique_id=424587612]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -152,26 +138,25 @@ theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
 
-[node name="BGMRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox"]
+[node name="BGMRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=59613263]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/BGMRow"]
+[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/BGMRow" unique_id=1836029649]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
 text = "MUSIC (BGM)"
 
-[node name="BGMSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/BGMRow"]
+[node name="BGMSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/BGMRow" unique_id=652204591]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 100.0
 value = 100.0
 
-[node name="BGMValLabel" type="Label" parent="SettingsPanel/Margin/VBox/BGMRow"]
+[node name="BGMValLabel" type="Label" parent="SettingsPanel/Margin/VBox/BGMRow" unique_id=1733657976]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -180,26 +165,25 @@ theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
 
-[node name="SFXRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox"]
+[node name="SFXRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=1764425687]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/SFXRow"]
+[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/SFXRow" unique_id=1808958435]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
 text = "SOUND SFX"
 
-[node name="SFXSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/SFXRow"]
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/Margin/VBox/SFXRow" unique_id=1796418070]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 100.0
 value = 100.0
 
-[node name="SFXValLabel" type="Label" parent="SettingsPanel/Margin/VBox/SFXRow"]
+[node name="SFXValLabel" type="Label" parent="SettingsPanel/Margin/VBox/SFXRow" unique_id=534417185]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -208,57 +192,59 @@ theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
 
-[node name="ScreenRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox"]
+[node name="ScreenRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=1692068187]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/ScreenRow"]
+[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/ScreenRow" unique_id=63888277]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
 text = "FULLSCREEN"
 
-[node name="FullscreenCheck" type="CheckBox" parent="SettingsPanel/Margin/VBox/ScreenRow"]
+[node name="FullscreenCheck" type="CheckBox" parent="SettingsPanel/Margin/VBox/ScreenRow" unique_id=25207543]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Spacer" type="Control" parent="SettingsPanel/Margin/VBox"]
+[node name="Spacer" type="Control" parent="SettingsPanel/Margin/VBox" unique_id=2060872227]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonsRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox"]
+[node name="ButtonsRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=1591842823]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="BackButton" type="Button" parent="SettingsPanel/Margin/VBox/ButtonsRow"]
+[node name="BackButton" type="Button" parent="SettingsPanel/Margin/VBox/ButtonsRow" unique_id=1492722696]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 text = "BACK"
+flat = true
 
-[node name="MainMenuButton" type="Button" parent="SettingsPanel/Margin/VBox/ButtonsRow"]
+[node name="MainMenuButton" type="Button" parent="SettingsPanel/Margin/VBox/ButtonsRow" unique_id=1033643040]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 text = "MAIN MENU"
+flat = true
 
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1106786325]
 unique_name_in_owner = true
 bus = &"SFX"
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1326124818]
 unique_name_in_owner = true
 bus = &"Music"

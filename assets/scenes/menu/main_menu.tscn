@@ -9,6 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://c00askbr7rlqi" path="res://assets/art/2d/silksong_full/Sounds/UI/ui_button_confirm.mp3" id="6_confirm_sfx"]
 [ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png" id="7_pointer_tex"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="8_trajan_font"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="9_divider_tex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
 content_margin_left = 20.0
@@ -180,65 +183,241 @@ texture = ExtResource("4_title_logo")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MenuButtonsContainer" type="VBoxContainer" parent="MainLayout" unique_id=1728164741]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
+[node name="MenuDivider" type="TextureRect" parent="MainLayout" unique_id=987001013]
+custom_minimum_size = Vector2(280, 10)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 10
+texture = ExtResource("9_divider_tex")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(0.75, 0.8, 0.9, 0.6)
+
+[node name="MenuButtonsContainer" type="VBoxContainer" parent="MainLayout" unique_id=1728164741]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
 
 [node name="PlayButton" type="Button" parent="MainLayout/MenuButtonsContainer" unique_id=540907998]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 42)
+custom_minimum_size = Vector2(280, 44)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.92, 0.95, 1)
-theme_override_colors/font_hover_color = Color(1, 0.95, 0.75, 1)
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4, 0.42, 0.46, 0.4)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_btn")
 text = "NEW GAME"
+
+[node name="PointerLeft" type="TextureRect" parent="MainLayout/MenuButtonsContainer/PlayButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainLayout/MenuButtonsContainer/PlayButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ContinueButton" type="Button" parent="MainLayout/MenuButtonsContainer" unique_id=758964974]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 42)
+custom_minimum_size = Vector2(280, 44)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.92, 0.95, 1)
-theme_override_colors/font_hover_color = Color(1, 0.95, 0.75, 1)
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4, 0.42, 0.46, 0.4)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_btn")
 text = "CONTINUE"
+
+[node name="PointerLeft" type="TextureRect" parent="MainLayout/MenuButtonsContainer/ContinueButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainLayout/MenuButtonsContainer/ContinueButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SettingsButton" type="Button" parent="MainLayout/MenuButtonsContainer" unique_id=61358824]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 42)
+custom_minimum_size = Vector2(280, 44)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.92, 0.95, 1)
-theme_override_colors/font_hover_color = Color(1, 0.95, 0.75, 1)
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4, 0.42, 0.46, 0.4)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_btn")
 text = "SETTINGS"
+
+[node name="PointerLeft" type="TextureRect" parent="MainLayout/MenuButtonsContainer/SettingsButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainLayout/MenuButtonsContainer/SettingsButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="QuitButton" type="Button" parent="MainLayout/MenuButtonsContainer" unique_id=24024328]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 42)
+custom_minimum_size = Vector2(280, 44)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.82, 0.85, 1)
-theme_override_colors/font_hover_color = Color(1, 0.6, 0.6, 1)
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4, 0.42, 0.46, 0.4)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_btn")
 text = "QUIT"
+
+[node name="PointerLeft" type="TextureRect" parent="MainLayout/MenuButtonsContainer/QuitButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainLayout/MenuButtonsContainer/QuitButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SettingsPanel" type="PanelContainer" parent="MainLayout" unique_id=1212046789]
 unique_name_in_owner = true
@@ -262,9 +441,19 @@ theme_override_constants/separation = 16
 [node name="SettingsTitle" type="Label" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=845439007]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.92, 0.75, 1)
+theme_override_fonts/font = ExtResource("8_trajan_font")
 theme_override_font_sizes/font_size = 18
 text = "SETTINGS"
 horizontal_alignment = 1
+
+[node name="SettingsDivider" type="TextureRect" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=987001014]
+custom_minimum_size = Vector2(220, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_divider_tex")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(0.85, 0.88, 0.95, 0.65)
 
 [node name="VolumeRow" type="HBoxContainer" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=375956848]
 layout_mode = 2
@@ -306,15 +495,57 @@ layout_mode = 2
 
 [node name="SettingsBackButton" type="Button" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=2062999156]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(140, 36)
+custom_minimum_size = Vector2(160, 38)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
 text = "BACK"
+
+[node name="PointerLeft" type="TextureRect" parent="MainLayout/SettingsPanel/Margin/SettingsVBox/SettingsBackButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainLayout/SettingsPanel/Margin/SettingsVBox/SettingsBackButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="LoadingContainer" type="VBoxContainer" parent="MainLayout" unique_id=2062509328]
 unique_name_in_owner = true
@@ -405,6 +636,15 @@ theme_override_font_sizes/font_size = 18
 text = "CẢNH BÁO / WARNING"
 horizontal_alignment = 1
 
+[node name="ModalDivider" type="TextureRect" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox" unique_id=987001015]
+custom_minimum_size = Vector2(240, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_divider_tex")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(1, 0.85, 0.5, 0.7)
+
 [node name="ModalDesc" type="Label" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox" unique_id=987001008]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 0.95)
@@ -421,29 +661,109 @@ alignment = 1
 
 [node name="ConfirmNewGameButton" type="Button" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow" unique_id=987001010]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 38)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+flat = true
 theme_override_colors/font_color = Color(1, 0.65, 0.65, 1)
-theme_override_colors/font_hover_color = Color(1, 0.45, 0.45, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
 text = "XÁC NHẬN"
+
+[node name="PointerLeft" type="TextureRect" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow/ConfirmNewGameButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow/ConfirmNewGameButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CancelNewGameButton" type="Button" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow" unique_id=987001011]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 38)
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.92, 0.95, 1)
-theme_override_colors/font_hover_color = Color(1, 0.95, 0.75, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
 text = "HỦY BỎ"
+
+[node name="PointerLeft" type="TextureRect" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow/CancelNewGameButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="ConfirmNewGameModal/ModalPanel/Margin/VBox/ButtonsRow/CancelNewGameButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_pointer_tex")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=77889911]
 unique_name_in_owner = true

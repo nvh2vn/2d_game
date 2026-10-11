@@ -7,52 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dpi2pemifkcj7" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="5_border_frame"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="6_font"]
 [ext_resource type="Texture2D" uid="uid://bcm430t126ujb" path="res://assets/art/Inventory & UI/Geo - HUD_coin_v020004.png" id="7_coin"]
+[ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png" id="8_pointer"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="9_divider"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.04, 0.05, 0.08, 0.94)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.85, 0.25, 0.25, 0.85)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(0.7, 0.1, 0.1, 0.4)
-shadow_size = 28
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
-content_margin_left = 20.0
-content_margin_top = 10.0
-content_margin_right = 20.0
-content_margin_bottom = 10.0
-bg_color = Color(0.1, 0.12, 0.17, 0.9)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.6, 0.65, 0.75, 0.6)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
-content_margin_left = 20.0
-content_margin_top = 10.0
-content_margin_right = 20.0
-content_margin_bottom = 10.0
-bg_color = Color(0.3, 0.12, 0.15, 0.98)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.45, 0.45, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
 
 [node name="GameOverScreen" type="Control" unique_id=597408831]
 process_mode = 3
@@ -72,10 +32,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.01, 0.02, 0.04, 0.9)
+color = Color(0, 0, 0, 0.85)
 
 [node name="FarBG" type="TextureRect" parent="." unique_id=281319711]
-modulate = Color(1, 0.6, 0.6, 0.35)
+modulate = Color(1, 0.6, 0.6, 0.18)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,7 +47,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Vignette" type="TextureRect" parent="." unique_id=1595034753]
-modulate = Color(1, 0.15, 0.15, 0.5)
+modulate = Color(1, 0.15, 0.15, 0.35)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,16 +73,7 @@ offset_right = 290.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="BorderFrame" type="NinePatchRect" parent="MainPanel" unique_id=2043422028]
-modulate = Color(1, 0.8, 0.8, 0.35)
-layout_mode = 2
-texture = ExtResource("5_border_frame")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
 
 [node name="Margin" type="MarginContainer" parent="MainPanel" unique_id=1752054398]
 layout_mode = 2
@@ -133,7 +84,7 @@ theme_override_constants/margin_bottom = 28
 
 [node name="VBox" type="VBoxContainer" parent="MainPanel/Margin" unique_id=1504980170]
 layout_mode = 2
-theme_override_constants/separation = 14
+theme_override_constants/separation = 12
 alignment = 1
 
 [node name="MaskCenter" type="CenterContainer" parent="MainPanel/Margin/VBox" unique_id=1177313698]
@@ -150,23 +101,30 @@ stretch_mode = 5
 [node name="TitleLabel" type="Label" parent="MainPanel/Margin/VBox" unique_id=840081287]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.98, 0.25, 0.25, 1)
+theme_override_colors/font_color = Color(0.96, 0.96, 0.98, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("6_font")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 38
 text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="SubtitleLabel" type="Label" parent="MainPanel/Margin/VBox" unique_id=2053153164]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.78, 0.85, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
 theme_override_fonts/font = ExtResource("6_font")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "YOU HAVE FALLEN IN THE DEPTHS"
 horizontal_alignment = 1
+
+[node name="Divider" type="TextureRect" parent="MainPanel/Margin/VBox" unique_id=473260157]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture = ExtResource("9_divider")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="GeoHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox" unique_id=1802962906]
 layout_mode = 2
@@ -189,10 +147,6 @@ theme_override_font_sizes/font_size = 16
 text = "0 GEO COLLECTED"
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="MainPanel/Margin/VBox" unique_id=473260157]
-layout_mode = 2
-theme_override_constants/separation = 8
-
 [node name="ButtonsVBox" type="VBoxContainer" parent="MainPanel/Margin/VBox" unique_id=807036336]
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -201,51 +155,219 @@ theme_override_constants/separation = 10
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.98, 0.98, 0.98, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_font")
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-text = "REPLAY"
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "RESPAWN"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/ReplayButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/ReplayButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HomeButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsVBox" unique_id=488667844]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.98, 0.98, 0.98, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_font")
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-text = "HOME SCREEN"
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "MAIN MENU"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HomeButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HomeButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxRow" type="HBoxContainer" parent="MainPanel/Margin/VBox/ButtonsVBox" unique_id=282474676]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 16
 
 [node name="SettingsButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow" unique_id=1760889532]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_font")
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
 text = "SETTINGS"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow/SettingsButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow/SettingsButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -4.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="WarehouseButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow" unique_id=727384214]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_font")
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
 text = "ITEM WAREHOUSE"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow/WarehouseButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsVBox/HBoxRow/WarehouseButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -4.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1141204114]
 unique_name_in_owner = true

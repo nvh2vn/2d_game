@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://teleport_menu_scene_01"]
+[gd_scene load_steps=7 format=3 uid="uid://teleport_menu_scene_01"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/teleport_menu.gd" id="1_menu_script"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="2_font"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="3_divider"]
+[ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png" id="4_pointer"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
 
 [node name="TeleportMenu" type="CanvasLayer"]
 layer = 105
@@ -22,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.04, 0.04, 0.08, 0.75)
+color = Color(0, 0, 0, 0.78)
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -37,6 +44,7 @@ offset_right = 220.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
 layout_mode = 2
@@ -47,21 +55,28 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.95, 0.92, 0.8, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_colors/font_color = Color(0.96, 0.96, 0.98, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 22
-text = "🌀 DANH SÁCH ĐIỂM DỊCH CHUYỂN"
+text = "STAG STATION"
 horizontal_alignment = 1
 
+[node name="TeleportDivider" type="TextureRect" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture = ExtResource("3_divider")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 240)
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
 [node name="DestinationList" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=987123101]
 unique_name_in_owner = true
@@ -72,6 +87,53 @@ alignment = 1
 
 [node name="CloseButton" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=987123102]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "✖ Đóng [ ESC ]"
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "CLOSE"
+
+[node name="PointerLeft" type="TextureRect" parent="Control/PanelContainer/MarginContainer/VBoxContainer/CloseButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="Control/PanelContainer/MarginContainer/VBoxContainer/CloseButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5

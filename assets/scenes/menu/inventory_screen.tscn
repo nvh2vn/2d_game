@@ -12,68 +12,28 @@
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Spell, Howling Wraiths - Inv_0024_spell_scream_01.png" id="10_wave"]
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/nail_upgrade_0000_pure-nail.png" id="11_nail"]
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="12_border"]
+[ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png" id="13_pointer"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="14_divider"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.06, 0.08, 0.12, 0.94)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.65, 0.7, 0.85, 0.7)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(0, 0, 0, 0.6)
-shadow_size = 16
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_card"]
 content_margin_left = 12.0
 content_margin_top = 8.0
 content_margin_right = 12.0
 content_margin_bottom = 8.0
-bg_color = Color(0.12, 0.15, 0.22, 0.8)
+bg_color = Color(0.04, 0.05, 0.08, 0.5)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.4, 0.5, 0.65, 0.6)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+border_color = Color(0.35, 0.38, 0.44, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
-content_margin_left = 24.0
-content_margin_top = 10.0
-content_margin_right = 24.0
-content_margin_bottom = 10.0
-bg_color = Color(0.1, 0.13, 0.18, 0.85)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.55, 0.6, 0.75, 0.6)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
-content_margin_left = 24.0
-content_margin_top = 10.0
-content_margin_right = 24.0
-content_margin_bottom = 10.0
-bg_color = Color(0.22, 0.28, 0.38, 0.95)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.95, 0.9, 0.7, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
 
 [node name="InventoryScreen" type="Control"]
 layout_mode = 3
@@ -121,10 +81,10 @@ offset_right = 430.0
 offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
 
 [node name="BorderFrame" type="NinePatchRect" parent="MainPanel"]
-modulate = Color(1, 1, 1, 0.35)
+modulate = Color(1, 1, 1, 0.12)
 layout_mode = 2
 texture = ExtResource("12_border")
 patch_margin_left = 16
@@ -141,7 +101,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 14
 
 [node name="Header" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
 layout_mode = 2
@@ -149,24 +109,26 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MainPanel/Margin/VBox/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.95, 0.9, 0.75, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
-theme_override_constants/outline_size = 6
+theme_override_colors/font_color = Color(0.96, 0.96, 0.98, 1)
 theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 text = "ITEM WAREHOUSE & PROGRESS"
 
 [node name="LastLevelLabel" type="Label" parent="MainPanel/Margin/VBox/Header"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 14
 text = "LAST EXPLORED: MAP 1"
 horizontal_alignment = 2
 
-[node name="HSeparator" type="HSeparator" parent="MainPanel/Margin/VBox"]
+[node name="InventoryDivider" type="TextureRect" parent="MainPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+texture = ExtResource("14_divider")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ContentHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
 layout_mode = 2
@@ -394,30 +356,114 @@ text = "Melee slashing weapon"
 
 [node name="ButtonsRow" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="BackButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 44)
+custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
 text = "BACK"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/BackButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/BackButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MainMenuButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 44)
+custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
 text = "MAIN MENU"
+
+[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/MainMenuButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/MainMenuButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
