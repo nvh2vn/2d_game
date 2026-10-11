@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvwse5blynpi7"
-path="res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Mossfly.png-fa49a8873f77f7275d098b1de5a02ae9.ctex"
+uid="uid://kq7s3ctnvptu"
+path="res://.godot/imported/Baldur.png-9ec3601b545f189ed78bf1a79142fc5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/Enemies/PC _ Computer - Hollow Knight - Enemies - Mossfly.png"
-dest_files=["res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Mossfly.png-fa49a8873f77f7275d098b1de5a02ae9.ctex"]
+source_file="res://assets/art/2d/Enemies/Baldur.png"
+dest_files=["res://.godot/imported/Baldur.png-9ec3601b545f189ed78bf1a79142fc5e.ctex"]
 
 [params]
 

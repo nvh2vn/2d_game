@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v2rmopmaffv3"
-path="res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Winged Sentry.png-d2104e8b7e11ce3cb8450d55f2913ebf.ctex"
+uid="uid://bl1ywhqd8jol2"
+path="res://.godot/imported/Inv_0028_spell_ring.png-7792205bc15066abf6570e65047471da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/Enemies/PC _ Computer - Hollow Knight - Enemies - Winged Sentry.png"
-dest_files=["res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Winged Sentry.png-d2104e8b7e11ce3cb8450d55f2913ebf.ctex"]
+source_file="res://assets/art/2d/Inventory & UI/Pointers/Inv_0028_spell_ring.png"
+dest_files=["res://.godot/imported/Inv_0028_spell_ring.png-7792205bc15066abf6570e65047471da.ctex"]
 
 [params]
 

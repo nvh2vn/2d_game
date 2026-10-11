@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://18dyo4q71lrm" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0069_abyss_02.png" id="8_q4dht"]
 [ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://assets/scenes/npc/tuk_npc.tscn" id="9_7hcen"]
 [ext_resource type="PackedScene" uid="uid://ckirrwpcnixiw" path="res://assets/scenes/environment/waypoint_pillar.tscn" id="10_h0x1w"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/enemies/winged_sentry.tscn" id="11_7oodl"]
+[ext_resource type="Texture2D" uid="uid://nsvnnswevwl" path="res://assets/art/2d/linhTinh/Gemini_Generated_Image_5ttk8s5ttk8s5ttk.png" id="11_i1b5r"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/room_area.tscn" id="12_q4dht"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/enemies/aspid_hunter.tscn" id="13_hea18"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/items/treasure_chest.tscn" id="14_jy8p8"]
+[ext_resource type="PackedScene" uid="uid://dubqsf2gq4b6w" path="res://assets/scenes/environment/bench.tscn" id="15_pd5qr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u6pke"]
 load_path = "res://.godot/imported/_0070_abyss_02.png-ce45f60fa06e40f67d2e1ecae6e3d613.ctex"
@@ -2765,6 +2769,10 @@ sources/4 = SubResource("TileSetAtlasSource_tb1cu")
 sources/6 = SubResource("TileSetAtlasSource_hm7tx")
 sources/7 = SubResource("TileSetAtlasSource_vtua7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1b5r"]
+resource_local_to_scene = true
+size = Vector2(2757, 1517)
+
 [node name="Level2" type="Node2D" unique_id=1855694474]
 script = ExtResource("1_level_script")
 
@@ -2852,10 +2860,40 @@ tile_set = SubResource("TileSet_sh3le")
 position = Vector2(1360, 299)
 
 [node name="WaypointPillar" parent="." unique_id=794646715 instance=ExtResource("10_h0x1w")]
-position = Vector2(1899, 303)
+position = Vector2(1908, 265)
 
 [node name="WaypointPillar2" parent="." unique_id=1261765546 instance=ExtResource("10_h0x1w")]
-position = Vector2(2408, 306)
+position = Vector2(2408, 259)
 
-[node name="WingedSentry" parent="." unique_id=359255565 instance=ExtResource("11_7oodl")]
-position = Vector2(2138, 303)
+[node name="GeminiGeneratedImage5Ttk8s5Ttk8s5Ttk" type="Sprite2D" parent="." unique_id=1553525925]
+z_index = -1
+position = Vector2(2165, -83)
+texture = ExtResource("11_i1b5r")
+
+[node name="RoomArea" parent="." unique_id=1164894404 instance=ExtResource("12_q4dht")]
+position = Vector2(2058, -201)
+room_size = Vector2(2757, 1517)
+
+[node name="CollisionShape2D" parent="RoomArea" index="0"]
+position = Vector2(1475, -119)
+shape = SubResource("RectangleShape2D_i1b5r")
+
+[node name="RoomArea2" parent="." unique_id=113673333 instance=ExtResource("12_q4dht")]
+position = Vector2(1670, 339)
+
+[node name="AspidHunter" parent="." unique_id=1680643638 instance=ExtResource("13_hea18")]
+position = Vector2(2209, 312)
+
+[node name="TreasureChest" parent="." unique_id=1162951725 instance=ExtResource("14_jy8p8")]
+position = Vector2(1997, 341)
+
+[node name="TreasureChest2" parent="." unique_id=2103757498 instance=ExtResource("14_jy8p8")]
+position = Vector2(1801, 345)
+
+[node name="TreasureChest3" parent="." unique_id=148053299 instance=ExtResource("14_jy8p8")]
+position = Vector2(1740, 341)
+
+[node name="BenchCheckpoint" parent="." unique_id=448962856 instance=ExtResource("15_pd5qr")]
+position = Vector2(2537, 322)
+
+[editable path="RoomArea"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m13n1o2333n1"
-path="res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Corpse Creeper (Variant 1).png-eee0e7f4878c7bacf35814c372b51e9f.ctex"
+uid="uid://b83iuyx0v2gf1"
+path="res://.godot/imported/RT_LT_arrow.png-2012a3c08ba93459403e218f4a40e273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/Enemies/PC _ Computer - Hollow Knight - Enemies - Corpse Creeper (Variant 1).png"
-dest_files=["res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Corpse Creeper (Variant 1).png-eee0e7f4878c7bacf35814c372b51e9f.ctex"]
+source_file="res://assets/art/2d/Inventory & UI/Pointers/RT_LT_arrow.png"
+dest_files=["res://.godot/imported/RT_LT_arrow.png-2012a3c08ba93459403e218f4a40e273.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blejrjr7v1j4x"
-path="res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Mosscreep.png-f70531acf3e3df91d4a6994126cc5c2a.ctex"
+uid="uid://c8mn82fhseg6h"
+path="res://.godot/imported/map_arrow #50302627.png-cbbcd2e5e6a72d22567e6d3ef040b960.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/Enemies/PC _ Computer - Hollow Knight - Enemies - Mosscreep.png"
-dest_files=["res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Mosscreep.png-f70531acf3e3df91d4a6994126cc5c2a.ctex"]
+source_file="res://assets/art/2d/Inventory & UI/Pointers/map_arrow #50302627.png"
+dest_files=["res://.godot/imported/map_arrow #50302627.png-cbbcd2e5e6a72d22567e6d3ef040b960.ctex"]
 
 [params]
 

@@ -14,6 +14,15 @@ var npc_name_str: String = "Tuk (Nhà Thu Gom)"
 var purchased_items: Dictionary = {}
 const SAVE_PATH: String = "user://shop_data.cfg"
 
+static var active_instance: ShopMenu = null
+
+func _enter_tree() -> void:
+	active_instance = self
+
+func _exit_tree() -> void:
+	if active_instance == self:
+		active_instance = null
+
 var shop_items: Array[Dictionary] = [
 	{
 		"id": "simple_key",
@@ -76,6 +85,7 @@ func open_shop(player_ref: Node2D = null, npc_title: String = "Tuk (Nhà Thu Gom
 	if title_label:
 		title_label.text = "🛒 CỬA HÀNG - " + npc_title.to_upper()
 		
+	load_shop_purchases()
 	update_geo_display()
 	populate_shop_items()
 
@@ -194,18 +204,24 @@ func _on_item_buy_pressed(item: Dictionary) -> void:
 		populate_shop_items()
 
 func _grant_item_to_player(item_id: String, item_name: String) -> void:
-	if not is_instance_valid(current_player):
-		return
-		
-	if "inventory" in current_player:
-		if current_player.inventory is Array:
-			current_player.inventory.append(item_id)
-			
-	if item_id == "mask_shard" and "max_health" in current_player:
-		current_player.max_health += 1
-		current_player.current_health = current_player.max_health
-		if current_player.has_method("update_health_hud"):
-			current_player.update_health_hud()
+	if is_instance_valid(current_player):
+		if "inventory" in current_player:
+			if current_player.inventory is Array and not (item_id in current_player.inventory):
+				current_player.inventory.append(item_id)
+				
+		if item_id == "mask_shard" and "max_health" in current_player:
+			current_player.max_health += 1
+			current_player.current_health = current_player.max_health
+			if current_player.has_method("update_health_hud"):
+				current_player.update_health_hud()
+
+	# Đồng bộ item vào inventory của SaveManager
+	if SaveManager.instance:
+		var inv: Array = SaveManager.instance.save_data.get("inventory", [])
+		if not (item_id in inv):
+			inv.append(item_id)
+			SaveManager.instance.save_data["inventory"] = inv
+		SaveManager.instance.save_to_disk()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE):
@@ -218,13 +234,44 @@ func _on_close_pressed() -> void:
 			current_player.is_sitting = false
 	queue_free()
 
+## Xóa sạch toàn bộ dữ liệu mua hàng của Shop trên đĩa và trong bộ nhớ
+static func reset_shop_state() -> void:
+	var da = DirAccess.open("user://")
+	if da and da.file_exists("shop_data.cfg"):
+		da.remove("shop_data.cfg")
+	if active_instance and is_instance_valid(active_instance):
+		active_instance.purchased_items.clear()
+		if active_instance.is_inside_tree():
+			active_instance.populate_shop_items()
+
 func save_shop_purchases() -> void:
+	# 1. Đồng bộ sang SaveManager tập trung nếu có
+	if SaveManager.instance:
+		SaveManager.instance.save_data["shop_purchases"] = purchased_items.duplicate()
+		SaveManager.instance.save_to_disk()
+		
+	# 2. Ghi ra shop_data.cfg
 	var config := ConfigFile.new()
 	config.load(SAVE_PATH)
 	config.set_value("shop", "purchased", purchased_items)
 	config.save(SAVE_PATH)
 
 func load_shop_purchases() -> void:
+	# 1. Ưu tiên nạp từ SaveManager tập trung nếu có
+	if SaveManager.instance and SaveManager.instance.save_data.has("shop_purchases"):
+		var sp = SaveManager.instance.save_data["shop_purchases"]
+		if typeof(sp) == TYPE_DICTIONARY:
+			purchased_items = sp.duplicate()
+			return
+		elif typeof(sp) == TYPE_ARRAY:
+			purchased_items.clear()
+			for item_id in sp:
+				purchased_items[item_id] = true
+			return
+			
+	# 2. Đọc từ file shop_data.cfg
 	var config := ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
 		purchased_items = config.get_value("shop", "purchased", {})
+	else:
+		purchased_items = {}

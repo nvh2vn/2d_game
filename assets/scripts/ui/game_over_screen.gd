@@ -116,7 +116,14 @@ func _on_replay_pressed() -> void:
 	var tw = create_tween()
 	tw.tween_property(self, "modulate:a", 0.0, 0.3)
 	await tw.finished
-	get_tree().change_scene_to_file(current_level_path)
+	
+	# Ưu tiên load lại màn chơi có Checkpoint đã lưu (Bench / Respawn)
+	var target_scene = current_level_path
+	if SaveManager.instance:
+		var respawn_data = SaveManager.instance.get_respawn_info()
+		if respawn_data.get("has_checkpoint", false) and respawn_data.get("scene_path", "") != "":
+			target_scene = respawn_data["scene_path"]
+	get_tree().change_scene_to_file(target_scene)
 
 
 func _on_home_pressed() -> void:

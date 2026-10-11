@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://48rurwvibexp"
-path="res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Deephunter.png-ae7d634ab1d7c6c7929ee4aecd5d1976.ctex"
+uid="uid://dwb28dci82s2j"
+path="res://.godot/imported/shop_up_down_arrow.png-83224e7e0fda3127c4c7701835beb6bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/Enemies/PC _ Computer - Hollow Knight - Enemies - Deephunter.png"
-dest_files=["res://.godot/imported/PC _ Computer - Hollow Knight - Enemies - Deephunter.png-ae7d634ab1d7c6c7929ee4aecd5d1976.ctex"]
+source_file="res://assets/art/2d/Inventory & UI/Pointers/shop_up_down_arrow.png"
+dest_files=["res://.godot/imported/shop_up_down_arrow.png-83224e7e0fda3127c4c7701835beb6bc.ctex"]
 
 [params]
 

@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://weofmbqqgmmc" path="res://assets/art/ui/sound_on.svg" id="ext_sound_on"]
 [ext_resource type="Texture2D" uid="uid://cv7gj0netijef" path="res://assets/art/2d/silksong_full/Images/UI/ins_3.png" id="ext_spool_frame"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="ext_trajan_font"]
+[ext_resource type="PackedScene" uid="uid://dpsmenuscene01" path="res://assets/scenes/ui/pause_menu.tscn" id="ext_pause_menu"]
 [ext_resource type="Texture2D" uid="uid://2sgn2is0mh42" path="res://assets/art/2d/silksong_full/Animations/Player/AirDash/0.png" id="h_airdash_0"]
 [ext_resource type="Texture2D" uid="uid://t8q4862rux1i" path="res://assets/art/2d/silksong_full/Animations/Player/AirDash/1.png" id="h_airdash_1"]
 [ext_resource type="Texture2D" uid="uid://48nych88m3cl" path="res://assets/art/2d/silksong_full/Animations/Player/AirDash/2.png" id="h_airdash_2"]
@@ -1048,9 +1049,9 @@ unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -120.0
+offset_left = -176.0
 offset_top = 20.0
-offset_right = -20.0
+offset_right = -72.0
 offset_bottom = 64.0
 grow_horizontal = 0
 theme_override_constants/separation = 12
@@ -1132,3 +1133,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("ext_pause_menu")]
+

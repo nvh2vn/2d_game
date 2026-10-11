@@ -118,10 +118,16 @@ func _start_rest() -> void:
 	var scene_path = ""
 	if get_tree().current_scene:
 		scene_path = get_tree().current_scene.scene_file_path
-	SaveManager.save_bench_checkpoint(sit_pos, scene_path)
-	
+		
+	# Hồi phục toàn bộ máu & năng lượng cho người chơi
 	if current_player.has_method("rest_at_bench"):
 		current_player.rest_at_bench(sit_pos, face_right)
+		
+	# Cập nhật Checkpoint và lưu mã hóa toàn bộ dữ liệu xuống đĩa (Mobile Safe)
+	if SaveManager.instance:
+		SaveManager.instance.set_checkpoint(scene_path, sit_pos, true)
+	else:
+		SaveManager.save_bench_checkpoint(sit_pos, scene_path)
 		
 	bench_rested.emit()
 	get_tree().call_group("enemies", "reset_enemy")

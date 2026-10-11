@@ -115,6 +115,7 @@ const SPRINT_ACCELERATION := 1800.0
 @export var game_over_scene: PackedScene = preload("res://assets/scenes/ui/game_over_screen.tscn")
 
 var geo_amount: int = 0
+var inventory: Array = []
 
 @export_group("Silk Energy System")
 @export var max_silk: int = 6
@@ -190,6 +191,11 @@ func _ready() -> void:
 	if sfx_player:
 		sfx_player.bus = &"SFX"
 	current_health = max_health
+	
+	# Đồng bộ các kỹ năng đã unlock và thông tin đã lưu từ SaveManager (Mobile Safe)
+	if SaveManager.instance:
+		SaveManager.instance.apply_to_player(self)
+		
 	switch_state(active_state)
 	ledge_climb_ray_cast.add_exception(self)
 	if attack_timer:
@@ -444,6 +450,7 @@ func play_silk_warning() -> void:
 
 func add_geo(amount: int) -> void:
 	geo_amount += amount
+	SaveManager.save_geo(geo_amount)
 	update_geo_hud()
 
 func update_geo_hud() -> void:
@@ -935,7 +942,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Cơ chế dời vị trí tức thì để không bao giờ có thể lồng/dính vào quái vật
-	if active_state != STATE.DIE and active_state != STATE.DASH:
+	if active_state != STATE.DIE and active_state != STATE.DASH and get_tree():
 		for enemy in get_tree().get_nodes_in_group("enemies"):
 			if enemy is CharacterBody2D and is_instance_valid(enemy) and not ("is_dead" in enemy and enemy.is_dead):
 				var diff_x = global_position.x - enemy.global_position.x
