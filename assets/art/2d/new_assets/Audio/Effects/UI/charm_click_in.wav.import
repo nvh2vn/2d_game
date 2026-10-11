@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b5elqes3sqqk5"
-path="res://.godot/imported/charm_click_in.wav-8a4c4c52f24ea67bacdb5af401fa9a35.sample"
+path="res://.godot/imported/charm_click_in.wav-12684dce962a4686c64c825e86010278.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/UI/charm_click_in.wav"
-dest_files=["res://.godot/imported/charm_click_in.wav-8a4c4c52f24ea67bacdb5af401fa9a35.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/UI/charm_click_in.wav"
+dest_files=["res://.godot/imported/charm_click_in.wav-12684dce962a4686c64c825e86010278.sample"]
 
 [params]
 

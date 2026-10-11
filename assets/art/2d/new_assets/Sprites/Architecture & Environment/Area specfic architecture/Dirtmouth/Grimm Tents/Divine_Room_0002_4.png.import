@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chaca6vleq3gn"
-path="res://.godot/imported/Divine_Room_0002_4.png-462e4a82f2c28ae752e00155580d3990.ctex"
+path="res://.godot/imported/Divine_Room_0002_4.png-4fae054fbf29d4993f9ff7c6f0fc0d8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/Divine_Room_0002_4.png"
-dest_files=["res://.godot/imported/Divine_Room_0002_4.png-462e4a82f2c28ae752e00155580d3990.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/Divine_Room_0002_4.png"
+dest_files=["res://.godot/imported/Divine_Room_0002_4.png-4fae054fbf29d4993f9ff7c6f0fc0d8b.ctex"]
 
 [params]
 

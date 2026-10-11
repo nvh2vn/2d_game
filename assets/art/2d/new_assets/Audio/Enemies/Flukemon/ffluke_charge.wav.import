@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://g4m82bd6etmn"
-path="res://.godot/imported/ffluke_charge.wav-85df5ed5b19ed3aaa8ebb63302e63e05.sample"
+path="res://.godot/imported/ffluke_charge.wav-3f464eb8275bdfb39188dfcb5a2ce85f.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemon/ffluke_charge.wav"
-dest_files=["res://.godot/imported/ffluke_charge.wav-85df5ed5b19ed3aaa8ebb63302e63e05.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemon/ffluke_charge.wav"
+dest_files=["res://.godot/imported/ffluke_charge.wav-3f464eb8275bdfb39188dfcb5a2ce85f.sample"]
 
 [params]
 

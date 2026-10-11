@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://digjqsb813rl8"
-path="res://.godot/imported/shaman_hut_lit.png-a4084e43ad267fdf0c1e19466e134609.ctex"
+path="res://.godot/imported/shaman_hut_lit.png-08f326a1e8dc47846fe963b7838813ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/shaman_hut_lit.png"
-dest_files=["res://.godot/imported/shaman_hut_lit.png-a4084e43ad267fdf0c1e19466e134609.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/shaman_hut_lit.png"
+dest_files=["res://.godot/imported/shaman_hut_lit.png-08f326a1e8dc47846fe963b7838813ad.ctex"]
 
 [params]
 

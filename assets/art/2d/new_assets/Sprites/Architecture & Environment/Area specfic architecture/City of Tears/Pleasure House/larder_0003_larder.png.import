@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwxrvnurpyton"
-path="res://.godot/imported/larder_0003_larder.png-0f52893a0cddb2ee7a503354392f5901.ctex"
+path="res://.godot/imported/larder_0003_larder.png-e732545b6da2c14493802f96a5e0d73f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/larder_0003_larder.png"
-dest_files=["res://.godot/imported/larder_0003_larder.png-0f52893a0cddb2ee7a503354392f5901.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/larder_0003_larder.png"
+dest_files=["res://.godot/imported/larder_0003_larder.png-e732545b6da2c14493802f96a5e0d73f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw7btpv5txg0g"
-path="res://.godot/imported/egg_pile_0005_02.png-5d65e055ee3653d22df627b837dacb53.ctex"
+path="res://.godot/imported/egg_pile_0005_02.png-768bb1b522059e9f30b91848f8d46166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/egg_pile_0005_02.png"
-dest_files=["res://.godot/imported/egg_pile_0005_02.png-5d65e055ee3653d22df627b837dacb53.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/egg_pile_0005_02.png"
+dest_files=["res://.godot/imported/egg_pile_0005_02.png-768bb1b522059e9f30b91848f8d46166.ctex"]
 
 [params]
 

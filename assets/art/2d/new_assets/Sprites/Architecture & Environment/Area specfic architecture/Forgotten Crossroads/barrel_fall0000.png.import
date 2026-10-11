@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy88fc8wrxa00"
-path="res://.godot/imported/barrel_fall0000.png-dd2dd6473cf4744e86aea8a7dcf69874.ctex"
+path="res://.godot/imported/barrel_fall0000.png-adf2337fc4a3dece94e9dd95b3fe4449.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/barrel_fall0000.png"
-dest_files=["res://.godot/imported/barrel_fall0000.png-dd2dd6473cf4744e86aea8a7dcf69874.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/barrel_fall0000.png"
+dest_files=["res://.godot/imported/barrel_fall0000.png-adf2337fc4a3dece94e9dd95b3fe4449.ctex"]
 
 [params]
 

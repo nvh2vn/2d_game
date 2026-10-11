@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fn482bnonxs3"
-path="res://.godot/imported/pipe_waterway_mask_left.png-66f423c5b224cd785b23f890666e876b.ctex"
+path="res://.godot/imported/pipe_waterway_mask_left.png-ed7b17ef3126a4f6be510af197ec0a25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/pipe_waterway_mask_left.png"
-dest_files=["res://.godot/imported/pipe_waterway_mask_left.png-66f423c5b224cd785b23f890666e876b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/pipe_waterway_mask_left.png"
+dest_files=["res://.godot/imported/pipe_waterway_mask_left.png-ed7b17ef3126a4f6be510af197ec0a25.ctex"]
 
 [params]
 

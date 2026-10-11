@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfk3ouxwo1cpj"
-path="res://.godot/imported/dream_plant_hit.wav-1229de0c2dacd224c312c31d53b6845c.sample"
+path="res://.godot/imported/dream_plant_hit.wav-42f14734fff8d8a07b4d9a3bc25018d2.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_plant_hit.wav"
-dest_files=["res://.godot/imported/dream_plant_hit.wav-1229de0c2dacd224c312c31d53b6845c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Dream/dream_plant_hit.wav"
+dest_files=["res://.godot/imported/dream_plant_hit.wav-42f14734fff8d8a07b4d9a3bc25018d2.sample"]
 
 [params]
 

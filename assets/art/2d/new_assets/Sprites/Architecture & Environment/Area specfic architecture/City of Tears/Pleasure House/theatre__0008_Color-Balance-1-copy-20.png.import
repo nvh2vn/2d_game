@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8d1wp8m7yuh"
-path="res://.godot/imported/theatre__0008_Color-Balance-1-copy-20.png-c5a072f8caa1e1d602347607ecc6c781.ctex"
+path="res://.godot/imported/theatre__0008_Color-Balance-1-copy-20.png-9e07b99133f8457de2c1f2374d669059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/theatre__0008_Color-Balance-1-copy-20.png"
-dest_files=["res://.godot/imported/theatre__0008_Color-Balance-1-copy-20.png-c5a072f8caa1e1d602347607ecc6c781.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/theatre__0008_Color-Balance-1-copy-20.png"
+dest_files=["res://.godot/imported/theatre__0008_Color-Balance-1-copy-20.png-9e07b99133f8457de2c1f2374d669059.ctex"]
 
 [params]
 

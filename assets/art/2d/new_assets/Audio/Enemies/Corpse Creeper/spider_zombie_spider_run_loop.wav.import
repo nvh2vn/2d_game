@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bgwn0xdpmi6i3"
-path="res://.godot/imported/spider_zombie_spider_run_loop.wav-62c43fa5f2faace51ef4afb16edc9954.sample"
+path="res://.godot/imported/spider_zombie_spider_run_loop.wav-1dcd69f6943385091a54143a9648b24c.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Corpse Creeper/spider_zombie_spider_run_loop.wav"
-dest_files=["res://.godot/imported/spider_zombie_spider_run_loop.wav-62c43fa5f2faace51ef4afb16edc9954.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Corpse Creeper/spider_zombie_spider_run_loop.wav"
+dest_files=["res://.godot/imported/spider_zombie_spider_run_loop.wav-1dcd69f6943385091a54143a9648b24c.sample"]
 
 [params]
 

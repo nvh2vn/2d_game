@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1yisx53g7tdv"
-path="res://.godot/imported/1833-1@2x.png-b566cdc0338135e709ca67348efdf4ef.ctex"
+path="res://.godot/imported/1833-1@2x.png-4562fbeb4018e952827f57e9c0d40722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/1833-1@2x.png"
-dest_files=["res://.godot/imported/1833-1@2x.png-b566cdc0338135e709ca67348efdf4ef.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/1833-1@2x.png"
+dest_files=["res://.godot/imported/1833-1@2x.png-4562fbeb4018e952827f57e9c0d40722.ctex"]
 
 [params]
 

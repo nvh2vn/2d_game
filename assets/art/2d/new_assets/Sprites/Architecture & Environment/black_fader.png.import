@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0gjew5j08m3a"
-path="res://.godot/imported/black_fader.png-22749881173b3b32ca02fe1d34aa3f98.ctex"
+path="res://.godot/imported/black_fader.png-c57613dba1bb78c1a4bcaf3b4f98c0fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/black_fader.png"
-dest_files=["res://.godot/imported/black_fader.png-22749881173b3b32ca02fe1d34aa3f98.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/black_fader.png"
+dest_files=["res://.godot/imported/black_fader.png-c57613dba1bb78c1a4bcaf3b4f98c0fc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1c1s4wkjl4jr"
-path="res://.godot/imported/theatre_chairs_0002_1.png-9cd4c01550b385a194c006f17239bcd5.ctex"
+path="res://.godot/imported/theatre_chairs_0002_1.png-6ba57d9744306447e133506570bf5628.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/theatre_chairs_0002_1.png"
-dest_files=["res://.godot/imported/theatre_chairs_0002_1.png-9cd4c01550b385a194c006f17239bcd5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/theatre_chairs_0002_1.png"
+dest_files=["res://.godot/imported/theatre_chairs_0002_1.png-6ba57d9744306447e133506570bf5628.ctex"]
 
 [params]
 

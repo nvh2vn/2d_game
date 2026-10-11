@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6e6pxarmdupm"
-path="res://.godot/imported/ceiling_dropper_look_5.wav-0dfda604f43773bde441c9359fa94e0a.sample"
+path="res://.godot/imported/ceiling_dropper_look_5.wav-5b41f6d4af6bedc1242c67397741e0ab.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Belfly/ceiling_dropper_look_5.wav"
-dest_files=["res://.godot/imported/ceiling_dropper_look_5.wav-0dfda604f43773bde441c9359fa94e0a.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Belfly/ceiling_dropper_look_5.wav"
+dest_files=["res://.godot/imported/ceiling_dropper_look_5.wav-5b41f6d4af6bedc1242c67397741e0ab.sample"]
 
 [params]
 

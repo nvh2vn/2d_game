@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://owsxqxuv6lyx"
-path="res://.godot/imported/FC_set__0024_fog_rock_pillar_01.png-32478775d34d91668fb4be995ca88f61.ctex"
+path="res://.godot/imported/FC_set__0024_fog_rock_pillar_01.png-cc1fd99f21aa40e50ddd0b75a490f4aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/FC_set__0024_fog_rock_pillar_01.png"
-dest_files=["res://.godot/imported/FC_set__0024_fog_rock_pillar_01.png-32478775d34d91668fb4be995ca88f61.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/FC_set__0024_fog_rock_pillar_01.png"
+dest_files=["res://.godot/imported/FC_set__0024_fog_rock_pillar_01.png-cc1fd99f21aa40e50ddd0b75a490f4aa.ctex"]
 
 [params]
 

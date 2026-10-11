@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nbs0rahkyjsj"
-path="res://.godot/imported/jar_col_padded_door.png-6d3ec0f40f6b6c2d3844c7ce6cd5907d.ctex"
+path="res://.godot/imported/jar_col_padded_door.png-215678749a0d5aae9b7027fa895d0393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/jar_col_padded_door.png"
-dest_files=["res://.godot/imported/jar_col_padded_door.png-6d3ec0f40f6b6c2d3844c7ce6cd5907d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/jar_col_padded_door.png"
+dest_files=["res://.godot/imported/jar_col_padded_door.png-215678749a0d5aae9b7027fa895d0393.ctex"]
 
 [params]
 

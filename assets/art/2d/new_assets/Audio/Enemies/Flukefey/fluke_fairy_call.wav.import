@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://kvtcnajloq3q"
-path="res://.godot/imported/fluke_fairy_call.wav-214e8b29f01f1efe8a3702cf03020bcc.sample"
+path="res://.godot/imported/fluke_fairy_call.wav-6883491b0212221727e06c4ac0be77e2.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukefey/fluke_fairy_call.wav"
-dest_files=["res://.godot/imported/fluke_fairy_call.wav-214e8b29f01f1efe8a3702cf03020bcc.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukefey/fluke_fairy_call.wav"
+dest_files=["res://.godot/imported/fluke_fairy_call.wav-6883491b0212221727e06c4ac0be77e2.sample"]
 
 [params]
 

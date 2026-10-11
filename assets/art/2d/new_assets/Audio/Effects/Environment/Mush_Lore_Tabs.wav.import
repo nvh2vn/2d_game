@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://db1arhxjpvltj"
-path="res://.godot/imported/Mush_Lore_Tabs.wav-5b96d7579ea8f6823536e8b0a952ce4e.sample"
+path="res://.godot/imported/Mush_Lore_Tabs.wav-4ef0c5b27390fc9dcbf552180615ef85.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/Mush_Lore_Tabs.wav"
-dest_files=["res://.godot/imported/Mush_Lore_Tabs.wav-5b96d7579ea8f6823536e8b0a952ce4e.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/Mush_Lore_Tabs.wav"
+dest_files=["res://.godot/imported/Mush_Lore_Tabs.wav-4ef0c5b27390fc9dcbf552180615ef85.sample"]
 
 [params]
 

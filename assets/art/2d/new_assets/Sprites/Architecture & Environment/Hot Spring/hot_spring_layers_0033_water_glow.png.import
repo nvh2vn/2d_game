@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chlayaersxegy"
-path="res://.godot/imported/hot_spring_layers_0033_water_glow.png-3065a794fbafb710f78bba8fa1ccd594.ctex"
+path="res://.godot/imported/hot_spring_layers_0033_water_glow.png-fb9cbbf2bbceca017e5e933628ec15eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Hot Spring/hot_spring_layers_0033_water_glow.png"
-dest_files=["res://.godot/imported/hot_spring_layers_0033_water_glow.png-3065a794fbafb710f78bba8fa1ccd594.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Hot Spring/hot_spring_layers_0033_water_glow.png"
+dest_files=["res://.godot/imported/hot_spring_layers_0033_water_glow.png-fb9cbbf2bbceca017e5e933628ec15eb.ctex"]
 
 [params]
 

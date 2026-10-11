@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cx3gwfg6wi3q0"
-path="res://.godot/imported/plant_trap_bite_new.wav-294670b77066392a34db2500e73c7128.sample"
+path="res://.godot/imported/plant_trap_bite_new.wav-e82d7c870796edca352876cef3a65639.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Fool Eater/plant_trap_bite_new.wav"
-dest_files=["res://.godot/imported/plant_trap_bite_new.wav-294670b77066392a34db2500e73c7128.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Fool Eater/plant_trap_bite_new.wav"
+dest_files=["res://.godot/imported/plant_trap_bite_new.wav-e82d7c870796edca352876cef3a65639.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qi5qdtbtrnun"
-path="res://.godot/imported/gg_workshop_light.png-5c23fb57b848e2b0f9fabfa0b11acf16.ctex"
+path="res://.godot/imported/gg_workshop_light.png-dcdc043d7fd593893dd6f2d1918acabf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/gg_workshop_light.png"
-dest_files=["res://.godot/imported/gg_workshop_light.png-5c23fb57b848e2b0f9fabfa0b11acf16.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/gg_workshop_light.png"
+dest_files=["res://.godot/imported/gg_workshop_light.png-dcdc043d7fd593893dd6f2d1918acabf.ctex"]
 
 [params]
 

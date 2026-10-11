@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpfxvrn4is331"
-path="res://.godot/imported/corpse_set_01_0012_nail1.png-461cf45fe200d7966a62d20f22daa4f2.ctex"
+path="res://.godot/imported/corpse_set_01_0012_nail1.png-243e5c64bdec6d07b0938e4040321c0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/corpse_set_01_0012_nail1.png"
-dest_files=["res://.godot/imported/corpse_set_01_0012_nail1.png-461cf45fe200d7966a62d20f22daa4f2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/corpse_set_01_0012_nail1.png"
+dest_files=["res://.godot/imported/corpse_set_01_0012_nail1.png-243e5c64bdec6d07b0938e4040321c0d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cydqy6xf78i0h"
-path="res://.godot/imported/mask_single.png-82fe22ec7e00bdea0f726342173adf8d.ctex"
+path="res://.godot/imported/mask_single.png-e14e9fdd939a1f0b4b74ccc138a519e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/mask_single.png"
-dest_files=["res://.godot/imported/mask_single.png-82fe22ec7e00bdea0f726342173adf8d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/mask_single.png"
+dest_files=["res://.godot/imported/mask_single.png-e14e9fdd939a1f0b4b74ccc138a519e7.ctex"]
 
 [params]
 

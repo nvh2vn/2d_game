@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cftnnkyor5n57"
-path="res://.godot/imported/rg_mask_03_0004_a.png-9ba34b6a6b1bfe42bb768a99b8454162.ctex"
+path="res://.godot/imported/rg_mask_03_0004_a.png-a1329a3abc72a15d83c80e236b925fdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_mask_03_0004_a.png"
-dest_files=["res://.godot/imported/rg_mask_03_0004_a.png-9ba34b6a6b1bfe42bb768a99b8454162.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_mask_03_0004_a.png"
+dest_files=["res://.godot/imported/rg_mask_03_0004_a.png-a1329a3abc72a15d83c80e236b925fdd.ctex"]
 
 [params]
 

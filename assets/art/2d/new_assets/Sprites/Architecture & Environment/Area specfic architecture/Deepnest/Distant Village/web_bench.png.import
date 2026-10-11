@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btsdg2yjxowhm"
-path="res://.godot/imported/web_bench.png-429709adf28b0d1f215d554e474d1e8b.ctex"
+path="res://.godot/imported/web_bench.png-758cc5afdd03784d85457f6b71f0f78d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/web_bench.png"
-dest_files=["res://.godot/imported/web_bench.png-429709adf28b0d1f215d554e474d1e8b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/web_bench.png"
+dest_files=["res://.godot/imported/web_bench.png-758cc5afdd03784d85457f6b71f0f78d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0uidps5kx5dw"
-path="res://.godot/imported/nailmaster_benches_0000_2_snow.png-95264c32f074d7976ab5423ceb763998.ctex"
+path="res://.godot/imported/nailmaster_benches_0000_2_snow.png-f653b2a1f21cf43d50018e342ae9d6b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/nailmaster_benches_0000_2_snow.png"
-dest_files=["res://.godot/imported/nailmaster_benches_0000_2_snow.png-95264c32f074d7976ab5423ceb763998.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/nailmaster_benches_0000_2_snow.png"
+dest_files=["res://.godot/imported/nailmaster_benches_0000_2_snow.png-f653b2a1f21cf43d50018e342ae9d6b3.ctex"]
 
 [params]
 

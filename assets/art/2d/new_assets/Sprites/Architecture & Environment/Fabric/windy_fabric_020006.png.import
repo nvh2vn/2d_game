@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdymycln0xa11"
-path="res://.godot/imported/windy_fabric_020006.png-dcf3768fb471eecf9e5620f897ca80fb.ctex"
+path="res://.godot/imported/windy_fabric_020006.png-8dab021f70c80aea25763219d85e7047.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Fabric/windy_fabric_020006.png"
-dest_files=["res://.godot/imported/windy_fabric_020006.png-dcf3768fb471eecf9e5620f897ca80fb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Fabric/windy_fabric_020006.png"
+dest_files=["res://.godot/imported/windy_fabric_020006.png-8dab021f70c80aea25763219d85e7047.ctex"]
 
 [params]
 

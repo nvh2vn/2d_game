@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciot8qd3tvyw7"
-path="res://.godot/imported/room_nailsmith_bg.png-c319dfcd609c27bb8d48f3572f6d4f3c.ctex"
+path="res://.godot/imported/room_nailsmith_bg.png-44579b5873ecd870e7b0f20fc92b08fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/room_nailsmith_bg.png"
-dest_files=["res://.godot/imported/room_nailsmith_bg.png-c319dfcd609c27bb8d48f3572f6d4f3c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/room_nailsmith_bg.png"
+dest_files=["res://.godot/imported/room_nailsmith_bg.png-44579b5873ecd870e7b0f20fc92b08fd.ctex"]
 
 [params]
 

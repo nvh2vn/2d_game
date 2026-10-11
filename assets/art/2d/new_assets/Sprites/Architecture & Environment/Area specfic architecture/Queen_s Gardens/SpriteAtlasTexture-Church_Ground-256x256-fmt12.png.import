@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cksgdj778v21p"
-path="res://.godot/imported/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png-ab17b78326d0a9a79cba41c43eb26ba1.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png-11abf270262adfa02b30c139d2cb9984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png-ab17b78326d0a9a79cba41c43eb26ba1.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Church_Ground-256x256-fmt12.png-11abf270262adfa02b30c139d2cb9984.ctex"]
 
 [params]
 

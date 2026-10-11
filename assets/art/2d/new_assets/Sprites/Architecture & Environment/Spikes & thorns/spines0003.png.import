@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2mklcd0rihcf"
-path="res://.godot/imported/spines0003.png-3cb6783100adb37aca1202815bda1409.ctex"
+path="res://.godot/imported/spines0003.png-0a92a6b855c9dc89115ef9ee51e7697f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Spikes & thorns/spines0003.png"
-dest_files=["res://.godot/imported/spines0003.png-3cb6783100adb37aca1202815bda1409.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Spikes & thorns/spines0003.png"
+dest_files=["res://.godot/imported/spines0003.png-0a92a6b855c9dc89115ef9ee51e7697f.ctex"]
 
 [params]
 

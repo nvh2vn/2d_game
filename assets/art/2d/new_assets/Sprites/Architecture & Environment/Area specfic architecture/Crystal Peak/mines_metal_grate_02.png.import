@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbgmqdnxspo66"
-path="res://.godot/imported/mines_metal_grate_02.png-3d474622670f9464f54ba7eb5c969979.ctex"
+path="res://.godot/imported/mines_metal_grate_02.png-af54207613fafba30241f6f36dcc99ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/mines_metal_grate_02.png"
-dest_files=["res://.godot/imported/mines_metal_grate_02.png-3d474622670f9464f54ba7eb5c969979.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/mines_metal_grate_02.png"
+dest_files=["res://.godot/imported/mines_metal_grate_02.png-af54207613fafba30241f6f36dcc99ac.ctex"]
 
 [params]
 

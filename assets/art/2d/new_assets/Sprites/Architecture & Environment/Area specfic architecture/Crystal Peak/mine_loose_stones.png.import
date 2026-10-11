@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bduau2xkqy27j"
-path="res://.godot/imported/mine_loose_stones.png-ce42e75f3b7d7713dbe5b4283930739e.ctex"
+path="res://.godot/imported/mine_loose_stones.png-74a852b7ebb4ff580bdabfec501abc96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/mine_loose_stones.png"
-dest_files=["res://.godot/imported/mine_loose_stones.png-ce42e75f3b7d7713dbe5b4283930739e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/mine_loose_stones.png"
+dest_files=["res://.godot/imported/mine_loose_stones.png-74a852b7ebb4ff580bdabfec501abc96.ctex"]
 
 [params]
 

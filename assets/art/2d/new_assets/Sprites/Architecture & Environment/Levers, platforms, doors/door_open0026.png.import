@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsrqlv70e8k5t"
-path="res://.godot/imported/door_open0026.png-e0516e275904f49cafe8c9d3c6a2892c.ctex"
+path="res://.godot/imported/door_open0026.png-4eece73fd3638353413067957b637916.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Levers, platforms, doors/door_open0026.png"
-dest_files=["res://.godot/imported/door_open0026.png-e0516e275904f49cafe8c9d3c6a2892c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Levers, platforms, doors/door_open0026.png"
+dest_files=["res://.godot/imported/door_open0026.png-4eece73fd3638353413067957b637916.ctex"]
 
 [params]
 

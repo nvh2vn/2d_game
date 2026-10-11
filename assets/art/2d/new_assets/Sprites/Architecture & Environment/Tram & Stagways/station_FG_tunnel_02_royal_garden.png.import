@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7o1rrxqrlcab"
-path="res://.godot/imported/station_FG_tunnel_02_royal_garden.png-be6dc1ee70a07c4b06ea3792fb0cb537.ctex"
+path="res://.godot/imported/station_FG_tunnel_02_royal_garden.png-92a5bc7489a1fee0b22d877d122d16a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/station_FG_tunnel_02_royal_garden.png"
-dest_files=["res://.godot/imported/station_FG_tunnel_02_royal_garden.png-be6dc1ee70a07c4b06ea3792fb0cb537.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/station_FG_tunnel_02_royal_garden.png"
+dest_files=["res://.godot/imported/station_FG_tunnel_02_royal_garden.png-92a5bc7489a1fee0b22d877d122d16a9.ctex"]
 
 [params]
 

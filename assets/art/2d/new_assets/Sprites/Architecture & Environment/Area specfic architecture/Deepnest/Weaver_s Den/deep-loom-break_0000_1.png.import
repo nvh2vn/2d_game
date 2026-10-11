@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw50en284prtn"
-path="res://.godot/imported/deep-loom-break_0000_1.png-e0ca99d8db6905d65c64f8685add774c.ctex"
+path="res://.godot/imported/deep-loom-break_0000_1.png-4d2fb7429259dc42e01de4a34bec2800.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Weaver_s Den/deep-loom-break_0000_1.png"
-dest_files=["res://.godot/imported/deep-loom-break_0000_1.png-e0ca99d8db6905d65c64f8685add774c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Weaver_s Den/deep-loom-break_0000_1.png"
+dest_files=["res://.godot/imported/deep-loom-break_0000_1.png-4d2fb7429259dc42e01de4a34bec2800.ctex"]
 
 [params]
 

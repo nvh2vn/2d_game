@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c2qxu7h5gq4or"
-path="res://.godot/imported/Nightmare_Crowd_moan.wav-6f67f5c26e901a89659b25143aa9c3d3.sample"
+path="res://.godot/imported/Nightmare_Crowd_moan.wav-6144412e94dfe4bf900059c2a6f3f130.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/Nightmare_Crowd_moan.wav"
-dest_files=["res://.godot/imported/Nightmare_Crowd_moan.wav-6f67f5c26e901a89659b25143aa9c3d3.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Grimmkin/Nightmare_Crowd_moan.wav"
+dest_files=["res://.godot/imported/Nightmare_Crowd_moan.wav-6144412e94dfe4bf900059c2a6f3f130.sample"]
 
 [params]
 

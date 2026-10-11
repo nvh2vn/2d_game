@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dijk7f2lv4xo6"
-path="res://.godot/imported/Fluke_fly_attack_loop.wav-16506b50816dc10ffae99ada17d34721.sample"
+path="res://.godot/imported/Fluke_fly_attack_loop.wav-6854b0e374480ccc128746f2d56787c6.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukefey/Fluke_fly_attack_loop.wav"
-dest_files=["res://.godot/imported/Fluke_fly_attack_loop.wav-16506b50816dc10ffae99ada17d34721.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukefey/Fluke_fly_attack_loop.wav"
+dest_files=["res://.godot/imported/Fluke_fly_attack_loop.wav-6854b0e374480ccc128746f2d56787c6.sample"]
 
 [params]
 

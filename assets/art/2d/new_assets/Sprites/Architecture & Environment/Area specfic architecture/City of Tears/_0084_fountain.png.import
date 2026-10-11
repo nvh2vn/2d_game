@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hq516djufn5s"
-path="res://.godot/imported/_0084_fountain.png-e45c780d55bcfb3beaccbc5c89982cb4.ctex"
+path="res://.godot/imported/_0084_fountain.png-23bfcd600d6bbd70433433461c8b0e0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/_0084_fountain.png"
-dest_files=["res://.godot/imported/_0084_fountain.png-e45c780d55bcfb3beaccbc5c89982cb4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/_0084_fountain.png"
+dest_files=["res://.godot/imported/_0084_fountain.png-23bfcd600d6bbd70433433461c8b0e0d.ctex"]
 
 [params]
 

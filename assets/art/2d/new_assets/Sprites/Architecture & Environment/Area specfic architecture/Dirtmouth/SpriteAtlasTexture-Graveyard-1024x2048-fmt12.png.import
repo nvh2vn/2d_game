@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2wfwk31b84cr"
-path="res://.godot/imported/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png-e8cdb8d79d62263ccc4ecac618a9229c.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png-49c006f5d21c5829b92c7f8d4e216398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png-e8cdb8d79d62263ccc4ecac618a9229c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Graveyard-1024x2048-fmt12.png-49c006f5d21c5829b92c7f8d4e216398.ctex"]
 
 [params]
 

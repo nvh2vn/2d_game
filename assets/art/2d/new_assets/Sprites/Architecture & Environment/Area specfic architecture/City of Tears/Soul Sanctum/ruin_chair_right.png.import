@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byhavdsarw6d2"
-path="res://.godot/imported/ruin_chair_right.png-44ae35a5aaab1ed0555b9fa9f43ffcf9.ctex"
+path="res://.godot/imported/ruin_chair_right.png-f3d47e838505453ed95fa10d72234d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/ruin_chair_right.png"
-dest_files=["res://.godot/imported/ruin_chair_right.png-44ae35a5aaab1ed0555b9fa9f43ffcf9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/ruin_chair_right.png"
+dest_files=["res://.godot/imported/ruin_chair_right.png-f3d47e838505453ed95fa10d72234d01.ctex"]
 
 [params]
 

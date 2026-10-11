@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bicikm2epcbkg"
-path="res://.godot/imported/nailmaster_hut_01_0011_BG.png-2dab0b8ae22caf1aee99e24d330155cd.ctex"
+path="res://.godot/imported/nailmaster_hut_01_0011_BG.png-e6246bd6156612bf757c2d411a38b1b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/nailmaster_hut_01_0011_BG.png"
-dest_files=["res://.godot/imported/nailmaster_hut_01_0011_BG.png-2dab0b8ae22caf1aee99e24d330155cd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/nailmaster_hut_01_0011_BG.png"
+dest_files=["res://.godot/imported/nailmaster_hut_01_0011_BG.png-e6246bd6156612bf757c2d411a38b1b9.ctex"]
 
 [params]
 

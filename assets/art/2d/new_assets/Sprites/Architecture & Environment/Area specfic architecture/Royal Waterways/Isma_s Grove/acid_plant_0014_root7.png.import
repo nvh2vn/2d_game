@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6lvboabbkg5d"
-path="res://.godot/imported/acid_plant_0014_root7.png-f2ea304046e474212fac3664f5067972.ctex"
+path="res://.godot/imported/acid_plant_0014_root7.png-b5097eaae09ba036e628283960e41ab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Isma_s Grove/acid_plant_0014_root7.png"
-dest_files=["res://.godot/imported/acid_plant_0014_root7.png-f2ea304046e474212fac3664f5067972.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Isma_s Grove/acid_plant_0014_root7.png"
+dest_files=["res://.godot/imported/acid_plant_0014_root7.png-b5097eaae09ba036e628283960e41ab2.ctex"]
 
 [params]
 

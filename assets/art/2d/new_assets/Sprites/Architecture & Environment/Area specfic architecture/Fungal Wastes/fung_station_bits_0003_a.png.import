@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clgtxpd214cx1"
-path="res://.godot/imported/fung_station_bits_0003_a.png-d91eebfa0c3f9d1a3a5d2f6f5fb37c7c.ctex"
+path="res://.godot/imported/fung_station_bits_0003_a.png-3e8b6a5933707f357fd012c970c27df6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/fung_station_bits_0003_a.png"
-dest_files=["res://.godot/imported/fung_station_bits_0003_a.png-d91eebfa0c3f9d1a3a5d2f6f5fb37c7c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/fung_station_bits_0003_a.png"
+dest_files=["res://.godot/imported/fung_station_bits_0003_a.png-3e8b6a5933707f357fd012c970c27df6.ctex"]
 
 [params]
 

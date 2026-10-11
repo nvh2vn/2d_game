@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdi063sa1wqxn"
-path="res://.godot/imported/cocoon_base_01.png-4911726bb52f1634e624e29027555d90.ctex"
+path="res://.godot/imported/cocoon_base_01.png-409dacff0f78b4cb4fbdc4f68c388175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifeblood cocoon/cocoon_base_01.png"
-dest_files=["res://.godot/imported/cocoon_base_01.png-4911726bb52f1634e624e29027555d90.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifeblood cocoon/cocoon_base_01.png"
+dest_files=["res://.godot/imported/cocoon_base_01.png-409dacff0f78b4cb4fbdc4f68c388175.ctex"]
 
 [params]
 

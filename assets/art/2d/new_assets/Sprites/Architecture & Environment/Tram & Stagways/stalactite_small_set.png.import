@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8arep1tnc7mq"
-path="res://.godot/imported/stalactite_small_set.png-3a106970891ee6b3efc6671c3556ac2c.ctex"
+path="res://.godot/imported/stalactite_small_set.png-64cad715c9c0b62ac07d58d1472d3d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/stalactite_small_set.png"
-dest_files=["res://.godot/imported/stalactite_small_set.png-3a106970891ee6b3efc6671c3556ac2c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/stalactite_small_set.png"
+dest_files=["res://.godot/imported/stalactite_small_set.png-64cad715c9c0b62ac07d58d1472d3d01.ctex"]
 
 [params]
 

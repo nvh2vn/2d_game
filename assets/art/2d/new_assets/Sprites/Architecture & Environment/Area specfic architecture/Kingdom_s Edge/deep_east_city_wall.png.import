@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc6lx4pf1k144"
-path="res://.godot/imported/deep_east_city_wall.png-8f82d0669313771ce5bd57ce81a590c4.ctex"
+path="res://.godot/imported/deep_east_city_wall.png-02da7de45a20d480a6822e8e39ad8c51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/deep_east_city_wall.png"
-dest_files=["res://.godot/imported/deep_east_city_wall.png-8f82d0669313771ce5bd57ce81a590c4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/deep_east_city_wall.png"
+dest_files=["res://.godot/imported/deep_east_city_wall.png-02da7de45a20d480a6822e8e39ad8c51.ctex"]
 
 [params]
 

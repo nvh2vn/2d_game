@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df1n57alp20yf"
-path="res://.godot/imported/Heart_Piece_01.png-7a1c3dae97d958d418618b66972d6d70.ctex"
+path="res://.godot/imported/Heart_Piece_01.png-2a5282a4b2d4ad410fbc0c16e770a6cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/Heart_Piece_01.png"
-dest_files=["res://.godot/imported/Heart_Piece_01.png-7a1c3dae97d958d418618b66972d6d70.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/Heart_Piece_01.png"
+dest_files=["res://.godot/imported/Heart_Piece_01.png-2a5282a4b2d4ad410fbc0c16e770a6cc.ctex"]
 
 [params]
 

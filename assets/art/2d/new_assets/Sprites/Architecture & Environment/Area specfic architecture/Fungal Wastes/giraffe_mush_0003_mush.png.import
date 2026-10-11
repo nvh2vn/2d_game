@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb13ahx6rkyta"
-path="res://.godot/imported/giraffe_mush_0003_mush.png-25cda5307518295dd5278294718ec5f5.ctex"
+path="res://.godot/imported/giraffe_mush_0003_mush.png-8820e0c11efa89ecc9bb9b3e33025d18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/giraffe_mush_0003_mush.png"
-dest_files=["res://.godot/imported/giraffe_mush_0003_mush.png-25cda5307518295dd5278294718ec5f5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/giraffe_mush_0003_mush.png"
+dest_files=["res://.godot/imported/giraffe_mush_0003_mush.png-8820e0c11efa89ecc9bb9b3e33025d18.ctex"]
 
 [params]
 

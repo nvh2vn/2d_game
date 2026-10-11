@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8jfo2ubj6amw"
-path="res://.godot/imported/hunter_scenery_0000_a.png-f9328ce6a6046043e819cdd7b0ae7f4e.ctex"
+path="res://.godot/imported/hunter_scenery_0000_a.png-f374ba7b5f12f38de8ff52c051fc86a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/hunter_scenery_0000_a.png"
-dest_files=["res://.godot/imported/hunter_scenery_0000_a.png-f9328ce6a6046043e819cdd7b0ae7f4e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/hunter_scenery_0000_a.png"
+dest_files=["res://.godot/imported/hunter_scenery_0000_a.png-f374ba7b5f12f38de8ff52c051fc86a9.ctex"]
 
 [params]
 

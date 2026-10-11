@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvi8qyb2aioox"
-path="res://.godot/imported/stagdoor_0006_Color-Balance-1-copy-18.png-d39b73043a724a68905e77be4ce69cd3.ctex"
+path="res://.godot/imported/stagdoor_0006_Color-Balance-1-copy-18.png-643cd599f6b80ae8fc0be48369c89a9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/stagdoor_0006_Color-Balance-1-copy-18.png"
-dest_files=["res://.godot/imported/stagdoor_0006_Color-Balance-1-copy-18.png-d39b73043a724a68905e77be4ce69cd3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/stagdoor_0006_Color-Balance-1-copy-18.png"
+dest_files=["res://.godot/imported/stagdoor_0006_Color-Balance-1-copy-18.png-643cd599f6b80ae8fc0be48369c89a9b.ctex"]
 
 [params]
 

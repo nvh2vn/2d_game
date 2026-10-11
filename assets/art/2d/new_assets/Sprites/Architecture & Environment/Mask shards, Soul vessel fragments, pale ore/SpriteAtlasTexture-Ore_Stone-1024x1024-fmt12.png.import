@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cog4gjwq7p5u0"
-path="res://.godot/imported/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png-09ad1ae77c1764d6664d3ded74f4e698.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png-b2d622e45ebbba3f481e09f25e7d3695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png-09ad1ae77c1764d6664d3ded74f4e698.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Ore_Stone-1024x1024-fmt12.png-b2d622e45ebbba3f481e09f25e7d3695.ctex"]
 
 [params]
 

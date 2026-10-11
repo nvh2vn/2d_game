@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s5cdeyj8r5xm"
-path="res://.godot/imported/zote_lamp.png-8b2b970dc49c6277ac990591a8f0b691.ctex"
+path="res://.godot/imported/zote_lamp.png-dba4702bdffd43a1ce31930a989fc36f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/zote_lamp.png"
-dest_files=["res://.godot/imported/zote_lamp.png-8b2b970dc49c6277ac990591a8f0b691.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/zote_lamp.png"
+dest_files=["res://.godot/imported/zote_lamp.png-dba4702bdffd43a1ce31930a989fc36f.ctex"]
 
 [params]
 

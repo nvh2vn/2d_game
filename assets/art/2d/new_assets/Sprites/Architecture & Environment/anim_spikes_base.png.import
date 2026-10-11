@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cchbxn8phk52r"
-path="res://.godot/imported/anim_spikes_base.png-90486a50c1955223394592ecdaa9d868.ctex"
+path="res://.godot/imported/anim_spikes_base.png-6e6c3751fae1e6d8f5d3657b4d132cab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/anim_spikes_base.png"
-dest_files=["res://.godot/imported/anim_spikes_base.png-90486a50c1955223394592ecdaa9d868.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/anim_spikes_base.png"
+dest_files=["res://.godot/imported/anim_spikes_base.png-6e6c3751fae1e6d8f5d3657b4d132cab.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqowtkv7evmb5"
-path="res://.godot/imported/atlas0 #392010.png-dec2f6c13f6fece9f75e417f94393403.ctex"
+path="res://.godot/imported/atlas0 #392010.png-0f701f4493e4c704e097680206b6ad62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/atlas0 #392010.png"
-dest_files=["res://.godot/imported/atlas0 #392010.png-dec2f6c13f6fece9f75e417f94393403.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/atlas0 #392010.png"
+dest_files=["res://.godot/imported/atlas0 #392010.png-0f701f4493e4c704e097680206b6ad62.ctex"]
 
 [params]
 

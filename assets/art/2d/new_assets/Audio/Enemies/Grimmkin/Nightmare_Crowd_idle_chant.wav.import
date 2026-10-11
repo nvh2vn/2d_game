@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dqoemw2xfrioo"
-path="res://.godot/imported/Nightmare_Crowd_idle_chant.wav-858041ac841131a3855d89c114fee5b3.sample"
+path="res://.godot/imported/Nightmare_Crowd_idle_chant.wav-0cbfcad5dc3399ec3f98f4aaf46bd66d.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/Nightmare_Crowd_idle_chant.wav"
-dest_files=["res://.godot/imported/Nightmare_Crowd_idle_chant.wav-858041ac841131a3855d89c114fee5b3.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Grimmkin/Nightmare_Crowd_idle_chant.wav"
+dest_files=["res://.godot/imported/Nightmare_Crowd_idle_chant.wav-0cbfcad5dc3399ec3f98f4aaf46bd66d.sample"]
 
 [params]
 

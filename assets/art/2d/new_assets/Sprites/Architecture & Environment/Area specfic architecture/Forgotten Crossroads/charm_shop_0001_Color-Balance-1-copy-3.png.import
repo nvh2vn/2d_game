@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://l776xceyp1ku"
-path="res://.godot/imported/charm_shop_0001_Color-Balance-1-copy-3.png-5b7aca6ae6acfe9daf95d8c4a849bc1b.ctex"
+path="res://.godot/imported/charm_shop_0001_Color-Balance-1-copy-3.png-b8a1bed794427770ed3fe714476b8c0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/charm_shop_0001_Color-Balance-1-copy-3.png"
-dest_files=["res://.godot/imported/charm_shop_0001_Color-Balance-1-copy-3.png-5b7aca6ae6acfe9daf95d8c4a849bc1b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/charm_shop_0001_Color-Balance-1-copy-3.png"
+dest_files=["res://.godot/imported/charm_shop_0001_Color-Balance-1-copy-3.png-b8a1bed794427770ed3fe714476b8c0e.ctex"]
 
 [params]
 

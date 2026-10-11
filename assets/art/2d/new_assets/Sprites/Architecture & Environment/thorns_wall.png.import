@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d525tpp1h2ts"
-path="res://.godot/imported/thorns_wall.png-dc7d3e2033afbc8a9741ec275176cecc.ctex"
+path="res://.godot/imported/thorns_wall.png-72ad1f5d767664549491db928105f6d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/thorns_wall.png"
-dest_files=["res://.godot/imported/thorns_wall.png-dc7d3e2033afbc8a9741ec275176cecc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/thorns_wall.png"
+dest_files=["res://.godot/imported/thorns_wall.png-72ad1f5d767664549491db928105f6d1.ctex"]
 
 [params]
 

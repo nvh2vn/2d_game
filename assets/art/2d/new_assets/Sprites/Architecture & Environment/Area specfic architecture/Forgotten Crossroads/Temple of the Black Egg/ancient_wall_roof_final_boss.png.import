@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bito4jialo5d0"
-path="res://.godot/imported/ancient_wall_roof_final_boss.png-d5bf6cdaf9608854c60d8bbb20509096.ctex"
+path="res://.godot/imported/ancient_wall_roof_final_boss.png-52c754a7b39a177356c37489c0d7d5dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/ancient_wall_roof_final_boss.png"
-dest_files=["res://.godot/imported/ancient_wall_roof_final_boss.png-d5bf6cdaf9608854c60d8bbb20509096.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/ancient_wall_roof_final_boss.png"
+dest_files=["res://.godot/imported/ancient_wall_roof_final_boss.png-52c754a7b39a177356c37489c0d7d5dd.ctex"]
 
 [params]
 

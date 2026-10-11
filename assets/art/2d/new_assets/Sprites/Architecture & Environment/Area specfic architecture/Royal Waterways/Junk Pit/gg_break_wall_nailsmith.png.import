@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gfumke2dc7aj"
-path="res://.godot/imported/gg_break_wall_nailsmith.png-a5d7b293c750e378a658e10d3bf0e0d7.ctex"
+path="res://.godot/imported/gg_break_wall_nailsmith.png-d8931b88cca103f3f5db0588b6adf6fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_break_wall_nailsmith.png"
-dest_files=["res://.godot/imported/gg_break_wall_nailsmith.png-a5d7b293c750e378a658e10d3bf0e0d7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_break_wall_nailsmith.png"
+dest_files=["res://.godot/imported/gg_break_wall_nailsmith.png-d8931b88cca103f3f5db0588b6adf6fd.ctex"]
 
 [params]
 

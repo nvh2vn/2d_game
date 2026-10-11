@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du2ck70iwtrvk"
-path="res://.godot/imported/fung_mask_02.png-6325908b24193b282bd0c3250a68b3a4.ctex"
+path="res://.godot/imported/fung_mask_02.png-eb5cfc000febe7cd54055f305e223448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/fung_mask_02.png"
-dest_files=["res://.godot/imported/fung_mask_02.png-6325908b24193b282bd0c3250a68b3a4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/fung_mask_02.png"
+dest_files=["res://.godot/imported/fung_mask_02.png-eb5cfc000febe7cd54055f305e223448.ctex"]
 
 [params]
 

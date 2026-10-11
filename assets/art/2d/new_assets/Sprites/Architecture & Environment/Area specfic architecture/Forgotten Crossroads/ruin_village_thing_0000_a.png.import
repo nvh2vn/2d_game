@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvwycijyd6ef"
-path="res://.godot/imported/ruin_village_thing_0000_a.png-bdc2b8fb0be7f50c640a8aae2cb5ca87.ctex"
+path="res://.godot/imported/ruin_village_thing_0000_a.png-605332e580803ee832d9676a0d2c5ec7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/ruin_village_thing_0000_a.png"
-dest_files=["res://.godot/imported/ruin_village_thing_0000_a.png-bdc2b8fb0be7f50c640a8aae2cb5ca87.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/ruin_village_thing_0000_a.png"
+dest_files=["res://.godot/imported/ruin_village_thing_0000_a.png-605332e580803ee832d9676a0d2c5ec7.ctex"]
 
 [params]
 

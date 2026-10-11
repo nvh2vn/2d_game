@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pcxoianl2qa2"
-path="res://.godot/imported/nailmaster_hut_01_0007_roof_01.png-2d387cdd9a8c823138b441949961131e.ctex"
+path="res://.godot/imported/nailmaster_hut_01_0007_roof_01.png-735207d88231822ad2ebc499db182790.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/nailmaster_hut_01_0007_roof_01.png"
-dest_files=["res://.godot/imported/nailmaster_hut_01_0007_roof_01.png-2d387cdd9a8c823138b441949961131e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/nailmaster_hut_01_0007_roof_01.png"
+dest_files=["res://.godot/imported/nailmaster_hut_01_0007_roof_01.png-735207d88231822ad2ebc499db182790.ctex"]
 
 [params]
 

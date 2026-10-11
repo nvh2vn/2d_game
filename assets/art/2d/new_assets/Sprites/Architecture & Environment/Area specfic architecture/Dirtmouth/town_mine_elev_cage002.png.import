@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgibywwb5lwo1"
-path="res://.godot/imported/town_mine_elev_cage002.png-7abe09e6031ed3d6aeb1a39dff715678.ctex"
+path="res://.godot/imported/town_mine_elev_cage002.png-623c40becb87db3728041c78282d53f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/town_mine_elev_cage002.png"
-dest_files=["res://.godot/imported/town_mine_elev_cage002.png-7abe09e6031ed3d6aeb1a39dff715678.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/town_mine_elev_cage002.png"
+dest_files=["res://.godot/imported/town_mine_elev_cage002.png-623c40becb87db3728041c78282d53f9.ctex"]
 
 [params]
 

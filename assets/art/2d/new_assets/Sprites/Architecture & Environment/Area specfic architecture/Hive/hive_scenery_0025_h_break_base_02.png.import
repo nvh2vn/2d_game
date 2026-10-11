@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn02ihudmucb6"
-path="res://.godot/imported/hive_scenery_0025_h_break_base_02.png-012cdb82716c889b616f5007d22c0e48.ctex"
+path="res://.godot/imported/hive_scenery_0025_h_break_base_02.png-1ded0e7df804939d898d2f318ab5b0a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/hive_scenery_0025_h_break_base_02.png"
-dest_files=["res://.godot/imported/hive_scenery_0025_h_break_base_02.png-012cdb82716c889b616f5007d22c0e48.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/hive_scenery_0025_h_break_base_02.png"
+dest_files=["res://.godot/imported/hive_scenery_0025_h_break_base_02.png-1ded0e7df804939d898d2f318ab5b0a8.ctex"]
 
 [params]
 

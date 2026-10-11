@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdpbqlkj0okjb"
-path="res://.godot/imported/hot_spring_layers_0040_Layer-7.png-a2de15a42e57e3f84eeb4baa6939c4eb.ctex"
+path="res://.godot/imported/hot_spring_layers_0040_Layer-7.png-f5171e2cfc1cfd95628791590f6d88a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Hot Spring/hot_spring_layers_0040_Layer-7.png"
-dest_files=["res://.godot/imported/hot_spring_layers_0040_Layer-7.png-a2de15a42e57e3f84eeb4baa6939c4eb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Hot Spring/hot_spring_layers_0040_Layer-7.png"
+dest_files=["res://.godot/imported/hot_spring_layers_0040_Layer-7.png-f5171e2cfc1cfd95628791590f6d88a9.ctex"]
 
 [params]
 

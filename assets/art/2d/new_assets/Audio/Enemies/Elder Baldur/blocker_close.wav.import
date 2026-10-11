@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3w487wecgp0e"
-path="res://.godot/imported/blocker_close.wav-31be5481cf1063f2c3d90684c2ad9e8b.sample"
+path="res://.godot/imported/blocker_close.wav-8a424614d84ae73b0b1998f1816af908.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Elder Baldur/blocker_close.wav"
-dest_files=["res://.godot/imported/blocker_close.wav-31be5481cf1063f2c3d90684c2ad9e8b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Elder Baldur/blocker_close.wav"
+dest_files=["res://.godot/imported/blocker_close.wav-8a424614d84ae73b0b1998f1816af908.sample"]
 
 [params]
 

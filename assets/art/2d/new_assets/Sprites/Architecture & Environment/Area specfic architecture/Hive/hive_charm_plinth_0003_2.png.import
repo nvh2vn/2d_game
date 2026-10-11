@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh1sctfjwk8ni"
-path="res://.godot/imported/hive_charm_plinth_0003_2.png-a916d735f954073990e9d6246a5839b7.ctex"
+path="res://.godot/imported/hive_charm_plinth_0003_2.png-3976eead5bee7bb48c3dec2f4b853811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/hive_charm_plinth_0003_2.png"
-dest_files=["res://.godot/imported/hive_charm_plinth_0003_2.png-a916d735f954073990e9d6246a5839b7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/hive_charm_plinth_0003_2.png"
+dest_files=["res://.godot/imported/hive_charm_plinth_0003_2.png-3976eead5bee7bb48c3dec2f4b853811.ctex"]
 
 [params]
 

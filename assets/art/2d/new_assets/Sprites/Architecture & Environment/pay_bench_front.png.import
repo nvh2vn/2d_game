@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq3oosjh6wuf3"
-path="res://.godot/imported/pay_bench_front.png-41d65496a3ec38af4ccb2e7b3296d1a8.ctex"
+path="res://.godot/imported/pay_bench_front.png-76f671d1b53cef83e747bc174b5b6337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/pay_bench_front.png"
-dest_files=["res://.godot/imported/pay_bench_front.png-41d65496a3ec38af4ccb2e7b3296d1a8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/pay_bench_front.png"
+dest_files=["res://.godot/imported/pay_bench_front.png-76f671d1b53cef83e747bc174b5b6337.ctex"]
 
 [params]
 

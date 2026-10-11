@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvxl6v5pxtatq"
-path="res://.godot/imported/ash_grass1004.png-f3ade94ea8b732e3adbf690ba0f27f3d.ctex"
+path="res://.godot/imported/ash_grass1004.png-118ea6d50a9437aa1dc800d29522cd6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/ash_grass1004.png"
-dest_files=["res://.godot/imported/ash_grass1004.png-f3ade94ea8b732e3adbf690ba0f27f3d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/ash_grass1004.png"
+dest_files=["res://.godot/imported/ash_grass1004.png-118ea6d50a9437aa1dc800d29522cd6e.ctex"]
 
 [params]
 

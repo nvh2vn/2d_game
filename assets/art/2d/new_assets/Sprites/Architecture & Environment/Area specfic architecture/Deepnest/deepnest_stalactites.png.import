@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://benyd11bdob4u"
-path="res://.godot/imported/deepnest_stalactites.png-fdd07247878627922a6e4fa052786330.ctex"
+path="res://.godot/imported/deepnest_stalactites.png-3b215dec4a0655e635c629aa257ba2ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_stalactites.png"
-dest_files=["res://.godot/imported/deepnest_stalactites.png-fdd07247878627922a6e4fa052786330.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_stalactites.png"
+dest_files=["res://.godot/imported/deepnest_stalactites.png-3b215dec4a0655e635c629aa257ba2ab.ctex"]
 
 [params]
 

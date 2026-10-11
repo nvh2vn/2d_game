@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chvckunpdmf75"
-path="res://.godot/imported/elev_window.png-78e068032a931200d0a854103d7f01b4.ctex"
+path="res://.godot/imported/elev_window.png-49437caa02abee0aaca129cd7668ff30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifts/elev_window.png"
-dest_files=["res://.godot/imported/elev_window.png-78e068032a931200d0a854103d7f01b4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifts/elev_window.png"
+dest_files=["res://.godot/imported/elev_window.png-49437caa02abee0aaca129cd7668ff30.ctex"]
 
 [params]
 

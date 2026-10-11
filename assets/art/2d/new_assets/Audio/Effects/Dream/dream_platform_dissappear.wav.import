@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cvhbx1nnip8aq"
-path="res://.godot/imported/dream_platform_dissappear.wav-61c22fc825085eab3d62379e87b44136.sample"
+path="res://.godot/imported/dream_platform_dissappear.wav-1e3ea4b283b460bbc5d04c7fec259205.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_platform_dissappear.wav"
-dest_files=["res://.godot/imported/dream_platform_dissappear.wav-61c22fc825085eab3d62379e87b44136.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Dream/dream_platform_dissappear.wav"
+dest_files=["res://.godot/imported/dream_platform_dissappear.wav-1e3ea4b283b460bbc5d04c7fec259205.sample"]
 
 [params]
 

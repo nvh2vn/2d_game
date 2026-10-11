@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn4ocscjehwnx"
-path="res://.godot/imported/hive_charm_spikes_0001_3.png-1eafd5153dcc24a154f5924960b432f9.ctex"
+path="res://.godot/imported/hive_charm_spikes_0001_3.png-195a3511da10cbf7b6c954f3115e736a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/hive_charm_spikes_0001_3.png"
-dest_files=["res://.godot/imported/hive_charm_spikes_0001_3.png-1eafd5153dcc24a154f5924960b432f9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/hive_charm_spikes_0001_3.png"
+dest_files=["res://.godot/imported/hive_charm_spikes_0001_3.png-195a3511da10cbf7b6c954f3115e736a.ctex"]
 
 [params]
 

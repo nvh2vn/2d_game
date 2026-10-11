@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctcogaamywrp4"
-path="res://.godot/imported/elev_chain.png-ff0778886c046f29ddb82f76151b3ba8.ctex"
+path="res://.godot/imported/elev_chain.png-18a3e66093737cd0af5798634bc7ee9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifts/elev_chain.png"
-dest_files=["res://.godot/imported/elev_chain.png-ff0778886c046f29ddb82f76151b3ba8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifts/elev_chain.png"
+dest_files=["res://.godot/imported/elev_chain.png-18a3e66093737cd0af5798634bc7ee9a.ctex"]
 
 [params]
 

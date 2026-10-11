@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7ivsv4yynmtf"
-path="res://.godot/imported/_0011_wish1_door_outside2.png-4abaa437a925b8d59fd6929d1615d817.ctex"
+path="res://.godot/imported/_0011_wish1_door_outside2.png-88fe7010557ab2049049ca8c4612d049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/_0011_wish1_door_outside2.png"
-dest_files=["res://.godot/imported/_0011_wish1_door_outside2.png-4abaa437a925b8d59fd6929d1615d817.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/_0011_wish1_door_outside2.png"
+dest_files=["res://.godot/imported/_0011_wish1_door_outside2.png-88fe7010557ab2049049ca8c4612d049.ctex"]
 
 [params]
 

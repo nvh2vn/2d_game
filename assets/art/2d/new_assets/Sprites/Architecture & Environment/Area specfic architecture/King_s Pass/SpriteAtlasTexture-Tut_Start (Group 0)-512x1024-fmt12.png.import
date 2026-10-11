@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byjffti5qyx0m"
-path="res://.godot/imported/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png-4612b30f62f7a2ebaf93cd33b55c9746.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png-cf509c0673574914fc1099537ce433d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png-4612b30f62f7a2ebaf93cd33b55c9746.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Tut_Start (Group 0)-512x1024-fmt12.png-cf509c0673574914fc1099537ce433d5.ctex"]
 
 [params]
 

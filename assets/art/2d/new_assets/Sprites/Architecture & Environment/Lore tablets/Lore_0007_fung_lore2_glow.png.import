@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://opg0vxe4ecw6"
-path="res://.godot/imported/Lore_0007_fung_lore2_glow.png-b8eccd131f5f81ab5b2218bd3664003d.ctex"
+path="res://.godot/imported/Lore_0007_fung_lore2_glow.png-e5590b2d3ce57d213427fcc2df21d298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/Lore_0007_fung_lore2_glow.png"
-dest_files=["res://.godot/imported/Lore_0007_fung_lore2_glow.png-b8eccd131f5f81ab5b2218bd3664003d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/Lore_0007_fung_lore2_glow.png"
+dest_files=["res://.godot/imported/Lore_0007_fung_lore2_glow.png-e5590b2d3ce57d213427fcc2df21d298.ctex"]
 
 [params]
 

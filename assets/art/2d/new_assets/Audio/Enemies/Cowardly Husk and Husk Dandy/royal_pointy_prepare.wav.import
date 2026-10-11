@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0uvdvw070385"
-path="res://.godot/imported/royal_pointy_prepare.wav-f8c5ff28bb6e3d18889b4b06a599f5ca.sample"
+path="res://.godot/imported/royal_pointy_prepare.wav-ed05544ef3fac6e4654ea057de05a280.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Cowardly Husk and Husk Dandy/royal_pointy_prepare.wav"
-dest_files=["res://.godot/imported/royal_pointy_prepare.wav-f8c5ff28bb6e3d18889b4b06a599f5ca.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Cowardly Husk and Husk Dandy/royal_pointy_prepare.wav"
+dest_files=["res://.godot/imported/royal_pointy_prepare.wav-ed05544ef3fac6e4654ea057de05a280.sample"]
 
 [params]
 

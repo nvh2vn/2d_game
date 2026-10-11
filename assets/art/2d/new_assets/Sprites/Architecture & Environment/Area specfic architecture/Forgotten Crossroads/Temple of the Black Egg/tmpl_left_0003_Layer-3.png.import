@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6ctdhts4nj5k"
-path="res://.godot/imported/tmpl_left_0003_Layer-3.png-84a1a5d2bc5e057845fd23b9b6dde7ff.ctex"
+path="res://.godot/imported/tmpl_left_0003_Layer-3.png-c12d6f1e2356de662e9153104b8adbf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/tmpl_left_0003_Layer-3.png"
-dest_files=["res://.godot/imported/tmpl_left_0003_Layer-3.png-84a1a5d2bc5e057845fd23b9b6dde7ff.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/tmpl_left_0003_Layer-3.png"
+dest_files=["res://.godot/imported/tmpl_left_0003_Layer-3.png-c12d6f1e2356de662e9153104b8adbf0.ctex"]
 
 [params]
 

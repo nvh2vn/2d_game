@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnnkjljd1vjxb"
-path="res://.godot/imported/cliffs_pole.png-16a665b93c20a03f90562dc2288f78dc.ctex"
+path="res://.godot/imported/cliffs_pole.png-ba59f49c1772a73d6264305701ae2583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/cliffs_pole.png"
-dest_files=["res://.godot/imported/cliffs_pole.png-16a665b93c20a03f90562dc2288f78dc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/cliffs_pole.png"
+dest_files=["res://.godot/imported/cliffs_pole.png-ba59f49c1772a73d6264305701ae2583.ctex"]
 
 [params]
 

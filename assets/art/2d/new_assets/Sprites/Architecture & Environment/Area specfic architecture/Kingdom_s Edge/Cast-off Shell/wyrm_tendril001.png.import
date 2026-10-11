@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bed5jjsepgopt"
-path="res://.godot/imported/wyrm_tendril001.png-9ae30f942a191a8687802f562f9620ca.ctex"
+path="res://.godot/imported/wyrm_tendril001.png-8079c7b50cd535d710390bd2f2a8d479.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/wyrm_tendril001.png"
-dest_files=["res://.godot/imported/wyrm_tendril001.png-9ae30f942a191a8687802f562f9620ca.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/wyrm_tendril001.png"
+dest_files=["res://.godot/imported/wyrm_tendril001.png-8079c7b50cd535d710390bd2f2a8d479.ctex"]
 
 [params]
 

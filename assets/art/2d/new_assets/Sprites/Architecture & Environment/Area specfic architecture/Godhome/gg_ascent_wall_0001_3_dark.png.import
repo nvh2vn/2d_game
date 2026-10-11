@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://40or7op6ed0f"
-path="res://.godot/imported/gg_ascent_wall_0001_3_dark.png-d911753fb6d5bfea928369232ee0c5ac.ctex"
+path="res://.godot/imported/gg_ascent_wall_0001_3_dark.png-699197d81bb993f1640cc4a05bcdd3db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_ascent_wall_0001_3_dark.png"
-dest_files=["res://.godot/imported/gg_ascent_wall_0001_3_dark.png-d911753fb6d5bfea928369232ee0c5ac.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_ascent_wall_0001_3_dark.png"
+dest_files=["res://.godot/imported/gg_ascent_wall_0001_3_dark.png-699197d81bb993f1640cc4a05bcdd3db.ctex"]
 
 [params]
 

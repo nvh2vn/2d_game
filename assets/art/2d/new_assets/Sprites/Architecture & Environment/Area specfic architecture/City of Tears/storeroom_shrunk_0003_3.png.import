@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsdlvr8e8wlno"
-path="res://.godot/imported/storeroom_shrunk_0003_3.png-c0533539612e91117038c1dc768305d6.ctex"
+path="res://.godot/imported/storeroom_shrunk_0003_3.png-5cf090befd81e6c2469c4d15cf2e26a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/storeroom_shrunk_0003_3.png"
-dest_files=["res://.godot/imported/storeroom_shrunk_0003_3.png-c0533539612e91117038c1dc768305d6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/storeroom_shrunk_0003_3.png"
+dest_files=["res://.godot/imported/storeroom_shrunk_0003_3.png-5cf090befd81e6c2469c4d15cf2e26a8.ctex"]
 
 [params]
 

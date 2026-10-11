@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8jwa3dmjntga"
-path="res://.godot/imported/acid_waterfall10003.png-3d57be87cc250519ce959b5f2c39db42.ctex"
+path="res://.godot/imported/acid_waterfall10003.png-0d2641292253d8b48c71975894ee5fd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Waterfalls/acid_waterfall10003.png"
-dest_files=["res://.godot/imported/acid_waterfall10003.png-3d57be87cc250519ce959b5f2c39db42.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Waterfalls/acid_waterfall10003.png"
+dest_files=["res://.godot/imported/acid_waterfall10003.png-0d2641292253d8b48c71975894ee5fd8.ctex"]
 
 [params]
 

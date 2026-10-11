@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ja0akh37wppq"
-path="res://.godot/imported/Radiance_ui_unlock.wav-e6744e04edde89026eced4307dfca850.sample"
+path="res://.godot/imported/Radiance_ui_unlock.wav-65e459099fd3a19e5cb035de7b480ebf.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/UI/Radiance_ui_unlock.wav"
-dest_files=["res://.godot/imported/Radiance_ui_unlock.wav-e6744e04edde89026eced4307dfca850.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/UI/Radiance_ui_unlock.wav"
+dest_files=["res://.godot/imported/Radiance_ui_unlock.wav-65e459099fd3a19e5cb035de7b480ebf.sample"]
 
 [params]
 

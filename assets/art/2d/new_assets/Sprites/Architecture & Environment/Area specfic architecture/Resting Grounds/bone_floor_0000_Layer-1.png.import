@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnipx514cdfut"
-path="res://.godot/imported/bone_floor_0000_Layer-1.png-c1078d7017bd8db2b895e27110827266.ctex"
+path="res://.godot/imported/bone_floor_0000_Layer-1.png-05935b6e92ecfa73ac013f3937be1498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/bone_floor_0000_Layer-1.png"
-dest_files=["res://.godot/imported/bone_floor_0000_Layer-1.png-c1078d7017bd8db2b895e27110827266.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/bone_floor_0000_Layer-1.png"
+dest_files=["res://.godot/imported/bone_floor_0000_Layer-1.png-05935b6e92ecfa73ac013f3937be1498.ctex"]
 
 [params]
 

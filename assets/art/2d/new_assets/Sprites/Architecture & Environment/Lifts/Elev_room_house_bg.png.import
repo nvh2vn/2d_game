@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv8r72bpvhtut"
-path="res://.godot/imported/Elev_room_house_bg.png-6676c1b381236a25e592b59dfc136138.ctex"
+path="res://.godot/imported/Elev_room_house_bg.png-409185267ae3f3dac490c98a494e0b87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifts/Elev_room_house_bg.png"
-dest_files=["res://.godot/imported/Elev_room_house_bg.png-6676c1b381236a25e592b59dfc136138.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifts/Elev_room_house_bg.png"
+dest_files=["res://.godot/imported/Elev_room_house_bg.png-409185267ae3f3dac490c98a494e0b87.ctex"]
 
 [params]
 

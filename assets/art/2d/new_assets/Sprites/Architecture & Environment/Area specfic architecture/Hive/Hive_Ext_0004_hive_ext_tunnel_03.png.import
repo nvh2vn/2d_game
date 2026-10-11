@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mtvh43xfl3ch"
-path="res://.godot/imported/Hive_Ext_0004_hive_ext_tunnel_03.png-aa88c38667181b6f72a74967d662bef8.ctex"
+path="res://.godot/imported/Hive_Ext_0004_hive_ext_tunnel_03.png-ab790a44c9fce78b3f18a512ad315103.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/Hive_Ext_0004_hive_ext_tunnel_03.png"
-dest_files=["res://.godot/imported/Hive_Ext_0004_hive_ext_tunnel_03.png-aa88c38667181b6f72a74967d662bef8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/Hive_Ext_0004_hive_ext_tunnel_03.png"
+dest_files=["res://.godot/imported/Hive_Ext_0004_hive_ext_tunnel_03.png-ab790a44c9fce78b3f18a512ad315103.ctex"]
 
 [params]
 

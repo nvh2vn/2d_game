@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvrykoxixx548"
-path="res://.godot/imported/gg_nailmaster_flower.png-e1def3a72b81d454977591ed11226b12.ctex"
+path="res://.godot/imported/gg_nailmaster_flower.png-4ca03560569ab8e9a8defffc13d39720.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/gg_nailmaster_flower.png"
-dest_files=["res://.godot/imported/gg_nailmaster_flower.png-e1def3a72b81d454977591ed11226b12.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/gg_nailmaster_flower.png"
+dest_files=["res://.godot/imported/gg_nailmaster_flower.png-4ca03560569ab8e9a8defffc13d39720.ctex"]
 
 [params]
 

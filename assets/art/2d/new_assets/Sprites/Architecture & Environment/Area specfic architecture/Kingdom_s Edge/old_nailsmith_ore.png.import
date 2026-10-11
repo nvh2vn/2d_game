@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx76a4wnggcmk"
-path="res://.godot/imported/old_nailsmith_ore.png-c087d1c2dfcf8c13a96b051e856336e8.ctex"
+path="res://.godot/imported/old_nailsmith_ore.png-54f10f9f8f8fee5cfd844d697572a524.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/old_nailsmith_ore.png"
-dest_files=["res://.godot/imported/old_nailsmith_ore.png-c087d1c2dfcf8c13a96b051e856336e8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/old_nailsmith_ore.png"
+dest_files=["res://.godot/imported/old_nailsmith_ore.png-54f10f9f8f8fee5cfd844d697572a524.ctex"]
 
 [params]
 

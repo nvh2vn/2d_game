@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://clodowu02k7g4"
-path="res://.godot/imported/ffluke_idle.wav-d34368dfe5c70714f83ac0b20b0ccdc1.sample"
+path="res://.godot/imported/ffluke_idle.wav-99c33aa4a4b98337b3cb9a56450534ea.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemon/ffluke_idle.wav"
-dest_files=["res://.godot/imported/ffluke_idle.wav-d34368dfe5c70714f83ac0b20b0ccdc1.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemon/ffluke_idle.wav"
+dest_files=["res://.godot/imported/ffluke_idle.wav-99c33aa4a4b98337b3cb9a56450534ea.sample"]
 
 [params]
 

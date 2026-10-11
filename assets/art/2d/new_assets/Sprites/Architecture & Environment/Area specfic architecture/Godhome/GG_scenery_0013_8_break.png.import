@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wscb3gm3a8er"
-path="res://.godot/imported/GG_scenery_0013_8_break.png-000590c9ee2a2582eef8f3b2a2b32503.ctex"
+path="res://.godot/imported/GG_scenery_0013_8_break.png-eca8337efd26d7b9fabe231ea6d2ba1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/GG_scenery_0013_8_break.png"
-dest_files=["res://.godot/imported/GG_scenery_0013_8_break.png-000590c9ee2a2582eef8f3b2a2b32503.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/GG_scenery_0013_8_break.png"
+dest_files=["res://.godot/imported/GG_scenery_0013_8_break.png-eca8337efd26d7b9fabe231ea6d2ba1b.ctex"]
 
 [params]
 

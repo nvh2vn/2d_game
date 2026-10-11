@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3xnj5t6dhjjf"
-path="res://.godot/imported/bath_house_0006_bath_stone_04.png-df78e51b5bc89ed68ce980c12afb12e8.ctex"
+path="res://.godot/imported/bath_house_0006_bath_stone_04.png-92dba6ccbdb0c3189af6e1c324036e56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/bath_house_0006_bath_stone_04.png"
-dest_files=["res://.godot/imported/bath_house_0006_bath_stone_04.png-df78e51b5bc89ed68ce980c12afb12e8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Pleasure House/bath_house_0006_bath_stone_04.png"
+dest_files=["res://.godot/imported/bath_house_0006_bath_stone_04.png-92dba6ccbdb0c3189af6e1c324036e56.ctex"]
 
 [params]
 

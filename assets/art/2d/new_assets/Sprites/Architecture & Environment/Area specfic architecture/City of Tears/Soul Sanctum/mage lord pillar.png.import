@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w814x3iec8cs"
-path="res://.godot/imported/mage lord pillar.png-6b40b1a401bc0953d96437c7d1cfd176.ctex"
+path="res://.godot/imported/mage lord pillar.png-0b011751c7643019973a5739609cfdbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage lord pillar.png"
-dest_files=["res://.godot/imported/mage lord pillar.png-6b40b1a401bc0953d96437c7d1cfd176.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage lord pillar.png"
+dest_files=["res://.godot/imported/mage lord pillar.png-0b011751c7643019973a5739609cfdbf.ctex"]
 
 [params]
 

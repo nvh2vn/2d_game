@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sk8ep3fl3evx"
-path="res://.godot/imported/col_sign_knight_marker.png-23854f792fb5b197b09fc8f8a4b67c39.ctex"
+path="res://.godot/imported/col_sign_knight_marker.png-d522080ad620dde490a323779bb2844e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/col_sign_knight_marker.png"
-dest_files=["res://.godot/imported/col_sign_knight_marker.png-23854f792fb5b197b09fc8f8a4b67c39.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/col_sign_knight_marker.png"
+dest_files=["res://.godot/imported/col_sign_knight_marker.png-d522080ad620dde490a323779bb2844e.ctex"]
 
 [params]
 

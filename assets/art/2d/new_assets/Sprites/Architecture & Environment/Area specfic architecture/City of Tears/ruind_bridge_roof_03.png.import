@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djt6et48ktmv1"
-path="res://.godot/imported/ruind_bridge_roof_03.png-e003f25217c262c5d1b52632a84bd8c4.ctex"
+path="res://.godot/imported/ruind_bridge_roof_03.png-c7f0b2f0c7d2f690521f972cdfc4981f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruind_bridge_roof_03.png"
-dest_files=["res://.godot/imported/ruind_bridge_roof_03.png-e003f25217c262c5d1b52632a84bd8c4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruind_bridge_roof_03.png"
+dest_files=["res://.godot/imported/ruind_bridge_roof_03.png-c7f0b2f0c7d2f690521f972cdfc4981f.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d2r2hp2tlttqr"
-path="res://.godot/imported/roller_hit_wall.wav-728c4b4b109e511083e117734db5fa03.sample"
+path="res://.godot/imported/roller_hit_wall.wav-127d54e72458b7dc557ec391f0002c5f.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Baldur/roller_hit_wall.wav"
-dest_files=["res://.godot/imported/roller_hit_wall.wav-728c4b4b109e511083e117734db5fa03.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Baldur/roller_hit_wall.wav"
+dest_files=["res://.godot/imported/roller_hit_wall.wav-127d54e72458b7dc557ec391f0002c5f.sample"]
 
 [params]
 

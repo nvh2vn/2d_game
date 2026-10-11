@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hgp3xu5hlmft"
-path="res://.godot/imported/mantis_lord_scenery_0006_a.png-f5281041c31f531e5b5dd242fbc00436.ctex"
+path="res://.godot/imported/mantis_lord_scenery_0006_a.png-d96f2be5d3f3a5fc1ba377aa27d4b39c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/Mantis Village/mantis_lord_scenery_0006_a.png"
-dest_files=["res://.godot/imported/mantis_lord_scenery_0006_a.png-f5281041c31f531e5b5dd242fbc00436.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/Mantis Village/mantis_lord_scenery_0006_a.png"
+dest_files=["res://.godot/imported/mantis_lord_scenery_0006_a.png-d96f2be5d3f3a5fc1ba377aa27d4b39c.ctex"]
 
 [params]
 

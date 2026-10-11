@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bbybujsa1vll5"
-path="res://.godot/imported/Flukeman_bottom_loop.wav-1b6c2997a9b37e8202e2a4228946280d.sample"
+path="res://.godot/imported/Flukeman_bottom_loop.wav-fdf67f664050f0817757abf866c40ee0.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemon/Flukeman_bottom_loop.wav"
-dest_files=["res://.godot/imported/Flukeman_bottom_loop.wav-1b6c2997a9b37e8202e2a4228946280d.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemon/Flukeman_bottom_loop.wav"
+dest_files=["res://.godot/imported/Flukeman_bottom_loop.wav-fdf67f664050f0817757abf866c40ee0.sample"]
 
 [params]
 

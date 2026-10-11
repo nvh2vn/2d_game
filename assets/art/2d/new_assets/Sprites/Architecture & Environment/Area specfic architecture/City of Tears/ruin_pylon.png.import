@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpaaukkgbqsl8"
-path="res://.godot/imported/ruin_pylon.png-3963d247e326435832bdd24c7186863d.ctex"
+path="res://.godot/imported/ruin_pylon.png-1af5664d038bc8a64f8068e14cc3b79f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruin_pylon.png"
-dest_files=["res://.godot/imported/ruin_pylon.png-3963d247e326435832bdd24c7186863d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruin_pylon.png"
+dest_files=["res://.godot/imported/ruin_pylon.png-1af5664d038bc8a64f8068e14cc3b79f.ctex"]
 
 [params]
 

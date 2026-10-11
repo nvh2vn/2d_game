@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2ktovxi36kx3"
-path="res://.godot/imported/gg_ascent_0002_shad_gate_full.png-c6521f5c82dd45a62f2a08a924fafcc7.ctex"
+path="res://.godot/imported/gg_ascent_0002_shad_gate_full.png-1c8b016c3a4e0da43a8c41eeee321053.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_ascent_0002_shad_gate_full.png"
-dest_files=["res://.godot/imported/gg_ascent_0002_shad_gate_full.png-c6521f5c82dd45a62f2a08a924fafcc7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_ascent_0002_shad_gate_full.png"
+dest_files=["res://.godot/imported/gg_ascent_0002_shad_gate_full.png-1c8b016c3a4e0da43a8c41eeee321053.ctex"]
 
 [params]
 

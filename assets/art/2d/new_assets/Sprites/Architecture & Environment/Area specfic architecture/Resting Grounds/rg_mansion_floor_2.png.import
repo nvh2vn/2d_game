@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3qgkicdt5vdv"
-path="res://.godot/imported/rg_mansion_floor_2.png-71b25bfa00cf608d3f3b12bbf4182a82.ctex"
+path="res://.godot/imported/rg_mansion_floor_2.png-7e866a5306871545d823223979f17014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_mansion_floor_2.png"
-dest_files=["res://.godot/imported/rg_mansion_floor_2.png-71b25bfa00cf608d3f3b12bbf4182a82.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_mansion_floor_2.png"
+dest_files=["res://.godot/imported/rg_mansion_floor_2.png-7e866a5306871545d823223979f17014.ctex"]
 
 [params]
 

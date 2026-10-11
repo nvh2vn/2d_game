@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqggj4ik7jkh7"
-path="res://.godot/imported/green_path_lore_tabs_0002_2.png-e8b7bd2b6030db3ecece84d1f1adc85f.ctex"
+path="res://.godot/imported/green_path_lore_tabs_0002_2.png-3af32fca1b23abe735c863f5c8a52d54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/green_path_lore_tabs_0002_2.png"
-dest_files=["res://.godot/imported/green_path_lore_tabs_0002_2.png-e8b7bd2b6030db3ecece84d1f1adc85f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/green_path_lore_tabs_0002_2.png"
+dest_files=["res://.godot/imported/green_path_lore_tabs_0002_2.png-3af32fca1b23abe735c863f5c8a52d54.ctex"]
 
 [params]
 

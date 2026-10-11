@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://okn5kg21baiu"
-path="res://.godot/imported/loom_workshop1.png-284a8f2aa18cc32e4bc5192abcb746d3.ctex"
+path="res://.godot/imported/loom_workshop1.png-978c53cf87a21a5285d132101b9d696d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/White Palace/loom_workshop1.png"
-dest_files=["res://.godot/imported/loom_workshop1.png-284a8f2aa18cc32e4bc5192abcb746d3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/White Palace/loom_workshop1.png"
+dest_files=["res://.godot/imported/loom_workshop1.png-978c53cf87a21a5285d132101b9d696d.ctex"]
 
 [params]
 

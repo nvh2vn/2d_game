@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y627ktfkgt0k"
-path="res://.godot/imported/ruinhouse_floor.png-f5cdfa0dc322e82ccd755bd76d876685.ctex"
+path="res://.godot/imported/ruinhouse_floor.png-1ea4f11a4db724be2430d044085c7c08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruinhouse_floor.png"
-dest_files=["res://.godot/imported/ruinhouse_floor.png-f5cdfa0dc322e82ccd755bd76d876685.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruinhouse_floor.png"
+dest_files=["res://.godot/imported/ruinhouse_floor.png-1ea4f11a4db724be2430d044085c7c08.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p5d1hl6jruex"
-path="res://.godot/imported/roof_01.png-6fb2e975dd13bc3943c7be601a76a37a.ctex"
+path="res://.godot/imported/roof_01.png-3842f49b64ede08248d545a3f3d60910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/roof_01.png"
-dest_files=["res://.godot/imported/roof_01.png-6fb2e975dd13bc3943c7be601a76a37a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/roof_01.png"
+dest_files=["res://.godot/imported/roof_01.png-3842f49b64ede08248d545a3f3d60910.ctex"]
 
 [params]
 

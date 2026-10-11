@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by0agophj0cy"
-path="res://.godot/imported/abyss_0004_blue_plinth_tall.png-0e02d4a37db6281395663e67a0dcba41.ctex"
+path="res://.godot/imported/abyss_0004_blue_plinth_tall.png-51b7f2e6efaa078b7842565661ee038e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/abyss_0004_blue_plinth_tall.png"
-dest_files=["res://.godot/imported/abyss_0004_blue_plinth_tall.png-0e02d4a37db6281395663e67a0dcba41.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/abyss_0004_blue_plinth_tall.png"
+dest_files=["res://.godot/imported/abyss_0004_blue_plinth_tall.png-51b7f2e6efaa078b7842565661ee038e.ctex"]
 
 [params]
 

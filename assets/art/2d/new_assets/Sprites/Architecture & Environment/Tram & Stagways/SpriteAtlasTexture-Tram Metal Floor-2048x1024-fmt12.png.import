@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d00p4hvly0v23"
-path="res://.godot/imported/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png-da9f7d353fafa0bbce2d7d47a8a96920.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png-9a57227f67c7f1d9ea822b96f3f18983.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png-da9f7d353fafa0bbce2d7d47a8a96920.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Tram Metal Floor-2048x1024-fmt12.png-9a57227f67c7f1d9ea822b96f3f18983.ctex"]
 
 [params]
 

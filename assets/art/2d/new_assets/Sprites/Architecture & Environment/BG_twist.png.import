@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sga8v11juu1l"
-path="res://.godot/imported/BG_twist.png-d795980beec868665d7ea5ebb612d386.ctex"
+path="res://.godot/imported/BG_twist.png-c502be87252458f631cab93732b45c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/BG_twist.png"
-dest_files=["res://.godot/imported/BG_twist.png-d795980beec868665d7ea5ebb612d386.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/BG_twist.png"
+dest_files=["res://.godot/imported/BG_twist.png-c502be87252458f631cab93732b45c78.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://30r5ew2q50sl"
-path="res://.godot/imported/waterway_break_0009_pipe_top_01.png-a52032babec12f6773fcf307497167e4.ctex"
+path="res://.godot/imported/waterway_break_0009_pipe_top_01.png-78dff4ba31d6f5d6be94b7df0c7f2cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/waterway_break_0009_pipe_top_01.png"
-dest_files=["res://.godot/imported/waterway_break_0009_pipe_top_01.png-a52032babec12f6773fcf307497167e4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/waterway_break_0009_pipe_top_01.png"
+dest_files=["res://.godot/imported/waterway_break_0009_pipe_top_01.png-78dff4ba31d6f5d6be94b7df0c7f2cd1.ctex"]
 
 [params]
 

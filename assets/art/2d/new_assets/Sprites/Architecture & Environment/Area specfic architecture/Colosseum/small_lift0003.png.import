@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqjcaov55wubg"
-path="res://.godot/imported/small_lift0003.png-068d8af53681886de2b22952d3a779b2.ctex"
+path="res://.godot/imported/small_lift0003.png-9b5dd6d58df5bb74c61b7df6a6990fe6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/small_lift0003.png"
-dest_files=["res://.godot/imported/small_lift0003.png-068d8af53681886de2b22952d3a779b2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/small_lift0003.png"
+dest_files=["res://.godot/imported/small_lift0003.png-9b5dd6d58df5bb74c61b7df6a6990fe6.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://12icdycgj3h"
-path="res://.godot/imported/watcher_room_0003_10.png-a8670c2b87df17b9f24d452f5ce33604.ctex"
+path="res://.godot/imported/watcher_room_0003_10.png-1e07bf8bf6bdeb27243c85f5cde4ca26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/watcher_room_0003_10.png"
-dest_files=["res://.godot/imported/watcher_room_0003_10.png-a8670c2b87df17b9f24d452f5ce33604.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/watcher_room_0003_10.png"
+dest_files=["res://.godot/imported/watcher_room_0003_10.png-1e07bf8bf6bdeb27243c85f5cde4ca26.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmtesi0dxgfxv"
-path="res://.godot/imported/Mines_Layered_0008_a.png-a67a8b782337cd14f958291200936b93.ctex"
+path="res://.godot/imported/Mines_Layered_0008_a.png-e006cf531fce6c6b1a08bc04a2661e01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/Mines_Layered_0008_a.png"
-dest_files=["res://.godot/imported/Mines_Layered_0008_a.png-a67a8b782337cd14f958291200936b93.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/Mines_Layered_0008_a.png"
+dest_files=["res://.godot/imported/Mines_Layered_0008_a.png-e006cf531fce6c6b1a08bc04a2661e01.ctex"]
 
 [params]
 

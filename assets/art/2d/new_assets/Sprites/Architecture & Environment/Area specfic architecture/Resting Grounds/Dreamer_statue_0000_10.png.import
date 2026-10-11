@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhpl37fc4083b"
-path="res://.godot/imported/Dreamer_statue_0000_10.png-550c5a6d7e2b2b954fc98204e0d1d658.ctex"
+path="res://.godot/imported/Dreamer_statue_0000_10.png-61553fe5c2ccafd0948c1e3e62a09ce1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/Dreamer_statue_0000_10.png"
-dest_files=["res://.godot/imported/Dreamer_statue_0000_10.png-550c5a6d7e2b2b954fc98204e0d1d658.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/Dreamer_statue_0000_10.png"
+dest_files=["res://.godot/imported/Dreamer_statue_0000_10.png-61553fe5c2ccafd0948c1e3e62a09ce1.ctex"]
 
 [params]
 

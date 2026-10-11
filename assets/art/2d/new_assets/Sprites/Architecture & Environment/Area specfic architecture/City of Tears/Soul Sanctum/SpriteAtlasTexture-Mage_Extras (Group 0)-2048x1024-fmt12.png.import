@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://icsv34livtto"
-path="res://.godot/imported/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png-98cb2d8a0f979f80a237d06a4cbcfefe.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png-f7326b88936f5242148ced896dee54e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png-98cb2d8a0f979f80a237d06a4cbcfefe.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Mage_Extras (Group 0)-2048x1024-fmt12.png-f7326b88936f5242148ced896dee54e4.ctex"]
 
 [params]
 

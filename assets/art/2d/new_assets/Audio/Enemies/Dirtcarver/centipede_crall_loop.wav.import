@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dj0ix6xes3qg1"
-path="res://.godot/imported/centipede_crall_loop.wav-954ad4cc12c09994af54a64f42e52809.sample"
+path="res://.godot/imported/centipede_crall_loop.wav-4440a6c145a3541e191583aadd9b8dd4.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Dirtcarver/centipede_crall_loop.wav"
-dest_files=["res://.godot/imported/centipede_crall_loop.wav-954ad4cc12c09994af54a64f42e52809.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Dirtcarver/centipede_crall_loop.wav"
+dest_files=["res://.godot/imported/centipede_crall_loop.wav-4440a6c145a3541e191583aadd9b8dd4.sample"]
 
 [params]
 

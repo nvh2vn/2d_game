@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqokfl0rputnl"
-path="res://.godot/imported/GG_cage_symbols_0003_1.png-8b74b3fe5ba73f52c7e99f5c649b17f8.ctex"
+path="res://.godot/imported/GG_cage_symbols_0003_1.png-4f6d213c9aa8c592881e39a36f31b1c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/GG_cage_symbols_0003_1.png"
-dest_files=["res://.godot/imported/GG_cage_symbols_0003_1.png-8b74b3fe5ba73f52c7e99f5c649b17f8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/GG_cage_symbols_0003_1.png"
+dest_files=["res://.godot/imported/GG_cage_symbols_0003_1.png-4f6d213c9aa8c592881e39a36f31b1c9.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsp3ahhggrvs8"
-path="res://.godot/imported/Path of Pain plaque - wp_plaque_new.png-cc1a0bf68d70a53e465e20aea53958eb.ctex"
+path="res://.godot/imported/Path of Pain plaque - wp_plaque_new.png-d598fb45b12ea7ec6368217d14fff8a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/Path of Pain plaque - wp_plaque_new.png"
-dest_files=["res://.godot/imported/Path of Pain plaque - wp_plaque_new.png-cc1a0bf68d70a53e465e20aea53958eb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/Path of Pain plaque - wp_plaque_new.png"
+dest_files=["res://.godot/imported/Path of Pain plaque - wp_plaque_new.png-d598fb45b12ea7ec6368217d14fff8a8.ctex"]
 
 [params]
 

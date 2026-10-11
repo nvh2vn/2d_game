@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjm4rpis81yq7"
-path="res://.godot/imported/abyss_spike_bg_roof.png-9c9ef88bda55b80421b6d9d1fd7935f3.ctex"
+path="res://.godot/imported/abyss_spike_bg_roof.png-fc08c8f4e389b571ae3e2ca0bfa5fcc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/abyss_spike_bg_roof.png"
-dest_files=["res://.godot/imported/abyss_spike_bg_roof.png-9c9ef88bda55b80421b6d9d1fd7935f3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/abyss_spike_bg_roof.png"
+dest_files=["res://.godot/imported/abyss_spike_bg_roof.png-fc08c8f4e389b571ae3e2ca0bfa5fcc4.ctex"]
 
 [params]
 

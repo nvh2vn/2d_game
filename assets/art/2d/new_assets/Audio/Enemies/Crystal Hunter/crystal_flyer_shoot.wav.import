@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c21j0ipf2848p"
-path="res://.godot/imported/crystal_flyer_shoot.wav-88507ea064be7c6f036de3de3da99d9f.sample"
+path="res://.godot/imported/crystal_flyer_shoot.wav-6e02c6d5a5f6a57d8e9a572f0bdc932b.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Crystal Hunter/crystal_flyer_shoot.wav"
-dest_files=["res://.godot/imported/crystal_flyer_shoot.wav-88507ea064be7c6f036de3de3da99d9f.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Crystal Hunter/crystal_flyer_shoot.wav"
+dest_files=["res://.godot/imported/crystal_flyer_shoot.wav-6e02c6d5a5f6a57d8e9a572f0bdc932b.sample"]
 
 [params]
 

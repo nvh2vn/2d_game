@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqat2kkttwkwf"
-path="res://.godot/imported/hot_spring_layers_0003_Color-Balance-1-copy-3.png-c8ed81328572544215ad8668c071d56e.ctex"
+path="res://.godot/imported/hot_spring_layers_0003_Color-Balance-1-copy-3.png-c02df41353e151016fe42817882da306.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Hot Spring/hot_spring_layers_0003_Color-Balance-1-copy-3.png"
-dest_files=["res://.godot/imported/hot_spring_layers_0003_Color-Balance-1-copy-3.png-c8ed81328572544215ad8668c071d56e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Hot Spring/hot_spring_layers_0003_Color-Balance-1-copy-3.png"
+dest_files=["res://.godot/imported/hot_spring_layers_0003_Color-Balance-1-copy-3.png-c02df41353e151016fe42817882da306.ctex"]
 
 [params]
 

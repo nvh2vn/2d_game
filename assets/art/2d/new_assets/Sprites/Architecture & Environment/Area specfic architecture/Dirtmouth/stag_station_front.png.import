@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccbspwjrxnvjv"
-path="res://.godot/imported/stag_station_front.png-f9d4e0a114435cdd6dc0dc7559d5fdd6.ctex"
+path="res://.godot/imported/stag_station_front.png-ec28f2307708dd5f4490a349ac556f62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/stag_station_front.png"
-dest_files=["res://.godot/imported/stag_station_front.png-f9d4e0a114435cdd6dc0dc7559d5fdd6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/stag_station_front.png"
+dest_files=["res://.godot/imported/stag_station_front.png-ec28f2307708dd5f4490a349ac556f62.ctex"]
 
 [params]
 

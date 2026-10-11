@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://de7jkanuqb4r2"
-path="res://.godot/imported/Spa_Heal_Loop.wav-19dc350975b37e130b05995a01f32011.sample"
+path="res://.godot/imported/Spa_Heal_Loop.wav-f48161d2ac5a6e2eaa79b4c85335d9c9.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/Spa_Heal_Loop.wav"
-dest_files=["res://.godot/imported/Spa_Heal_Loop.wav-19dc350975b37e130b05995a01f32011.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/Spa_Heal_Loop.wav"
+dest_files=["res://.godot/imported/Spa_Heal_Loop.wav-f48161d2ac5a6e2eaa79b4c85335d9c9.sample"]
 
 [params]
 

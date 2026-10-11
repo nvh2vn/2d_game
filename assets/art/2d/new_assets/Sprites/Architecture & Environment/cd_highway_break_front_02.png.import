@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lm27lo00yoa8"
-path="res://.godot/imported/cd_highway_break_front_02.png-56ea6dde205e3331b0f99d2f22bdf1d2.ctex"
+path="res://.godot/imported/cd_highway_break_front_02.png-f360bcd0d75f129fad8347b34b96f446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/cd_highway_break_front_02.png"
-dest_files=["res://.godot/imported/cd_highway_break_front_02.png-56ea6dde205e3331b0f99d2f22bdf1d2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/cd_highway_break_front_02.png"
+dest_files=["res://.godot/imported/cd_highway_break_front_02.png-f360bcd0d75f129fad8347b34b96f446.ctex"]
 
 [params]
 

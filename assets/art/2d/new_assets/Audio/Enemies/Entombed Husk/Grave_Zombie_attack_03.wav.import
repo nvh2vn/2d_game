@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8pc7pdfm5spa"
-path="res://.godot/imported/Grave_Zombie_attack_03.wav-382515e54909fe73851d89737297fe7c.sample"
+path="res://.godot/imported/Grave_Zombie_attack_03.wav-f0cc236a68de00c826c5258441246087.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Entombed Husk/Grave_Zombie_attack_03.wav"
-dest_files=["res://.godot/imported/Grave_Zombie_attack_03.wav-382515e54909fe73851d89737297fe7c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Entombed Husk/Grave_Zombie_attack_03.wav"
+dest_files=["res://.godot/imported/Grave_Zombie_attack_03.wav-f0cc236a68de00c826c5258441246087.sample"]
 
 [params]
 

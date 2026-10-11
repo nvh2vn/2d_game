@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bl7arvrwg2p35"
-path="res://.godot/imported/centipede_jump.wav-90ed1fd2be98bcc0a307730f96ae41ef.sample"
+path="res://.godot/imported/centipede_jump.wav-6710dde89f52fb986f3bcac37bfa49c3.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Dirtcarver/centipede_jump.wav"
-dest_files=["res://.godot/imported/centipede_jump.wav-90ed1fd2be98bcc0a307730f96ae41ef.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Dirtcarver/centipede_jump.wav"
+dest_files=["res://.godot/imported/centipede_jump.wav-6710dde89f52fb986f3bcac37bfa49c3.sample"]
 
 [params]
 

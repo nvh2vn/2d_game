@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0nq221uddivb"
-path="res://.godot/imported/hut_0000_Hue_Saturation-2.png-1db5f0115995efae595e3bf39ce14090.ctex"
+path="res://.godot/imported/hut_0000_Hue_Saturation-2.png-23335c16110dcf5014e8f83c4eef397f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/hut_0000_Hue_Saturation-2.png"
-dest_files=["res://.godot/imported/hut_0000_Hue_Saturation-2.png-1db5f0115995efae595e3bf39ce14090.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/hut_0000_Hue_Saturation-2.png"
+dest_files=["res://.godot/imported/hut_0000_Hue_Saturation-2.png-23335c16110dcf5014e8f83c4eef397f.ctex"]
 
 [params]
 

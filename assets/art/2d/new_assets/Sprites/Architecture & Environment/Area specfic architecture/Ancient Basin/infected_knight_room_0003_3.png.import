@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0howno3qc5w"
-path="res://.godot/imported/infected_knight_room_0003_3.png-961f87986338fc8b29f10ed398b8a249.ctex"
+path="res://.godot/imported/infected_knight_room_0003_3.png-751cec76995d7ecf451ae74d86ab1602.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/infected_knight_room_0003_3.png"
-dest_files=["res://.godot/imported/infected_knight_room_0003_3.png-961f87986338fc8b29f10ed398b8a249.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/infected_knight_room_0003_3.png"
+dest_files=["res://.godot/imported/infected_knight_room_0003_3.png-751cec76995d7ecf451ae74d86ab1602.ctex"]
 
 [params]
 

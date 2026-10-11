@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca2uv5bisidgt"
-path="res://.godot/imported/deep_beam_glow.png-1ce700fea9930eef234355db2e134adc.ctex"
+path="res://.godot/imported/deep_beam_glow.png-f51027bfbea5f5e09984bab6df6085fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/deep_beam_glow.png"
-dest_files=["res://.godot/imported/deep_beam_glow.png-1ce700fea9930eef234355db2e134adc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/deep_beam_glow.png"
+dest_files=["res://.godot/imported/deep_beam_glow.png-f51027bfbea5f5e09984bab6df6085fa.ctex"]
 
 [params]
 

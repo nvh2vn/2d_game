@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2efk0vvotce2"
-path="res://.godot/imported/station_pole.png-aa4b2e143da5024b6a12000aefa5574f.ctex"
+path="res://.godot/imported/station_pole.png-63a72b6bd876ea5fbfbbe299b2a5a2a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/station_pole.png"
-dest_files=["res://.godot/imported/station_pole.png-aa4b2e143da5024b6a12000aefa5574f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/station_pole.png"
+dest_files=["res://.godot/imported/station_pole.png-63a72b6bd876ea5fbfbbe299b2a5a2a0.ctex"]
 
 [params]
 

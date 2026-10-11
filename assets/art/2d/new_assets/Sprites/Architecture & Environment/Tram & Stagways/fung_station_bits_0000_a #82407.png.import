@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxh5j2ttm6q1w"
-path="res://.godot/imported/fung_station_bits_0000_a #82407.png-7fadc75acdbd0c4f147222a6a459bfc1.ctex"
+path="res://.godot/imported/fung_station_bits_0000_a #82407.png-6e6810b8c67caeb88f65aef7c2077b1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/fung_station_bits_0000_a #82407.png"
-dest_files=["res://.godot/imported/fung_station_bits_0000_a #82407.png-7fadc75acdbd0c4f147222a6a459bfc1.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/fung_station_bits_0000_a #82407.png"
+dest_files=["res://.godot/imported/fung_station_bits_0000_a #82407.png-6e6810b8c67caeb88f65aef7c2077b1b.ctex"]
 
 [params]
 

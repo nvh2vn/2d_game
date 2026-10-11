@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddqwt5xk6861p"
-path="res://.godot/imported/garden_sliding_floor_0000_Color-Balance-1-copy.png-880f25ceb2f3f473e08facf86624be75.ctex"
+path="res://.godot/imported/garden_sliding_floor_0000_Color-Balance-1-copy.png-083442350577e35cc80cfd5bfcfd19e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/garden_sliding_floor_0000_Color-Balance-1-copy.png"
-dest_files=["res://.godot/imported/garden_sliding_floor_0000_Color-Balance-1-copy.png-880f25ceb2f3f473e08facf86624be75.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/garden_sliding_floor_0000_Color-Balance-1-copy.png"
+dest_files=["res://.godot/imported/garden_sliding_floor_0000_Color-Balance-1-copy.png-083442350577e35cc80cfd5bfcfd19e7.ctex"]
 
 [params]
 

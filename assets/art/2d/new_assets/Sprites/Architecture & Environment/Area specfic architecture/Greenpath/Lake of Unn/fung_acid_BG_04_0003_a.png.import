@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://co6e4srqiwhe6"
-path="res://.godot/imported/fung_acid_BG_04_0003_a.png-cd490b4f6b382e9f3dd0638a3329bdf8.ctex"
+path="res://.godot/imported/fung_acid_BG_04_0003_a.png-e269e0a61e608eb351bf84ed71b37ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/fung_acid_BG_04_0003_a.png"
-dest_files=["res://.godot/imported/fung_acid_BG_04_0003_a.png-cd490b4f6b382e9f3dd0638a3329bdf8.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/fung_acid_BG_04_0003_a.png"
+dest_files=["res://.godot/imported/fung_acid_BG_04_0003_a.png-e269e0a61e608eb351bf84ed71b37ed2.ctex"]
 
 [params]
 

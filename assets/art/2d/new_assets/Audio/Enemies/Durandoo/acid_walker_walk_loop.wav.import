@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0ph8l833rnx1"
-path="res://.godot/imported/acid_walker_walk_loop.wav-e6decea49be001dcdb8a5b9362f13a8b.sample"
+path="res://.godot/imported/acid_walker_walk_loop.wav-c0f4be192e38272ee35277bdb1387aa3.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Durandoo/acid_walker_walk_loop.wav"
-dest_files=["res://.godot/imported/acid_walker_walk_loop.wav-e6decea49be001dcdb8a5b9362f13a8b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Durandoo/acid_walker_walk_loop.wav"
+dest_files=["res://.godot/imported/acid_walker_walk_loop.wav-c0f4be192e38272ee35277bdb1387aa3.sample"]
 
 [params]
 

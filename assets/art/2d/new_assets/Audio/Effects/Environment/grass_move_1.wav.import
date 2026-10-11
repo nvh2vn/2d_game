@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bjdgwghwm2qp7"
-path="res://.godot/imported/grass_move_1.wav-2a1518051b6d8f23c69d5008cabf040d.sample"
+path="res://.godot/imported/grass_move_1.wav-f94943f61b4c32ecd4fe8fa67d2f04eb.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/grass_move_1.wav"
-dest_files=["res://.godot/imported/grass_move_1.wav-2a1518051b6d8f23c69d5008cabf040d.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/grass_move_1.wav"
+dest_files=["res://.godot/imported/grass_move_1.wav-f94943f61b4c32ecd4fe8fa67d2f04eb.sample"]
 
 [params]
 

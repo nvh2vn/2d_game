@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vob5mwjrof7x"
-path="res://.godot/imported/snail_shaman_plinth_0005_sarcophagus.png-97e580f4fc0d5caf7da47bd4158d9fe9.ctex"
+path="res://.godot/imported/snail_shaman_plinth_0005_sarcophagus.png-3ffc89835c6ea5fd0bd0dde259e9cbd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/snail_shaman_plinth_0005_sarcophagus.png"
-dest_files=["res://.godot/imported/snail_shaman_plinth_0005_sarcophagus.png-97e580f4fc0d5caf7da47bd4158d9fe9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/snail_shaman_plinth_0005_sarcophagus.png"
+dest_files=["res://.godot/imported/snail_shaman_plinth_0005_sarcophagus.png-3ffc89835c6ea5fd0bd0dde259e9cbd2.ctex"]
 
 [params]
 

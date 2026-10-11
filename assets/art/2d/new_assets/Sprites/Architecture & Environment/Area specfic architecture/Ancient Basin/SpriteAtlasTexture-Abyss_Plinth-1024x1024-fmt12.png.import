@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf501n2wkbkyj"
-path="res://.godot/imported/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png-145d23fc2b168c8580854bf2f74f1c12.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png-bc315de99930abfb644ed04fa43f33c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png-145d23fc2b168c8580854bf2f74f1c12.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Abyss_Plinth-1024x1024-fmt12.png-bc315de99930abfb644ed04fa43f33c0.ctex"]
 
 [params]
 

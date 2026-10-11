@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x8782xc6tqky"
-path="res://.godot/imported/ancient_wall_pieces_0002_a_hive.png-f30b71dfaf459b26edb2e2a9951f7681.ctex"
+path="res://.godot/imported/ancient_wall_pieces_0002_a_hive.png-0452af44283e5938621cbb0bd3ba5f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/ancient_wall_pieces_0002_a_hive.png"
-dest_files=["res://.godot/imported/ancient_wall_pieces_0002_a_hive.png-f30b71dfaf459b26edb2e2a9951f7681.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/ancient_wall_pieces_0002_a_hive.png"
+dest_files=["res://.godot/imported/ancient_wall_pieces_0002_a_hive.png-0452af44283e5938621cbb0bd3ba5f44.ctex"]
 
 [params]
 

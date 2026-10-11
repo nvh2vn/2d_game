@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yfp7e88cdqmc"
-path="res://.godot/imported/fence_01.png-25d6e059ae2168a8b46a8af0379989f4.ctex"
+path="res://.godot/imported/fence_01.png-b2b33540e79a6a424923e1de35bc5a58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/fence_01.png"
-dest_files=["res://.godot/imported/fence_01.png-25d6e059ae2168a8b46a8af0379989f4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/fence_01.png"
+dest_files=["res://.godot/imported/fence_01.png-b2b33540e79a6a424923e1de35bc5a58.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfca5etponsa6"
-path="res://.godot/imported/pipe_bend.png-9854463adf3482f64204dbf2db277ecd.ctex"
+path="res://.godot/imported/pipe_bend.png-70165821dfeaa3d3d568e276a8a4cd37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/pipe_bend.png"
-dest_files=["res://.godot/imported/pipe_bend.png-9854463adf3482f64204dbf2db277ecd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/pipe_bend.png"
+dest_files=["res://.godot/imported/pipe_bend.png-70165821dfeaa3d3d568e276a8a4cd37.ctex"]
 
 [params]
 

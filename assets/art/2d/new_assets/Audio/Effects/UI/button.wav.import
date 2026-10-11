@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3jgrhwidc7kv"
-path="res://.godot/imported/button.wav-df47dd62b7f415bac66e485691a991da.sample"
+path="res://.godot/imported/button.wav-90d6656a5decb0499be44af1a3eddbf6.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/UI/button.wav"
-dest_files=["res://.godot/imported/button.wav-df47dd62b7f415bac66e485691a991da.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/UI/button.wav"
+dest_files=["res://.godot/imported/button.wav-90d6656a5decb0499be44af1a3eddbf6.sample"]
 
 [params]
 

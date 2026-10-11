@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgyfwfqfy8fan"
-path="res://.godot/imported/_0164_abyss.png-8bd3eabeeb8c2521fdb2fc46d4e0914a.ctex"
+path="res://.godot/imported/_0164_abyss.png-1d2b360535f5231800fe7d83940ee894.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/_0164_abyss.png"
-dest_files=["res://.godot/imported/_0164_abyss.png-8bd3eabeeb8c2521fdb2fc46d4e0914a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/_0164_abyss.png"
+dest_files=["res://.godot/imported/_0164_abyss.png-1d2b360535f5231800fe7d83940ee894.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1b1722ray244"
-path="res://.godot/imported/stag_pole_tall_break_04.png-431842c508f5cdafc747c39946715045.ctex"
+path="res://.godot/imported/stag_pole_tall_break_04.png-6612ec9f0e985ebc7e33634cf5b3c2ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/stag_pole_tall_break_04.png"
-dest_files=["res://.godot/imported/stag_pole_tall_break_04.png-431842c508f5cdafc747c39946715045.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/stag_pole_tall_break_04.png"
+dest_files=["res://.godot/imported/stag_pole_tall_break_04.png-6612ec9f0e985ebc7e33634cf5b3c2ce.ctex"]
 
 [params]
 

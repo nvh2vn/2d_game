@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bys7lh6oc2hfp"
-path="res://.godot/imported/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png-d7ea99886fce29c1c4a731a782845017.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png-daa5c4488a5583779cc2a4ac88060e03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png-d7ea99886fce29c1c4a731a782845017.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Hallownest_Door-1024x1024-fmt4.png-daa5c4488a5583779cc2a4ac88060e03.ctex"]
 
 [params]
 

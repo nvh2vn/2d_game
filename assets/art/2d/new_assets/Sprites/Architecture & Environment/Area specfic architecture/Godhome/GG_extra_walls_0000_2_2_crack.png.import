@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd3sld6k63qvf"
-path="res://.godot/imported/GG_extra_walls_0000_2_2_crack.png-a491ececa58cf97ee81f337f5eefcaf9.ctex"
+path="res://.godot/imported/GG_extra_walls_0000_2_2_crack.png-bcd530cc0c2d3fb260f1d69710e478e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/GG_extra_walls_0000_2_2_crack.png"
-dest_files=["res://.godot/imported/GG_extra_walls_0000_2_2_crack.png-a491ececa58cf97ee81f337f5eefcaf9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/GG_extra_walls_0000_2_2_crack.png"
+dest_files=["res://.godot/imported/GG_extra_walls_0000_2_2_crack.png-bcd530cc0c2d3fb260f1d69710e478e6.ctex"]
 
 [params]
 

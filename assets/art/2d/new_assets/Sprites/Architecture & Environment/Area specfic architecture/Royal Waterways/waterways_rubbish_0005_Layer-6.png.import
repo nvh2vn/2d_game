@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dohnfwlxj2uao"
-path="res://.godot/imported/waterways_rubbish_0005_Layer-6.png-1111442bf2e78fe664955ca643526d95.ctex"
+path="res://.godot/imported/waterways_rubbish_0005_Layer-6.png-efd4c0f4f3f9378075a133b4bdd53651.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_rubbish_0005_Layer-6.png"
-dest_files=["res://.godot/imported/waterways_rubbish_0005_Layer-6.png-1111442bf2e78fe664955ca643526d95.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_rubbish_0005_Layer-6.png"
+dest_files=["res://.godot/imported/waterways_rubbish_0005_Layer-6.png-efd4c0f4f3f9378075a133b4bdd53651.ctex"]
 
 [params]
 

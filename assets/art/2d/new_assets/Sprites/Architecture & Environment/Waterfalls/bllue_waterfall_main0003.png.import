@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2rkuy7sactm1"
-path="res://.godot/imported/bllue_waterfall_main0003.png-40f405ddd65d5d816ca99e60913e8496.ctex"
+path="res://.godot/imported/bllue_waterfall_main0003.png-cdbf96e3677d4bf2d7cce35f105bea97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Waterfalls/bllue_waterfall_main0003.png"
-dest_files=["res://.godot/imported/bllue_waterfall_main0003.png-40f405ddd65d5d816ca99e60913e8496.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Waterfalls/bllue_waterfall_main0003.png"
+dest_files=["res://.godot/imported/bllue_waterfall_main0003.png-cdbf96e3677d4bf2d7cce35f105bea97.ctex"]
 
 [params]
 

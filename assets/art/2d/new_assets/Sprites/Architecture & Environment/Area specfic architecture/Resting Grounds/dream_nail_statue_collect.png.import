@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl13vmjoubw87"
-path="res://.godot/imported/dream_nail_statue_collect.png-db5552a2f512dec87b86991799171f52.ctex"
+path="res://.godot/imported/dream_nail_statue_collect.png-440baa1604f4617a2fa6af145864e34d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_nail_statue_collect.png"
-dest_files=["res://.godot/imported/dream_nail_statue_collect.png-db5552a2f512dec87b86991799171f52.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_nail_statue_collect.png"
+dest_files=["res://.godot/imported/dream_nail_statue_collect.png-440baa1604f4617a2fa6af145864e34d.ctex"]
 
 [params]
 

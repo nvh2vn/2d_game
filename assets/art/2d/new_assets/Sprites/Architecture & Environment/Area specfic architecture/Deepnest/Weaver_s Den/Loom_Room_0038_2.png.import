@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb5ybl5qyfawx"
-path="res://.godot/imported/Loom_Room_0038_2.png-7855e3f1077999a81ff62d3e0d98d047.ctex"
+path="res://.godot/imported/Loom_Room_0038_2.png-84c085a428feef6629f976920e5bd16b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Weaver_s Den/Loom_Room_0038_2.png"
-dest_files=["res://.godot/imported/Loom_Room_0038_2.png-7855e3f1077999a81ff62d3e0d98d047.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Weaver_s Den/Loom_Room_0038_2.png"
+dest_files=["res://.godot/imported/Loom_Room_0038_2.png-84c085a428feef6629f976920e5bd16b.ctex"]
 
 [params]
 

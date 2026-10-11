@@ -1,0 +1,17 @@
+band_01_frame_00.png: x=3, y=39, w=181, h=199, band=1
+band_01_frame_01.png: x=190, y=23, w=160, h=224, band=1
+band_01_frame_02.png: x=378, y=57, w=181, h=182, band=1
+band_01_frame_03.png: x=572, y=80, w=162, h=147, band=1
+band_04_frame_00.png: x=3, y=285, w=195, h=191, band=4
+band_04_frame_01.png: x=234, y=294, w=152, h=198, band=4
+band_06_frame_00.png: x=51, y=551, w=147, h=185, band=6
+band_06_frame_01.png: x=253, y=517, w=244, h=160, band=6
+band_06_frame_02.png: x=501, y=565, w=237, h=121, band=6
+band_08_frame_00.png: x=6, y=759, w=234, h=190, band=8
+band_08_frame_01.png: x=251, y=771, w=244, h=173, band=8
+band_08_frame_02.png: x=529, y=801, w=201, h=159, band=8
+band_10_frame_00.png: x=3, y=1025, w=224, h=140, band=10
+band_10_frame_01.png: x=276, y=983, w=127, h=179, band=10
+band_12_frame_00.png: x=9, y=1190, w=130, h=138, band=12
+band_12_frame_01.png: x=183, y=1191, w=147, h=142, band=12
+band_12_frame_02.png: x=353, y=1187, w=171, h=145, band=12

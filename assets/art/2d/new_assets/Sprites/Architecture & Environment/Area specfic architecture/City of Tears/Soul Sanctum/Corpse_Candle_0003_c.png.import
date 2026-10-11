@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciu5ton7lxbqy"
-path="res://.godot/imported/Corpse_Candle_0003_c.png-df4b298387213f397526bbf23833d383.ctex"
+path="res://.godot/imported/Corpse_Candle_0003_c.png-9e27f912503743ea65b6713a9a3fd215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/Corpse_Candle_0003_c.png"
-dest_files=["res://.godot/imported/Corpse_Candle_0003_c.png-df4b298387213f397526bbf23833d383.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/Corpse_Candle_0003_c.png"
+dest_files=["res://.godot/imported/Corpse_Candle_0003_c.png-9e27f912503743ea65b6713a9a3fd215.ctex"]
 
 [params]
 

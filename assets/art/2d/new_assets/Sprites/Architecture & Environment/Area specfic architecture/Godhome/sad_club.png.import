@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brbqh2rpic305"
-path="res://.godot/imported/sad_club.png-af860bfa7f18dc376f05a4abd6c28991.ctex"
+path="res://.godot/imported/sad_club.png-e2f65d5a791ce1abc0cb6f7b3cb7a2a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/sad_club.png"
-dest_files=["res://.godot/imported/sad_club.png-af860bfa7f18dc376f05a4abd6c28991.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/sad_club.png"
+dest_files=["res://.godot/imported/sad_club.png-e2f65d5a791ce1abc0cb6f7b3cb7a2a0.ctex"]
 
 [params]
 

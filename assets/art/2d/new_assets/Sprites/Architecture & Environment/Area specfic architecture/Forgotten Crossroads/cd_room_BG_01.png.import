@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddrbjumgl88ft"
-path="res://.godot/imported/cd_room_BG_01.png-621a1dbb6de39c85f679f5d6cf27a1b6.ctex"
+path="res://.godot/imported/cd_room_BG_01.png-10d25bd8546c14e2f7ea4b4cf698fac6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_room_BG_01.png"
-dest_files=["res://.godot/imported/cd_room_BG_01.png-621a1dbb6de39c85f679f5d6cf27a1b6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_room_BG_01.png"
+dest_files=["res://.godot/imported/cd_room_BG_01.png-10d25bd8546c14e2f7ea4b4cf698fac6.ctex"]
 
 [params]
 

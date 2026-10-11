@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tybg5c2kcth4"
-path="res://.godot/imported/chandelier_0007_chand3.png-bdd189f7186127dc63fa399df6d34feb.ctex"
+path="res://.godot/imported/chandelier_0007_chand3.png-35652eae22b2c8128a512ee2578e34a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/chandelier_0007_chand3.png"
-dest_files=["res://.godot/imported/chandelier_0007_chand3.png-bdd189f7186127dc63fa399df6d34feb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/chandelier_0007_chand3.png"
+dest_files=["res://.godot/imported/chandelier_0007_chand3.png-35652eae22b2c8128a512ee2578e34a4.ctex"]
 
 [params]
 

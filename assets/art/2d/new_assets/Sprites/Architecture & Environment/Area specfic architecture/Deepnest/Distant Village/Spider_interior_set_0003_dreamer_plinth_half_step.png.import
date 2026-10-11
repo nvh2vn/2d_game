@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w0i7fra8k7u7"
-path="res://.godot/imported/Spider_interior_set_0003_dreamer_plinth_half_step.png-45f242a6ea6b90c8e72f72b1789c73a7.ctex"
+path="res://.godot/imported/Spider_interior_set_0003_dreamer_plinth_half_step.png-fdfe73aff24577bbd7b9f30077d13db0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/Spider_interior_set_0003_dreamer_plinth_half_step.png"
-dest_files=["res://.godot/imported/Spider_interior_set_0003_dreamer_plinth_half_step.png-45f242a6ea6b90c8e72f72b1789c73a7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/Spider_interior_set_0003_dreamer_plinth_half_step.png"
+dest_files=["res://.godot/imported/Spider_interior_set_0003_dreamer_plinth_half_step.png-fdfe73aff24577bbd7b9f30077d13db0.ctex"]
 
 [params]
 

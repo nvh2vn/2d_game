@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2lnhn58u00c1"
-path="res://.godot/imported/town_buildings_left_0002_a.png-43a9c525b9b1ed87734d5cfb94094944.ctex"
+path="res://.godot/imported/town_buildings_left_0002_a.png-bb23e933a75d9f00311253a217acbbf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/town_buildings_left_0002_a.png"
-dest_files=["res://.godot/imported/town_buildings_left_0002_a.png-43a9c525b9b1ed87734d5cfb94094944.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/town_buildings_left_0002_a.png"
+dest_files=["res://.godot/imported/town_buildings_left_0002_a.png-bb23e933a75d9f00311253a217acbbf3.ctex"]
 
 [params]
 

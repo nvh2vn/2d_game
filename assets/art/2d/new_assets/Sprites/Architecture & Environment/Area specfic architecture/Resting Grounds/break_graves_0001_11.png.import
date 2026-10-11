@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8om5mdyt3vc8"
-path="res://.godot/imported/break_graves_0001_11.png-6bff4fe270608a5492c5fd2994c42bb9.ctex"
+path="res://.godot/imported/break_graves_0001_11.png-e0a4dead5b47cc4c7ed07a6c4ad84346.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/break_graves_0001_11.png"
-dest_files=["res://.godot/imported/break_graves_0001_11.png-6bff4fe270608a5492c5fd2994c42bb9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/break_graves_0001_11.png"
+dest_files=["res://.godot/imported/break_graves_0001_11.png-e0a4dead5b47cc4c7ed07a6c4ad84346.ctex"]
 
 [params]
 

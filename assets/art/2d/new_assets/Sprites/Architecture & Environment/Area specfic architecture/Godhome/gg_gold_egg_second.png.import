@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b78ktdgyenpxe"
-path="res://.godot/imported/gg_gold_egg_second.png-3073fb53d21a8b82aafdfbc15a3d0190.ctex"
+path="res://.godot/imported/gg_gold_egg_second.png-bf1a3a2a5fcd011ce2e5e5ce21fe5091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_gold_egg_second.png"
-dest_files=["res://.godot/imported/gg_gold_egg_second.png-3073fb53d21a8b82aafdfbc15a3d0190.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_gold_egg_second.png"
+dest_files=["res://.godot/imported/gg_gold_egg_second.png-bf1a3a2a5fcd011ce2e5e5ce21fe5091.ctex"]
 
 [params]
 

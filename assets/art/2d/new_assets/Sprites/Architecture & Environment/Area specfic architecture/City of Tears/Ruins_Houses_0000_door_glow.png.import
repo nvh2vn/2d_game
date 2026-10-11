@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk3g4106tkv1r"
-path="res://.godot/imported/Ruins_Houses_0000_door_glow.png-83f124ee6c63c1e6dab8135b12303676.ctex"
+path="res://.godot/imported/Ruins_Houses_0000_door_glow.png-f50a334d7cead431649bd6ea43126696.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Ruins_Houses_0000_door_glow.png"
-dest_files=["res://.godot/imported/Ruins_Houses_0000_door_glow.png-83f124ee6c63c1e6dab8135b12303676.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Ruins_Houses_0000_door_glow.png"
+dest_files=["res://.godot/imported/Ruins_Houses_0000_door_glow.png-f50a334d7cead431649bd6ea43126696.ctex"]
 
 [params]
 

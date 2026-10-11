@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbw51fdkgnu21"
-path="res://.godot/imported/old_nailsmith_corridor_walll.png-ae745808a4555e4b15765ff91cba9973.ctex"
+path="res://.godot/imported/old_nailsmith_corridor_walll.png-fa47342dff3537968944cb7fd1ecff12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/old_nailsmith_corridor_walll.png"
-dest_files=["res://.godot/imported/old_nailsmith_corridor_walll.png-ae745808a4555e4b15765ff91cba9973.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/old_nailsmith_corridor_walll.png"
+dest_files=["res://.godot/imported/old_nailsmith_corridor_walll.png-fa47342dff3537968944cb7fd1ecff12.ctex"]
 
 [params]
 

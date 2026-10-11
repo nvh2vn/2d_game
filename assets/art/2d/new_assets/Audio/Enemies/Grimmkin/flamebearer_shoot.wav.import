@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnnnegl3tdenc"
-path="res://.godot/imported/flamebearer_shoot.wav-be9e5bad480ab0c5b6e0ec4e3700b3a5.sample"
+path="res://.godot/imported/flamebearer_shoot.wav-5cca894fb30bb1f102ae218291a5f8b6.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/flamebearer_shoot.wav"
-dest_files=["res://.godot/imported/flamebearer_shoot.wav-be9e5bad480ab0c5b6e0ec4e3700b3a5.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Grimmkin/flamebearer_shoot.wav"
+dest_files=["res://.godot/imported/flamebearer_shoot.wav-5cca894fb30bb1f102ae218291a5f8b6.sample"]
 
 [params]
 

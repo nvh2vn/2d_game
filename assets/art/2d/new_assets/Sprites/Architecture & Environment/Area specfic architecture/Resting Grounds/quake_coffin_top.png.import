@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://eo8scrh2ioy0"
-path="res://.godot/imported/quake_coffin_top.png-17fbb0216fae9b8ffdc032b5526c73c9.ctex"
+path="res://.godot/imported/quake_coffin_top.png-b9cf232e7bec1f1bd0be333107c7cd3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/quake_coffin_top.png"
-dest_files=["res://.godot/imported/quake_coffin_top.png-17fbb0216fae9b8ffdc032b5526c73c9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/quake_coffin_top.png"
+dest_files=["res://.godot/imported/quake_coffin_top.png-b9cf232e7bec1f1bd0be333107c7cd3b.ctex"]
 
 [params]
 

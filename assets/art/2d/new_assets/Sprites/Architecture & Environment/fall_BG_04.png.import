@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doaj0g0gsxaqn"
-path="res://.godot/imported/fall_BG_04.png-7e2d8142ea6ad4591bf2d4e717ff74af.ctex"
+path="res://.godot/imported/fall_BG_04.png-52d15c503465d272c84555876b3cf6a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/fall_BG_04.png"
-dest_files=["res://.godot/imported/fall_BG_04.png-7e2d8142ea6ad4591bf2d4e717ff74af.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/fall_BG_04.png"
+dest_files=["res://.godot/imported/fall_BG_04.png-52d15c503465d272c84555876b3cf6a2.ctex"]
 
 [params]
 

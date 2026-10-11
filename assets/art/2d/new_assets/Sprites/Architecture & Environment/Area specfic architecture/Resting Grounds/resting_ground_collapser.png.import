@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw28h5reohkin"
-path="res://.godot/imported/resting_ground_collapser.png-713470a669c5b8d4254c63a69afe8bfb.ctex"
+path="res://.godot/imported/resting_ground_collapser.png-559f35831106221b86dde0fe3bfa6de5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/resting_ground_collapser.png"
-dest_files=["res://.godot/imported/resting_ground_collapser.png-713470a669c5b8d4254c63a69afe8bfb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/resting_ground_collapser.png"
+dest_files=["res://.godot/imported/resting_ground_collapser.png-559f35831106221b86dde0fe3bfa6de5.ctex"]
 
 [params]
 

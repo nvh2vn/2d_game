@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6nrv7gap4in8"
-path="res://.godot/imported/grub_homes_0016_Color-Balance-1-copy-33.png-dad4408b1c9e60fd63e71880c902f75d.ctex"
+path="res://.godot/imported/grub_homes_0016_Color-Balance-1-copy-33.png-d2f414af52f5df09913f5fee4117a850.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/grub_homes_0016_Color-Balance-1-copy-33.png"
-dest_files=["res://.godot/imported/grub_homes_0016_Color-Balance-1-copy-33.png-dad4408b1c9e60fd63e71880c902f75d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/grub_homes_0016_Color-Balance-1-copy-33.png"
+dest_files=["res://.godot/imported/grub_homes_0016_Color-Balance-1-copy-33.png-d2f414af52f5df09913f5fee4117a850.ctex"]
 
 [params]
 

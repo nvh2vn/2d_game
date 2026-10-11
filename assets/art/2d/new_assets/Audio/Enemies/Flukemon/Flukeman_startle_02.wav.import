@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xebdh3dvk80e"
-path="res://.godot/imported/Flukeman_startle_02.wav-a1e3a635f9b8ac6cad54872df2e1bb27.sample"
+path="res://.godot/imported/Flukeman_startle_02.wav-e152cf21c731a203ecbeade12ba202d5.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemon/Flukeman_startle_02.wav"
-dest_files=["res://.godot/imported/Flukeman_startle_02.wav-a1e3a635f9b8ac6cad54872df2e1bb27.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemon/Flukeman_startle_02.wav"
+dest_files=["res://.godot/imported/Flukeman_startle_02.wav-e152cf21c731a203ecbeade12ba202d5.sample"]
 
 [params]
 

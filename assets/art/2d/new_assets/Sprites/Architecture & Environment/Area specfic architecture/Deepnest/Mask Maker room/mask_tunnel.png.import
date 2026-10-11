@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0br3hx7jvqbn"
-path="res://.godot/imported/mask_tunnel.png-fb5a13922339a845b40c938a0a3a2aaa.ctex"
+path="res://.godot/imported/mask_tunnel.png-95e5119ea9fbd885494b5d5bde62fa6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/mask_tunnel.png"
-dest_files=["res://.godot/imported/mask_tunnel.png-fb5a13922339a845b40c938a0a3a2aaa.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/mask_tunnel.png"
+dest_files=["res://.godot/imported/mask_tunnel.png-95e5119ea9fbd885494b5d5bde62fa6f.ctex"]
 
 [params]
 

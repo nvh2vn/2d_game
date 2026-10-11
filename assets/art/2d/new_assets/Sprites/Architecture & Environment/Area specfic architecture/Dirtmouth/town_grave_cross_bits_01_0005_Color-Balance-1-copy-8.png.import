@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpf7jduam8hak"
-path="res://.godot/imported/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png-07266a49385da087e3ed42bfc02c2c3e.ctex"
+path="res://.godot/imported/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png-ee715bbfa119d6b360bc8e07c0a6b657.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png"
-dest_files=["res://.godot/imported/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png-07266a49385da087e3ed42bfc02c2c3e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png"
+dest_files=["res://.godot/imported/town_grave_cross_bits_01_0005_Color-Balance-1-copy-8.png-ee715bbfa119d6b360bc8e07c0a6b657.ctex"]
 
 [params]
 

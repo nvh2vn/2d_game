@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brs3il1p600qs"
-path="res://.godot/imported/break_candles_0006_Layer-1-copy.png-08577b9acadb893d50c5ccc4e7d2a102.ctex"
+path="res://.godot/imported/break_candles_0006_Layer-1-copy.png-127b70fd744dc8cafb6ac58beac5c70e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/break_candles_0006_Layer-1-copy.png"
-dest_files=["res://.godot/imported/break_candles_0006_Layer-1-copy.png-08577b9acadb893d50c5ccc4e7d2a102.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/break_candles_0006_Layer-1-copy.png"
+dest_files=["res://.godot/imported/break_candles_0006_Layer-1-copy.png-127b70fd744dc8cafb6ac58beac5c70e.ctex"]
 
 [params]
 

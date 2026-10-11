@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bwg0gptkyrfe4"
-path="res://.godot/imported/flukeman_crawling_half_run_loop.wav-d8cad62124090fe52f1c105c4add84c7.sample"
+path="res://.godot/imported/flukeman_crawling_half_run_loop.wav-42bb85f7a9ff682ca00cbc7fdeaa3d40.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemon/flukeman_crawling_half_run_loop.wav"
-dest_files=["res://.godot/imported/flukeman_crawling_half_run_loop.wav-d8cad62124090fe52f1c105c4add84c7.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemon/flukeman_crawling_half_run_loop.wav"
+dest_files=["res://.godot/imported/flukeman_crawling_half_run_loop.wav-42bb85f7a9ff682ca00cbc7fdeaa3d40.sample"]
 
 [params]
 

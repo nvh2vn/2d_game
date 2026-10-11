@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://p5a0kgee0xpr"
-path="res://.godot/imported/Royal_Zombie_death_03.wav-193bd3b3fd11f9387cf41125558e916b.sample"
+path="res://.godot/imported/Royal_Zombie_death_03.wav-3e720f442ab59786cd6077d03e726fa3.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Cowardly Husk and Husk Dandy/Royal_Zombie_death_03.wav"
-dest_files=["res://.godot/imported/Royal_Zombie_death_03.wav-193bd3b3fd11f9387cf41125558e916b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Cowardly Husk and Husk Dandy/Royal_Zombie_death_03.wav"
+dest_files=["res://.godot/imported/Royal_Zombie_death_03.wav-3e720f442ab59786cd6077d03e726fa3.sample"]
 
 [params]
 

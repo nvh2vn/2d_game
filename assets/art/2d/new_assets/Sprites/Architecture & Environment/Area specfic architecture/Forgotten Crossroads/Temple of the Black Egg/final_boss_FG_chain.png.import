@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0ucu18f7fdet"
-path="res://.godot/imported/final_boss_FG_chain.png-f0080bdb76d5cca7cf8fbfdfdb02c3f7.ctex"
+path="res://.godot/imported/final_boss_FG_chain.png-909ac4e033698cbedd07b0d0c5c9fc19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/final_boss_FG_chain.png"
-dest_files=["res://.godot/imported/final_boss_FG_chain.png-f0080bdb76d5cca7cf8fbfdfdb02c3f7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/final_boss_FG_chain.png"
+dest_files=["res://.godot/imported/final_boss_FG_chain.png-909ac4e033698cbedd07b0d0c5c9fc19.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chlq16v3hboou"
-path="res://.godot/imported/stag_sign_breakable_0001_Layer-3.png-ba5c026cbe4b73d582dac4339c96bb68.ctex"
+path="res://.godot/imported/stag_sign_breakable_0001_Layer-3.png-af86c5a49756a15f62e5376b4f1fc6a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/stag_sign_breakable_0001_Layer-3.png"
-dest_files=["res://.godot/imported/stag_sign_breakable_0001_Layer-3.png-ba5c026cbe4b73d582dac4339c96bb68.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/stag_sign_breakable_0001_Layer-3.png"
+dest_files=["res://.godot/imported/stag_sign_breakable_0001_Layer-3.png-af86c5a49756a15f62e5376b4f1fc6a3.ctex"]
 
 [params]
 

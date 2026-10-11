@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://da8orabxyr44y"
-path="res://.godot/imported/acid_ambient_loop.wav-2a366366abd1ec07e81ce0013908c0da.sample"
+path="res://.godot/imported/acid_ambient_loop.wav-556f3278dca127a77397b83dd954d833.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/acid_ambient_loop.wav"
-dest_files=["res://.godot/imported/acid_ambient_loop.wav-2a366366abd1ec07e81ce0013908c0da.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/acid_ambient_loop.wav"
+dest_files=["res://.godot/imported/acid_ambient_loop.wav-556f3278dca127a77397b83dd954d833.sample"]
 
 [params]
 

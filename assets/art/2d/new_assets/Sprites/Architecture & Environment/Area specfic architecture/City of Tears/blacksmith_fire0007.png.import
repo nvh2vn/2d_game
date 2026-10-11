@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da7sf63t642vy"
-path="res://.godot/imported/blacksmith_fire0007.png-5380f3b030ce8fea40c973a94b78ce77.ctex"
+path="res://.godot/imported/blacksmith_fire0007.png-400a47a409936eb095aa44900246b3f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/blacksmith_fire0007.png"
-dest_files=["res://.godot/imported/blacksmith_fire0007.png-5380f3b030ce8fea40c973a94b78ce77.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/blacksmith_fire0007.png"
+dest_files=["res://.godot/imported/blacksmith_fire0007.png-400a47a409936eb095aa44900246b3f4.ctex"]
 
 [params]
 

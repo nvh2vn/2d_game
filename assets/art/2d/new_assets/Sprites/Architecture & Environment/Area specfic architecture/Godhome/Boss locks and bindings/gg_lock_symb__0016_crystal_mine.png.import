@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmbrf4k7h53ul"
-path="res://.godot/imported/gg_lock_symb__0016_crystal_mine.png-6acc952c3d3aeef9d74ce3c357f219fb.ctex"
+path="res://.godot/imported/gg_lock_symb__0016_crystal_mine.png-63ee3819c653483dc36ab2c67711fddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0016_crystal_mine.png"
-dest_files=["res://.godot/imported/gg_lock_symb__0016_crystal_mine.png-6acc952c3d3aeef9d74ce3c357f219fb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0016_crystal_mine.png"
+dest_files=["res://.godot/imported/gg_lock_symb__0016_crystal_mine.png-63ee3819c653483dc36ab2c67711fddd.ctex"]
 
 [params]
 

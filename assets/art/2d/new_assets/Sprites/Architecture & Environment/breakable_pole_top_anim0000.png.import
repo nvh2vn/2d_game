@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdgo8h3emj2db"
-path="res://.godot/imported/breakable_pole_top_anim0000.png-5a1956498b67d49e0c09ff4e88ad29f7.ctex"
+path="res://.godot/imported/breakable_pole_top_anim0000.png-075656b1038f5d40fcf84f72c14d33ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/breakable_pole_top_anim0000.png"
-dest_files=["res://.godot/imported/breakable_pole_top_anim0000.png-5a1956498b67d49e0c09ff4e88ad29f7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/breakable_pole_top_anim0000.png"
+dest_files=["res://.godot/imported/breakable_pole_top_anim0000.png-075656b1038f5d40fcf84f72c14d33ef.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cug7ogsi44wsp"
-path="res://.godot/imported/atlas0 #0330050.png-6b7728c59cc674b5ea8d28daeb594f8c.ctex"
+path="res://.godot/imported/atlas0 #0330050.png-5b3e23688954f980050a53e9f67a9d7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Spikes & thorns/atlas0 #0330050.png"
-dest_files=["res://.godot/imported/atlas0 #0330050.png-6b7728c59cc674b5ea8d28daeb594f8c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Spikes & thorns/atlas0 #0330050.png"
+dest_files=["res://.godot/imported/atlas0 #0330050.png-5b3e23688954f980050a53e9f67a9d7e.ctex"]
 
 [params]
 

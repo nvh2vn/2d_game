@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvvib8jqbrn0d"
-path="res://.godot/imported/blue_door_0010_blue_roots_big.png-db9716a690dece188c6d1edf75b438a2.ctex"
+path="res://.godot/imported/blue_door_0010_blue_roots_big.png-cf909c96a853ec52b985af486f9799f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/blue_door_0010_blue_roots_big.png"
-dest_files=["res://.godot/imported/blue_door_0010_blue_roots_big.png-db9716a690dece188c6d1edf75b438a2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/blue_door_0010_blue_roots_big.png"
+dest_files=["res://.godot/imported/blue_door_0010_blue_roots_big.png-cf909c96a853ec52b985af486f9799f5.ctex"]
 
 [params]
 

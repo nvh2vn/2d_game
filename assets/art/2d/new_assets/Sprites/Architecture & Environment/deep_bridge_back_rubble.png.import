@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c86uru27d7hhc"
-path="res://.godot/imported/deep_bridge_back_rubble.png-c38750ce17cf3ad1cc3148df551052bd.ctex"
+path="res://.godot/imported/deep_bridge_back_rubble.png-b57ef69eeef77a8a276c667aaa95a70c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/deep_bridge_back_rubble.png"
-dest_files=["res://.godot/imported/deep_bridge_back_rubble.png-c38750ce17cf3ad1cc3148df551052bd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/deep_bridge_back_rubble.png"
+dest_files=["res://.godot/imported/deep_bridge_back_rubble.png-b57ef69eeef77a8a276c667aaa95a70c.ctex"]
 
 [params]
 

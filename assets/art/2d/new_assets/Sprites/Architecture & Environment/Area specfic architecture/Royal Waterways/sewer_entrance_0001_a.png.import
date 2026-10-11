@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw6pkty5ou25o"
-path="res://.godot/imported/sewer_entrance_0001_a.png-d9203fcecbe8840327a9150f5da487e6.ctex"
+path="res://.godot/imported/sewer_entrance_0001_a.png-b01f8b9bf3e632551311bbaf877b7bd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/sewer_entrance_0001_a.png"
-dest_files=["res://.godot/imported/sewer_entrance_0001_a.png-d9203fcecbe8840327a9150f5da487e6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/sewer_entrance_0001_a.png"
+dest_files=["res://.godot/imported/sewer_entrance_0001_a.png-b01f8b9bf3e632551311bbaf877b7bd7.ctex"]
 
 [params]
 

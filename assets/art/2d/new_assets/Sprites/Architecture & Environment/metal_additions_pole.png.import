@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mk3s20o8xr2w"
-path="res://.godot/imported/metal_additions_pole.png-32d34120a08ebc44bab9f48ec02e3b36.ctex"
+path="res://.godot/imported/metal_additions_pole.png-418754c43326903cfcdcb586e6c4474f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/metal_additions_pole.png"
-dest_files=["res://.godot/imported/metal_additions_pole.png-32d34120a08ebc44bab9f48ec02e3b36.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/metal_additions_pole.png"
+dest_files=["res://.godot/imported/metal_additions_pole.png-418754c43326903cfcdcb586e6c4474f.ctex"]
 
 [params]
 

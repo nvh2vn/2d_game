@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dagnh1xnsn1dl"
-path="res://.godot/imported/deepnest_cornifer_mound_02.png-222efc3f3f8ade8de1a9be4eca305b96.ctex"
+path="res://.godot/imported/deepnest_cornifer_mound_02.png-9b327a7e5e1d90d27af4b27fa64081e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_cornifer_mound_02.png"
-dest_files=["res://.godot/imported/deepnest_cornifer_mound_02.png-222efc3f3f8ade8de1a9be4eca305b96.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_cornifer_mound_02.png"
+dest_files=["res://.godot/imported/deepnest_cornifer_mound_02.png-9b327a7e5e1d90d27af4b27fa64081e5.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7vamj4lonxca"
-path="res://.godot/imported/Mask_Maker_Egg_Chamber_0006_FG7.png-f7e7bcba4857128eb741ae02bb4d8bc3.ctex"
+path="res://.godot/imported/Mask_Maker_Egg_Chamber_0006_FG7.png-b8c2cd77f79e031117bec6499d251bf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/Mask_Maker_Egg_Chamber_0006_FG7.png"
-dest_files=["res://.godot/imported/Mask_Maker_Egg_Chamber_0006_FG7.png-f7e7bcba4857128eb741ae02bb4d8bc3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/Mask_Maker_Egg_Chamber_0006_FG7.png"
+dest_files=["res://.godot/imported/Mask_Maker_Egg_Chamber_0006_FG7.png-b8c2cd77f79e031117bec6499d251bf2.ctex"]
 
 [params]
 

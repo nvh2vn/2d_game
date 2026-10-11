@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1vd1wj5fvuo"
-path="res://.godot/imported/No_eyes_temple_0003_3.png-ae35bcfb453c3d0c1060dc89de63f96f.ctex"
+path="res://.godot/imported/No_eyes_temple_0003_3.png-9ce6c55394b5857408648dea5712c6c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/No_eyes_temple_0003_3.png"
-dest_files=["res://.godot/imported/No_eyes_temple_0003_3.png-ae35bcfb453c3d0c1060dc89de63f96f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/No_eyes_temple_0003_3.png"
+dest_files=["res://.godot/imported/No_eyes_temple_0003_3.png-9ce6c55394b5857408648dea5712c6c5.ctex"]
 
 [params]
 

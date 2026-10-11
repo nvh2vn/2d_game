@@ -1,0 +1,64 @@
+==================================================
+  HOLLOW KNIGHT ENEMIES VERIFICATION REPORT
+==================================================
+Checking: res://assets/prefabs/enemies/winged_sentry.tscn
+  [OK] Node: WingedSentry (CharacterBody2D)
+  [OK] SpriteFrames animations (9): ["anticipate", "attack_slash", "attack_thrust", "death", "hurt", "idle", "pursue", "recover", "turn"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/aspid_hunter.tscn
+  [OK] Node: AspidHunter (CharacterBody2D)
+  [OK] SpriteFrames animations (4): ["anticipate", "idle", "shoot", "turn"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/furious_vengefly.tscn
+  [OK] Node: FuriousVengefly (CharacterBody2D)
+  [OK] SpriteFrames animations (5): ["death", "dive", "idle", "screech", "turn"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/baldur.tscn
+  [OK] Node: Baldur (CharacterBody2D)
+  [OK] SpriteFrames animations (5): ["curl", "death", "idle", "roll", "uncurl"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/corpse_creeper.tscn
+  [OK] Node: CorpseCreeper (CharacterBody2D)
+  [OK] SpriteFrames animations (5): ["awaken", "crawl", "death", "idle_corpse", "run"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/deephunter.tscn
+  [OK] Node: Deephunter (CharacterBody2D)
+  [OK] SpriteFrames animations (5): ["death", "hover", "idle", "swoop", "swoop_anticipate"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/mosscreep.tscn
+  [OK] Node: Mosscreep (CharacterBody2D)
+  [OK] SpriteFrames animations (4): ["death", "idle", "panic_run", "walk"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/enemies/mossfly.tscn
+  [OK] Node: Mossfly (CharacterBody2D)
+  [OK] SpriteFrames animations (3): ["death", "fly", "turn"]
+  [OK] Hurtbox take_damage method present (Pogo jump ready): true
+  [OK] Hitbox contact damage node present
+  [OK] take_damage test: HP 2 -> 1
+--------------------------------------------------
+Checking: res://assets/prefabs/projectiles/aspid_projectile.tscn
+  [OK] Node: AspidProjectile (Area2D)
+  [OK] Area2D projectile confirmed
+--------------------------------------------------
+RESULT: 9/9 PREFABS PASSED 100% VERIFICATION

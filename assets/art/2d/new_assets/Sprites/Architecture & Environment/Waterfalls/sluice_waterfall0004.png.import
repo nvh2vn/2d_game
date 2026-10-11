@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdfqkt00h67yy"
-path="res://.godot/imported/sluice_waterfall0004.png-be6ec914d6042f49f5d1e870e8e5b79a.ctex"
+path="res://.godot/imported/sluice_waterfall0004.png-2d1c8ebef25e2635cefeb3202bf4eff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Waterfalls/sluice_waterfall0004.png"
-dest_files=["res://.godot/imported/sluice_waterfall0004.png-be6ec914d6042f49f5d1e870e8e5b79a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Waterfalls/sluice_waterfall0004.png"
+dest_files=["res://.godot/imported/sluice_waterfall0004.png-2d1c8ebef25e2635cefeb3202bf4eff2.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://tr1uq07d3yft"
-path="res://.godot/imported/zombie_laser_miner_run.wav-18a78adc4da0ce54988096ffccbebca8.sample"
+path="res://.godot/imported/zombie_laser_miner_run.wav-d6a9a489bb93e7614c033429664f9602.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Crystallised Husk/zombie_laser_miner_run.wav"
-dest_files=["res://.godot/imported/zombie_laser_miner_run.wav-18a78adc4da0ce54988096ffccbebca8.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Crystallised Husk/zombie_laser_miner_run.wav"
+dest_files=["res://.godot/imported/zombie_laser_miner_run.wav-d6a9a489bb93e7614c033429664f9602.sample"]
 
 [params]
 

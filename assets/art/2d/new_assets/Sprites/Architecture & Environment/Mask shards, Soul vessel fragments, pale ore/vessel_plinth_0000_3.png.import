@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfr27mmp35nom"
-path="res://.godot/imported/vessel_plinth_0000_3.png-971d1c48e1d9aefc37727012bc6c3ae4.ctex"
+path="res://.godot/imported/vessel_plinth_0000_3.png-4d10fe775e10ae6b52ec10f4c50c0c60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/vessel_plinth_0000_3.png"
-dest_files=["res://.godot/imported/vessel_plinth_0000_3.png-971d1c48e1d9aefc37727012bc6c3ae4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/vessel_plinth_0000_3.png"
+dest_files=["res://.godot/imported/vessel_plinth_0000_3.png-4d10fe775e10ae6b52ec10f4c50c0c60.ctex"]
 
 [params]
 

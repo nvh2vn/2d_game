@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b856woypx0vft"
-path="res://.godot/imported/GG_UI_pieces_soul_shine0001.png-809c67e31f37b6280ef5e6124def3a29.ctex"
+path="res://.godot/imported/GG_UI_pieces_soul_shine0001.png-64463330f855803c6b35266c5f8d3aac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/GG_UI_pieces_soul_shine0001.png"
-dest_files=["res://.godot/imported/GG_UI_pieces_soul_shine0001.png-809c67e31f37b6280ef5e6124def3a29.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/GG_UI_pieces_soul_shine0001.png"
+dest_files=["res://.godot/imported/GG_UI_pieces_soul_shine0001.png-64463330f855803c6b35266c5f8d3aac.ctex"]
 
 [params]
 

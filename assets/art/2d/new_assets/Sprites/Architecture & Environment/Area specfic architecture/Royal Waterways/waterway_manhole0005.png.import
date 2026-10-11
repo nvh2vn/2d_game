@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfu07q8u84of6"
-path="res://.godot/imported/waterway_manhole0005.png-45fb33480af7d312009ed4fc0a06f0c7.ctex"
+path="res://.godot/imported/waterway_manhole0005.png-d558eb89ffadf01a330132d52ac59965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/waterway_manhole0005.png"
-dest_files=["res://.godot/imported/waterway_manhole0005.png-45fb33480af7d312009ed4fc0a06f0c7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/waterway_manhole0005.png"
+dest_files=["res://.godot/imported/waterway_manhole0005.png-d558eb89ffadf01a330132d52ac59965.ctex"]
 
 [params]
 

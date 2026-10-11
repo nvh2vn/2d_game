@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://susg3ucenyq2"
-path="res://.godot/imported/deep_collapser.png-8113dad93446b50b2633dcbde2cd334f.ctex"
+path="res://.godot/imported/deep_collapser.png-758984345c47da82de85d492f29d6d42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/deep_collapser.png"
-dest_files=["res://.godot/imported/deep_collapser.png-8113dad93446b50b2633dcbde2cd334f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/deep_collapser.png"
+dest_files=["res://.godot/imported/deep_collapser.png-758984345c47da82de85d492f29d6d42.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fvh2r8sqe2s6"
-path="res://.godot/imported/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png-3d5b21ec67f2fa63cfa93360d834ca50.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png-0ccdee950eee0995d7bd1d5c04a4ead6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png-3d5b21ec67f2fa63cfa93360d834ca50.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Dead_Ghoul_Bugs-512x1024-fmt4.png-0ccdee950eee0995d7bd1d5c04a4ead6.ctex"]
 
 [params]
 

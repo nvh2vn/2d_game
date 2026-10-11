@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://muxapbrr0aw6"
-path="res://.godot/imported/Whispering Root - atlas0 #04407.png-f40e2c3de56892c2bb46e36e2b4c3d16.ctex"
+path="res://.godot/imported/Whispering Root - atlas0 #04407.png-ac4a28f0a3384e12b073803a64fd8fbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Dream/Whispering Root - atlas0 #04407.png"
-dest_files=["res://.godot/imported/Whispering Root - atlas0 #04407.png-f40e2c3de56892c2bb46e36e2b4c3d16.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Dream/Whispering Root - atlas0 #04407.png"
+dest_files=["res://.godot/imported/Whispering Root - atlas0 #04407.png-ac4a28f0a3384e12b073803a64fd8fbd.ctex"]
 
 [params]
 

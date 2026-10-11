@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5agchd07onnp"
-path="res://.godot/imported/giant_centipede_move_loop.wav-a5ea87395e8d0dedd778186653a36d8c.sample"
+path="res://.godot/imported/giant_centipede_move_loop.wav-182bc52e9c8716d69eb4342aaca9134a.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Garpede/giant_centipede_move_loop.wav"
-dest_files=["res://.godot/imported/giant_centipede_move_loop.wav-a5ea87395e8d0dedd778186653a36d8c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Garpede/giant_centipede_move_loop.wav"
+dest_files=["res://.godot/imported/giant_centipede_move_loop.wav-182bc52e9c8716d69eb4342aaca9134a.sample"]
 
 [params]
 

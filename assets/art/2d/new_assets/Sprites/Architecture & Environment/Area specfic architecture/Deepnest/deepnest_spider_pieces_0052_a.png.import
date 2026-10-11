@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btmww70qr5cba"
-path="res://.godot/imported/deepnest_spider_pieces_0052_a.png-3f591f50183cce574fffb2045014567f.ctex"
+path="res://.godot/imported/deepnest_spider_pieces_0052_a.png-3e1baf679de09b0ad8a74d917a9d890e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_spider_pieces_0052_a.png"
-dest_files=["res://.godot/imported/deepnest_spider_pieces_0052_a.png-3f591f50183cce574fffb2045014567f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/deepnest_spider_pieces_0052_a.png"
+dest_files=["res://.godot/imported/deepnest_spider_pieces_0052_a.png-3e1baf679de09b0ad8a74d917a9d890e.ctex"]
 
 [params]
 

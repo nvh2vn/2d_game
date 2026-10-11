@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://brrbhq62v0jx3"
-path="res://.godot/imported/spider_spitter_run_loop.wav-6e83f06098bd02e7996e84db8ca4211c.sample"
+path="res://.godot/imported/spider_spitter_run_loop.wav-a025ba84f1e931ab5daae3fc4b9eec02.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Deephunter/spider_spitter_run_loop.wav"
-dest_files=["res://.godot/imported/spider_spitter_run_loop.wav-6e83f06098bd02e7996e84db8ca4211c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Deephunter/spider_spitter_run_loop.wav"
+dest_files=["res://.godot/imported/spider_spitter_run_loop.wav-a025ba84f1e931ab5daae3fc4b9eec02.sample"]
 
 [params]
 

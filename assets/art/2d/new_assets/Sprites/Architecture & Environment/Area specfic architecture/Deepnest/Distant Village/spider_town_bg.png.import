@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbhmcpk7qv3cd"
-path="res://.godot/imported/spider_town_bg.png-d26248c5f1556998552b777414483cbf.ctex"
+path="res://.godot/imported/spider_town_bg.png-f1dfe05fc8c2a9b91f06e503c393fdf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/spider_town_bg.png"
-dest_files=["res://.godot/imported/spider_town_bg.png-d26248c5f1556998552b777414483cbf.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/spider_town_bg.png"
+dest_files=["res://.godot/imported/spider_town_bg.png-f1dfe05fc8c2a9b91f06e503c393fdf0.ctex"]
 
 [params]
 

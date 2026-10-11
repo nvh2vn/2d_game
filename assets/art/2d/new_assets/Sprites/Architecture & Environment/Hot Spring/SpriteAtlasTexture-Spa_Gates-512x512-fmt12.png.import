@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd1n31810e6qe"
-path="res://.godot/imported/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png-c0496e6b835fc7d931cf74177546126b.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png-e61945ec5dd172ccfd756b08716a6285.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Hot Spring/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png-c0496e6b835fc7d931cf74177546126b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Hot Spring/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Spa_Gates-512x512-fmt12.png-e61945ec5dd172ccfd756b08716a6285.ctex"]
 
 [params]
 

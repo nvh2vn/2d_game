@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kqw16cpab55a"
-path="res://.godot/imported/enoki_0000_fg3.png-ae2db976f11437bb8c97d1520afc1808.ctex"
+path="res://.godot/imported/enoki_0000_fg3.png-997903244905bd5426f74e60093e49ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/enoki_0000_fg3.png"
-dest_files=["res://.godot/imported/enoki_0000_fg3.png-ae2db976f11437bb8c97d1520afc1808.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/enoki_0000_fg3.png"
+dest_files=["res://.godot/imported/enoki_0000_fg3.png-997903244905bd5426f74e60093e49ec.ctex"]
 
 [params]
 

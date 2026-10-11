@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fpukkqukly3j"
-path="res://.godot/imported/spa_pole.png-bf5eb6670fd2732baaacf4c29d4c74fc.ctex"
+path="res://.godot/imported/spa_pole.png-42bf76f3b0bf39c89b9999f3d681d12c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Hot Spring/spa_pole.png"
-dest_files=["res://.godot/imported/spa_pole.png-bf5eb6670fd2732baaacf4c29d4c74fc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Hot Spring/spa_pole.png"
+dest_files=["res://.godot/imported/spa_pole.png-42bf76f3b0bf39c89b9999f3d681d12c.ctex"]
 
 [params]
 

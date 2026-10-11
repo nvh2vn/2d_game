@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dx4d32xm5o8re"
-path="res://.godot/imported/nail_cliff_bench_room3.png-57ac0d25d8c0f488183ab938eab433ba.ctex"
+path="res://.godot/imported/nail_cliff_bench_room3.png-b1faae2b041e62d89cc477441b76a94d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/nail_cliff_bench_room3.png"
-dest_files=["res://.godot/imported/nail_cliff_bench_room3.png-57ac0d25d8c0f488183ab938eab433ba.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/nail_cliff_bench_room3.png"
+dest_files=["res://.godot/imported/nail_cliff_bench_room3.png-b1faae2b041e62d89cc477441b76a94d.ctex"]
 
 [params]
 

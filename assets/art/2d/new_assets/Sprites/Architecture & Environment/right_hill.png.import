@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xs73we5q4nc3"
-path="res://.godot/imported/right_hill.png-c77fa93c74e72355873dd5bcc0ef697c.ctex"
+path="res://.godot/imported/right_hill.png-fc79bfc2adbf3f3fe527020549242c29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/right_hill.png"
-dest_files=["res://.godot/imported/right_hill.png-c77fa93c74e72355873dd5bcc0ef697c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/right_hill.png"
+dest_files=["res://.godot/imported/right_hill.png-fc79bfc2adbf3f3fe527020549242c29.ctex"]
 
 [params]
 

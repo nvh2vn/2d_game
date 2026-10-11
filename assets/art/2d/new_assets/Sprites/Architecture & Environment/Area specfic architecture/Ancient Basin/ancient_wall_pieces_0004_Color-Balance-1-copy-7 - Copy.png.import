@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhf0gcgebsgv2"
-path="res://.godot/imported/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png-7154846d9135219d991cdfb67a06d11c.ctex"
+path="res://.godot/imported/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png-e20c7335c91351fa87c4cd08bb3e19bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png"
-dest_files=["res://.godot/imported/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png-7154846d9135219d991cdfb67a06d11c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png"
+dest_files=["res://.godot/imported/ancient_wall_pieces_0004_Color-Balance-1-copy-7 - Copy.png-e20c7335c91351fa87c4cd08bb3e19bf.ctex"]
 
 [params]
 

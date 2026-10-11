@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5ajb63y8hhwj"
-path="res://.godot/imported/bell_appear_broken.png-1035a696d20c2cdda68fc2c6cf34d475.ctex"
+path="res://.godot/imported/bell_appear_broken.png-eb4830291a244f928810cc332be0a6dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/bell_appear_broken.png"
-dest_files=["res://.godot/imported/bell_appear_broken.png-1035a696d20c2cdda68fc2c6cf34d475.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/bell_appear_broken.png"
+dest_files=["res://.godot/imported/bell_appear_broken.png-eb4830291a244f928810cc332be0a6dd.ctex"]
 
 [params]
 

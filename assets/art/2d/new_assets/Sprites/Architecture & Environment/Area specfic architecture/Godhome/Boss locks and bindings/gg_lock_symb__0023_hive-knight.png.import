@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgl70t8lhclvx"
-path="res://.godot/imported/gg_lock_symb__0023_hive-knight.png-76ba32c2e6231cd6c85ce88c24e6b200.ctex"
+path="res://.godot/imported/gg_lock_symb__0023_hive-knight.png-15cf892150cb3beed534ce9036eb9f01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0023_hive-knight.png"
-dest_files=["res://.godot/imported/gg_lock_symb__0023_hive-knight.png-76ba32c2e6231cd6c85ce88c24e6b200.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0023_hive-knight.png"
+dest_files=["res://.godot/imported/gg_lock_symb__0023_hive-knight.png-15cf892150cb3beed534ce9036eb9f01.ctex"]
 
 [params]
 

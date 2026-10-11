@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvwlxhf8rx3r8"
-path="res://.godot/imported/d_break_0016_deep_egg_break6.png-d31da4e3d345c60394709d0b9315012e.ctex"
+path="res://.godot/imported/d_break_0016_deep_egg_break6.png-16b9806f5963d140ee32d01b35ab1587.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/d_break_0016_deep_egg_break6.png"
-dest_files=["res://.godot/imported/d_break_0016_deep_egg_break6.png-d31da4e3d345c60394709d0b9315012e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/d_break_0016_deep_egg_break6.png"
+dest_files=["res://.godot/imported/d_break_0016_deep_egg_break6.png-16b9806f5963d140ee32d01b35ab1587.ctex"]
 
 [params]
 

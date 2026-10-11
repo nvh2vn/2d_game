@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ubkwjf7py07"
-path="res://.godot/imported/gg_lurker_mesh.png-1b16b3f61d75b4d9feccd06dad3e8273.ctex"
+path="res://.godot/imported/gg_lurker_mesh.png-8361d01bfc0d3086222016e605a1cd53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/gg_lurker_mesh.png"
-dest_files=["res://.godot/imported/gg_lurker_mesh.png-1b16b3f61d75b4d9feccd06dad3e8273.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/gg_lurker_mesh.png"
+dest_files=["res://.godot/imported/gg_lurker_mesh.png-8361d01bfc0d3086222016e605a1cd53.ctex"]
 
 [params]
 

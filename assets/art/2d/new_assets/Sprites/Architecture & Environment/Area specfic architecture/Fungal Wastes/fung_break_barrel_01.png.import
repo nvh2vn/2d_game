@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpxdjgjti2f0r"
-path="res://.godot/imported/fung_break_barrel_01.png-e5727ee165ccfd8e95df2fe0ac0c570e.ctex"
+path="res://.godot/imported/fung_break_barrel_01.png-d92a35bb0825325b9b8072548da1f2c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/fung_break_barrel_01.png"
-dest_files=["res://.godot/imported/fung_break_barrel_01.png-e5727ee165ccfd8e95df2fe0ac0c570e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/fung_break_barrel_01.png"
+dest_files=["res://.godot/imported/fung_break_barrel_01.png-d92a35bb0825325b9b8072548da1f2c6.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ct27xnw7daexs"
-path="res://.godot/imported/zap_bug.wav-5142b2a11cc4c7dcb51ae4ae4388c8b5.sample"
+path="res://.godot/imported/zap_bug.wav-9f7ffdb8986ac404115eb9ceafe4316e.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Charged Lumafly/zap_bug.wav"
-dest_files=["res://.godot/imported/zap_bug.wav-5142b2a11cc4c7dcb51ae4ae4388c8b5.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Charged Lumafly/zap_bug.wav"
+dest_files=["res://.godot/imported/zap_bug.wav-9f7ffdb8986ac404115eb9ceafe4316e.sample"]
 
 [params]
 

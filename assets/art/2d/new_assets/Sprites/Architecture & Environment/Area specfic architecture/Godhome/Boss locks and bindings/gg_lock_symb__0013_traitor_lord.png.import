@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v5hqavk300qa"
-path="res://.godot/imported/gg_lock_symb__0013_traitor_lord.png-5533fff687e482a9ff87fc58743ff48c.ctex"
+path="res://.godot/imported/gg_lock_symb__0013_traitor_lord.png-bcfff9317c141f91317545310ab94b6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0013_traitor_lord.png"
-dest_files=["res://.godot/imported/gg_lock_symb__0013_traitor_lord.png-5533fff687e482a9ff87fc58743ff48c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0013_traitor_lord.png"
+dest_files=["res://.godot/imported/gg_lock_symb__0013_traitor_lord.png-bcfff9317c141f91317545310ab94b6d.ctex"]
 
 [params]
 

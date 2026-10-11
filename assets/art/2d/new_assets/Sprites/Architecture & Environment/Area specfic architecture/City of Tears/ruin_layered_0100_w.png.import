@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sxkpnps1sd2s"
-path="res://.godot/imported/ruin_layered_0100_w.png-94a9411567f4dc1b411ed913960b023d.ctex"
+path="res://.godot/imported/ruin_layered_0100_w.png-52be55266b2a1f58908283529292644c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruin_layered_0100_w.png"
-dest_files=["res://.godot/imported/ruin_layered_0100_w.png-94a9411567f4dc1b411ed913960b023d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruin_layered_0100_w.png"
+dest_files=["res://.godot/imported/ruin_layered_0100_w.png-52be55266b2a1f58908283529292644c.ctex"]
 
 [params]
 

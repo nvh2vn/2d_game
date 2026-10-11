@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfktxbc7pygbs"
-path="res://.godot/imported/tut_edge_01_0002_03.png-c294a193e66a7c6cb28b0333a7407475.ctex"
+path="res://.godot/imported/tut_edge_01_0002_03.png-218c773056a9dda3e0d1cafb334b2087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/tut_edge_01_0002_03.png"
-dest_files=["res://.godot/imported/tut_edge_01_0002_03.png-c294a193e66a7c6cb28b0333a7407475.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/tut_edge_01_0002_03.png"
+dest_files=["res://.godot/imported/tut_edge_01_0002_03.png-218c773056a9dda3e0d1cafb334b2087.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duplwfs3fe3ix"
-path="res://.godot/imported/abyss_break_wall_palace.png-f1df483553f9d57e32a6e5d84071ea0e.ctex"
+path="res://.godot/imported/abyss_break_wall_palace.png-54715b7e87d2f1d71705572186146d6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/abyss_break_wall_palace.png"
-dest_files=["res://.godot/imported/abyss_break_wall_palace.png-f1df483553f9d57e32a6e5d84071ea0e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/abyss_break_wall_palace.png"
+dest_files=["res://.godot/imported/abyss_break_wall_palace.png-54715b7e87d2f1d71705572186146d6f.ctex"]
 
 [params]
 

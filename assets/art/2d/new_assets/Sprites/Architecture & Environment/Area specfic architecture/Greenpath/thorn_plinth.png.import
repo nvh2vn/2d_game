@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://07aqrpqm25wc"
-path="res://.godot/imported/thorn_plinth.png-5df3f88f63127a17dcfb29fc09b9739f.ctex"
+path="res://.godot/imported/thorn_plinth.png-4a619e4e249bb8b1a8abd7a36f57f50d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/thorn_plinth.png"
-dest_files=["res://.godot/imported/thorn_plinth.png-5df3f88f63127a17dcfb29fc09b9739f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/thorn_plinth.png"
+dest_files=["res://.godot/imported/thorn_plinth.png-4a619e4e249bb8b1a8abd7a36f57f50d.ctex"]
 
 [params]
 

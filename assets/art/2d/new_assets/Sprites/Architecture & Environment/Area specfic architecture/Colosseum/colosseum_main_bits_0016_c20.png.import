@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6a1cdf6sargt"
-path="res://.godot/imported/colosseum_main_bits_0016_c20.png-213b77a40168931051ab8e7bd4ca27dd.ctex"
+path="res://.godot/imported/colosseum_main_bits_0016_c20.png-d376560e8d9e5d534d13e658cfd59148.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/colosseum_main_bits_0016_c20.png"
-dest_files=["res://.godot/imported/colosseum_main_bits_0016_c20.png-213b77a40168931051ab8e7bd4ca27dd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/colosseum_main_bits_0016_c20.png"
+dest_files=["res://.godot/imported/colosseum_main_bits_0016_c20.png-d376560e8d9e5d534d13e658cfd59148.ctex"]
 
 [params]
 

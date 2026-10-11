@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di0o3cyfac1ue"
-path="res://.godot/imported/mage_computer_02.png-8240101cd19f32a16e2cc5fd84201ec6.ctex"
+path="res://.godot/imported/mage_computer_02.png-a3c7a0d01f6f9e10f1facd8a13496c64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage_computer_02.png"
-dest_files=["res://.godot/imported/mage_computer_02.png-8240101cd19f32a16e2cc5fd84201ec6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage_computer_02.png"
+dest_files=["res://.godot/imported/mage_computer_02.png-a3c7a0d01f6f9e10f1facd8a13496c64.ctex"]
 
 [params]
 

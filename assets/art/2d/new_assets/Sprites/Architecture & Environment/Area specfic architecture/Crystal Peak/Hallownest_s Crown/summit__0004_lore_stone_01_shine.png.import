@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dca4prc8ckorg"
-path="res://.godot/imported/summit__0004_lore_stone_01_shine.png-1f2f314f4bebc00ec908a6b2d6131b51.ctex"
+path="res://.godot/imported/summit__0004_lore_stone_01_shine.png-4253a5ce59a958c52a532c5b947406b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/Hallownest_s Crown/summit__0004_lore_stone_01_shine.png"
-dest_files=["res://.godot/imported/summit__0004_lore_stone_01_shine.png-1f2f314f4bebc00ec908a6b2d6131b51.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/Hallownest_s Crown/summit__0004_lore_stone_01_shine.png"
+dest_files=["res://.godot/imported/summit__0004_lore_stone_01_shine.png-4253a5ce59a958c52a532c5b947406b6.ctex"]
 
 [params]
 

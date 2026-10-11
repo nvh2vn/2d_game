@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccli2p3qfddf6"
-path="res://.godot/imported/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png-8d81c369e0bbddb0b381462ae000d9b0.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png-3810837b40a4425633e4c8ceb2d668ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png-8d81c369e0bbddb0b381462ae000d9b0.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-GG_Statue-2048x4096-fmt12.png-3810837b40a4425633e4c8ceb2d668ab.ctex"]
 
 [params]
 

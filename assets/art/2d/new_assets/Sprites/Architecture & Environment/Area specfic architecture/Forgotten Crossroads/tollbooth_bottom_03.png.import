@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blrgfyujmxns4"
-path="res://.godot/imported/tollbooth_bottom_03.png-1e8b70a5258551933e42e740bcb27cde.ctex"
+path="res://.godot/imported/tollbooth_bottom_03.png-5ff3b5b307f3d74b59235022c99e8faf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/tollbooth_bottom_03.png"
-dest_files=["res://.godot/imported/tollbooth_bottom_03.png-1e8b70a5258551933e42e740bcb27cde.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/tollbooth_bottom_03.png"
+dest_files=["res://.godot/imported/tollbooth_bottom_03.png-5ff3b5b307f3d74b59235022c99e8faf.ctex"]
 
 [params]
 

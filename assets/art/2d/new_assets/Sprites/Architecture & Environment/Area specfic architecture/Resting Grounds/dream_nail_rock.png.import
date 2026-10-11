@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djh2073jwd01m"
-path="res://.godot/imported/dream_nail_rock.png-e149fc5cbf770279fd6089a7dcd449bd.ctex"
+path="res://.godot/imported/dream_nail_rock.png-b69ea22b415d5e37de4a3d9f2e40251d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_nail_rock.png"
-dest_files=["res://.godot/imported/dream_nail_rock.png-e149fc5cbf770279fd6089a7dcd449bd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_nail_rock.png"
+dest_files=["res://.godot/imported/dream_nail_rock.png-b69ea22b415d5e37de4a3d9f2e40251d.ctex"]
 
 [params]
 

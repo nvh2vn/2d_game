@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de4km2b7ndu38"
-path="res://.godot/imported/Grimm_tent_ext_0011_2.png-15f8c6f0b9c7ddf0a0d6c1cc3ccdf7ca.ctex"
+path="res://.godot/imported/Grimm_tent_ext_0011_2.png-943eeaf4767768e221df83bc3dfdfa8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/Grimm_tent_ext_0011_2.png"
-dest_files=["res://.godot/imported/Grimm_tent_ext_0011_2.png-15f8c6f0b9c7ddf0a0d6c1cc3ccdf7ca.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Grimm Tents/Grimm_tent_ext_0011_2.png"
+dest_files=["res://.godot/imported/Grimm_tent_ext_0011_2.png-943eeaf4767768e221df83bc3dfdfa8f.ctex"]
 
 [params]
 

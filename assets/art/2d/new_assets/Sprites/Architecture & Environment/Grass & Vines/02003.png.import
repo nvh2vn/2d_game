@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc04gbilae6ce"
-path="res://.godot/imported/02003.png-de052026c4242559fe22d9e2a24d0d95.ctex"
+path="res://.godot/imported/02003.png-ee937c42f280c17354906f8d3c744f22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Grass & Vines/02003.png"
-dest_files=["res://.godot/imported/02003.png-de052026c4242559fe22d9e2a24d0d95.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Grass & Vines/02003.png"
+dest_files=["res://.godot/imported/02003.png-ee937c42f280c17354906f8d3c744f22.ctex"]
 
 [params]
 

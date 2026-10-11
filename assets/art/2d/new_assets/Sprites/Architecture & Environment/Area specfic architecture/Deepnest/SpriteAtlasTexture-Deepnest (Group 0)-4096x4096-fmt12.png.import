@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgt8l4by2nqa2"
-path="res://.godot/imported/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png-ba273eb2c2615f9e682bf9d2d19c783f.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png-6cca431f266e3f3b393e5766c8bebcdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png-ba273eb2c2615f9e682bf9d2d19c783f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Deepnest (Group 0)-4096x4096-fmt12.png-6cca431f266e3f3b393e5766c8bebcdb.ctex"]
 
 [params]
 

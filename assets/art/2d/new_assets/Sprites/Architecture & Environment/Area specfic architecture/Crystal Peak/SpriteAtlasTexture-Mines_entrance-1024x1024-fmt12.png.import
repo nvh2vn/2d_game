@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxuid3ajkwkct"
-path="res://.godot/imported/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png-8e4fb331aa74a1288688dc483d780998.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png-bbc52af07e04aae3c3d7b545cec4e4bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png-8e4fb331aa74a1288688dc483d780998.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Mines_entrance-1024x1024-fmt12.png-bbc52af07e04aae3c3d7b545cec4e4bb.ctex"]
 
 [params]
 

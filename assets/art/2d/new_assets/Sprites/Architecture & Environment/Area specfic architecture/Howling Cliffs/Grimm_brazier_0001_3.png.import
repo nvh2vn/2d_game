@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c33glxwrxb135"
-path="res://.godot/imported/Grimm_brazier_0001_3.png-d699b2e670dd9897c69a097d591612ef.ctex"
+path="res://.godot/imported/Grimm_brazier_0001_3.png-081d064529d394df39b5d6df47a170ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/Grimm_brazier_0001_3.png"
-dest_files=["res://.godot/imported/Grimm_brazier_0001_3.png-d699b2e670dd9897c69a097d591612ef.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/Grimm_brazier_0001_3.png"
+dest_files=["res://.godot/imported/Grimm_brazier_0001_3.png-081d064529d394df39b5d6df47a170ff.ctex"]
 
 [params]
 

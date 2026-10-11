@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4ffyp815irsv"
-path="res://.godot/imported/crossroads_false_door_0000_4.png-1841d965b32d681109d0b11e42a589f9.ctex"
+path="res://.godot/imported/crossroads_false_door_0000_4.png-93b75397b6ce76b19f1f8ff66ab1fd4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/crossroads_false_door_0000_4.png"
-dest_files=["res://.godot/imported/crossroads_false_door_0000_4.png-1841d965b32d681109d0b11e42a589f9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/crossroads_false_door_0000_4.png"
+dest_files=["res://.godot/imported/crossroads_false_door_0000_4.png-93b75397b6ce76b19f1f8ff66ab1fd4a.ctex"]
 
 [params]
 

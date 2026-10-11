@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwsiinvkokelr"
-path="res://.godot/imported/central_elev.png-22ed81c70674577ea9135647a565353f.ctex"
+path="res://.godot/imported/central_elev.png-cdf816941b574ddeb6a5368d11431960.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/central_elev.png"
-dest_files=["res://.godot/imported/central_elev.png-22ed81c70674577ea9135647a565353f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/central_elev.png"
+dest_files=["res://.godot/imported/central_elev.png-cdf816941b574ddeb6a5368d11431960.ctex"]
 
 [params]
 

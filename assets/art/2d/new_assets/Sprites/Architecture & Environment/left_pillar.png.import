@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3enxcpqea1th"
-path="res://.godot/imported/left_pillar.png-b582e81aa89b258e9ae6b8f15cd4aaad.ctex"
+path="res://.godot/imported/left_pillar.png-fd4e7899948d5a3aa971fda9f5dd03d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/left_pillar.png"
-dest_files=["res://.godot/imported/left_pillar.png-b582e81aa89b258e9ae6b8f15cd4aaad.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/left_pillar.png"
+dest_files=["res://.godot/imported/left_pillar.png-fd4e7899948d5a3aa971fda9f5dd03d9.ctex"]
 
 [params]
 

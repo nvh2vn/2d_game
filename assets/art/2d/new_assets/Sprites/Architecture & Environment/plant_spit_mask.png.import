@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hdmad5w1tusi"
-path="res://.godot/imported/plant_spit_mask.png-56bfa7f2b94f8a6e4c51d28bd530c921.ctex"
+path="res://.godot/imported/plant_spit_mask.png-312982a9748d4ad475ff46c6febe1e2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/plant_spit_mask.png"
-dest_files=["res://.godot/imported/plant_spit_mask.png-56bfa7f2b94f8a6e4c51d28bd530c921.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/plant_spit_mask.png"
+dest_files=["res://.godot/imported/plant_spit_mask.png-312982a9748d4ad475ff46c6febe1e2a.ctex"]
 
 [params]
 

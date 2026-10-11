@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daj7t6vdagvjl"
-path="res://.godot/imported/mush_030003.png-448ef80a4e61b61db321655bf61a427e.ctex"
+path="res://.godot/imported/mush_030003.png-20575e2dee338cb88e6fca85f24a2331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/mush_030003.png"
-dest_files=["res://.godot/imported/mush_030003.png-448ef80a4e61b61db321655bf61a427e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/mush_030003.png"
+dest_files=["res://.godot/imported/mush_030003.png-20575e2dee338cb88e6fca85f24a2331.ctex"]
 
 [params]
 

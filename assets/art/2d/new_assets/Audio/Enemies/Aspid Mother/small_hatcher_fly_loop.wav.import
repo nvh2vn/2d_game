@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bk6l2ncug6fmk"
-path="res://.godot/imported/small_hatcher_fly_loop.wav-f2b430cd25f5e5bb9d55009d586f6b91.sample"
+path="res://.godot/imported/small_hatcher_fly_loop.wav-c2bdcadfd0a0fcc5825bcd1b504539d4.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Aspid Mother/small_hatcher_fly_loop.wav"
-dest_files=["res://.godot/imported/small_hatcher_fly_loop.wav-f2b430cd25f5e5bb9d55009d586f6b91.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Aspid Mother/small_hatcher_fly_loop.wav"
+dest_files=["res://.godot/imported/small_hatcher_fly_loop.wav-c2bdcadfd0a0fcc5825bcd1b504539d4.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://14kcrraj1nt4"
-path="res://.godot/imported/break0001.png-6297e21d0e87d5b2e4d8c7da7c2fd94d.ctex"
+path="res://.godot/imported/break0001.png-4181a8cc1f772e038813fdb4e3932186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/break0001.png"
-dest_files=["res://.godot/imported/break0001.png-6297e21d0e87d5b2e4d8c7da7c2fd94d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/break0001.png"
+dest_files=["res://.godot/imported/break0001.png-4181a8cc1f772e038813fdb4e3932186.ctex"]
 
 [params]
 

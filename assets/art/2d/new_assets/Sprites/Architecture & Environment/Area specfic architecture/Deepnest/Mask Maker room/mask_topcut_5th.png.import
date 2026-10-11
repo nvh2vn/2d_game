@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjdw23h54xbxi"
-path="res://.godot/imported/mask_topcut_5th.png-647bb4f2da0551a94603078bdadedacd.ctex"
+path="res://.godot/imported/mask_topcut_5th.png-d278a863dd3ec08413d4304ea0e1b4cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/mask_topcut_5th.png"
-dest_files=["res://.godot/imported/mask_topcut_5th.png-647bb4f2da0551a94603078bdadedacd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Mask Maker room/mask_topcut_5th.png"
+dest_files=["res://.godot/imported/mask_topcut_5th.png-d278a863dd3ec08413d4304ea0e1b4cc.ctex"]
 
 [params]
 

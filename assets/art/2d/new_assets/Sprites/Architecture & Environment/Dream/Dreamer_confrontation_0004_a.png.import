@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmd1ijikndgi"
-path="res://.godot/imported/Dreamer_confrontation_0004_a.png-188911bdf35c7dab1b1093dc40649968.ctex"
+path="res://.godot/imported/Dreamer_confrontation_0004_a.png-be78f386adc618d32f9c18a12acda147.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Dream/Dreamer_confrontation_0004_a.png"
-dest_files=["res://.godot/imported/Dreamer_confrontation_0004_a.png-188911bdf35c7dab1b1093dc40649968.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Dream/Dreamer_confrontation_0004_a.png"
+dest_files=["res://.godot/imported/Dreamer_confrontation_0004_a.png-be78f386adc618d32f9c18a12acda147.ctex"]
 
 [params]
 

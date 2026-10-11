@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dacben4x6fe4d"
-path="res://.godot/imported/shadow_gate_idle_loop.wav-f6f456ccbaf51ed6daf883a18d8de00a.sample"
+path="res://.godot/imported/shadow_gate_idle_loop.wav-c30837269d4e39bd8952c4904d76cbce.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/shadow_gate_idle_loop.wav"
-dest_files=["res://.godot/imported/shadow_gate_idle_loop.wav-f6f456ccbaf51ed6daf883a18d8de00a.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/shadow_gate_idle_loop.wav"
+dest_files=["res://.godot/imported/shadow_gate_idle_loop.wav-c30837269d4e39bd8952c4904d76cbce.sample"]
 
 [params]
 

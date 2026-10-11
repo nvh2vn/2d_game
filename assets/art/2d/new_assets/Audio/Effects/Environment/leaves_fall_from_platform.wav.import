@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjp1vnb1jcwiy"
-path="res://.godot/imported/leaves_fall_from_platform.wav-fb810ff84aa8db4519d402f338e2200c.sample"
+path="res://.godot/imported/leaves_fall_from_platform.wav-657c3d3142cd247e7d021fe6211519f0.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/leaves_fall_from_platform.wav"
-dest_files=["res://.godot/imported/leaves_fall_from_platform.wav-fb810ff84aa8db4519d402f338e2200c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/leaves_fall_from_platform.wav"
+dest_files=["res://.godot/imported/leaves_fall_from_platform.wav-657c3d3142cd247e7d021fe6211519f0.sample"]
 
 [params]
 

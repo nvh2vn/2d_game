@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blf5au3d4isy6"
-path="res://.godot/imported/cr10_break_wall.png-8478ab919e1adb45f73efbe7066aee93.ctex"
+path="res://.godot/imported/cr10_break_wall.png-e16efdcbaf0806de51695f118cf32553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/cr10_break_wall.png"
-dest_files=["res://.godot/imported/cr10_break_wall.png-8478ab919e1adb45f73efbe7066aee93.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/cr10_break_wall.png"
+dest_files=["res://.godot/imported/cr10_break_wall.png-e16efdcbaf0806de51695f118cf32553.ctex"]
 
 [params]
 

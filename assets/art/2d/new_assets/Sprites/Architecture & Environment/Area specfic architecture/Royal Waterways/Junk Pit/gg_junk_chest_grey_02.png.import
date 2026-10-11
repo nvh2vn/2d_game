@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm2w2ml82p8kc"
-path="res://.godot/imported/gg_junk_chest_grey_02.png-4b0defcb182470dcb8356faf1dc7ab58.ctex"
+path="res://.godot/imported/gg_junk_chest_grey_02.png-bfd1ca0f100c34dceb7ed5adb720c83c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_junk_chest_grey_02.png"
-dest_files=["res://.godot/imported/gg_junk_chest_grey_02.png-4b0defcb182470dcb8356faf1dc7ab58.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_junk_chest_grey_02.png"
+dest_files=["res://.godot/imported/gg_junk_chest_grey_02.png-bfd1ca0f100c34dceb7ed5adb720c83c.ctex"]
 
 [params]
 

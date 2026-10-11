@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2l33j80p4lw3"
-path="res://.godot/imported/_0117_jar.png-507195703dd0299eea7cf0288ef93c14.ctex"
+path="res://.godot/imported/_0117_jar.png-3c1fcaa02275458802d9127ee1b49d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/_0117_jar.png"
-dest_files=["res://.godot/imported/_0117_jar.png-507195703dd0299eea7cf0288ef93c14.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/_0117_jar.png"
+dest_files=["res://.godot/imported/_0117_jar.png-3c1fcaa02275458802d9127ee1b49d17.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6hvs7s8q5sg7"
-path="res://.godot/imported/Cryst_Shaman_Ext_0000_4.png-4b467ba452632d4b9af9f3b902de40f6.ctex"
+path="res://.godot/imported/Cryst_Shaman_Ext_0000_4.png-d6815727ae5c69d19c1b9612a486bddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/Cryst_Shaman_Ext_0000_4.png"
-dest_files=["res://.godot/imported/Cryst_Shaman_Ext_0000_4.png-4b467ba452632d4b9af9f3b902de40f6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/Cryst_Shaman_Ext_0000_4.png"
+dest_files=["res://.godot/imported/Cryst_Shaman_Ext_0000_4.png-d6815727ae5c69d19c1b9612a486bddd.ctex"]
 
 [params]
 

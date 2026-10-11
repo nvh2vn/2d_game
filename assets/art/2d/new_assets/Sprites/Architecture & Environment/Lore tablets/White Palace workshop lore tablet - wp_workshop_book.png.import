@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da0kdjpnc8h8y"
-path="res://.godot/imported/White Palace workshop lore tablet - wp_workshop_book.png-f44ed334db944655132957714a9025dd.ctex"
+path="res://.godot/imported/White Palace workshop lore tablet - wp_workshop_book.png-8fa7c147958881715e6ad6c2118c93c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/White Palace workshop lore tablet - wp_workshop_book.png"
-dest_files=["res://.godot/imported/White Palace workshop lore tablet - wp_workshop_book.png-f44ed334db944655132957714a9025dd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/White Palace workshop lore tablet - wp_workshop_book.png"
+dest_files=["res://.godot/imported/White Palace workshop lore tablet - wp_workshop_book.png-8fa7c147958881715e6ad6c2118c93c2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drvc68hevkuy8"
-path="res://.godot/imported/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png-2bcbd03d40dc583208c0ef1718f7370b.ctex"
+path="res://.godot/imported/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png-759e4aa8586fcd148e214d50edc05650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png"
-dest_files=["res://.godot/imported/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png-2bcbd03d40dc583208c0ef1718f7370b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png"
+dest_files=["res://.godot/imported/hive_roof_02_0003_Color-Balance-1-copy-3_floor.png-759e4aa8586fcd148e214d50edc05650.ctex"]
 
 [params]
 

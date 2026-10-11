@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://12rqb0vr6sun"
-path="res://.godot/imported/gg_aerial.png-09877b87e0304909c6de88468aa7ced5.ctex"
+path="res://.godot/imported/gg_aerial.png-41240dc1bf5e17be46a37606f3caf1c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_aerial.png"
-dest_files=["res://.godot/imported/gg_aerial.png-09877b87e0304909c6de88468aa7ced5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_aerial.png"
+dest_files=["res://.godot/imported/gg_aerial.png-41240dc1bf5e17be46a37606f3caf1c6.ctex"]
 
 [params]
 

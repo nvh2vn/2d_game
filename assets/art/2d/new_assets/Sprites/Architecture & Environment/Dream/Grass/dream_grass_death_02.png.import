@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f0e8y4h1bh14"
-path="res://.godot/imported/dream_grass_death_02.png-8a603aaf5a9740b32147c70369a8d29b.ctex"
+path="res://.godot/imported/dream_grass_death_02.png-3d05891f15f29856f3166974acceff47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Dream/Grass/dream_grass_death_02.png"
-dest_files=["res://.godot/imported/dream_grass_death_02.png-8a603aaf5a9740b32147c70369a8d29b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Dream/Grass/dream_grass_death_02.png"
+dest_files=["res://.godot/imported/dream_grass_death_02.png-3d05891f15f29856f3166974acceff47.ctex"]
 
 [params]
 

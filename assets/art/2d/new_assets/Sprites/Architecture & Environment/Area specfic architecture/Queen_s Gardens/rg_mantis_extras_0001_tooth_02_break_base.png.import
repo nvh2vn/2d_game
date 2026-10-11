@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hi5epo3jsm0u"
-path="res://.godot/imported/rg_mantis_extras_0001_tooth_02_break_base.png-04ef50faee9795bc0cb459ee25b2c370.ctex"
+path="res://.godot/imported/rg_mantis_extras_0001_tooth_02_break_base.png-438be7d9a8c5e846fd34b344d8bd8d8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/rg_mantis_extras_0001_tooth_02_break_base.png"
-dest_files=["res://.godot/imported/rg_mantis_extras_0001_tooth_02_break_base.png-04ef50faee9795bc0cb459ee25b2c370.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/rg_mantis_extras_0001_tooth_02_break_base.png"
+dest_files=["res://.godot/imported/rg_mantis_extras_0001_tooth_02_break_base.png-438be7d9a8c5e846fd34b344d8bd8d8d.ctex"]
 
 [params]
 

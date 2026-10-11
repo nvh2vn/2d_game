@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uhqljih6plqf"
-path="res://.godot/imported/shade_gate_0001_shadegate_front.png-0238f34ad8143807374eab19043d98ac.ctex"
+path="res://.godot/imported/shade_gate_0001_shadegate_front.png-afef92ff4e5b6928ea06579d6605cc73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Levers, platforms, doors/shade_gate_0001_shadegate_front.png"
-dest_files=["res://.godot/imported/shade_gate_0001_shadegate_front.png-0238f34ad8143807374eab19043d98ac.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Levers, platforms, doors/shade_gate_0001_shadegate_front.png"
+dest_files=["res://.godot/imported/shade_gate_0001_shadegate_front.png-afef92ff4e5b6928ea06579d6605cc73.ctex"]
 
 [params]
 

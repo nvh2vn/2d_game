@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coxgxsn212jhi"
-path="res://.godot/imported/egg_rim_castoff.png-7bb04a10b69b591abed0577be94d9407.ctex"
+path="res://.godot/imported/egg_rim_castoff.png-4256fff735d41c8b01ca1205332a665e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/egg_rim_castoff.png"
-dest_files=["res://.godot/imported/egg_rim_castoff.png-7bb04a10b69b591abed0577be94d9407.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/egg_rim_castoff.png"
+dest_files=["res://.godot/imported/egg_rim_castoff.png-4256fff735d41c8b01ca1205332a665e.ctex"]
 
 [params]
 

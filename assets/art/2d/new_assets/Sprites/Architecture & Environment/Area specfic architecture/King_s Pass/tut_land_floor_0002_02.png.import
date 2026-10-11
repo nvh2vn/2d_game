@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c557brpkfoh2j"
-path="res://.godot/imported/tut_land_floor_0002_02.png-d8791918c2b9197fcb03510bc778136e.ctex"
+path="res://.godot/imported/tut_land_floor_0002_02.png-349a9a4377359b0a26a2c513828e4a51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/tut_land_floor_0002_02.png"
-dest_files=["res://.godot/imported/tut_land_floor_0002_02.png-d8791918c2b9197fcb03510bc778136e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/tut_land_floor_0002_02.png"
+dest_files=["res://.godot/imported/tut_land_floor_0002_02.png-349a9a4377359b0a26a2c513828e4a51.ctex"]
 
 [params]
 

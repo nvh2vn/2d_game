@@ -1,0 +1,118 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/0.png" id="1_f41jy"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/1.png" id="2_wgp3o"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/2.png" id="3_m1e1k"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/3.png" id="4_yxw0l"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/4.png" id="5_p5ds6"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/death/5.png" id="6_tu3w8"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/hover/0.png" id="7_bj52w"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/hover/1.png" id="8_qsem2"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/hover/2.png" id="9_ru3si"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/idle/0.png" id="10_h4hc8"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/idle/1.png" id="11_03kxc"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/idle/2.png" id="12_b6kv3"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/idle/3.png" id="13_l1vqr"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/0.png" id="14_d10m6"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/1.png" id="15_ah07w"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/2.png" id="16_p7evi"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/3.png" id="17_rlfri"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/4.png" id="18_ari3p"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop/5.png" id="19_xo81b"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop_anticipate/0.png" id="20_h7r4p"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop_anticipate/1.png" id="21_x26je"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/deephunter/swoop_anticipate/2.png" id="22_02eoe"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f41jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgp3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m1e1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yxw0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p5ds6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tu3w8")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bj52w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qsem2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ru3si")
+}],
+"loop": 1,
+"name": &"hover",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_h4hc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_03kxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b6kv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l1vqr")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_d10m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ah07w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p7evi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rlfri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ari3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xo81b")
+}],
+"loop": 0,
+"name": &"swoop",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_h7r4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x26je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_02eoe")
+}],
+"loop": 0,
+"name": &"swoop_anticipate",
+"speed": 6.0
+}]

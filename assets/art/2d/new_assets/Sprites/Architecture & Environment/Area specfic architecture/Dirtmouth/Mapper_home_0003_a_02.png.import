@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csvvima4tgdxc"
-path="res://.godot/imported/Mapper_home_0003_a_02.png-a0d66fade61fdf246abb061a9059c99c.ctex"
+path="res://.godot/imported/Mapper_home_0003_a_02.png-11b72cbb806a2250b0bd3120662cb8d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Mapper_home_0003_a_02.png"
-dest_files=["res://.godot/imported/Mapper_home_0003_a_02.png-a0d66fade61fdf246abb061a9059c99c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Mapper_home_0003_a_02.png"
+dest_files=["res://.godot/imported/Mapper_home_0003_a_02.png-11b72cbb806a2250b0bd3120662cb8d8.ctex"]
 
 [params]
 

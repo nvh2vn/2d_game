@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4vx573kry4h8"
-path="res://.godot/imported/mr_mush_riddle_room_0000_Layer-9-copy.png-47ae15edd73e1e05fa00d5acb172cd48.ctex"
+path="res://.godot/imported/mr_mush_riddle_room_0000_Layer-9-copy.png-9d814e606fdd997d4cf86aa849c5d2ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/mr_mush_riddle_room_0000_Layer-9-copy.png"
-dest_files=["res://.godot/imported/mr_mush_riddle_room_0000_Layer-9-copy.png-47ae15edd73e1e05fa00d5acb172cd48.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/mr_mush_riddle_room_0000_Layer-9-copy.png"
+dest_files=["res://.godot/imported/mr_mush_riddle_room_0000_Layer-9-copy.png-9d814e606fdd997d4cf86aa849c5d2ff.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bikfpsn4e2b62"
-path="res://.godot/imported/cryst_cave_0003_Layer-7.png-4a026b050d05c640e0c636ffacde526e.ctex"
+path="res://.godot/imported/cryst_cave_0003_Layer-7.png-f448e0ef8f5c20c0c6c76c317703ca36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/cryst_cave_0003_Layer-7.png"
-dest_files=["res://.godot/imported/cryst_cave_0003_Layer-7.png-4a026b050d05c640e0c636ffacde526e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/cryst_cave_0003_Layer-7.png"
+dest_files=["res://.godot/imported/cryst_cave_0003_Layer-7.png-f448e0ef8f5c20c0c6c76c317703ca36.ctex"]
 
 [params]
 

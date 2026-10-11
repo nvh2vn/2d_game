@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnbruqx4pxiwa"
-path="res://.godot/imported/blue_door_0007_blue_vine_03.png-a7ea3ad18fed409a72ff55bc72235600.ctex"
+path="res://.godot/imported/blue_door_0007_blue_vine_03.png-be1e9bb43c800a1c78eb5bf5408690b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/blue_door_0007_blue_vine_03.png"
-dest_files=["res://.godot/imported/blue_door_0007_blue_vine_03.png-a7ea3ad18fed409a72ff55bc72235600.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/blue_door_0007_blue_vine_03.png"
+dest_files=["res://.godot/imported/blue_door_0007_blue_vine_03.png-be1e9bb43c800a1c78eb5bf5408690b9.ctex"]
 
 [params]
 

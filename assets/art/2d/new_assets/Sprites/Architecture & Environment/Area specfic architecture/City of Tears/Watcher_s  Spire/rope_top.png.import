@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc17rbmnkovr"
-path="res://.godot/imported/rope_top.png-01da63e8ea89a34aa7108e9a9e62af62.ctex"
+path="res://.godot/imported/rope_top.png-025467d0e2400aab3f3876b86e1b5524.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/rope_top.png"
-dest_files=["res://.godot/imported/rope_top.png-01da63e8ea89a34aa7108e9a9e62af62.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/rope_top.png"
+dest_files=["res://.godot/imported/rope_top.png-025467d0e2400aab3f3876b86e1b5524.ctex"]
 
 [params]
 

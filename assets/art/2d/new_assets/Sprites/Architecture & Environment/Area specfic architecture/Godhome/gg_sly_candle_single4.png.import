@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxq63nh43bmcu"
-path="res://.godot/imported/gg_sly_candle_single4.png-b2cac00e908b9f3dec11c9f2ea95fe3c.ctex"
+path="res://.godot/imported/gg_sly_candle_single4.png-284d74b5661337a378ef20da1652afb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_sly_candle_single4.png"
-dest_files=["res://.godot/imported/gg_sly_candle_single4.png-b2cac00e908b9f3dec11c9f2ea95fe3c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_sly_candle_single4.png"
+dest_files=["res://.godot/imported/gg_sly_candle_single4.png-284d74b5661337a378ef20da1652afb9.ctex"]
 
 [params]
 

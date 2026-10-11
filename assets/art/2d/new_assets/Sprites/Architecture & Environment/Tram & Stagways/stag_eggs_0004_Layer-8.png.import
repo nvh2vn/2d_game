@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bngrqhe6ok1pg"
-path="res://.godot/imported/stag_eggs_0004_Layer-8.png-fe67fc725b8b21f51526474cf9b1470e.ctex"
+path="res://.godot/imported/stag_eggs_0004_Layer-8.png-fe14287fd2e4c0747165202e142976de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/stag_eggs_0004_Layer-8.png"
-dest_files=["res://.godot/imported/stag_eggs_0004_Layer-8.png-fe67fc725b8b21f51526474cf9b1470e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/stag_eggs_0004_Layer-8.png"
+dest_files=["res://.godot/imported/stag_eggs_0004_Layer-8.png-fe14287fd2e4c0747165202e142976de.ctex"]
 
 [params]
 

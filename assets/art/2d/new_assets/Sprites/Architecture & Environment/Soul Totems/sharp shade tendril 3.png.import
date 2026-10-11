@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djn1q0m512yvm"
-path="res://.godot/imported/sharp shade tendril 3.png-24c79fc579efecc3b41fe4134066a65a.ctex"
+path="res://.godot/imported/sharp shade tendril 3.png-56527799f486ce9540c5b0cb56caa92d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Soul Totems/sharp shade tendril 3.png"
-dest_files=["res://.godot/imported/sharp shade tendril 3.png-24c79fc579efecc3b41fe4134066a65a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Soul Totems/sharp shade tendril 3.png"
+dest_files=["res://.godot/imported/sharp shade tendril 3.png-56527799f486ce9540c5b0cb56caa92d.ctex"]
 
 [params]
 

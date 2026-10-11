@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw0w8taetc3c1"
-path="res://.godot/imported/outskirts__0006_camp.png-a4dfe0501cdf71df800f09631b07a139.ctex"
+path="res://.godot/imported/outskirts__0006_camp.png-9e2b57bba7203ac817878e68246e5bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/outskirts__0006_camp.png"
-dest_files=["res://.godot/imported/outskirts__0006_camp.png-a4dfe0501cdf71df800f09631b07a139.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/outskirts__0006_camp.png"
+dest_files=["res://.godot/imported/outskirts__0006_camp.png-9e2b57bba7203ac817878e68246e5bac.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u7paill3lwv7"
-path="res://.godot/imported/Shop Counter.png-ea09dcbf9ed399d291832be9ebe45fa0.ctex"
+path="res://.godot/imported/Shop Counter.png-743f655e9ab5ca5ffdc30c3aaee4c302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Shop Counter.png"
-dest_files=["res://.godot/imported/Shop Counter.png-ea09dcbf9ed399d291832be9ebe45fa0.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Shop Counter.png"
+dest_files=["res://.godot/imported/Shop Counter.png-743f655e9ab5ca5ffdc30c3aaee4c302.ctex"]
 
 [params]
 

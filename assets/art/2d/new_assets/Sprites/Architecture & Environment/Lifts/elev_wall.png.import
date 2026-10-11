@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwd1xvx0sy8mm"
-path="res://.godot/imported/elev_wall.png-83f1cc0a6d2445d6848b50ae1aeaad39.ctex"
+path="res://.godot/imported/elev_wall.png-25c8f75bad498bedbcf16f102c16e6a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifts/elev_wall.png"
-dest_files=["res://.godot/imported/elev_wall.png-83f1cc0a6d2445d6848b50ae1aeaad39.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifts/elev_wall.png"
+dest_files=["res://.godot/imported/elev_wall.png-25c8f75bad498bedbcf16f102c16e6a6.ctex"]
 
 [params]
 

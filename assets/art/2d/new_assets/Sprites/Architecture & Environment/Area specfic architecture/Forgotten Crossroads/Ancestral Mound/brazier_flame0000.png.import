@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c16su741q1cdx"
-path="res://.godot/imported/brazier_flame0000.png-40a310691d0a2e358f0f6331316602cb.ctex"
+path="res://.godot/imported/brazier_flame0000.png-1ce2d2a0cd55768f93b883a56e86cdca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/brazier_flame0000.png"
-dest_files=["res://.godot/imported/brazier_flame0000.png-40a310691d0a2e358f0f6331316602cb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/brazier_flame0000.png"
+dest_files=["res://.godot/imported/brazier_flame0000.png-1ce2d2a0cd55768f93b883a56e86cdca.ctex"]
 
 [params]
 

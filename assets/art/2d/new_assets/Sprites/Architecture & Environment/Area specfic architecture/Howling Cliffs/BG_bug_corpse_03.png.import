@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0feq8vsok77u"
-path="res://.godot/imported/BG_bug_corpse_03.png-bcab8ef0414b048d9bdb3b85fb8e7529.ctex"
+path="res://.godot/imported/BG_bug_corpse_03.png-71e14168c4276e0918e747501310601d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/BG_bug_corpse_03.png"
-dest_files=["res://.godot/imported/BG_bug_corpse_03.png-bcab8ef0414b048d9bdb3b85fb8e7529.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/BG_bug_corpse_03.png"
+dest_files=["res://.godot/imported/BG_bug_corpse_03.png-71e14168c4276e0918e747501310601d.ctex"]
 
 [params]
 

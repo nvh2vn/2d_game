@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpfdtr10jjqsu"
-path="res://.godot/imported/station_BG_tunnel #34713.png-5b112adf45cff70559f2258aa314b710.ctex"
+path="res://.godot/imported/station_BG_tunnel #34713.png-04359f3ffaa36c76f0911a8af9064d8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/station_BG_tunnel #34713.png"
-dest_files=["res://.godot/imported/station_BG_tunnel #34713.png-5b112adf45cff70559f2258aa314b710.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/station_BG_tunnel #34713.png"
+dest_files=["res://.godot/imported/station_BG_tunnel #34713.png-04359f3ffaa36c76f0911a8af9064d8a.ctex"]
 
 [params]
 

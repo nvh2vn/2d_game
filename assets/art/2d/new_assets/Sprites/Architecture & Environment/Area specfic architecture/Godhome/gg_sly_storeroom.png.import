@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq7bkefk3ovxw"
-path="res://.godot/imported/gg_sly_storeroom.png-005436629bdaab856db34f634b3a55ea.ctex"
+path="res://.godot/imported/gg_sly_storeroom.png-ccdc1061e786c927edf3ebcd76c5052a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_sly_storeroom.png"
-dest_files=["res://.godot/imported/gg_sly_storeroom.png-005436629bdaab856db34f634b3a55ea.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_sly_storeroom.png"
+dest_files=["res://.godot/imported/gg_sly_storeroom.png-ccdc1061e786c927edf3ebcd76c5052a.ctex"]
 
 [params]
 

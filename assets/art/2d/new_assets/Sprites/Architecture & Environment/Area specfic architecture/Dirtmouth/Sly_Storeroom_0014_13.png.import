@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de6jbgkuo2xie"
-path="res://.godot/imported/Sly_Storeroom_0014_13.png-34d570b5210d9eb4bc63f7d5becf6bd5.ctex"
+path="res://.godot/imported/Sly_Storeroom_0014_13.png-f76c64c324495826b2e3bcf573a1d02f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Sly_Storeroom_0014_13.png"
-dest_files=["res://.godot/imported/Sly_Storeroom_0014_13.png-34d570b5210d9eb4bc63f7d5becf6bd5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Sly_Storeroom_0014_13.png"
+dest_files=["res://.godot/imported/Sly_Storeroom_0014_13.png-f76c64c324495826b2e3bcf573a1d02f.ctex"]
 
 [params]
 

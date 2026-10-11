@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd6418obthbjn"
-path="res://.godot/imported/rg_coffin_break_back.png-86cf4be6dd98df81cd0e1fee49ded844.ctex"
+path="res://.godot/imported/rg_coffin_break_back.png-7f9519316c65ce0e8dfde5b882702dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_coffin_break_back.png"
-dest_files=["res://.godot/imported/rg_coffin_break_back.png-86cf4be6dd98df81cd0e1fee49ded844.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/rg_coffin_break_back.png"
+dest_files=["res://.godot/imported/rg_coffin_break_back.png-7f9519316c65ce0e8dfde5b882702dfc.ctex"]
 
 [params]
 

@@ -1,0 +1,97 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/death/0.png" id="1_r4hxh"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/death/1.png" id="2_as3ok"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/death/2.png" id="3_vgujf"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/death/3.png" id="4_sc0kp"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/idle/0.png" id="5_axvib"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/idle/1.png" id="6_8v3c6"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/idle/2.png" id="7_0fs82"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/idle/3.png" id="8_rvn6f"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/panic_run/0.png" id="9_j643h"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/panic_run/1.png" id="10_m4xgt"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/panic_run/2.png" id="11_21m7m"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/panic_run/3.png" id="12_kwb3f"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/panic_run/4.png" id="13_mj7e4"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/walk/0.png" id="14_sud6k"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/walk/1.png" id="15_dbgwo"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/walk/2.png" id="16_3o70s"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/walk/3.png" id="17_pq6nv"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/sprites/mosscreep/walk/4.png" id="18_fqhoe"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r4hxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_as3ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vgujf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sc0kp")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_axvib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8v3c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0fs82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rvn6f")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_j643h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m4xgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_21m7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kwb3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mj7e4")
+}],
+"loop": 1,
+"name": &"panic_run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_sud6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dbgwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3o70s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pq6nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fqhoe")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]

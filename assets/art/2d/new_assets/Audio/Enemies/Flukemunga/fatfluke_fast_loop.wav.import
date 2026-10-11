@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://comckndoydra"
-path="res://.godot/imported/fatfluke_fast_loop.wav-75abb003dc835defcd350c7e28a8665e.sample"
+path="res://.godot/imported/fatfluke_fast_loop.wav-d4837ed27d4692006291b15f3c61404f.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Flukemunga/fatfluke_fast_loop.wav"
-dest_files=["res://.godot/imported/fatfluke_fast_loop.wav-75abb003dc835defcd350c7e28a8665e.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Flukemunga/fatfluke_fast_loop.wav"
+dest_files=["res://.godot/imported/fatfluke_fast_loop.wav-d4837ed27d4692006291b15f3c61404f.sample"]
 
 [params]
 

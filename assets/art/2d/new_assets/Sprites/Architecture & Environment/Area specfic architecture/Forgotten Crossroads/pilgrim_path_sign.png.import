@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckmrfp4hxoai5"
-path="res://.godot/imported/pilgrim_path_sign.png-538ab9734ce52296d6c48bf98b5ddc26.ctex"
+path="res://.godot/imported/pilgrim_path_sign.png-2c252f33c4dbf97b30b2315fad81a5ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/pilgrim_path_sign.png"
-dest_files=["res://.godot/imported/pilgrim_path_sign.png-538ab9734ce52296d6c48bf98b5ddc26.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/pilgrim_path_sign.png"
+dest_files=["res://.godot/imported/pilgrim_path_sign.png-2c252f33c4dbf97b30b2315fad81a5ad.ctex"]
 
 [params]
 

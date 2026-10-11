@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bxyta0vxfbchh"
-path="res://.godot/imported/gg_shadelord_roar.wav-52739d7b0257a52346a08a87d7399338.sample"
+path="res://.godot/imported/gg_shadelord_roar.wav-751a273549d86fde13517ca33594bd5d.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/The Knight/Lord of Shades/gg_shadelord_roar.wav"
-dest_files=["res://.godot/imported/gg_shadelord_roar.wav-52739d7b0257a52346a08a87d7399338.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/The Knight/Lord of Shades/gg_shadelord_roar.wav"
+dest_files=["res://.godot/imported/gg_shadelord_roar.wav-751a273549d86fde13517ca33594bd5d.sample"]
 
 [params]
 

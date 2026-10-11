@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk4ljulg82ofv"
-path="res://.godot/imported/pole_05_base.png-374c8c962a65c5cbdc4a319a61a31f0c.ctex"
+path="res://.godot/imported/pole_05_base.png-a844229f8027773acf8b3589202d4d63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/pole_05_base.png"
-dest_files=["res://.godot/imported/pole_05_base.png-374c8c962a65c5cbdc4a319a61a31f0c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/pole_05_base.png"
+dest_files=["res://.godot/imported/pole_05_base.png-a844229f8027773acf8b3589202d4d63.ctex"]
 
 [params]
 

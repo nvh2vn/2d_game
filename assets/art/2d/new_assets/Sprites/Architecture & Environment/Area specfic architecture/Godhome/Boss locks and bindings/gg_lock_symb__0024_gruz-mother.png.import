@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2mrtv4hjwkgu"
-path="res://.godot/imported/gg_lock_symb__0024_gruz-mother.png-f0c31ab34312341b3f9d77e2591a7ab6.ctex"
+path="res://.godot/imported/gg_lock_symb__0024_gruz-mother.png-8c44985cef923dcde464534fffcda1fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0024_gruz-mother.png"
-dest_files=["res://.godot/imported/gg_lock_symb__0024_gruz-mother.png-f0c31ab34312341b3f9d77e2591a7ab6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0024_gruz-mother.png"
+dest_files=["res://.godot/imported/gg_lock_symb__0024_gruz-mother.png-8c44985cef923dcde464534fffcda1fa.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcop2mdmrsh7k"
-path="res://.godot/imported/bone_deep_0003_Layer-127.png-dbb70481f68f2c0c46c79f7edd9471b6.ctex"
+path="res://.godot/imported/bone_deep_0003_Layer-127.png-27cb447b51a9cf55907fc79e4c680fbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/bone_deep_0003_Layer-127.png"
-dest_files=["res://.godot/imported/bone_deep_0003_Layer-127.png-dbb70481f68f2c0c46c79f7edd9471b6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/bone_deep_0003_Layer-127.png"
+dest_files=["res://.godot/imported/bone_deep_0003_Layer-127.png-27cb447b51a9cf55907fc79e4c680fbc.ctex"]
 
 [params]
 

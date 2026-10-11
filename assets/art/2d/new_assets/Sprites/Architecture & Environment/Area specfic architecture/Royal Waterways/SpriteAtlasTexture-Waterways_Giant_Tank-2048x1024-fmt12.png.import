@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfyp5uof2f1ee"
-path="res://.godot/imported/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png-c1ba38018192e8d07cc0d443e3c1e971.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png-c0d3444c7702265397fa7a672be9ca16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png-c1ba38018192e8d07cc0d443e3c1e971.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Waterways_Giant_Tank-2048x1024-fmt12.png-c0d3444c7702265397fa7a672be9ca16.ctex"]
 
 [params]
 

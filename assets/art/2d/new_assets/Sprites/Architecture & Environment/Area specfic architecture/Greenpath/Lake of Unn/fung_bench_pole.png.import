@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcapgjiytu3t"
-path="res://.godot/imported/fung_bench_pole.png-1a57464a16a892dde8e07d2793e7ed5b.ctex"
+path="res://.godot/imported/fung_bench_pole.png-f07a37f650fd62628226e4a789705bd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/fung_bench_pole.png"
-dest_files=["res://.godot/imported/fung_bench_pole.png-1a57464a16a892dde8e07d2793e7ed5b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/fung_bench_pole.png"
+dest_files=["res://.godot/imported/fung_bench_pole.png-f07a37f650fd62628226e4a789705bd6.ctex"]
 
 [params]
 

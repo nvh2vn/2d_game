@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ubwvptgwmg17"
-path="res://.godot/imported/Mini_Soul_Orb_Collect.png-eb89a224c12784e53b773ebf7337260b.ctex"
+path="res://.godot/imported/Mini_Soul_Orb_Collect.png-a78fdb1a441f169264727569e9ea06b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/Mini_Soul_Orb_Collect.png"
-dest_files=["res://.godot/imported/Mini_Soul_Orb_Collect.png-eb89a224c12784e53b773ebf7337260b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Mask shards, Soul vessel fragments, pale ore/Mini_Soul_Orb_Collect.png"
+dest_files=["res://.godot/imported/Mini_Soul_Orb_Collect.png-a78fdb1a441f169264727569e9ea06b0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwxbjxwrmye54"
-path="res://.godot/imported/ouiji_mat_lit.png-dfe106b486a0930304f418ad30d754f2.ctex"
+path="res://.godot/imported/ouiji_mat_lit.png-d7044b317339942cbb74b20688bff545.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/ouiji_mat_lit.png"
-dest_files=["res://.godot/imported/ouiji_mat_lit.png-dfe106b486a0930304f418ad30d754f2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/ouiji_mat_lit.png"
+dest_files=["res://.godot/imported/ouiji_mat_lit.png-d7044b317339942cbb74b20688bff545.ctex"]
 
 [params]
 

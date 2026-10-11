@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7igesvocwvhw"
-path="res://.godot/imported/mage_glowies.png-08d762552fc1e8b6ac96d0121dc5a828.ctex"
+path="res://.godot/imported/mage_glowies.png-fff69905b6343c47f4df2b65bce6e88b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage_glowies.png"
-dest_files=["res://.godot/imported/mage_glowies.png-08d762552fc1e8b6ac96d0121dc5a828.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage_glowies.png"
+dest_files=["res://.godot/imported/mage_glowies.png-fff69905b6343c47f4df2b65bce6e88b.ctex"]
 
 [params]
 

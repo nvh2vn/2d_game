@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1cug8budxs7b"
-path="res://.godot/imported/empty.png-a0d8f8e7c6505e498fb6dbfe75a6e589.ctex"
+path="res://.godot/imported/empty.png-5ae9cab0b433181b90efe167f0915b62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/empty.png"
-dest_files=["res://.godot/imported/empty.png-a0d8f8e7c6505e498fb6dbfe75a6e589.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/empty.png"
+dest_files=["res://.godot/imported/empty.png-5ae9cab0b433181b90efe167f0915b62.ctex"]
 
 [params]
 

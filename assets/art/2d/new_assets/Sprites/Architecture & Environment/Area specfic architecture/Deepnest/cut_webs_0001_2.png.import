@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jqnu5g751tnd"
-path="res://.godot/imported/cut_webs_0001_2.png-b5872edcc5909c3bd7b75ee731f87711.ctex"
+path="res://.godot/imported/cut_webs_0001_2.png-dca3d2b412a171b572e77d0224950911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/cut_webs_0001_2.png"
-dest_files=["res://.godot/imported/cut_webs_0001_2.png-b5872edcc5909c3bd7b75ee731f87711.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/cut_webs_0001_2.png"
+dest_files=["res://.godot/imported/cut_webs_0001_2.png-dca3d2b412a171b572e77d0224950911.ctex"]
 
 [params]
 

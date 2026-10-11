@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b5n8bbgcn7ijc"
-path="res://.godot/imported/crawler.wav-c1531b95c48ff03b6d7cc268a2651132.sample"
+path="res://.godot/imported/crawler.wav-37fc030b158807c5a31eb01a3fc52dc1.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Crawlid/crawler.wav"
-dest_files=["res://.godot/imported/crawler.wav-c1531b95c48ff03b6d7cc268a2651132.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Crawlid/crawler.wav"
+dest_files=["res://.godot/imported/crawler.wav-37fc030b158807c5a31eb01a3fc52dc1.sample"]
 
 [params]
 

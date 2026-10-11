@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuuxf7nwar534"
-path="res://.godot/imported/conveyor_belt_simple0003.png-7c49e7e9cb8b65131f19f214b19eeec3.ctex"
+path="res://.godot/imported/conveyor_belt_simple0003.png-bb66ee29a9f0e92bfb2313ff7866c9bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/conveyor_belt_simple0003.png"
-dest_files=["res://.godot/imported/conveyor_belt_simple0003.png-7c49e7e9cb8b65131f19f214b19eeec3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/conveyor_belt_simple0003.png"
+dest_files=["res://.godot/imported/conveyor_belt_simple0003.png-bb66ee29a9f0e92bfb2313ff7866c9bc.ctex"]
 
 [params]
 

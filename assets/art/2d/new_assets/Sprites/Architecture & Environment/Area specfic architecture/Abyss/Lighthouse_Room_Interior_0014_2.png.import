@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0wldcof7bqaj"
-path="res://.godot/imported/Lighthouse_Room_Interior_0014_2.png-ce95d6e627da923e07cb17306002da58.ctex"
+path="res://.godot/imported/Lighthouse_Room_Interior_0014_2.png-be9f610fdbeb95e16a4298b858867492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Lighthouse_Room_Interior_0014_2.png"
-dest_files=["res://.godot/imported/Lighthouse_Room_Interior_0014_2.png-ce95d6e627da923e07cb17306002da58.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Lighthouse_Room_Interior_0014_2.png"
+dest_files=["res://.godot/imported/Lighthouse_Room_Interior_0014_2.png-be9f610fdbeb95e16a4298b858867492.ctex"]
 
 [params]
 

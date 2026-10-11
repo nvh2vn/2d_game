@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diy3w514c47j1"
-path="res://.godot/imported/queen_0004_a.png-99e09b4d4fc1830a0e45ff3ea877adde.ctex"
+path="res://.godot/imported/queen_0004_a.png-48b93f96cff486958a62047612700344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/queen_0004_a.png"
-dest_files=["res://.godot/imported/queen_0004_a.png-99e09b4d4fc1830a0e45ff3ea877adde.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/queen_0004_a.png"
+dest_files=["res://.godot/imported/queen_0004_a.png-48b93f96cff486958a62047612700344.ctex"]
 
 [params]
 

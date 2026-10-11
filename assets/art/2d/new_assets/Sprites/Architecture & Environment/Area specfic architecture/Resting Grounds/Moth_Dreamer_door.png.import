@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clgsin4sv6rhf"
-path="res://.godot/imported/Moth_Dreamer_door.png-7039abb302d838b34210edc8ee7c3984.ctex"
+path="res://.godot/imported/Moth_Dreamer_door.png-ebde64847c2fb6230081e77d2803a3c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/Moth_Dreamer_door.png"
-dest_files=["res://.godot/imported/Moth_Dreamer_door.png-7039abb302d838b34210edc8ee7c3984.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/Moth_Dreamer_door.png"
+dest_files=["res://.godot/imported/Moth_Dreamer_door.png-ebde64847c2fb6230081e77d2803a3c6.ctex"]
 
 [params]
 

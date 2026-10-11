@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buohllkp7fxj"
-path="res://.godot/imported/GG_sarcophagus-pieces_0002_2.png-088176866ddb3a6ad28b5f3af8a62c9c.ctex"
+path="res://.godot/imported/GG_sarcophagus-pieces_0002_2.png-554ffd7c66cde5481335a23373587302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/GG_sarcophagus-pieces_0002_2.png"
-dest_files=["res://.godot/imported/GG_sarcophagus-pieces_0002_2.png-088176866ddb3a6ad28b5f3af8a62c9c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/GG_sarcophagus-pieces_0002_2.png"
+dest_files=["res://.godot/imported/GG_sarcophagus-pieces_0002_2.png-554ffd7c66cde5481335a23373587302.ctex"]
 
 [params]
 

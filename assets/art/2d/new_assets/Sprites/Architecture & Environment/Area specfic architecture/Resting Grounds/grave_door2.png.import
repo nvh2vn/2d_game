@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c03kqpn5ha115"
-path="res://.godot/imported/grave_door2.png-b98497d46a2c563df55fd3b0f1b0a946.ctex"
+path="res://.godot/imported/grave_door2.png-f0c3da37bd7fceafb58da3a711a1cdcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/grave_door2.png"
-dest_files=["res://.godot/imported/grave_door2.png-b98497d46a2c563df55fd3b0f1b0a946.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/grave_door2.png"
+dest_files=["res://.godot/imported/grave_door2.png-f0c3da37bd7fceafb58da3a711a1cdcc.ctex"]
 
 [params]
 

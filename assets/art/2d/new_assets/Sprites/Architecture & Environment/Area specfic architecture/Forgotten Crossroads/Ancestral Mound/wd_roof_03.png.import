@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://628i4xiaxes2"
-path="res://.godot/imported/wd_roof_03.png-ab76723608f9210fe11001dbfaaeb740.ctex"
+path="res://.godot/imported/wd_roof_03.png-0dbb438ee5ef89479503f4960c4952bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/wd_roof_03.png"
-dest_files=["res://.godot/imported/wd_roof_03.png-ab76723608f9210fe11001dbfaaeb740.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Ancestral Mound/wd_roof_03.png"
+dest_files=["res://.godot/imported/wd_roof_03.png-0dbb438ee5ef89479503f4960c4952bf.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2ekp2vt5ny5k"
-path="res://.godot/imported/direction_sign_breakable_0003_ciity.png-a42d409e0aa80623e5fa821e5916e1ca.ctex"
+path="res://.godot/imported/direction_sign_breakable_0003_ciity.png-1444acd1a0b9a292653ac998aa9ff252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Signs/direction_sign_breakable_0003_ciity.png"
-dest_files=["res://.godot/imported/direction_sign_breakable_0003_ciity.png-a42d409e0aa80623e5fa821e5916e1ca.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Signs/direction_sign_breakable_0003_ciity.png"
+dest_files=["res://.godot/imported/direction_sign_breakable_0003_ciity.png-1444acd1a0b9a292653ac998aa9ff252.ctex"]
 
 [params]
 

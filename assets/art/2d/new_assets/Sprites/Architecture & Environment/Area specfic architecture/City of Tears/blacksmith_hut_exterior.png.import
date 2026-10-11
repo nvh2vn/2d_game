@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqoyjwucrqgmf"
-path="res://.godot/imported/blacksmith_hut_exterior.png-49ee885fab123a1eb449b60457b32734.ctex"
+path="res://.godot/imported/blacksmith_hut_exterior.png-0ad244483c0ae089a96c52c482c96888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/blacksmith_hut_exterior.png"
-dest_files=["res://.godot/imported/blacksmith_hut_exterior.png-49ee885fab123a1eb449b60457b32734.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/blacksmith_hut_exterior.png"
+dest_files=["res://.godot/imported/blacksmith_hut_exterior.png-0ad244483c0ae089a96c52c482c96888.ctex"]
 
 [params]
 

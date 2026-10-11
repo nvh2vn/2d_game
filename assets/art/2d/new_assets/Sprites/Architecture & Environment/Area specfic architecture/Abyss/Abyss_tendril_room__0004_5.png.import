@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt54fwktp7o8c"
-path="res://.godot/imported/Abyss_tendril_room__0004_5.png-d894de23aabf5d53813417461bcd1155.ctex"
+path="res://.godot/imported/Abyss_tendril_room__0004_5.png-2467ddbb286841edf8058df2ae4cd3c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Abyss_tendril_room__0004_5.png"
-dest_files=["res://.godot/imported/Abyss_tendril_room__0004_5.png-d894de23aabf5d53813417461bcd1155.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Abyss_tendril_room__0004_5.png"
+dest_files=["res://.godot/imported/Abyss_tendril_room__0004_5.png-2467ddbb286841edf8058df2ae4cd3c8.ctex"]
 
 [params]
 

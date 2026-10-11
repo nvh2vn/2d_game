@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c46tgxfgqlwy0"
-path="res://.godot/imported/ruins_elevator_brokentop_0000_Layer-1.png-c519a6d3d173f1eead0638984c5abe86.ctex"
+path="res://.godot/imported/ruins_elevator_brokentop_0000_Layer-1.png-b0b77faaeec98451d61f94fd31886829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/ruins_elevator_brokentop_0000_Layer-1.png"
-dest_files=["res://.godot/imported/ruins_elevator_brokentop_0000_Layer-1.png-c519a6d3d173f1eead0638984c5abe86.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/ruins_elevator_brokentop_0000_Layer-1.png"
+dest_files=["res://.godot/imported/ruins_elevator_brokentop_0000_Layer-1.png-b0b77faaeec98451d61f94fd31886829.ctex"]
 
 [params]
 

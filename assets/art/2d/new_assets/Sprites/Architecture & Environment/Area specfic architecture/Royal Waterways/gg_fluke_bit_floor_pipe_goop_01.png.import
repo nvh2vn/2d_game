@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://celotsmqesx4n"
-path="res://.godot/imported/gg_fluke_bit_floor_pipe_goop_01.png-9ba0a9d500a835efd4fa14b5bd5a2064.ctex"
+path="res://.godot/imported/gg_fluke_bit_floor_pipe_goop_01.png-4b9c3c414ee3d8cedaf5d05232e60b2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/gg_fluke_bit_floor_pipe_goop_01.png"
-dest_files=["res://.godot/imported/gg_fluke_bit_floor_pipe_goop_01.png-9ba0a9d500a835efd4fa14b5bd5a2064.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/gg_fluke_bit_floor_pipe_goop_01.png"
+dest_files=["res://.godot/imported/gg_fluke_bit_floor_pipe_goop_01.png-4b9c3c414ee3d8cedaf5d05232e60b2e.ctex"]
 
 [params]
 

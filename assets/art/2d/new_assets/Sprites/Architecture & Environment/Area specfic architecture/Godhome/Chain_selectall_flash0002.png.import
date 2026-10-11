@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cypunrx3e7v8y"
-path="res://.godot/imported/Chain_selectall_flash0002.png-e5aeb765e93b3f717c5f9fc8382d893e.ctex"
+path="res://.godot/imported/Chain_selectall_flash0002.png-2ebe122c638ae6317cef6692247bbf3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Chain_selectall_flash0002.png"
-dest_files=["res://.godot/imported/Chain_selectall_flash0002.png-e5aeb765e93b3f717c5f9fc8382d893e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Chain_selectall_flash0002.png"
+dest_files=["res://.godot/imported/Chain_selectall_flash0002.png-2ebe122c638ae6317cef6692247bbf3c.ctex"]
 
 [params]
 

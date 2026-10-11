@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1kq3klyixels"
-path="res://.godot/imported/elev_shortcut.png-644fd497a4494aab836f1f6107df88da.ctex"
+path="res://.godot/imported/elev_shortcut.png-fc71e8ffbb611a1b964978fd0feb5c8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifts/elev_shortcut.png"
-dest_files=["res://.godot/imported/elev_shortcut.png-644fd497a4494aab836f1f6107df88da.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifts/elev_shortcut.png"
+dest_files=["res://.godot/imported/elev_shortcut.png-fc71e8ffbb611a1b964978fd0feb5c8e.ctex"]
 
 [params]
 

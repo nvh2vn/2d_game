@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dftqbvt8gyvj5"
-path="res://.godot/imported/jelly_lamp0002.png-7781f54f6073b59327a5170c56a23cef.ctex"
+path="res://.godot/imported/jelly_lamp0002.png-2fa11e8ec570d316d7dbcec1b8bd0465.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/jelly_lamp0002.png"
-dest_files=["res://.godot/imported/jelly_lamp0002.png-7781f54f6073b59327a5170c56a23cef.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/jelly_lamp0002.png"
+dest_files=["res://.godot/imported/jelly_lamp0002.png-2fa11e8ec570d316d7dbcec1b8bd0465.ctex"]
 
 [params]
 

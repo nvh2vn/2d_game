@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dolksx32a4cla"
-path="res://.godot/imported/arena_BG_wall_01_0004_Layer-0.png-5241a25ce4a561ca39131c5880a73967.ctex"
+path="res://.godot/imported/arena_BG_wall_01_0004_Layer-0.png-9ddf102636bf8b6e6d663546557ffe1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/arena_BG_wall_01_0004_Layer-0.png"
-dest_files=["res://.godot/imported/arena_BG_wall_01_0004_Layer-0.png-5241a25ce4a561ca39131c5880a73967.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/arena_BG_wall_01_0004_Layer-0.png"
+dest_files=["res://.godot/imported/arena_BG_wall_01_0004_Layer-0.png-9ddf102636bf8b6e6d663546557ffe1b.ctex"]
 
 [params]
 

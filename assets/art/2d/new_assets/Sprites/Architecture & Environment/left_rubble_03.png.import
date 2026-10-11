@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b53mwo0h2p4ru"
-path="res://.godot/imported/left_rubble_03.png-faa7d56b80701f58370077ec80669035.ctex"
+path="res://.godot/imported/left_rubble_03.png-cd1687311daf5b6239f354b1519d42f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/left_rubble_03.png"
-dest_files=["res://.godot/imported/left_rubble_03.png-faa7d56b80701f58370077ec80669035.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/left_rubble_03.png"
+dest_files=["res://.godot/imported/left_rubble_03.png-cd1687311daf5b6239f354b1519d42f3.ctex"]
 
 [params]
 

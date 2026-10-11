@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d34fs0myfe34o"
-path="res://.godot/imported/dream_gate_fail.wav-9c6052e59e5174c04986a8825ee0c945.sample"
+path="res://.godot/imported/dream_gate_fail.wav-f1a6670a8afc0d452fde60f9ace33d38.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_gate_fail.wav"
-dest_files=["res://.godot/imported/dream_gate_fail.wav-9c6052e59e5174c04986a8825ee0c945.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Dream/dream_gate_fail.wav"
+dest_files=["res://.godot/imported/dream_gate_fail.wav-f1a6670a8afc0d452fde60f9ace33d38.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnrmopwkoi6ar"
-path="res://.godot/imported/atlas0 #423018.png-6fd56021d8045a82abe3f2c49982cd0b.ctex"
+path="res://.godot/imported/atlas0 #423018.png-e1c087f284335766ebdd7dd070dad8ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/atlas0 #423018.png"
-dest_files=["res://.godot/imported/atlas0 #423018.png-6fd56021d8045a82abe3f2c49982cd0b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/atlas0 #423018.png"
+dest_files=["res://.godot/imported/atlas0 #423018.png-e1c087f284335766ebdd7dd070dad8ae.ctex"]
 
 [params]
 

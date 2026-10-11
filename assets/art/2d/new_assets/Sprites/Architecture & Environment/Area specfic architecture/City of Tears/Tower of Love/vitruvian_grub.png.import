@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy2u7eqy27wdr"
-path="res://.godot/imported/vitruvian_grub.png-90c83edafc69f85e20ac033ccc1b3414.ctex"
+path="res://.godot/imported/vitruvian_grub.png-a170ddbcf118ad57a7f1d30ebf2e7e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/vitruvian_grub.png"
-dest_files=["res://.godot/imported/vitruvian_grub.png-90c83edafc69f85e20ac033ccc1b3414.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/vitruvian_grub.png"
+dest_files=["res://.godot/imported/vitruvian_grub.png-a170ddbcf118ad57a7f1d30ebf2e7e93.ctex"]
 
 [params]
 

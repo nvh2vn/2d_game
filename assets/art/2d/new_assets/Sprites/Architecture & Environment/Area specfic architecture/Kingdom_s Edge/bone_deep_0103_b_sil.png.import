@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxalt8jfq3d7f"
-path="res://.godot/imported/bone_deep_0103_b_sil.png-1ac62ccdcf99942adff02378a53ed3ff.ctex"
+path="res://.godot/imported/bone_deep_0103_b_sil.png-235aef2e5f7bb7bdd0c8b0e24e867f3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/bone_deep_0103_b_sil.png"
-dest_files=["res://.godot/imported/bone_deep_0103_b_sil.png-1ac62ccdcf99942adff02378a53ed3ff.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/bone_deep_0103_b_sil.png"
+dest_files=["res://.godot/imported/bone_deep_0103_b_sil.png-235aef2e5f7bb7bdd0c8b0e24e867f3f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfpo3apix761o"
-path="res://.godot/imported/cliffs_moths_0007_Layer-4.png-8be8c91361eaf3f3f284071a07957aa4.ctex"
+path="res://.godot/imported/cliffs_moths_0007_Layer-4.png-c2026fda820cbfcd652b9e0b33a2f948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/cliffs_moths_0007_Layer-4.png"
-dest_files=["res://.godot/imported/cliffs_moths_0007_Layer-4.png-8be8c91361eaf3f3f284071a07957aa4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/cliffs_moths_0007_Layer-4.png"
+dest_files=["res://.godot/imported/cliffs_moths_0007_Layer-4.png-c2026fda820cbfcd652b9e0b33a2f948.ctex"]
 
 [params]
 

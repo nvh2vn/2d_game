@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgqidbrlset76"
-path="res://.godot/imported/blizzard_start.wav-9feeb41c6fa638ba58ee8aa5258e12af.sample"
+path="res://.godot/imported/blizzard_start.wav-c7fadaddd331798da3e79e69cb0b43d4.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/blizzard_start.wav"
-dest_files=["res://.godot/imported/blizzard_start.wav-9feeb41c6fa638ba58ee8aa5258e12af.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/blizzard_start.wav"
+dest_files=["res://.godot/imported/blizzard_start.wav-c7fadaddd331798da3e79e69cb0b43d4.sample"]
 
 [params]
 

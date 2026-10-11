@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n1g151ub0gfp"
-path="res://.godot/imported/gg_blue_room_core_glow.png-b4905cd8a4aee9734fb380e9ec2a8797.ctex"
+path="res://.godot/imported/gg_blue_room_core_glow.png-b68bc0a7b859fcd79ca95c671d55f553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_blue_room_core_glow.png"
-dest_files=["res://.godot/imported/gg_blue_room_core_glow.png-b4905cd8a4aee9734fb380e9ec2a8797.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_blue_room_core_glow.png"
+dest_files=["res://.godot/imported/gg_blue_room_core_glow.png-b68bc0a7b859fcd79ca95c671d55f553.ctex"]
 
 [params]
 

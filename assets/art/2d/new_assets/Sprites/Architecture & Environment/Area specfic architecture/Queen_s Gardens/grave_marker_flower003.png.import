@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs3cxkdekms7d"
-path="res://.godot/imported/grave_marker_flower003.png-10fa5aaf5bf4b3d4f4bc9246e3153387.ctex"
+path="res://.godot/imported/grave_marker_flower003.png-39d311556a60725a566c2e9d47f4981e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/grave_marker_flower003.png"
-dest_files=["res://.godot/imported/grave_marker_flower003.png-10fa5aaf5bf4b3d4f4bc9246e3153387.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/grave_marker_flower003.png"
+dest_files=["res://.godot/imported/grave_marker_flower003.png-39d311556a60725a566c2e9d47f4981e.ctex"]
 
 [params]
 

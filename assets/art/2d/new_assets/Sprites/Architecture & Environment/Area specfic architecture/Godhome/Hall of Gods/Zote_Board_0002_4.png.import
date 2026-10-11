@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dijt7k7gfn1xb"
-path="res://.godot/imported/Zote_Board_0002_4.png-367165aa4e68f96db8aad317330d3f09.ctex"
+path="res://.godot/imported/Zote_Board_0002_4.png-c69042a46fc94ef9feb2df9a31617a96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/Zote_Board_0002_4.png"
-dest_files=["res://.godot/imported/Zote_Board_0002_4.png-367165aa4e68f96db8aad317330d3f09.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/Zote_Board_0002_4.png"
+dest_files=["res://.godot/imported/Zote_Board_0002_4.png-c69042a46fc94ef9feb2df9a31617a96.ctex"]
 
 [params]
 

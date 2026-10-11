@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://7aui8433d04m"
-path="res://.godot/imported/Ruins_Great_Shield_Sentry_shield_raise_01.wav-9b0768ada1eb887361e294cb08142487.sample"
+path="res://.godot/imported/Ruins_Great_Shield_Sentry_shield_raise_01.wav-476bf18c4ef8219973fecc9e5f54a03e.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Great Husk Sentry/Ruins_Great_Shield_Sentry_shield_raise_01.wav"
-dest_files=["res://.godot/imported/Ruins_Great_Shield_Sentry_shield_raise_01.wav-9b0768ada1eb887361e294cb08142487.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Great Husk Sentry/Ruins_Great_Shield_Sentry_shield_raise_01.wav"
+dest_files=["res://.godot/imported/Ruins_Great_Shield_Sentry_shield_raise_01.wav-476bf18c4ef8219973fecc9e5f54a03e.sample"]
 
 [params]
 

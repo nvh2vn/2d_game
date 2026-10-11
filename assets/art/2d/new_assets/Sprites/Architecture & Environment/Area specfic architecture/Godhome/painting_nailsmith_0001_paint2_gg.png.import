@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bedc14kn17a6o"
-path="res://.godot/imported/painting_nailsmith_0001_paint2_gg.png-68f789ad53d6cd656e3757556b493a84.ctex"
+path="res://.godot/imported/painting_nailsmith_0001_paint2_gg.png-b97cb9fd30f12bac03332788dee7fff0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/painting_nailsmith_0001_paint2_gg.png"
-dest_files=["res://.godot/imported/painting_nailsmith_0001_paint2_gg.png-68f789ad53d6cd656e3757556b493a84.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/painting_nailsmith_0001_paint2_gg.png"
+dest_files=["res://.godot/imported/painting_nailsmith_0001_paint2_gg.png-b97cb9fd30f12bac03332788dee7fff0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2sm81av3k14f"
-path="res://.godot/imported/Broken-Bridge_0006_a.png-b0cfe9cfae643852ff7a73b5cf462fcc.ctex"
+path="res://.godot/imported/Broken-Bridge_0006_a.png-0d645b4d511e1fbc4d75df2fbe5436c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/Broken-Bridge_0006_a.png"
-dest_files=["res://.godot/imported/Broken-Bridge_0006_a.png-b0cfe9cfae643852ff7a73b5cf462fcc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/Broken-Bridge_0006_a.png"
+dest_files=["res://.godot/imported/Broken-Bridge_0006_a.png-0d645b4d511e1fbc4d75df2fbe5436c3.ctex"]
 
 [params]
 

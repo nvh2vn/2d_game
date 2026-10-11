@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwc5hx0dne6xp"
-path="res://.godot/imported/brk_barrel_01.png-70e2c4c4eba5edb35df700fe9b828a60.ctex"
+path="res://.godot/imported/brk_barrel_01.png-916c3531e1bc49beec40bf98d3558b7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/brk_barrel_01.png"
-dest_files=["res://.godot/imported/brk_barrel_01.png-70e2c4c4eba5edb35df700fe9b828a60.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/brk_barrel_01.png"
+dest_files=["res://.godot/imported/brk_barrel_01.png-916c3531e1bc49beec40bf98d3558b7a.ctex"]
 
 [params]
 

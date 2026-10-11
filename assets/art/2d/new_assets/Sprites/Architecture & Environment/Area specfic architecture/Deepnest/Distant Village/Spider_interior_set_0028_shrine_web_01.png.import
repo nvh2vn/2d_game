@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chj25rabo1sa0"
-path="res://.godot/imported/Spider_interior_set_0028_shrine_web_01.png-3384b97313a93ee297fed7615db13b3e.ctex"
+path="res://.godot/imported/Spider_interior_set_0028_shrine_web_01.png-24cd838523b25070eee25acc6855022c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/Spider_interior_set_0028_shrine_web_01.png"
-dest_files=["res://.godot/imported/Spider_interior_set_0028_shrine_web_01.png-3384b97313a93ee297fed7615db13b3e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/Spider_interior_set_0028_shrine_web_01.png"
+dest_files=["res://.godot/imported/Spider_interior_set_0028_shrine_web_01.png-24cd838523b25070eee25acc6855022c.ctex"]
 
 [params]
 

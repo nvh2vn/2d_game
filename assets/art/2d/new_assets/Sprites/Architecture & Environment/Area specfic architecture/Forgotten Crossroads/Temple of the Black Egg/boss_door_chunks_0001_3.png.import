@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cady50h7heb56"
-path="res://.godot/imported/boss_door_chunks_0001_3.png-ce4057033c4fd4582de25f39d269d8d9.ctex"
+path="res://.godot/imported/boss_door_chunks_0001_3.png-18dade8d58469cc731aab550d7630f1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/boss_door_chunks_0001_3.png"
-dest_files=["res://.godot/imported/boss_door_chunks_0001_3.png-ce4057033c4fd4582de25f39d269d8d9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/boss_door_chunks_0001_3.png"
+dest_files=["res://.godot/imported/boss_door_chunks_0001_3.png-18dade8d58469cc731aab550d7630f1b.ctex"]
 
 [params]
 

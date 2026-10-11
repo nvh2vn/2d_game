@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmpg4c0gqap2m"
-path="res://.godot/imported/Hallownest_Gate_0016_04.png-1d2902923ba5e164a4bfa8ae679c27ec.ctex"
+path="res://.godot/imported/Hallownest_Gate_0016_04.png-32bd18b0d80b55d531f2c1bdea2dec69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Hallownest_Gate_0016_04.png"
-dest_files=["res://.godot/imported/Hallownest_Gate_0016_04.png-1d2902923ba5e164a4bfa8ae679c27ec.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Hallownest_Gate_0016_04.png"
+dest_files=["res://.godot/imported/Hallownest_Gate_0016_04.png-32bd18b0d80b55d531f2c1bdea2dec69.ctex"]
 
 [params]
 

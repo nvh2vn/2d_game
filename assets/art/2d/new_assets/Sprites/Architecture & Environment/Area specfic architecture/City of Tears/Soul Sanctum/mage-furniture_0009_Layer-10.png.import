@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cixmcx2wmgevl"
-path="res://.godot/imported/mage-furniture_0009_Layer-10.png-73b8026d883681a5fcc2f35090eb77cd.ctex"
+path="res://.godot/imported/mage-furniture_0009_Layer-10.png-0fa6e22b56638f5cfe407a0a4911b80a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage-furniture_0009_Layer-10.png"
-dest_files=["res://.godot/imported/mage-furniture_0009_Layer-10.png-73b8026d883681a5fcc2f35090eb77cd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Soul Sanctum/mage-furniture_0009_Layer-10.png"
+dest_files=["res://.godot/imported/mage-furniture_0009_Layer-10.png-0fa6e22b56638f5cfe407a0a4911b80a.ctex"]
 
 [params]
 

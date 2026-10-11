@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ha88uw4323d5"
-path="res://.godot/imported/level_tile.png-9b5d3ac9558af7e48bdd990a2bf7223c.ctex"
+path="res://.godot/imported/level_tile.png-ffdf5e5724c5de762eab33bd2d1518f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/level_tile.png"
-dest_files=["res://.godot/imported/level_tile.png-9b5d3ac9558af7e48bdd990a2bf7223c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/level_tile.png"
+dest_files=["res://.godot/imported/level_tile.png-ffdf5e5724c5de762eab33bd2d1518f4.ctex"]
 
 [params]
 

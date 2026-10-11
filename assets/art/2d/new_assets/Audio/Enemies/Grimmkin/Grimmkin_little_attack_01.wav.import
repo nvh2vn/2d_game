@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://chg0jgobvmdd4"
-path="res://.godot/imported/Grimmkin_little_attack_01.wav-849c4ad93e706c25d6f75a69049599a2.sample"
+path="res://.godot/imported/Grimmkin_little_attack_01.wav-39b2e290536268b91fbce158e8af557d.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Grimmkin/Grimmkin_little_attack_01.wav"
-dest_files=["res://.godot/imported/Grimmkin_little_attack_01.wav-849c4ad93e706c25d6f75a69049599a2.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Grimmkin/Grimmkin_little_attack_01.wav"
+dest_files=["res://.godot/imported/Grimmkin_little_attack_01.wav-39b2e290536268b91fbce158e8af557d.sample"]
 
 [params]
 

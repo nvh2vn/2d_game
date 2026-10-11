@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxft36my3log"
-path="res://.godot/imported/fung_new_0068_Layer-280.png-6bc7f6523e8bfd720aafaf095a96f73d.ctex"
+path="res://.godot/imported/fung_new_0068_Layer-280.png-cf9d15c4e8e40ecddcb7b4a039e9ac6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/fung_new_0068_Layer-280.png"
-dest_files=["res://.godot/imported/fung_new_0068_Layer-280.png-6bc7f6523e8bfd720aafaf095a96f73d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/fung_new_0068_Layer-280.png"
+dest_files=["res://.godot/imported/fung_new_0068_Layer-280.png-cf9d15c4e8e40ecddcb7b4a039e9ac6b.ctex"]
 
 [params]
 

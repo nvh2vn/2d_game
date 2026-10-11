@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d273f74r745te"
-path="res://.godot/imported/beach_extras_0005_1.png-981f54796ea439339534963f2b10a4f5.ctex"
+path="res://.godot/imported/beach_extras_0005_1.png-3d7c9636db522860dc65172b2e74392f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/Blue lake/beach_extras_0005_1.png"
-dest_files=["res://.godot/imported/beach_extras_0005_1.png-981f54796ea439339534963f2b10a4f5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/Blue lake/beach_extras_0005_1.png"
+dest_files=["res://.godot/imported/beach_extras_0005_1.png-3d7c9636db522860dc65172b2e74392f.ctex"]
 
 [params]
 

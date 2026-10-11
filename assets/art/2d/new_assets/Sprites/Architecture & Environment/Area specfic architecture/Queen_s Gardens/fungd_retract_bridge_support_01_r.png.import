@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxoovjxitscji"
-path="res://.godot/imported/fungd_retract_bridge_support_01_r.png-0be725563b69173375dfd8c0f5b6165b.ctex"
+path="res://.godot/imported/fungd_retract_bridge_support_01_r.png-c77cf5f14e1631ddd64160984bea7afe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/fungd_retract_bridge_support_01_r.png"
-dest_files=["res://.godot/imported/fungd_retract_bridge_support_01_r.png-0be725563b69173375dfd8c0f5b6165b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/fungd_retract_bridge_support_01_r.png"
+dest_files=["res://.godot/imported/fungd_retract_bridge_support_01_r.png-c77cf5f14e1631ddd64160984bea7afe.ctex"]
 
 [params]
 

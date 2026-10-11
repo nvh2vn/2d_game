@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7f1nm0s151p4"
-path="res://.godot/imported/room_BG_0001_Color-Balance-1-copy-8.png-b972703b9dd8d68e8069a258dc147b88.ctex"
+path="res://.godot/imported/room_BG_0001_Color-Balance-1-copy-8.png-968bf0b80a097be7fe4cbef5153c2de4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/room_BG_0001_Color-Balance-1-copy-8.png"
-dest_files=["res://.godot/imported/room_BG_0001_Color-Balance-1-copy-8.png-b972703b9dd8d68e8069a258dc147b88.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/room_BG_0001_Color-Balance-1-copy-8.png"
+dest_files=["res://.godot/imported/room_BG_0001_Color-Balance-1-copy-8.png-968bf0b80a097be7fe4cbef5153c2de4.ctex"]
 
 [params]
 

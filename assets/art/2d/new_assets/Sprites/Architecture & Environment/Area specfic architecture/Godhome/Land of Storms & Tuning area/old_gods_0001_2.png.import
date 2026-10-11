@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8o4vpk2ismq3"
-path="res://.godot/imported/old_gods_0001_2.png-34ca355caab213412289a007f87d905b.ctex"
+path="res://.godot/imported/old_gods_0001_2.png-9670a7f8d2fc740e68f9fca236220b37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/old_gods_0001_2.png"
-dest_files=["res://.godot/imported/old_gods_0001_2.png-34ca355caab213412289a007f87d905b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/old_gods_0001_2.png"
+dest_files=["res://.godot/imported/old_gods_0001_2.png-9670a7f8d2fc740e68f9fca236220b37.ctex"]
 
 [params]
 

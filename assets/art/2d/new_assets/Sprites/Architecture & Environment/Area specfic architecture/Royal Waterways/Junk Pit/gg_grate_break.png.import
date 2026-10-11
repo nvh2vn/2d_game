@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafuapr4sst2w"
-path="res://.godot/imported/gg_grate_break.png-70761297287bdf09502459de9a3aa274.ctex"
+path="res://.godot/imported/gg_grate_break.png-2e539f9ae67703253c860da572b5f610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_grate_break.png"
-dest_files=["res://.godot/imported/gg_grate_break.png-70761297287bdf09502459de9a3aa274.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_grate_break.png"
+dest_files=["res://.godot/imported/gg_grate_break.png-2e539f9ae67703253c860da572b5f610.ctex"]
 
 [params]
 

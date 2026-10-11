@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cudun2hh8gxd0"
-path="res://.godot/imported/Fung_FG_Silhouettes_0001_fb3.png-1f2914189f4b6db6c825e858cb8e891a.ctex"
+path="res://.godot/imported/Fung_FG_Silhouettes_0001_fb3.png-18d2ee80f70c216b35c5afe7826e95a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Fung_FG_Silhouettes_0001_fb3.png"
-dest_files=["res://.godot/imported/Fung_FG_Silhouettes_0001_fb3.png-1f2914189f4b6db6c825e858cb8e891a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Fung_FG_Silhouettes_0001_fb3.png"
+dest_files=["res://.godot/imported/Fung_FG_Silhouettes_0001_fb3.png-18d2ee80f70c216b35c5afe7826e95a3.ctex"]
 
 [params]
 

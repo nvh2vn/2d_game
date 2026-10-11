@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0qntchlgkaew"
-path="res://.godot/imported/fung temple window arch small.png-783d05b2bc275ceea8852a0e2449acb5.ctex"
+path="res://.godot/imported/fung temple window arch small.png-25bd33e6af3053f32a83a261668a0783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/fung temple window arch small.png"
-dest_files=["res://.godot/imported/fung temple window arch small.png-783d05b2bc275ceea8852a0e2449acb5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/fung temple window arch small.png"
+dest_files=["res://.godot/imported/fung temple window arch small.png-25bd33e6af3053f32a83a261668a0783.ctex"]
 
 [params]
 

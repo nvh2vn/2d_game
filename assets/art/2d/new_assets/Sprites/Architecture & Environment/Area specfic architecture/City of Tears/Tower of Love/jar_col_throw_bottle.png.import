@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgytegbmxfh1x"
-path="res://.godot/imported/jar_col_throw_bottle.png-bfe196a190af7fbd42980a697d4dd77f.ctex"
+path="res://.godot/imported/jar_col_throw_bottle.png-7ab2f732679c10a5f0b7fa8834168d83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/jar_col_throw_bottle.png"
-dest_files=["res://.godot/imported/jar_col_throw_bottle.png-bfe196a190af7fbd42980a697d4dd77f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Tower of Love/jar_col_throw_bottle.png"
+dest_files=["res://.godot/imported/jar_col_throw_bottle.png-7ab2f732679c10a5f0b7fa8834168d83.ctex"]
 
 [params]
 

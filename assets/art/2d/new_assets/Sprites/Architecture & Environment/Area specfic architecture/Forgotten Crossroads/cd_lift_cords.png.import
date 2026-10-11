@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tbh6255rifvr"
-path="res://.godot/imported/cd_lift_cords.png-42db291d42c93584de30bbc7e3916fb2.ctex"
+path="res://.godot/imported/cd_lift_cords.png-ace20b687cb7d7e821235404e97e8fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_lift_cords.png"
-dest_files=["res://.godot/imported/cd_lift_cords.png-42db291d42c93584de30bbc7e3916fb2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_lift_cords.png"
+dest_files=["res://.godot/imported/cd_lift_cords.png-ace20b687cb7d7e821235404e97e8fb6.ctex"]
 
 [params]
 

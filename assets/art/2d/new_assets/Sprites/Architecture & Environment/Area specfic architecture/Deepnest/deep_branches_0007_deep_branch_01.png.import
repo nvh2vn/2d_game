@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6eo21l4xmacc"
-path="res://.godot/imported/deep_branches_0007_deep_branch_01.png-12b9229d35559e7c43def460cdba9f82.ctex"
+path="res://.godot/imported/deep_branches_0007_deep_branch_01.png-3f345c3f858676bf9a8242d19fab5d18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/deep_branches_0007_deep_branch_01.png"
-dest_files=["res://.godot/imported/deep_branches_0007_deep_branch_01.png-12b9229d35559e7c43def460cdba9f82.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/deep_branches_0007_deep_branch_01.png"
+dest_files=["res://.godot/imported/deep_branches_0007_deep_branch_01.png-3f345c3f858676bf9a8242d19fab5d18.ctex"]
 
 [params]
 

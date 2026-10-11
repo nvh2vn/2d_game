@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd0f6lss5c3qb"
-path="res://.godot/imported/summit_plinth_0002_7.png-be47fc311db62ffe6f67be893a3c13dc.ctex"
+path="res://.godot/imported/summit_plinth_0002_7.png-899f198b3982c426b01fb68c63402713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/Hallownest_s Crown/summit_plinth_0002_7.png"
-dest_files=["res://.godot/imported/summit_plinth_0002_7.png-be47fc311db62ffe6f67be893a3c13dc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/Hallownest_s Crown/summit_plinth_0002_7.png"
+dest_files=["res://.godot/imported/summit_plinth_0002_7.png-899f198b3982c426b01fb68c63402713.ctex"]
 
 [params]
 

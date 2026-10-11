@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btlwm6t27lfjg"
-path="res://.godot/imported/amelitia_flowers_0006_2.png-524557559733efb6dbe6638e26185b02.ctex"
+path="res://.godot/imported/amelitia_flowers_0006_2.png-3c6dfc61480d80419c2b80dd28c2e2d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/amelitia_flowers_0006_2.png"
-dest_files=["res://.godot/imported/amelitia_flowers_0006_2.png-524557559733efb6dbe6638e26185b02.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/amelitia_flowers_0006_2.png"
+dest_files=["res://.godot/imported/amelitia_flowers_0006_2.png-3c6dfc61480d80419c2b80dd28c2e2d4.ctex"]
 
 [params]
 

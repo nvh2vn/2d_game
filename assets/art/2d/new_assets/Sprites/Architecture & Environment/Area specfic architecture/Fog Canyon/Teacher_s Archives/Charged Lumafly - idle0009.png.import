@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://55a8yoskiqiw"
-path="res://.godot/imported/Charged Lumafly - idle0009.png-397c350d7f3a17ec700ba2f16d187cfd.ctex"
+path="res://.godot/imported/Charged Lumafly - idle0009.png-684cf2edf812e8d8ed9c452217ddbe07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/Charged Lumafly - idle0009.png"
-dest_files=["res://.godot/imported/Charged Lumafly - idle0009.png-397c350d7f3a17ec700ba2f16d187cfd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/Charged Lumafly - idle0009.png"
+dest_files=["res://.godot/imported/Charged Lumafly - idle0009.png-684cf2edf812e8d8ed9c452217ddbe07.ctex"]
 
 [params]
 

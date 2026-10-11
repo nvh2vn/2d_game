@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bd3vvmf7016re"
-path="res://.godot/imported/deepnest_insect_floor_loop.wav-40c26093b3cca22332ff5c202f6ba8ed.sample"
+path="res://.godot/imported/deepnest_insect_floor_loop.wav-f196c1964bb0eb5c8704916a2ea5ddba.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/deepnest_insect_floor_loop.wav"
-dest_files=["res://.godot/imported/deepnest_insect_floor_loop.wav-40c26093b3cca22332ff5c202f6ba8ed.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/deepnest_insect_floor_loop.wav"
+dest_files=["res://.godot/imported/deepnest_insect_floor_loop.wav-f196c1964bb0eb5c8704916a2ea5ddba.sample"]
 
 [params]
 

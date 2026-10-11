@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://34fuypno8ic3"
-path="res://.godot/imported/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png-0fce9240e0973f5e4e420e3b28229b05.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png-ddc928480b988b46e7c323ad107046a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png-0fce9240e0973f5e4e420e3b28229b05.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-F_Boss_Stone-1024x1024-fmt12.png-ddc928480b988b46e7c323ad107046a8.ctex"]
 
 [params]
 

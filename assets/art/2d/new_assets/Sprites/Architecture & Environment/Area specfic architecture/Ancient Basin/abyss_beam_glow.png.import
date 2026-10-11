@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brx7bfahna7pd"
-path="res://.godot/imported/abyss_beam_glow.png-0dfc6aeab642947219372105cf450ac7.ctex"
+path="res://.godot/imported/abyss_beam_glow.png-76811c99e64c4f33481161efe2dffe63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Ancient Basin/abyss_beam_glow.png"
-dest_files=["res://.godot/imported/abyss_beam_glow.png-0dfc6aeab642947219372105cf450ac7.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Ancient Basin/abyss_beam_glow.png"
+dest_files=["res://.godot/imported/abyss_beam_glow.png-76811c99e64c4f33481161efe2dffe63.ctex"]
 
 [params]
 

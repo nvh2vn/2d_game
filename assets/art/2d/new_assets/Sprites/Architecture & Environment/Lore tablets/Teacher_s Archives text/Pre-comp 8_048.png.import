@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg5vbn5mra4jq"
-path="res://.godot/imported/Pre-comp 8_048.png-c81f820778369912a1b20b1eb5d43746.ctex"
+path="res://.godot/imported/Pre-comp 8_048.png-0f1ed49a3e148c87ac158ca49283aa29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/Teacher_s Archives text/Pre-comp 8_048.png"
-dest_files=["res://.godot/imported/Pre-comp 8_048.png-c81f820778369912a1b20b1eb5d43746.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/Teacher_s Archives text/Pre-comp 8_048.png"
+dest_files=["res://.godot/imported/Pre-comp 8_048.png-0f1ed49a3e148c87ac158ca49283aa29.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yasqypcdstxh"
-path="res://.godot/imported/gg_lock_symb__0010_watcher_knight.png-3813822a247d82344a2729c31fc7446c.ctex"
+path="res://.godot/imported/gg_lock_symb__0010_watcher_knight.png-7124ed0bf77eecebcba56499488efcc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0010_watcher_knight.png"
-dest_files=["res://.godot/imported/gg_lock_symb__0010_watcher_knight.png-3813822a247d82344a2729c31fc7446c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/gg_lock_symb__0010_watcher_knight.png"
+dest_files=["res://.godot/imported/gg_lock_symb__0010_watcher_knight.png-7124ed0bf77eecebcba56499488efcc3.ctex"]
 
 [params]
 

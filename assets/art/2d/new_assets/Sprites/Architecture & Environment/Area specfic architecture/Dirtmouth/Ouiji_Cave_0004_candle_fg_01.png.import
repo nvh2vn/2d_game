@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e2d6f1hyrry6"
-path="res://.godot/imported/Ouiji_Cave_0004_candle_fg_01.png-43bf8123e8cef55986cf7a08530849c6.ctex"
+path="res://.godot/imported/Ouiji_Cave_0004_candle_fg_01.png-41a6529572c129139af640694346e5ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Ouiji_Cave_0004_candle_fg_01.png"
-dest_files=["res://.godot/imported/Ouiji_Cave_0004_candle_fg_01.png-43bf8123e8cef55986cf7a08530849c6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Ouiji_Cave_0004_candle_fg_01.png"
+dest_files=["res://.godot/imported/Ouiji_Cave_0004_candle_fg_01.png-41a6529572c129139af640694346e5ff.ctex"]
 
 [params]
 

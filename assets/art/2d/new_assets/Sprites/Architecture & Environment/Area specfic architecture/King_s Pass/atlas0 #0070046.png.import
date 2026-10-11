@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkwlebg2d7khw"
-path="res://.godot/imported/atlas0 #0070046.png-d22f6572950d3cb562b782be87445ef5.ctex"
+path="res://.godot/imported/atlas0 #0070046.png-521fee2cdb982a6c239b120040a8ac22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/atlas0 #0070046.png"
-dest_files=["res://.godot/imported/atlas0 #0070046.png-d22f6572950d3cb562b782be87445ef5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/atlas0 #0070046.png"
+dest_files=["res://.godot/imported/atlas0 #0070046.png-521fee2cdb982a6c239b120040a8ac22.ctex"]
 
 [params]
 

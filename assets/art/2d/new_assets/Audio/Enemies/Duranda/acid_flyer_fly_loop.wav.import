@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dl47qx7g50wvr"
-path="res://.godot/imported/acid_flyer_fly_loop.wav-bfb615727cba1a3d90f385cef0bfc17b.sample"
+path="res://.godot/imported/acid_flyer_fly_loop.wav-7fd5a4a465cc40fa09b3031f66d31f4a.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Duranda/acid_flyer_fly_loop.wav"
-dest_files=["res://.godot/imported/acid_flyer_fly_loop.wav-bfb615727cba1a3d90f385cef0bfc17b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Duranda/acid_flyer_fly_loop.wav"
+dest_files=["res://.godot/imported/acid_flyer_fly_loop.wav-7fd5a4a465cc40fa09b3031f66d31f4a.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://87k324j5nk0g"
-path="res://.godot/imported/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png-fbb8652604cbca84898338be3b512574.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png-d47c6b53be750a5852c9f8ae16adf061.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png-fbb8652604cbca84898338be3b512574.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Lurian_Table-512x512-fmt12.png-d47c6b53be750a5852c9f8ae16adf061.ctex"]
 
 [params]
 

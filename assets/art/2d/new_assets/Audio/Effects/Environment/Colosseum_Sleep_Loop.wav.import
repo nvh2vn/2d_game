@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://hq8ov08ghep"
-path="res://.godot/imported/Colosseum_Sleep_Loop.wav-b79ec421c34eac6e4b991fd4f8dd7082.sample"
+path="res://.godot/imported/Colosseum_Sleep_Loop.wav-c4621c15323e2cfd0918e7b15e168440.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/Colosseum_Sleep_Loop.wav"
-dest_files=["res://.godot/imported/Colosseum_Sleep_Loop.wav-b79ec421c34eac6e4b991fd4f8dd7082.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/Colosseum_Sleep_Loop.wav"
+dest_files=["res://.godot/imported/Colosseum_Sleep_Loop.wav-c4621c15323e2cfd0918e7b15e168440.sample"]
 
 [params]
 

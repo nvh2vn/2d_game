@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://082mvca6l57c"
-path="res://.godot/imported/spitter_spit.wav-3046d8547f8ba81862777a107d816374.sample"
+path="res://.godot/imported/spitter_spit.wav-e2f36ef5ea9ea2240d6a76f5565f8d93.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Aspid and Primal Aspid/spitter_spit.wav"
-dest_files=["res://.godot/imported/spitter_spit.wav-3046d8547f8ba81862777a107d816374.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Aspid and Primal Aspid/spitter_spit.wav"
+dest_files=["res://.godot/imported/spitter_spit.wav-e2f36ef5ea9ea2240d6a76f5565f8d93.sample"]
 
 [params]
 

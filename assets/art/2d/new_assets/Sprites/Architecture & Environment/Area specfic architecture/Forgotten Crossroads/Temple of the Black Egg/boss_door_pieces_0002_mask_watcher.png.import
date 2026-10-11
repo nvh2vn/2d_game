@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c00rqclj83qng"
-path="res://.godot/imported/boss_door_pieces_0002_mask_watcher.png-d5a999a696119a99987e812ae0e03d3e.ctex"
+path="res://.godot/imported/boss_door_pieces_0002_mask_watcher.png-14aa522ae98f1231d5251362769456ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/boss_door_pieces_0002_mask_watcher.png"
-dest_files=["res://.godot/imported/boss_door_pieces_0002_mask_watcher.png-d5a999a696119a99987e812ae0e03d3e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/boss_door_pieces_0002_mask_watcher.png"
+dest_files=["res://.godot/imported/boss_door_pieces_0002_mask_watcher.png-14aa522ae98f1231d5251362769456ae.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh8y01tpoydl6"
-path="res://.godot/imported/wp_floor_short.png-61bbc88476b6771d5347cab52a8340dd.ctex"
+path="res://.godot/imported/wp_floor_short.png-dac3823285d3b3fcba00416c3d1fed06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/White Palace/wp_floor_short.png"
-dest_files=["res://.godot/imported/wp_floor_short.png-61bbc88476b6771d5347cab52a8340dd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/White Palace/wp_floor_short.png"
+dest_files=["res://.godot/imported/wp_floor_short.png-dac3823285d3b3fcba00416c3d1fed06.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beimgtaiqx1ll"
-path="res://.godot/imported/dunes_0001_a.png-13f9de0386c2fffc763d51eadf02f809.ctex"
+path="res://.godot/imported/dunes_0001_a.png-8da1192d27e59e757e1f407861da7bb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/dunes_0001_a.png"
-dest_files=["res://.godot/imported/dunes_0001_a.png-13f9de0386c2fffc763d51eadf02f809.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/dunes_0001_a.png"
+dest_files=["res://.godot/imported/dunes_0001_a.png-8da1192d27e59e757e1f407861da7bb0.ctex"]
 
 [params]
 

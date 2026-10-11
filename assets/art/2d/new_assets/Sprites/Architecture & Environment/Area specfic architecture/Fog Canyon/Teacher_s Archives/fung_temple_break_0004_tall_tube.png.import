@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1svdts5dvox8"
-path="res://.godot/imported/fung_temple_break_0004_tall_tube.png-bb6523a522f1bbcea40658cd45d2657d.ctex"
+path="res://.godot/imported/fung_temple_break_0004_tall_tube.png-71c7eb182faa4fdcc6702a7834e79e81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/fung_temple_break_0004_tall_tube.png"
-dest_files=["res://.godot/imported/fung_temple_break_0004_tall_tube.png-bb6523a522f1bbcea40658cd45d2657d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/fung_temple_break_0004_tall_tube.png"
+dest_files=["res://.godot/imported/fung_temple_break_0004_tall_tube.png-71c7eb182faa4fdcc6702a7834e79e81.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq4nlghocaw55"
-path="res://.godot/imported/gg_mantis_cage_0001_2.png-9294f58e8833c4ea5aca0fd43f35bf32.ctex"
+path="res://.godot/imported/gg_mantis_cage_0001_2.png-e642ee489cfb1453288248feff1d767f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/gg_mantis_cage_0001_2.png"
-dest_files=["res://.godot/imported/gg_mantis_cage_0001_2.png-9294f58e8833c4ea5aca0fd43f35bf32.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/gg_mantis_cage_0001_2.png"
+dest_files=["res://.godot/imported/gg_mantis_cage_0001_2.png-e642ee489cfb1453288248feff1d767f.ctex"]
 
 [params]
 

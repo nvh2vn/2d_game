@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nvj4sxs27g6e"
-path="res://.godot/imported/ar_0004_acid_rocks.png-aa019defd8535487d9462340baf1ed9e.ctex"
+path="res://.godot/imported/ar_0004_acid_rocks.png-f97ce86893b6096b7488cbcaed0e52c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/ar_0004_acid_rocks.png"
-dest_files=["res://.godot/imported/ar_0004_acid_rocks.png-aa019defd8535487d9462340baf1ed9e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Greenpath/Lake of Unn/ar_0004_acid_rocks.png"
+dest_files=["res://.godot/imported/ar_0004_acid_rocks.png-f97ce86893b6096b7488cbcaed0e52c7.ctex"]
 
 [params]
 

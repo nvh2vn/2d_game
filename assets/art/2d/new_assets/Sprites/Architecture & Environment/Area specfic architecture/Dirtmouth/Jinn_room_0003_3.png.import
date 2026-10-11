@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtt7et7gqqnb"
-path="res://.godot/imported/Jinn_room_0003_3.png-9b9ff393f7ea596ef4446a2fea7da7a3.ctex"
+path="res://.godot/imported/Jinn_room_0003_3.png-e1a7f74ae10fe3f23f952504dbfa7141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Jinn_room_0003_3.png"
-dest_files=["res://.godot/imported/Jinn_room_0003_3.png-9b9ff393f7ea596ef4446a2fea7da7a3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Jinn_room_0003_3.png"
+dest_files=["res://.godot/imported/Jinn_room_0003_3.png-e1a7f74ae10fe3f23f952504dbfa7141.ctex"]
 
 [params]
 

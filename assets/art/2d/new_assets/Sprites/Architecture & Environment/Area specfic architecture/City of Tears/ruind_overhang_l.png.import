@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ks4ijipd37n"
-path="res://.godot/imported/ruind_overhang_l.png-f5ef3251b4b17aad399c898de2ec283e.ctex"
+path="res://.godot/imported/ruind_overhang_l.png-391c53d52c8ee33207e3085fe9c2517b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruind_overhang_l.png"
-dest_files=["res://.godot/imported/ruind_overhang_l.png-f5ef3251b4b17aad399c898de2ec283e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruind_overhang_l.png"
+dest_files=["res://.godot/imported/ruind_overhang_l.png-391c53d52c8ee33207e3085fe9c2517b.ctex"]
 
 [params]
 

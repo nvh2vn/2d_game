@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bism3ar217al2"
-path="res://.godot/imported/health_plant_020010.png-ad8250d3e03a3e1e76e5c1e100865f82.ctex"
+path="res://.godot/imported/health_plant_020010.png-988a7e384f9ec0d3dd9705f41ab9ca5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lifeblood cocoon/health_plant_020010.png"
-dest_files=["res://.godot/imported/health_plant_020010.png-ad8250d3e03a3e1e76e5c1e100865f82.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lifeblood cocoon/health_plant_020010.png"
+dest_files=["res://.godot/imported/health_plant_020010.png-988a7e384f9ec0d3dd9705f41ab9ca5d.ctex"]
 
 [params]
 

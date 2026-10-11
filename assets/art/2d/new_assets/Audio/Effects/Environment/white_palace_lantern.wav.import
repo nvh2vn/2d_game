@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bk7hucd4hc31a"
-path="res://.godot/imported/white_palace_lantern.wav-1aad2301b3aa72d83e52b3f9a10f0ecc.sample"
+path="res://.godot/imported/white_palace_lantern.wav-b55d26a0678fe800e134b9919154d0e6.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/white_palace_lantern.wav"
-dest_files=["res://.godot/imported/white_palace_lantern.wav-1aad2301b3aa72d83e52b3f9a10f0ecc.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/white_palace_lantern.wav"
+dest_files=["res://.godot/imported/white_palace_lantern.wav-b55d26a0678fe800e134b9919154d0e6.sample"]
 
 [params]
 

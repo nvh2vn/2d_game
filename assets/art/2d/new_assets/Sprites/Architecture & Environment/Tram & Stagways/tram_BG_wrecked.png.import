@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhp50ma4pxdgi"
-path="res://.godot/imported/tram_BG_wrecked.png-b29e695b37364ec82e6a9c39c7c62c52.ctex"
+path="res://.godot/imported/tram_BG_wrecked.png-3c87137e6609081d3f91cacb73dcd6ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Tram & Stagways/tram_BG_wrecked.png"
-dest_files=["res://.godot/imported/tram_BG_wrecked.png-b29e695b37364ec82e6a9c39c7c62c52.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Tram & Stagways/tram_BG_wrecked.png"
+dest_files=["res://.godot/imported/tram_BG_wrecked.png-3c87137e6609081d3f91cacb73dcd6ba.ctex"]
 
 [params]
 

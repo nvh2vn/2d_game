@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doucp1xy6qfnn"
-path="res://.godot/imported/dream_graves_0002_2.png-6db6e88b59c35ddf02ba91d134ef469e.ctex"
+path="res://.godot/imported/dream_graves_0002_2.png-461522d24183fb3c3663e6dee12f66fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_graves_0002_2.png"
-dest_files=["res://.godot/imported/dream_graves_0002_2.png-6db6e88b59c35ddf02ba91d134ef469e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/dream_graves_0002_2.png"
+dest_files=["res://.godot/imported/dream_graves_0002_2.png-461522d24183fb3c3663e6dee12f66fa.ctex"]
 
 [params]
 

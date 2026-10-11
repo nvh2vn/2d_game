@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://bj5wi82g2t5jb"]
 
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://assets/scenes/levels/pixel_level.gd" id="1_level_script"]
-[ext_resource type="Texture2D" uid="uid://dqm2a14msdgfo" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/pier_0000_3.png" id="2_hvkbq"]
+[ext_resource type="Texture2D" uid="uid://dqm2a14msdgfo" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/pier_0000_3.png" id="2_hvkbq"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://assets/prefabs/player/player_controller(pixel).tscn" id="2_player"]
-[ext_resource type="Texture2D" uid="uid://cxyndcfdr8eb8" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/_0000_abyss_plat4.png" id="4_7hcen"]
-[ext_resource type="Texture2D" uid="uid://d0knnjialhict" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/_0001_abyss_plat3.png" id="5_h0x1w"]
-[ext_resource type="Texture2D" uid="uid://b0nfqe33u7nul" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/_0002_abyss_plat2.png" id="6_7oodl"]
-[ext_resource type="Texture2D" uid="uid://ci75hm0pd45yc" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/_0003_abyss_plat1.png" id="7_i1b5r"]
-[ext_resource type="Texture2D" uid="uid://18dyo4q71lrm" path="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/_0069_abyss_02.png" id="8_q4dht"]
+[ext_resource type="Texture2D" uid="uid://cxyndcfdr8eb8" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0000_abyss_plat4.png" id="4_7hcen"]
+[ext_resource type="Texture2D" uid="uid://d0knnjialhict" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0001_abyss_plat3.png" id="5_h0x1w"]
+[ext_resource type="Texture2D" uid="uid://b0nfqe33u7nul" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0002_abyss_plat2.png" id="6_7oodl"]
+[ext_resource type="Texture2D" uid="uid://ci75hm0pd45yc" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0003_abyss_plat1.png" id="7_i1b5r"]
+[ext_resource type="Texture2D" uid="uid://18dyo4q71lrm" path="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/_0069_abyss_02.png" id="8_q4dht"]
 [ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://assets/scenes/npc/tuk_npc.tscn" id="9_7hcen"]
+[ext_resource type="PackedScene" uid="uid://ckirrwpcnixiw" path="res://assets/scenes/environment/waypoint_pillar.tscn" id="10_h0x1w"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/enemies/winged_sentry.tscn" id="11_7oodl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u6pke"]
 load_path = "res://.godot/imported/_0070_abyss_02.png-ce45f60fa06e40f67d2e1ecae6e3d613.ctex"
@@ -2848,3 +2850,12 @@ tile_set = SubResource("TileSet_sh3le")
 
 [node name="TukNPC" parent="." unique_id=831566038 instance=ExtResource("9_7hcen")]
 position = Vector2(1360, 299)
+
+[node name="WaypointPillar" parent="." unique_id=794646715 instance=ExtResource("10_h0x1w")]
+position = Vector2(1899, 303)
+
+[node name="WaypointPillar2" parent="." unique_id=1261765546 instance=ExtResource("10_h0x1w")]
+position = Vector2(2408, 306)
+
+[node name="WingedSentry" parent="." unique_id=359255565 instance=ExtResource("11_7oodl")]
+position = Vector2(2138, 303)

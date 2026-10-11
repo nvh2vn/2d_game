@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d34f2k81m0ufv"
-path="res://.godot/imported/bridge_roof_half.png-9610fa23f57dee66f5214081e3451bbb.ctex"
+path="res://.godot/imported/bridge_roof_half.png-b33d5ed84b6472350bcb8ad8af7d8c92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/bridge_roof_half.png"
-dest_files=["res://.godot/imported/bridge_roof_half.png-9610fa23f57dee66f5214081e3451bbb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/bridge_roof_half.png"
+dest_files=["res://.godot/imported/bridge_roof_half.png-b33d5ed84b6472350bcb8ad8af7d8c92.ctex"]
 
 [params]
 

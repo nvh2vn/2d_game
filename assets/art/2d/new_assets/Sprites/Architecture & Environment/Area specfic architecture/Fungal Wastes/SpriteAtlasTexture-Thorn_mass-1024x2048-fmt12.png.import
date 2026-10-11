@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx641ekgnx0nw"
-path="res://.godot/imported/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png-af7c751653de95fab7ab87f2cddfd089.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png-4379c55d17f56c651025dd204252c56f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png-af7c751653de95fab7ab87f2cddfd089.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Thorn_mass-1024x2048-fmt12.png-4379c55d17f56c651025dd204252c56f.ctex"]
 
 [params]
 

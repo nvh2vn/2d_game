@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgqm86vr5q8bw"
-path="res://.godot/imported/additional_destruction_0000_a.png-cde6b506dfdb628db6cac6343efe68cc.ctex"
+path="res://.godot/imported/additional_destruction_0000_a.png-3b141d89cebc2532c49ba9e0fdba3fcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/additional_destruction_0000_a.png"
-dest_files=["res://.godot/imported/additional_destruction_0000_a.png-cde6b506dfdb628db6cac6343efe68cc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/additional_destruction_0000_a.png"
+dest_files=["res://.godot/imported/additional_destruction_0000_a.png-3b141d89cebc2532c49ba9e0fdba3fcb.ctex"]
 
 [params]
 

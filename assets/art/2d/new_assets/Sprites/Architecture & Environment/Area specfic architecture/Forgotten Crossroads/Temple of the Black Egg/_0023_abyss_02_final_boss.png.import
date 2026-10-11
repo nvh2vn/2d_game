@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpaxkenvfgfqu"
-path="res://.godot/imported/_0023_abyss_02_final_boss.png-c0dd623cce62bbf2ee8830126b7dba6a.ctex"
+path="res://.godot/imported/_0023_abyss_02_final_boss.png-5798bce78608e1340cfc493ec31f644c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/_0023_abyss_02_final_boss.png"
-dest_files=["res://.godot/imported/_0023_abyss_02_final_boss.png-c0dd623cce62bbf2ee8830126b7dba6a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/_0023_abyss_02_final_boss.png"
+dest_files=["res://.godot/imported/_0023_abyss_02_final_boss.png-5798bce78608e1340cfc493ec31f644c.ctex"]
 
 [params]
 

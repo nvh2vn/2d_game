@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d0n3qncv7etyk"
-path="res://.godot/imported/dream_essence_corpse_collect.wav-3768ccf910967051b5a22a297fd7737c.sample"
+path="res://.godot/imported/dream_essence_corpse_collect.wav-faa4fce875e66f5720301f18faa8215b.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_essence_corpse_collect.wav"
-dest_files=["res://.godot/imported/dream_essence_corpse_collect.wav-3768ccf910967051b5a22a297fd7737c.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Dream/dream_essence_corpse_collect.wav"
+dest_files=["res://.godot/imported/dream_essence_corpse_collect.wav-faa4fce875e66f5720301f18faa8215b.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drpyjq7jcjrlo"
-path="res://.godot/imported/Shrine_of_Believers_Ext_door.png-fafc7e129319416e231e146c2278e029.ctex"
+path="res://.godot/imported/Shrine_of_Believers_Ext_door.png-71523dae965e3b79e8528c684d733c33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/Shrine of Believers/Shrine_of_Believers_Ext_door.png"
-dest_files=["res://.godot/imported/Shrine_of_Believers_Ext_door.png-fafc7e129319416e231e146c2278e029.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/Shrine of Believers/Shrine_of_Believers_Ext_door.png"
+dest_files=["res://.godot/imported/Shrine_of_Believers_Ext_door.png-71523dae965e3b79e8528c684d733c33.ctex"]
 
 [params]
 

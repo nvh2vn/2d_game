@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5nflvdjuu8iy"
-path="res://.godot/imported/fg_acid_leaf.png-3089d37cdbebaeed6c66cfc00d605be3.ctex"
+path="res://.godot/imported/fg_acid_leaf.png-3f375308e9343033694ee08c6a028f54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/fg_acid_leaf.png"
-dest_files=["res://.godot/imported/fg_acid_leaf.png-3089d37cdbebaeed6c66cfc00d605be3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/fg_acid_leaf.png"
+dest_files=["res://.godot/imported/fg_acid_leaf.png-3f375308e9343033694ee08c6a028f54.ctex"]
 
 [params]
 

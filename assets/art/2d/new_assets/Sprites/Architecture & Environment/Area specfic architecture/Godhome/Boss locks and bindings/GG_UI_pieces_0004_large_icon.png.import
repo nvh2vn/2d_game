@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://depdhllf67hse"
-path="res://.godot/imported/GG_UI_pieces_0004_large_icon.png-8b21870ad76394c0870d2b55dfe7d701.ctex"
+path="res://.godot/imported/GG_UI_pieces_0004_large_icon.png-44419985ea7b67d6a34d90b9b7eeac50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/GG_UI_pieces_0004_large_icon.png"
-dest_files=["res://.godot/imported/GG_UI_pieces_0004_large_icon.png-8b21870ad76394c0870d2b55dfe7d701.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Boss locks and bindings/GG_UI_pieces_0004_large_icon.png"
+dest_files=["res://.godot/imported/GG_UI_pieces_0004_large_icon.png-44419985ea7b67d6a34d90b9b7eeac50.ctex"]
 
 [params]
 

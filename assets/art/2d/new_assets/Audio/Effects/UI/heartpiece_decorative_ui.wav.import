@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bgp1blxlqmpgj"
-path="res://.godot/imported/heartpiece_decorative_ui.wav-5bd0e2d7b5712ac12e1eb9122a386a26.sample"
+path="res://.godot/imported/heartpiece_decorative_ui.wav-ad1d73d35092a1bb33d7eaf1e7805699.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/UI/heartpiece_decorative_ui.wav"
-dest_files=["res://.godot/imported/heartpiece_decorative_ui.wav-5bd0e2d7b5712ac12e1eb9122a386a26.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/UI/heartpiece_decorative_ui.wav"
+dest_files=["res://.godot/imported/heartpiece_decorative_ui.wav-ad1d73d35092a1bb33d7eaf1e7805699.sample"]
 
 [params]
 

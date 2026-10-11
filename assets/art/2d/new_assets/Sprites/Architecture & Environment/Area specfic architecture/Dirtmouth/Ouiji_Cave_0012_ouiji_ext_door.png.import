@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0arnkm15prhy"
-path="res://.godot/imported/Ouiji_Cave_0012_ouiji_ext_door.png-c929a9a69ba08049c22e3eaf5d6f4781.ctex"
+path="res://.godot/imported/Ouiji_Cave_0012_ouiji_ext_door.png-e89da5235a97822d33e37ed07842a277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Ouiji_Cave_0012_ouiji_ext_door.png"
-dest_files=["res://.godot/imported/Ouiji_Cave_0012_ouiji_ext_door.png-c929a9a69ba08049c22e3eaf5d6f4781.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Ouiji_Cave_0012_ouiji_ext_door.png"
+dest_files=["res://.godot/imported/Ouiji_Cave_0012_ouiji_ext_door.png-e89da5235a97822d33e37ed07842a277.ctex"]
 
 [params]
 

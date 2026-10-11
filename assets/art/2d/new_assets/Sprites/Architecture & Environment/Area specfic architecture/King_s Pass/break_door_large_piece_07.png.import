@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgmgkie8ey6e7"
-path="res://.godot/imported/break_door_large_piece_07.png-0c6300ddade6d483c48dddde956d659f.ctex"
+path="res://.godot/imported/break_door_large_piece_07.png-66d4d48d7ab27f791734acb8d2667413.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/break_door_large_piece_07.png"
-dest_files=["res://.godot/imported/break_door_large_piece_07.png-0c6300ddade6d483c48dddde956d659f.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/break_door_large_piece_07.png"
+dest_files=["res://.godot/imported/break_door_large_piece_07.png-66d4d48d7ab27f791734acb8d2667413.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmokxrcvw37ki"
-path="res://.godot/imported/s_town_crumble_floor.png-db09b06e601f3451e73b4227cfdce4c2.ctex"
+path="res://.godot/imported/s_town_crumble_floor.png-b8beffad82820574d29512276aff5300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/s_town_crumble_floor.png"
-dest_files=["res://.godot/imported/s_town_crumble_floor.png-db09b06e601f3451e73b4227cfdce4c2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/Distant Village/s_town_crumble_floor.png"
+dest_files=["res://.godot/imported/s_town_crumble_floor.png-b8beffad82820574d29512276aff5300.ctex"]
 
 [params]
 

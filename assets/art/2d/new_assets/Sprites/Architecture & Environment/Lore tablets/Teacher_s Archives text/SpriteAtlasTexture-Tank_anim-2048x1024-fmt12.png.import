@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq1cdq0nfc107"
-path="res://.godot/imported/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png-0b28211bba8bb779231cbebb1c627416.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png-6f428c337cc6582a9b3f2fa28ea983c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/Teacher_s Archives text/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png-0b28211bba8bb779231cbebb1c627416.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/Teacher_s Archives text/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Tank_anim-2048x1024-fmt12.png-6f428c337cc6582a9b3f2fa28ea983c3.ctex"]
 
 [params]
 

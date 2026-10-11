@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbnbg8d8i7sv6"
-path="res://.godot/imported/collapse_chunk3.png-6891d1da14718d33a03e838f89ac10cf.ctex"
+path="res://.godot/imported/collapse_chunk3.png-f6c532be80cecefea74930357f43a7ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/collapse_chunk3.png"
-dest_files=["res://.godot/imported/collapse_chunk3.png-6891d1da14718d33a03e838f89ac10cf.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/collapse_chunk3.png"
+dest_files=["res://.godot/imported/collapse_chunk3.png-f6c532be80cecefea74930357f43a7ea.ctex"]
 
 [params]
 

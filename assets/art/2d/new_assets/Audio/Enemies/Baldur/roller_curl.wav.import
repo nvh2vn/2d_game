@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://taie5dmiuvtt"
-path="res://.godot/imported/roller_curl.wav-25749e41d377dacb76457b70a53a9867.sample"
+path="res://.godot/imported/roller_curl.wav-5ea89f4b024bd2ef66d42c44b54d8b1a.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Baldur/roller_curl.wav"
-dest_files=["res://.godot/imported/roller_curl.wav-25749e41d377dacb76457b70a53a9867.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Baldur/roller_curl.wav"
+dest_files=["res://.godot/imported/roller_curl.wav-5ea89f4b024bd2ef66d42c44b54d8b1a.sample"]
 
 [params]
 

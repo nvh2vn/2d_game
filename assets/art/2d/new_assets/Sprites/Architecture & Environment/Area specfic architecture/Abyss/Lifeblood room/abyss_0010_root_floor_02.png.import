@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bllodqb75bkqd"
-path="res://.godot/imported/abyss_0010_root_floor_02.png-29264683dee932323455d20cd0bd6f65.ctex"
+path="res://.godot/imported/abyss_0010_root_floor_02.png-390b92e8e93e91c03785aa27a5e7798f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/abyss_0010_root_floor_02.png"
-dest_files=["res://.godot/imported/abyss_0010_root_floor_02.png-29264683dee932323455d20cd0bd6f65.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/Lifeblood room/abyss_0010_root_floor_02.png"
+dest_files=["res://.godot/imported/abyss_0010_root_floor_02.png-390b92e8e93e91c03785aa27a5e7798f.ctex"]
 
 [params]
 

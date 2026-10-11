@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bimi35sk1cu3a"
-path="res://.godot/imported/waterways_acid_side_tank.png-a017e9ec65a118ba8449dbace90956a9.ctex"
+path="res://.godot/imported/waterways_acid_side_tank.png-283c1136445fbd5a2d160922b73e44f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_acid_side_tank.png"
-dest_files=["res://.godot/imported/waterways_acid_side_tank.png-a017e9ec65a118ba8449dbace90956a9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_acid_side_tank.png"
+dest_files=["res://.godot/imported/waterways_acid_side_tank.png-283c1136445fbd5a2d160922b73e44f2.ctex"]
 
 [params]
 

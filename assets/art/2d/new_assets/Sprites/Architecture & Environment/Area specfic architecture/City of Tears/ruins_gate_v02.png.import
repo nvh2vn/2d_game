@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu74ccjiqjglu"
-path="res://.godot/imported/ruins_gate_v02.png-bde5943001e57d1cf065dfab146a0bf4.ctex"
+path="res://.godot/imported/ruins_gate_v02.png-7572a0c8e9b3a5f5856a8b5db3457864.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruins_gate_v02.png"
-dest_files=["res://.godot/imported/ruins_gate_v02.png-bde5943001e57d1cf065dfab146a0bf4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruins_gate_v02.png"
+dest_files=["res://.godot/imported/ruins_gate_v02.png-7572a0c8e9b3a5f5856a8b5db3457864.ctex"]
 
 [params]
 

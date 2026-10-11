@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ourr11up64fg"
-path="res://.godot/imported/spider_plinth_small.png-f3c2a37a7269d9e811a21b83fe4ebe00.ctex"
+path="res://.godot/imported/spider_plinth_small.png-76f14c18ec1b9ae20dbef9580d40a207.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/spider_plinth_small.png"
-dest_files=["res://.godot/imported/spider_plinth_small.png-f3c2a37a7269d9e811a21b83fe4ebe00.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/spider_plinth_small.png"
+dest_files=["res://.godot/imported/spider_plinth_small.png-76f14c18ec1b9ae20dbef9580d40a207.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwq1axg4fdmpy"
-path="res://.godot/imported/zap_tank_0000_1.png-04de587a43c984fa130e1d8dddc4bb82.ctex"
+path="res://.godot/imported/zap_tank_0000_1.png-851c89f13489e208c4ba5a89b4d0c2b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/zap_tank_0000_1.png"
-dest_files=["res://.godot/imported/zap_tank_0000_1.png-04de587a43c984fa130e1d8dddc4bb82.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/zap_tank_0000_1.png"
+dest_files=["res://.godot/imported/zap_tank_0000_1.png-851c89f13489e208c4ba5a89b4d0c2b2.ctex"]
 
 [params]
 

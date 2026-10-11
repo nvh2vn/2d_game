@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1w4t07eckgt5"
-path="res://.godot/imported/mansion_grave_roots_0002_1.png-a473ec07f0c09b7b93684b8bc884b590.ctex"
+path="res://.godot/imported/mansion_grave_roots_0002_1.png-b2601259c5104a0bc2bdd0d38a132c2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/mansion_grave_roots_0002_1.png"
-dest_files=["res://.godot/imported/mansion_grave_roots_0002_1.png-a473ec07f0c09b7b93684b8bc884b590.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/mansion_grave_roots_0002_1.png"
+dest_files=["res://.godot/imported/mansion_grave_roots_0002_1.png-b2601259c5104a0bc2bdd0d38a132c2a.ctex"]
 
 [params]
 

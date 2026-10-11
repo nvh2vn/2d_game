@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6v5deka4firb"
-path="res://.godot/imported/ruins_lift_spikes00003.png-e307ab83c564209c83f55410519211dd.ctex"
+path="res://.godot/imported/ruins_lift_spikes00003.png-aa34a827a88e44f5a903ea3267a682b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruins_lift_spikes00003.png"
-dest_files=["res://.godot/imported/ruins_lift_spikes00003.png-e307ab83c564209c83f55410519211dd.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruins_lift_spikes00003.png"
+dest_files=["res://.godot/imported/ruins_lift_spikes00003.png-aa34a827a88e44f5a903ea3267a682b7.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcrukxvhu3o4c"
-path="res://.godot/imported/fungd_roof_vine_02_0007_a.png-35df0d38e545c31ecdb9dd877721eff4.ctex"
+path="res://.godot/imported/fungd_roof_vine_02_0007_a.png-d6f2c7f3eb1cdb4c750b38cfc69308fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Grass & Vines/fungd_roof_vine_02_0007_a.png"
-dest_files=["res://.godot/imported/fungd_roof_vine_02_0007_a.png-35df0d38e545c31ecdb9dd877721eff4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Grass & Vines/fungd_roof_vine_02_0007_a.png"
+dest_files=["res://.godot/imported/fungd_roof_vine_02_0007_a.png-d6f2c7f3eb1cdb4c750b38cfc69308fe.ctex"]
 
 [params]
 

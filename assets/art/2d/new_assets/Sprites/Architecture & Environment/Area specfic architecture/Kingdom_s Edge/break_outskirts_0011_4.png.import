@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e7kf7idnqf16"
-path="res://.godot/imported/break_outskirts_0011_4.png-c3baa573ad7cc666e3e404b119485393.ctex"
+path="res://.godot/imported/break_outskirts_0011_4.png-17a88866d2f3f0c2d46cf3a206cfaec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/break_outskirts_0011_4.png"
-dest_files=["res://.godot/imported/break_outskirts_0011_4.png-c3baa573ad7cc666e3e404b119485393.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/break_outskirts_0011_4.png"
+dest_files=["res://.godot/imported/break_outskirts_0011_4.png-17a88866d2f3f0c2d46cf3a206cfaec1.ctex"]
 
 [params]
 

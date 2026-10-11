@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdjumjy6y2r4u"
-path="res://.godot/imported/mine_break_bridge_02_0000_mine_bridge_02.png-f3edacdade916e8ce8e651d02d7d32f1.ctex"
+path="res://.godot/imported/mine_break_bridge_02_0000_mine_bridge_02.png-fc7f4a739313484beb28ad1363940388.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/mine_break_bridge_02_0000_mine_bridge_02.png"
-dest_files=["res://.godot/imported/mine_break_bridge_02_0000_mine_bridge_02.png-f3edacdade916e8ce8e651d02d7d32f1.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/mine_break_bridge_02_0000_mine_bridge_02.png"
+dest_files=["res://.godot/imported/mine_break_bridge_02_0000_mine_bridge_02.png-fc7f4a739313484beb28ad1363940388.ctex"]
 
 [params]
 

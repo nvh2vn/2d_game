@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o8xv37kg6pgn"
-path="res://.godot/imported/nailsmith_hut_door.png-bd8caabf8545e90e60ca36d550b44fcf.ctex"
+path="res://.godot/imported/nailsmith_hut_door.png-64ad0c0a214c5dcdda67f8e7cb801217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/nailsmith_hut_door.png"
-dest_files=["res://.godot/imported/nailsmith_hut_door.png-bd8caabf8545e90e60ca36d550b44fcf.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/nailsmith_hut_door.png"
+dest_files=["res://.godot/imported/nailsmith_hut_door.png-64ad0c0a214c5dcdda67f8e7cb801217.ctex"]
 
 [params]
 

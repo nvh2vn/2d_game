@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2uso5hmca50b"
-path="res://.godot/imported/cliffs_layered_02_0003_a.png-b24c320492a4b865fffce5887f46ee07.ctex"
+path="res://.godot/imported/cliffs_layered_02_0003_a.png-ae3fb0a01e70a89a92c686152cf30ad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/cliffs_layered_02_0003_a.png"
-dest_files=["res://.godot/imported/cliffs_layered_02_0003_a.png-b24c320492a4b865fffce5887f46ee07.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/cliffs_layered_02_0003_a.png"
+dest_files=["res://.godot/imported/cliffs_layered_02_0003_a.png-ae3fb0a01e70a89a92c686152cf30ad7.ctex"]
 
 [params]
 

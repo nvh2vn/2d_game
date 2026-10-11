@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://80j3prr8fqhk"
-path="res://.godot/imported/royal_garden_BG_structure_0000_Layer-4_cage.png-2b18c42257e7e29ae5eb6953fb2f971b.ctex"
+path="res://.godot/imported/royal_garden_BG_structure_0000_Layer-4_cage.png-fbc4087dd9f2d020977e3cb80cc39667.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Queen_s Gardens/royal_garden_BG_structure_0000_Layer-4_cage.png"
-dest_files=["res://.godot/imported/royal_garden_BG_structure_0000_Layer-4_cage.png-2b18c42257e7e29ae5eb6953fb2f971b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Queen_s Gardens/royal_garden_BG_structure_0000_Layer-4_cage.png"
+dest_files=["res://.godot/imported/royal_garden_BG_structure_0000_Layer-4_cage.png-fbc4087dd9f2d020977e3cb80cc39667.ctex"]
 
 [params]
 

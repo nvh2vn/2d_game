@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ja463re2h05p"
-path="res://.godot/imported/GG_statues_mage_knight.png-258fa2c327d59377a4facc2c6c62468d.ctex"
+path="res://.godot/imported/GG_statues_mage_knight.png-84bf8f1083fb3c549a8c953c0d9a8a2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/GG_statues_mage_knight.png"
-dest_files=["res://.godot/imported/GG_statues_mage_knight.png-258fa2c327d59377a4facc2c6c62468d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Hall of Gods/GG_statues_mage_knight.png"
+dest_files=["res://.godot/imported/GG_statues_mage_knight.png-84bf8f1083fb3c549a8c953c0d9a8a2c.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjlh4wv7vgp3d"
-path="res://.godot/imported/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png-0090c476164d78be113759aaf04f332a.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png-c8c7e8fc71bf4ec4b60363836f05f888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png-0090c476164d78be113759aaf04f332a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Col_Poles-512x1024-fmt12.png-c8c7e8fc71bf4ec4b60363836f05f888.ctex"]
 
 [params]
 

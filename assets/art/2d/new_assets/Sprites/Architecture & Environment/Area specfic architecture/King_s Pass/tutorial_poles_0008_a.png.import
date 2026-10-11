@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cafc67xqb2ql5"
-path="res://.godot/imported/tutorial_poles_0008_a.png-26f6f3b577461b75c83a3dd217261ae3.ctex"
+path="res://.godot/imported/tutorial_poles_0008_a.png-f988cb39e55a369e7f0870bc1789859f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/King_s Pass/tutorial_poles_0008_a.png"
-dest_files=["res://.godot/imported/tutorial_poles_0008_a.png-26f6f3b577461b75c83a3dd217261ae3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/King_s Pass/tutorial_poles_0008_a.png"
+dest_files=["res://.godot/imported/tutorial_poles_0008_a.png-f988cb39e55a369e7f0870bc1789859f.ctex"]
 
 [params]
 

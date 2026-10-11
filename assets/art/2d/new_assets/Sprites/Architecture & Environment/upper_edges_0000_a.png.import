@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0x06c81gflu7"
-path="res://.godot/imported/upper_edges_0000_a.png-606d54cb0c54338c7ec2a3e30a0206d2.ctex"
+path="res://.godot/imported/upper_edges_0000_a.png-40742a5149e82570c663f661822c0ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/upper_edges_0000_a.png"
-dest_files=["res://.godot/imported/upper_edges_0000_a.png-606d54cb0c54338c7ec2a3e30a0206d2.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/upper_edges_0000_a.png"
+dest_files=["res://.godot/imported/upper_edges_0000_a.png-40742a5149e82570c663f661822c0ff4.ctex"]
 
 [params]
 

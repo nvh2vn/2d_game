@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjgson46c76oj"
-path="res://.godot/imported/blizzard_loop_inside_cave.wav-8eb017e40409bba0c41fc1bfea5cb89b.sample"
+path="res://.godot/imported/blizzard_loop_inside_cave.wav-68ae2f51c9cd6be497eb085d44961a36.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/blizzard_loop_inside_cave.wav"
-dest_files=["res://.godot/imported/blizzard_loop_inside_cave.wav-8eb017e40409bba0c41fc1bfea5cb89b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/blizzard_loop_inside_cave.wav"
+dest_files=["res://.godot/imported/blizzard_loop_inside_cave.wav-68ae2f51c9cd6be497eb085d44961a36.sample"]
 
 [params]
 

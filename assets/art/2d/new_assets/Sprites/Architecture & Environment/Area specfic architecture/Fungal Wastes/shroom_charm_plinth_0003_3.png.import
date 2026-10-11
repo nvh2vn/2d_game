@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hlvb52q32nei"
-path="res://.godot/imported/shroom_charm_plinth_0003_3.png-8d2c676a073f3edba67587a4462a32ab.ctex"
+path="res://.godot/imported/shroom_charm_plinth_0003_3.png-ad3a9a150bc062c7b7e24723d8a11ebe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/shroom_charm_plinth_0003_3.png"
-dest_files=["res://.godot/imported/shroom_charm_plinth_0003_3.png-8d2c676a073f3edba67587a4462a32ab.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/shroom_charm_plinth_0003_3.png"
+dest_files=["res://.godot/imported/shroom_charm_plinth_0003_3.png-ad3a9a150bc062c7b7e24723d8a11ebe.ctex"]
 
 [params]
 

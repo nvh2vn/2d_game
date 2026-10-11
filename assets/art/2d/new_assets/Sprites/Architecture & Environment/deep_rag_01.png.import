@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccn8toh6jx61j"
-path="res://.godot/imported/deep_rag_01.png-1af6e240cb0baf2a6d80fef96f7eb619.ctex"
+path="res://.godot/imported/deep_rag_01.png-f11f68e40d2ada5cab214f42d25f2c33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/deep_rag_01.png"
-dest_files=["res://.godot/imported/deep_rag_01.png-1af6e240cb0baf2a6d80fef96f7eb619.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/deep_rag_01.png"
+dest_files=["res://.godot/imported/deep_rag_01.png-f11f68e40d2ada5cab214f42d25f2c33.ctex"]
 
 [params]
 

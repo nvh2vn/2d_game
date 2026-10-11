@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfhxv3adydtkn"
-path="res://.godot/imported/soul_totem_04_b.png-ec4c43297ea81311c3d0587594815adc.ctex"
+path="res://.godot/imported/soul_totem_04_b.png-d32569a7eba41a2590725ce4e6081946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Soul Totems/soul_totem_04_b.png"
-dest_files=["res://.godot/imported/soul_totem_04_b.png-ec4c43297ea81311c3d0587594815adc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Soul Totems/soul_totem_04_b.png"
+dest_files=["res://.godot/imported/soul_totem_04_b.png-d32569a7eba41a2590725ce4e6081946.ctex"]
 
 [params]
 

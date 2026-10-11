@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdr2hpbh14150"
-path="res://.godot/imported/grimm_lantern_rag.png-0932a49823cc65493846a05f33a14e90.ctex"
+path="res://.godot/imported/grimm_lantern_rag.png-d4679ad1fc27e7f1ee7b56fa606ba477.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Howling Cliffs/grimm_lantern_rag.png"
-dest_files=["res://.godot/imported/grimm_lantern_rag.png-0932a49823cc65493846a05f33a14e90.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Howling Cliffs/grimm_lantern_rag.png"
+dest_files=["res://.godot/imported/grimm_lantern_rag.png-d4679ad1fc27e7f1ee7b56fa606ba477.ctex"]
 
 [params]
 

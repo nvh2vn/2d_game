@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://40i4cde2d0g8"
-path="res://.godot/imported/col_dungeon_shade_trap_0011_1.png-376d84aaf98a2404a00e1d5bee8c467a.ctex"
+path="res://.godot/imported/col_dungeon_shade_trap_0011_1.png-5ebdcd05b2be05291b27f3a606d2919a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/col_dungeon_shade_trap_0011_1.png"
-dest_files=["res://.godot/imported/col_dungeon_shade_trap_0011_1.png-376d84aaf98a2404a00e1d5bee8c467a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/col_dungeon_shade_trap_0011_1.png"
+dest_files=["res://.godot/imported/col_dungeon_shade_trap_0011_1.png-5ebdcd05b2be05291b27f3a606d2919a.ctex"]
 
 [params]
 

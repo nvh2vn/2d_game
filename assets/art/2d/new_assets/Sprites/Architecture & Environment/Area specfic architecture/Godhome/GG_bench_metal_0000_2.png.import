@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cydsfru5bpkyl"
-path="res://.godot/imported/GG_bench_metal_0000_2.png-3ce48f79dc257ae24264d834174b328d.ctex"
+path="res://.godot/imported/GG_bench_metal_0000_2.png-c693aaefd7c6b0b62071a3804a21e8c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/GG_bench_metal_0000_2.png"
-dest_files=["res://.godot/imported/GG_bench_metal_0000_2.png-3ce48f79dc257ae24264d834174b328d.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/GG_bench_metal_0000_2.png"
+dest_files=["res://.godot/imported/GG_bench_metal_0000_2.png-c693aaefd7c6b0b62071a3804a21e8c1.ctex"]
 
 [params]
 

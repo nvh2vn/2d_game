@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnaff32uoip5g"
-path="res://.godot/imported/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png-1990690d4a5a889077c8cca03ee58a9e.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png-f4e1f198d7ae0830fcc88c52e74bb41b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fungal Wastes/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png-1990690d4a5a889077c8cca03ee58a9e.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fungal Wastes/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Leg Eater_Scenery-2048x1024-fmt12.png-f4e1f198d7ae0830fcc88c52e74bb41b.ctex"]
 
 [params]
 

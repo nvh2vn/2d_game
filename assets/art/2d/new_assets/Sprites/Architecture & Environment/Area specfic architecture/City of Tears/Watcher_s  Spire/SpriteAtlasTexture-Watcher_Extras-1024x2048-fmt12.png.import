@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b10i1hfm1ier2"
-path="res://.godot/imported/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png-38129c206d4408dc1433c6f1d7db14c9.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png-5a8431bc529662fad1d5b84a99d18107.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png-38129c206d4408dc1433c6f1d7db14c9.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/Watcher_s  Spire/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Watcher_Extras-1024x2048-fmt12.png-5a8431bc529662fad1d5b84a99d18107.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coaf10qucji7h"
-path="res://.godot/imported/shadow_gate_tendrils0004.png-137437639b4fe42df7950871b95053c1.ctex"
+path="res://.godot/imported/shadow_gate_tendrils0004.png-9082274b7886990ced48b636eec1d4b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Levers, platforms, doors/shadow_gate_tendrils0004.png"
-dest_files=["res://.godot/imported/shadow_gate_tendrils0004.png-137437639b4fe42df7950871b95053c1.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Levers, platforms, doors/shadow_gate_tendrils0004.png"
+dest_files=["res://.godot/imported/shadow_gate_tendrils0004.png-9082274b7886990ced48b636eec1d4b2.ctex"]
 
 [params]
 

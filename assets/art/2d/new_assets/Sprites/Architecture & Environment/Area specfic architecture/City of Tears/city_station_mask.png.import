@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cifoj15kq366o"
-path="res://.godot/imported/city_station_mask.png-89b568ed1764321dd8692230faee6a1c.ctex"
+path="res://.godot/imported/city_station_mask.png-7a63792c596e21eafc5a4fd1c6911598.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/city_station_mask.png"
-dest_files=["res://.godot/imported/city_station_mask.png-89b568ed1764321dd8692230faee6a1c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/city_station_mask.png"
+dest_files=["res://.godot/imported/city_station_mask.png-7a63792c596e21eafc5a4fd1c6911598.ctex"]
 
 [params]
 

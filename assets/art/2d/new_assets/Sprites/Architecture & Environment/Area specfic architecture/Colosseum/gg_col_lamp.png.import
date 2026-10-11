@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://75negvs5ixft"
-path="res://.godot/imported/gg_col_lamp.png-f65d38ee7678879dbc7a989a00a26a82.ctex"
+path="res://.godot/imported/gg_col_lamp.png-ecc0c2c6ad4be25ddd55d0e4f05d1214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/gg_col_lamp.png"
-dest_files=["res://.godot/imported/gg_col_lamp.png-f65d38ee7678879dbc7a989a00a26a82.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Colosseum/gg_col_lamp.png"
+dest_files=["res://.godot/imported/gg_col_lamp.png-ecc0c2c6ad4be25ddd55d0e4f05d1214.ctex"]
 
 [params]
 

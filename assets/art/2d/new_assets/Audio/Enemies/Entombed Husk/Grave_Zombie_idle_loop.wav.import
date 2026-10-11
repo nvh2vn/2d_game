@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c3mffvyhdhr1g"
-path="res://.godot/imported/Grave_Zombie_idle_loop.wav-d5bb2e9b52d85604d9c934d888d744ce.sample"
+path="res://.godot/imported/Grave_Zombie_idle_loop.wav-e12d5045ab0fba0bfb2d0e0f661bf201.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Entombed Husk/Grave_Zombie_idle_loop.wav"
-dest_files=["res://.godot/imported/Grave_Zombie_idle_loop.wav-d5bb2e9b52d85604d9c934d888d744ce.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Entombed Husk/Grave_Zombie_idle_loop.wav"
+dest_files=["res://.godot/imported/Grave_Zombie_idle_loop.wav-e12d5045ab0fba0bfb2d0e0f661bf201.sample"]
 
 [params]
 

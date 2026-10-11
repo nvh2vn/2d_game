@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6didpnw7dpo8"
-path="res://.godot/imported/dream_orb_pickup.wav-4e2d91306436faaa6ad0b967691edf3d.sample"
+path="res://.godot/imported/dream_orb_pickup.wav-d8745d30498569704fbdc4269d91ad3e.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Dream/dream_orb_pickup.wav"
-dest_files=["res://.godot/imported/dream_orb_pickup.wav-4e2d91306436faaa6ad0b967691edf3d.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Dream/dream_orb_pickup.wav"
+dest_files=["res://.godot/imported/dream_orb_pickup.wav-d8745d30498569704fbdc4269d91ad3e.sample"]
 
 [params]
 

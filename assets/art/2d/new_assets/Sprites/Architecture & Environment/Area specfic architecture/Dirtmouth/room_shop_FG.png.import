@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://42cdeapxcbyf"
-path="res://.godot/imported/room_shop_FG.png-b9776fd38459ddcbec047645aed1da52.ctex"
+path="res://.godot/imported/room_shop_FG.png-5f5a759f9721113152da3e41016b8826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/room_shop_FG.png"
-dest_files=["res://.godot/imported/room_shop_FG.png-b9776fd38459ddcbec047645aed1da52.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/room_shop_FG.png"
+dest_files=["res://.godot/imported/room_shop_FG.png-5f5a759f9721113152da3e41016b8826.ctex"]
 
 [params]
 

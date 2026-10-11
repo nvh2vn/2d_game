@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de47glc6m1gen"
-path="res://.godot/imported/jiji_rock.png-461a501223f18964d9a435e04b1aafb3.ctex"
+path="res://.godot/imported/jiji_rock.png-4deab41ba5212e0e738e7e969aedad5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/jiji_rock.png"
-dest_files=["res://.godot/imported/jiji_rock.png-461a501223f18964d9a435e04b1aafb3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/jiji_rock.png"
+dest_files=["res://.godot/imported/jiji_rock.png-4deab41ba5212e0e738e7e969aedad5e.ctex"]
 
 [params]
 

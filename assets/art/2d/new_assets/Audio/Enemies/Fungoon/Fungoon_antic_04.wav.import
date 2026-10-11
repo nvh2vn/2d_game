@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3lguf4y0t7p1"
-path="res://.godot/imported/Fungoon_antic_04.wav-28b9e245c7b13c4d8f8e6fae2cc6bf5b.sample"
+path="res://.godot/imported/Fungoon_antic_04.wav-ed284dfab875bc3df46af5ea60adab44.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Fungoon/Fungoon_antic_04.wav"
-dest_files=["res://.godot/imported/Fungoon_antic_04.wav-28b9e245c7b13c4d8f8e6fae2cc6bf5b.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Fungoon/Fungoon_antic_04.wav"
+dest_files=["res://.godot/imported/Fungoon_antic_04.wav-ed284dfab875bc3df46af5ea60adab44.sample"]
 
 [params]
 

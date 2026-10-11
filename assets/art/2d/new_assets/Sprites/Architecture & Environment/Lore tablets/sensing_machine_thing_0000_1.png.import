@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccv17mogarjgd"
-path="res://.godot/imported/sensing_machine_thing_0000_1.png-ef4df49fe40452f109c1ea082156afe5.ctex"
+path="res://.godot/imported/sensing_machine_thing_0000_1.png-1c7f24fa6eed39c109e1c85d4e69e322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Lore tablets/sensing_machine_thing_0000_1.png"
-dest_files=["res://.godot/imported/sensing_machine_thing_0000_1.png-ef4df49fe40452f109c1ea082156afe5.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Lore tablets/sensing_machine_thing_0000_1.png"
+dest_files=["res://.godot/imported/sensing_machine_thing_0000_1.png-1c7f24fa6eed39c109e1c85d4e69e322.ctex"]
 
 [params]
 

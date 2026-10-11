@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvs0tdns12riv"
-path="res://.godot/imported/basement_lid.png-f19b5cc81b084aa455ca5472dfeaaa50.ctex"
+path="res://.godot/imported/basement_lid.png-872bb42a175c2ac6f2e02a06d8246c7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/basement_lid.png"
-dest_files=["res://.godot/imported/basement_lid.png-f19b5cc81b084aa455ca5472dfeaaa50.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/basement_lid.png"
+dest_files=["res://.godot/imported/basement_lid.png-872bb42a175c2ac6f2e02a06d8246c7c.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c4obkivv0i6pg"
-path="res://.godot/imported/shiny_item_loop.wav-4f6ec1fea57f007e44be82f1eefb7a0d.sample"
+path="res://.godot/imported/shiny_item_loop.wav-b54c8a7fbedc090b990be566c9360865.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Effects/Environment/shiny_item_loop.wav"
-dest_files=["res://.godot/imported/shiny_item_loop.wav-4f6ec1fea57f007e44be82f1eefb7a0d.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Effects/Environment/shiny_item_loop.wav"
+dest_files=["res://.godot/imported/shiny_item_loop.wav-b54c8a7fbedc090b990be566c9360865.sample"]
 
 [params]
 

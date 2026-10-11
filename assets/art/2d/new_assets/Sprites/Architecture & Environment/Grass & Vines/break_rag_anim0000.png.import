@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dieksajpmo3re"
-path="res://.godot/imported/break_rag_anim0000.png-f20e4bae9b88216755d28b01fd8dc9d4.ctex"
+path="res://.godot/imported/break_rag_anim0000.png-a961aa16ef240465bbaab12fa829a21c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Grass & Vines/break_rag_anim0000.png"
-dest_files=["res://.godot/imported/break_rag_anim0000.png-f20e4bae9b88216755d28b01fd8dc9d4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Grass & Vines/break_rag_anim0000.png"
+dest_files=["res://.godot/imported/break_rag_anim0000.png-a961aa16ef240465bbaab12fa829a21c.ctex"]
 
 [params]
 

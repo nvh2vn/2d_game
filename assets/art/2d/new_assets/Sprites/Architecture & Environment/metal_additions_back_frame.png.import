@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvh2yr1r51qjo"
-path="res://.godot/imported/metal_additions_back_frame.png-ff424c93bfda2e21ed427022f031a6a0.ctex"
+path="res://.godot/imported/metal_additions_back_frame.png-7d3f62e3d26ecb1baed9467fa06d7fa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/metal_additions_back_frame.png"
-dest_files=["res://.godot/imported/metal_additions_back_frame.png-ff424c93bfda2e21ed427022f031a6a0.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/metal_additions_back_frame.png"
+dest_files=["res://.godot/imported/metal_additions_back_frame.png-7d3f62e3d26ecb1baed9467fa06d7fa8.ctex"]
 
 [params]
 

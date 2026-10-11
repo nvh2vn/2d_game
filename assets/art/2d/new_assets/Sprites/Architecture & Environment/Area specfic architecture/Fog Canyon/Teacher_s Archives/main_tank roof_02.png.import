@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ys2brvh0icws"
-path="res://.godot/imported/main_tank roof_02.png-258709770c663d056812e05a201e29ef.ctex"
+path="res://.godot/imported/main_tank roof_02.png-59dbba17de9d520634e73fe24b7c8f71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/main_tank roof_02.png"
-dest_files=["res://.godot/imported/main_tank roof_02.png-258709770c663d056812e05a201e29ef.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Fog Canyon/Teacher_s Archives/main_tank roof_02.png"
+dest_files=["res://.godot/imported/main_tank roof_02.png-59dbba17de9d520634e73fe24b7c8f71.ctex"]
 
 [params]
 

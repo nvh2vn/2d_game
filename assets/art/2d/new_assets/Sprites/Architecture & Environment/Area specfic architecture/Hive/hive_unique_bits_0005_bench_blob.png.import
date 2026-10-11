@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnk2afixrjgy1"
-path="res://.godot/imported/hive_unique_bits_0005_bench_blob.png-a95607452d194392ed381f03aa9e378b.ctex"
+path="res://.godot/imported/hive_unique_bits_0005_bench_blob.png-0c39f45c02ea80adb21fbf964069c97d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Hive/hive_unique_bits_0005_bench_blob.png"
-dest_files=["res://.godot/imported/hive_unique_bits_0005_bench_blob.png-a95607452d194392ed381f03aa9e378b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Hive/hive_unique_bits_0005_bench_blob.png"
+dest_files=["res://.godot/imported/hive_unique_bits_0005_bench_blob.png-0c39f45c02ea80adb21fbf964069c97d.ctex"]
 
 [params]
 

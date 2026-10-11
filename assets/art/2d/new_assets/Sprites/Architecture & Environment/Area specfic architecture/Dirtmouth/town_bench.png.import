@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba2eykjwcji78"
-path="res://.godot/imported/town_bench.png-b360b8857c8a921abd91b625cbd48b59.ctex"
+path="res://.godot/imported/town_bench.png-d320ceabcc281727927a81a1983fc228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/town_bench.png"
-dest_files=["res://.godot/imported/town_bench.png-b360b8857c8a921abd91b625cbd48b59.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/town_bench.png"
+dest_files=["res://.godot/imported/town_bench.png-d320ceabcc281727927a81a1983fc228.ctex"]
 
 [params]
 

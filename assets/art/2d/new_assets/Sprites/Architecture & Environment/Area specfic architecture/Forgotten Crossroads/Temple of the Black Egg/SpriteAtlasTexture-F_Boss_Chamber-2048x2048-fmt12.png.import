@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buxr5oxxb54ku"
-path="res://.godot/imported/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png-3947f0bec4f09507e1f8011dc681dd99.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png-39b47b1b8fd0ee232fd0eab377d29eed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png-3947f0bec4f09507e1f8011dc681dd99.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/Temple of the Black Egg/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-F_Boss_Chamber-2048x2048-fmt12.png-39b47b1b8fd0ee232fd0eab377d29eed.ctex"]
 
 [params]
 

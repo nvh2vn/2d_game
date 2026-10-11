@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr5h00nb82oaw"
-path="res://.godot/imported/centipede_pit_FG0010.png-deee3cb669f4e6ad8e597f5dbe837c33.ctex"
+path="res://.godot/imported/centipede_pit_FG0010.png-adc513930152b2ff67ca727a087b899e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Spikes & thorns/centipede_pit_FG0010.png"
-dest_files=["res://.godot/imported/centipede_pit_FG0010.png-deee3cb669f4e6ad8e597f5dbe837c33.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Spikes & thorns/centipede_pit_FG0010.png"
+dest_files=["res://.godot/imported/centipede_pit_FG0010.png-adc513930152b2ff67ca727a087b899e.ctex"]
 
 [params]
 

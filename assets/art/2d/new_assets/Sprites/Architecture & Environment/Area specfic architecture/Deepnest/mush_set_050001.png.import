@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djxwth1ppj3wo"
-path="res://.godot/imported/mush_set_050001.png-8c1385d78922d5c802a98cf710cc0ac6.ctex"
+path="res://.godot/imported/mush_set_050001.png-03f43d6556b69c0ed0303f013e554a8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Deepnest/mush_set_050001.png"
-dest_files=["res://.godot/imported/mush_set_050001.png-8c1385d78922d5c802a98cf710cc0ac6.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Deepnest/mush_set_050001.png"
+dest_files=["res://.godot/imported/mush_set_050001.png-03f43d6556b69c0ed0303f013e554a8a.ctex"]
 
 [params]
 

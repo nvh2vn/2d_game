@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwadxq514jko6"
-path="res://.godot/imported/gg_workshop_rubble.png-def97e1b6d098710837e196c60224009.ctex"
+path="res://.godot/imported/gg_workshop_rubble.png-095a41082ab61089f758533349bc34fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/gg_workshop_rubble.png"
-dest_files=["res://.godot/imported/gg_workshop_rubble.png-def97e1b6d098710837e196c60224009.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/Land of Storms & Tuning area/gg_workshop_rubble.png"
+dest_files=["res://.godot/imported/gg_workshop_rubble.png-095a41082ab61089f758533349bc34fb.ctex"]
 
 [params]
 

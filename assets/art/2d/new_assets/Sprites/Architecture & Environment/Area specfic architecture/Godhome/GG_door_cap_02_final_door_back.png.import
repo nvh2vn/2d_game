@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x3ihbin8ebjj"
-path="res://.godot/imported/GG_door_cap_02_final_door_back.png-16225c8a21d7c0117135d16cc34d1c7b.ctex"
+path="res://.godot/imported/GG_door_cap_02_final_door_back.png-766f0667761da68f4d16881a8e0b5c60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Godhome/GG_door_cap_02_final_door_back.png"
-dest_files=["res://.godot/imported/GG_door_cap_02_final_door_back.png-16225c8a21d7c0117135d16cc34d1c7b.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Godhome/GG_door_cap_02_final_door_back.png"
+dest_files=["res://.godot/imported/GG_door_cap_02_final_door_back.png-766f0667761da68f4d16881a8e0b5c60.ctex"]
 
 [params]
 

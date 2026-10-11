@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6o4r5jt1gmxi"
-path="res://.godot/imported/ancient_scream_pieces_0000_2.png-3aa6d4d717ae09298f3f316096efadfc.ctex"
+path="res://.godot/imported/ancient_scream_pieces_0000_2.png-b7b6ee53488e5837ab83f77f796a6caf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/ancient_scream_pieces_0000_2.png"
-dest_files=["res://.godot/imported/ancient_scream_pieces_0000_2.png-3aa6d4d717ae09298f3f316096efadfc.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/ancient_scream_pieces_0000_2.png"
+dest_files=["res://.godot/imported/ancient_scream_pieces_0000_2.png-b7b6ee53488e5837ab83f77f796a6caf.ctex"]
 
 [params]
 

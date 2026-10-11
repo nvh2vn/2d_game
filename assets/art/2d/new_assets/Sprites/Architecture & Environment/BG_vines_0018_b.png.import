@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhhqwumjfb4gw"
-path="res://.godot/imported/BG_vines_0018_b.png-3087ba8ede60a67b05f21a3b00a09f1a.ctex"
+path="res://.godot/imported/BG_vines_0018_b.png-ea1545501cedcfb5e315b14935c80c40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/BG_vines_0018_b.png"
-dest_files=["res://.godot/imported/BG_vines_0018_b.png-3087ba8ede60a67b05f21a3b00a09f1a.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/BG_vines_0018_b.png"
+dest_files=["res://.godot/imported/BG_vines_0018_b.png-ea1545501cedcfb5e315b14935c80c40.ctex"]
 
 [params]
 

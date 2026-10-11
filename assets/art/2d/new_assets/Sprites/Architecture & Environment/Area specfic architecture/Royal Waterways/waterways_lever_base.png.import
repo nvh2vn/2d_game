@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brmxlk3j151v3"
-path="res://.godot/imported/waterways_lever_base.png-abb4aad316968eda07a9aed4b1b2a8a3.ctex"
+path="res://.godot/imported/waterways_lever_base.png-93a1316bba1b7b695da92a17a7eb0625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_lever_base.png"
-dest_files=["res://.godot/imported/waterways_lever_base.png-abb4aad316968eda07a9aed4b1b2a8a3.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/waterways_lever_base.png"
+dest_files=["res://.godot/imported/waterways_lever_base.png-93a1316bba1b7b695da92a17a7eb0625.ctex"]
 
 [params]
 

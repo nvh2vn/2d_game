@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1pj04r0mhnht"
-path="res://.godot/imported/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png-8d5e78ea6ed8841f5e59be20ca972072.ctex"
+path="res://.godot/imported/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png-fd69ff96adaf398af49bb205c07a9167.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Abyss/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png"
-dest_files=["res://.godot/imported/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png-8d5e78ea6ed8841f5e59be20ca972072.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png"
+dest_files=["res://.godot/imported/SpriteAtlasTexture-Lighthouse-2048x4096-fmt12.png-fd69ff96adaf398af49bb205c07a9167.ctex"]
 
 [params]
 

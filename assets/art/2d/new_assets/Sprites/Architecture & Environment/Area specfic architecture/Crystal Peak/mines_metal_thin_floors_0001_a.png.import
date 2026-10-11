@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciw3p4apji3pe"
-path="res://.godot/imported/mines_metal_thin_floors_0001_a.png-d8de5554037ff7af92b393947777fc7c.ctex"
+path="res://.godot/imported/mines_metal_thin_floors_0001_a.png-2b6dabd21de4b6253b6eaf5722ae2a13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Crystal Peak/mines_metal_thin_floors_0001_a.png"
-dest_files=["res://.godot/imported/mines_metal_thin_floors_0001_a.png-d8de5554037ff7af92b393947777fc7c.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Crystal Peak/mines_metal_thin_floors_0001_a.png"
+dest_files=["res://.godot/imported/mines_metal_thin_floors_0001_a.png-2b6dabd21de4b6253b6eaf5722ae2a13.ctex"]
 
 [params]
 

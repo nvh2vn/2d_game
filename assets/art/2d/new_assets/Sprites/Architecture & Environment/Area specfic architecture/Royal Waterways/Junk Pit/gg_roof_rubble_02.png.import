@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p2f3k7x2rb40"
-path="res://.godot/imported/gg_roof_rubble_02.png-81366bcf451f99fc86debeb1cf73dbc4.ctex"
+path="res://.godot/imported/gg_roof_rubble_02.png-d2253ebd6b3ec28991553c9d366c15e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_roof_rubble_02.png"
-dest_files=["res://.godot/imported/gg_roof_rubble_02.png-81366bcf451f99fc86debeb1cf73dbc4.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Royal Waterways/Junk Pit/gg_roof_rubble_02.png"
+dest_files=["res://.godot/imported/gg_roof_rubble_02.png-d2253ebd6b3ec28991553c9d366c15e4.ctex"]
 
 [params]
 

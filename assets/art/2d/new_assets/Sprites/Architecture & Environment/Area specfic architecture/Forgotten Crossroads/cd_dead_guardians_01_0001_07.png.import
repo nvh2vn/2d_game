@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sulu133kjmfa"
-path="res://.godot/imported/cd_dead_guardians_01_0001_07.png-45a0d54a2d5f6bdaadd976cd5005c8cb.ctex"
+path="res://.godot/imported/cd_dead_guardians_01_0001_07.png-0e959eac462a67bde53b9d963cc113bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_dead_guardians_01_0001_07.png"
-dest_files=["res://.godot/imported/cd_dead_guardians_01_0001_07.png-45a0d54a2d5f6bdaadd976cd5005c8cb.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Forgotten Crossroads/cd_dead_guardians_01_0001_07.png"
+dest_files=["res://.godot/imported/cd_dead_guardians_01_0001_07.png-0e959eac462a67bde53b9d963cc113bf.ctex"]
 
 [params]
 

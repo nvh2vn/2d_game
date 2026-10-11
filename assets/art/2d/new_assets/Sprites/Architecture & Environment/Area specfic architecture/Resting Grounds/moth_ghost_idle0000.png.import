@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uc8iklhn4c6v"
-path="res://.godot/imported/moth_ghost_idle0000.png-ff11841c8b0b14acc68608fc7ea7d670.ctex"
+path="res://.godot/imported/moth_ghost_idle0000.png-20c8921131c8779ce275335945561a3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Resting Grounds/moth_ghost_idle0000.png"
-dest_files=["res://.godot/imported/moth_ghost_idle0000.png-ff11841c8b0b14acc68608fc7ea7d670.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Resting Grounds/moth_ghost_idle0000.png"
+dest_files=["res://.godot/imported/moth_ghost_idle0000.png-20c8921131c8779ce275335945561a3e.ctex"]
 
 [params]
 

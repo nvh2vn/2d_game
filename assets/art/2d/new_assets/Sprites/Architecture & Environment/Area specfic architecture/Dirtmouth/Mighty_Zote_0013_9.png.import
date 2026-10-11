@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgqf444ejp38s"
-path="res://.godot/imported/Mighty_Zote_0013_9.png-203a3ed6b5e5fcbe88dfe5a977e7bf99.ctex"
+path="res://.godot/imported/Mighty_Zote_0013_9.png-f8df2eea57b18aa89b7c4763f533dcd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Dirtmouth/Mighty_Zote_0013_9.png"
-dest_files=["res://.godot/imported/Mighty_Zote_0013_9.png-203a3ed6b5e5fcbe88dfe5a977e7bf99.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Dirtmouth/Mighty_Zote_0013_9.png"
+dest_files=["res://.godot/imported/Mighty_Zote_0013_9.png-f8df2eea57b18aa89b7c4763f533dcd7.ctex"]
 
 [params]
 

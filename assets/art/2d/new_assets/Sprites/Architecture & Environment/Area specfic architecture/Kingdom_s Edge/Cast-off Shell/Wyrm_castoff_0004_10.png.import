@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://culixfgvb1ugr"
-path="res://.godot/imported/Wyrm_castoff_0004_10.png-ace9ee9189b4fc599a107476e942bd60.ctex"
+path="res://.godot/imported/Wyrm_castoff_0004_10.png-59e63414caae962ced614d791d6f4da6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/Wyrm_castoff_0004_10.png"
-dest_files=["res://.godot/imported/Wyrm_castoff_0004_10.png-ace9ee9189b4fc599a107476e942bd60.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Kingdom_s Edge/Cast-off Shell/Wyrm_castoff_0004_10.png"
+dest_files=["res://.godot/imported/Wyrm_castoff_0004_10.png-59e63414caae962ced614d791d6f4da6.ctex"]
 
 [params]
 

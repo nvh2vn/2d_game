@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b8aj4t6df31xi"
-path="res://.godot/imported/hatchling_explode.wav-15517eca581f3fe0480c53691c8ab45a.sample"
+path="res://.godot/imported/hatchling_explode.wav-296776dbbe4d8b2e9c27d8084b2c701e.sample"
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight audio files 1.5.12459 (Nintendo Switch 2 edition)/Enemies/Aspid Hatchling/hatchling_explode.wav"
-dest_files=["res://.godot/imported/hatchling_explode.wav-15517eca581f3fe0480c53691c8ab45a.sample"]
+source_file="res://assets/art/2d/new_assets/Audio/Enemies/Aspid Hatchling/hatchling_explode.wav"
+dest_files=["res://.godot/imported/hatchling_explode.wav-296776dbbe4d8b2e9c27d8084b2c701e.sample"]
 
 [params]
 

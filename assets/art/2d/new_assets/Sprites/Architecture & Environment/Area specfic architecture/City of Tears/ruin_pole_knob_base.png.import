@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://30tbxuh6q170"
-path="res://.godot/imported/ruin_pole_knob_base.png-ad60e88acda86eaf668d053677e41ea0.ctex"
+path="res://.godot/imported/ruin_pole_knob_base.png-92f74b5a2c2abf50f47d902caf8a5ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/City of Tears/ruin_pole_knob_base.png"
-dest_files=["res://.godot/imported/ruin_pole_knob_base.png-ad60e88acda86eaf668d053677e41ea0.ctex"]
+source_file="res://assets/art/2d/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruin_pole_knob_base.png"
+dest_files=["res://.godot/imported/ruin_pole_knob_base.png-92f74b5a2c2abf50f47d902caf8a5ebc.ctex"]
 
 [params]
 
