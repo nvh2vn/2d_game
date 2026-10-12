@@ -1,474 +1,1050 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://assets/scripts/menu/inventory_screen.gd" id="1_inv_script"]
-[ext_resource type="Texture2D" uid="uid://lrerukr11llw" path="res://assets/art/2d/silksong_full/Images/Menu/Voidheart_menu_BG.jpg" id="2_bg"]
-[ext_resource type="Texture2D" uid="uid://bi6hbgptqdaey" path="res://assets/art/2d/silksong_full/Images/Menu/Main_Menu_GG_beam.png" id="3_beam"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="4_font"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Geo - HUD_coin_v020004.png" id="5_coin"]
-[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/UI/mask_white.png" id="6_mask"]
-[ext_resource type="Texture2D" uid="uid://cv7gj0netijef" path="res://assets/art/2d/silksong_full/Images/UI/ins_3.png" id="7_spool"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Inv_0015_dash-cloak.png" id="8_dash"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Spell, Shade Soul - Inv_0025_spell_fireball_01_level2.png" id="9_dart"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Spell, Howling Wraiths - Inv_0024_spell_scream_01.png" id="10_wave"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/nail_upgrade_0000_pure-nail.png" id="11_nail"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="12_border"]
-[ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/art/Inventory & UI/Pointers/main_menu_pointer_anim0000.png" id="13_pointer"]
-[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="14_divider"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="2_font"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Geo - HUD_coin_v020004.png" id="3_coin"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/silksong_full/Images/UI/mask_white.png" id="4_mask"]
+[ext_resource type="Texture2D" uid="uid://cv7gj0netijef" path="res://assets/art/2d/silksong_full/Images/UI/ins_3.png" id="5_spool"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_attack.png" id="6_btn_attack"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_dash.png" id="7_btn_dash"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_jump.png" id="8_btn_jump"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_throw.png" id="9_btn_throw"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_skill.png" id="10_btn_skill"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/art/Inventory & UI/Fleurs/prompt_divider.png" id="11_divider"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/inv_item__0013_wanderers-journal.png" id="12_hud_icon"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/nail_upgrade_0000_pure-nail.png" id="13_nail"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/City Crest - false_knight_statue_crest.png" id="14_crest_city"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Charms/Defender_s Crest - charm_dung_def.png" id="15_crest_def"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/inv_item__0012_hallownest-seal.png" id="16_seal"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Lumafly_Lantern0000.png" id="17_lantern"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="18_border"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/new_assets/Inventory & UI/Fleurs/overscan_corner_fleur009.png" id="19_corner_fleur"]
+[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Pointers/Inv_0014_selection_cursor.png" id="20_cursor"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flat"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_card"]
+[sub_resource type="Gradient" id="Gradient_vignette"]
+offsets = PackedFloat32Array(0, 0.45, 0.8, 1)
+colors = PackedColorArray(0.02, 0.03, 0.06, 0.55, 0.02, 0.03, 0.05, 0.68, 0.01, 0.01, 0.02, 0.9, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vignette"]
+gradient = SubResource("Gradient_vignette")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.85)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_card"]
 content_margin_left = 12.0
-content_margin_top = 8.0
+content_margin_top = 10.0
 content_margin_right = 12.0
-content_margin_bottom = 8.0
-bg_color = Color(0.04, 0.05, 0.08, 0.5)
+content_margin_bottom = 10.0
+bg_color = Color(0.02, 0.02, 0.04, 0.6)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.35, 0.38, 0.44, 0.6)
+border_color = Color(0.3, 0.33, 0.4, 0.35)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lore"]
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+bg_color = Color(0.05, 0.04, 0.03, 0.7)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.42, 0.28, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[node name="InventoryScreen" type="Control"]
+[node name="InventoryScreen" type="CanvasLayer"]
+process_mode = 3
+layer = 85
+script = ExtResource("1_inv_script")
+
+[node name="HUDInventoryButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(44, 44)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 18.0
+offset_right = -192.0
+offset_bottom = 62.0
+grow_horizontal = 0
+texture_normal = ExtResource("12_hud_icon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MenuOverlay" type="Control" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_inv_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="VignetteBackground" type="TextureRect" parent="MenuOverlay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bg")
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_vignette")
 expand_mode = 1
-stretch_mode = 6
 
-[node name="BeamSprite" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.4)
+[node name="BorderFrame" type="NinePatchRect" parent="MenuOverlay"]
+modulate = Color(0.85, 0.88, 0.95, 0.45)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_beam")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="MainPanel" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(860, 560)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -430.0
-offset_top = -280.0
-offset_right = 430.0
-offset_bottom = 280.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
-
-[node name="BorderFrame" type="NinePatchRect" parent="MainPanel"]
-modulate = Color(1, 1, 1, 0.12)
-layout_mode = 2
-texture = ExtResource("12_border")
+mouse_filter = 2
+texture = ExtResource("18_border")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="Margin" type="MarginContainer" parent="MainPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 24
+[node name="CornerTL" type="TextureRect" parent="MenuOverlay"]
+modulate = Color(0.85, 0.88, 0.95, 0.45)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 74.0
+offset_bottom = 74.0
+mouse_filter = 2
+texture = ExtResource("19_corner_fleur")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+[node name="CornerTR" type="TextureRect" parent="MenuOverlay"]
+modulate = Color(0.85, 0.88, 0.95, 0.45)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 74.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("19_corner_fleur")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CornerBL" type="TextureRect" parent="MenuOverlay"]
+modulate = Color(0.85, 0.88, 0.95, 0.45)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -74.0
+offset_right = 74.0
+offset_bottom = -10.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("19_corner_fleur")
+flip_v = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CornerBR" type="TextureRect" parent="MenuOverlay"]
+modulate = Color(0.85, 0.88, 0.95, 0.45)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -74.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("19_corner_fleur")
+flip_h = true
+flip_v = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MainPanel" type="MarginContainer" parent="MenuOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 18
+
+[node name="MainVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderContainer" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+alignment = 1
+
+[node name="PrevTabButton" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_color = Color(0.7, 0.72, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "<"
+
+[node name="TabButtonQuests" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.72, 0.8)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "NHIỆM VỤ"
+
+[node name="Sep1" type="Label" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.42, 0.48, 0.6)
+text = "•"
+
+[node name="TabButtonInventory" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "TÚI ĐỒ & CHỈ SỐ"
+
+[node name="Sep2" type="Label" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.42, 0.48, 0.6)
+text = "•"
+
+[node name="TabButtonJournal" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_color = Color(0.66, 0.67, 0.72, 0.8)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "SỔ TAY THỢ SĂN"
+
+[node name="NextTabButton" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_color = Color(0.7, 0.72, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = ">"
+
+[node name="HeaderSpacer" type="Control" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="MenuOverlay/MainPanel/MainVBox/HeaderContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.65, 0.68, 0.75, 0.9)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "QUAY LẠI (ESC)"
+
+[node name="TopDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox"]
+modulate = Color(1, 1, 1, 0.45)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("11_divider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContentArea" type="Control" parent="MenuOverlay/MainPanel/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PageQuests" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="QuestListPanel" type="PanelContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tab_card")
+
+[node name="QuestListMargin" type="MarginContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestListPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="QuestListVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestListPanel/QuestListMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="QuestListHeader" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestListPanel/QuestListMargin/QuestListVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "DANH SÁCH NHIỆM VỤ"
+
+[node name="QuestScroll" type="ScrollContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestListPanel/QuestListMargin/QuestListVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="QuestListContainer" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestListPanel/QuestListMargin/QuestListVBox/QuestScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="QuestDetailPanel" type="PanelContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tab_card")
+
+[node name="QuestDetailMargin" type="MarginContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="QuestDetailVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin"]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Header" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+[node name="DetailHeaderHBox" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="MainPanel/Margin/VBox/Header"]
+[node name="QuestDetailIcon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox/DetailHeaderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleStatusVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox/DetailHeaderHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.96, 0.96, 0.98, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 24
-text = "ITEM WAREHOUSE & PROGRESS"
+alignment = 1
 
-[node name="LastLevelLabel" type="Label" parent="MainPanel/Margin/VBox/Header"]
+[node name="QuestDetailTitle" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox/DetailHeaderHBox/TitleStatusVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 14
-text = "LAST EXPLORED: MAP 1"
-horizontal_alignment = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.6, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+text = "TÊN NHIỆM VỤ"
 
-[node name="InventoryDivider" type="TextureRect" parent="MainPanel/Margin/VBox"]
-custom_minimum_size = Vector2(0, 16)
+[node name="QuestDetailStatus" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox/DetailHeaderHBox/TitleStatusVBox"]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("14_divider")
+theme_override_colors/font_color = Color(0.4, 0.9, 0.9, 1)
+theme_override_font_sizes/size = 12
+text = "TRẠNG THÁI: ĐANG THỰC HIỆN"
+
+[node name="QuestDetailDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("11_divider")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ContentHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+[node name="QuestDetailDesc" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 14
+text = "Mô tả chi tiết nhiệm vụ..."
+autowrap_mode = 2
+
+[node name="QuestDetailSpacer" type="Control" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="QuestDetailObjective" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "Mục tiêu: Đang cập nhật..."
+autowrap_mode = 2
+
+[node name="PageInventory" type="Control" parent="MenuOverlay/MainPanel/MainVBox/ContentArea"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColumnsHBox" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="LeftCol" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LeftHeader" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "TRANG BỊ CỐT LÕI"
+
+[node name="WeaponAndCrests" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 24
+theme_override_constants/separation = 16
 
-[node name="LeftCol" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox"]
-custom_minimum_size = Vector2(260, 0)
+[node name="WeaponSlot" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 220)
 layout_mode = 2
-theme_override_constants/separation = 12
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
 
-[node name="Sec1" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 18
-text = "RESOURCES"
-
-[node name="GeoCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
-
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard"]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard/HBox"]
-custom_minimum_size = Vector2(36, 36)
-layout_mode = 2
-texture = ExtResource("5_coin")
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/WeaponSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_nail")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="GeoCountLabel" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/GeoCard/HBox"]
+[node name="CrestsContainer" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 20
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Crest1" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer/Crest1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("14_crest_city")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Crest2" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer/Crest2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_crest_def")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Crest3" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer/Crest3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_seal")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Crest4" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/WeaponAndCrests/CrestsContainer/Crest4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_lantern")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeftDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol"]
+modulate = Color(1, 1, 1, 0.3)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("11_divider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CompactResources" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="GeoRow" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/GeoRow"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+texture = ExtResource("3_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GeoCountLabel" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/GeoRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.49, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
 text = "0 GEO"
 vertical_alignment = 1
 
-[node name="HealthCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+[node name="StatsRow" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+theme_override_constants/separation = 14
 
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard"]
+[node name="MaskRow" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 6
 
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard/HBox"]
-custom_minimum_size = Vector2(36, 36)
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow/MaskRow"]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
-texture = ExtResource("6_mask")
+texture = ExtResource("4_mask")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/HealthCard/HBox"]
+[node name="HealthCountLabel" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow/MaskRow"]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.88, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
 text = "5 / 5 MASKS"
 vertical_alignment = 1
 
-[node name="SilkCard" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol"]
+[node name="SilkRow" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+theme_override_constants/separation = 6
 
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard"]
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow/SilkRow"]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard/HBox"]
-custom_minimum_size = Vector2(36, 36)
-layout_mode = 2
-texture = ExtResource("7_spool")
+texture = ExtResource("5_spool")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/LeftCol/SilkCard/HBox"]
+[node name="SilkCountLabel" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/LeftCol/CompactResources/StatsRow/SilkRow"]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 16
-text = "6 SILK SPOOL"
+theme_override_colors/font_color = Color(0.88, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "4 / 4 SPOOLS"
 vertical_alignment = 1
 
-[node name="RightCol" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox"]
+[node name="CenterCol" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
-[node name="Sec2" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol"]
+[node name="SkillsHeader" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 18
-text = "UNLOCKED ABILITIES & GEAR"
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "KỸ NĂNG DI CHUYỂN & CHIẾN ĐẤU"
 
-[node name="Grid" type="GridContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol"]
+[node name="AbilitiesGrid" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="attack" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid/attack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_btn_attack")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="dash" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid/dash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_btn_dash")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="double_jump" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid/double_jump"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_btn_jump")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shoot" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid/shoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_btn_throw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="special_attack" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+
+[node name="Icon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/AbilitiesGrid/special_attack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_btn_skill")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol"]
+modulate = Color(1, 1, 1, 0.3)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("11_divider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemsHeader" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "TÚI ĐỒ & CỔ VẬT THU THẬP"
+
+[node name="ItemsScroll" type="ScrollContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol"]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ItemsGrid" type="GridContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/CenterCol/ItemsScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 12
-theme_override_constants/v_separation = 10
-columns = 2
+theme_override_constants/v_separation = 12
+columns = 5
 
-[node name="Ab1" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
-
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1"]
+[node name="RightCol" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox"]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox"]
-custom_minimum_size = Vector2(32, 32)
+[node name="RightHeader" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
 layout_mode = 2
-texture = ExtResource("8_dash")
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "CHI TIẾT MỤC CHỌN"
+horizontal_alignment = 1
+
+[node name="IconCenter" type="CenterContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+
+[node name="ItemPreviewIcon" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol/IconCenter"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox"]
+[node name="ItemPreviewName" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.73, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "TÊN VẬT PHẨM"
+horizontal_alignment = 1
 
-[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox/VBox"]
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 14
-text = "MOTHWING DASH (L)"
-
-[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab1/HBox/VBox"]
-theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
-theme_override_font_sizes/font_size = 11
-text = "Invincible forward dash"
-
-[node name="Ab2" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+[node name="ItemPreviewCategory" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+theme_override_colors/font_color = Color(0.56, 0.64, 0.72, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "PHÂN LOẠI: VẬT PHẨM"
+horizontal_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2"]
+[node name="PreviewDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
+texture = ExtResource("11_divider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemPreviewDesc" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81, 0.83, 0.86, 1)
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 13
+text = "Mô tả chi tiết mục chọn..."
+autowrap_mode = 2
+
+[node name="SelectionBrackets" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("20_cursor")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PageJournal" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox"]
-custom_minimum_size = Vector2(32, 32)
+[node name="JournalSummaryLabel" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal"]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("9_dart")
-expand_mode = 1
-stretch_mode = 5
+theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "SỔ TAY QUÁI VẬT — ĐÃ KHÁM PHÁ: 0 / 8"
 
-[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox"]
+[node name="JournalHBox" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
 
-[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox/VBox"]
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 14
-text = "SHADE SOUL (K)"
-
-[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab2/HBox/VBox"]
-theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
-theme_override_font_sizes/font_size = 11
-text = "Ranged needle dart spell"
-
-[node name="Ab3" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+[node name="EnemyListPanel" type="PanelContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tab_card")
 
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3"]
+[node name="EnemyListMargin" type="MarginContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyListPanel"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
 
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox"]
-custom_minimum_size = Vector2(32, 32)
+[node name="EnemyScroll" type="ScrollContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyListPanel/EnemyListMargin"]
 layout_mode = 2
-texture = ExtResource("10_wave")
-expand_mode = 1
-stretch_mode = 5
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
-[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox"]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox/VBox"]
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 14
-text = "HOWLING STORM (X)"
-
-[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab3/HBox/VBox"]
-theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
-theme_override_font_sizes/font_size = 11
-text = "AoE silk explosion"
-
-[node name="Ab4" type="PanelContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid"]
+[node name="EnemyListContainer" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyListPanel/EnemyListMargin/EnemyScroll"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_card")
+theme_override_constants/separation = 6
 
-[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4"]
+[node name="EnemyShowcasePanel" type="PanelContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox"]
 layout_mode = 2
-theme_override_constants/separation = 10
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tab_card")
 
-[node name="Icon" type="TextureRect" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox"]
-custom_minimum_size = Vector2(32, 32)
+[node name="EnemyShowcaseMargin" type="MarginContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel"]
 layout_mode = 2
-texture = ExtResource("11_nail")
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 18
+
+[node name="EnemyShowcaseVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ShowcaseHeaderHBox" type="HBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="EnemyShowcaseArt" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox"]
+[node name="ShowcaseMetaVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox"]
 layout_mode = 2
-
-[node name="Name" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox/VBox"]
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 14
-text = "PURE NAIL (J / Z)"
-
-[node name="Desc" type="Label" parent="MainPanel/Margin/VBox/ContentHBox/RightCol/Grid/Ab4/HBox/VBox"]
-theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
-theme_override_font_sizes/font_size = 11
-text = "Melee slashing weapon"
-
-[node name="ButtonsRow" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
-layout_mode = 2
-theme_override_constants/separation = 24
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="BackButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
+[node name="EnemyShowcaseName" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox/ShowcaseMetaVBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
-flat = true
-text = "BACK"
+theme_override_colors/font_color = Color(1, 0.92, 0.75, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = "TÊN QUÁI VẬT"
 
-[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/BackButton"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -12.0
-offset_right = 30.0
-offset_bottom = 12.0
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("13_pointer")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/BackButton"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -12.0
-offset_right = -6.0
-offset_bottom = 12.0
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("13_pointer")
-flip_h = true
-expand_mode = 1
-stretch_mode = 5
-
-[node name="MainMenuButton" type="Button" parent="MainPanel/Margin/VBox/ButtonsRow"]
+[node name="EnemyShowcaseKills" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox/ShowcaseMetaVBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
-flat = true
-text = "MAIN MENU"
+theme_override_colors/font_color = Color(0.5, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "TIẾN ĐỘ THỢ SĂN: 0 / 5"
 
-[node name="PointerLeft" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/MainMenuButton"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -12.0
-offset_right = 30.0
-offset_bottom = 12.0
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("13_pointer")
+[node name="EnemyShowcaseDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox/ShowcaseMetaVBox"]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("11_divider")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PointerRight" type="TextureRect" parent="MainPanel/Margin/VBox/ButtonsRow/MainMenuButton"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -12.0
-offset_right = -6.0
-offset_bottom = 12.0
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("13_pointer")
-flip_h = true
-expand_mode = 1
-stretch_mode = 5
+[node name="EnemyShowcaseDesc" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/ShowcaseHeaderHBox/ShowcaseMetaVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 13
+text = "Mô tả quái vật..."
+autowrap_mode = 2
+
+[node name="EnemyHunterLoreBox" type="PanelContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lore")
+
+[node name="EnemyHunterLoreMargin" type="MarginContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/EnemyHunterLoreBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="EnemyHunterLoreVBox" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/EnemyHunterLoreBox/EnemyHunterLoreMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LoreTitle" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/EnemyHunterLoreBox/EnemyHunterLoreMargin/EnemyHunterLoreVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.7, 0.45, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "GHI CHÉP CỦA THỢ SĂN (HUNTER'S LORE)"
+
+[node name="EnemyHunterLoreText" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageJournal/JournalHBox/EnemyShowcasePanel/EnemyShowcaseMargin/EnemyShowcaseVBox/EnemyHunterLoreBox/EnemyHunterLoreMargin/EnemyHunterLoreVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.88, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "\"Ghi chép thơ mộng của thợ săn...\""
+autowrap_mode = 2
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 bus = &"SFX"
-
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-bus = &"Music"

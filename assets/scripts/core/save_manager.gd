@@ -34,7 +34,40 @@ var save_data: Dictionary = {
 			"float": false
 		}
 	},
-	"inventory": [],
+	"inventory": [
+		{
+			"id": "city_key",
+			"name": "City Crest",
+			"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
+			"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+			"category": "key"
+		},
+		{
+			"id": "hallownest_map",
+			"name": "Bản Đồ Phế Tích",
+			"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
+			"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+			"category": "map"
+		},
+		{
+			"id": "pale_ore",
+			"name": "Mảnh Quặng Cổ (Pale Ore)",
+			"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
+			"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
+			"category": "upgrade"
+		}
+	],
+	"quests": {
+		"ancient_whispers": {
+			"id": "ancient_whispers",
+			"title": "Dấu Vết Cổ Xưa (Ancient Whispers)",
+			"desc": "Một nguồn năng lượng bí ẩn đang lan tỏa khắp khu phế tích. Hãy khám phá sâu hơn vào lòng đất...",
+			"objective": "Khám phá vùng đất chưa biết (0/1)",
+			"status": "active",
+			"icon_path": "res://assets/art/2d/Achievements/achievement__0014_dream_witch_quest_end.png"
+		}
+	},
+	"hunter_journal": {},
 	"shop_purchases": {}, # Lưu trạng thái { "item_id": true/false }
 	"checkpoint": {
 		"has_checkpoint": false,
@@ -228,7 +261,40 @@ func _reset_to_default() -> void:
 				"float": false
 			}
 		},
-		"inventory": [],
+		"inventory": [
+			{
+				"id": "city_key",
+				"name": "City Crest",
+				"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
+				"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+				"category": "key"
+			},
+			{
+				"id": "hallownest_map",
+				"name": "Bản Đồ Phế Tích",
+				"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
+				"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+				"category": "map"
+			},
+			{
+				"id": "pale_ore",
+				"name": "Mảnh Quặng Cổ (Pale Ore)",
+				"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
+				"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
+				"category": "upgrade"
+			}
+		],
+		"quests": {
+			"ancient_whispers": {
+				"id": "ancient_whispers",
+				"title": "Dấu Vết Cổ Xưa (Ancient Whispers)",
+				"desc": "Một nguồn năng lượng bí ẩn đang lan tỏa khắp khu phế tích. Hãy khám phá sâu hơn vào lòng đất...",
+				"objective": "Khám phá vùng đất chưa biết (0/1)",
+				"status": "active",
+				"icon_path": "res://assets/art/2d/Achievements/achievement__0014_dream_witch_quest_end.png"
+			}
+		},
+		"hunter_journal": {},
 		"shop_purchases": {},
 		"checkpoint": {
 			"has_checkpoint": false,
@@ -526,6 +592,73 @@ static func get_cocoon() -> Dictionary:
 
 static func clear_cocoon() -> void:
 	clear_shade()
+
+
+# --- QUẢN LÝ NHIỆM VỤ (QUEST SYSTEM API) ---
+
+func get_quests() -> Dictionary:
+	return save_data.get("quests", {})
+
+func add_quest(quest_id: String, title: String, desc: String, objective: String = "", icon_path: String = "") -> void:
+	if not save_data.has("quests") or not (save_data["quests"] is Dictionary):
+		save_data["quests"] = {}
+	if icon_path == "":
+		icon_path = "res://assets/art/2d/Achievements/achievement__0014_dream_witch_quest_end.png"
+	save_data["quests"][quest_id] = {
+		"id": quest_id,
+		"title": title,
+		"desc": desc,
+		"objective": objective,
+		"status": "active",
+		"icon_path": icon_path
+	}
+	save_to_disk()
+
+func complete_quest(quest_id: String) -> void:
+	if save_data.has("quests") and save_data["quests"].has(quest_id):
+		save_data["quests"][quest_id]["status"] = "completed"
+		save_to_disk()
+
+func is_quest_completed(quest_id: String) -> bool:
+	if save_data.has("quests") and save_data["quests"].has(quest_id):
+		return save_data["quests"][quest_id].get("status", "") == "completed"
+	return false
+
+
+# --- QUẢN LÝ SỔ TAY THỢ SĂN (HUNTER'S JOURNAL API) ---
+
+func get_hunter_journal() -> Dictionary:
+	return save_data.get("hunter_journal", {})
+
+func record_enemy_kill(enemy_id: String) -> void:
+	if not save_data.has("hunter_journal") or not (save_data["hunter_journal"] is Dictionary):
+		save_data["hunter_journal"] = {}
+	var cur = int(save_data["hunter_journal"].get(enemy_id, 0))
+	save_data["hunter_journal"][enemy_id] = cur + 1
+	save_to_disk()
+
+func get_enemy_kills(enemy_id: String) -> int:
+	if save_data.has("hunter_journal") and save_data["hunter_journal"].has(enemy_id):
+		return int(save_data["hunter_journal"][enemy_id])
+	return 0
+
+
+# --- QUẢN LÝ VẬT PHẨM TÚI ĐỒ (INVENTORY ITEMS API) ---
+
+func get_inventory_items() -> Array:
+	return save_data.get("inventory", [])
+
+func add_inventory_item(item_data: Dictionary) -> void:
+	if not save_data.has("inventory") or not (save_data["inventory"] is Array):
+		save_data["inventory"] = []
+	save_data["inventory"].append(item_data)
+	save_to_disk()
+
+func has_inventory_item(item_id: String) -> bool:
+	for it in get_inventory_items():
+		if it is Dictionary and it.get("id", "") == item_id:
+			return true
+	return false
 
 
 # --- HELPER FUNCTIONS NỘI BỘ ---

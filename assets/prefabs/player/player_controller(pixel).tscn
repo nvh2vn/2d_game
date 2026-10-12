@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cbfg647pltope" path="res://assets/art/ui/music_on.svg" id="ext_music_on"]
 [ext_resource type="Texture2D" uid="uid://kqnwg37t8y6y" path="res://assets/art/2d/silksong_full/Images/UI/ins_2.png" id="ext_needle_tip"]
 [ext_resource type="PackedScene" uid="uid://bueax57rgk5a3" path="res://assets/scenes/ui/pause_menu.tscn" id="ext_pause_menu"]
+[ext_resource type="PackedScene" path="res://assets/scenes/menu/inventory_screen.tscn" id="ext_inventory_screen"]
 [ext_resource type="Texture2D" uid="uid://bt02nh1gwc2ga" path="res://assets/art/ui/sound_off.svg" id="ext_sound_off"]
 [ext_resource type="Texture2D" uid="uid://weofmbqqgmmc" path="res://assets/art/ui/sound_on.svg" id="ext_sound_on"]
 [ext_resource type="Texture2D" uid="uid://cv7gj0netijef" path="res://assets/art/2d/silksong_full/Images/UI/ins_3.png" id="ext_spool_frame"]
@@ -1134,3 +1135,5 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="." unique_id=1010551985 instance=ExtResource("ext_pause_menu")]
+
+[node name="InventoryScreen" parent="." unique_id=1010551999 instance=ExtResource("ext_inventory_screen")]

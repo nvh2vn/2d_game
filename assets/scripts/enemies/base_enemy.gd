@@ -14,6 +14,7 @@ extends CharacterBody2D
 @export var chance_25_geo: float = 0.0  # Tỷ lệ rơi 25Geo (0.0 -> 1.0)
 
 @export var is_boss: bool = false
+@export var enemy_journal_id: String = ""
 
 var current_health: int = 2
 var is_dead: bool = false
@@ -143,6 +144,13 @@ func die() -> void:
 	else:
 		GeoDropHelper.drop_from_tier(global_position, get_parent(), loot_tier)
 
+	# Ghi nhận hạ gục vào Sổ tay thợ săn (Hunter's Journal)
+	var j_id = enemy_journal_id
+	if j_id == "":
+		j_id = _infer_journal_id()
+	if j_id != "" and SaveManager.instance:
+		SaveManager.instance.record_enemy_kill(j_id)
+
 	_on_death_animation()
 
 
@@ -154,3 +162,35 @@ func _on_death_animation() -> void:
 			animated_sprite.play("death")
 	await get_tree().create_timer(1.0).timeout
 	queue_free()
+
+
+func _infer_journal_id() -> String:
+	var n = name.to_lower()
+	var s_name = ""
+	var scr = get_script()
+	if scr:
+		s_name = scr.resource_path.get_file().to_lower()
+	var full = n + " " + s_name
+	if "crawlid" in full:
+		return "crawlid"
+	elif "vengefly" in full or "fly" in full:
+		return "vengefly"
+	elif "aspid" in full:
+		return "aspid_hunter"
+	elif "belfly" in full:
+		return "belfly"
+	elif "tiktik" in full:
+		return "tiktik"
+	elif "moss" in full:
+		return "mosscreep"
+	elif "sentry" in full:
+		return "winged_sentry"
+	elif "baldur" in full:
+		return "baldur"
+	elif "bug" in full or "husk" in full:
+		return "wandering_husk"
+	elif "nightmare" in full or "grimm" in full:
+		return "nightmare_king"
+	elif "shade" in full:
+		return "shade"
+	return ""
