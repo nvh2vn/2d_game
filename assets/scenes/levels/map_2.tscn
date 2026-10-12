@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://nsvnnswevwl" path="res://assets/art/2d/linhTinh/Gemini_Generated_Image_5ttk8s5ttk8s5ttk.png" id="11_i1b5r"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/aspid_hunter.tscn" id="13_hea18"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/items/treasure_chest.tscn" id="14_jy8p8"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/environment/room_area.tscn" id="15_hea18"]
 [ext_resource type="PackedScene" uid="uid://dubqsf2gq4b6w" path="res://assets/scenes/environment/bench.tscn" id="15_pd5qr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u6pke"]
@@ -2768,6 +2769,10 @@ sources/4 = SubResource("TileSetAtlasSource_tb1cu")
 sources/6 = SubResource("TileSetAtlasSource_hm7tx")
 sources/7 = SubResource("TileSetAtlasSource_vtua7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy8p8"]
+resource_local_to_scene = true
+size = Vector2(1226, 836)
+
 [node name="Level2" type="Node2D" unique_id=1855694474]
 script = ExtResource("1_level_script")
 
@@ -2879,3 +2884,15 @@ position = Vector2(1740, 341)
 
 [node name="BenchCheckpoint" parent="." unique_id=448962856 instance=ExtResource("15_pd5qr")]
 position = Vector2(2620, 332)
+
+[node name="RoomArea" parent="." unique_id=1855937945 instance=ExtResource("15_hea18")]
+position = Vector2(1648, 379)
+
+[node name="CollisionShape2D" parent="RoomArea" index="0"]
+position = Vector2(-133, -148)
+shape = SubResource("RectangleShape2D_jy8p8")
+
+[node name="RoomArea2" parent="." unique_id=1654647781 instance=ExtResource("15_hea18")]
+position = Vector2(2614, 237)
+
+[editable path="RoomArea"]

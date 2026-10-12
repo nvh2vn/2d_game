@@ -2,31 +2,49 @@
 class_name RoomArea
 extends Area2D
 
-## Hệ thống giới hạn Camera theo từng phòng (Room-Based Camera Bounds) chuẩn phong cách Hollow Knight.
-## Tự động tính toán 4 cạnh biên (Left, Top, Right, Bottom) và nội suy mượt mà (Smoothing Interpolation)
-## cho Camera2D của người chơi khi bước qua ranh giới các phòng.
+## Hệ thống giới hạn Camera theo từng phòng và bục bậc thang (Room & Stepped Area Camera Bounds).
+## Tự động tính toán 4 cạnh biên (Left, Top, Right, Bottom) và nội suy mượt mà (Smooth Limits Interpolation)
+## bằng Tween khi người chơi di chuyển qua lại giữa các phòng hoặc nhảy lên bục cao / vực sâu.
 
 # --- TÍN HIỆU (SIGNALS) ---
 signal player_entered_room(room: RoomArea, bounds: Rect2i)
 signal player_exited_room(room: RoomArea)
 
-# --- BIẾN TOÀN CỤC QUẢN LÝ PHÒNG ĐANG HOẠT ĐỘNG ---
+# --- QUẢN LÝ DANH SÁCH PHÒNG ĐANG HOẠT ĐỘNG (ROOM STACK & TWEEN) ---
+static var active_rooms: Array[RoomArea] = []
 static var current_active_room: RoomArea = null
 static var active_tween: Tween = null
 
-# --- CẤU HÌNH PHÒNG (ROOM SETTINGS) ---
-@export_group("Room Identity")
+# --- CẤU HÌNH PHÒNG & ĐỘ ƯU TIÊN (ROOM SETTINGS & PRIORITY) ---
+@export_group("Room Identity & Priority")
 @export var room_name: String = "Unnamed Room":
 	set(value):
 		room_name = value
 		queue_redraw()
 
+## Độ ưu tiên của khu vực. Main Room phòng lớn = 0.
+## Các bục bậc thang cao hơn (Sub-Areas/Stepped Platforms) = 1 (hoặc cao hơn).
+## Khi người chơi đứng trong bục cao nằm trong phòng lớn, bục cao sẽ chiếm quyền camera.
+## Khi người chơi nhảy xuống lại sàn chính, camera tự động trượt êm ái về lại phòng lớn.
+@export var room_priority: int = 0:
+	set(value):
+		room_priority = value
+		queue_redraw()
+
+@export_group("Stepped Platform & Selective Overrides")
+## Cho phép khu vực này ghi đè cạnh Trái
+@export var override_limit_left: bool = true
+## Cho phép khu vực này ghi đè cạnh Trên
+@export var override_limit_top: bool = true
+## Cho phép khu vực này ghi đè cạnh Phải
+@export var override_limit_right: bool = true
+## Cho phép khu vực này ghi đè cạnh Dưới (Rất quan trọng cho bục bậc thang/vực sâu)
+@export var override_limit_bottom: bool = true
+
 @export_group("Room Dimensions (Kích Thước Phòng)")
-## Kích thước phòng (Rộng x Cao). Bạn có thể chỉnh trực tiếp tại đây trong Inspector 
-## mà KHÔNG CẦN phải mở node con CollisionShape2D!
+## Kích thước phòng (Rộng x Cao). Chỉnh trực tiếp tại Inspector mà không cần mở node con CollisionShape2D.
 @export var room_size: Vector2 = Vector2(960, 540):
 	set(value):
-		# Giới hạn kích thước tối thiểu để tránh lỗi shape âm
 		room_size = Vector2(maxf(value.x, 32.0), maxf(value.y, 32.0))
 		_apply_room_size_to_shape()
 		queue_redraw()
@@ -77,13 +95,13 @@ static var active_tween: Tween = null
 @export var manual_limit_right: int = 10000000
 @export var manual_limit_bottom: int = 10000000
 
-@export_group("Transition Smoothing (Hollow Knight Style)")
-## Bật chuyển đổi mượt mà giữa các giới hạn camera thay vì bị giật khung hình tức thì
+@export_group("Transition Smoothing (Tween Interpolation)")
+## Bật chuyển đổi mượt mà giữa các giới hạn camera thay vì bị giật khung hình
 @export var smooth_transition: bool = true
-## Thời gian chuyển giao camera giữa 2 phòng (giây)
-@export_range(0.05, 2.0, 0.05) var transition_duration: float = 0.45
-## Kiểu chuyển động nội suy
-@export var transition_type: Tween.TransitionType = Tween.TRANS_CUBIC
+## Thời gian chuyển giao camera giữa 2 phòng/bục (khoảng 0.35s - 0.45s theo yêu cầu)
+@export_range(0.1, 1.5, 0.05) var transition_duration: float = 0.4
+## Kiểu chuyển động nội suy (Mặc định TRANS_SINE kết hợp EASE_OUT)
+@export var transition_type: Tween.TransitionType = Tween.TRANS_SINE
 @export var ease_type: Tween.EaseType = Tween.EASE_OUT
 
 @export_group("Editor Debug Visuals")
@@ -92,7 +110,7 @@ static var active_tween: Tween = null
 	set(value):
 		show_editor_debug = value
 		queue_redraw()
-@export var debug_color: Color = Color(0.18, 0.8, 0.95, 0.25):
+@export var debug_color: Color = Color(0.18, 0.8, 0.95, 0.22):
 	set(value):
 		debug_color = value
 		queue_redraw()
@@ -107,9 +125,9 @@ func _ready() -> void:
 	_sync_initial_size()
 	_connect_shape_changed()
 
-	# Đảm bảo mask nhận diện được Layer 4 (PlayerController)
 	if not Engine.is_editor_hint():
-		set_collision_mask_value(3, true) # Layer 4 (bit 3)
+		# Layer va chạm của Player (Layer 3 bit value 4)
+		set_collision_mask_value(3, true)
 		body_entered.connect(_on_body_entered)
 		body_exited.connect(_on_body_exited)
 	else:
@@ -121,7 +139,7 @@ func _on_child_order_changed() -> void:
 	queue_redraw()
 
 
-## Đảm bảo mỗi phòng có Shape riêng biệt (Local to Scene), tránh bị đổi kích thước chùm
+## Đảm bảo mỗi phòng có Shape riêng biệt (Local to Scene)
 func _ensure_unique_shape() -> void:
 	var shape_node = _get_active_collision_shape()
 	if shape_node and shape_node.shape:
@@ -156,7 +174,7 @@ func _apply_room_size_to_shape() -> void:
 			rect.size = room_size
 
 
-## Lắng nghe khi người dùng kéo tay các handle của CollisionShape2D trên màn hình 2D
+## Lắng nghe khi người dùng kéo handle CollisionShape2D trên màn hình 2D
 func _connect_shape_changed() -> void:
 	var shape_node = _get_active_collision_shape()
 	if shape_node and shape_node.shape:
@@ -176,13 +194,18 @@ func _on_shape_resource_changed() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not _is_player(body):
 		return
-	activate_room(body)
+	if not active_rooms.has(self):
+		active_rooms.append(self)
+	_recalculate_active_room(body)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if not _is_player(body):
 		return
 	player_exited_room.emit(self)
+	if active_rooms.has(self):
+		active_rooms.erase(self)
+	_recalculate_active_room(body)
 
 
 ## Kiểm tra xem body va chạm có phải là Player
@@ -190,12 +213,33 @@ func _is_player(node: Node) -> bool:
 	return node.is_in_group("player") or node.name == "PlayerController" or node.name.begins_with("Player")
 
 
-## Kích hoạt ranh giới camera của phòng hiện tại
+## Tính toán lại phòng có độ ưu tiên cao nhất trong danh sách các phòng Player đang đứng trong đó
+static func _recalculate_active_room(player_node: Node2D = null) -> void:
+	# Lọc bỏ các phòng đã bị free hoặc không còn trong scene tree
+	active_rooms = active_rooms.filter(func(r: RoomArea) -> bool:
+		return is_instance_valid(r) and r.is_inside_tree()
+	)
+	
+	if active_rooms.is_empty():
+		current_active_room = null
+		return
+
+	# Sắp xếp theo priority giảm dần (priority cao nhất sẽ đứng đầu danh sách)
+	active_rooms.sort_custom(func(a: RoomArea, b: RoomArea) -> bool:
+		return a.room_priority > b.room_priority
+	)
+
+	var target_room: RoomArea = active_rooms[0]
+	if target_room != current_active_room:
+		target_room.activate_room(player_node)
+
+
+## Kích hoạt ranh giới camera của phòng/bục hiện tại
 func activate_room(player_node: Node2D = null) -> void:
 	current_active_room = self
 	
-	var bounds = get_room_bounds()
-	var cam = _find_camera(player_node)
+	var bounds: Rect2i = get_room_bounds()
+	var cam: Camera2D = _find_camera(player_node)
 	
 	if not cam:
 		push_warning("[RoomArea] '%s': Không tìm thấy Camera2D hợp lệ!" % room_name)
@@ -251,14 +295,17 @@ func get_room_bounds() -> Rect2i:
 	return Rect2i(left_bound, top_bound, right_bound, bottom_bound)
 
 
-## Cập nhật các giới hạn camera với tính năng chuyển giao mượt mà (Smoothing)
+## Cập nhật các giới hạn camera mượt mà bằng Tween (Không bao giờ gán đứt đoạn)
 func _apply_camera_bounds(cam: Camera2D, target_bounds: Rect2i) -> void:
-	var target_left = target_bounds.position.x
-	var target_top = target_bounds.position.y
-	var target_right = target_bounds.size.x
-	var target_bottom = target_bounds.size.y
+	if not is_instance_valid(cam):
+		return
+
+	var raw_left: int = target_bounds.position.x
+	var raw_top: int = target_bounds.position.y
+	var raw_right: int = target_bounds.size.x
+	var raw_bottom: int = target_bounds.size.y
 	
-	# Đảm bảo kích thước tối thiểu bằng màn hình để tránh rung lắc camera khi phòng nhỏ
+	# Đảm bảo kích thước tối thiểu bằng màn hình để tránh rung giật camera khi phòng nhỏ
 	var vp_size = Vector2(640, 360)
 	if cam.is_inside_tree():
 		var vp = cam.get_viewport()
@@ -267,51 +314,49 @@ func _apply_camera_bounds(cam: Camera2D, target_bounds: Rect2i) -> void:
 	var min_w = int(vp_size.x)
 	var min_h = int(vp_size.y)
 	
-	if (target_right - target_left) < min_w:
-		var mid_x = (target_left + target_right) / 2
-		target_left = mid_x - min_w / 2
-		target_right = target_left + min_w
+	if (raw_right - raw_left) < min_w:
+		var mid_x = (raw_left + raw_right) / 2
+		raw_left = mid_x - min_w / 2
+		raw_right = raw_left + min_w
 		
-	if (target_bottom - target_top) < min_h:
-		var mid_y = (target_top + target_bottom) / 2
-		target_top = mid_y - min_h / 2
-		target_bottom = target_top + min_h
+	if (raw_bottom - raw_top) < min_h:
+		var mid_y = (raw_top + raw_bottom) / 2
+		raw_top = mid_y - min_h / 2
+		raw_bottom = raw_top + min_h
 
-	# Nếu không bật smooth, cập nhật trực tiếp ngay lập tức
-	if not smooth_transition or transition_duration <= 0.0:
-		cam.limit_left = target_left
-		cam.limit_top = target_top
-		cam.limit_right = target_right
-		cam.limit_bottom = target_bottom
-		return
-		
-	# Hủy Tween cũ nếu người chơi chuyển phòng liên tục
-	if active_tween and active_tween.is_valid():
+	# Tính toán 4 cạnh đích cuối cùng dựa trên cấu hình Override của khu vực
+	# Nếu một cạnh không được override (ví dụ bục bậc thang chỉ nâng/hạ limit_bottom),
+	# cạnh đó sẽ giữ nguyên vị trí hiện tại của Camera mà không ép buộc co cụm.
+	var final_target_left: int = raw_left if override_limit_left else cam.limit_left
+	var final_target_top: int = raw_top if override_limit_top else cam.limit_top
+	var final_target_right: int = raw_right if override_limit_right else cam.limit_right
+	var final_target_bottom: int = raw_bottom if override_limit_bottom else cam.limit_bottom
+
+	# Nếu camera trước đó đang ở giới hạn mặc định vô hạn (chưa gán lần nào),
+	# khởi tạo điểm bắt đầu từ tầm nhìn màn hình hiện tại của camera để tween mượt mà,
+	# TUYỆT ĐỐI không gán đứt đoạn gây giật camera.
+	var cam_center = cam.get_screen_center_position()
+	var half_vp = vp_size * 0.5
+	if abs(cam.limit_left) > 1000000:
+		cam.limit_left = int(cam_center.x - half_vp.x - 100)
+	if abs(cam.limit_right) > 1000000:
+		cam.limit_right = int(cam_center.x + half_vp.x + 100)
+	if abs(cam.limit_top) > 1000000:
+		cam.limit_top = int(cam_center.y - half_vp.y - 100)
+	if abs(cam.limit_bottom) > 1000000:
+		cam.limit_bottom = int(cam_center.y + half_vp.y + 100)
+
+	# KIỂM TRA AN TOÀN: Nếu có tween đổi limit cũ đang chạy (is_running()), hãy gọi kill()
+	# trước khi khởi tạo tween mới để tránh xung đột làm rung giật camera khi di chuyển qua lại ranh giới liên tục.
+	if active_tween and active_tween.is_valid() and active_tween.is_running():
 		active_tween.kill()
-		
-	var start_left = cam.limit_left
-	var start_top = cam.limit_top
-	var start_right = cam.limit_right
-	var start_bottom = cam.limit_bottom
-	
-	# Nếu lần đầu tiên camera chưa được gán giới hạn hợp lệ
-	if abs(start_left) > 1000000 or abs(start_right) > 1000000:
-		cam.limit_left = target_left
-		cam.limit_top = target_top
-		cam.limit_right = target_right
-		cam.limit_bottom = target_bottom
-		return
-		
-	# Tween nội suy mượt mà từng pixel cho cả 4 cạnh giới hạn theo thời gian thực
-	active_tween = create_tween().set_trans(transition_type).set_ease(ease_type)
-	active_tween.tween_method(func(progress: float):
-		if not is_instance_valid(cam):
-			return
-		cam.limit_left = int(lerpf(start_left, target_left, progress))
-		cam.limit_top = int(lerpf(start_top, target_top, progress))
-		cam.limit_right = int(lerpf(start_right, target_right, progress))
-		cam.limit_bottom = int(lerpf(start_bottom, target_bottom, progress))
-	, 0.0, 1.0, transition_duration)
+
+	# Khởi tạo Tween nội suy mượt mà từng pixel cho cả 4 cạnh giới hạn theo thời gian thực
+	active_tween = cam.create_tween().set_trans(transition_type).set_ease(ease_type)
+	active_tween.tween_property(cam, "limit_left", final_target_left, transition_duration)
+	active_tween.parallel().tween_property(cam, "limit_top", final_target_top, transition_duration)
+	active_tween.parallel().tween_property(cam, "limit_right", final_target_right, transition_duration)
+	active_tween.parallel().tween_property(cam, "limit_bottom", final_target_bottom, transition_duration)
 
 
 ## Tự động tìm kiếm Camera2D theo nhiều cơ chế linh hoạt
@@ -389,14 +434,17 @@ func _draw() -> void:
 			s.y + (offset_bottom - offset_top)
 		)
 		
-		# Nền trong suốt màu cyan phong cách Hollow Knight
-		draw_rect(local_rect, debug_color, true)
-		# Đường viền phòng
-		draw_rect(local_rect, debug_border_color, false, 2.5)
+		# Tùy biến màu theo Priority: Phòng chính (room_priority=0) màu Cyan, Sub-Area (room_priority>0) màu Amber ấm
+		var fill_col = debug_color if room_priority == 0 else Color(0.95, 0.75, 0.2, 0.25)
+		var border_col = debug_border_color if room_priority == 0 else Color(1.0, 0.82, 0.3, 0.95)
 		
-		# Nhãn tên phòng
+		draw_rect(local_rect, fill_col, true)
+		draw_rect(local_rect, border_col, false, 2.5)
+		
+		# Nhãn tên phòng và cấp độ ưu tiên
 		if room_name != "":
 			var font = ThemeDB.fallback_font
-			var font_size = 16
-			var text_pos = local_rect.position + Vector2(10, 24)
-			draw_string(font, text_pos, " [Room: " + room_name + "] (" + str(int(s.x)) + "x" + str(int(s.y)) + ")", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, debug_border_color)
+			var font_size = 15
+			var text_pos = local_rect.position + Vector2(10, 22)
+			var type_str = "Main Room" if room_priority == 0 else "Sub-Area (Priority %d)" % room_priority
+			draw_string(font, text_pos, " [%s: %s] (%dx%d)" % [type_str, room_name, int(s.x), int(s.y)], HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, border_col)

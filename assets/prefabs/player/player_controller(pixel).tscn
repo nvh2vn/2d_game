@@ -805,13 +805,9 @@ position = Vector2(0, -31)
 zoom = Vector2(1.15, 1.15)
 process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 25.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.7
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
+position_smoothing_speed = 6.0
+drag_horizontal_enabled = false
+drag_vertical_enabled = false
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=1642415630]
 unique_name_in_owner = true
