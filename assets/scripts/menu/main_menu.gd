@@ -1,6 +1,7 @@
 extends Control
 
 @export_file("*.tscn") var default_level_path: String = "res://assets/scenes/levels/map_1.tscn"
+@export_file("*.tscn") var intro_cutscene_path: String = "res://assets/scenes/menu/intro_cutscene.tscn"
 
 @export_group("Background Music (BGM)")
 @export var menu_bgm: AudioStream
@@ -363,7 +364,8 @@ func _start_fresh_new_game() -> void:
 		sm.reset_and_start_new_game()
 		sm.queue_free()
 		
-	start_game_loading(default_level_path)
+	var target_scene = intro_cutscene_path if intro_cutscene_path != "" and ResourceLoader.exists(intro_cutscene_path) else default_level_path
+	start_game_loading(target_scene)
 
 
 # --- NÚT CONTINUE ---
