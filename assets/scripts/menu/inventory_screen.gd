@@ -2,7 +2,7 @@ class_name InventoryScreen
 extends CanvasLayer
 
 ## Menu 3 Tab: NHIỆM VỤ (Quests), TÚI ĐỒ & KỸ NĂNG (Inventory & Stats), SỔ TAY THỢ SĂN (Hunter's Journal)
-## Thiết kế theo chuẩn phong cách Gothic tối giản của Hollow Knight dành cho Godot 4 2D Mobile.
+## Thiết kế theo chuẩn phong cách Gothic tối giản của Hollow Knight / Silksong dành cho Godot 4 2D Mobile.
 
 enum TAB {
 	QUESTS = 0,
@@ -697,6 +697,23 @@ func _refresh_abilities() -> void:
 		)
 
 
+func _normalize_item_data(raw_item) -> Dictionary:
+	if raw_item is Dictionary:
+		return raw_item
+	elif raw_item is String:
+		for def_it in DEFAULT_ITEMS:
+			if def_it.get("id", "") == raw_item:
+				return def_it
+		return {
+			"id": raw_item,
+			"name": raw_item.capitalize(),
+			"desc": "Vật phẩm thu thập trong hành trình.",
+			"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+			"category": "VẬT PHẨM"
+		}
+	return {}
+
+
 func _refresh_items_grid() -> void:
 	if not items_container:
 		return
@@ -704,15 +721,19 @@ func _refresh_items_grid() -> void:
 	for c in items_container.get_children():
 		c.queue_free()
 
-	var items: Array = []
+	var raw_items: Array = []
 	if SaveManager.instance:
-		items = SaveManager.instance.get_inventory_items()
-	if items.is_empty():
-		items = DEFAULT_ITEMS
+		raw_items = SaveManager.instance.get_inventory_items()
+	if raw_items.is_empty():
+		raw_items = DEFAULT_ITEMS
 
 	var first_item: Dictionary = {}
 	var first_btn: Control = null
-	for it in items:
+	for raw_it in raw_items:
+		var it: Dictionary = _normalize_item_data(raw_it)
+		if it.is_empty():
+			continue
+
 		if first_item.is_empty() or it.get("id", "") == active_selected_item:
 			first_item = it
 

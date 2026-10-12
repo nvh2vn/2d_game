@@ -17,8 +17,6 @@
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Charms/Defender_s Crest - charm_dung_def.png" id="15_crest_def"]
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/inv_item__0012_hallownest-seal.png" id="16_seal"]
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Lumafly_Lantern0000.png" id="17_lantern"]
-[ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Menu_Border_Black.png" id="18_border"]
-[ext_resource type="Texture2D" path="res://assets/art/2d/new_assets/Inventory & UI/Fleurs/overscan_corner_fleur009.png" id="19_corner_fleur"]
 [ext_resource type="Texture2D" path="res://assets/art/Inventory & UI/Pointers/Inv_0014_selection_cursor.png" id="20_cursor"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flat"]
@@ -107,92 +105,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_vignette")
 expand_mode = 1
-
-[node name="BorderFrame" type="NinePatchRect" parent="MenuOverlay"]
-modulate = Color(0.85, 0.88, 0.95, 0.45)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("18_border")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="CornerTL" type="TextureRect" parent="MenuOverlay"]
-modulate = Color(0.85, 0.88, 0.95, 0.45)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 74.0
-offset_bottom = 74.0
-mouse_filter = 2
-texture = ExtResource("19_corner_fleur")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CornerTR" type="TextureRect" parent="MenuOverlay"]
-modulate = Color(0.85, 0.88, 0.95, 0.45)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -74.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = 74.0
-grow_horizontal = 0
-mouse_filter = 2
-texture = ExtResource("19_corner_fleur")
-flip_h = true
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CornerBL" type="TextureRect" parent="MenuOverlay"]
-modulate = Color(0.85, 0.88, 0.95, 0.45)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -74.0
-offset_right = 74.0
-offset_bottom = -10.0
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("19_corner_fleur")
-flip_v = true
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CornerBR" type="TextureRect" parent="MenuOverlay"]
-modulate = Color(0.85, 0.88, 0.95, 0.45)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -74.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("19_corner_fleur")
-flip_h = true
-flip_v = true
-expand_mode = 1
-stretch_mode = 5
 
 [node name="MainPanel" type="MarginContainer" parent="MenuOverlay"]
 layout_mode = 1
@@ -416,7 +328,7 @@ text = "TÊN NHIỆM VỤ"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.9, 0.9, 1)
-theme_override_font_sizes/size = 12
+theme_override_font_sizes/font_size = 12
 text = "TRẠNG THÁI: ĐANG THỰC HIỆN"
 
 [node name="QuestDetailDivider" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageQuests/QuestDetailPanel/QuestDetailMargin/QuestDetailVBox"]
