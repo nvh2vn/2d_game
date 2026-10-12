@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://db1h2x5yp2q4u"]
 
+[ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/art/2d/Abyss/_0033_abyss_02.png" id="1_fm2qu"]
 [ext_resource type="Texture2D" uid="uid://bowev6yvj8xp4" path="res://assets/art/2d/Abyss/Gemini_Generated_Image_84ph5d84ph5d84ph.png" id="1_iobw0"]
 [ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/art/2d/Abyss/_0173_Layer-425.png" id="2_mspvc"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://assets/prefabs/player/player_controller(pixel).tscn" id="3_0ot1f"]
@@ -27,6 +28,10 @@ gizmo_extents = 40.0
 
 [node name="Enviroment" type="Node2D" parent="." unique_id=2106845380]
 
+[node name="0033Abyss02" type="Sprite2D" parent="Enviroment" unique_id=429263008]
+position = Vector2(1201, 626)
+texture = ExtResource("1_fm2qu")
+
 [node name="GeminiGeneratedImage84Ph5d84Ph5d84Ph" type="Sprite2D" parent="Enviroment" unique_id=1098861069]
 position = Vector2(640, 351)
 scale = Vector2(0.5, 0.5)
@@ -43,12 +48,10 @@ texture = ExtResource("2_mspvc")
 position = Vector2(40.5, -16)
 shape = SubResource("RectangleShape2D_sh3le")
 
-[node name="PlayerController" parent="Enviroment" unique_id=373544482 instance=ExtResource("3_0ot1f")]
-position = Vector2(235, 532)
-
 [node name="Boss" type="Node2D" parent="." unique_id=1660629658]
 
 [node name="RoomArea" parent="." unique_id=1608876148 instance=ExtResource("4_mspvc")]
+visible = false
 position = Vector2(560, 409)
 room_size = Vector2(1375, 753)
 
@@ -56,7 +59,10 @@ room_size = Vector2(1375, 753)
 position = Vector2(82.5, -65.5)
 shape = SubResource("RectangleShape2D_0ot1f")
 
-[node name="SoulMaster" parent="RoomArea" unique_id=1434003224 instance=ExtResource("5_0ot1f")]
-position = Vector2(334, 174)
+[node name="PlayerController" parent="." unique_id=373544482 instance=ExtResource("3_0ot1f")]
+position = Vector2(235, 532)
+
+[node name="SoulMaster" parent="." unique_id=1434003224 instance=ExtResource("5_0ot1f")]
+position = Vector2(894, 583)
 
 [editable path="RoomArea"]

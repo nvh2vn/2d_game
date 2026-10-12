@@ -33,6 +33,7 @@ layer = -100
 
 [node name="SeamlessBG_Rect" type="ColorRect" parent="Background_Layer" unique_id=874321987]
 visible = false
+z_index = -10
 material = SubResource("ShaderMaterial_seamless_bg")
 anchors_preset = 15
 anchor_right = 1.0

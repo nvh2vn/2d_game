@@ -35,6 +35,17 @@ extends Control
 @onready var skip_container: MarginContainer = %SkipContainer
 @onready var skip_button: Button = %SkipButton
 @onready var skip_hint_label: Label = %SkipHintLabel
+@onready var subtitle_container: MarginContainer = get_node_or_null("%SubtitleContainer")
+@onready var subtitle_label: Label = get_node_or_null("%SubtitleLabel")
+
+@export_group("Subtitles (Phụ Đề Dẫn Truyện)")
+@export var slide_subtitles: Array[String] = [
+	"Tại vương quốc Pharloom xa xôi, một bài ca cổ xưa đang vẫy gọi...",
+	"Bị giam cầm trong lồng sắt, kẻ lữ hành dệt tơ thức tỉnh giữa miền đất lạ.",
+	"Tơ nhện quấn quanh lưỡi kim, báo hiệu cuộc trốn chạy định mệnh.",
+	"Vượt qua ngàn hiểm nguy và cạm bẫy dưới đáy vực sâu...",
+	"Hornet bước lên đỉnh cao, khám phá bí mật của vương quốc tơ lụa!"
+]
 
 enum SlideState {
 	IDLE,
@@ -97,6 +108,20 @@ func _ready() -> void:
 func _on_resized() -> void:
 	if slide_image and is_instance_valid(slide_image):
 		slide_image.pivot_offset = slide_image.size * 0.5
+	_update_safe_area_margins()
+
+
+func _update_safe_area_margins() -> void:
+	var safe_area: Rect2i = DisplayServer.get_display_safe_area()
+	var win_size: Vector2i = DisplayServer.window_get_size()
+	var bottom_padding: int = 56
+	if win_size.y > 0 and safe_area.size.y > 0 and safe_area.size.y < win_size.y:
+		var inset_bottom: int = win_size.y - (safe_area.position.y + safe_area.size.y)
+		var vp_height: float = get_viewport_rect().size.y
+		var scale_ratio: float = vp_height / float(win_size.y)
+		bottom_padding = maxi(56, int(56 + inset_bottom * scale_ratio))
+	if subtitle_container and is_instance_valid(subtitle_container):
+		subtitle_container.add_theme_constant_override("margin_bottom", bottom_padding)
 
 
 # ==============================================================================
@@ -164,6 +189,8 @@ func next_frame() -> void:
 		if fade_tween and fade_tween.is_valid():
 			fade_tween.kill()
 		slide_image.modulate.a = 1.0
+		if subtitle_container and subtitle_container.visible:
+			subtitle_container.modulate.a = 1.0
 		current_state = SlideState.DISPLAYING
 		return
 		
@@ -203,10 +230,23 @@ func _show_slide(index: int) -> void:
 	_apply_ken_burns(index, ken_burns_tween)
 	
 	# 2. Fade In từ đen lên ảnh (fade_duration = 0.85s)
-	fade_tween = create_tween()
+	fade_tween = create_tween().set_parallel(true)
 	fade_tween.tween_property(slide_image, "modulate:a", 1.0, fade_duration)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
+
+	# 2.1 Cập nhật và Fade In phụ đề dẫn truyện (nếu có)
+	if subtitle_container and subtitle_label:
+		if index < slide_subtitles.size() and slide_subtitles[index] != "":
+			subtitle_label.text = slide_subtitles[index]
+			subtitle_container.visible = true
+			subtitle_container.modulate.a = 0.0
+			fade_tween.tween_property(subtitle_container, "modulate:a", 1.0, fade_duration)\
+				.set_trans(Tween.TRANS_SINE)\
+				.set_ease(Tween.EASE_OUT)
+		else:
+			subtitle_container.visible = false
+
 	await fade_tween.finished
 	
 	if is_transitioning or current_slide_index != index:
@@ -242,10 +282,15 @@ func _transition_to_next_slide() -> void:
 	_kill_active_tweens()
 	
 	# Mờ dần ảnh hiện tại (fade out mượt mà ~0.45s)
-	var tw_fade_out = create_tween()
+	var tw_fade_out = create_tween().set_parallel(true)
 	tw_fade_out.tween_property(slide_image, "modulate:a", 0.0, tap_advance_fade_duration)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_IN)
+	if subtitle_container and subtitle_container.visible:
+		tw_fade_out.tween_property(subtitle_container, "modulate:a", 0.0, tap_advance_fade_duration)\
+			.set_trans(Tween.TRANS_SINE)\
+			.set_ease(Tween.EASE_IN)
+
 	await tw_fade_out.finished
 	
 	if is_transitioning:
@@ -328,6 +373,10 @@ func skip_cutscene() -> void:
 		tw.tween_property(fade_overlay, "modulate:a", 1.0, 0.4)\
 			.set_trans(Tween.TRANS_SINE)\
 			.set_ease(Tween.EASE_OUT)
+	if subtitle_container:
+		tw.tween_property(subtitle_container, "modulate:a", 0.0, 0.3)\
+			.set_trans(Tween.TRANS_SINE)\
+			.set_ease(Tween.EASE_IN)
 	if bgm_player:
 		tw.tween_property(bgm_player, "volume_db", -60.0, 0.4)\
 			.set_trans(Tween.TRANS_SINE)\
@@ -349,6 +398,10 @@ func _finish_cutscene() -> void:
 		tw.tween_property(fade_overlay, "modulate:a", 1.0, 0.5)\
 			.set_trans(Tween.TRANS_SINE)\
 			.set_ease(Tween.EASE_OUT)
+	if subtitle_container:
+		tw.tween_property(subtitle_container, "modulate:a", 0.0, 0.4)\
+			.set_trans(Tween.TRANS_SINE)\
+			.set_ease(Tween.EASE_IN)
 	if bgm_player:
 		tw.tween_property(bgm_player, "volume_db", -60.0, bgm_fade_out_time)\
 			.set_trans(Tween.TRANS_SINE)\

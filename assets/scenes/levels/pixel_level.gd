@@ -9,6 +9,8 @@ extends Node2D
 @export var fallback_limit_right: int = 2000
 @export var fallback_limit_top: int = -600
 @export var fallback_limit_bottom: int = 200
+## Khoảng đệm an toàn mở rộng cạnh đáy để sàn TileMap không bị Camera che khuất trên mobile
+@export var bottom_margin_buffer: int = 96
 
 
 @export_group("Background Motion")
@@ -67,9 +69,18 @@ func update_camera_limits() -> void:
 			cam.limit_left = int(top_left.global_position.x)
 			cam.limit_top = int(top_left.global_position.y)
 			cam.limit_right = int(bottom_right.global_position.x)
-			cam.limit_bottom = int(bottom_right.global_position.y)
+			cam.limit_bottom = int(bottom_right.global_position.y) + bottom_margin_buffer
 		else:
 			cam.limit_left = fallback_limit_left
 			cam.limit_top = fallback_limit_top
 			cam.limit_right = fallback_limit_right
-			cam.limit_bottom = fallback_limit_bottom
+			cam.limit_bottom = fallback_limit_bottom + bottom_margin_buffer
+
+		# Điều chỉnh zoom an toàn trên màn hình điện thoại tỉ lệ dài (width/height > 1.8)
+		var vp_rect := get_viewport_rect()
+		if vp_rect.size.y > 0.0:
+			var aspect_ratio := vp_rect.size.x / vp_rect.size.y
+			if aspect_ratio > 1.8:
+				# Tránh crop mất trục Y khi màn hình siêu dài
+				if cam.zoom.y > 1.05:
+					cam.zoom = Vector2(1.05, 1.05)

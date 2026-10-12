@@ -863,6 +863,48 @@ func has_inventory_item(item_id: String) -> bool:
 	return false
 
 
+func remove_inventory_item(item_id: String, count: int = 1) -> bool:
+	if not save_data.has("inventory") or not (save_data["inventory"] is Array):
+		return false
+		
+	var items: Array = save_data["inventory"]
+	var target_idx: int = -1
+	for i in range(items.size()):
+		var it = items[i]
+		if (it is Dictionary and it.get("id", "") == item_id) or (it is String and it == item_id):
+			target_idx = i
+			break
+			
+	if target_idx < 0:
+		return false
+		
+	var it = items[target_idx]
+	if it is Dictionary and it.has("count") and int(it["count"]) > count:
+		it["count"] = int(it["count"]) - count
+	else:
+		items.remove_at(target_idx)
+		
+	save_to_disk()
+	
+	var p = _get_active_player()
+	if is_instance_valid(p) and "inventory" in p and p.inventory is Array:
+		p.inventory = save_data["inventory"].duplicate()
+	return true
+
+
+static func has_item(item_id: String) -> bool:
+	if instance:
+		return instance.has_inventory_item(item_id)
+	return false
+
+
+static func remove_item(item_id: String, count: int = 1) -> bool:
+	if instance:
+		return instance.remove_inventory_item(item_id, count)
+	return false
+
+
+
 
 # --- HELPER FUNCTIONS NỘI BỘ ---
 
