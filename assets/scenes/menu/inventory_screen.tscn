@@ -803,6 +803,38 @@ theme_override_font_sizes/font_size = 13
 text = "Mô tả chi tiết mục chọn..."
 autowrap_mode = 2
 
+[node name="MaskUpgradeContainer" type="VBoxContainer" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MaskShardProgress" type="Label" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol/MaskUpgradeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.48, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Mảnh mặt nạ: 0 / 4"
+horizontal_alignment = 1
+
+[node name="UpgradeMaskButton" type="Button" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory/ColumnsHBox/RightCol/MaskUpgradeContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.92, 0.65, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+flat = true
+text = "✨ HỢP NHẤT MẶT NẠ"
+
+
 [node name="SelectionBrackets" type="TextureRect" parent="MenuOverlay/MainPanel/MainVBox/ContentArea/PageInventory"]
 unique_name_in_owner = true
 visible = false

@@ -1,5 +1,6 @@
 extends Node
 
+
 ## Singleton Autoload quản lý Lưu / Đọc dữ liệu (Save/Load) tập trung cho tựa game Metroidvania trên Mobile.
 ## Tự động mã hóa file save trên thiết bị (Android/iOS) bằng FileAccess.open_encrypted_with_pass.
 ## Hỗ trợ vòng đời Mobile (_notification), Checkpoint hồi sinh và World State Event tracking.
@@ -101,6 +102,7 @@ var save_data: Dictionary = {
 		"geo": 0,
 		"current_silk": 4,
 		"max_silk": 4,
+		"mask_shards": 0,
 		"skills": {
 			"dash": true,
 			"double_jump": false,
@@ -307,6 +309,7 @@ func _reset_to_default() -> void:
 			"geo": 0,
 			"current_silk": 4,
 			"max_silk": 4,
+			"mask_shards": 0,
 			"skills": {
 				"dash": true,
 				"double_jump": false,
@@ -417,6 +420,10 @@ func update_current_player_stats(player_node: Node = null) -> bool:
 		skills["float"] = player.unlock_float
 	p_data["skills"] = skills
 	
+	# 4b. Mask Shards (Mảnh mặt nạ)
+	if "mask_shards" in player:
+		p_data["mask_shards"] = player.mask_shards
+	
 	# 5. Inventory (Túi đồ nếu có)
 	if "inventory" in player and player.inventory is Array:
 		var normalized_inv: Array = []
@@ -487,7 +494,9 @@ func apply_to_player(player: Node) -> void:
 		player.unlock_wall_climb = skills["wall_climb"]
 	if "unlock_float" in player and skills.has("float"):
 		player.unlock_float = skills["float"]
-		
+	if "mask_shards" in player and p_data.has("mask_shards"):
+		player.mask_shards = p_data["mask_shards"]
+
 	if "inventory" in player and save_data.has("inventory") and save_data["inventory"] is Array:
 		player.inventory = save_data["inventory"].duplicate()
 		
@@ -722,6 +731,10 @@ func add_inventory_item(item_input) -> void:
 	if item_id == "":
 		return
 
+	if item_id == "mask_shard":
+		add_mask_shards(1)
+		return
+
 	var existing_idx: int = -1
 	for i in range(save_data["inventory"].size()):
 		var it = save_data["inventory"][i]
@@ -745,6 +758,101 @@ func add_inventory_item(item_input) -> void:
 	var p = _get_active_player()
 	if p and "inventory" in p and p.inventory is Array:
 		p.inventory = save_data["inventory"].duplicate()
+
+
+# --- QUẢN LÝ MẢNH MẶT NẠ (MASK SHARDS API) ---
+
+func get_mask_shards() -> int:
+	return int(save_data.get("player", {}).get("mask_shards", 0))
+
+func add_mask_shards(amount: int = 1) -> int:
+	if not save_data.has("player") or not (save_data["player"] is Dictionary):
+		save_data["player"] = {}
+	var cur = int(save_data["player"].get("mask_shards", 0))
+	cur += amount
+	save_data["player"]["mask_shards"] = cur
+	
+	# Đồng bộ với inventory item "mask_shard"
+	_sync_mask_shard_inventory_item(cur)
+	save_to_disk()
+	
+	var p = _get_active_player()
+	if is_instance_valid(p) and "mask_shards" in p:
+		p.mask_shards = cur
+	return cur
+
+func set_mask_shards(val: int) -> void:
+	if not save_data.has("player") or not (save_data["player"] is Dictionary):
+		save_data["player"] = {}
+	save_data["player"]["mask_shards"] = maxi(0, val)
+	_sync_mask_shard_inventory_item(save_data["player"]["mask_shards"])
+	save_to_disk()
+	var p = _get_active_player()
+	if is_instance_valid(p) and "mask_shards" in p:
+		p.mask_shards = save_data["player"]["mask_shards"]
+
+func can_upgrade_mask() -> bool:
+	return get_mask_shards() >= 4
+
+func upgrade_mask() -> bool:
+	var shards = get_mask_shards()
+	if shards < 4:
+		return false
+	shards -= 4
+	save_data["player"]["mask_shards"] = shards
+	
+	# Tăng máu tối đa của Player + Hồi đầy máu hiện tại
+	var cur_max = int(save_data["player"].get("max_health", 5)) + 1
+	save_data["player"]["max_health"] = cur_max
+	save_data["player"]["current_health"] = cur_max
+	
+	_sync_mask_shard_inventory_item(shards)
+	save_to_disk()
+	
+	# Đồng bộ với Player node nếu có
+	var p = _get_active_player()
+	if is_instance_valid(p):
+		if "mask_shards" in p:
+			p.mask_shards = shards
+		if "max_health" in p:
+			p.max_health = cur_max
+		if "current_health" in p:
+			p.current_health = cur_max
+		elif "current_hp" in p:
+			p.current_hp = cur_max
+		if p.has_method("update_health_hud"):
+			p.update_health_hud()
+		elif p.has_method("update_hud"):
+			p.update_hud()
+			
+	return true
+
+func _sync_mask_shard_inventory_item(shards_count: int) -> void:
+	if not save_data.has("inventory") or not (save_data["inventory"] is Array):
+		save_data["inventory"] = []
+	
+	var idx = -1
+	for i in range(save_data["inventory"].size()):
+		var it = save_data["inventory"][i]
+		if (it is Dictionary and it.get("id", "") == "mask_shard") or (it is String and it == "mask_shard"):
+			idx = i
+			break
+			
+	if shards_count > 0:
+		var item_def = get_item_definition("mask_shard")
+		item_def["count"] = shards_count
+		if idx >= 0:
+			save_data["inventory"][idx] = item_def
+		else:
+			save_data["inventory"].append(item_def)
+	else:
+		if idx >= 0:
+			save_data["inventory"].remove_at(idx)
+			
+	var p = _get_active_player()
+	if is_instance_valid(p) and "inventory" in p and p.inventory is Array:
+		p.inventory = save_data["inventory"].duplicate()
+
 
 func has_inventory_item(item_id: String) -> bool:
 	for it in get_inventory_items():

@@ -53,6 +53,9 @@ enum TAB {
 @onready var selection_brackets: TextureRect = get_node_or_null("%SelectionBrackets")
 @onready var weapon_slot: Button = get_node_or_null("%WeaponSlot")
 @onready var crests_container: Control = get_node_or_null("%CrestsContainer")
+@onready var mask_upgrade_container: Control = get_node_or_null("%MaskUpgradeContainer")
+@onready var mask_shard_progress: Label = get_node_or_null("%MaskShardProgress")
+@onready var upgrade_mask_button: Button = get_node_or_null("%UpgradeMaskButton")
 
 # TAB 3: Hunter's Journal UI
 @onready var journal_summary_label: Label = %JournalSummaryLabel
@@ -260,6 +263,9 @@ func _ready() -> void:
 		tab_btn_inventory.pressed.connect(func(): _switch_to_tab(TAB.INVENTORY))
 	if tab_btn_journal:
 		tab_btn_journal.pressed.connect(func(): _switch_to_tab(TAB.JOURNAL))
+
+	if upgrade_mask_button:
+		upgrade_mask_button.pressed.connect(_on_upgrade_mask_pressed)
 
 	# Kiểm tra nếu chạy độc lập như một scene Menu chính
 	var is_standalone: bool = (get_tree().current_scene == self or get_parent() == get_tree().root)
@@ -659,10 +665,9 @@ func _normalize_item_data(raw_item) -> Dictionary:
 	if raw_item is Dictionary:
 		return raw_item
 	elif raw_item is String:
-		if SaveManager.has_method("get_item_definition"):
-			var def = SaveManager.get_item_definition(raw_item)
-			if not def.is_empty():
-				return def
+		var def: Dictionary = SaveManager.get_item_definition(raw_item)
+		if not def.is_empty():
+			return def
 		for def_it in DEFAULT_ITEMS:
 			if def_it.get("id", "") == raw_item:
 				return def_it
@@ -691,6 +696,8 @@ func _refresh_items_grid() -> void:
 	if raw_items.is_empty():
 		if selection_brackets:
 			selection_brackets.visible = false
+		if mask_upgrade_container:
+			mask_upgrade_container.visible = false
 		if item_preview_name:
 			item_preview_name.text = "TÚI ĐỒ TRỐNG"
 		if item_preview_category:
@@ -745,9 +752,25 @@ func _create_item_slot(it: Dictionary) -> Button:
 		icon.texture = load(icon_p)
 	btn.add_child(icon)
 
-	# Hiển thị số lượng chồng vật phẩm nếu > 1 (ví dụ: Trứng thối x2)
+	# Hiển thị số lượng: Mảnh mặt nạ hiển thị X/4, vật phẩm khác hiển thị xN
+	var item_id = it.get("id", "")
 	var count: int = int(it.get("count", 1))
-	if count > 1:
+	if item_id == "mask_shard":
+		var shards = 0
+		if SaveManager.instance:
+			shards = SaveManager.instance.get_mask_shards()
+		else:
+			shards = count
+		var badge = Label.new()
+		badge.text = "%d/4" % shards
+		badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		badge.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+		badge.set_anchors_preset(Control.PRESET_FULL_RECT)
+		badge.add_theme_font_size_override("font_size", 10)
+		badge.add_theme_color_override("font_color", Color(1.0, 0.88, 0.45, 1.0))
+		badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		btn.add_child(badge)
+	elif count > 1:
 		var badge = Label.new()
 		badge.text = "x%d" % count
 		badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -768,22 +791,62 @@ func _create_item_slot(it: Dictionary) -> Button:
 
 
 func _display_item_preview(it: Dictionary) -> void:
+	var item_id: String = it.get("id", "")
 	var count: int = int(it.get("count", 1))
+
+	# 1. Tên vật phẩm
 	if item_preview_name:
 		var name_str = it.get("name", "").to_upper()
-		if count > 1:
+		if count > 1 and item_id != "mask_shard":
 			name_str += " (x%d)" % count
 		item_preview_name.text = name_str
+
+	# 2. Phân loại
 	if item_preview_category:
 		item_preview_category.text = "PHÂN LOẠI: %s" % it.get("category", "VẬT PHẨM").to_upper()
+
+	# 3. Mô tả chi tiết & Tiến độ Mảnh mặt nạ
+	var desc_str = it.get("desc", "")
+	if item_id == "mask_shard":
+		var shards = 0
+		if SaveManager.instance:
+			shards = SaveManager.instance.get_mask_shards()
+		else:
+			shards = count
+		desc_str = "Mảnh vỡ cổ vật tích tụ sinh mệnh.\n\nTiến độ: Mảnh mặt nạ: %d / 4\n\nThu thập đủ 4 mảnh để hợp nhất tăng vĩnh viễn 1 Mask sinh lực tối đa." % shards
+		
+		if mask_upgrade_container:
+			mask_upgrade_container.visible = true
+		if mask_shard_progress:
+			mask_shard_progress.text = "Mảnh mặt nạ: %d / 4" % shards
+		if upgrade_mask_button:
+			upgrade_mask_button.visible = (shards >= 4)
+			upgrade_mask_button.disabled = (shards < 4)
+			upgrade_mask_button.text = "✨ HỢP NHẤT MẶT NẠ (+1 MASK)"
+	else:
+		if mask_upgrade_container:
+			mask_upgrade_container.visible = false
+
 	if item_preview_desc:
-		item_preview_desc.text = it.get("desc", "")
+		item_preview_desc.text = desc_str
+
+	# 4. Icon
 	if item_preview_icon:
 		var icon_p = it.get("icon", "")
 		if ResourceLoader.exists(icon_p):
 			item_preview_icon.texture = load(icon_p)
 		else:
 			item_preview_icon.texture = null
+
+
+func _on_upgrade_mask_pressed() -> void:
+	_play_sfx(click_sfx)
+	if SaveManager.instance and SaveManager.instance.can_upgrade_mask():
+		var success = SaveManager.instance.upgrade_mask()
+		if success:
+			_play_sfx(page_sfx)
+			_refresh_inventory_tab()
+
 
 
 

@@ -116,6 +116,7 @@ const SPRINT_ACCELERATION := 1800.0
 
 var geo_amount: int = 0
 var inventory: Array = []
+var mask_shards: int = 0
 
 @export_group("Silk Energy System")
 @export var max_silk: int = 6
@@ -369,8 +370,24 @@ func trigger_parry_counter() -> void:
 	
 	switch_state(STATE.DEFEND_ATTACK)
 
+func update_health_hud() -> void:
+	update_hud()
+
 func update_hud() -> void:
 	if health_container:
+		while health_container.get_child_count() < max_health:
+			var new_mask = TextureRect.new()
+			new_mask.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			new_mask.custom_minimum_size = Vector2(26, 38)
+			new_mask.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			new_mask.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			new_mask.texture = active_mask_texture
+			health_container.add_child(new_mask)
+		while health_container.get_child_count() > max_health:
+			var c = health_container.get_child(health_container.get_child_count() - 1)
+			health_container.remove_child(c)
+			c.queue_free()
+
 		var masks = health_container.get_children()
 		for i in range(masks.size()):
 			if i < current_health:

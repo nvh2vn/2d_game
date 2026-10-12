@@ -58,7 +58,7 @@ var shop_items: Array[Dictionary] = [
 		"description": "Mảnh cổ vật tích tụ sức sống. Thu thập đủ 4 mảnh để gia tăng tối đa 1 HP.",
 		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/blessing_prompt.png",
 		"category": "CỔ VẬT NÂNG CẤP",
-		"one_time": true
+		"one_time": false
 	}
 ]
 
@@ -382,10 +382,20 @@ func _on_item_buy_pressed(item: Dictionary) -> void:
 		populate_shop_items()
 
 func _grant_item_to_player(item_id: String, item_name: String) -> void:
-	# 1. Tìm thông tin chi tiết vật phẩm từ SaveManager registry hoặc shop_items
-	var item_dict: Dictionary = {}
-	if SaveManager.has_method("get_item_definition"):
-		item_dict = SaveManager.get_item_definition(item_id)
+	# 1. Nếu là Mảnh Mặt Nạ: tăng mask_shards
+	if item_id == "mask_shard":
+		if SaveManager.instance:
+			SaveManager.instance.add_mask_shards(1)
+		elif is_instance_valid(current_player) and "mask_shards" in current_player:
+			current_player.mask_shards += 1
+		if is_instance_valid(current_player) and "inventory" in current_player:
+			if SaveManager.instance:
+				current_player.inventory = SaveManager.instance.get_inventory_items().duplicate()
+		return
+
+	# 2. Tìm thông tin chi tiết vật phẩm từ SaveManager registry hoặc shop_items
+	var item_dict: Dictionary = SaveManager.get_item_definition(item_id)
+
 	if item_dict.is_empty():
 		for s_it in shop_items:
 			if s_it.get("id", "") == item_id:
@@ -398,33 +408,18 @@ func _grant_item_to_player(item_id: String, item_name: String) -> void:
 				}
 				break
 
-	# 2. Thêm vào SaveManager tập trung
+	# 3. Thêm vào SaveManager tập trung
 	if SaveManager.instance:
 		if not item_dict.is_empty():
 			SaveManager.instance.add_inventory_item(item_dict)
 		else:
 			SaveManager.instance.add_inventory_item(item_id)
 
-	# 3. Hiệu ứng riêng của từng vật phẩm (Mảnh mặt nạ tăng 1 Max HP)
-	if item_id == "mask_shard":
-		if is_instance_valid(current_player) and "max_health" in current_player:
-			current_player.max_health += 1
-			current_player.current_health = current_player.max_health
-			if current_player.has_method("update_health_hud"):
-				current_player.update_health_hud()
-			elif current_player.has_method("update_hud"):
-				current_player.update_hud()
-		if SaveManager.instance:
-			var p_data = SaveManager.instance.save_data.get("player", {})
-			p_data["max_health"] = p_data.get("max_health", 5) + 1
-			p_data["current_health"] = p_data["max_health"]
-			SaveManager.instance.save_data["player"] = p_data
-			SaveManager.instance.save_to_disk()
-
 	# 4. Đồng bộ player inventory nếu player đang tồn tại
 	if is_instance_valid(current_player) and "inventory" in current_player:
 		if SaveManager.instance:
 			current_player.inventory = SaveManager.instance.get_inventory_items().duplicate()
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
