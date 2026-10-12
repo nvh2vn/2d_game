@@ -123,7 +123,7 @@ size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.65, 0.67, 0.72, 0.6)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 11
-text = "Chạm hoặc bấm phím bất kỳ"
+text = "Chạm màn hình để tiếp tục"
 horizontal_alignment = 2
 
 [node name="FadeOverlay" type="ColorRect" parent="."]
