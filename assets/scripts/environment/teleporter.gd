@@ -10,12 +10,25 @@ enum TeleportType {
 @export_file("*.tscn") var target_scene_path: String = ""
 @export var target_marker: Marker2D
 @export var is_active: bool = true
+@export var require_interaction: bool = false
 
 var is_teleporting: bool = false
+var is_player_in_range: bool = false
+var current_player: Node2D = null
 
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not require_interaction or not is_player_in_range or is_teleporting or not is_instance_valid(current_player):
+		return
+	if event.is_action_pressed("interact") or event.is_action_pressed("ui_up") or (event is InputEventKey and event.pressed and (event.keycode in [KEY_E, KEY_UP, KEY_W])):
+		TouchControls.hide_interact(get_tree())
+		trigger_teleport(current_player)
+		get_viewport().set_input_as_handled()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -23,7 +36,20 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	if body.is_in_group("player") or body.name == "PlayerController" or body.name.begins_with("Player"):
-		trigger_teleport(body)
+		current_player = body
+		is_player_in_range = true
+		if require_interaction:
+			TouchControls.show_interact(get_tree(), "door")
+		else:
+			trigger_teleport(body)
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body == current_player:
+		is_player_in_range = false
+		current_player = null
+		if require_interaction:
+			TouchControls.hide_interact(get_tree())
 
 
 func trigger_teleport(player: Node2D) -> void:

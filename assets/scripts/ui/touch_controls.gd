@@ -7,6 +7,39 @@ extends CanvasLayer
 
 signal customizing_finished
 
+static var instance: TouchControls = null
+
+static func show_interact(tree: SceneTree, target_type: String = "") -> void:
+	if instance and is_instance_valid(instance):
+		instance.show_interact_button(target_type)
+	elif tree:
+		var tc = tree.get_first_node_in_group("touch_controls") as TouchControls
+		if tc:
+			tc.show_interact_button(target_type)
+
+static func hide_interact(tree: SceneTree) -> void:
+	if instance and is_instance_valid(instance):
+		instance.hide_interact_button()
+	elif tree:
+		var tc = tree.get_first_node_in_group("touch_controls") as TouchControls
+		if tc:
+			tc.hide_interact_button()
+
+static func suppress_interact(tree: SceneTree, suppressed: bool) -> void:
+	if instance and is_instance_valid(instance):
+		instance.set_interact_suppressed(suppressed)
+	elif tree:
+		var tc = tree.get_first_node_in_group("touch_controls") as TouchControls
+		if tc:
+			tc.set_interact_suppressed(suppressed)
+
+func _enter_tree() -> void:
+	instance = self
+
+func _exit_tree() -> void:
+	if instance == self:
+		instance = null
+
 const CONFIG_FILE_PATH: String = "user://touch_layout.cfg"
 const CONFIG_SECTION: String = "touch_layout"
 
@@ -39,6 +72,7 @@ const CONFIG_SECTION: String = "touch_layout"
 @onready var throw_btn: TouchScreenButton = get_node_or_null("%ThrowButton")
 @onready var skill_btn: TouchScreenButton = get_node_or_null("%SkillButton")
 @onready var bind_btn: TouchScreenButton = get_node_or_null("%BindButton")
+@onready var interact_btn: TouchScreenButton = get_node_or_null("%InteractButton")
 
 # UI Tùy chỉnh (Customize Overlay)
 @onready var customize_overlay: Control = get_node_or_null("%CustomizeOverlay")
@@ -51,6 +85,10 @@ var joystick_touch_id: int = -1
 var current_input_vector: Vector2 = Vector2.ZERO
 var _snap_tween: Tween = null
 var _active_mouse_btn: TouchScreenButton = null
+
+# --- Trạng thái Nút Tương Tác Ngữ Cảnh ---
+var _interact_tween: Tween = null
+var _interaction_count: int = 0
 
 # --- Trạng thái Chế độ Tùy chỉnh (Edit Mode) ---
 var is_customizing: bool = false
@@ -66,6 +104,15 @@ var _drag_offset: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	add_to_group("touch_controls")
+
+	# Đảm bảo action interact luôn có sẵn trong InputMap
+	if not InputMap.has_action("interact"):
+		InputMap.add_action("interact", 0.2)
+		for key in [KEY_E, KEY_W, KEY_UP]:
+			var ev := InputEventKey.new()
+			ev.physical_keycode = key
+			InputMap.action_add_event("interact", ev)
+
 	# 1. Tự động kiểm tra thiết bị: Hiển thị trên Android/iOS hoặc màn hình cảm ứng
 	var is_mobile: bool = OS.get_name() in ["Android", "iOS"] or DisplayServer.is_touchscreen_available()
 	visible = is_mobile or force_show
@@ -130,6 +177,8 @@ func _record_default_positions() -> void:
 		default_positions["skill"] = skill_btn.global_position
 	if bind_btn:
 		default_positions["bind"] = bind_btn.global_position
+	if interact_btn:
+		default_positions["interact"] = interact_btn.global_position
 
 
 func save_layout() -> void:
@@ -148,6 +197,8 @@ func save_layout() -> void:
 		config.set_value(CONFIG_SECTION, "skill", skill_btn.global_position)
 	if bind_btn:
 		config.set_value(CONFIG_SECTION, "bind", bind_btn.global_position)
+	if interact_btn:
+		config.set_value(CONFIG_SECTION, "interact", interact_btn.global_position)
 
 	var err = config.save(CONFIG_FILE_PATH)
 	if err == OK:
@@ -180,6 +231,8 @@ func load_layout() -> bool:
 		skill_btn.global_position = config.get_value(CONFIG_SECTION, "skill")
 	if bind_btn and config.has_section_key(CONFIG_SECTION, "bind"):
 		bind_btn.global_position = config.get_value(CONFIG_SECTION, "bind")
+	if interact_btn and config.has_section_key(CONFIG_SECTION, "interact"):
+		interact_btn.global_position = config.get_value(CONFIG_SECTION, "interact")
 
 	print("[TouchControls] Layout loaded successfully from: ", CONFIG_FILE_PATH)
 	return true
@@ -203,6 +256,8 @@ func reset_to_defaults() -> void:
 		_animate_to_pos(skill_btn, default_positions["skill"])
 	if bind_btn and default_positions.has("bind"):
 		_animate_to_pos(bind_btn, default_positions["bind"])
+	if interact_btn and default_positions.has("interact"):
+		_animate_to_pos(interact_btn, default_positions["interact"])
 
 
 func _animate_to_pos(target_node: Node, target_pos: Vector2) -> void:
@@ -230,17 +285,21 @@ func start_customizing(return_target: Control = null) -> void:
 
 	# 1. Tạm thời xóa action trên TouchScreenButton để ngắt hoàn toàn gameplay actions
 	_original_actions.clear()
-	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and is_instance_valid(btn):
 			_original_actions[btn] = btn.action
 			btn.action = &""
 
+	if interact_btn and is_instance_valid(interact_btn):
+		interact_btn.visible = true
+		interact_btn.modulate.a = 0.85
+
 	# 2. Hủy trạng thái joystick và nhả toàn bộ các phím gameplay
 	_release_joystick()
 	var all_actions = [
 		&"move_left", &"move_right", &"move_up", &"move_down",
-		&"jump", &"attack", &"dash", &"shoot", &"special_attack", &"bind"
+		&"jump", &"attack", &"dash", &"shoot", &"special_attack", &"bind", &"interact"
 	]
 	for act in all_actions:
 		Input.action_release(act)
@@ -256,11 +315,20 @@ func finish_customizing() -> void:
 		customize_overlay.visible = false
 
 	# 1. Khôi phục lại action gameplay cho TouchScreenButton
-	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and is_instance_valid(btn) and _original_actions.has(btn):
 			btn.action = _original_actions[btn]
 	_original_actions.clear()
+
+	# Khôi phục trạng thái hiển thị của interact_btn theo số lượng tương tác hiện tại
+	if interact_btn and is_instance_valid(interact_btn):
+		if _interaction_count <= 0:
+			interact_btn.visible = false
+			interact_btn.modulate.a = 0.0
+		else:
+			interact_btn.visible = true
+			interact_btn.modulate.a = 1.0
 
 	# 2. Xóa trạng thái kéo
 	if _drag_target:
@@ -300,10 +368,83 @@ func _on_save_exit_pressed() -> void:
 
 
 func _cache_button_scales() -> void:
-	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and is_instance_valid(btn):
 			_button_base_scales[btn] = btn.scale
+
+
+# ==============================================================================
+# QUẢN LÝ NÚT TƯƠNG TÁC NGỮ CẢNH (CONTEXTUAL INTERACT BUTTON)
+# ==============================================================================
+
+func show_interact_button(target_type: String = "") -> void:
+	if not interact_btn:
+		interact_btn = get_node_or_null("%InteractButton")
+	if not interact_btn or not is_instance_valid(interact_btn):
+		return
+	_interaction_count += 1
+	if is_customizing:
+		return
+	if _interact_tween and _interact_tween.is_valid():
+		_interact_tween.kill()
+
+	interact_btn.visible = true
+	var base_scale: Vector2 = _button_base_scales.get(interact_btn, interact_btn.scale)
+	interact_btn.scale = base_scale * 0.8
+	
+	_interact_tween = create_tween().set_parallel(true)
+	_interact_tween.tween_property(interact_btn, "modulate:a", 1.0, 0.2)\
+		.set_trans(Tween.TRANS_CUBIC)\
+		.set_ease(Tween.EASE_OUT)
+	_interact_tween.tween_property(interact_btn, "scale", base_scale, 0.2)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_OUT)
+
+
+func hide_interact_button() -> void:
+	if not interact_btn:
+		interact_btn = get_node_or_null("%InteractButton")
+	if not interact_btn or not is_instance_valid(interact_btn):
+		return
+	_interaction_count = maxi(0, _interaction_count - 1)
+	if _interaction_count > 0:
+		return
+	_force_hide_interact_button()
+
+
+func _force_hide_interact_button() -> void:
+	if not interact_btn:
+		interact_btn = get_node_or_null("%InteractButton")
+	if not interact_btn or not is_instance_valid(interact_btn):
+		return
+	if is_customizing:
+		return
+	if _interact_tween and _interact_tween.is_valid():
+		_interact_tween.kill()
+
+	var base_scale: Vector2 = _button_base_scales.get(interact_btn, interact_btn.scale)
+	_interact_tween = create_tween().set_parallel(true)
+	_interact_tween.tween_property(interact_btn, "modulate:a", 0.0, 0.15)\
+		.set_trans(Tween.TRANS_CUBIC)\
+		.set_ease(Tween.EASE_IN)
+	_interact_tween.tween_property(interact_btn, "scale", base_scale * 0.8, 0.15)\
+		.set_trans(Tween.TRANS_QUAD)\
+		.set_ease(Tween.EASE_IN)
+	_interact_tween.chain().tween_callback(func():
+		if interact_btn and not is_customizing and _interaction_count <= 0:
+			interact_btn.visible = false
+	)
+
+
+func set_interact_suppressed(suppressed: bool) -> void:
+	if suppressed:
+		_force_hide_interact_button()
+	else:
+		if _interaction_count > 0:
+			# Re-show
+			_interaction_count -= 1
+			show_interact_button()
 
 
 # ==============================================================================
@@ -440,7 +581,7 @@ func _handle_customize_drag_input(event: InputEvent, pointer_pos: Vector2) -> vo
 
 func _get_customizable_item_at(screen_pos: Vector2) -> Node:
 	# Kiểm tra TouchScreenButtons trước
-	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and is_instance_valid(btn):
 			var tex_size = btn.texture_normal.get_size() if btn.texture_normal else Vector2(512, 512)
@@ -513,9 +654,11 @@ func _is_in_joystick_zone(screen_pos: Vector2) -> bool:
 
 
 func _get_action_button_at(screen_pos: Vector2) -> TouchScreenButton:
-	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [jump_btn, attack_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and is_instance_valid(btn):
+			if btn == interact_btn and (not btn.visible or btn.modulate.a <= 0.05):
+				continue
 			var tex_size = btn.texture_normal.get_size() if btn.texture_normal else Vector2(512, 512)
 			var btn_center: Vector2 = btn.global_position + (tex_size * 0.5 * btn.scale)
 			var btn_radius: float = (tex_size.x * 0.5) * btn.scale.x * 1.15
@@ -595,7 +738,7 @@ func _release_joystick() -> void:
 
 
 func _setup_button_feedback() -> void:
-	var buttons = [attack_btn, jump_btn, dash_btn, throw_btn, skill_btn, bind_btn]
+	var buttons = [attack_btn, jump_btn, dash_btn, throw_btn, skill_btn, bind_btn, interact_btn]
 	for btn in buttons:
 		if btn and btn is TouchScreenButton:
 			btn.pressed.connect(_on_btn_down.bind(btn))

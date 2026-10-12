@@ -124,6 +124,11 @@ func _set_in_range(in_range: bool) -> void:
 			var tw = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 			interact_prompt.scale = Vector2(0.5, 0.5)
 			tw.tween_property(interact_prompt, "scale", Vector2.ONE, 0.15)
+	
+	if in_range:
+		TouchControls.show_interact(get_tree(), "tuk_shop")
+	else:
+		TouchControls.hide_interact(get_tree())
 
 func _open_shop_menu() -> void:
 	var existing_menu = get_tree().current_scene.find_child("ShopMenu", true, false)
@@ -131,8 +136,15 @@ func _open_shop_menu() -> void:
 		return
 		
 	if shop_menu_scene:
+		TouchControls.hide_interact(get_tree())
 		var menu_inst = shop_menu_scene.instantiate()
 		get_tree().current_scene.add_child(menu_inst)
+		menu_inst.tree_exited.connect(_on_shop_menu_closed)
 		if menu_inst.has_method("open_shop"):
 			menu_inst.open_shop(current_player, npc_name)
 		shop_opened.emit()
+
+func _on_shop_menu_closed() -> void:
+	shop_closed.emit()
+	if is_player_in_range:
+		TouchControls.show_interact(get_tree(), "tuk_shop")

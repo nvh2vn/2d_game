@@ -965,7 +965,7 @@ func _physics_process(delta: float) -> void:
 		
 		# Khi dang ngoi, bat ke nguoi choi an Trai, Phai, Len, Xuong (A, D, W, S hoac phim mui ten) hoac phim hanh dong deu se roi khoi ghe
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		var is_key_dir: bool = Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_E) or Input.is_key_pressed(KEY_SPACE) or Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("dash")
+		var is_key_dir: bool = Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_E) or Input.is_key_pressed(KEY_SPACE) or Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("dash") or Input.is_action_just_pressed("interact")
 		
 		if input_dir.length() > 0.1 or is_key_dir:
 			stand_up_from_bench()

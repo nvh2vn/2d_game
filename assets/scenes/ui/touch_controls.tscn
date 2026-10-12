@@ -10,9 +10,13 @@
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_skill.png" id="8_skill"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="9_font"]
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_bind.png" id="10_bind"]
+[ext_resource type="Texture2D" uid="uid://c5c2aeb7hcjko" path="res://assets/art/2d/silksong_full/Images/prompt_idle0000.png" id="11_interact"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btn"]
 radius = 256.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 100.0
 
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
@@ -161,6 +165,19 @@ shape = SubResource("CircleShape2D_btn")
 shape_centered = true
 passby_press = true
 action = &"bind"
+visibility_mode = 0
+
+[node name="InteractButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010112]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-260, -420)
+scale = Vector2(0.45, 0.45)
+texture_normal = ExtResource("11_interact")
+shape = SubResource("CircleShape2D_interact")
+shape_centered = true
+passby_press = true
+action = &"interact"
 visibility_mode = 0
 
 [node name="CustomizeOverlay" type="Control" parent="." unique_id=1010120]

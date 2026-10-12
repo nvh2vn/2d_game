@@ -97,12 +97,18 @@ func _set_in_range(in_range: bool) -> void:
 			interact_prompt.scale = Vector2(0.5, 0.5)
 			tw.tween_property(interact_prompt, "scale", Vector2.ONE, 0.15)
 
+	if in_range and not is_active_bench:
+		TouchControls.show_interact(get_tree(), "bench")
+	elif not in_range:
+		TouchControls.hide_interact(get_tree())
+
 func _start_rest() -> void:
 	if not is_instance_valid(current_player):
 		return
 		
 	is_active_bench = true
 	rest_cooldown = 0.35
+	TouchControls.hide_interact(get_tree())
 	
 	if sprite and bench_lit_tex:
 		sprite.texture = bench_lit_tex
@@ -138,3 +144,5 @@ func _stop_rest() -> void:
 	if sprite and bench_unlit_tex:
 		sprite.texture = bench_unlit_tex
 	is_active_bench = false
+	if is_player_in_range:
+		TouchControls.show_interact(get_tree(), "bench")

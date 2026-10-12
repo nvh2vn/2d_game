@@ -109,13 +109,24 @@ func _set_in_range(in_range: bool) -> void:
 			interact_prompt.scale = Vector2(0.5, 0.5)
 			tw.tween_property(interact_prompt, "scale", Vector2.ONE, 0.15)
 
+	if in_range:
+		TouchControls.show_interact(get_tree(), "waypoint")
+	else:
+		TouchControls.hide_interact(get_tree())
+
 func _open_teleport_menu() -> void:
 	var existing_menu = get_tree().current_scene.find_child("TeleportMenu", true, false)
 	if existing_menu:
 		return
 		
 	if teleport_menu_scene:
+		TouchControls.hide_interact(get_tree())
 		var menu_inst = teleport_menu_scene.instantiate()
 		get_tree().current_scene.add_child(menu_inst)
+		menu_inst.tree_exited.connect(_on_teleport_menu_closed)
 		if menu_inst.has_method("open_menu"):
 			menu_inst.open_menu(waypoint_id, current_player)
+
+func _on_teleport_menu_closed() -> void:
+	if is_player_in_range:
+		TouchControls.show_interact(get_tree(), "waypoint")
