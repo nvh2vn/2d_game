@@ -171,6 +171,20 @@
 [ext_resource type="AudioStream" uid="uid://ch8n61nkbbyk1" path="res://assets/art/2d/silksong_full/Sounds/Player/voice_remoteskill_0.MP3" id="sfx_remote_voice"]
 [ext_resource type="AudioStream" uid="uid://c5spep1vedilq" path="res://assets/art/2d/silksong_full/Sounds/Player/sound_throw.mp3" id="sfx_throw"]
 [ext_resource type="Texture2D" uid="uid://dyvysji0pjn6u" path="res://assets/art/2d/silksong_full/Images/UI/vignette_low_health.png" id="vignette_texture"]
+[ext_resource type="Texture2D" uid="uid://bdd32rmwbqemp" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/0.png" id="h_cure_0"]
+[ext_resource type="Texture2D" uid="uid://dj6hrgllqo5pu" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/1.png" id="h_cure_1"]
+[ext_resource type="Texture2D" uid="uid://bi2vw0xwxcbb1" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/2.png" id="h_cure_2"]
+[ext_resource type="Texture2D" uid="uid://comybvxp20lq" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/3.png" id="h_cure_3"]
+[ext_resource type="Texture2D" uid="uid://dd1e3nth7p2d" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/4.png" id="h_cure_4"]
+[ext_resource type="Texture2D" uid="uid://tjxy2vkh0c13" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/5.png" id="h_cure_5"]
+[ext_resource type="Texture2D" uid="uid://y5x0w4v2ilu7" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/6.png" id="h_cure_6"]
+[ext_resource type="Texture2D" uid="uid://cjurwlwfxv4qa" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/7.png" id="h_cure_7"]
+[ext_resource type="Texture2D" uid="uid://btpher64oncuo" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/8.png" id="h_cure_8"]
+[ext_resource type="Texture2D" uid="uid://chabqt7725jpy" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/9.png" id="h_cure_9"]
+[ext_resource type="Texture2D" uid="uid://fw1tf4opbmje" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/10.png" id="h_cure_10"]
+[ext_resource type="Texture2D" uid="uid://gaecnyu6ax4i" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/11.png" id="h_cure_11"]
+[ext_resource type="Texture2D" uid="uid://dk6vdatph80n5" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/12.png" id="h_cure_12"]
+[ext_resource type="Texture2D" uid="uid://bh786um65brxl" path="res://assets/art/2d/silksong_full/Animations/Player/Cure/13.png" id="h_cure_13"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_player"]
 radius = 8.0
@@ -635,6 +649,97 @@ animations = [{
 "loop": 1,
 "name": &"walk",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_cure_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_3")
+}],
+"loop": 0,
+"name": &"bind_start",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_cure_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_7")
+}],
+"loop": 1,
+"name": &"bind_charging",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_cure_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_7")
+}],
+"loop": 1,
+"name": &"bind_loop",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_cure_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_13")
+}],
+"loop": 0,
+"name": &"bind_success",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("h_cure_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("h_cure_0")
+}],
+"loop": 0,
+"name": &"bind_cancel",
+"speed": 16.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_counter"]

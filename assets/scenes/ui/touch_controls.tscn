@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_throw.png" id="7_throw"]
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_skill.png" id="8_skill"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="9_font"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Movement/Gemini_Generated_Image_gph3cfgph3cfgph3.png" id="10_bind"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btn"]
 radius = 256.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btn_bind"]
+radius = 1024.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
 content_margin_left = 18.0
@@ -148,6 +152,17 @@ shape = SubResource("CircleShape2D_btn")
 shape_centered = true
 passby_press = true
 action = &"special_attack"
+visibility_mode = 0
+
+[node name="BindButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010111]
+unique_name_in_owner = true
+position = Vector2(-386, -345)
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("10_bind")
+shape = SubResource("CircleShape2D_btn_bind")
+shape_centered = true
+passby_press = true
+action = &"bind"
 visibility_mode = 0
 
 [node name="CustomizeOverlay" type="Control" parent="." unique_id=1010120]

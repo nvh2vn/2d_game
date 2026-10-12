@@ -123,10 +123,22 @@ var inventory: Array = []
 @export var dart_silk_cost: int = 1         # Chiêu K: Bắn phi tiêu tốn 1 tơ
 @export var remote_skill_silk_cost: int = 2 # Chiêu X: Sóng tơ bão kích tốn 2 tơ
 @export var heal_silk_cost: int = 3         # Phím H: Hồi 1 MASK tốn 3 tơ
+@export var bind_silk_cost: int = 6         # Silksong Bind: Tiêu tốn full cuộn tơ (hoặc tối thiểu bind_silk_cost)
+@export var bind_heal_amount: int = 3       # Hồi 3 MASK
+@export var bind_charge_duration: float = 0.95 # Giữ nút tụ lực ~0.95s
 @export var silk_gain_on_hit: int = 1       # Đánh thường trúng tích 1 tơ
 @export var soul_hit_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/soulhit.mp3")
 @export var sound_cure_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/sound_cure.mp3")
 @export var voice_cure_sfx: AudioStream = preload("res://assets/art/2d/silksong_full/Sounds/Player/voice_cure.mp3")
+
+enum BIND_PHASE {
+	START,
+	CHARGING,
+	SUCCESS,
+	CANCEL
+}
+var bind_phase: BIND_PHASE = BIND_PHASE.START
+var bind_timer: float = 0.0
 var focus_heal_timer: float = 0.0
 
 @export var active_mask_texture: Texture2D = preload("res://assets/art/2d/silksong_full/Images/UI/mask_white.png")
@@ -315,6 +327,18 @@ func _on_animated_sprite_animation_finished() -> void:
 				switch_state(STATE.FLOOR)
 			else:
 				switch_state(STATE.FALL)
+		STATE.FOCUS_HEAL:
+			if animated_sprite:
+				animated_sprite.modulate = Color.WHITE
+			if bind_phase == BIND_PHASE.START:
+				bind_phase = BIND_PHASE.CHARGING
+				if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_charging"):
+					animated_sprite.play("bind_charging")
+			elif bind_phase == BIND_PHASE.SUCCESS or bind_phase == BIND_PHASE.CANCEL:
+				if is_on_floor():
+					switch_state(STATE.FLOOR)
+				else:
+					switch_state(STATE.FALL)
 
 func _spawn_dart() -> void:
 	if not dart_scene:
@@ -608,6 +632,10 @@ func take_damage(amount: int, source_pos: Vector2 = Vector2.ZERO) -> void:
 	if is_invincible or current_health <= 0 or active_state == STATE.DIE:
 		return
 	
+	# Nếu đang tụ lực Bind (FOCUS_HEAL) mà bị trúng đòn thì ngắt tụ lực ngay lập tức
+	if active_state == STATE.FOCUS_HEAL:
+		_trigger_bind_cancel()
+
 	# Kiểm tra trạng thái đang phòng thủ để chặn đòn & phản đòn (Block & Parry)
 	if active_state == STATE.DEFEND_START or active_state == STATE.DEFEND:
 		trigger_parry_counter()
@@ -984,6 +1012,11 @@ func switch_state(to_state: STATE) -> void:
 	var previous_state := active_state
 	active_state = to_state
 	
+	if previous_state == STATE.FOCUS_HEAL and to_state != STATE.FOCUS_HEAL:
+		if animated_sprite:
+			animated_sprite.modulate = Color.WHITE
+			animated_sprite.offset = Vector2.ZERO
+
 	## State specific things that only need to run once upon entering the next state.
 	match active_state:
 		STATE.FALL:
@@ -1207,12 +1240,99 @@ func switch_state(to_state: STATE) -> void:
 		STATE.FOCUS_HEAL:
 			velocity = Vector2.ZERO
 			focus_heal_timer = 0.0
+			bind_timer = 0.0
+			bind_phase = BIND_PHASE.START
 			is_sprinting = false
 			if sound_cure_sfx:
 				play_sfx(sound_cure_sfx)
-			if voice_cure_sfx:
-				play_sfx(voice_cure_sfx)
+			if animated_sprite:
+				animated_sprite.modulate = Color.WHITE
+				if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_start"):
+					animated_sprite.play("bind_start")
+				elif animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_charging"):
+					animated_sprite.play("bind_charging")
+				else:
+					animated_sprite.play("idle")
 
+
+func is_bind_held() -> bool:
+	return Input.is_action_pressed("bind") or Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_Q) or Input.is_key_pressed(KEY_H)
+
+func is_bind_just_pressed() -> bool:
+	return Input.is_action_just_pressed("bind") or Input.is_action_just_pressed("heal") or Input.is_key_pressed(KEY_Q) or Input.is_key_pressed(KEY_H)
+
+func can_bind() -> bool:
+	if not is_on_floor():
+		return false
+	if current_health >= max_health:
+		return false
+	var required_silk = mini(bind_silk_cost, max_silk)
+	if current_silk < required_silk:
+		return false
+	if is_sitting or is_resetting_hazard or active_state == STATE.DIE:
+		return false
+	return true
+
+func _trigger_bind_cancel() -> void:
+	if bind_phase == BIND_PHASE.CANCEL or bind_phase == BIND_PHASE.SUCCESS:
+		return
+	bind_phase = BIND_PHASE.CANCEL
+	bind_timer = 0.0
+	if animated_sprite:
+		animated_sprite.modulate = Color.WHITE
+		if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_cancel"):
+			animated_sprite.play("bind_cancel")
+		else:
+			switch_state(STATE.FLOOR)
+
+func _trigger_bind_success() -> void:
+	if bind_phase == BIND_PHASE.SUCCESS:
+		return
+	bind_phase = BIND_PHASE.SUCCESS
+	
+	# 1. Trừ tơ theo quy định Silksong (tiêu tốn full cuộn tơ hoặc bind_silk_cost)
+	var cost = mini(bind_silk_cost, max_silk)
+	consume_silk(cost)
+	
+	# 2. Hồi phục 3 Mask (hoặc hồi đầy tùy giới hạn máu)
+	var heal_target = mini(current_health + bind_heal_amount, max_health)
+	var heal_count = heal_target - current_health
+	if heal_count > 0:
+		for i in range(heal_count):
+			var restored_idx = current_health + i
+			play_blood_load_effect(restored_idx)
+		current_health = heal_target
+		update_hud()
+		
+	# 3. SFX và Voice Silksong
+	if voice_cure_sfx:
+		play_sfx(voice_cure_sfx)
+	if sound_cure_sfx:
+		play_sfx(sound_cure_sfx)
+	elif heal_sfx:
+		play_sfx(heal_sfx)
+		
+	# 4. Hoạt ảnh bind_success (tơ phát nổ tỏa sáng hoàn tất hồi phục máu)
+	if animated_sprite:
+		animated_sprite.modulate = Color.WHITE
+		if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_success"):
+			animated_sprite.play("bind_success")
+		else:
+			switch_state(STATE.FLOOR)
+			
+	# 5. Hiệu ứng lóe sáng phát nổ / rung nhẹ camera
+	_play_bind_burst_flash()
+
+func _play_bind_burst_flash() -> void:
+	if animated_sprite:
+		var flash_tw = create_tween()
+		flash_tw.tween_property(animated_sprite, "modulate", Color(2.6, 2.6, 2.6, 1.0), 0.06)
+		flash_tw.tween_property(animated_sprite, "modulate", Color.WHITE, 0.28)
+	if camera_2d:
+		var cam_tw = create_tween()
+		var orig_offset = camera_2d.offset
+		cam_tw.tween_property(camera_2d, "offset", orig_offset + Vector2(0, -3), 0.04)
+		cam_tw.tween_property(camera_2d, "offset", orig_offset, 0.08)
 
 func is_dash_held() -> bool:
 	return Input.is_action_pressed("dash") or Input.is_action_pressed("sprint") or Input.is_key_pressed(KEY_L)
@@ -1287,8 +1407,12 @@ func process_state(delta: float) -> void:
 				switch_state(STATE.FALL)
 			elif Input.is_action_just_pressed("jump"):
 				switch_state(STATE.JUMP)
-			elif (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)) and current_silk >= heal_silk_cost and current_health < max_health:
+			elif is_bind_held() and can_bind():
 				switch_state(STATE.FOCUS_HEAL)
+			elif is_bind_just_pressed() and not can_bind():
+				var req_silk = mini(bind_silk_cost, max_silk)
+				if current_silk < req_silk:
+					play_silk_warning()
 			elif (Input.is_action_just_pressed("dash") or Input.is_key_pressed(KEY_L) or Input.is_action_just_pressed("sprint")) and unlock_dash and (dash_cooldown == null or dash_cooldown.time_left <= 0.0):
 				switch_state(STATE.DASH)
 			elif is_sprinting and is_input_against_facing():
@@ -1365,35 +1489,41 @@ func process_state(delta: float) -> void:
 
 		STATE.FOCUS_HEAL:
 			velocity = Vector2.ZERO
-			focus_heal_timer += delta
 			
-			if animated_sprite:
-				if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("defend"):
-					animated_sprite.play("defend")
-				else:
-					animated_sprite.play("idle")
-				var pulse = 1.0 + sin(focus_heal_timer * 18.0) * 0.35
-				animated_sprite.modulate = Color(1.3 * pulse, 1.2 * pulse, 0.85 * pulse, 1.0)
-			
-			if not (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)):
-				focus_heal_timer = 0.0
-				if animated_sprite:
-					animated_sprite.modulate = Color.WHITE
-				switch_state(STATE.FLOOR)
-			elif focus_heal_timer >= 0.6:
-				focus_heal_timer = 0.0
-				if current_silk >= heal_silk_cost and current_health < max_health:
-					current_silk -= heal_silk_cost
-					heal(1)
-					play_sfx(sound_cure_sfx if sound_cure_sfx else heal_sfx)
-					if voice_cure_sfx:
-						play_sfx(voice_cure_sfx)
-				if animated_sprite:
-					animated_sprite.modulate = Color.WHITE
-				if (Input.is_action_pressed("heal") or Input.is_key_pressed(KEY_H)) and current_silk >= heal_silk_cost and current_health < max_health:
-					focus_heal_timer = 0.0
-				else:
-					switch_state(STATE.FLOOR)
+			if not is_on_floor() and bind_phase != BIND_PHASE.SUCCESS:
+				_trigger_bind_cancel()
+				switch_state(STATE.FALL)
+				return
+				
+			match bind_phase:
+				BIND_PHASE.START:
+					bind_timer += delta
+					if not is_bind_held():
+						_trigger_bind_cancel()
+						return
+					if bind_timer >= 0.32:
+						bind_phase = BIND_PHASE.CHARGING
+						if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("bind_charging"):
+							animated_sprite.play("bind_charging")
+
+				BIND_PHASE.CHARGING:
+					bind_timer += delta
+					if animated_sprite:
+						var pulse = 1.0 + sin(bind_timer * 20.0) * 0.18
+						animated_sprite.modulate = Color(1.25 * pulse, 1.25 * pulse, 1.1 * pulse, 1.0)
+					
+					if not is_bind_held():
+						_trigger_bind_cancel()
+						return
+					
+					if bind_timer >= bind_charge_duration:
+						_trigger_bind_success()
+
+				BIND_PHASE.SUCCESS:
+					pass
+
+				BIND_PHASE.CANCEL:
+					pass
 		
 		STATE.WALL_SLIDE:
 			velocity.y = move_toward(velocity.y, WALL_SLIDE_VELOCITY, WALL_SLIDE_GRAVITY * delta)
