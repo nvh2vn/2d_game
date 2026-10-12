@@ -216,6 +216,15 @@ func _ready() -> void:
 	update_hud()
 	_check_and_spawn_shade()
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Cho phép click chuột trái để tấn công trên Desktop/PC
+	# CHỈ kích hoạt khi người chơi click vào thế giới game (không trúng bất kỳ nút UI hoặc vùng điều khiển ảo nào)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if OS.get_name() not in ["Android", "iOS"]:
+			if unlock_attack and not is_sitting and active_state not in [STATE.DIE, STATE.FOCUS_HEAL]:
+				Input.action_press(&"attack")
+				get_tree().create_timer(0.05).timeout.connect(func(): Input.action_release(&"attack"))
+
 func trigger_hitstop(duration: float = 0.04) -> void:
 	Engine.time_scale = 0.05
 	await get_tree().create_timer(duration, true, false, true).timeout

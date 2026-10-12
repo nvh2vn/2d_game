@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://da84ajuoi0pue"]
 
 [ext_resource type="Texture2D" uid="uid://c3rykii0l8pef" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_08.png" id="1_wl5pn"]
-[ext_resource type="PackedScene" uid="uid://ctuknpcscene01" path="res://assets/scenes/npc/tuk_npc.tscn" id="ext_tuk_npc"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://assets/prefabs/player/player_controller(pixel).tscn" id="2_jm60u"]
 [ext_resource type="Texture2D" uid="uid://chlxldvba628j" path="res://assets/art/2d/silksong_full/Images/PlatForm/MossHole/fung_plat_float_09.png" id="2_njlr7"]
 [ext_resource type="AudioStream" uid="uid://6cool0bam8n3" path="res://assets/art/2d/silksong_full/Sounds/mossgrotto.mp3" id="2_uy8wc"]
@@ -62,11 +61,11 @@
 [ext_resource type="Texture2D" uid="uid://b8wdhyvnd031l" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/moss_0.png" id="60_j8p8j"]
 [ext_resource type="Texture2D" uid="uid://lil1skxsaymm" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_1.png" id="61_563o8"]
 [ext_resource type="Texture2D" uid="uid://bmshfdk0cb851" path="res://assets/art/2d/silksong_full/Images/Environment/MossHole/mosshole_floor_0.png" id="62_fdn3g"]
-[ext_resource type="PackedScene" uid="uid://bnd18fx50ufxf" path="res://assets/scenes/environment/elevator_fast_travel.tscn" id="65_bkq34"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/bug_enemy.tscn" id="ext_bug_enemy"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/items/treasure_chest.tscn" id="ext_chest"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/enemies/fly_enemy.tscn" id="ext_fly_enemy"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/environment/teleporter.tscn" id="ext_teleporter"]
+[ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://assets/scenes/npc/tuk_npc.tscn" id="ext_tuk_npc"]
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://assets/scenes/levels/pixel_level.gd" id="level_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baaps"]
@@ -10142,9 +10141,6 @@ texture = ExtResource("60_j8p8j")
 [node name="TeleporterToLevel2" parent="Map_1" unique_id=90962396 instance=ExtResource("ext_teleporter")]
 position = Vector2(807, -208)
 target_scene_path = "res://assets/scenes/levels/map_2.tscn"
-
-[node name="ElevatorFastTravel" parent="Map_1" unique_id=1336122621 instance=ExtResource("65_bkq34")]
-position = Vector2(515, -445)
 
 [node name="TreasureChest1" parent="." unique_id=990102050 instance=ExtResource("ext_chest")]
 position = Vector2(1993, 116)
