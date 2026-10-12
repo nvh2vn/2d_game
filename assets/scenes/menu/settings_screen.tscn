@@ -70,7 +70,8 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="SettingsPanel" type="Control" parent="." unique_id=1015214192]
-custom_minimum_size = Vector2(580, 480)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(580, 520)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,16 +79,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -290.0
-offset_top = -240.0
+offset_top = -260.0
 offset_right = 290.0
-offset_bottom = 240.0
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Margin" type="MarginContainer" parent="SettingsPanel" unique_id=1798727407]
 layout_mode = 0
 offset_right = 580.0
-offset_bottom = 480.0
+offset_bottom = 520.0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 32
@@ -207,6 +208,31 @@ text = "FULLSCREEN"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="TouchControlsRow" type="HBoxContainer" parent="SettingsPanel/Margin/VBox" unique_id=1692068199]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/TouchControlsRow" unique_id=63888299]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "TOUCH CONTROLS"
+
+[node name="CustomizeControlsButton" type="Button" parent="SettingsPanel/Margin/VBox/TouchControlsRow" unique_id=25207599]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+text = "CHỈNH NÚT CẢM ỨNG"
+flat = true
 
 [node name="Spacer" type="Control" parent="SettingsPanel/Margin/VBox" unique_id=2060872227]
 layout_mode = 2

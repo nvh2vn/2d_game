@@ -21,6 +21,7 @@ extends Control
 @onready var volume_slider: HSlider = %VolumeSlider
 @onready var volume_value_label: Label = %VolumeValueLabel
 @onready var fullscreen_check: CheckBox = %FullscreenCheck
+@onready var customize_controls_button: Button = get_node_or_null("%CustomizeControlsButton")
 @onready var settings_back_button: Button = %SettingsBackButton
 
 @onready var loading_container: VBoxContainer = %LoadingContainer
@@ -89,6 +90,10 @@ func _ready() -> void:
 	if settings_back_button:
 		settings_back_button.pressed.connect(_on_settings_back_pressed)
 		_setup_button_hover(settings_back_button)
+	
+	if customize_controls_button:
+		customize_controls_button.pressed.connect(_on_customize_controls_pressed)
+		_setup_button_hover(customize_controls_button)
 	
 	if volume_slider:
 		volume_slider.value_changed.connect(_on_volume_slider_changed)
@@ -413,6 +418,19 @@ func _on_settings_back_pressed() -> void:
 	_update_continue_button_state()
 	if play_button:
 		play_button.grab_focus()
+
+
+func _on_customize_controls_pressed() -> void:
+	_play_confirm_sfx()
+	var touch_controls = get_node_or_null("TouchControls")
+	if not touch_controls:
+		var tc_scene = preload("res://assets/scenes/ui/touch_controls.tscn")
+		touch_controls = tc_scene.instantiate()
+		touch_controls.name = "TouchControls"
+		add_child(touch_controls)
+
+	settings_panel.visible = false
+	touch_controls.start_customizing(settings_panel)
 
 
 func _on_volume_slider_changed(value: float) -> void:

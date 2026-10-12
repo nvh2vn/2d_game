@@ -493,6 +493,34 @@ text = "Fullscreen:"
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="ControlsRow" type="HBoxContainer" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=820424650]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ControlsLabel" type="Label" parent="MainLayout/SettingsPanel/Margin/SettingsVBox/ControlsRow" unique_id=2092043730]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Controls:"
+
+[node name="CustomizeControlsButton" type="Button" parent="MainLayout/SettingsPanel/Margin/SettingsVBox/ControlsRow" unique_id=218280025]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_trajan_font")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+text = "CHỈNH NÚT CẢM ỨNG"
+
 [node name="SettingsBackButton" type="Button" parent="MainLayout/SettingsPanel/Margin/SettingsVBox" unique_id=2062999156]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 38)

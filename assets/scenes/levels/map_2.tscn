@@ -2769,7 +2769,7 @@ sources/4 = SubResource("TileSetAtlasSource_tb1cu")
 sources/6 = SubResource("TileSetAtlasSource_hm7tx")
 sources/7 = SubResource("TileSetAtlasSource_vtua7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy8p8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hea18"]
 resource_local_to_scene = true
 size = Vector2(1226, 836)
 
@@ -2887,10 +2887,11 @@ position = Vector2(2620, 332)
 
 [node name="RoomArea" parent="." unique_id=1855937945 instance=ExtResource("15_hea18")]
 position = Vector2(1648, 379)
+room_size = Vector2(1226, 836)
 
 [node name="CollisionShape2D" parent="RoomArea" index="0"]
 position = Vector2(-133, -148)
-shape = SubResource("RectangleShape2D_jy8p8")
+shape = SubResource("RectangleShape2D_hea18")
 
 [node name="RoomArea2" parent="." unique_id=1654647781 instance=ExtResource("15_hea18")]
 position = Vector2(2614, 237)

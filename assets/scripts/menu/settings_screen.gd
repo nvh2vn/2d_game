@@ -12,8 +12,10 @@ extends Control
 @onready var sfx_slider: HSlider = %SFXSlider
 @onready var sfx_val_label: Label = %SFXValLabel
 @onready var fullscreen_check: CheckBox = %FullscreenCheck
+@onready var customize_controls_button: Button = get_node_or_null("%CustomizeControlsButton")
 @onready var back_button: Button = %BackButton
 @onready var main_menu_button: Button = %MainMenuButton
+@onready var settings_panel: Control = get_node_or_null("%SettingsPanel")
 @onready var sfx_player: AudioStreamPlayer = %SFXPlayer
 @onready var bgm_player: AudioStreamPlayer = %BGMPlayer
 
@@ -67,6 +69,9 @@ func _init_sliders() -> void:
 
 
 func _init_buttons() -> void:
+	if customize_controls_button:
+		customize_controls_button.pressed.connect(_on_customize_controls_pressed)
+		_setup_button_hover(customize_controls_button)
 	if back_button:
 		back_button.pressed.connect(_on_back_pressed)
 		_setup_button_hover(back_button)
@@ -137,6 +142,20 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_customize_controls_pressed() -> void:
+	_play_sfx(button_click_sfx)
+	var touch_controls = get_node_or_null("TouchControls")
+	if not touch_controls:
+		var tc_scene = preload("res://assets/scenes/ui/touch_controls.tscn")
+		touch_controls = tc_scene.instantiate()
+		touch_controls.name = "TouchControls"
+		add_child(touch_controls)
+	
+	if settings_panel:
+		settings_panel.visible = false
+	touch_controls.start_customizing(settings_panel)
 
 
 func _on_back_pressed() -> void:
