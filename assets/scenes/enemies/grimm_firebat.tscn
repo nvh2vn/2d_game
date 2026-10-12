@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://grimm_firebat_scene_01"]
+
+[ext_resource type="Script" path="res://assets/scripts/enemies/grimm_firebat.gd" id="1_fb_script"]
+[ext_resource type="SpriteFrames" path="res://assets/art/2d/Enemies/grimm_firebat_frames.tres" id="2_fb_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bat"]
+radius = 16.0
+
+[node name="GrimmFirebat" type="Area2D" groups=["enemy_projectiles"]]
+collision_layer = 4
+collision_mask = 255
+monitoring = true
+monitorable = true
+script = ExtResource("1_fb_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("2_fb_frames")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bat")

@@ -191,6 +191,8 @@ func _infer_journal_id() -> String:
 		return "wandering_husk"
 	elif "nightmare" in full or "grimm" in full:
 		return "nightmare_king"
+	elif "soul_master" in full or "soul" in full or "mage" in full:
+		return "mage_lord"
 	elif "shade" in full:
 		return "shade"
 	return ""

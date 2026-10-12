@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://assets/prefabs/items/treasure_chest.tscn" id="14_jy8p8"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/environment/room_area.tscn" id="15_hea18"]
 [ext_resource type="PackedScene" uid="uid://dubqsf2gq4b6w" path="res://assets/scenes/environment/bench.tscn" id="15_pd5qr"]
+[ext_resource type="PackedScene" path="res://assets/scenes/enemies/soul_master.tscn" id="16_jy8p8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u6pke"]
 load_path = "res://.godot/imported/_0070_abyss_02.png-ce45f60fa06e40f67d2e1ecae6e3d613.ctex"
@@ -2769,7 +2770,7 @@ sources/4 = SubResource("TileSetAtlasSource_tb1cu")
 sources/6 = SubResource("TileSetAtlasSource_hm7tx")
 sources/7 = SubResource("TileSetAtlasSource_vtua7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hea18"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd5qr"]
 resource_local_to_scene = true
 size = Vector2(1226, 836)
 
@@ -2891,9 +2892,12 @@ room_size = Vector2(1226, 836)
 
 [node name="CollisionShape2D" parent="RoomArea" index="0"]
 position = Vector2(-133, -148)
-shape = SubResource("RectangleShape2D_hea18")
+shape = SubResource("RectangleShape2D_pd5qr")
 
 [node name="RoomArea2" parent="." unique_id=1654647781 instance=ExtResource("15_hea18")]
 position = Vector2(2614, 237)
+
+[node name="SoulMaster" parent="." unique_id=160682299 instance=ExtResource("16_jy8p8")]
+position = Vector2(2906, 343)
 
 [editable path="RoomArea"]

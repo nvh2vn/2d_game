@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_2.png" id="1_j2i5w"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_3.png" id="2_x5w50"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_4.png" id="3_uc6vh"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_5.png" id="4_7y148"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_1.png" id="5_u2to8"]
+[ext_resource type="Texture2D" path="res://assets/art/2d/Enemies/grimm_extracted/spike_0.png" id="6_5h3sa"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2i5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x5w50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uc6vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7y148")
+}],
+"loop": 0,
+"name": &"erupt",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2i5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u2to8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5h3sa")
+}],
+"loop": 0,
+"name": &"retract",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5h3sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u2to8")
+}],
+"loop": 1,
+"name": &"warn",
+"speed": 8.0
+}]
