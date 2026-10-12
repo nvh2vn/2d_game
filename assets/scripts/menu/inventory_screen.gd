@@ -233,50 +233,8 @@ const CORE_CRESTS: Array[Dictionary] = [
 ]
 
 # --- DỮ LIỆU VẬT PHẨM MẶC ĐỊNH (DEFAULT ITEMS FALLBACK) ---
-const DEFAULT_ITEMS: Array[Dictionary] = [
-	{
-		"id": "city_key",
-		"name": "City Crest",
-		"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
-		"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
-		"category": "CHÌA KHÓA"
-	},
-	{
-		"id": "hallownest_map",
-		"name": "Bản Đồ Phế Tích",
-		"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
-		"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
-		"category": "BẢN ĐỒ"
-	},
-	{
-		"id": "pale_ore",
-		"name": "Mảnh Quặng Cổ (Pale Ore)",
-		"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
-		"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
-		"category": "NÂNG CẤP"
-	},
-	{
-		"id": "lumafly_lantern",
-		"name": "Đèn Lumafly",
-		"desc": "Chiếc đèn chứa đom đóm phát sáng soi tỏ những góc tối sâu thẳm dưới lòng đất.",
-		"icon": "res://assets/art/Inventory & UI/Lumafly_Lantern0000.png",
-		"category": "CÔNG CỤ"
-	},
-	{
-		"id": "hallownest_seal",
-		"name": "Con Dấu Cổ Vương Quốc",
-		"desc": "Cổ vật quý giá của vương triều Hallownest, có thể đổi lấy nhiều Geo tại thương gia.",
-		"icon": "res://assets/art/Inventory & UI/inv_item__0012_hallownest-seal.png",
-		"category": "CỔ VẬT"
-	},
-	{
-		"id": "simple_key",
-		"name": "Chìa Khóa Đơn Giản",
-		"desc": "Chiếc chìa khóa sắt cũ kỹ dùng để mở các ổ khóa thông thường rải rác trong phế tích.",
-		"icon": "res://assets/art/Inventory & UI/inv_item__00014_graveyard_key.png",
-		"category": "CHÌA KHÓA"
-	}
-]
+# Túi đồ rỗng mặc định khi bắt đầu game mới
+const DEFAULT_ITEMS: Array[Dictionary] = []
 
 
 func _ready() -> void:
@@ -701,6 +659,10 @@ func _normalize_item_data(raw_item) -> Dictionary:
 	if raw_item is Dictionary:
 		return raw_item
 	elif raw_item is String:
+		if SaveManager.has_method("get_item_definition"):
+			var def = SaveManager.get_item_definition(raw_item)
+			if not def.is_empty():
+				return def
 		for def_it in DEFAULT_ITEMS:
 			if def_it.get("id", "") == raw_item:
 				return def_it
@@ -724,8 +686,20 @@ func _refresh_items_grid() -> void:
 	var raw_items: Array = []
 	if SaveManager.instance:
 		raw_items = SaveManager.instance.get_inventory_items()
+
+	# Khi túi đồ trống (New Game hoặc chưa mua/nhặt gì), xóa preview và không sinh ô mẫu
 	if raw_items.is_empty():
-		raw_items = DEFAULT_ITEMS
+		if selection_brackets:
+			selection_brackets.visible = false
+		if item_preview_name:
+			item_preview_name.text = "TÚI ĐỒ TRỐNG"
+		if item_preview_category:
+			item_preview_category.text = "CHƯA CÓ VẬT PHẨM"
+		if item_preview_desc:
+			item_preview_desc.text = "Bạn chưa thu thập vật phẩm hoặc cổ vật nào. Hãy khám phá thế giới hoặc mua hàng từ các thương gia."
+		if item_preview_icon:
+			item_preview_icon.texture = null
+		return
 
 	var first_item: Dictionary = {}
 	var first_btn: Control = null
@@ -771,6 +745,19 @@ func _create_item_slot(it: Dictionary) -> Button:
 		icon.texture = load(icon_p)
 	btn.add_child(icon)
 
+	# Hiển thị số lượng chồng vật phẩm nếu > 1 (ví dụ: Trứng thối x2)
+	var count: int = int(it.get("count", 1))
+	if count > 1:
+		var badge = Label.new()
+		badge.text = "x%d" % count
+		badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		badge.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+		badge.set_anchors_preset(Control.PRESET_FULL_RECT)
+		badge.add_theme_font_size_override("font_size", 11)
+		badge.add_theme_color_override("font_color", Color(1.0, 0.95, 0.7, 1.0))
+		badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		btn.add_child(badge)
+
 	btn.pressed.connect(func():
 		_play_sfx(click_sfx)
 		active_selected_item = it.get("id", "")
@@ -781,8 +768,12 @@ func _create_item_slot(it: Dictionary) -> Button:
 
 
 func _display_item_preview(it: Dictionary) -> void:
+	var count: int = int(it.get("count", 1))
 	if item_preview_name:
-		item_preview_name.text = it.get("name", "").to_upper()
+		var name_str = it.get("name", "").to_upper()
+		if count > 1:
+			name_str += " (x%d)" % count
+		item_preview_name.text = name_str
 	if item_preview_category:
 		item_preview_category.text = "PHÂN LOẠI: %s" % it.get("category", "VẬT PHẨM").to_upper()
 	if item_preview_desc:
@@ -791,6 +782,9 @@ func _display_item_preview(it: Dictionary) -> void:
 		var icon_p = it.get("icon", "")
 		if ResourceLoader.exists(icon_p):
 			item_preview_icon.texture = load(icon_p)
+		else:
+			item_preview_icon.texture = null
+
 
 
 func _highlight_selected_control(target_ctrl: Control) -> void:

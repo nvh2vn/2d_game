@@ -29,23 +29,17 @@ var shop_items: Array[Dictionary] = [
 		"name": "Chìa Khóa Đơn (Simple Key)",
 		"price": 150,
 		"description": "Dùng để mở các ổ khóa cổ hoặc cửa sắt bí mật bị khóa trong các khu vực.",
-		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/kings_brand_prompt.png",
+		"icon": "res://assets/art/Inventory & UI/inv_item__00014_graveyard_key.png",
+		"category": "CHÌA KHÓA",
 		"one_time": true
 	},
 	{
-		"id": "forgotten_map",
-		"name": "Bản Đồ Cổ Khu Vực",
+		"id": "map_tuk",
+		"name": "Bản Đồ Cổ Khu Vực (Map)",
 		"price": 100,
-		"description": "Mở khóa góc nhìn bản đồ vị trí và các tuyến đường trong khu vực.",
-		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/Map_prompt.png",
-		"one_time": true
-	},
-	{
-		"id": "collectors_map",
-		"name": "Bản Đồ Nhà Thu Gom",
-		"price": 180,
-		"description": "Bản đồ đánh dấu các điểm rương kho báu và vật phẩm ẩn của Tuk.",
-		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/collectors_map_prompt.png",
+		"description": "Tấm bản đồ ghi chép mạng lưới địa hình và các ngóc ngách bí mật dưới cống ngầm của Tuk.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+		"category": "BẢN ĐỒ",
 		"one_time": true
 	},
 	{
@@ -53,7 +47,8 @@ var shop_items: Array[Dictionary] = [
 		"name": "Trứng Thối (Rancid Egg)",
 		"price": 80,
 		"description": "Món đồ ưa thích được Tuk thu gom dưới các cống ngầm. Có giá trị trao đổi đặc biệt.",
-		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/dreamer_mask_prompt.png",
+		"icon": "res://assets/art/Inventory & UI/inv_rancid_egg.png",
+		"category": "VẬT PHẨM",
 		"one_time": false
 	},
 	{
@@ -62,6 +57,7 @@ var shop_items: Array[Dictionary] = [
 		"price": 250,
 		"description": "Mảnh cổ vật tích tụ sức sống. Thu thập đủ 4 mảnh để gia tăng tối đa 1 HP.",
 		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/blessing_prompt.png",
+		"category": "CỔ VẬT NÂNG CẤP",
 		"one_time": true
 	}
 ]
@@ -386,24 +382,50 @@ func _on_item_buy_pressed(item: Dictionary) -> void:
 		populate_shop_items()
 
 func _grant_item_to_player(item_id: String, item_name: String) -> void:
-	if is_instance_valid(current_player):
-		if "inventory" in current_player:
-			if current_player.inventory is Array and not (item_id in current_player.inventory):
-				current_player.inventory.append(item_id)
-				
-		if item_id == "mask_shard" and "max_health" in current_player:
+	# 1. Tìm thông tin chi tiết vật phẩm từ SaveManager registry hoặc shop_items
+	var item_dict: Dictionary = {}
+	if SaveManager.has_method("get_item_definition"):
+		item_dict = SaveManager.get_item_definition(item_id)
+	if item_dict.is_empty():
+		for s_it in shop_items:
+			if s_it.get("id", "") == item_id:
+				item_dict = {
+					"id": item_id,
+					"name": s_it.get("name", item_name),
+					"desc": s_it.get("description", ""),
+					"icon": s_it.get("icon", ""),
+					"category": s_it.get("category", "VẬT PHẨM")
+				}
+				break
+
+	# 2. Thêm vào SaveManager tập trung
+	if SaveManager.instance:
+		if not item_dict.is_empty():
+			SaveManager.instance.add_inventory_item(item_dict)
+		else:
+			SaveManager.instance.add_inventory_item(item_id)
+
+	# 3. Hiệu ứng riêng của từng vật phẩm (Mảnh mặt nạ tăng 1 Max HP)
+	if item_id == "mask_shard":
+		if is_instance_valid(current_player) and "max_health" in current_player:
 			current_player.max_health += 1
 			current_player.current_health = current_player.max_health
 			if current_player.has_method("update_health_hud"):
 				current_player.update_health_hud()
+			elif current_player.has_method("update_hud"):
+				current_player.update_hud()
+		if SaveManager.instance:
+			var p_data = SaveManager.instance.save_data.get("player", {})
+			p_data["max_health"] = p_data.get("max_health", 5) + 1
+			p_data["current_health"] = p_data["max_health"]
+			SaveManager.instance.save_data["player"] = p_data
+			SaveManager.instance.save_to_disk()
 
-	# Đồng bộ item vào inventory của SaveManager
-	if SaveManager.instance:
-		var inv: Array = SaveManager.instance.save_data.get("inventory", [])
-		if not (item_id in inv):
-			inv.append(item_id)
-			SaveManager.instance.save_data["inventory"] = inv
-		SaveManager.instance.save_to_disk()
+	# 4. Đồng bộ player inventory nếu player đang tồn tại
+	if is_instance_valid(current_player) and "inventory" in current_player:
+		if SaveManager.instance:
+			current_player.inventory = SaveManager.instance.get_inventory_items().duplicate()
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE):

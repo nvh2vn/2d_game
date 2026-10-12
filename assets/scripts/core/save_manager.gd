@@ -17,6 +17,80 @@ static var last_geo_collected: int = 0
 static var last_bench_pos: Vector2 = Vector2.ZERO
 static var last_bench_scene: String = ""
 
+# --- CƠ SỞ DỮ LIỆU ĐỊNH NGHĨA VẬT PHẨM (CENTRAL ITEM REGISTRY) ---
+const ITEM_REGISTRY: Dictionary = {
+	"simple_key": {
+		"id": "simple_key",
+		"name": "Chìa Khóa Đơn (Simple Key)",
+		"desc": "Chiếc chìa khóa sắt cũ kỹ dùng để mở các ổ khóa cổ hoặc cửa sắt bí mật bị khóa trong các khu vực.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__00014_graveyard_key.png",
+		"category": "CHÌA KHÓA"
+	},
+	"map_tuk": {
+		"id": "map_tuk",
+		"name": "Bản Đồ Cổ Khu Vực (Map)",
+		"desc": "Tấm bản đồ ghi chép mạng lưới địa hình và các ngóc ngách bí mật dưới cống ngầm của Tuk.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+		"category": "BẢN ĐỒ"
+	},
+	"map_verdant": {
+		"id": "map_verdant",
+		"name": "Bản Đồ Vùng Cỏ (Verdant Map)",
+		"desc": "Tấm bản đồ chi tiết về các hang động xanh tươi và vách đá rêu phong của Moss Grotto.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+		"category": "BẢN ĐỒ"
+	},
+	"rancid_egg": {
+		"id": "rancid_egg",
+		"name": "Trứng Thối (Rancid Egg)",
+		"desc": "Món đồ ưa thích được Tuk thu gom dưới các cống ngầm. Tỏa ra mùi nồng nặc đặc trưng nhưng ẩn chứa giá trị trao đổi huyền bí.",
+		"icon": "res://assets/art/Inventory & UI/inv_rancid_egg.png",
+		"category": "VẬT PHẨM"
+	},
+	"mask_shard": {
+		"id": "mask_shard",
+		"name": "Mảnh Mặt Nạ (Mask Shard)",
+		"desc": "Mảnh vỡ cổ vật tích tụ sinh mệnh. Thu thập đủ 4 mảnh để gia tăng tối đa 1 MASK sinh lực.",
+		"icon": "res://assets/art/Inventory & UI/Spell & Item prompts/blessing_prompt.png",
+		"category": "CỔ VẬT NÂNG CẤP"
+	},
+	"city_key": {
+		"id": "city_key",
+		"name": "City Crest",
+		"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
+		"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+		"category": "CHÌA KHÓA"
+	},
+	"hallownest_map": {
+		"id": "hallownest_map",
+		"name": "Bản Đồ Phế Tích",
+		"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
+		"category": "BẢN ĐỒ"
+	},
+	"pale_ore": {
+		"id": "pale_ore",
+		"name": "Mảnh Quặng Cổ (Pale Ore)",
+		"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
+		"category": "NÂNG CẤP"
+	},
+	"lumafly_lantern": {
+		"id": "lumafly_lantern",
+		"name": "Đèn Lumafly",
+		"desc": "Chiếc đèn chứa đom đóm phát sáng soi tỏ những góc tối sâu thẳm dưới lòng đất.",
+		"icon": "res://assets/art/Inventory & UI/Lumafly_Lantern0000.png",
+		"category": "CÔNG CỤ"
+	},
+	"hallownest_seal": {
+		"id": "hallownest_seal",
+		"name": "Con Dấu Cổ Vương Quốc",
+		"desc": "Cổ vật quý giá của vương triều Hallownest, có thể đổi lấy nhiều Geo tại thương gia.",
+		"icon": "res://assets/art/Inventory & UI/inv_item__0012_hallownest-seal.png",
+		"category": "CỔ VẬT"
+	}
+}
+
 # --- CẤU TRÚC DỮ LIỆU LƯU (SAVE DATA DICTIONARY) ---
 var save_data: Dictionary = {
 	"version": 1,
@@ -34,29 +108,8 @@ var save_data: Dictionary = {
 			"float": false
 		}
 	},
-	"inventory": [
-		{
-			"id": "city_key",
-			"name": "City Crest",
-			"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
-			"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
-			"category": "key"
-		},
-		{
-			"id": "hallownest_map",
-			"name": "Bản Đồ Phế Tích",
-			"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
-			"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
-			"category": "map"
-		},
-		{
-			"id": "pale_ore",
-			"name": "Mảnh Quặng Cổ (Pale Ore)",
-			"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
-			"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
-			"category": "upgrade"
-		}
-	],
+	"inventory": [],
+
 	"quests": {
 		"ancient_whispers": {
 			"id": "ancient_whispers",
@@ -261,29 +314,7 @@ func _reset_to_default() -> void:
 				"float": false
 			}
 		},
-		"inventory": [
-			{
-				"id": "city_key",
-				"name": "City Crest",
-				"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
-				"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
-				"category": "key"
-			},
-			{
-				"id": "hallownest_map",
-				"name": "Bản Đồ Phế Tích",
-				"desc": "Tấm giấy da ghi chép mạng lưới địa hình và các ngóc ngách đã từng đi qua.",
-				"icon": "res://assets/art/Inventory & UI/inv_item__0006_area_map.png",
-				"category": "map"
-			},
-			{
-				"id": "pale_ore",
-				"name": "Mảnh Quặng Cổ (Pale Ore)",
-				"desc": "Kim loại cổ màu nhợt nhạt hiếm có, tỏa ra hơi lạnh. Dùng để tôi luyện và nâng cấp vũ khí.",
-				"icon": "res://assets/art/Inventory & UI/inv_item__0009_ore.png",
-				"category": "upgrade"
-			}
-		],
+		"inventory": [],
 		"quests": {
 			"ancient_whispers": {
 				"id": "ancient_whispers",
@@ -388,7 +419,23 @@ func update_current_player_stats(player_node: Node = null) -> bool:
 	
 	# 5. Inventory (Túi đồ nếu có)
 	if "inventory" in player and player.inventory is Array:
-		save_data["inventory"] = player.inventory.duplicate()
+		var normalized_inv: Array = []
+		for it in player.inventory:
+			if it is Dictionary:
+				normalized_inv.append(it.duplicate())
+			elif it is String:
+				var def = get_item_definition(it)
+				if not def.is_empty():
+					normalized_inv.append(def)
+				else:
+					normalized_inv.append({
+						"id": it,
+						"name": it.capitalize(),
+						"desc": "Vật phẩm thu thập trong hành trình.",
+						"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+						"category": "VẬT PHẨM"
+					})
+		save_data["inventory"] = normalized_inv
 		
 	save_data["player"] = p_data
 	return true
@@ -645,20 +692,68 @@ func get_enemy_kills(enemy_id: String) -> int:
 
 # --- QUẢN LÝ VẬT PHẨM TÚI ĐỒ (INVENTORY ITEMS API) ---
 
+static func get_item_definition(item_id: String) -> Dictionary:
+	if ITEM_REGISTRY.has(item_id):
+		return ITEM_REGISTRY[item_id].duplicate()
+	return {}
+
 func get_inventory_items() -> Array:
 	return save_data.get("inventory", [])
 
-func add_inventory_item(item_data: Dictionary) -> void:
+func add_inventory_item(item_input) -> void:
 	if not save_data.has("inventory") or not (save_data["inventory"] is Array):
 		save_data["inventory"] = []
-	save_data["inventory"].append(item_data)
+
+	var item_dict: Dictionary = {}
+	if item_input is Dictionary:
+		item_dict = item_input.duplicate()
+	elif item_input is String:
+		item_dict = get_item_definition(item_input)
+		if item_dict.is_empty():
+			item_dict = {
+				"id": item_input,
+				"name": item_input.capitalize(),
+				"desc": "Vật phẩm thu thập trong hành trình.",
+				"icon": "res://assets/art/Inventory & UI/inv_item_city_key.png",
+				"category": "VẬT PHẨM"
+			}
+
+	var item_id = item_dict.get("id", "")
+	if item_id == "":
+		return
+
+	var existing_idx: int = -1
+	for i in range(save_data["inventory"].size()):
+		var it = save_data["inventory"][i]
+		if (it is Dictionary and it.get("id", "") == item_id) or (it is String and it == item_id):
+			existing_idx = i
+			break
+
+	if existing_idx >= 0:
+		var it = save_data["inventory"][existing_idx]
+		if it is Dictionary:
+			if item_id == "rancid_egg" or it.has("count"):
+				it["count"] = it.get("count", 1) + 1
+		elif it is String:
+			save_data["inventory"][existing_idx] = item_dict
+	else:
+		save_data["inventory"].append(item_dict)
+
 	save_to_disk()
+
+	# Đồng bộ với Player nếu đang hoạt động trong scene
+	var p = _get_active_player()
+	if p and "inventory" in p and p.inventory is Array:
+		p.inventory = save_data["inventory"].duplicate()
 
 func has_inventory_item(item_id: String) -> bool:
 	for it in get_inventory_items():
 		if it is Dictionary and it.get("id", "") == item_id:
 			return true
+		elif it is String and it == item_id:
+			return true
 	return false
+
 
 
 # --- HELPER FUNCTIONS NỘI BỘ ---
