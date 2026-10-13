@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dubqsf2gq4b6w"]
+
+[ext_resource type="Script" uid="uid://ceiyrcfx12j54" path="res://scripts/environment/bench.gd" id="1_bench_script"]
+[ext_resource type="Texture2D" uid="uid://citt7tlx8asg7" path="res://assets/env/new_assets/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Architecture & Environment/Area specfic architecture/Colosseum/col_0003_bench.png" id="2_idsb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bench"]
+size = Vector2(94, 39)
+
+[node name="BenchCheckpoint" type="Area2D" unique_id=448962856]
+collision_layer = 4
+collision_mask = 255
+script = ExtResource("1_bench_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1401268001]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_idsb3")
+
+[node name="SitPosition" type="Marker2D" parent="." unique_id=400896877]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1344432659]
+position = Vector2(2, 14.5)
+shape = SubResource("RectangleShape2D_bench")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1622058653]
+bus = &"SFX"

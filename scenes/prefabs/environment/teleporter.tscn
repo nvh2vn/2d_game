@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://teleporter_prefab_01"]
+
+[ext_resource type="Script" path="res://scripts/environment/teleporter.gd" id="1_teleporter_script"]
+[ext_resource type="Texture2D" uid="uid://bfvvfpqbcw4q4" path="res://assets/env/props/MossHole/cage.png" id="2_door_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teleport"]
+size = Vector2(40, 70)
+
+[node name="Teleporter" type="Area2D"]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_teleporter_script")
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_door_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_teleport")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di3qvu28m46uw"
+path="res://.godot/imported/Grave_Zombie_death_01.wav-aabec3bdb3d98fa80b567103a1cc6b33.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Entombed Husk/Grave_Zombie_death_01.wav"
+dest_files=["res://.godot/imported/Grave_Zombie_death_01.wav-aabec3bdb3d98fa80b567103a1cc6b33.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0uvdvw070385"
+path="res://.godot/imported/royal_pointy_prepare.wav-5871846e82b2e9a1b88f8031e3ea1d48.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Cowardly Husk and Husk Dandy/royal_pointy_prepare.wav"
+dest_files=["res://.godot/imported/royal_pointy_prepare.wav-5871846e82b2e9a1b88f8031e3ea1d48.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdmv2q7vu4cq2"
+path="res://.godot/imported/Ruins_Great_Shield_Sentry_attack_01.wav-58757aa285af00aff98710155a78c564.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Great Husk Sentry/Ruins_Great_Shield_Sentry_attack_01.wav"
+dest_files=["res://.godot/imported/Ruins_Great_Shield_Sentry_attack_01.wav-58757aa285af00aff98710155a78c564.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

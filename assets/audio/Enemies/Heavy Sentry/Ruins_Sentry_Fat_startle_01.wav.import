@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cm4n22r42p3sb"
+path="res://.godot/imported/Ruins_Sentry_Fat_startle_01.wav-d6e6f14c5b4d0f7f6a60295cd93666bf.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Heavy Sentry/Ruins_Sentry_Fat_startle_01.wav"
+dest_files=["res://.godot/imported/Ruins_Sentry_Fat_startle_01.wav-d6e6f14c5b4d0f7f6a60295cd93666bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

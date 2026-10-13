@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dart_projectile_001"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/dart.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dart/0.png" id="dart_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dart/1.png" id="dart_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dart/2.png" id="dart_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dart/3.png" id="dart_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dart/4.png" id="dart_4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dart"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("dart_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dart_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dart_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dart_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dart_4")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dart"]
+size = Vector2(24, 10)
+
+[node name="Dart" type="Area2D" groups=["player_attacks"]]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_dart")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dart")

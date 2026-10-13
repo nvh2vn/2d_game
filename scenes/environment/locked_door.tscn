@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://c2ovpdlgbmbhl"]
+
+[ext_resource type="Script" uid="uid://dtpyjx18wpgd1" path="res://scripts/environment/locked_door.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://833i8ian5048" path="res://assets/sprites/door/door_open0026.png" id="2_frame26"]
+[ext_resource type="Texture2D" uid="uid://o362qjeg5x0t" path="res://assets/sprites/door/door_open0027.png" id="3_frame27"]
+[ext_resource type="Texture2D" uid="uid://catvhm3geobg7" path="res://assets/sprites/door/door_open0028.png" id="4_frame28"]
+[ext_resource type="Texture2D" uid="uid://brenmn0nm6nsm" path="res://assets/sprites/door/door_open0029.png" id="5_frame29"]
+[ext_resource type="Texture2D" uid="uid://cos85dptn1ln" path="res://assets/sprites/door/door_open0030.png" id="6_frame30"]
+[ext_resource type="Texture2D" uid="uid://dinqetmc87wke" path="res://assets/sprites/door/door_open0031.png" id="7_frame31"]
+[ext_resource type="Texture2D" uid="uid://crjtkuch6q50g" path="res://assets/sprites/door/door_open0032.png" id="8_frame32"]
+[ext_resource type="Texture2D" uid="uid://dyh85i4nb5ane" path="res://assets/ui/prompts/test_clean.png" id="9_prompt_icon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
+size = Vector2(40, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boss_teleport"]
+size = Vector2(36, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_door"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame26")
+}],
+"loop": false,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frame28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frame29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_frame30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frame31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_frame32")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_frame32")
+}],
+"loop": false,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(140, 160)
+
+[node name="LockedDoor" type="StaticBody2D" groups=["doors"]]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_solid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_door")
+animation = &"locked"
+autoplay = "locked"
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="BossTeleportTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 255
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossTeleportTrigger"]
+shape = SubResource("RectangleShape2D_boss_teleport")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="InteractPrompt" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -95)
+
+[node name="IconSprite" type="Sprite2D" parent="InteractPrompt"]
+position = Vector2(0, -26)
+scale = Vector2(0.022, 0.022)
+texture = ExtResource("9_prompt_icon")
+
+[node name="Label" type="Label" parent="InteractPrompt"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -14.0
+offset_right = 110.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "[E] Mở Cửa (Cần Chìa Khóa)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Cần chìa khóa từ thương nhân Tuk để mở!"
+horizontal_alignment = 1
+vertical_alignment = 1

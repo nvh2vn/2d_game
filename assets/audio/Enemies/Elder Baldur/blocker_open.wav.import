@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s8hq8h5hi25l"
+path="res://.godot/imported/blocker_open.wav-43ae258d3fa6cfc2abf4ca7ae1179852.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Elder Baldur/blocker_open.wav"
+dest_files=["res://.godot/imported/blocker_open.wav-43ae258d3fa6cfc2abf4ca7ae1179852.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

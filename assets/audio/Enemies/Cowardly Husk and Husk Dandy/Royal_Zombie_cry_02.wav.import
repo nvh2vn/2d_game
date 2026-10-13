@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddfwx35kn0f2k"
+path="res://.godot/imported/Royal_Zombie_cry_02.wav-abcba4dfd62fe34cae6b49564958c1a1.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Cowardly Husk and Husk Dandy/Royal_Zombie_cry_02.wav"
+dest_files=["res://.godot/imported/Royal_Zombie_cry_02.wav-abcba4dfd62fe34cae6b49564958c1a1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

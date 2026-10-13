@@ -1,0 +1,462 @@
+[gd_scene format=3 uid="uid://bj5wi82g2t5jb"]
+
+[ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://scripts/levels/pixel_level.gd" id="1_level_script"]
+[ext_resource type="Texture2D" uid="uid://dqm2a14msdgfo" path="res://assets/env/new_assets/Sprites/Architecture & Environment/Area specfic architecture/Abyss/pier_0000_3.png" id="2_hvkbq"]
+[ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://scenes/prefabs/player/player_controller(pixel).tscn" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://ur7tnos6a7po" path="res://assets/env/abyss/_0175_Layer-427.png" id="3_hm7tx"]
+[ext_resource type="Texture2D" uid="uid://ddpxq3i6meo6s" path="res://assets/env/abyss/_0176_Layer-428.png" id="4_vtua7"]
+[ext_resource type="Texture2D" uid="uid://dc3sn0qgl0xup" path="res://assets/env/abyss/_0174_Layer-426.png" id="5_1kukw"]
+[ext_resource type="Texture2D" uid="uid://c84oxcyqlne30" path="res://assets/env/abyss/_0179_Layer-431.png" id="6_vso6x"]
+[ext_resource type="Texture2D" uid="uid://cy8g24j4g0e4b" path="res://assets/env/abyss/_0180_Layer-432.png" id="7_n7igs"]
+[ext_resource type="Texture2D" uid="uid://qsxu4s3pwl2w" path="res://assets/env/abyss/_0181_Layer-433.png" id="8_ikbej"]
+[ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://scenes/npc/tuk_npc.tscn" id="9_7hcen"]
+[ext_resource type="Texture2D" uid="uid://dc5hybktv3q68" path="res://assets/env/abyss/_0183_Layer-435.png" id="9_ypve7"]
+[ext_resource type="Texture2D" uid="uid://hjgch6xxc2pp" path="res://assets/env/abyss/_0178_Layer-430.png" id="10_8is5f"]
+[ext_resource type="Texture2D" uid="uid://nsvnnswevwl" path="res://assets/ui/prompts/Gemini_Generated_Image_5ttk8s5ttk8s5ttk.png" id="11_i1b5r"]
+[ext_resource type="Texture2D" uid="uid://cuj1675v1dmqo" path="res://assets/env/abyss/_0009_abyss_02.png" id="13_45j2g"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/items/treasure_chest.tscn" id="14_jy8p8"]
+[ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/env/abyss/_0173_Layer-425.png" id="15_j56mx"]
+[ext_resource type="PackedScene" uid="uid://dubqsf2gq4b6w" path="res://scenes/environment/bench.tscn" id="15_pd5qr"]
+[ext_resource type="Texture2D" uid="uid://cfxu628ettmrp" path="res://assets/env/abyss/black_fader.png" id="19_45j2g"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/furious_vengefly.tscn" id="21_n7igs"]
+[ext_resource type="PackedScene" uid="uid://8vjrswm7abm3" path="res://scenes/hazards/spikes_hazard.tscn" id="24_ikbej"]
+[ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/env/abyss/_0033_abyss_02.png" id="27_if6r6"]
+[ext_resource type="Texture2D" uid="uid://dospuhx3itdbg" path="res://assets/env/abyss/Code_Generated_Image.png" id="28_n4dsj"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/environment/teleporter.tscn" id="29_j56mx"]
+[ext_resource type="PackedScene" uid="uid://c2ovpdlgbmbhl" path="res://scenes/environment/locked_door.tscn" id="31_eeb04"]
+[ext_resource type="Texture2D" uid="uid://dy3th1waywris" path="res://assets/env/abyss/Lighthouse_Room_Interior_0004_Layer-5.png" id="31_yt1e1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20iwf"]
+size = Vector2(903.33435, 58.333252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkvh"]
+size = Vector2(58, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td685"]
+size = Vector2(60, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwb76"]
+size = Vector2(238, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvq4s"]
+size = Vector2(92.20001, 252.40002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp2hk"]
+size = Vector2(237, 42)
+
+[node name="Level2" type="Node2D" unique_id=1855694474]
+script = ExtResource("1_level_script")
+
+[node name="CameraLimits" type="Node2D" parent="." unique_id=144386589]
+
+[node name="TopLeft" type="Marker2D" parent="CameraLimits" unique_id=1788123204]
+position = Vector2(871, -907)
+gizmo_extents = 40.0
+
+[node name="BottomRight" type="Marker2D" parent="CameraLimits" unique_id=1959667819]
+position = Vector2(4080, 416)
+gizmo_extents = 40.0
+
+[node name="Environment" type="Node2D" parent="." unique_id=812308939]
+
+[node name="LighthouseRoomInterior0004Layer5" type="Sprite2D" parent="Environment" unique_id=369988651]
+position = Vector2(3784, -653)
+texture = ExtResource("31_yt1e1")
+
+[node name="CodeGeneratedImage" type="Sprite2D" parent="Environment" unique_id=2128870908]
+position = Vector2(3556.0002, -178.00003)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("28_n4dsj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/CodeGeneratedImage" unique_id=184614059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/CodeGeneratedImage/StaticBody2D" unique_id=1730215321]
+position = Vector2(3.3330078, -299.16663)
+shape = SubResource("RectangleShape2D_20iwf")
+
+[node name="Pier00003" type="Sprite2D" parent="Environment" unique_id=29484134]
+z_index = -1
+position = Vector2(1595, 265)
+texture = ExtResource("2_hvkbq")
+
+[node name="Pier00004" type="Sprite2D" parent="Environment" unique_id=1744174516]
+z_index = -1
+position = Vector2(2091, 254)
+texture = ExtResource("2_hvkbq")
+
+[node name="Pier00005" type="Sprite2D" parent="Environment" unique_id=1107813192]
+z_index = -1
+position = Vector2(2593, 255)
+texture = ExtResource("2_hvkbq")
+
+[node name="0175Layer427" type="Sprite2D" parent="Environment" unique_id=2122751380]
+position = Vector2(1932, -59)
+texture = ExtResource("3_hm7tx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0175Layer427" unique_id=1316418856]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0175Layer427/StaticBody2D" unique_id=1869805905]
+visible = false
+position = Vector2(19, 7)
+shape = SubResource("RectangleShape2D_8xkvh")
+
+[node name="0176Layer428" type="Sprite2D" parent="Environment" unique_id=1810510048]
+position = Vector2(1947, 22)
+texture = ExtResource("4_vtua7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0176Layer428" unique_id=1704633712]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0176Layer428/StaticBody2D" unique_id=2109052851]
+visible = false
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_td685")
+
+[node name="0174Layer426" type="Sprite2D" parent="Environment" unique_id=1219821895]
+position = Vector2(1802, -62)
+texture = ExtResource("5_1kukw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0174Layer426" unique_id=1912085152]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0174Layer426/StaticBody2D" unique_id=108730727]
+visible = false
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_nwb76")
+
+[node name="0174Layer427" type="Sprite2D" parent="Environment" unique_id=1080579761]
+position = Vector2(1588, -62)
+texture = ExtResource("5_1kukw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0174Layer427" unique_id=479575709]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0174Layer427/StaticBody2D" unique_id=1304059560]
+visible = false
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_nwb76")
+
+[node name="0174Layer428" type="Sprite2D" parent="Environment" unique_id=1014264593]
+position = Vector2(1376, -60)
+texture = ExtResource("5_1kukw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0174Layer428" unique_id=1539255274]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0174Layer428/StaticBody2D" unique_id=1830224235]
+visible = false
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_nwb76")
+
+[node name="0179Layer431" type="Sprite2D" parent="Environment" unique_id=1755223600]
+position = Vector2(1860, 49)
+texture = ExtResource("6_vso6x")
+
+[node name="0180Layer432" type="Sprite2D" parent="Environment" unique_id=1633569695]
+position = Vector2(1729, 82)
+texture = ExtResource("7_n7igs")
+
+[node name="0181Layer433" type="Sprite2D" parent="Environment" unique_id=1413659947]
+position = Vector2(1780, 55)
+texture = ExtResource("8_ikbej")
+
+[node name="0183Layer435" type="Sprite2D" parent="Environment" unique_id=633032929]
+position = Vector2(1624, 84)
+texture = ExtResource("9_ypve7")
+
+[node name="0178Layer430" type="Sprite2D" parent="Environment" unique_id=1158245016]
+position = Vector2(1489, 90)
+texture = ExtResource("10_8is5f")
+
+[node name="GeminiGeneratedImage5Ttk8s5Ttk8s5Ttk" type="Sprite2D" parent="Environment" unique_id=1553525925]
+z_index = -1
+position = Vector2(2447, -121)
+texture = ExtResource("11_i1b5r")
+
+[node name="0183Layer436" type="Sprite2D" parent="Environment" unique_id=1120727032]
+position = Vector2(1628, 133)
+texture = ExtResource("9_ypve7")
+
+[node name="0183Layer437" type="Sprite2D" parent="Environment" unique_id=255757567]
+position = Vector2(1351, 158)
+rotation = 0.44331366
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_ypve7")
+
+[node name="BlackFader" type="Sprite2D" parent="Environment" unique_id=540628283]
+position = Vector2(1331, 72)
+scale = Vector2(3, 3)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader2" type="Sprite2D" parent="Environment" unique_id=633479331]
+position = Vector2(1449, 37)
+scale = Vector2(3, 3)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader3" type="Sprite2D" parent="Environment" unique_id=316368011]
+position = Vector2(1552, 37)
+scale = Vector2(3, 3)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader4" type="Sprite2D" parent="Environment" unique_id=1061545533]
+position = Vector2(1661, 37)
+scale = Vector2(3, 3)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader5" type="Sprite2D" parent="Environment" unique_id=856440209]
+position = Vector2(1787, 25)
+scale = Vector2(3, 3)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader6" type="Sprite2D" parent="Environment" unique_id=2020031205]
+position = Vector2(1864, -25)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader7" type="Sprite2D" parent="Environment" unique_id=121683740]
+position = Vector2(1906, -27)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader8" type="Sprite2D" parent="Environment" unique_id=1354886305]
+position = Vector2(1298, -8)
+texture = ExtResource("19_45j2g")
+
+[node name="BlackFader9" type="Sprite2D" parent="Environment" unique_id=1671165069]
+position = Vector2(1362, -23)
+texture = ExtResource("19_45j2g")
+
+[node name="0009Abyss02" type="Sprite2D" parent="Environment" unique_id=1175121402]
+position = Vector2(4050.9998, 8.999939)
+scale = Vector2(5, 5)
+texture = ExtResource("13_45j2g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0009Abyss02" unique_id=1936430543]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0009Abyss02/StaticBody2D" unique_id=1868969512]
+position = Vector2(1.6999512, -0.5999985)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_rvq4s")
+
+[node name="0009Abyss03" type="Sprite2D" parent="Environment" unique_id=80434773]
+position = Vector2(4066.9998, -1265.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("13_45j2g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0009Abyss03" unique_id=1927066815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0009Abyss03/StaticBody2D" unique_id=1474889952]
+position = Vector2(1.6999512, -0.5999985)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_rvq4s")
+
+[node name="0009Abyss04" type="Sprite2D" parent="Environment" unique_id=1233440230]
+position = Vector2(838.00006, 7.9999847)
+scale = Vector2(5, 5)
+texture = ExtResource("13_45j2g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0009Abyss04" unique_id=343246937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0009Abyss04/StaticBody2D" unique_id=1017435258]
+position = Vector2(1.6999512, -0.5999985)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_rvq4s")
+
+[node name="0009Abyss05" type="Sprite2D" parent="Environment" unique_id=968884893]
+position = Vector2(849, -1260)
+scale = Vector2(5, 5)
+texture = ExtResource("13_45j2g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0009Abyss05" unique_id=1000289351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0009Abyss05/StaticBody2D" unique_id=1509400013]
+position = Vector2(1.6999512, -0.5999985)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_rvq4s")
+
+[node name="0173Layer425" type="Sprite2D" parent="Environment" unique_id=1105260540]
+position = Vector2(1200, 387)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer425" unique_id=604934527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer425/StaticBody2D" unique_id=1662448680]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer426" type="Sprite2D" parent="Environment" unique_id=1492867360]
+position = Vector2(1406, 389)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer426" unique_id=1811092231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer426/StaticBody2D" unique_id=1611521251]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer427" type="Sprite2D" parent="Environment" unique_id=1706666831]
+position = Vector2(1612, 389)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer427" unique_id=620368402]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer427/StaticBody2D" unique_id=134554247]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer428" type="Sprite2D" parent="Environment" unique_id=2018004055]
+position = Vector2(1815, 387)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer428" unique_id=935633327]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer428/StaticBody2D" unique_id=771357466]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer429" type="Sprite2D" parent="Environment" unique_id=651663178]
+position = Vector2(2023, 389)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer429" unique_id=770477791]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer429/StaticBody2D" unique_id=471275716]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer430" type="Sprite2D" parent="Environment" unique_id=847288434]
+position = Vector2(2229, 389)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer430" unique_id=1168085140]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer430/StaticBody2D" unique_id=357927212]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer431" type="Sprite2D" parent="Environment" unique_id=1622387871]
+position = Vector2(2433, 387)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer431" unique_id=923967160]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer431/StaticBody2D" unique_id=1779289224]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer432" type="Sprite2D" parent="Environment" unique_id=367077895]
+position = Vector2(2637, 387)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer432" unique_id=932932014]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer432/StaticBody2D" unique_id=1948105990]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer433" type="Sprite2D" parent="Environment" unique_id=1130092215]
+position = Vector2(2845, 386)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer433" unique_id=658783275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer433/StaticBody2D" unique_id=914594212]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer434" type="Sprite2D" parent="Environment" unique_id=1277214670]
+position = Vector2(3053, 387)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer434" unique_id=532067461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer434/StaticBody2D" unique_id=1016579169]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer435" type="Sprite2D" parent="Environment" unique_id=873169849]
+position = Vector2(3258, 388)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer435" unique_id=257298273]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer435/StaticBody2D" unique_id=296157028]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer436" type="Sprite2D" parent="Environment" unique_id=629916076]
+position = Vector2(3462, 392)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer436" unique_id=559537175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer436/StaticBody2D" unique_id=1312922499]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer437" type="Sprite2D" parent="Environment" unique_id=776149192]
+position = Vector2(3666, 394)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer437" unique_id=1790894083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer437/StaticBody2D" unique_id=354955887]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0173Layer438" type="Sprite2D" parent="Environment" unique_id=2080087795]
+position = Vector2(3867, 397)
+texture = ExtResource("15_j56mx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/0173Layer438" unique_id=341378277]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/0173Layer438/StaticBody2D" unique_id=862464728]
+visible = false
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vp2hk")
+
+[node name="0033Abyss02" type="Sprite2D" parent="Environment" unique_id=1766309179]
+position = Vector2(3563, 215)
+texture = ExtResource("27_if6r6")
+
+[node name="PlayerController" parent="." unique_id=530549205 instance=ExtResource("2_player")]
+position = Vector2(1521.0001, 246)
+
+[node name="TukNPC" parent="." unique_id=831566038 instance=ExtResource("9_7hcen")]
+position = Vector2(1360, 299)
+
+[node name="FuriousVengefly" parent="." unique_id=1584441606 instance=ExtResource("21_n7igs")]
+position = Vector2(1495, -301)
+
+[node name="BenchCheckpoint" parent="." unique_id=448962856 instance=ExtResource("15_pd5qr")]
+position = Vector2(1720, 333)
+
+[node name="TreasureChest" parent="." unique_id=352965780 instance=ExtResource("14_jy8p8")]
+position = Vector2(1339, -101)
+
+[node name="SpikesHazard" parent="." unique_id=1992497380 instance=ExtResource("24_ikbej")]
+position = Vector2(3222, 318)
+
+[node name="SpikesHazard2" parent="." unique_id=526307623 instance=ExtResource("24_ikbej")]
+position = Vector2(3145, 317)
+
+[node name="TreasureChest2" parent="." unique_id=2032511005 instance=ExtResource("14_jy8p8")]
+position = Vector2(3440, 342)
+
+[node name="Teleporter" parent="." unique_id=874396730 instance=ExtResource("29_j56mx")]
+position = Vector2(1114, 127)
+
+[node name="DoorSprite" parent="Teleporter" index="0"]
+texture = ExtResource("19_45j2g")
+
+[node name="LockedDoor" parent="." unique_id=1762223187 instance=ExtResource("31_eeb04")]
+position = Vector2(2659, 279)
+
+[editable path="Teleporter"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tr1uq07d3yft"
+path="res://.godot/imported/zombie_laser_miner_run.wav-0a67fc921bfc8ed7564f454a7922dbbe.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Crystallised Husk/zombie_laser_miner_run.wav"
+dest_files=["res://.godot/imported/zombie_laser_miner_run.wav-0a67fc921bfc8ed7564f454a7922dbbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

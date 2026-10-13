@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://db1h2x5yp2q4u"]
+
+[ext_resource type="Script" path="res://scripts/levels/map_boss.gd" id="1_boss_script"]
+[ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/env/abyss/_0033_abyss_02.png" id="1_fm2qu"]
+[ext_resource type="Texture2D" uid="uid://bowev6yvj8xp4" path="res://assets/env/abyss/Gemini_Generated_Image_84ph5d84ph5d84ph.png" id="1_iobw0"]
+[ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/env/abyss/_0173_Layer-425.png" id="2_mspvc"]
+[ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://scenes/prefabs/player/player_controller(pixel).tscn" id="3_0ot1f"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/environment/room_area.tscn" id="4_mspvc"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/soul_master.tscn" id="5_0ot1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh3le"]
+size = Vector2(1353, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ot1f"]
+resource_local_to_scene = true
+size = Vector2(1375, 753)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(60, 320)
+
+[node name="Node2D" type="Node2D" unique_id=70923853]
+script = ExtResource("1_boss_script")
+
+[node name="CameraLimit" type="Node2D" parent="." unique_id=1373396636]
+
+[node name="TopLeft" type="Marker2D" parent="CameraLimit" unique_id=733929686]
+position = Vector2(-42, -31)
+gizmo_extents = 40.0
+
+[node name="BottomRight" type="Marker2D" parent="CameraLimit" unique_id=1573461654]
+position = Vector2(1326, 730)
+gizmo_extents = 40.0
+
+[node name="Enviroment" type="Node2D" parent="." unique_id=2106845380]
+
+[node name="0033Abyss02" type="Sprite2D" parent="Enviroment" unique_id=429263008]
+position = Vector2(1201, 626)
+texture = ExtResource("1_fm2qu")
+
+[node name="GeminiGeneratedImage84Ph5d84Ph5d84Ph" type="Sprite2D" parent="Enviroment" unique_id=1098861069]
+position = Vector2(640, 351)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iobw0")
+
+[node name="0173Layer425" type="Sprite2D" parent="Enviroment" unique_id=1752060871]
+z_index = -1
+position = Vector2(580, 642)
+texture = ExtResource("2_mspvc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Enviroment/0173Layer425" unique_id=1360744646]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/0173Layer425/StaticBody2D" unique_id=703889217]
+position = Vector2(40.5, -16)
+shape = SubResource("RectangleShape2D_sh3le")
+
+[node name="Boss" type="Node2D" parent="." unique_id=1660629658]
+
+[node name="RoomArea" parent="." unique_id=1608876148 instance=ExtResource("4_mspvc")]
+visible = false
+position = Vector2(560, 409)
+room_size = Vector2(1375, 753)
+
+[node name="CollisionShape2D" parent="RoomArea" index="0"]
+position = Vector2(82.5, -65.5)
+shape = SubResource("RectangleShape2D_0ot1f")
+
+[node name="PlayerController" parent="." unique_id=373544482 instance=ExtResource("3_0ot1f")]
+position = Vector2(235, 532)
+
+[node name="BossTriggerArea" type="Area2D" parent="." unique_id=184920184]
+position = Vector2(480, 530)
+collision_layer = 0
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossTriggerArea" unique_id=184920185]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="SoulMaster" parent="." unique_id=1434003224 instance=ExtResource("5_0ot1f")]
+position = Vector2(894, 583)
+wait_for_trigger = true
+
+[editable path="RoomArea"]

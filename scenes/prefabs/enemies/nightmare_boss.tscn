@@ -1,0 +1,439 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/nightmare_boss.gd" id="1_boss_script"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/0.png" id="b_bow_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/1.png" id="b_bow_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/2.png" id="b_bow_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/3.png" id="b_bow_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/4.png" id="b_bow_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/5.png" id="b_bow_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Bow/6.png" id="b_bow_6"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/0.png" id="b_idle_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/1.png" id="b_idle_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/2.png" id="b_idle_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/3.png" id="b_idle_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/4.png" id="b_idle_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/5.png" id="b_idle_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/6.png" id="b_idle_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/7.png" id="b_idle_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/8.png" id="b_idle_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/9.png" id="b_idle_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/10.png" id="b_idle_10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Idle/11.png" id="b_idle_11"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/0.png" id="b_tp_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/1.png" id="b_tp_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/2.png" id="b_tp_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/3.png" id="b_tp_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/4.png" id="b_tp_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/5.png" id="b_tp_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Teleport/6.png" id="b_tp_6"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartDash/0.png" id="b_sd_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartDash/1.png" id="b_sd_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartDash/2.png" id="b_sd_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartDash/3.png" id="b_sd_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Dash/0.png" id="b_dash_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Dash/1.png" id="b_dash_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Dash/2.png" id="b_dash_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Dash/3.png" id="b_dash_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartUpperCut/0.png" id="b_suc_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartUpperCut/1.png" id="b_suc_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartUpperCut/2.png" id="b_suc_2"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/UpperCut/0.png" id="b_uc_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/UpperCut/1.png" id="b_uc_1"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/0.png" id="b_sad_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/1.png" id="b_sad_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/2.png" id="b_sad_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/3.png" id="b_sad_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/4.png" id="b_sad_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartAirDash/5.png" id="b_sad_5"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/AirDash/0.png" id="b_ad_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/AirDash/1.png" id="b_ad_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/AirDash/2.png" id="b_ad_2"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/0.png" id="b_cast_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/1.png" id="b_cast_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/2.png" id="b_cast_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/3.png" id="b_cast_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/4.png" id="b_cast_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/5.png" id="b_cast_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/6.png" id="b_cast_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Cast/7.png" id="b_cast_7"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Spike/0.png" id="b_spk_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Spike/1.png" id="b_spk_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Spike/2.png" id="b_spk_2"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartBalloon/0.png" id="b_sbal_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/StartBalloon/1.png" id="b_sbal_1"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Balloon/0.png" id="b_bal_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Balloon/1.png" id="b_bal_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Balloon/2.png" id="b_bal_2"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Scream/0.png" id="b_scr_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Scream/1.png" id="b_scr_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Scream/2.png" id="b_scr_2"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Die/0.png" id="b_die_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Die/1.png" id="b_die_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/NightMare/Die/2.png" id="b_die_2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nightmare"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_ad_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_ad_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_ad_2")
+}],
+"loop": true,
+"name": &"air_dash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_bal_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bal_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bal_2")
+}],
+"loop": true,
+"name": &"balloon",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_bow_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_bow_6")
+}],
+"loop": false,
+"name": &"bow",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_cast_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_cast_7")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_dash_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_dash_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_dash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_dash_3")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_die_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_die_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_die_2")
+}],
+"loop": false,
+"name": &"die",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_idle_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_idle_11")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_scr_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_scr_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_scr_2")
+}],
+"loop": false,
+"name": &"scream",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_spk_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_spk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_spk_2")
+}],
+"loop": false,
+"name": &"spike",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_sad_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sad_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sad_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sad_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sad_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sad_5")
+}],
+"loop": false,
+"name": &"start_air_dash",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_sbal_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sbal_1")
+}],
+"loop": false,
+"name": &"start_balloon",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_sd_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sd_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sd_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_sd_3")
+}],
+"loop": false,
+"name": &"start_dash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_suc_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_suc_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_suc_2")
+}],
+"loop": false,
+"name": &"start_uppercut",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_tp_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_tp_6")
+}],
+"loop": false,
+"name": &"teleport",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b_uc_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b_uc_1")
+}],
+"loop": false,
+"name": &"uppercut",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 18.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hitbox"]
+radius = 22.0
+height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hurtbox"]
+radius = 24.0
+height = 72.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_attack"]
+radius = 36.0
+
+[node name="NightmareBoss" type="CharacterBody2D" groups=["enemies"]]
+z_index = 3
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_boss_script")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_nightmare")
+animation = &"bow"
+autoplay = "bow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("CapsuleShape2D_body")
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -32)
+shape = SubResource("CapsuleShape2D_hitbox")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -32)
+shape = SubResource("CapsuleShape2D_hurtbox")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(0, -32)
+shape = SubResource("CircleShape2D_attack")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"

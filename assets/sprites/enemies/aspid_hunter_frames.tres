@@ -1,0 +1,77 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/anticipate/0.png" id="1_35ax4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/anticipate/1.png" id="2_3glvv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/anticipate/2.png" id="3_0xtby"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/anticipate/3.png" id="4_sqd8o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/idle/0.png" id="5_xwi6r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/idle/1.png" id="6_o2d6s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/idle/2.png" id="7_jnfi0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/idle/3.png" id="8_56jt8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/shoot/0.png" id="9_arg0c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/shoot/1.png" id="10_x55d7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/shoot/2.png" id="11_b5kts"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/turn/0.png" id="12_gyr8q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/sprites/aspid_hunter/turn/1.png" id="13_xy1lj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_35ax4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3glvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0xtby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sqd8o")
+}],
+"loop": 0,
+"name": &"anticipate",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xwi6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o2d6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnfi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_56jt8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_arg0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x55d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b5kts")
+}],
+"loop": 0,
+"name": &"shoot",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gyr8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xy1lj")
+}],
+"loop": 0,
+"name": &"turn",
+"speed": 8.0
+}]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cx3gwfg6wi3q0"
+path="res://.godot/imported/plant_trap_bite_new.wav-3d217720a20eb4924614d5ae69b7ed36.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Fool Eater/plant_trap_bite_new.wav"
+dest_files=["res://.godot/imported/plant_trap_bite_new.wav-3d217720a20eb4924614d5ae69b7ed36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

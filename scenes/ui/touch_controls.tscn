@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://c07h86bapagf2"]
+
+[ext_resource type="Script" path="res://scripts/ui/touch_controls.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/joystick_base.png" id="2_base"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/joystick_knob.png" id="3_knob"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_jump.png" id="4_jump"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_attack.png" id="5_attack"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_dash.png" id="6_dash"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_throw.png" id="7_throw"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_skill.png" id="8_skill"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="9_font"]
+[ext_resource type="Texture2D" path="res://assets/ui/movement/button_bind.png" id="10_bind"]
+[ext_resource type="Texture2D" uid="uid://dyh85i4nb5ane" path="res://assets/ui/prompts/test_clean.png" id="11_interact"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btn"]
+radius = 256.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 950.0
+
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.08, 0.1, 0.14, 0.88)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.55, 0.7, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18, 0.22, 0.32, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.85, 0.6, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="TouchControls" type="CanvasLayer" unique_id=1010100]
+process_mode = 3
+layer = 60
+script = ExtResource("1_script")
+
+[node name="ControlRoot" type="Control" parent="." unique_id=1010101]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoystickContainer" type="Control" parent="ControlRoot" unique_id=1010102]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = -135.0
+offset_right = 135.0
+offset_bottom = -135.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="JoystickBase" type="Sprite2D" parent="ControlRoot/JoystickContainer" unique_id=1010103]
+unique_name_in_owner = true
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("2_base")
+
+[node name="JoystickKnob" type="Sprite2D" parent="ControlRoot/JoystickContainer" unique_id=1010104]
+unique_name_in_owner = true
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_knob")
+
+[node name="ActionButtonsContainer" type="Control" parent="ControlRoot" unique_id=1010105]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="JumpButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010106]
+unique_name_in_owner = true
+position = Vector2(-163.5, -163.5)
+scale = Vector2(0.17, 0.17)
+texture_normal = ExtResource("4_jump")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"jump"
+visibility_mode = 0
+
+[node name="AttackButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010107]
+unique_name_in_owner = true
+position = Vector2(-291.2, -211.2)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_attack")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"attack"
+visibility_mode = 0
+
+[node name="DashButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010108]
+unique_name_in_owner = true
+position = Vector2(-143.4, -273.4)
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("6_dash")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"dash"
+visibility_mode = 0
+
+[node name="ThrowButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010109]
+unique_name_in_owner = true
+position = Vector2(-263.4, -308.4)
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("7_throw")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"shoot"
+visibility_mode = 0
+
+[node name="SkillButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010110]
+unique_name_in_owner = true
+position = Vector2(-386, -226)
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("8_skill")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"special_attack"
+visibility_mode = 0
+
+[node name="BindButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010111]
+unique_name_in_owner = true
+position = Vector2(-386, -345)
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("10_bind")
+shape = SubResource("CircleShape2D_btn")
+shape_centered = true
+passby_press = true
+action = &"bind"
+visibility_mode = 0
+
+[node name="InteractButton" type="TouchScreenButton" parent="ControlRoot/ActionButtonsContainer" unique_id=1010112]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-260, -420)
+scale = Vector2(0.048, 0.048)
+texture_normal = ExtResource("11_interact")
+shape = SubResource("CircleShape2D_interact")
+shape_centered = true
+passby_press = true
+action = &"interact"
+visibility_mode = 0
+
+[node name="CustomizeOverlay" type="Control" parent="." unique_id=1010120]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DimBackground" type="ColorRect" parent="CustomizeOverlay" unique_id=1010121]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="CustomizeTopBar" type="MarginContainer" parent="CustomizeOverlay" unique_id=1010122]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 136.0
+grow_horizontal = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 6
+
+[node name="VBox" type="VBoxContainer" parent="CustomizeOverlay/CustomizeTopBar" unique_id=1010123]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CustomizeOverlay/CustomizeTopBar/VBox" unique_id=1010124]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.92, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 20
+text = "CHẾ ĐỘ TÙY CHỈNH NÚT ẢO"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CustomizeOverlay/CustomizeTopBar/VBox" unique_id=1010125]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.78, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 13
+text = "CHẠM VÀ KÉO CÁC NÚT ĐẾN VỊ TRÍ MONG MUỐN"
+horizontal_alignment = 1
+
+[node name="ButtonBar" type="HBoxContainer" parent="CustomizeOverlay/CustomizeTopBar/VBox" unique_id=1010126]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ResetLayoutButton" type="Button" parent="CustomizeOverlay/CustomizeTopBar/VBox/ButtonBar" unique_id=1010127]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+text = "ĐẶT LẠI MẶC ĐỊNH"
+
+[node name="SaveExitButton" type="Button" parent="CustomizeOverlay/CustomizeTopBar/VBox/ButtonBar" unique_id=1010128]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+text = "LƯU & THOÁT"

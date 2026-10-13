@@ -1,0 +1,302 @@
+[gd_scene format=3 uid="uid://bueax57rgk5a3"]
+
+[ext_resource type="Script" uid="uid://lr7u17lf64m6" path="res://scripts/ui/pause_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ccwinrd40b26g" path="res://assets/env/new_assets/Inventory & UI/Fleurs/pause_top_fleur0000.png" id="2_fleur"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="3_font"]
+[ext_resource type="AudioStream" uid="uid://d2e6a78tfn3ox" path="res://assets/audio/ui/ui_change_selection.mp3" id="4_hover"]
+[ext_resource type="AudioStream" uid="uid://c00askbr7rlqi" path="res://assets/audio/ui/ui_button_confirm.mp3" id="5_confirm"]
+[ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/ui/inventory/Pointers/main_menu_pointer_anim0000.png" id="6_pointer"]
+[ext_resource type="Texture2D" uid="uid://bloxlpmej7sn4" path="res://assets/ui/icons/pause.svg" id="7_pause_icon"]
+[ext_resource type="Texture2D" uid="uid://150ntiu4iaid" path="res://assets/ui/inventory/Fleurs/prompt_divider.png" id="8_divider"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.06, 0.08, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.44, 0.52, 0.7)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=987002001]
+process_mode = 3
+layer = 90
+script = ExtResource("1_script")
+hover_sfx = ExtResource("4_hover")
+confirm_sfx = ExtResource("5_confirm")
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=987002002]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = 66.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_pause_icon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PauseOverlay" type="Control" parent="." unique_id=987002003]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PauseOverlay" unique_id=987002004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.74)
+
+[node name="MenuPanel" type="PanelContainer" parent="PauseOverlay" unique_id=987002005]
+custom_minimum_size = Vector2(400, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="PauseOverlay/MenuPanel" unique_id=987002006]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="PauseOverlay/MenuPanel/Margin" unique_id=987002007]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopFleur" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox" unique_id=987002008]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+texture = ExtResource("2_fleur")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="PauseOverlay/MenuPanel/Margin/VBox" unique_id=987002009]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.98, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="PauseDivider" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox" unique_id=987002010]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture = ExtResource("8_divider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="PauseOverlay/MenuPanel/Margin/VBox" unique_id=987002011]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox" unique_id=987002012]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenuButton")
+focus_neighbor_bottom = NodePath("../RestartCheckpointButton")
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "RESUME"
+
+[node name="PointerLeft" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/ResumeButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/ResumeButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RestartCheckpointButton" type="Button" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox" unique_id=987002013]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "RESTART CHECKPOINT"
+
+[node name="PointerLeft" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/RestartCheckpointButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/RestartCheckpointButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MainMenuButton" type="Button" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox" unique_id=987002014]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
+focus_neighbor_top = NodePath("../RestartCheckpointButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+flat = true
+text = "MAIN MENU"
+
+[node name="PointerLeft" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/MainMenuButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PointerRight" type="TextureRect" parent="PauseOverlay/MenuPanel/Margin/VBox/ButtonsVBox/MainMenuButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+flip_h = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PausePointer" type="TextureRect" parent="PauseOverlay" unique_id=987002015]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 26.0
+mouse_filter = 2
+texture = ExtResource("6_pointer")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=987002016]
+unique_name_in_owner = true
+process_mode = 3
+bus = &"SFX"

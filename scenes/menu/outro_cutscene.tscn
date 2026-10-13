@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://dmv8axk41nrv4"]
+
+[ext_resource type="Script" uid="uid://co4fgtgdk2r74" path="res://scripts/menu/outro_cutscene.gd" id="1_outro_script"]
+[ext_resource type="AudioStream" uid="uid://bjfhfhp6oaeo2" path="res://assets/audio/tearcity_o.mp3" id="2_bgm"]
+[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="3_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_norm"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.08, 0.1, 0.14, 0.65)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.68, 0.75, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_pressed"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.1, 0.12, 0.18, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.75, 0.5, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_hover"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18, 0.22, 0.3, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0.65, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_norm"]
+content_margin_left = 32.0
+content_margin_top = 12.0
+content_margin_right = 32.0
+content_margin_bottom = 12.0
+bg_color = Color(0.06, 0.08, 0.12, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.72, 0.52, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_pressed"]
+content_margin_left = 32.0
+content_margin_top = 12.0
+content_margin_right = 32.0
+content_margin_bottom = 12.0
+bg_color = Color(0.12, 0.15, 0.22, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.88, 0.65, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_hover"]
+content_margin_left = 32.0
+content_margin_top = 12.0
+content_margin_right = 32.0
+content_margin_bottom = 12.0
+bg_color = Color(0.18, 0.22, 0.32, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.92, 0.7, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="OutroCutscene" type="Control" unique_id=1582910480]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_outro_script")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=1582910481]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SlideImage" type="TextureRect" parent="." unique_id=1582910482]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkipContainer" type="MarginContainer" parent="." unique_id=1582910487]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -260.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+
+[node name="VBox" type="VBoxContainer" parent="SkipContainer" unique_id=1582910488]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="SkipButton" type="Button" parent="SkipContainer/VBox" unique_id=1582910489]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.88, 0.88, 0.85, 0.95)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0.5, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_skip_norm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_skip_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_skip_hover")
+text = "BỎ QUA >>"
+
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=1582910490]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TheEndContainer" type="Control" parent="." unique_id=1582910491]
+unique_name_in_owner = true
+visible = false
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TheEndContainer" unique_id=1582910492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndVBox" type="VBoxContainer" parent="TheEndContainer/CenterContainer" unique_id=1582910493]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TheEndLabel" type="Label" parent="TheEndContainer/CenterContainer/EndVBox" unique_id=1582910494]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.6, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 48
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="ThankYouLabel" type="Label" parent="TheEndContainer/CenterContainer/EndVBox" unique_id=1582910495]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 0.9)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "CẢM ƠN VÌ ĐÃ TRẢI NGHIỆM"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="TheEndContainer/CenterContainer/EndVBox" unique_id=1582910496]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="ReturnMenuButton" type="Button" parent="TheEndContainer/CenterContainer/EndVBox" unique_id=1582910497]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.92, 0.92, 0.9, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.88, 0.65, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_norm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_menu_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_hover")
+text = "VỀ MENU CHÍNH"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1582910498]
+unique_name_in_owner = true
+stream = ExtResource("2_bgm")
+bus = &"Music"

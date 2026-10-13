@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckhchhhnvg06r"
+path="res://.godot/imported/gg_shadelord_headgrab.wav-1e42ea54d7f43a2f35b33c566fbddca9.sample"
+
+[deps]
+
+source_file="res://assets/audio/The Knight/Lord of Shades/gg_shadelord_headgrab.wav"
+dest_files=["res://.godot/imported/gg_shadelord_headgrab.wav-1e42ea54d7f43a2f35b33c566fbddca9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
