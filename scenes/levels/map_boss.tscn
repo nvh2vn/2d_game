@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://db1h2x5yp2q4u"]
 
-[ext_resource type="Script" path="res://scripts/levels/map_boss.gd" id="1_boss_script"]
+[ext_resource type="Script" uid="uid://dwta1s63rx7m7" path="res://scripts/levels/map_boss.gd" id="1_boss_script"]
 [ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/env/abyss/_0033_abyss_02.png" id="1_fm2qu"]
 [ext_resource type="Texture2D" uid="uid://bowev6yvj8xp4" path="res://assets/env/abyss/Gemini_Generated_Image_84ph5d84ph5d84ph.png" id="1_iobw0"]
 [ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/env/abyss/_0173_Layer-425.png" id="2_mspvc"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://scenes/prefabs/player/player_controller(pixel).tscn" id="3_0ot1f"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/room_area.tscn" id="4_mspvc"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/soul_master.tscn" id="5_0ot1f"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/nightmare_boss.tscn" id="7_y185h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh3le"]
 size = Vector2(1353, 30)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ot1f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24d6o"]
 resource_local_to_scene = true
 size = Vector2(1375, 753)
 
@@ -62,7 +62,7 @@ room_size = Vector2(1375, 753)
 
 [node name="CollisionShape2D" parent="RoomArea" index="0"]
 position = Vector2(82.5, -65.5)
-shape = SubResource("RectangleShape2D_0ot1f")
+shape = SubResource("RectangleShape2D_24d6o")
 
 [node name="PlayerController" parent="." unique_id=373544482 instance=ExtResource("3_0ot1f")]
 position = Vector2(235, 532)
@@ -75,8 +75,7 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossTriggerArea" unique_id=184920185]
 shape = SubResource("RectangleShape2D_trigger")
 
-[node name="SoulMaster" parent="." unique_id=1434003224 instance=ExtResource("5_0ot1f")]
-position = Vector2(894, 583)
-wait_for_trigger = true
+[node name="NightmareBoss" parent="." unique_id=1698653507 instance=ExtResource("7_y185h")]
+position = Vector2(833, 546)
 
 [editable path="RoomArea"]

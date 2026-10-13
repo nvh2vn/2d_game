@@ -31,11 +31,11 @@ position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_nailmaster_interact")
 
 [node name="InteractPrompt" type="Label" parent="."]
-offset_left = -90.0
+offset_left = -130.0
 offset_top = -100.0
-offset_right = 90.0
+offset_right = 130.0
 offset_bottom = -77.0
-text = "[E] NailMaster"
+text = "[E] Nói chuyện & Truyền thụ bí kỹ"
 horizontal_alignment = 1
 
 [node name="TalkPosition" type="Marker2D" parent="."]

@@ -33,6 +33,18 @@ static func suppress_interact(tree: SceneTree, suppressed: bool) -> void:
 		if tc:
 			tc.set_interact_suppressed(suppressed)
 
+static func set_controls_visible(tree: SceneTree, p_visible: bool) -> void:
+	if instance and is_instance_valid(instance):
+		instance.visible = p_visible
+	elif tree:
+		var tc_nodes = tree.get_nodes_in_group("touch_controls")
+		for n in tc_nodes:
+			if n is CanvasItem:
+				n.visible = p_visible
+		var tc = tree.root.find_child("TouchControls", true, false)
+		if tc and tc is CanvasItem:
+			tc.visible = p_visible
+
 func _enter_tree() -> void:
 	instance = self
 

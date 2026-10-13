@@ -2,14 +2,15 @@ extends Area2D
 class_name EmilitiaNPC
 
 ## NPC Eternal Emilitia (Quý Tộc Lưu Vong)
-## Cốt truyện: Học giả/quý tộc phế tích trao đổi "Ống Nghiệm Linh Hồn" (Soul Vial)
-## lấy "City Crest" (Cổ Vật Hoàng Thành) để mở đường vào Thánh Đường.
+## Cốt truyện: Trao đổi "Ống Nghiệm Linh Hồn" (Soul Vial) lấy "City Crest" (Cổ Vật Hoàng Thành).
+## Thiết kế mới: Tự động kiểm tra Inventory, hiển thị lựa chọn đổi trực tiếp trên khung thoại,
+## ẩn Touch Controls khi đối thoại, đồng bộ SaveManager.
 
 signal dialogue_started()
 signal dialogue_finished()
 signal item_exchanged(item_given: String, item_received: String)
 
-@export var npc_name: String = "ETERNAL EMILITIA"
+@export var npc_name: String = "EMILITIA (QUÝ TỘC LƯU VONG)"
 @export var typing_speed: float = 38.0
 @export var anim_speed: float = 0.22
 
@@ -18,18 +19,17 @@ signal item_exchanged(item_given: String, item_received: String)
 @onready var interaction_area: Area2D = get_node_or_null("InteractionArea")
 @onready var talk_position: Marker2D = get_node_or_null("TalkPosition")
 
-# --- NỘI DUNG 3 NHÁNH HỘI THOẠI CỐT TRUYỆN ---
-const DIALOGUE_BRANCH_1_NO_ITEM: String = "Ôi chao... Một bóng hình còn thở giữa đống đổ nát này sao? Những tiếng la hét từ đỉnh tháp vẫn văng vẳng mỗi đêm... Soul Master, gã học giả điên loạn đó đã rút cạn sinh lực của tất cả những ai dám bén mảng đến. Nếu ngươi còn giữ một chút tàn dư linh hồn của các đồng môn ta – thứ mà tên buôn Tuk bẩn thỉu kia nhặt nhạnh được – hãy mang nó đến đây. Ta sẽ trao cho ngươi một ấn vật hoàng tộc để mở ra con đường phía trước."
+# --- NỘI DUNG ĐỐI THOẠI CHUẨN KỊCH BẢN ---
+const DIALOGUE_CASE_1_NO_ITEM: String = "Khúc khích... Lại thêm một bóng hình cô độc mang áo choàng đỏ lạc bước vào nấm mồ đá này sao? Ngươi có nghe thấy không? Tiếng rên xiết vỡ vụn dội lại từ vách tháp mỗi khi gió rít qua... Đó là tàn dư của đồng môn ta. Soul Master – kẻ từng là niềm kiêu hãnh của học viện – đã hóa điên vì khát vọng trường sinh. Hắn bóp nghẹt sinh mệnh của từng người một, chắt lấy linh hồn họ vào những bình thủy tinh lạnh ngắt. Nếu ngươi bắt gặp món tàn dư ấy vương vãi trong bao tải của tên bọ rác Tuk, hãy mang nó về đây... Cho họ được nghe thấy một lời cầu siêu, trước khi bóng tối nuốt chửng tất cả."
 
-const DIALOGUE_BRANCH_2_EXCHANGE: String = "Thứ sương mờ này... đúng là họ rồi! Ta có thể nghe thấy lời ai oán của họ lắng xuống. Cầm lấy chiếc huy hiệu này đi, hiệp sĩ áo đỏ. Hãy dùng nó để xuyên qua kết giới và trả thù cho chúng ta!"
+const DIALOGUE_CASE_2_HAVE_ITEM: String = "Ánh sáng chập chờn này... đúng là họ rồi! Ta ngửi thấy mùi tro tàn và sự giải thoát toát ra từ tay ngươi. Hãy đưa chiếc ống nghiệm lại cho ta, đổi lại, ta trao cho ngươi CITY CREST. Dấu ấn hoàng tộc này từng được ta dùng để phong tỏa lối hầm khi đại họa ập đến. Giờ đây, hãy mang nó đi... đánh thức sợi tơ trong tim ngươi mà xé toạc màn đêm phía trước!"
 
-const DIALOGUE_BRANCH_3_DONE: String = "Hãy cẩn trọng khi bước qua cánh cổng thánh đường. Soul Master không còn là kẻ phàm trần nữa... Hắn sử dụng ma thuật thao túng không gian để biến mất và giáng đòn từ hư vô. Đừng để hắn đánh lừa đôi mắt của ngươi!"
+const DIALOGUE_THANK_YOU: String = "Linh hồn họ... rốt cuộc đã được yên giấc. Cầm chắc chiếc ấn ấy, cô bé thợ dệt. Kẻ trên đỉnh tháp kia không còn là một học giả nữa... hắn là hiện thân của sự điên loạn."
 
-# --- TRẠNG THÁI HỘI THOẠI & SAVE/LOAD FLAGS ---
-var has_met_emilitia: bool = false
+const DIALOGUE_CASE_3_DONE: String = "Đi đi, lưỡi kim của ngươi không thể chùn bước ở đây. Hãy đem sự tĩnh lặng vĩnh hằng đến cho Soul Master."
+
+# --- TRẠNG THÁI LƯU TRỮ ---
 var has_exchanged_city_crest: bool = false
-
-# --- THAM CHIẾU & BIẾN ĐIỀU KHIỂN ---
 var is_player_in_range: bool = false
 var current_player: Node2D = null
 
@@ -39,21 +39,29 @@ var dialogue_panel: PanelContainer = null
 var dialogue_name_label: Label = null
 var dialogue_text_label: Label = null
 var dialogue_hint_label: Label = null
+var choice_container: HBoxContainer = null
+var trade_btn: Button = null
+var later_btn: Button = null
+var leave_btn: Button = null
 var reward_banner: PanelContainer = null
 var reward_label: Label = null
 var touch_blocker: Control = null
+
+# --- ĐIỀU KHIỂN HỘI THOẠI ---
+enum DialogueMode { NO_ITEM, CAN_TRADE, AFTER_TRADE, COMPLETED }
+var current_mode: DialogueMode = DialogueMode.NO_ITEM
 
 var is_dialogue_active: bool = false
 var is_typing: bool = false
 var dialogue_fully_revealed: bool = false
 var type_tween: Tween = null
 var hint_tween: Tween = null
-var _current_dialogue_callback: Callable = Callable()
 
 var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
 var confirm_sfx: AudioStream = preload("res://assets/audio/ui/ui_button_confirm.mp3")
+var save_sfx: AudioStream = preload("res://assets/audio/ui/ui_save.mp3")
 
-# --- ANIMATION FRAMES ---
+# --- ANIMATION SPRITE FRAMES ---
 var anim_frames: Array[Texture2D] = []
 var current_frame_idx: int = 0
 var anim_timer: float = 0.0
@@ -84,6 +92,8 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
+	if is_dialogue_active:
+		_set_touch_controls_visible(true)
 	if dialogue_layer and is_instance_valid(dialogue_layer):
 		dialogue_layer.queue_free()
 
@@ -93,12 +103,11 @@ func _notification(what: int) -> void:
 		_update_dialogue_margins()
 
 
-# ==================== ĐỒNG BỘ DỮ LIỆU SAVEMANAGER ====================
+# ==================== ĐỒNG BỘ SAVEMANAGER ====================
 func _load_state() -> void:
 	if SaveManager.instance:
-		has_met_emilitia = SaveManager.instance.is_event_completed("has_met_emilitia")
 		has_exchanged_city_crest = SaveManager.instance.is_event_completed("has_exchanged_city_crest")
-		if SaveManager.instance.has_inventory_item("city_crest"):
+		if SaveManager.instance.has_inventory_item("city_crest") or SaveManager.instance.has_inventory_item("city_key"):
 			has_exchanged_city_crest = true
 
 
@@ -150,13 +159,16 @@ func _setup_nodes_if_missing() -> void:
 		if trajan_font:
 			prompt_lbl.add_theme_font_override("font", trajan_font)
 		prompt_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		prompt_lbl.position = Vector2(-110, -90)
+		prompt_lbl.position = Vector2(-120, -90)
 		prompt_lbl.visible = false
 		add_child(prompt_lbl)
 		interact_prompt = prompt_lbl
+	else:
+		if interact_prompt is Label:
+			interact_prompt.text = "[E] Nói chuyện với Emilitia"
 
 
-# ==================== GIAO DIỆN HỘP THOẠI (DIALOGUE UI) ====================
+# ==================== KHỞI TẠO DIALOGUE UI ====================
 func _setup_dialogue_ui() -> void:
 	if dialogue_layer and is_instance_valid(dialogue_layer):
 		return
@@ -167,11 +179,12 @@ func _setup_dialogue_ui() -> void:
 	add_child(dialogue_layer)
 	dialogue_layer.visible = false
 	
+	# Touch Blocker nền (bắt chạm để bỏ qua gõ chữ khi đang chạy typewriter)
 	touch_blocker = Control.new()
 	touch_blocker.name = "TouchBlocker"
 	touch_blocker.set_anchors_preset(Control.PRESET_FULL_RECT)
-	touch_blocker.mouse_filter = Control.MOUSE_FILTER_STOP
-	touch_blocker.gui_input.connect(_on_touch_receiver_gui_input)
+	touch_blocker.mouse_filter = Control.MOUSE_FILTER_PASS
+	touch_blocker.gui_input.connect(_on_touch_blocker_gui_input)
 	dialogue_layer.add_child(touch_blocker)
 	
 	dialogue_panel = PanelContainer.new()
@@ -185,7 +198,7 @@ func _setup_dialogue_ui() -> void:
 	_update_dialogue_margins()
 	
 	var panel_sb = _create_stylebox(
-		Color(0.04, 0.05, 0.08, 0.94),
+		Color(0.04, 0.05, 0.08, 0.95),
 		Color(0.85, 0.72, 0.5, 0.9),
 		2,
 		6,
@@ -196,11 +209,12 @@ func _setup_dialogue_ui() -> void:
 	dialogue_layer.add_child(dialogue_panel)
 	
 	var vbox = VBoxContainer.new()
-	vbox.add_theme_constant_override("separation", 8)
+	vbox.add_theme_constant_override("separation", 10)
 	dialogue_panel.add_child(vbox)
 	
+	# Tên NPC: "EMILITIA (QUÝ TỘC LƯU VONG)"
 	dialogue_name_label = Label.new()
-	dialogue_name_label.text = "ETERNAL EMILITIA (QUÝ TỘC LƯU VONG)"
+	dialogue_name_label.text = npc_name
 	if trajan_font:
 		dialogue_name_label.add_theme_font_override("font", trajan_font)
 	dialogue_name_label.add_theme_font_size_override("font_size", 18)
@@ -209,6 +223,7 @@ func _setup_dialogue_ui() -> void:
 	dialogue_name_label.add_theme_constant_override("outline_size", 4)
 	vbox.add_child(dialogue_name_label)
 	
+	# Lời thoại
 	dialogue_text_label = Label.new()
 	dialogue_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if trajan_font:
@@ -219,9 +234,66 @@ func _setup_dialogue_ui() -> void:
 	dialogue_text_label.add_theme_constant_override("outline_size", 3)
 	vbox.add_child(dialogue_text_label)
 	
+	# VÙNG NÚT LỰA CHỌN TRỰC TIẾP TRÊN KHUNG THOẠI (FOOTER)
 	var footer = HBoxContainer.new()
 	footer.add_theme_constant_override("separation", 12)
 	vbox.add_child(footer)
+	
+	choice_container = HBoxContainer.new()
+	choice_container.add_theme_constant_override("separation", 12)
+	choice_container.visible = false
+	footer.add_child(choice_container)
+	
+	# 1. Nút [TRAO ĐỔI VẬT PHẨM] (Nổi bật viền vàng ánh kim)
+	trade_btn = Button.new()
+	trade_btn.text = "🎁 TRAO ĐỔI VẬT PHẨM"
+	if trajan_font:
+		trade_btn.add_theme_font_override("font", trajan_font)
+	trade_btn.add_theme_font_size_override("font_size", 13)
+	trade_btn.custom_minimum_size = Vector2(180, 40)
+	trade_btn.mouse_filter = Control.MOUSE_FILTER_STOP
+	var btn_trade_sb = _create_stylebox(Color(0.18, 0.15, 0.08, 0.95), Color(1.0, 0.82, 0.35, 1.0), 1, 6, Vector4(16, 8, 16, 8))
+	var btn_trade_h = _create_stylebox(Color(0.28, 0.23, 0.1, 1.0), Color(1.0, 0.95, 0.65, 1.0), 2, 6, Vector4(16, 8, 16, 8))
+	trade_btn.add_theme_stylebox_override("normal", btn_trade_sb)
+	trade_btn.add_theme_stylebox_override("hover", btn_trade_h)
+	trade_btn.add_theme_stylebox_override("pressed", btn_trade_h)
+	trade_btn.add_theme_color_override("font_color", Color(1.0, 0.92, 0.65))
+	trade_btn.pressed.connect(_on_trade_button_pressed)
+	choice_container.add_child(trade_btn)
+	
+	# 2. Nút [ĐỂ SAU] (Đóng hộp thoại, không thực hiện đổi)
+	later_btn = Button.new()
+	later_btn.text = "✕ ĐỂ SAU"
+	if trajan_font:
+		later_btn.add_theme_font_override("font", trajan_font)
+	later_btn.add_theme_font_size_override("font_size", 13)
+	later_btn.custom_minimum_size = Vector2(110, 40)
+	later_btn.mouse_filter = Control.MOUSE_FILTER_STOP
+	var btn_later_sb = _create_stylebox(Color(0.13, 0.13, 0.16, 0.85), Color(0.5, 0.5, 0.6, 0.6), 1, 6, Vector4(14, 8, 14, 8))
+	var btn_later_h = _create_stylebox(Color(0.2, 0.2, 0.25, 0.95), Color(0.8, 0.8, 0.9, 0.9), 1, 6, Vector4(14, 8, 14, 8))
+	later_btn.add_theme_stylebox_override("normal", btn_later_sb)
+	later_btn.add_theme_stylebox_override("hover", btn_later_h)
+	later_btn.add_theme_stylebox_override("pressed", btn_later_h)
+	later_btn.add_theme_color_override("font_color", Color(0.8, 0.82, 0.88))
+	later_btn.pressed.connect(_on_close_dialogue_pressed)
+	choice_container.add_child(later_btn)
+	
+	# 3. Nút [RỜI ĐI] (Dùng cho TH1 và TH3)
+	leave_btn = Button.new()
+	leave_btn.text = "✕ RỜI ĐI"
+	if trajan_font:
+		leave_btn.add_theme_font_override("font", trajan_font)
+	leave_btn.add_theme_font_size_override("font_size", 13)
+	leave_btn.custom_minimum_size = Vector2(110, 40)
+	leave_btn.mouse_filter = Control.MOUSE_FILTER_STOP
+	var btn_leave_sb = _create_stylebox(Color(0.14, 0.14, 0.16, 0.85), Color(0.5, 0.5, 0.55, 0.6), 1, 6, Vector4(14, 8, 14, 8))
+	var btn_leave_h = _create_stylebox(Color(0.24, 0.15, 0.15, 0.95), Color(0.9, 0.45, 0.45, 0.9), 1, 6, Vector4(14, 8, 14, 8))
+	leave_btn.add_theme_stylebox_override("normal", btn_leave_sb)
+	leave_btn.add_theme_stylebox_override("hover", btn_leave_h)
+	leave_btn.add_theme_stylebox_override("pressed", btn_leave_h)
+	leave_btn.add_theme_color_override("font_color", Color(0.82, 0.84, 0.88))
+	leave_btn.pressed.connect(_on_close_dialogue_pressed)
+	choice_container.add_child(leave_btn)
 	
 	var spacer = Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -229,7 +301,7 @@ func _setup_dialogue_ui() -> void:
 	footer.add_child(spacer)
 	
 	dialogue_hint_label = Label.new()
-	dialogue_hint_label.text = "▼ Chạm màn hình hoặc bấm Enter / Space / E để tiếp tục"
+	dialogue_hint_label.text = "▼ Chạm màn hình để tiếp tục"
 	if trajan_font:
 		dialogue_hint_label.add_theme_font_override("font", trajan_font)
 	dialogue_hint_label.add_theme_font_size_override("font_size", 12)
@@ -237,7 +309,7 @@ func _setup_dialogue_ui() -> void:
 	dialogue_hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	footer.add_child(dialogue_hint_label)
 	
-	# Banner nhận thưởng
+	# Banner nhận thưởng trên đỉnh màn hình
 	reward_banner = PanelContainer.new()
 	reward_banner.name = "RewardBanner"
 	reward_banner.anchors_preset = Control.PRESET_CENTER_TOP
@@ -274,20 +346,16 @@ func _update_dialogue_margins() -> void:
 	dialogue_panel.offset_left = left_m
 	dialogue_panel.offset_right = right_m
 	dialogue_panel.offset_bottom = bot_m
-	dialogue_panel.offset_top = bot_m - 175.0
+	dialogue_panel.offset_top = bot_m - 185.0
 
 
-# ==================== ĐIỀU KHIỂN & KÍCH HOẠT HỘI THOẠI ====================
+# ==================== ĐIỀU KHIỂN & KÍCH HOẠT ====================
 func _unhandled_input(event: InputEvent) -> void:
 	if is_dialogue_active:
 		var is_advance_action: bool = (
 			event.is_action_pressed("ui_accept") or
 			event.is_action_pressed("interact") or
-			event.is_action_pressed("jump") or
-			event.is_action_pressed("attack") or
-			(event is InputEventKey and event.pressed and not event.echo and (event.keycode in [KEY_SPACE, KEY_ENTER, KEY_E, KEY_W, KEY_UP, KEY_Z, KEY_J])) or
-			(event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or
-			(event is InputEventScreenTouch and event.pressed)
+			(event is InputEventKey and event.pressed and not event.echo and (event.keycode in [KEY_SPACE, KEY_ENTER, KEY_E]))
 		)
 		if is_advance_action:
 			_handle_dialogue_advance()
@@ -309,36 +377,149 @@ func _interact_with_emilitia() -> void:
 		
 	_load_state()
 	
-	# NHÁNH 3: Đã hoàn tất trao đổi vật phẩm trước đó
+	# TRƯỜNG HỢP 3: Đã hoàn tất đổi trước đó
 	if has_exchanged_city_crest:
-		_start_dialogue(DIALOGUE_BRANCH_3_DONE)
+		current_mode = DialogueMode.COMPLETED
+		_start_typewriter(DIALOGUE_CASE_3_DONE)
 		return
 		
-	# Kiểm tra người chơi có mang theo Soul Vial (hoặc rancid_egg) hay không
-	var has_vial = SaveManager.has_item("soul_vial") or SaveManager.has_item("rancid_egg")
+	# Tự động kiểm tra Inventory xem đã có Ống Nghiệm Linh Hồn chưa
+	var has_vial: bool = SaveManager.has_item("soul_vial") or SaveManager.has_item("rancid_egg")
 	
 	if has_vial:
-		# NHÁNH 2: Đã có Soul Vial trong túi -> Thực hiện trao đổi
-		_start_dialogue(DIALOGUE_BRANCH_2_EXCHANGE, func():
-			_execute_item_exchange()
-		)
+		# TRƯỜNG HỢP 2: Đã có soul_vial và CHƯA ĐỔI
+		current_mode = DialogueMode.CAN_TRADE
+		_start_typewriter(DIALOGUE_CASE_2_HAVE_ITEM)
 	else:
-		# NHÁNH 1: Chưa có Soul Vial -> Gợi ý tìm kiếm
-		_start_dialogue(DIALOGUE_BRANCH_1_NO_ITEM, func():
-			has_met_emilitia = true
-			if SaveManager.instance:
-				SaveManager.instance.set_event_completed("has_met_emilitia", true)
-				SaveManager.instance.save_to_disk()
-		)
+		# TRƯỜNG HỢP 1: Trong túi CHƯA CÓ soul_vial
+		current_mode = DialogueMode.NO_ITEM
+		_start_typewriter(DIALOGUE_CASE_1_NO_ITEM)
 
 
-func _execute_item_exchange() -> void:
-	# Trừ 1 Soul Vial khỏi túi đồ
+func _start_typewriter(text: String) -> void:
+	_setup_dialogue_ui()
+	_update_dialogue_margins()
+	
+	is_dialogue_active = true
+	dialogue_started.emit()
+	
+	# 1. Khóa di chuyển của Hornet
+	if current_player and current_player.has_method("set_cutscene_locked"):
+		current_player.set_cutscene_locked(true)
+	elif current_player and "velocity" in current_player:
+		current_player.velocity = Vector2.ZERO
+		
+	# 2. ẨN HOÀN TOÀN CỤM ĐIỀU KHIỂN CẢM ỨNG (TOUCH CONTROLS)
+	_set_touch_controls_visible(false)
+	
+	TouchControls.hide_interact(get_tree())
+	TouchControls.suppress_interact(get_tree(), true)
+	if interact_prompt:
+		interact_prompt.visible = false
+		
+	if choice_container:
+		choice_container.visible = false
+	if dialogue_hint_label:
+		dialogue_hint_label.text = "▼ Chạm màn hình để bỏ qua gõ chữ"
+		dialogue_hint_label.visible = true
+		
+	dialogue_name_label.text = npc_name
+	dialogue_text_label.text = text
+	dialogue_text_label.visible_characters = 0
+	
+	dialogue_layer.visible = true
+	dialogue_panel.modulate.a = 1.0
+	_update_choice_buttons_for_mode()
+	
+	is_typing = true
+	dialogue_fully_revealed = false
+	
+	if type_tween and type_tween.is_valid():
+		type_tween.kill()
+		
+	var total_chars = text.length()
+	var duration = float(total_chars) / maxf(1.0, typing_speed)
+	type_tween = create_tween()
+	type_tween.tween_property(dialogue_text_label, "visible_characters", total_chars, duration)
+	type_tween.finished.connect(func():
+		if is_typing:
+			is_typing = false
+			dialogue_fully_revealed = true
+			_on_text_reveal_completed()
+	)
+
+
+func _on_text_reveal_completed() -> void:
+	if not is_inside_tree() or not is_dialogue_active:
+		return
+		
+	if choice_container:
+		choice_container.visible = true
+		_update_choice_buttons_for_mode()
+		
+	if dialogue_hint_label:
+		dialogue_hint_label.text = "▼ Chọn thao tác bên dưới"
+		dialogue_hint_label.visible = true
+	_start_hint_pulse()
+
+
+func _update_choice_buttons_for_mode() -> void:
+	match current_mode:
+		DialogueMode.NO_ITEM:
+			# Trường hợp 1: Chỉ có 1 nút duy nhất [RỜI ĐI]
+			if trade_btn: trade_btn.visible = false
+			if later_btn: later_btn.visible = false
+			if leave_btn: leave_btn.visible = true
+			
+		DialogueMode.CAN_TRADE:
+			# Trường hợp 2: Có 2 nút [TRAO ĐỔI VẬT PHẨM] và [ĐỂ SAU]
+			if trade_btn: trade_btn.visible = true
+			if later_btn: later_btn.visible = true
+			if leave_btn: leave_btn.visible = false
+			
+		DialogueMode.AFTER_TRADE, DialogueMode.COMPLETED:
+			# Sau khi đổi xong hoặc Trường hợp 3: Chỉ có 1 nút [RỜI ĐI]
+			if trade_btn: trade_btn.visible = false
+			if later_btn: later_btn.visible = false
+			if leave_btn: leave_btn.visible = true
+
+
+func _handle_dialogue_advance() -> void:
+	if not is_dialogue_active:
+		return
+		
+	# Nếu đang gõ -> hiển thị tức thì toàn bộ nội dung
+	if is_typing:
+		if type_tween and type_tween.is_valid():
+			type_tween.kill()
+		if dialogue_text_label:
+			dialogue_text_label.visible_characters = -1
+		is_typing = false
+		dialogue_fully_revealed = true
+		_on_text_reveal_completed()
+		return
+
+
+func _on_touch_blocker_gui_input(event: InputEvent) -> void:
+	if not is_dialogue_active:
+		return
+	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or (event is InputEventScreenTouch and event.pressed):
+		if is_typing:
+			_handle_dialogue_advance()
+			get_viewport().set_input_as_handled()
+
+
+# ==================== XỬ LÝ NÚT BẤM TRAO ĐỔI ====================
+func _on_trade_button_pressed() -> void:
+	_play_sfx(confirm_sfx)
+	_play_sfx(save_sfx)
+	
+	# 1. Trừ 1 "soul_vial" khỏi Inventory
 	var removed = SaveManager.remove_item("soul_vial", 1)
 	if not removed:
 		SaveManager.remove_item("rancid_egg", 1)
 		
-	# Thêm City Crest vào túi đồ
+	# 2. Thêm 1 "city_crest" vào Inventory
 	if SaveManager.instance:
 		SaveManager.instance.add_inventory_item("city_crest")
 		SaveManager.instance.set_event_completed("has_exchanged_city_crest", true)
@@ -346,7 +527,74 @@ func _execute_item_exchange() -> void:
 		
 	has_exchanged_city_crest = true
 	item_exchanged.emit("soul_vial", "city_crest")
+	
+	# 3. Hiện banner thông báo nhận đồ
 	_show_reward_banner("★ NHẬN ĐƯỢC: CITY CREST (CỔ VẬT HOÀNG THÀNH)")
+	
+	# 4. Cập nhật UI Túi đồ nếu đang mở
+	_refresh_active_inventory_ui()
+	
+	# 5. Cập nhật sang câu thoại cảm ơn ngắn & chỉ hiện nút [RỜI ĐI]
+	current_mode = DialogueMode.AFTER_TRADE
+	_start_typewriter(DIALOGUE_THANK_YOU)
+
+
+func _on_close_dialogue_pressed() -> void:
+	_play_sfx(confirm_sfx)
+	_close_dialogue()
+
+
+func _close_dialogue() -> void:
+	is_dialogue_active = false
+	dialogue_fully_revealed = false
+	
+	if hint_tween and hint_tween.is_valid():
+		hint_tween.kill()
+		
+	# 1. Mở khóa di chuyển cho Hornet
+	if current_player and current_player.has_method("set_cutscene_locked"):
+		current_player.set_cutscene_locked(false)
+		
+	# 2. BẬT LẠI CỤM ĐIỀU KHIỂN CẢM ỨNG (TOUCH CONTROLS)
+	_set_touch_controls_visible(true)
+	
+	TouchControls.suppress_interact(get_tree(), false)
+	if is_player_in_range:
+		TouchControls.show_interact(get_tree(), "emilitia")
+		if interact_prompt:
+			interact_prompt.visible = true
+			
+	if dialogue_panel and is_instance_valid(dialogue_panel):
+		dialogue_panel.modulate.a = 0.0
+	if dialogue_layer and is_instance_valid(dialogue_layer):
+		dialogue_layer.visible = false
+		
+	dialogue_finished.emit()
+
+
+func _set_touch_controls_visible(p_visible: bool) -> void:
+	TouchControls.set_controls_visible(get_tree(), p_visible)
+	if is_instance_valid(current_player):
+		var tc = current_player.get_node_or_null("TouchControls")
+		if tc and tc is CanvasItem:
+			tc.visible = p_visible
+	if is_inside_tree() and get_tree():
+		var tc_nodes = get_tree().get_nodes_in_group("touch_controls")
+		for n in tc_nodes:
+			if n is CanvasItem:
+				n.visible = p_visible
+		var tc_root = get_tree().root.find_child("TouchControls", true, false)
+		if tc_root and tc_root is CanvasItem:
+			tc_root.visible = p_visible
+
+
+func _refresh_active_inventory_ui() -> void:
+	if is_inside_tree() and get_tree():
+		var inv = get_tree().root.find_child("InventoryScreen", true, false)
+		if inv and inv.has_method("_refresh_inventory_tab"):
+			inv._refresh_inventory_tab()
+	if is_instance_valid(current_player) and current_player.has_method("update_hud"):
+		current_player.update_hud()
 
 
 func _show_reward_banner(text: String) -> void:
@@ -365,64 +613,6 @@ func _show_reward_banner(text: String) -> void:
 	tw.finished.connect(func(): reward_banner.visible = false)
 
 
-func _start_dialogue(text: String, on_complete: Callable = Callable()) -> void:
-	_setup_dialogue_ui()
-	_update_dialogue_margins()
-	
-	is_dialogue_active = true
-	_current_dialogue_callback = on_complete
-	dialogue_started.emit()
-	
-	# Khóa di chuyển của Hornet
-	if current_player and current_player.has_method("set_cutscene_locked"):
-		current_player.set_cutscene_locked(true)
-	elif current_player and "velocity" in current_player:
-		current_player.velocity = Vector2.ZERO
-		
-	TouchControls.hide_interact(get_tree())
-	TouchControls.suppress_interact(get_tree(), true)
-	if interact_prompt:
-		interact_prompt.visible = false
-		
-	if dialogue_hint_label:
-		dialogue_hint_label.visible = false
-		
-	dialogue_text_label.text = text
-	dialogue_text_label.visible_characters = 0
-	
-	dialogue_layer.visible = true
-	dialogue_panel.modulate.a = 0.0
-	
-	var fade_tw = create_tween()
-	fade_tw.tween_property(dialogue_panel, "modulate:a", 1.0, 0.2)
-	await fade_tw.finished
-	
-	is_typing = true
-	dialogue_fully_revealed = false
-	
-	if type_tween and type_tween.is_valid():
-		type_tween.kill()
-		
-	var total_chars = text.length()
-	var duration = float(total_chars) / maxf(1.0, typing_speed)
-	type_tween = create_tween()
-	type_tween.tween_property(dialogue_text_label, "visible_characters", total_chars, duration)
-	await type_tween.finished
-	
-	is_typing = false
-	dialogue_fully_revealed = true
-	_on_text_reveal_completed()
-
-
-func _on_text_reveal_completed() -> void:
-	if not is_inside_tree() or not is_dialogue_active:
-		return
-	if dialogue_hint_label:
-		dialogue_hint_label.text = "▼ Chạm màn hình hoặc bấm Enter / Space / E để tiếp tục"
-		dialogue_hint_label.visible = true
-	_start_hint_pulse()
-
-
 func _start_hint_pulse() -> void:
 	if not dialogue_hint_label:
 		return
@@ -431,62 +621,6 @@ func _start_hint_pulse() -> void:
 	hint_tween = create_tween().set_loops()
 	hint_tween.tween_property(dialogue_hint_label, "modulate:a", 0.35, 0.5)
 	hint_tween.tween_property(dialogue_hint_label, "modulate:a", 1.0, 0.5)
-
-
-func _handle_dialogue_advance() -> void:
-	if not is_dialogue_active:
-		return
-		
-	if is_typing:
-		if type_tween and type_tween.is_valid():
-			type_tween.kill()
-		if dialogue_text_label:
-			dialogue_text_label.visible_characters = -1
-		is_typing = false
-		dialogue_fully_revealed = true
-		_on_text_reveal_completed()
-		return
-		
-	if dialogue_fully_revealed:
-		_close_dialogue_and_execute(_current_dialogue_callback)
-
-
-func _close_dialogue_and_execute(callback: Callable = Callable()) -> void:
-	is_dialogue_active = false
-	dialogue_fully_revealed = false
-	
-	if hint_tween and hint_tween.is_valid():
-		hint_tween.kill()
-		
-	if dialogue_panel and is_instance_valid(dialogue_panel):
-		var tw = create_tween()
-		tw.tween_property(dialogue_panel, "modulate:a", 0.0, 0.14)
-		await tw.finished
-		
-	if dialogue_layer and is_instance_valid(dialogue_layer):
-		dialogue_layer.visible = false
-		
-	dialogue_finished.emit()
-	
-	if callback.is_valid():
-		callback.call()
-		
-	# Mở khóa Hornet
-	if current_player and current_player.has_method("set_cutscene_locked"):
-		current_player.set_cutscene_locked(false)
-	TouchControls.suppress_interact(get_tree(), false)
-	if is_player_in_range:
-		TouchControls.show_interact(get_tree(), "emilitia")
-		if interact_prompt:
-			interact_prompt.visible = true
-
-
-func _on_touch_receiver_gui_input(event: InputEvent) -> void:
-	if not is_dialogue_active:
-		return
-	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or (event is InputEventScreenTouch and event.pressed):
-		_handle_dialogue_advance()
-		get_viewport().set_input_as_handled()
 
 
 # ==================== VÙNG VA CHẠM TƯƠNG TÁC ====================
@@ -504,7 +638,8 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()
 	if parent and _is_player(parent):
-		current_player = parent
+		if parent is Node2D:
+			current_player = parent
 		_set_in_range(true)
 
 
@@ -514,7 +649,9 @@ func _on_area_exited(area: Area2D) -> void:
 		_set_in_range(false)
 
 
-func _is_player(node: Node2D) -> bool:
+func _is_player(node: Node) -> bool:
+	if not node:
+		return false
 	return node.is_in_group("player") or node.name.begins_with("Player") or node.has_method("trigger_hazard_reset")
 
 
