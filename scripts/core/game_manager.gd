@@ -7,9 +7,18 @@ static var instance: Node = null
 
 signal skill_unlocked(skill_name: String)
 signal skills_changed()
+signal bench_rested()
+signal enemies_reset()
+signal chest_opened(chest_id: String)
 
 var can_silk_storm: bool = false
 var can_needle_throw: bool = false
+
+# Quản lý danh sách quái thường bị tiêu diệt (chỉ hồi sinh khi ngồi Ghế/Bench)
+var defeated_normal_enemies: Dictionary = {}
+
+# Quản lý danh sách rương kho báu đã mở (lưu vĩnh viễn, không bị reset khi chuyển map/dùng waypoint)
+var opened_chests: Dictionary = {}
 
 func _enter_tree() -> void:
 	instance = self
@@ -24,7 +33,49 @@ func _sync_from_save_manager() -> void:
 		var skills = SaveManager.instance.save_data.get("player", {}).get("skills", {})
 		can_silk_storm = skills.get("can_silk_storm", false)
 		can_needle_throw = skills.get("can_needle_throw", false)
+		opened_chests = SaveManager.instance.save_data.get("opened_chests", {})
 	skills_changed.emit()
+
+
+# ==================== QUẢN LÝ QUÁI VẬT & BENCH RESPRAWN ====================
+func record_enemy_defeated(enemy_id: String) -> void:
+	if enemy_id != "":
+		defeated_normal_enemies[enemy_id] = true
+
+
+func is_enemy_defeated(enemy_id: String) -> bool:
+	if enemy_id == "":
+		return false
+	return defeated_normal_enemies.get(enemy_id, false)
+
+
+func reset_map_enemies() -> void:
+	defeated_normal_enemies.clear()
+	bench_rested.emit()
+	enemies_reset.emit()
+	if is_inside_tree() and get_tree():
+		get_tree().call_group("enemies", "reset_enemy")
+
+
+# ==================== QUẢN LÝ TRẠNG THÁI MỞ RƯƠNG ====================
+func is_chest_opened(chest_id: String) -> bool:
+	if chest_id == "":
+		return false
+	return opened_chests.get(chest_id, false)
+
+
+func record_chest_opened(chest_id: String) -> void:
+	if chest_id == "":
+		return
+	opened_chests[chest_id] = true
+	_persist_opened_chests()
+	chest_opened.emit(chest_id)
+
+
+func _persist_opened_chests() -> void:
+	if SaveManager and SaveManager.instance:
+		SaveManager.instance.save_data["opened_chests"] = opened_chests
+		SaveManager.instance.save_to_disk()
 
 
 func unlock_silk_storm() -> void:

@@ -15,6 +15,7 @@ extends CharacterBody2D
 
 @export var is_boss: bool = false
 @export var enemy_journal_id: String = ""
+@export var enemy_id: String = ""
 
 var current_health: int = 2
 var is_dead: bool = false
@@ -31,24 +32,83 @@ func _ready() -> void:
 	spawn_position = global_position
 	current_health = max_health
 	_setup_combat_areas()
+	_init_enemy_id()
+	
+	# Kết nối signal bench_rested từ GameManager nếu có
+	var gm = _get_game_manager()
+	if gm and gm.has_signal("bench_rested") and not gm.bench_rested.is_connected(reset_enemy):
+		gm.bench_rested.connect(reset_enemy)
+		
+	# Kiểm tra nếu quái thường này đã bị hạ trước đó trong phiên chơi hiện tại
+	if not is_boss and _is_already_defeated():
+		_set_defeated_state(true)
+		return
+		
 	_on_enemy_ready()
 
+
+func _init_enemy_id() -> void:
+	if enemy_id.strip_edges() == "":
+		var scene_name = ""
+		if is_inside_tree() and get_tree() and get_tree().current_scene:
+			scene_name = get_tree().current_scene.name
+		enemy_id = "%s_%s_%d_%d" % [scene_name, name, int(spawn_position.x), int(spawn_position.y)]
+
+
+func _get_game_manager() -> Node:
+	if is_inside_tree() and get_tree() and get_tree().root and get_tree().root.has_node("GameManager"):
+		return get_tree().root.get_node("GameManager")
+	return null
+
+
+func _is_already_defeated() -> bool:
+	var gm = _get_game_manager()
+	if gm and gm.has_method("is_enemy_defeated"):
+		return gm.is_enemy_defeated(enemy_id)
+	return false
+
+
+func _set_defeated_state(defeated: bool) -> void:
+	if defeated:
+		is_dead = true
+		visible = false
+		process_mode = Node.PROCESS_MODE_DISABLED
+		if hitbox:
+			hitbox.set_deferred("monitoring", false)
+			hitbox.set_deferred("monitorable", false)
+		if hurtbox:
+			hurtbox.set_deferred("monitoring", false)
+			hurtbox.set_deferred("monitorable", false)
+		var col = get_node_or_null("CollisionShape2D")
+		if col:
+			col.set_deferred("disabled", true)
+	else:
+		is_dead = false
+		current_health = max_health
+		if spawn_position != Vector2.ZERO:
+			global_position = spawn_position
+		velocity = Vector2.ZERO
+		visible = true
+		process_mode = Node.PROCESS_MODE_INHERIT
+		if hitbox:
+			hitbox.set_deferred("monitoring", true)
+			hitbox.set_deferred("monitorable", true)
+		if hurtbox:
+			hurtbox.set_deferred("monitoring", true)
+			hurtbox.set_deferred("monitorable", true)
+		var col = get_node_or_null("CollisionShape2D")
+		if col:
+			col.set_deferred("disabled", false)
+		if animated_sprite:
+			animated_sprite.modulate = Color.WHITE
+			if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("idle"):
+				animated_sprite.play("idle")
+
+
 func reset_enemy() -> void:
-	if is_boss and is_dead:
+	if is_boss:
 		return
-	is_dead = false
-	current_health = max_health
-	if spawn_position != Vector2.ZERO:
-		global_position = spawn_position
-	visible = true
-	if hitbox:
-		hitbox.set_deferred("monitoring", true)
-		hitbox.set_deferred("monitorable", true)
-	if hurtbox:
-		hurtbox.set_deferred("monitoring", true)
-		hurtbox.set_deferred("monitorable", true)
-	if animated_sprite and animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("idle"):
-		animated_sprite.play("idle")
+	_set_defeated_state(false)
 
 
 ## Hook để quái vật con ghi đè logic khởi tạo riêng
@@ -131,6 +191,12 @@ func die() -> void:
 		return
 	is_dead = true
 	
+	# Ghi nhận trạng thái tiêu diệt vào GameManager đối với quái thường
+	if not is_boss:
+		var gm = _get_game_manager()
+		if gm and gm.has_method("record_enemy_defeated"):
+			gm.record_enemy_defeated(enemy_id)
+	
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 		hitbox.set_deferred("monitorable", false)
@@ -161,7 +227,10 @@ func _on_death_animation() -> void:
 		elif animated_sprite.sprite_frames.has_animation("death"):
 			animated_sprite.play("death")
 	await get_tree().create_timer(1.0).timeout
-	queue_free()
+	if is_boss:
+		queue_free()
+	else:
+		_set_defeated_state(true)
 
 
 func _infer_journal_id() -> String:

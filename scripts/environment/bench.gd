@@ -136,7 +136,10 @@ func _start_rest() -> void:
 		SaveManager.save_bench_checkpoint(sit_pos, scene_path)
 		
 	bench_rested.emit()
-	get_tree().call_group("enemies", "reset_enemy")
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		get_tree().root.get_node("GameManager").reset_map_enemies()
+	else:
+		get_tree().call_group("enemies", "reset_enemy")
 
 func _stop_rest() -> void:
 	if is_instance_valid(current_player) and current_player.has_method("stand_up_from_bench"):

@@ -37,6 +37,7 @@ var active_shop_menu: Node = null
 # --- UI DIALOGUE COMPONENTS ---
 var dialogue_layer: CanvasLayer = null
 var dialogue_panel: PanelContainer = null
+var dialogue_scroll: ScrollContainer = null
 var dialogue_name_label: Label = null
 var dialogue_text_label: Label = null
 var dialogue_hint_label: Label = null
@@ -187,6 +188,7 @@ func _setup_dialogue_ui() -> void:
 	dialogue_panel.anchor_bottom = 1.0
 	dialogue_panel.anchor_left = 0.0
 	dialogue_panel.anchor_right = 1.0
+	dialogue_panel.custom_minimum_size = Vector2(0, 195.0)
 	
 	_update_dialogue_margins()
 	
@@ -196,17 +198,20 @@ func _setup_dialogue_ui() -> void:
 		Color(0.8, 0.72, 0.55, 0.88),
 		2,
 		6,
-		Vector4(24, 16, 24, 16)
+		Vector4(24, 14, 24, 14)
 	)
 	dialogue_panel.add_theme_stylebox_override("panel", panel_sb)
 	dialogue_panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	dialogue_layer.add_child(dialogue_panel)
 	
 	var vbox = VBoxContainer.new()
-	vbox.add_theme_constant_override("separation", 8)
+	vbox.name = "DialogueVBox"
+	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	vbox.add_theme_constant_override("separation", 6)
 	dialogue_panel.add_child(vbox)
 	
-	# Tên người nói: "TUK (NHÀ THU GOM)"
+	# 1. Tên người nói: "TUK (NHÀ THU GOM)" (Cố định ở đỉnh)
 	dialogue_name_label = Label.new()
 	dialogue_name_label.text = "TUK (NHÀ THU GOM)"
 	if font_title:
@@ -217,8 +222,19 @@ func _setup_dialogue_ui() -> void:
 	dialogue_name_label.add_theme_constant_override("outline_size", 4)
 	vbox.add_child(dialogue_name_label)
 	
+	# 2. ScrollContainer bọc quanh nội dung thoại (Cuộn mượt mà khi text dài, không đội kích thước panel)
+	dialogue_scroll = ScrollContainer.new()
+	dialogue_scroll.name = "DialogueScroll"
+	dialogue_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	dialogue_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	dialogue_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	dialogue_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	vbox.add_child(dialogue_scroll)
+	
 	# Nội dung thoại (Typewriter Effect)
 	dialogue_text_label = Label.new()
+	dialogue_text_label.name = "DialogueTextLabel"
+	dialogue_text_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	dialogue_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if font_body:
 		dialogue_text_label.add_theme_font_override("font", font_body)
@@ -227,10 +243,13 @@ func _setup_dialogue_ui() -> void:
 	dialogue_text_label.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96))
 	dialogue_text_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	dialogue_text_label.add_theme_constant_override("outline_size", 3)
-	vbox.add_child(dialogue_text_label)
+	dialogue_scroll.add_child(dialogue_text_label)
 	
-	# Vùng nút tùy chọn & chỉ dẫn (Footer)
+	# 3. Vùng nút tùy chọn & chỉ dẫn (Footer ghim cố định ở đáy hộp thoại)
 	var footer = HBoxContainer.new()
+	footer.name = "DialogueFooter"
+	footer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	footer.custom_minimum_size = Vector2(0, 36.0)
 	footer.add_theme_constant_override("separation", 12)
 	vbox.add_child(footer)
 	
@@ -293,10 +312,11 @@ func _update_dialogue_margins() -> void:
 	var left_m = maxf(80.0, float(safe_area.position.x) + 30.0)
 	var right_m = -maxf(80.0, float(vp_size.x - safe_area.end.x) + 30.0)
 	var bot_m = -maxf(35.0, float(vp_size.y - safe_area.end.y) + 20.0)
+	var panel_h = 195.0
 	dialogue_panel.offset_left = left_m
 	dialogue_panel.offset_right = right_m
 	dialogue_panel.offset_bottom = bot_m
-	dialogue_panel.offset_top = bot_m - 175.0
+	dialogue_panel.offset_top = bot_m - panel_h
 
 
 # ==================== ĐIỀU KHIỂN & KÍCH HOẠT HỘI THOẠI ====================
@@ -379,6 +399,8 @@ func _start_dialogue(text: String, on_complete: Callable = Callable(), show_choi
 		
 	dialogue_text_label.text = text
 	dialogue_text_label.visible_characters = 0
+	if dialogue_scroll:
+		dialogue_scroll.scroll_vertical = 0
 	
 	dialogue_layer.visible = true
 	dialogue_panel.modulate.a = 0.0

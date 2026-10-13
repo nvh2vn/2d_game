@@ -34,6 +34,8 @@ enum ChestType {
 	preload("res://assets/audio/geo/geo_rock_hit_2.mp3")
 ]
 
+@export var chest_id: String = ""
+
 var current_hits: int = 0
 var is_opened: bool = false
 
@@ -44,10 +46,53 @@ var is_opened: bool = false
 
 func _ready() -> void:
 	add_to_group("chests")
+	_init_chest_id()
+	
+	# Kiểm tra trạng thái đã mở từ GameManager
+	if _check_is_opened():
+		_set_opened_state_immediate()
+		return
+		
 	if sprite and closed_texture:
 		sprite.texture = closed_texture
 	if hurtbox:
 		hurtbox.area_entered.connect(_on_hurtbox_area_entered)
+
+
+func _init_chest_id() -> void:
+	if chest_id.strip_edges() == "":
+		var scene_name = ""
+		if is_inside_tree() and get_tree() and get_tree().current_scene:
+			scene_name = get_tree().current_scene.name
+		chest_id = "%s_%s_%d_%d" % [scene_name, name, int(global_position.x), int(global_position.y)]
+
+
+func _get_game_manager() -> Node:
+	if is_inside_tree() and get_tree() and get_tree().root and get_tree().root.has_node("GameManager"):
+		return get_tree().root.get_node("GameManager")
+	return null
+
+
+func _check_is_opened() -> bool:
+	var gm = _get_game_manager()
+	if gm:
+		if "opened_chests" in gm and gm.opened_chests.has(chest_id):
+			return bool(gm.opened_chests[chest_id])
+		if gm.has_method("is_chest_opened"):
+			return gm.is_chest_opened(chest_id)
+	return false
+
+
+func _set_opened_state_immediate() -> void:
+	is_opened = true
+	if sprite and opened_texture:
+		sprite.texture = opened_texture
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", false)
+		hurtbox.set_deferred("monitorable", false)
+		var col = hurtbox.get_node_or_null("CollisionShape2D")
+		if col:
+			col.set_deferred("disabled", true)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
@@ -85,7 +130,25 @@ func take_hit() -> void:
 
 
 func open_chest() -> void:
+	if is_opened:
+		return
 	is_opened = true
+	
+	# Ghi nhận trạng thái mở rương vào GameManager
+	var gm = _get_game_manager()
+	if gm:
+		if "opened_chests" in gm:
+			gm.opened_chests[chest_id] = true
+		if gm.has_method("record_chest_opened"):
+			gm.record_chest_opened(chest_id)
+			
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", false)
+		hurtbox.set_deferred("monitorable", false)
+		var col = hurtbox.get_node_or_null("CollisionShape2D")
+		if col:
+			col.set_deferred("disabled", true)
+			
 	if sprite and opened_texture:
 		sprite.texture = opened_texture
 		

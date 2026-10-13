@@ -32,6 +32,7 @@ extends "res://scripts/levels/pixel_level.gd"
 @onready var player_node: Node2D = get_node_or_null("PlayerController")
 @onready var dialogue_layer: CanvasLayer = get_node_or_null("DialogueLayer")
 @onready var dialogue_panel: Control = get_node_or_null("%DialoguePanel")
+@onready var dialogue_scroll: ScrollContainer = get_node_or_null("%DialogueScroll")
 @onready var dialogue_text_label: Label = get_node_or_null("%DialogueTextLabel")
 @onready var dialogue_name_label: Label = get_node_or_null("%DialogueNameLabel")
 @onready var dialogue_hint_label: Label = get_node_or_null("%DialogueHintLabel")
@@ -131,10 +132,11 @@ func _setup_dialogue_ui() -> void:
 		panel.anchor_top = 1.0
 		panel.anchor_right = 1.0
 		panel.anchor_bottom = 1.0
+		panel.custom_minimum_size = Vector2(0, 195.0)
 		panel.offset_left = 120.0
-		panel.offset_top = -185.0
+		panel.offset_top = -205.0
 		panel.offset_right = -120.0
-		panel.offset_bottom = -35.0
+		panel.offset_bottom = -30.0
 		
 		# Stylebox chuẩn Hollow Knight: Khung đen mờ viền xám bạc ánh kim
 		var sb := StyleBoxFlat.new()
@@ -152,16 +154,18 @@ func _setup_dialogue_ui() -> void:
 		
 		var margin := MarginContainer.new()
 		margin.add_theme_constant_override("margin_left", 26)
-		margin.add_theme_constant_override("margin_top", 16)
+		margin.add_theme_constant_override("margin_top", 14)
 		margin.add_theme_constant_override("margin_right", 26)
-		margin.add_theme_constant_override("margin_bottom", 16)
+		margin.add_theme_constant_override("margin_bottom", 14)
 		panel.add_child(margin)
 		
 		var vbox := VBoxContainer.new()
-		vbox.add_theme_constant_override("separation", 8)
+		vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		vbox.add_theme_constant_override("separation", 6)
 		margin.add_child(vbox)
 		
-		# Tên Boss
+		# 1. Tên Boss (Cố định ở đỉnh)
 		var name_lbl := Label.new()
 		name_lbl.name = "DialogueNameLabel"
 		name_lbl.unique_name_in_owner = true
@@ -175,10 +179,22 @@ func _setup_dialogue_ui() -> void:
 		vbox.add_child(name_lbl)
 		dialogue_name_label = name_lbl
 		
+		# 2. ScrollContainer bọc nội dung thoại (Cuộn khi dài, không đội kích thước panel)
+		var scroll := ScrollContainer.new()
+		scroll.name = "DialogueScroll"
+		scroll.unique_name_in_owner = true
+		scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+		vbox.add_child(scroll)
+		dialogue_scroll = scroll
+		
 		# Nội dung thoại
 		var txt_lbl := Label.new()
 		txt_lbl.name = "DialogueTextLabel"
 		txt_lbl.unique_name_in_owner = true
+		txt_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		txt_lbl.text = dialogue_text
 		txt_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		if font_body:
@@ -188,15 +204,16 @@ func _setup_dialogue_ui() -> void:
 		txt_lbl.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96, 1.0))
 		txt_lbl.add_theme_color_override("font_outline_color", Color.BLACK)
 		txt_lbl.add_theme_constant_override("outline_size", 3)
-		vbox.add_child(txt_lbl)
+		scroll.add_child(txt_lbl)
 		dialogue_text_label = txt_lbl
 		
-		# Gợi ý bấm tiếp tục
+		# 3. Gợi ý bấm tiếp tục (Ghim cố định ở đáy hộp thoại)
 		var hint_lbl := Label.new()
 		hint_lbl.name = "DialogueHintLabel"
 		hint_lbl.unique_name_in_owner = true
 		hint_lbl.text = "▼ Chạm màn hình hoặc bấm Enter / Space / E để tiếp tục"
 		hint_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		hint_lbl.custom_minimum_size = Vector2(0, 24.0)
 		if font_body:
 			hint_lbl.add_theme_font_override("font", font_body)
 		hint_lbl.add_theme_font_size_override("font_size", 13)
@@ -285,6 +302,8 @@ func _display_dialogue() -> void:
 	await fade_tw.finished
 	
 	# Hiệu ứng Typewriter gõ từng chữ
+	if dialogue_scroll:
+		dialogue_scroll.scroll_vertical = 0
 	if dialogue_text_label:
 		dialogue_text_label.visible_characters = 0
 		var total_chars: int = dialogue_text.length()
