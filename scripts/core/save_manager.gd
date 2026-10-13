@@ -29,8 +29,8 @@ const ITEM_REGISTRY: Dictionary = {
 	},
 	"map_tuk": {
 		"id": "map_tuk",
-		"name": "Bản Đồ Cổ Khu Vực (Map)",
-		"desc": "Tấm bản đồ ghi chép mạng lưới địa hình và các ngóc ngách bí mật dưới cống ngầm của Tuk.",
+		"name": "Bản Thảo Thánh Đường (Sanctum Parchment)",
+		"desc": "Cuộn da thuộc sờn cũ khắc họa những đường hầm bí mật đã bị rêu phong xóa nhòa. Một nét vẽ dở dang tại đỉnh tháp như chỉ ra điểm mù chí tử của kẻ ngự trị trên cao.",
 		"icon": "res://assets/ui/inventory/inv_item__0006_area_map.png",
 		"category": "BẢN ĐỒ"
 	},
@@ -43,10 +43,24 @@ const ITEM_REGISTRY: Dictionary = {
 	},
 	"rancid_egg": {
 		"id": "rancid_egg",
-		"name": "Trứng Thối (Rancid Egg)",
-		"desc": "Món đồ ưa thích được Tuk thu gom dưới các cống ngầm. Tỏa ra mùi nồng nặc đặc trưng nhưng ẩn chứa giá trị trao đổi huyền bí.",
+		"name": "Ống Nghiệm Linh Hồn (Soul Vial)",
+		"desc": "Một ống thủy tinh cổ chứa lớp sương mờ chập chờn lơ lửng. Khi áp sát tai, dường như có tiếng thì thầm tuyệt vọng van xin được giải thoát khỏi sự giam hãm vĩnh hằng.",
 		"icon": "res://assets/ui/inventory/inv_rancid_egg.png",
 		"category": "VẬT PHẨM"
+	},
+	"soul_vial": {
+		"id": "soul_vial",
+		"name": "Ống Nghiệm Linh Hồn (Soul Vial)",
+		"desc": "Một ống thủy tinh cổ chứa lớp sương mờ chập chờn lơ lửng. Khi áp sát tai, dường như có tiếng thì thầm tuyệt vọng van xin được giải thoát khỏi sự giam hãm vĩnh hằng.",
+		"icon": "res://assets/ui/inventory/inv_rancid_egg.png",
+		"category": "VẬT PHẨM"
+	},
+	"sanctum_parchment": {
+		"id": "sanctum_parchment",
+		"name": "Bản Thảo Thánh Đường (Sanctum Parchment)",
+		"desc": "Cuộn da thuộc sờn cũ khắc họa những đường hầm bí mật đã bị rêu phong xóa nhòa. Một nét vẽ dở dang tại đỉnh tháp như chỉ ra điểm mù chí tử của kẻ ngự trị trên cao.",
+		"icon": "res://assets/ui/inventory/inv_item__0006_area_map.png",
+		"category": "BẢN ĐỒ"
 	},
 	"mask_shard": {
 		"id": "mask_shard",
@@ -57,10 +71,31 @@ const ITEM_REGISTRY: Dictionary = {
 	},
 	"city_key": {
 		"id": "city_key",
-		"name": "City Crest",
-		"desc": "Chìa khóa đá cổ mang biểu tượng vương quốc, dùng để mở các cánh cổng cơ quan ngầm.",
+		"name": "CITY CREST",
+		"desc": "Dấu ấn bằng bạc mang biểu tượng một guồng tơ đang xoay tít. Ẩn sâu bên trong là xung lực mãnh liệt đang bị kìm nén, chực chờ thức tỉnh để phóng ra những vệt tơ xé rách không gian.",
 		"icon": "res://assets/ui/inventory/inv_item_city_key.png",
-		"category": "CHÌA KHÓA"
+		"category": "CỔ VẬT HOÀNG THÀNH"
+	},
+	"city_crest": {
+		"id": "city_crest",
+		"name": "CITY CREST",
+		"desc": "Dấu ấn bằng bạc mang biểu tượng một guồng tơ đang xoay tít. Ẩn sâu bên trong là xung lực mãnh liệt đang bị kìm nén, chực chờ thức tỉnh để phóng ra những vệt tơ xé rách không gian.",
+		"icon": "res://assets/ui/inventory/City Crest - false_knight_statue_crest.png",
+		"category": "CỔ VẬT HOÀNG THÀNH"
+	},
+	"defender_crest": {
+		"id": "defender_crest",
+		"name": "PIERCING BLAST",
+		"desc": "Tinh thể hộ vệ phát ra ánh sáng tím lạnh lẽo, tỏa ra làn khói mỏng áp chế xung quanh. Đầu ngọn tinh thể sắc lẹm như một mũi tên ngưng tụ, chỉ thiếu một ý chí sắt đá để phóng ra tia chớp xuyên thủng mọi kết giới.",
+		"icon": "res://assets/ui/inventory/Charms/Defender_s Crest - charm_dung_def.png",
+		"category": "KỶ VẬT XẠ THỦ"
+	},
+	"piercing_blast": {
+		"id": "piercing_blast",
+		"name": "PIERCING BLAST",
+		"desc": "Tinh thể hộ vệ phát ra ánh sáng tím lạnh lẽo, tỏa ra làn khói mỏng áp chế xung quanh. Đầu ngọn tinh thể sắc lẹm như một mũi tên ngưng tụ, chỉ thiếu một ý chí sắt đá để phóng ra tia chớp xuyên thủng mọi kết giới.",
+		"icon": "res://assets/ui/inventory/Charms/Defender_s Crest - charm_dung_def.png",
+		"category": "KỶ VẬT XẠ THỦ"
 	},
 	"hallownest_map": {
 		"id": "hallownest_map",
@@ -854,11 +889,32 @@ func _sync_mask_shard_inventory_item(shards_count: int) -> void:
 		p.inventory = save_data["inventory"].duplicate()
 
 
+func _get_item_aliases(item_id: String) -> Array[String]:
+	var target_ids: Array[String] = [item_id]
+	if item_id == "soul_vial" or item_id == "rancid_egg":
+		if not ("soul_vial" in target_ids): target_ids.append("soul_vial")
+		if not ("rancid_egg" in target_ids): target_ids.append("rancid_egg")
+	elif item_id == "sanctum_parchment" or item_id == "map_tuk":
+		if not ("sanctum_parchment" in target_ids): target_ids.append("sanctum_parchment")
+		if not ("map_tuk" in target_ids): target_ids.append("map_tuk")
+	elif item_id == "piercing_blast" or item_id == "defender_crest":
+		if not ("piercing_blast" in target_ids): target_ids.append("piercing_blast")
+		if not ("defender_crest" in target_ids): target_ids.append("defender_crest")
+	elif item_id == "city_crest" or item_id == "city_key":
+		if not ("city_crest" in target_ids): target_ids.append("city_crest")
+		if not ("city_key" in target_ids): target_ids.append("city_key")
+	return target_ids
+
+
 func has_inventory_item(item_id: String) -> bool:
+	var target_ids = _get_item_aliases(item_id)
 	for it in get_inventory_items():
-		if it is Dictionary and it.get("id", "") == item_id:
-			return true
-		elif it is String and it == item_id:
+		var id_str: String = ""
+		if it is Dictionary:
+			id_str = str(it.get("id", ""))
+		elif it is String:
+			id_str = str(it)
+		if id_str in target_ids:
 			return true
 	return false
 
@@ -867,11 +923,17 @@ func remove_inventory_item(item_id: String, count: int = 1) -> bool:
 	if not save_data.has("inventory") or not (save_data["inventory"] is Array):
 		return false
 		
+	var target_ids = _get_item_aliases(item_id)
 	var items: Array = save_data["inventory"]
 	var target_idx: int = -1
 	for i in range(items.size()):
 		var it = items[i]
-		if (it is Dictionary and it.get("id", "") == item_id) or (it is String and it == item_id):
+		var id_str: String = ""
+		if it is Dictionary:
+			id_str = str(it.get("id", ""))
+		elif it is String:
+			id_str = str(it)
+		if id_str in target_ids:
 			target_idx = i
 			break
 			
@@ -902,6 +964,17 @@ static func remove_item(item_id: String, count: int = 1) -> bool:
 	if instance:
 		return instance.remove_inventory_item(item_id, count)
 	return false
+
+
+static func is_event_done(event_id: String) -> bool:
+	if instance:
+		return instance.is_event_completed(event_id)
+	return false
+
+
+static func set_event_done(event_id: String, save_now: bool = true) -> void:
+	if instance:
+		instance.set_event_completed(event_id, save_now)
 
 
 

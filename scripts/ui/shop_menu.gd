@@ -35,18 +35,18 @@ var shop_items: Array[Dictionary] = [
 	},
 	{
 		"id": "map_tuk",
-		"name": "Bản Đồ Cổ Khu Vực (Map)",
+		"name": "Bản Thảo Thánh Đường (Sanctum Parchment)",
 		"price": 100,
-		"description": "Tấm bản đồ ghi chép mạng lưới địa hình và các ngóc ngách bí mật dưới cống ngầm của Tuk.",
+		"description": "Cuộn da thuộc sờn cũ khắc họa những đường hầm bí mật đã bị rêu phong xóa nhòa. Một nét vẽ dở dang tại đỉnh tháp như chỉ ra điểm mù chí tử của kẻ ngự trị trên cao.",
 		"icon": "res://assets/ui/inventory/inv_item__0006_area_map.png",
 		"category": "BẢN ĐỒ",
 		"one_time": true
 	},
 	{
 		"id": "rancid_egg",
-		"name": "Trứng Thối (Rancid Egg)",
+		"name": "Ống Nghiệm Linh Hồn (Soul Vial)",
 		"price": 80,
-		"description": "Món đồ ưa thích được Tuk thu gom dưới các cống ngầm. Có giá trị trao đổi đặc biệt.",
+		"description": "Một ống thủy tinh cổ chứa lớp sương mờ chập chờn lơ lửng. Khi áp sát tai, dường như có tiếng thì thầm tuyệt vọng van xin được giải thoát khỏi sự giam hãm vĩnh hằng.",
 		"icon": "res://assets/ui/inventory/inv_rancid_egg.png",
 		"category": "VẬT PHẨM",
 		"one_time": false
@@ -177,6 +177,8 @@ func populate_shop_items() -> void:
 		
 		var desc_lbl = Label.new()
 		desc_lbl.text = item["description"]
+		desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		desc_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		desc_lbl.add_theme_font_size_override("font_size", 12)
 		desc_lbl.add_theme_color_override("font_color", Color(0.66, 0.68, 0.74, 0.85))
 		detail_box.add_child(desc_lbl)

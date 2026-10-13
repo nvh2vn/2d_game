@@ -67,6 +67,8 @@
 [ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/fly_enemy.tscn" id="ext_fly_enemy"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/teleporter.tscn" id="ext_teleporter"]
 [ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://scenes/npc/tuk_npc.tscn" id="ext_tuk_npc"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/emilitia_npc.tscn" id="ext_emilitia_npc"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/nailmaster_npc.tscn" id="ext_nailmaster_npc"]
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://scripts/levels/pixel_level.gd" id="level_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baaps"]
@@ -10155,6 +10157,12 @@ position = Vector2(501, 116)
 
 [node name="TukNPC" parent="." unique_id=981273918 instance=ExtResource("ext_tuk_npc")]
 position = Vector2(-120, 63)
+
+[node name="EmilitiaNPC" parent="." instance=ExtResource("ext_emilitia_npc")]
+position = Vector2(280, 63)
+
+[node name="NailMasterNPC" parent="." instance=ExtResource("ext_nailmaster_npc")]
+position = Vector2(680, 63)
 
 [node name="PlayerController" parent="." unique_id=494526030 instance=ExtResource("2_jm60u")]
 position = Vector2(-241, 63)

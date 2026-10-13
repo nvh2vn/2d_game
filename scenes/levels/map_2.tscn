@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/teleporter.tscn" id="29_j56mx"]
 [ext_resource type="PackedScene" uid="uid://c2ovpdlgbmbhl" path="res://scenes/environment/locked_door.tscn" id="31_eeb04"]
 [ext_resource type="Texture2D" uid="uid://dy3th1waywris" path="res://assets/env/abyss/Lighthouse_Room_Interior_0004_Layer-5.png" id="31_yt1e1"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/emilitia_npc.tscn" id="ext_emilitia_npc"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/nailmaster_npc.tscn" id="ext_nailmaster_npc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20iwf"]
 size = Vector2(903.33435, 58.333252)
@@ -458,5 +460,11 @@ texture = ExtResource("19_45j2g")
 
 [node name="LockedDoor" parent="." unique_id=1762223187 instance=ExtResource("31_eeb04")]
 position = Vector2(2659, 279)
+
+[node name="EmilitiaNPC" parent="." instance=ExtResource("ext_emilitia_npc")]
+position = Vector2(2020, 310)
+
+[node name="NailMasterNPC" parent="." instance=ExtResource("ext_nailmaster_npc")]
+position = Vector2(2440, 310)
 
 [editable path="Teleporter"]

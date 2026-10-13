@@ -208,16 +208,16 @@ const CORE_CRESTS: Array[Dictionary] = [
 	{
 		"id": "city_crest",
 		"name": "CITY CREST",
-		"category": "HUY HIỆU HOÀNG GIA",
+		"category": "CỔ VẬT HOÀNG THÀNH",
 		"icon": "res://assets/ui/inventory/City Crest - false_knight_statue_crest.png",
-		"desc": "Khối đá chạm khắc biểu tượng vương triều, dùng để kích hoạt các cơ quan ngầm cổ xưa."
+		"desc": "Dấu ấn bằng bạc mang biểu tượng một guồng tơ đang xoay tít. Ẩn sâu bên trong là xung lực mãnh liệt đang bị kìm nén, chực chờ thức tỉnh để phóng ra những vệt tơ xé rách không gian."
 	},
 	{
 		"id": "defender_crest",
-		"name": "DEFENDER'S CREST",
-		"category": "BÙA HỘ THÂN",
+		"name": "PIERCING BLAST",
+		"category": "KỶ VẬT XẠ THỦ",
 		"icon": "res://assets/ui/inventory/Charms/Defender_s Crest - charm_dung_def.png",
-		"desc": "Mang theo linh hồn của người hộ vệ trung kiên, tỏa ra làn khói bảo vệ xung quanh chủ nhân."
+		"desc": "Tinh thể hộ vệ phát ra ánh sáng tím lạnh lẽo, tỏa ra làn khói mỏng áp chế xung quanh. Đầu ngọn tinh thể sắc lẹm như một mũi tên ngưng tụ, chỉ thiếu một ý chí sắt đá để phóng ra tia chớp xuyên thủng mọi kết giới."
 	},
 	{
 		"id": "hallownest_seal",
@@ -803,7 +803,11 @@ func _display_item_preview(it: Dictionary) -> void:
 
 	# 2. Phân loại
 	if item_preview_category:
-		item_preview_category.text = "PHÂN LOẠI: %s" % it.get("category", "VẬT PHẨM").to_upper()
+		var cat_str = it.get("category", "VẬT PHẨM").strip_edges()
+		if cat_str.to_upper().begins_with("PHÂN LOẠI:"):
+			item_preview_category.text = cat_str.to_upper()
+		else:
+			item_preview_category.text = "PHÂN LOẠI: %s" % cat_str.to_upper()
 
 	# 3. Mô tả chi tiết & Tiến độ Mảnh mặt nạ
 	var desc_str = it.get("desc", "")
@@ -828,6 +832,7 @@ func _display_item_preview(it: Dictionary) -> void:
 			mask_upgrade_container.visible = false
 
 	if item_preview_desc:
+		item_preview_desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		item_preview_desc.text = desc_str
 
 	# 4. Icon
