@@ -26,7 +26,7 @@ var is_armored: bool = false
 @onready var ledge_ray: RayCast2D = get_node_or_null("%LedgeRay")
 
 func _on_enemy_ready() -> void:
-	max_health = 4
+	max_health = 2
 	current_health = max_health
 	damage = 1
 	loot_tier = GeoDropHelper.EnemyTier.NORMAL
