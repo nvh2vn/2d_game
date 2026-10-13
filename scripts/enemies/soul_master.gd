@@ -290,7 +290,7 @@ func _trigger_phase_transition() -> void:
 		return
 		
 	# 2. Boss bay lơ lửng lên giữa không trung
-	var hover_y = arena_ground_y - 175.0
+	var hover_y = arena_ground_y - 200.0
 	var tw_rise = create_tween()
 	tw_rise.tween_property(self, "global_position:y", hover_y, 0.45).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
@@ -351,9 +351,9 @@ func _next_attack_cycle() -> void:
 			animated_sprite.play("idle")
 		return
 		
-	# Thời gian bay lơ lửng chờ giữa các đòn: Phase 2 giảm mạnh còn 0.32s
+	# Thời gian bay lơ lửng chờ giữa các đòn: Phase 2 được cân bằng lại gần như Phase 1 (0.6s so với 0.7s)
 	state = BossState.IDLE_HOVER
-	var rest_time = 0.7 if current_phase == 1 else 0.32
+	var rest_time = 0.7 if current_phase == 1 else 0.6
 	await get_tree().create_timer(rest_time).timeout
 	if is_dead or not is_inside_tree() or state == BossState.STAGGER or state == BossState.TRANSITION:
 		return
@@ -431,8 +431,8 @@ func _attack_orb_shot() -> void:
 		_find_player()
 		
 	# Teleport lơ lửng trên không
-	var air_y = arena_ground_y - randf_range(160.0, 220.0)
-	var air_x = clampf(global_position.x + randf_range(-180.0, 180.0), arena_left_x + 80.0, arena_right_x - 80.0)
+	var air_y = arena_ground_y - randf_range(180.0, 240.0)
+	var air_x = clampf(global_position.x + randf_range(-180.0, 180.0), arena_left_x + 100.0, arena_right_x - 100.0)
 	await _teleport_to(Vector2(air_x, air_y))
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
@@ -441,21 +441,21 @@ func _attack_orb_shot() -> void:
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("cast_orb"):
 		animated_sprite.play("cast_orb")
 		
-	var cast_delay = 0.28 if current_phase == 2 else 0.35
+	var cast_delay = 0.3 if current_phase == 2 else 0.35
 	await get_tree().create_timer(cast_delay).timeout
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# Phase 1: 1 quả cầu đuổi theo người chơi; Phase 2: Burst fire 3 quả cầu dồn dập
-	var orb_count = 3 if current_phase == 2 else 1
-	var orb_speed = 390.0 if current_phase == 2 else 330.0
-	var burst_delay = 0.22 if current_phase == 2 else 0.35
+	# Giảm bớt số cầu ở Phase 2 từ 3 xuống 2 để thời gian ra chiêu gọn gàng giống Phase 1
+	var orb_count = 2 if current_phase == 2 else 1
+	var orb_speed = 360.0 if current_phase == 2 else 330.0
+	var burst_delay = 0.18 if current_phase == 2 else 0.35
 	
 	for i in range(orb_count):
 		if orb_scene and get_parent():
 			var orb = orb_scene.instantiate()
 			get_parent().add_child(orb)
-			var shoot_pos = global_position + Vector2(facing_dir * 45.0, -20.0)
+			var shoot_pos = global_position + Vector2(facing_dir * 75.0, -90.0)
 			var init_dir = (player_target.global_position - shoot_pos).normalized() if player_target else Vector2(facing_dir, 0.5)
 			orb.setup_shot(shoot_pos, init_dir, orb_speed, true)
 		if orb_count > 1 and i < orb_count - 1:
@@ -464,7 +464,7 @@ func _attack_orb_shot() -> void:
 			if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 				return
 			
-	var post_delay = 0.35 if current_phase == 2 else 0.6
+	var post_delay = 0.45 if current_phase == 2 else 0.6
 	await get_tree().create_timer(post_delay).timeout
 	_next_attack_cycle()
 
@@ -477,12 +477,12 @@ func _attack_orb_shield_pass() -> void:
 		
 	# Chọn mép xuất phát (trái hoặc phải)
 	var start_from_left = (randf() < 0.5)
-	var start_x = (arena_left_x + 70.0) if start_from_left else (arena_right_x - 70.0)
-	var target_x = (arena_right_x - 70.0) if start_from_left else (arena_left_x + 70.0)
+	var start_x = (arena_left_x + 90.0) if start_from_left else (arena_right_x - 90.0)
+	var target_x = (arena_right_x - 90.0) if start_from_left else (arena_left_x + 90.0)
 	var fly_dir_x = 1.0 if start_from_left else -1.0
 	
-	# Teleport ở độ cao ngang người chơi (cần nhảy né)
-	await _teleport_to(Vector2(start_x, arena_ground_y - 75.0))
+	# Teleport ở độ cao ngang người chơi (căn chỉnh theo tỷ lệ scale mới)
+	await _teleport_to(Vector2(start_x, arena_ground_y - 110.0))
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
@@ -492,9 +492,9 @@ func _attack_orb_shield_pass() -> void:
 	if animated_sprite:
 		animated_sprite.flip_h = (fly_dir_x > 0)
 		
-	# Phase 1: 4 quả cầu; Phase 2: 6 quả cầu xoay quanh người làm khiên
-	var orb_count = 6 if current_phase == 2 else 4
-	var shield_radius = 105.0 if current_phase == 2 else 90.0
+	# Triệu hồi các quả cầu xoay quanh người làm khiên (bán kính mở rộng theo scale gấp đôi)
+	var orb_count = 5 if current_phase == 2 else 4
+	var shield_radius = 180.0 if current_phase == 2 else 165.0
 	var shield_orbs = []
 	if orb_scene and get_parent():
 		for i in range(orb_count):
@@ -504,8 +504,8 @@ func _attack_orb_shield_pass() -> void:
 			orb.setup_shield_orb(self, angle, shield_radius)
 			shield_orbs.append(orb)
 			
-	# Bay từ từ từ mép này sang mép kia sân đấu (Phase 2 nhanh hơn: 2.3s thay vì 3.2s)
-	var fly_duration = 2.3 if current_phase == 2 else 3.2
+	# Bay ngang sân đấu: thời gian rút gọn hợp lý
+	var fly_duration = 2.6 if current_phase == 2 else 3.1
 	var tw_fly = create_tween()
 	tw_fly.tween_property(self, "global_position:x", target_x, fly_duration).set_trans(Tween.TRANS_LINEAR)
 	await tw_fly.finished
@@ -515,7 +515,7 @@ func _attack_orb_shield_pass() -> void:
 		return
 		
 	# Khi bay hết màn hình, các quả cầu mở rộng bán kính và bay tỏa ra ngoài
-	var release_speed = 460.0 if current_phase == 2 else 400.0
+	var release_speed = 430.0 if current_phase == 2 else 390.0
 	for i in range(shield_orbs.size()):
 		var o = shield_orbs[i]
 		if is_instance_valid(o):
@@ -527,41 +527,40 @@ func _attack_orb_shield_pass() -> void:
 
 
 # ==================== ĐÒN 3: ĐẬP SÀN XUNG KÍCH (DESOLATE DIVE / SLAM) ====================
-func _attack_slam_dive(is_second_slam: bool = false) -> void:
+func _attack_slam_dive(_is_second_slam: bool = false) -> void:
 	state = BossState.ATTACK_SLAM
 	if not player_target or not is_instance_valid(player_target):
 		_find_player()
 	var p_x = player_target.global_position.x if player_target and is_instance_valid(player_target) else global_position.x
 	
-	# Teleport lên vị trí ngay trên đầu Player
-	await _teleport_to(Vector2(p_x, arena_ground_y - 250.0))
+	# Teleport lên vị trí ngay trên đầu Player (nâng độ cao theo tỷ lệ 2x)
+	await _teleport_to(Vector2(p_x, arena_ground_y - 280.0))
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	# Khựng lại chuẩn bị lao xuống
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_anticipation"):
 		animated_sprite.play("slam_anticipation")
-	var antic_time = 0.22 if current_phase == 2 else 0.32
+	var antic_time = 0.26 if current_phase == 2 else 0.32
 	await get_tree().create_timer(antic_time).timeout
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# CƠ CHẾ ĐÁNH LỪA (FAKE DIVE / FEINT): Phase 1 30%, Phase 2 45%
-	var feint_chance = 0.45 if current_phase == 2 else 0.30
-	var is_feint = (randf() < feint_chance) and not is_second_slam
+	# CƠ CHẾ ĐÁNH LỪA (FAKE DIVE / FEINT): Tỷ lệ gọn gàng, không kéo dài thời gian
+	var feint_chance = 0.35 if current_phase == 2 else 0.30
+	var is_feint = (randf() < feint_chance)
 	if is_feint:
-		# Lao xuống lưng chừng rồi đột ngột teleport biến mất!
 		if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_dive"):
 			animated_sprite.play("slam_dive")
 		var fake_tw = create_tween()
-		fake_tw.tween_property(self, "global_position:y", arena_ground_y - 120.0, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		fake_tw.tween_property(self, "global_position:y", arena_ground_y - 140.0, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		await fake_tw.finished
 		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
-		# Teleport xuất hiện lại trên đầu vị trí mới của Player!
+		# Teleport xuất hiện lại trên đầu vị trí mới của Player
 		if not player_target or not is_instance_valid(player_target): _find_player()
 		var new_p_x = player_target.global_position.x if player_target else global_position.x
-		await _teleport_to(Vector2(new_p_x, arena_ground_y - 250.0))
+		await _teleport_to(Vector2(new_p_x, arena_ground_y - 280.0))
 		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
 		if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_anticipation"):
@@ -569,56 +568,49 @@ func _attack_slam_dive(is_second_slam: bool = false) -> void:
 		await get_tree().create_timer(0.16).timeout
 		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
-	# LAO CẮM THẲNG XUỐNG ĐẤT THẬT (Phase 2 nhanh hơn: 0.15s thay vì 0.22s)
+	# LAO CẮM THẲNG XUỐNG ĐẤT THẬT
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_dive"):
 		animated_sprite.play("slam_dive")
 	if attack_collision:
 		attack_collision.set_deferred("disabled", false)
 		
-	var dive_duration = 0.15 if current_phase == 2 else 0.22
+	var dive_duration = 0.18 if current_phase == 2 else 0.22
 	var dive_tw = create_tween()
 	dive_tw.tween_property(self, "global_position:y", arena_ground_y, dive_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	await dive_tw.finished
 	
 	# TIẾP ĐẤT TẠO RUNG CHẤN VÀ CỘT SÓNG XUNG KÍCH SANG HAI BÊN
 	play_sfx(slam_ground_sfx)
-	var shake_power = 9.0 if current_phase == 2 else 6.0
+	var shake_power = 8.0 if current_phase == 2 else 6.0
 	_shake_camera(shake_power, 0.35)
 		
-	# Sinh 2 sóng chấn động (Phase 2 tốc độ 460.0 thay vì 360.0)
-	var wave_speed = 460.0 if current_phase == 2 else 360.0
+	# Sinh 2 sóng chấn động
+	var wave_speed = 400.0 if current_phase == 2 else 360.0
 	if shockwave_scene and get_parent():
 		var sw_left = shockwave_scene.instantiate()
 		get_parent().add_child(sw_left)
-		sw_left.setup(-1.0, Vector2(global_position.x - 30.0, arena_ground_y), wave_speed)
+		sw_left.setup(-1.0, Vector2(global_position.x - 40.0, arena_ground_y), wave_speed)
 		
 		var sw_right = shockwave_scene.instantiate()
 		get_parent().add_child(sw_right)
-		sw_right.setup(1.0, Vector2(global_position.x + 30.0, arena_ground_y), wave_speed)
+		sw_right.setup(1.0, Vector2(global_position.x + 40.0, arena_ground_y), wave_speed)
 		
-	# Phase 2: Bắn thêm 2 quả cầu Soul Orb bay bổng lên trên khi tiếp đất!
+	# Phase 2: Bắn thêm 2 quả cầu Soul Orb bay bổng lên trên khi tiếp đất
 	if current_phase == 2 and orb_scene and get_parent():
 		var orb_left = orb_scene.instantiate()
 		get_parent().add_child(orb_left)
-		orb_left.setup_shot(Vector2(global_position.x - 24.0, arena_ground_y - 35.0), Vector2(-0.55, -0.85).normalized(), 330.0, true)
+		orb_left.setup_shot(Vector2(global_position.x - 35.0, arena_ground_y - 45.0), Vector2(-0.55, -0.85).normalized(), 330.0, true)
 		
 		var orb_right = orb_scene.instantiate()
 		get_parent().add_child(orb_right)
-		orb_right.setup_shot(Vector2(global_position.x + 24.0, arena_ground_y - 35.0), Vector2(0.55, -0.85).normalized(), 330.0, true)
+		orb_right.setup_shot(Vector2(global_position.x + 35.0, arena_ground_y - 45.0), Vector2(0.55, -0.85).normalized(), 330.0, true)
 		
 	# Tắt va chạm đập đất sau nhịp va đập ngắn
 	await get_tree().create_timer(0.12).timeout
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
 		
-	# Phase 2: 40% TỶ LỆ ĐẬP ĐẤT 2 LẦN LIÊN TIẾP (DOUBLE SLAM)
-	if current_phase == 2 and not is_second_slam and randf() < 0.40:
-		await get_tree().create_timer(0.18).timeout
-		if not is_dead and is_inside_tree() and state != BossState.TRANSITION:
-			_attack_slam_dive(true)
-			return
-		
-	var recover_time = 0.2 if current_phase == 2 else 0.3
+	var recover_time = 0.25 if current_phase == 2 else 0.3
 	await get_tree().create_timer(recover_time).timeout
 	_next_attack_cycle()
 
@@ -631,11 +623,11 @@ func _attack_dash_lunge() -> void:
 		
 	# Teleport sát mặt sàn ở mép phòng
 	var start_left = (player_target.global_position.x > (arena_left_x + arena_right_x) * 0.5) if player_target else true
-	var start_x = (arena_left_x + 60.0) if start_left else (arena_right_x - 60.0)
-	var dash_target_x = (arena_right_x - 60.0) if start_left else (arena_left_x + 60.0)
+	var start_x = (arena_left_x + 80.0) if start_left else (arena_right_x - 80.0)
+	var dash_target_x = (arena_right_x - 80.0) if start_left else (arena_left_x + 80.0)
 	var dash_dir_x = 1.0 if start_left else -1.0
 	
-	await _teleport_to(Vector2(start_x, arena_ground_y - 30.0))
+	await _teleport_to(Vector2(start_x, arena_ground_y))
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
@@ -647,8 +639,8 @@ func _attack_dash_lunge() -> void:
 	if attack_collision:
 		attack_collision.set_deferred("disabled", false)
 		
-	# Lướt nhanh ngang người: Phase 2 nhanh hơn 1.5x (0.32s thay vì 0.48s)
-	var dash_duration = 0.32 if current_phase == 2 else 0.48
+	# Lướt nhanh ngang người: Thời gian cân bằng nhịp nhàng
+	var dash_duration = 0.38 if current_phase == 2 else 0.48
 	var tw_dash = create_tween()
 	tw_dash.tween_property(self, "global_position:x", dash_target_x, dash_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	await tw_dash.finished
@@ -657,7 +649,7 @@ func _attack_dash_lunge() -> void:
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	var rest_time = 0.16 if current_phase == 2 else 0.25
+	var rest_time = 0.2 if current_phase == 2 else 0.25
 	await get_tree().create_timer(rest_time).timeout
 	_next_attack_cycle()
 
@@ -749,9 +741,10 @@ func _pulse_enraged_aura(delta: float) -> void:
 	_aura_pulse_timer += delta
 	if dark_aura_particles:
 		var pulse = 1.0 + 0.22 * sin(_aura_pulse_timer * 4.5)
-		dark_aura_particles.scale_amount_min = 6.0 * pulse
-		dark_aura_particles.scale_amount_max = 12.0 * pulse
+		dark_aura_particles.scale_amount_min = 12.0 * pulse
+		dark_aura_particles.scale_amount_max = 24.0 * pulse
 		dark_aura_particles.speed_scale = 0.95 + 0.35 * pulse
+
 
 
 func _shake_camera(intensity: float = 6.0, duration: float = 0.5) -> void:
