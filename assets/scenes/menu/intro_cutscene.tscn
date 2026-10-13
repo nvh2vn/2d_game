@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bjefw6nwpmxyr"]
 
-[ext_resource type="Script" path="res://assets/scripts/menu/intro_cutscene.gd" id="1_intro_script"]
-[ext_resource type="AudioStream" path="res://assets/art/2d/silksong_full/Sounds/tearcity_i.mp3" id="2_bgm"]
+[ext_resource type="Script" uid="uid://blckchunj226u" path="res://assets/scripts/menu/intro_cutscene.gd" id="1_intro_script"]
+[ext_resource type="AudioStream" uid="uid://c5cyecusna4xm" path="res://assets/art/2d/silksong_full/Sounds/tearcity_i.mp3" id="2_bgm"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="3_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_norm"]
@@ -15,22 +15,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.65, 0.68, 0.75, 0.5)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_hover"]
-content_margin_left = 18.0
-content_margin_top = 8.0
-content_margin_right = 18.0
-content_margin_bottom = 8.0
-bg_color = Color(0.18, 0.22, 0.3, 0.88)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.9, 0.65, 0.9)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -52,7 +36,23 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="IntroCutscene" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_hover"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18, 0.22, 0.3, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0.65, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="IntroCutscene" type="Control" unique_id=1442160480]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_intro_script")
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=1365664403]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -72,7 +72,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="SlideImage" type="TextureRect" parent="."]
+[node name="SlideImage" type="TextureRect" parent="." unique_id=2143003045]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -84,37 +84,7 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SubtitleContainer" type="MarginContainer" parent="."]
-unique_name_in_owner = true
-z_index = 20
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -140.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 56
-
-[node name="SubtitleLabel" type="Label" parent="SubtitleContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.94, 0.9, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.95)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 18
-text = ""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="SkipContainer" type="MarginContainer" parent="."]
+[node name="SkipContainer" type="MarginContainer" parent="." unique_id=1932385965]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
@@ -126,27 +96,27 @@ grow_horizontal = 0
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 28
 
-[node name="VBox" type="VBoxContainer" parent="SkipContainer"]
+[node name="VBox" type="VBoxContainer" parent="SkipContainer" unique_id=1182753327]
 layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 2
 
-[node name="SkipButton" type="Button" parent="SkipContainer/VBox"]
+[node name="SkipButton" type="Button" parent="SkipContainer/VBox" unique_id=1391085068]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.88, 0.88, 0.85, 0.95)
-theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.85, 0.5, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.8, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_skip_norm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_skip_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_skip_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_skip_hover")
 text = "BỎ QUA >>"
 
-[node name="SkipHintLabel" type="Label" parent="SkipContainer/VBox"]
+[node name="SkipHintLabel" type="Label" parent="SkipContainer/VBox" unique_id=143531369]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -156,7 +126,7 @@ theme_override_font_sizes/font_size = 11
 text = "Chạm màn hình để tiếp tục"
 horizontal_alignment = 2
 
-[node name="FadeOverlay" type="ColorRect" parent="."]
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=1624043119]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -167,7 +137,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=708360998]
 unique_name_in_owner = true
 stream = ExtResource("2_bgm")
 bus = &"Music"

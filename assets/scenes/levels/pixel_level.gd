@@ -1,3 +1,4 @@
+class_name PixelLevel
 extends Node2D
 
 @onready var top_left: Marker2D = find_child("TopLeft", true, false)

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_skill.png" id="8_skill"]
 [ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/art/2d/silksong_full/TrajanPro.ttf" id="9_font"]
 [ext_resource type="Texture2D" path="res://assets/art/2d/Movement/button_bind.png" id="10_bind"]
-[ext_resource type="Texture2D" uid="uid://dbldjbfy1npww" path="res://assets/art/2d/linhTinh/Gemini_Generated_Image_96gm6z96gm6z96gm.png" id="11_interact"]
+[ext_resource type="Texture2D" uid="uid://dyh85i4nb5ane" path="res://assets/art/2d/linhTinh/test_clean.png" id="11_interact"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btn"]
 radius = 256.0

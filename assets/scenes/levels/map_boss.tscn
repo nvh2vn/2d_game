@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://db1h2x5yp2q4u"]
 
+[ext_resource type="Script" path="res://assets/scripts/levels/map_boss.gd" id="1_boss_script"]
 [ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/art/2d/Abyss/_0033_abyss_02.png" id="1_fm2qu"]
 [ext_resource type="Texture2D" uid="uid://bowev6yvj8xp4" path="res://assets/art/2d/Abyss/Gemini_Generated_Image_84ph5d84ph5d84ph.png" id="1_iobw0"]
 [ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/art/2d/Abyss/_0173_Layer-425.png" id="2_mspvc"]
@@ -14,7 +15,11 @@ size = Vector2(1353, 30)
 resource_local_to_scene = true
 size = Vector2(1375, 753)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(60, 320)
+
 [node name="Node2D" type="Node2D" unique_id=70923853]
+script = ExtResource("1_boss_script")
 
 [node name="CameraLimit" type="Node2D" parent="." unique_id=1373396636]
 
@@ -62,7 +67,16 @@ shape = SubResource("RectangleShape2D_0ot1f")
 [node name="PlayerController" parent="." unique_id=373544482 instance=ExtResource("3_0ot1f")]
 position = Vector2(235, 532)
 
+[node name="BossTriggerArea" type="Area2D" parent="." unique_id=184920184]
+position = Vector2(480, 530)
+collision_layer = 0
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossTriggerArea" unique_id=184920185]
+shape = SubResource("RectangleShape2D_trigger")
+
 [node name="SoulMaster" parent="." unique_id=1434003224 instance=ExtResource("5_0ot1f")]
 position = Vector2(894, 583)
+wait_for_trigger = true
 
 [editable path="RoomArea"]

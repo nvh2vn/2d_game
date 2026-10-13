@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cos85dptn1ln" path="res://assets/art/2d/door/door_open0030.png" id="6_frame30"]
 [ext_resource type="Texture2D" uid="uid://dinqetmc87wke" path="res://assets/art/2d/door/door_open0031.png" id="7_frame31"]
 [ext_resource type="Texture2D" uid="uid://crjtkuch6q50g" path="res://assets/art/2d/door/door_open0032.png" id="8_frame32"]
-[ext_resource type="Texture2D" uid="uid://dbldjbfy1npww" path="res://assets/art/2d/linhTinh/Gemini_Generated_Image_96gm6z96gm6z96gm.png" id="9_prompt_icon"]
+[ext_resource type="Texture2D" uid="uid://dyh85i4nb5ane" path="res://assets/art/2d/linhTinh/test_clean.png" id="9_prompt_icon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
 size = Vector2(40, 150)

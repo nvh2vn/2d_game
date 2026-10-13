@@ -117,6 +117,7 @@ const SPRINT_ACCELERATION := 1800.0
 var geo_amount: int = 0
 var inventory: Array = []
 var mask_shards: int = 0
+var is_cutscene_locked: bool = false
 
 @export_group("Silk Energy System")
 @export var max_silk: int = 6
@@ -230,6 +231,8 @@ func _ready() -> void:
 	_check_and_spawn_shade()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_cutscene_locked:
+		return
 	# Cho phép click chuột trái để tấn công trên Desktop/PC
 	# CHỈ kích hoạt khi người chơi click vào thế giới game (không trúng bất kỳ nút UI hoặc vùng điều khiển ảo nào)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -237,6 +240,28 @@ func _unhandled_input(event: InputEvent) -> void:
 			if unlock_attack and not is_sitting and active_state not in [STATE.DIE, STATE.FOCUS_HEAL]:
 				Input.action_press(&"attack")
 				get_tree().create_timer(0.05).timeout.connect(func(): Input.action_release(&"attack"))
+
+
+func set_cutscene_locked(locked: bool) -> void:
+	is_cutscene_locked = locked
+	if locked:
+		velocity.x = 0.0
+		if is_on_floor() and active_state not in [STATE.DIE]:
+			switch_state(STATE.FLOOR)
+			if animated_sprite:
+				animated_sprite.play("idle")
+
+
+func set_hud_visible(p_visible: bool) -> void:
+	var hud_node = get_node_or_null("HUD")
+	if hud_node:
+		hud_node.visible = p_visible
+	var tc = get_node_or_null("TouchControls")
+	if tc:
+		tc.visible = p_visible
+	if TouchControls.instance and is_instance_valid(TouchControls.instance):
+		TouchControls.instance.visible = p_visible
+
 
 func trigger_hitstop(duration: float = 0.04) -> void:
 	Engine.time_scale = 0.05
@@ -955,6 +980,18 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_cutscene_locked:
+		velocity.x = 0.0
+		if not is_on_floor():
+			velocity.y += FALL_GRAVITY * delta
+			if animated_sprite and active_state != STATE.DIE:
+				animated_sprite.play("fall")
+		else:
+			if animated_sprite and active_state != STATE.DIE:
+				animated_sprite.play("idle")
+		move_and_slide()
+		return
+
 	if is_sitting:
 		velocity = Vector2.ZERO
 		move_and_slide()

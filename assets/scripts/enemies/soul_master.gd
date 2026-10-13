@@ -23,10 +23,14 @@ enum BossState {
 	DEATH
 }
 
+signal boss_defeated()
+
 @export_group("Boss Settings")
 @export var boss_display_name: String = "SOUL MASTER"
 @export var activation_range: float = 620.0
 @export var auto_start_fight: bool = false
+## Nếu bật, Boss sẽ chờ tín hiệu kích hoạt từ Cutscene / TriggerArea thay vì tự bật theo tầm nhìn
+@export var wait_for_trigger: bool = false
 @export var arena_left_x: float = -9999.0
 @export var arena_right_x: float = 9999.0
 @export var arena_ground_y: float = 9999.0
@@ -118,7 +122,9 @@ func _physics_process(delta: float) -> void:
 		_find_player()
 		
 	if state == BossState.DORMANT and not is_dead:
-		if auto_start_fight:
+		if wait_for_trigger:
+			pass
+		elif auto_start_fight:
 			start_encounter()
 		elif player_target and is_instance_valid(player_target):
 			var dist = global_position.distance_to(player_target.global_position)
@@ -570,6 +576,7 @@ func die() -> void:
 	is_dead = true
 	state = BossState.DEATH
 	is_invulnerable = true
+	boss_defeated.emit()
 	
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
@@ -597,6 +604,7 @@ func die() -> void:
 		
 	if SaveManager.instance:
 		SaveManager.instance.record_enemy_kill("mage_lord")
+		SaveManager.instance.set_event_completed("soul_master_defeated", true)
 		
 	var tw = create_tween()
 	tw.tween_property(animated_sprite, "modulate:a", 0.0, 1.4)
