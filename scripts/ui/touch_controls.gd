@@ -167,13 +167,10 @@ func update_skills_visibility() -> void:
 		return
 	var can_storm: bool = false
 	var can_throw: bool = false
-	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+	if is_inside_tree() and get_tree() and get_tree().root and get_tree().root.has_node("GameManager"):
 		var gm = get_tree().root.get_node("GameManager")
 		can_storm = gm.can_silk_storm
 		can_throw = gm.can_needle_throw
-	elif "GameManager" in self:
-		can_storm = GameManager.can_silk_storm
-		can_throw = GameManager.can_needle_throw
 		
 	if skill_btn and is_instance_valid(skill_btn):
 		skill_btn.visible = can_storm
@@ -207,8 +204,9 @@ func _init_layout_persistence() -> void:
 
 	_record_default_positions()
 
+	# Xóa bỏ file cấu hình cũ nếu có và KHÔNG tự động nạp để ưu tiên 100% vị trí được kéo thả trong Editor .tscn
 	if FileAccess.file_exists(CONFIG_FILE_PATH):
-		load_layout()
+		DirAccess.remove_absolute(CONFIG_FILE_PATH)
 
 
 func _record_default_positions() -> void:
@@ -259,34 +257,8 @@ func save_layout() -> void:
 
 
 func load_layout() -> bool:
-	if not FileAccess.file_exists(CONFIG_FILE_PATH):
-		return false
-
-	var config = ConfigFile.new()
-	var err = config.load(CONFIG_FILE_PATH)
-	if err != OK:
-		push_warning("[TouchControls] Could not load %s (error %d)" % [CONFIG_FILE_PATH, err])
-		return false
-
-	if joystick_container and config.has_section_key(CONFIG_SECTION, "joystick"):
-		joystick_container.global_position = config.get_value(CONFIG_SECTION, "joystick")
-	if jump_btn and config.has_section_key(CONFIG_SECTION, "jump"):
-		jump_btn.global_position = config.get_value(CONFIG_SECTION, "jump")
-	if attack_btn and config.has_section_key(CONFIG_SECTION, "attack"):
-		attack_btn.global_position = config.get_value(CONFIG_SECTION, "attack")
-	if dash_btn and config.has_section_key(CONFIG_SECTION, "dash"):
-		dash_btn.global_position = config.get_value(CONFIG_SECTION, "dash")
-	if throw_btn and config.has_section_key(CONFIG_SECTION, "throw"):
-		throw_btn.global_position = config.get_value(CONFIG_SECTION, "throw")
-	if skill_btn and config.has_section_key(CONFIG_SECTION, "skill"):
-		skill_btn.global_position = config.get_value(CONFIG_SECTION, "skill")
-	if bind_btn and config.has_section_key(CONFIG_SECTION, "bind"):
-		bind_btn.global_position = config.get_value(CONFIG_SECTION, "bind")
-	if interact_btn and config.has_section_key(CONFIG_SECTION, "interact"):
-		interact_btn.global_position = config.get_value(CONFIG_SECTION, "interact")
-
-	print("[TouchControls] Layout loaded successfully from: ", CONFIG_FILE_PATH)
-	return true
+	# Vô hiệu hóa nạp cấu hình đè vị trí để ưu tiên 100% vị trí trong Editor .tscn
+	return false
 
 
 func reset_to_defaults() -> void:
@@ -697,12 +669,7 @@ func _is_in_joystick_zone(screen_pos: Vector2) -> bool:
 	if not joystick_container:
 		return false
 	var center := joystick_container.global_position
-	if screen_pos.distance_to(center) <= touch_zone_radius:
-		return true
-	var vp_size := get_viewport().get_visible_rect().size
-	if screen_pos.x <= vp_size.x * 0.32 and screen_pos.y >= vp_size.y * 0.45:
-		return true
-	return false
+	return screen_pos.distance_to(center) <= touch_zone_radius
 
 
 func _get_action_button_at(screen_pos: Vector2) -> TouchScreenButton:

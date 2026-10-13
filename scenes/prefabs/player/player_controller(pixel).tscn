@@ -1149,8 +1149,9 @@ theme_override_font_sizes/font_size = 20
 text = "0"
 vertical_alignment = 1
 
-[node name="AudioControls" type="HBoxContainer" parent="HUD" unique_id=990102030]
+[node name="AudioControls" type="Control" parent="HUD" unique_id=990102030]
 unique_name_in_owner = true
+layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -1159,12 +1160,14 @@ offset_top = 20.0
 offset_right = -72.0
 offset_bottom = 64.0
 grow_horizontal = 0
-theme_override_constants/separation = 12
-alignment = 2
 
 [node name="SoundControl" type="Control" parent="HUD/AudioControls" unique_id=990102031]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="SoundOff" type="TextureButton" parent="HUD/AudioControls/SoundControl" unique_id=990102032]
 unique_name_in_owner = true
@@ -1195,7 +1198,11 @@ stretch_mode = 5
 
 [node name="MusicControl" type="Control" parent="HUD/AudioControls" unique_id=990102034]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
+layout_mode = 0
+offset_left = 52.0
+offset_top = 0.0
+offset_right = 92.0
+offset_bottom = 40.0
 
 [node name="MusicOff" type="TextureButton" parent="HUD/AudioControls/MusicControl" unique_id=990102035]
 unique_name_in_owner = true

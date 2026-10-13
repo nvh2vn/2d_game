@@ -3,13 +3,19 @@ extends Node
 ## Singleton Autoload quản lý trạng thái trò chơi & tiến trình kỹ năng (Skills & Global State).
 ## Điều khiển việc thức tỉnh kỹ năng "Silk Storm" (City Crest) và "Needle Throw" (Piercing Blast).
 
+static var instance: Node = null
+
 signal skill_unlocked(skill_name: String)
 signal skills_changed()
 
 var can_silk_storm: bool = false
 var can_needle_throw: bool = false
 
+func _enter_tree() -> void:
+	instance = self
+
 func _ready() -> void:
+	instance = self
 	_sync_from_save_manager()
 
 
