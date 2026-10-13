@@ -142,7 +142,9 @@ var save_data: Dictionary = {
 			"dash": true,
 			"double_jump": false,
 			"wall_climb": false,
-			"float": false
+			"float": false,
+			"can_silk_storm": false,
+			"can_needle_throw": false
 		}
 	},
 	"inventory": [],
@@ -331,6 +333,10 @@ func delete_save() -> void:
 	last_bench_pos = Vector2.ZERO
 	last_bench_scene = ""
 	last_geo_collected = 0
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		var gm = get_tree().root.get_node("GameManager")
+		if gm and gm.has_method("reset_skills"):
+			gm.reset_skills()
 	_reset_to_default()
 
 
@@ -349,7 +355,9 @@ func _reset_to_default() -> void:
 				"dash": true,
 				"double_jump": false,
 				"wall_climb": false,
-				"float": false
+				"float": false,
+				"can_silk_storm": false,
+				"can_needle_throw": false
 			}
 		},
 		"inventory": [],
@@ -453,6 +461,10 @@ func update_current_player_stats(player_node: Node = null) -> bool:
 		skills["wall_climb"] = player.unlock_wall_climb
 	if "unlock_float" in player:
 		skills["float"] = player.unlock_float
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		var gm = get_tree().root.get_node("GameManager")
+		skills["can_silk_storm"] = gm.can_silk_storm
+		skills["can_needle_throw"] = gm.can_needle_throw
 	p_data["skills"] = skills
 	
 	# 4b. Mask Shards (Mảnh mặt nạ)
@@ -529,6 +541,19 @@ func apply_to_player(player: Node) -> void:
 		player.unlock_wall_climb = skills["wall_climb"]
 	if "unlock_float" in player and skills.has("float"):
 		player.unlock_float = skills["float"]
+		
+	var silk_storm_unlocked: bool = skills.get("can_silk_storm", false)
+	var needle_throw_unlocked: bool = skills.get("can_needle_throw", false)
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		var gm = get_tree().root.get_node("GameManager")
+		gm.can_silk_storm = silk_storm_unlocked
+		gm.can_needle_throw = needle_throw_unlocked
+	if "unlock_special_attack" in player:
+		player.unlock_special_attack = silk_storm_unlocked
+	if "unlock_shoot" in player:
+		player.unlock_shoot = needle_throw_unlocked
+	TouchControls.update_skill_buttons(player.get_tree())
+	
 	if "mask_shards" in player and p_data.has("mask_shards"):
 		player.mask_shards = p_data["mask_shards"]
 

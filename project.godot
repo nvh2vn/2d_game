@@ -24,6 +24,7 @@ busses/default_bus_layout="res://default_bus_layout.tres"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 TeleportManager="*res://scripts/core/teleport_manager.gd"
 SaveManager="*res://scripts/core/save_manager.gd"
+GameManager="*res://scripts/core/game_manager.gd"
 DebugManager="*res://scripts/core/debug_manager.gd"
 
 [display]

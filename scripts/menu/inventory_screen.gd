@@ -74,6 +74,13 @@ var is_menu_open: bool = false
 var active_selected_quest: String = ""
 var active_selected_item: String = ""
 var active_selected_enemy: String = ""
+var current_preview_item: Dictionary = {}
+var item_action_container: VBoxContainer = null
+var item_use_button: Button = null
+var floating_popup_panel: PanelContainer = null
+var floating_popup_label: Label = null
+var floating_popup_tween: Tween = null
+var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
 
 # --- DỮ LIỆU CỐ ĐỊNH CHO SỔ TAY THỢ SĂN (HUNTER'S JOURNAL DATABASE) ---
 const BESTIARY_DATABASE: Array[Dictionary] = [
@@ -266,6 +273,9 @@ func _ready() -> void:
 
 	if upgrade_mask_button:
 		upgrade_mask_button.pressed.connect(_on_upgrade_mask_pressed)
+
+	_setup_item_use_ui()
+	_setup_floating_popup_ui()
 
 	# Kiểm tra nếu chạy độc lập như một scene Menu chính
 	var is_standalone: bool = (get_tree().current_scene == self or get_parent() == get_tree().root)
@@ -625,15 +635,20 @@ func _refresh_abilities() -> void:
 		if not btn:
 			continue
 
-		var is_unlocked: bool = skills_dict.get(ab["key"], false)
-		var player = _get_player()
-		if player:
-			match ab["key"]:
-				"attack": is_unlocked = true
-				"dash": is_unlocked = player.get("unlock_dash") if "unlock_dash" in player else is_unlocked
-				"double_jump": is_unlocked = player.get("unlock_double_jump") if "unlock_double_jump" in player else is_unlocked
-				"shoot": is_unlocked = player.get("unlock_shoot") if "unlock_shoot" in player else is_unlocked
-				"special_attack": is_unlocked = player.get("unlock_special_attack") if "unlock_special_attack" in player else is_unlocked
+		var is_unlocked: bool = false
+		match ab["key"]:
+			"attack":
+				is_unlocked = true
+			"dash":
+				var player = _get_player()
+				is_unlocked = player.get("unlock_dash") if player and "unlock_dash" in player else skills_dict.get("dash", true)
+			"double_jump":
+				var player = _get_player()
+				is_unlocked = player.get("unlock_double_jump") if player and "unlock_double_jump" in player else skills_dict.get("double_jump", false)
+			"shoot":
+				is_unlocked = GameManager.can_needle_throw if GameManager else false
+			"special_attack":
+				is_unlocked = GameManager.can_silk_storm if GameManager else false
 
 		var icon: TextureRect = btn.find_child("Icon", true, false)
 		if icon:
@@ -643,7 +658,7 @@ func _refresh_abilities() -> void:
 				icon.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			else:
 				# Silhouette mờ tối khi chưa mở khóa
-				icon.modulate = Color(0.2, 0.22, 0.28, 0.4)
+				icon.modulate = Color(0.2, 0.22, 0.28, 0.35)
 
 		# Bấm vào kỹ năng để xem thông tin ở cột phải và hiện 4 góc viền bạc
 		for conn in btn.pressed.get_connections():
@@ -653,7 +668,7 @@ func _refresh_abilities() -> void:
 			var preview_data = {
 				"name": ab["name"],
 				"category": ab["category"],
-				"desc": "%s\n%s" % [ab["action"], ab["desc"] if is_unlocked else "Chưa mở khóa kỹ năng này."],
+				"desc": "%s\n%s" % [ab["action"], ab["desc"] if is_unlocked else "🔒 CHƯA MỞ KHÓA KỸ NĂNG NÀY.\nHãy tìm kiếm cổ vật tương ứng trong hành trình và bấm SỬ DỤNG trong Túi Đồ để kích hoạt."],
 				"icon": ab["icon"]
 			}
 			_display_item_preview(preview_data)
@@ -831,6 +846,37 @@ func _display_item_preview(it: Dictionary) -> void:
 		if mask_upgrade_container:
 			mask_upgrade_container.visible = false
 
+	# 3b. Nút SỬ DỤNG / KÍCH HOẠT cho City Crest và Piercing Blast
+	current_preview_item = it
+	var item_name: String = it.get("name", "").to_upper()
+	var is_city_crest: bool = (item_id in ["city_crest", "city_key"] or item_name == "CITY CREST")
+	var is_piercing_blast: bool = (item_id in ["piercing_blast", "defender_crest"] or item_name == "PIERCING BLAST")
+	
+	if not item_action_container:
+		_setup_item_use_ui()
+		
+	if is_city_crest:
+		if item_action_container and item_use_button:
+			item_action_container.visible = true
+			if GameManager and GameManager.can_silk_storm:
+				item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
+				item_use_button.disabled = true
+			else:
+				item_use_button.text = "⚡ SỬ DỤNG / KÍCH HOẠT"
+				item_use_button.disabled = false
+	elif is_piercing_blast:
+		if item_action_container and item_use_button:
+			item_action_container.visible = true
+			if GameManager and GameManager.can_needle_throw:
+				item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
+				item_use_button.disabled = true
+			else:
+				item_use_button.text = "⚡ SỬ DỤNG / KÍCH HOẠT"
+				item_use_button.disabled = false
+	else:
+		if item_action_container:
+			item_action_container.visible = false
+
 	if item_preview_desc:
 		item_preview_desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		item_preview_desc.text = desc_str
@@ -851,6 +897,173 @@ func _on_upgrade_mask_pressed() -> void:
 		if success:
 			_play_sfx(page_sfx)
 			_refresh_inventory_tab()
+
+
+# ==============================================================================
+# HỆ THỐNG SỬ DỤNG VẬT PHẨM & KÍCH HOẠT KỸ NĂNG (ITEM USE & POPUP)
+# ==============================================================================
+
+func _setup_item_use_ui() -> void:
+	if item_action_container:
+		return
+	var right_col = find_child("RightCol", true, false)
+	if not right_col:
+		return
+		
+	item_action_container = VBoxContainer.new()
+	item_action_container.name = "ItemActionContainer"
+	item_action_container.add_theme_constant_override("separation", 8)
+	item_action_container.visible = false
+	
+	item_use_button = Button.new()
+	item_use_button.name = "ItemUseButton"
+	item_use_button.text = "⚡ SỬ DỤNG / KÍCH HOẠT"
+	item_use_button.custom_minimum_size = Vector2(210, 42)
+	item_use_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
+	if trajan_font:
+		item_use_button.add_theme_font_override("font", trajan_font)
+	item_use_button.add_theme_font_size_override("font_size", 13)
+	item_use_button.add_theme_color_override("font_color", Color(1.0, 0.9, 0.45, 1.0))
+	item_use_button.add_theme_color_override("font_hover_color", Color(1.2, 1.1, 0.7, 1.0))
+	item_use_button.add_theme_color_override("font_disabled_color", Color(0.65, 0.7, 0.75, 0.7))
+	
+	var sb_normal = StyleBoxFlat.new()
+	sb_normal.bg_color = Color(0.1, 0.13, 0.22, 0.92)
+	sb_normal.border_color = Color(1.0, 0.82, 0.35, 0.9)
+	sb_normal.set_border_width_all(2)
+	sb_normal.set_corner_radius_all(6)
+	sb_normal.content_margin_left = 16
+	sb_normal.content_margin_right = 16
+	sb_normal.content_margin_top = 8
+	sb_normal.content_margin_bottom = 8
+	item_use_button.add_theme_stylebox_override("normal", sb_normal)
+	
+	var sb_hover = sb_normal.duplicate() as StyleBoxFlat
+	sb_hover.bg_color = Color(0.16, 0.22, 0.36, 0.96)
+	sb_hover.border_color = Color(1.2, 1.0, 0.5, 1.0)
+	item_use_button.add_theme_stylebox_override("hover", sb_hover)
+	
+	var sb_pressed = sb_normal.duplicate() as StyleBoxFlat
+	sb_pressed.bg_color = Color(0.08, 0.1, 0.18, 0.95)
+	item_use_button.add_theme_stylebox_override("pressed", sb_pressed)
+	
+	var sb_disabled = StyleBoxFlat.new()
+	sb_disabled.bg_color = Color(0.08, 0.09, 0.12, 0.7)
+	sb_disabled.border_color = Color(0.35, 0.38, 0.45, 0.6)
+	sb_disabled.set_border_width_all(1)
+	sb_disabled.set_corner_radius_all(6)
+	sb_disabled.content_margin_left = 16
+	sb_disabled.content_margin_right = 16
+	sb_disabled.content_margin_top = 8
+	sb_disabled.content_margin_bottom = 8
+	item_use_button.add_theme_stylebox_override("disabled", sb_disabled)
+	
+	item_action_container.add_child(item_use_button)
+	
+	var desc_node = right_col.get_node_or_null("ItemPreviewDesc")
+	if desc_node:
+		var desc_idx = desc_node.get_index()
+		right_col.add_child(item_action_container)
+		right_col.move_child(item_action_container, desc_idx + 1)
+	else:
+		right_col.add_child(item_action_container)
+		
+	item_use_button.pressed.connect(_on_use_item_pressed)
+
+
+func _on_use_item_pressed() -> void:
+	if current_preview_item.is_empty():
+		return
+	var item_id: String = current_preview_item.get("id", "")
+	var item_name: String = current_preview_item.get("name", "").to_upper()
+	var is_city_crest: bool = (item_id in ["city_crest", "city_key"] or item_name == "CITY CREST")
+	var is_piercing_blast: bool = (item_id in ["piercing_blast", "defender_crest"] or item_name == "PIERCING BLAST")
+	
+	if is_city_crest and GameManager and not GameManager.can_silk_storm:
+		_play_sfx(click_sfx)
+		_play_sfx(page_sfx)
+		GameManager.unlock_silk_storm()
+		_show_floating_popup("ĐÃ THỨC TỈNH KỸ NĂNG: SILK STORM!")
+		if item_use_button:
+			item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
+			item_use_button.disabled = true
+		_refresh_abilities()
+		
+	elif is_piercing_blast and GameManager and not GameManager.can_needle_throw:
+		_play_sfx(click_sfx)
+		_play_sfx(page_sfx)
+		GameManager.unlock_needle_throw()
+		_show_floating_popup("ĐÃ THỨC TỈNH KỸ NĂNG: NEEDLE THROW!")
+		if item_use_button:
+			item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
+			item_use_button.disabled = true
+		_refresh_abilities()
+
+
+func _setup_floating_popup_ui() -> void:
+	if floating_popup_panel:
+		return
+	floating_popup_panel = PanelContainer.new()
+	floating_popup_panel.name = "SkillAwakenPopup"
+	floating_popup_panel.anchors_preset = Control.PRESET_CENTER_TOP
+	floating_popup_panel.anchor_left = 0.5
+	floating_popup_panel.anchor_right = 0.5
+	floating_popup_panel.anchor_top = 0.0
+	floating_popup_panel.offset_left = -260
+	floating_popup_panel.offset_right = 260
+	floating_popup_panel.offset_top = 55
+	floating_popup_panel.offset_bottom = 105
+	floating_popup_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	var sb = StyleBoxFlat.new()
+	sb.bg_color = Color(0.06, 0.08, 0.14, 0.96)
+	sb.border_color = Color(1.0, 0.85, 0.4, 0.95)
+	sb.set_border_width_all(2)
+	sb.set_corner_radius_all(8)
+	sb.content_margin_left = 24
+	sb.content_margin_top = 10
+	sb.content_margin_right = 24
+	sb.content_margin_bottom = 10
+	floating_popup_panel.add_theme_stylebox_override("panel", sb)
+	
+	floating_popup_label = Label.new()
+	if trajan_font:
+		floating_popup_label.add_theme_font_override("font", trajan_font)
+	floating_popup_label.add_theme_font_size_override("font_size", 15)
+	floating_popup_label.add_theme_color_override("font_color", Color(1.0, 0.92, 0.55, 1.0))
+	floating_popup_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	floating_popup_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	floating_popup_panel.add_child(floating_popup_label)
+	
+	floating_popup_panel.visible = false
+	add_child(floating_popup_panel)
+
+
+func _show_floating_popup(msg: String) -> void:
+	if not floating_popup_panel:
+		_setup_floating_popup_ui()
+	if not floating_popup_panel or not floating_popup_label:
+		return
+		
+	floating_popup_label.text = "★ " + msg
+	floating_popup_panel.visible = true
+	floating_popup_panel.modulate.a = 0.0
+	floating_popup_panel.position.y = 35.0
+	
+	if floating_popup_tween and floating_popup_tween.is_valid():
+		floating_popup_tween.kill()
+		
+	floating_popup_tween = create_tween()
+	floating_popup_tween.tween_property(floating_popup_panel, "modulate:a", 1.0, 0.2).set_trans(Tween.TRANS_SINE)
+	floating_popup_tween.parallel().tween_property(floating_popup_panel, "position:y", 55.0, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	floating_popup_tween.tween_interval(2.2)
+	floating_popup_tween.tween_property(floating_popup_panel, "modulate:a", 0.0, 0.35)
+	floating_popup_tween.parallel().tween_property(floating_popup_panel, "position:y", 30.0, 0.35)
+	floating_popup_tween.finished.connect(func():
+		if is_instance_valid(floating_popup_panel):
+			floating_popup_panel.visible = false
+	)
 
 
 

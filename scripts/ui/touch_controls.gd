@@ -45,6 +45,19 @@ static func set_controls_visible(tree: SceneTree, p_visible: bool) -> void:
 		if tc and tc is CanvasItem:
 			tc.visible = p_visible
 
+
+static func update_skill_buttons(tree: SceneTree) -> void:
+	if instance and is_instance_valid(instance):
+		instance.update_skills_visibility()
+	elif tree:
+		var tc_nodes = tree.get_nodes_in_group("touch_controls")
+		for n in tc_nodes:
+			if n.has_method("update_skills_visibility"):
+				n.update_skills_visibility()
+		var tc = tree.root.find_child("TouchControls", true, false)
+		if tc and tc.has_method("update_skills_visibility"):
+			tc.update_skills_visibility()
+
 func _enter_tree() -> void:
 	instance = self
 
@@ -140,6 +153,32 @@ func _ready() -> void:
 
 	# Khởi tạo nạp vị trí lưu từ ConfigFile
 	_init_layout_persistence()
+	
+	# Đồng bộ hiển thị 2 nút kỹ năng Silk Storm và Needle Throw theo GameManager
+	update_skills_visibility()
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		var gm = get_tree().root.get_node("GameManager")
+		if not gm.skills_changed.is_connected(update_skills_visibility):
+			gm.skills_changed.connect(update_skills_visibility)
+
+
+func update_skills_visibility() -> void:
+	if is_customizing:
+		return
+	var can_storm: bool = false
+	var can_throw: bool = false
+	if is_inside_tree() and get_tree().root.has_node("GameManager"):
+		var gm = get_tree().root.get_node("GameManager")
+		can_storm = gm.can_silk_storm
+		can_throw = gm.can_needle_throw
+	elif "GameManager" in self:
+		can_storm = GameManager.can_silk_storm
+		can_throw = GameManager.can_needle_throw
+		
+	if skill_btn and is_instance_valid(skill_btn):
+		skill_btn.visible = can_storm
+	if throw_btn and is_instance_valid(throw_btn):
+		throw_btn.visible = can_throw
 
 
 func _notification(what: int) -> void:
@@ -357,6 +396,7 @@ func finish_customizing() -> void:
 		visible = is_mobile or force_show
 
 	customizing_finished.emit()
+	update_skills_visibility()
 
 	if return_ui_target and is_instance_valid(return_ui_target):
 		return_ui_target.visible = true

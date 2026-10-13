@@ -33,8 +33,8 @@ enum STATE {
 @export var unlock_ledge_climb: bool = true
 var ledge_climb_timer: float = 0.0
 @export var unlock_attack: bool = true
-@export var unlock_shoot: bool = true
-@export var unlock_special_attack: bool = true
+@export var unlock_shoot: bool = false
+@export var unlock_special_attack: bool = false
 @export var unlock_defend: bool = true
 
 @export_group("Combat Timings")
@@ -209,6 +209,9 @@ func _ready() -> void:
 	# Đồng bộ các kỹ năng đã unlock và thông tin đã lưu từ SaveManager (Mobile Safe)
 	if SaveManager.instance:
 		SaveManager.instance.apply_to_player(self)
+	elif GameManager:
+		unlock_shoot = GameManager.can_needle_throw
+		unlock_special_attack = GameManager.can_silk_storm
 		
 	switch_state(active_state)
 	ledge_climb_ray_cast.add_exception(self)
@@ -1230,6 +1233,9 @@ func switch_state(to_state: STATE) -> void:
 			play_sfx(slash_sfx)
 
 		STATE.THROW:
+			if GameManager and not GameManager.can_needle_throw:
+				switch_state(previous_state)
+				return
 			shoot_cooldown = shoot_cooldown_time
 			if animated_sprite:
 				animated_sprite.play("throw")
@@ -1239,6 +1245,9 @@ func switch_state(to_state: STATE) -> void:
 			_spawn_dart()
 
 		STATE.REMOTE_SKILL:
+			if GameManager and not GameManager.can_silk_storm:
+				switch_state(previous_state)
+				return
 			remote_skill_cooldown = remote_skill_cooldown_time
 			if animated_sprite:
 				animated_sprite.play("remote_skill")
@@ -1404,11 +1413,15 @@ func is_dash_held() -> bool:
 	return Input.is_action_pressed("dash") or Input.is_action_pressed("sprint") or Input.is_key_pressed(KEY_L)
 
 func try_cast_shoot() -> void:
+	if GameManager and not GameManager.can_needle_throw:
+		return
 	if unlock_shoot and shoot_cooldown <= 0.0:
 		if consume_silk(dart_silk_cost):
 			switch_state(STATE.THROW)
 
 func try_cast_remote_skill() -> void:
+	if GameManager and not GameManager.can_silk_storm:
+		return
 	if unlock_special_attack and remote_skill_cooldown <= 0.0:
 		if consume_silk(remote_skill_silk_cost):
 			switch_state(STATE.REMOTE_SKILL)
