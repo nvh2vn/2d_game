@@ -6,8 +6,13 @@ signal item_purchased(item_id: String, item_name: String, price: int)
 @onready var title_label: Label = get_node_or_null("%ShopTitle")
 @onready var geo_label: Label = get_node_or_null("%GeoBalance")
 @onready var item_list_container: VBoxContainer = get_node_or_null("%ItemList")
+@onready var scroll_container: ScrollContainer = get_node_or_null("%ScrollContainer")
 @onready var close_button: Button = get_node_or_null("%CloseButton")
 @onready var info_description: Label = get_node_or_null("%InfoDescription")
+
+var _is_touch_dragging_active: bool = false
+var _touch_drag_accum: float = 0.0
+var _is_dragging_list: bool = false
 
 var current_player: Node2D = null
 var npc_name_str: String = "Tuk (Nhà Thu Gom)"
@@ -96,6 +101,18 @@ func _ready() -> void:
 		close_button.pressed.connect(_on_close_pressed)
 		_setup_button_hover(close_button)
 
+	# Cấu hình ScrollContainer hỗ trợ vuốt chạm trên thiết bị cảm ứng / Android
+	if not scroll_container and item_list_container:
+		scroll_container = item_list_container.get_parent() as ScrollContainer
+	if scroll_container:
+		scroll_container.mouse_filter = Control.MOUSE_FILTER_PASS
+		if not scroll_container.gui_input.is_connected(_on_touch_drag_event):
+			scroll_container.gui_input.connect(_on_touch_drag_event)
+	if item_list_container:
+		item_list_container.mouse_filter = Control.MOUSE_FILTER_PASS
+		if not item_list_container.gui_input.is_connected(_on_touch_drag_event):
+			item_list_container.gui_input.connect(_on_touch_drag_event)
+
 func open_shop(player_ref: Node2D = null, npc_title: String = "Tuk (Nhà Thu Gom)") -> void:
 	current_player = player_ref
 	npc_name_str = npc_title
@@ -177,16 +194,20 @@ func populate_shop_items() -> void:
 		
 		var card = PanelContainer.new()
 		card.add_theme_stylebox_override("panel", card_box.duplicate())
+		card.mouse_filter = Control.MOUSE_FILTER_PASS
+		card.gui_input.connect(_on_touch_drag_event)
 		
 		var item_row = HBoxContainer.new()
 		item_row.custom_minimum_size = Vector2(0, 52)
 		item_row.add_theme_constant_override("separation", 12)
+		item_row.mouse_filter = Control.MOUSE_FILTER_PASS
 		
 		# Icon
 		var icon_rect = TextureRect.new()
 		icon_rect.custom_minimum_size = Vector2(40, 40)
 		icon_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var icon_tex = load(item["icon"])
 		if icon_tex:
 			icon_rect.texture = icon_tex
@@ -196,9 +217,11 @@ func populate_shop_items() -> void:
 		var detail_box = VBoxContainer.new()
 		detail_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		detail_box.add_theme_constant_override("separation", 2)
+		detail_box.mouse_filter = Control.MOUSE_FILTER_PASS
 		
 		var name_lbl = Label.new()
 		name_lbl.text = item["name"].to_upper()
+		name_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		if font_title:
 			name_lbl.add_theme_font_override("font", font_title)
 		name_lbl.add_theme_font_size_override("font_size", 15)
@@ -209,6 +232,7 @@ func populate_shop_items() -> void:
 		desc_lbl.text = item["description"]
 		desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		desc_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		desc_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		if font_body:
 			desc_lbl.add_theme_font_override("font", font_body)
 		desc_lbl.add_theme_font_size_override("font_size", 13)
@@ -221,6 +245,7 @@ func populate_shop_items() -> void:
 		# Buy Button
 		var buy_btn = Button.new()
 		buy_btn.custom_minimum_size = Vector2(160, 40)
+		buy_btn.gui_input.connect(_on_touch_drag_event)
 		if font_body:
 			buy_btn.add_theme_font_override("font", font_body)
 		buy_btn.add_theme_font_size_override("font_size", 13)
@@ -245,6 +270,8 @@ func populate_shop_items() -> void:
 			else:
 				buy_btn.text = "BUY (%d GEO)" % item["price"]
 				buy_btn.pressed.connect(func():
+					if _is_dragging_list:
+						return
 					_play_sfx(confirm_sfx)
 					_on_item_buy_pressed(item)
 				)
@@ -458,10 +485,83 @@ func _grant_item_to_player(item_id: String, item_name: String) -> void:
 
 
 
+# ==================== TOUCH SCROLL / VUỐT CHẠM MOBILE ====================
+func _on_touch_drag_event(event: InputEvent) -> void:
+	if event is InputEventScreenDrag:
+		_handle_drag(event.relative.y)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouseMotion:
+		if (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+			_handle_drag(event.relative.y)
+			get_viewport().set_input_as_handled()
+	elif event is InputEventScreenTouch:
+		if event.pressed:
+			_is_touch_dragging_active = true
+			_touch_drag_accum = 0.0
+			_is_dragging_list = false
+		else:
+			_is_touch_dragging_active = false
+			_schedule_drag_reset()
+	elif event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				_is_touch_dragging_active = true
+				_touch_drag_accum = 0.0
+				_is_dragging_list = false
+			else:
+				_is_touch_dragging_active = false
+				_schedule_drag_reset()
+
+func _handle_drag(rel_y: float) -> void:
+	if not is_instance_valid(scroll_container):
+		return
+	_touch_drag_accum += abs(rel_y)
+	if _touch_drag_accum > 8.0:
+		_is_dragging_list = true
+	scroll_container.scroll_vertical -= int(rel_y)
+
+func _schedule_drag_reset() -> void:
+	if not is_inside_tree():
+		_is_dragging_list = false
+		_touch_drag_accum = 0.0
+		return
+	get_tree().create_timer(0.12).timeout.connect(func():
+		_is_dragging_list = false
+		_touch_drag_accum = 0.0
+	)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE):
 		_on_close_pressed()
 		get_viewport().set_input_as_handled()
+		return
+
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if scroll_container and scroll_container.get_global_rect().has_point(event.position):
+				_is_touch_dragging_active = true
+				_touch_drag_accum = 0.0
+				_is_dragging_list = false
+		else:
+			_is_touch_dragging_active = false
+			_schedule_drag_reset()
+	elif event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				if scroll_container and scroll_container.get_global_rect().has_point(event.position):
+					_is_touch_dragging_active = true
+					_touch_drag_accum = 0.0
+					_is_dragging_list = false
+			else:
+				_is_touch_dragging_active = false
+				_schedule_drag_reset()
+	elif event is InputEventScreenDrag and _is_touch_dragging_active:
+		_handle_drag(event.relative.y)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouseMotion and _is_touch_dragging_active:
+		if (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+			_handle_drag(event.relative.y)
+			get_viewport().set_input_as_handled()
 
 func _on_close_pressed() -> void:
 	if is_inside_tree() and get_tree():

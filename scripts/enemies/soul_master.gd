@@ -336,12 +336,23 @@ func _trigger_phase_transition() -> void:
 	max_health = phase_2_max_health
 	current_health = phase_2_max_health
 	is_invulnerable = false
+	state = BossState.IDLE_HOVER
+	damage_cooldown = 0.0
+	stagger_hits = 0
 	if hurtbox:
 		hurtbox.set_deferred("monitoring", true)
 		hurtbox.set_deferred("monitorable", true)
+	if hitbox:
+		hitbox.set_deferred("monitoring", true)
+		hitbox.set_deferred("monitorable", true)
+	if attack_collision:
+		attack_collision.set_deferred("disabled", true)
 		
 	# Bật viền đen hào quang cuồng nộ liên tục
 	_set_dark_aura_continuous(true)
+	
+	if boss_health_bar_inst and is_instance_valid(boss_health_bar_inst) and boss_health_bar_inst.has_method("update_health"):
+		boss_health_bar_inst.update_health(phase_2_max_health)
 	
 	# Tiếp tục chu kỳ tấn công với nhịp độ dồn dập
 	_next_attack_cycle()
