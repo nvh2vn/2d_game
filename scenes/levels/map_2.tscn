@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dfewtvk5d5wki" path="res://assets/env/new_assets/Sprites/Architecture & Environment/Area specfic architecture/City of Tears/ruin_plat_float_05_wide.png" id="33_mg5np"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/winged_sentry.tscn" id="34_5qy3n"]
 [ext_resource type="PackedScene" uid="uid://djvpbvdqc6mfm" path="res://scenes/prefabs/enemies/baldur.tscn" id="35_3ht48"]
+[ext_resource type="PackedScene" uid="uid://ckirrwpcnixiw" path="res://scenes/environment/waypoint_pillar.tscn" id="36_3ht48"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/emilitia_npc.tscn" id="ext_emilitia_npc"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/nailmaster_npc.tscn" id="ext_nailmaster_npc"]
 
@@ -3777,5 +3778,8 @@ position = Vector2(2307, 331)
 
 [node name="Baldur2" parent="." unique_id=759386834 instance=ExtResource("35_3ht48")]
 position = Vector2(2792, 326)
+
+[node name="WaypointPillar" parent="." unique_id=1151024179 instance=ExtResource("36_3ht48")]
+position = Vector2(3767, 277)
 
 [editable path="Teleporter"]

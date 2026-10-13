@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://da84ajuoi0pue"]
+[gd_scene format=4 uid="uid://da84ajuoi0pue"]
 
 [ext_resource type="Texture2D" uid="uid://c3rykii0l8pef" path="res://assets/env/platforms/MossHole/fung_plat_float_08.png" id="1_wl5pn"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://scenes/prefabs/player/player_controller(pixel).tscn" id="2_jm60u"]
@@ -61,14 +61,15 @@
 [ext_resource type="Texture2D" uid="uid://b8wdhyvnd031l" path="res://assets/env/props/MossHole/moss_0.png" id="60_j8p8j"]
 [ext_resource type="Texture2D" uid="uid://lil1skxsaymm" path="res://assets/env/props/MossHole/mosshole_floor_1.png" id="61_563o8"]
 [ext_resource type="Texture2D" uid="uid://bmshfdk0cb851" path="res://assets/env/props/MossHole/mosshole_floor_0.png" id="62_fdn3g"]
+[ext_resource type="Texture2D" uid="uid://b7pqpvdwtkg1m" path="res://assets/env/abyss/_0033_abyss_02.png" id="65_eroup"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/mosscreep.tscn" id="68_4evsx"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/room_area.tscn" id="68_btq2r"]
+[ext_resource type="PackedScene" uid="uid://0csx22xtdh3e" path="res://scenes/prefabs/environment/waypoint_pillar.tscn" id="70_4evsx"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/bug_enemy.tscn" id="ext_bug_enemy"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/items/treasure_chest.tscn" id="ext_chest"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/fly_enemy.tscn" id="ext_fly_enemy"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/teleporter.tscn" id="ext_teleporter"]
 [ext_resource type="PackedScene" uid="uid://ctlip3krx65c7" path="res://scenes/npc/tuk_npc.tscn" id="ext_tuk_npc"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/emilitia_npc.tscn" id="ext_emilitia_npc"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/nailmaster_npc.tscn" id="ext_nailmaster_npc"]
 [ext_resource type="Script" uid="uid://c8ywavl6kjvv5" path="res://scripts/levels/pixel_level.gd" id="level_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baaps"]
@@ -9675,7 +9676,10 @@ size = Vector2(309, 52)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1om5"]
 size = Vector2(373, 55)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r40x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q7ej"]
+size = Vector2(143, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eroup"]
 resource_local_to_scene = true
 size = Vector2(3566, 567)
 
@@ -9687,6 +9691,8 @@ level_bgm = ExtResource("2_uy8wc")
 color = Color(0.1254902, 0.1254902, 0.15686275, 1)
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1933497591]
+position = Vector2(-29, 38)
+tile_map_data = PackedByteArray("AAAuAP7/CgAAAAAAAAAuAP//CgAAAAEAAAAuAAAACgAAAAIAAAAuAAEACgAAAAMAAAAvAP7/CgABAAAAAAAvAP//CgABAAEAAAAvAAAACgABAAIAAAAvAAEACgABAAMAAAAvAAIACgABAAQAAAAwAP7/CgACAAAAAAAwAP//CgACAAEAAAAwAAAACgACAAIAAAAwAAEACgACAAMAAAAwAAIACgACAAQAAAAxAP7/CgADAAAAAAAxAP//CgADAAEAAAAxAAAACgADAAIAAAAxAAEACgADAAMAAAAxAAIACgADAAQAAAAyAP7/CgAEAAAAAAAyAP//CgAEAAEAAAAyAAAACgAEAAIAAAAyAAEACgAEAAMAAAAyAAIACgAEAAQAAAAzAP7/CgAFAAAAAAAzAP//CgAFAAEAAAAzAAAACgAFAAIAAAAzAAEACgAFAAMAAAAzAAIACgAFAAQAAAA0AP7/CgAGAAAAAAA0AP//CgAGAAEAAAA0AAAACgAGAAIAAAA0AAEACgAGAAMAAAA0AAIACgAGAAQAAAA1AP7/CgAHAAAAAAA1AP//CgAHAAEAAAA1AAAACgAHAAIAAAA1AAEACgAHAAMAAAA1AAIACgAHAAQAAAA2AP7/CgAIAAAAAAA2AP//CgAIAAEAAAA2AAAACgAIAAIAAAA2AAEACgAIAAMAAAA2AAIACgAIAAQAAAA+APv/CwAAAAAAAAA+APz/CwAAAAEAAAA+AP3/CwAAAAIAAAA+AP7/CwAAAAMAAAA+AP//CwAAAAQAAAA/APv/CwABAAAAAAA/APz/CwABAAEAAAA/AP3/CwABAAIAAAA/AP7/CwABAAMAAAA/AP//CwABAAQAAABAAPv/CwACAAAAAABAAPz/CwACAAEAAABAAP3/CwACAAIAAABAAP7/CwACAAMAAABAAP//CwACAAQAAABBAPv/CwADAAAAAABBAPz/CwADAAEAAABBAP3/CwADAAIAAABBAP7/CwADAAMAAABBAP//CwADAAQAAABCAPv/CwAEAAAAAABCAPz/CwAEAAEAAABCAP3/CwAEAAIAAABCAP7/CwAEAAMAAABCAP//CwAEAAQAAABDAPv/CwAFAAAAAABDAPz/CwAFAAEAAABDAP3/CwAFAAIAAABDAP7/CwAFAAMAAABDAP//CwAFAAQAAABEAPv/CwAGAAAAAABEAPz/CwAGAAEAAABEAP3/CwAGAAIAAABEAP7/CwAGAAMAAABEAP//CwAGAAQAAABFAPv/CwAHAAAAAABFAPz/CwAHAAEAAABFAP3/CwAHAAIAAABFAP7/CwAHAAMAAABFAP//CwAHAAQAAABGAPv/CwAIAAAAAABGAPz/CwAIAAEAAABGAP3/CwAIAAIAAABGAP7/CwAIAAMAAABGAP//CwAIAAQAAABHAPv/CwAJAAAAAABHAPz/CwAJAAEAAABHAP3/CwAJAAIAAABHAP7/CwAJAAMAAABHAP//CwAJAAQAAABIAPv/CwAKAAAAAABIAPz/CwAKAAEAAABIAP3/CwAKAAIAAABIAP7/CwAKAAMAAABIAP//CwAKAAQAAABJAPv/CwALAAAAAABJAPz/CwALAAEAAABJAP3/CwALAAIAAABJAP7/CwALAAMAAABJAP//CwALAAQAAABKAPv/CwAMAAAAAABKAPz/CwAMAAEAAABKAP3/CwAMAAIAAABKAP7/CwAMAAMAAABKAP//CwAMAAQAAABLAPv/CwANAAAAAABLAPz/CwANAAEAAABLAP3/CwANAAIAAABLAP7/CwANAAMAAABLAP//CwANAAQAAABMAPv/CwAOAAAAAABMAPz/CwAOAAEAAABMAP3/CwAOAAIAAABMAP7/CwAOAAMAAABMAP//CwAOAAQAAABNAPv/CwAPAAAAAABNAPz/CwAPAAEAAABNAP3/CwAPAAIAAABNAP7/CwAPAAMAAABNAP//CwAPAAQAAABOAPv/CwAQAAAAAABOAPz/CwAQAAEAAABOAP3/CwAQAAIAAABOAP7/CwAQAAMAAABOAP//CwAQAAQAAABPAPv/CwARAAAAAABPAPz/CwARAAEAAABPAP3/CwARAAIAAABPAP7/CwARAAMAAABPAP//CwARAAQAAABWAPv/BwAAAAAAAABWAPz/BwAAAAEAAABWAP3/BwAAAAIAAABWAP7/BwAAAAMAAABWAP//BwAAAAQAAABXAPv/BwABAAAAAABXAPz/BwABAAEAAABXAP3/BwABAAIAAABXAP7/BwABAAMAAABXAP//BwABAAQAAABXAAAABwABAAUAAABYAPv/BwACAAAAAABYAPz/BwACAAEAAABYAP3/BwACAAIAAABYAP7/BwACAAMAAABYAP//BwACAAQAAABYAAAABwACAAUAAABYAAEABwACAAYAAABZAPv/BwADAAAAAABZAPz/BwADAAEAAABZAP3/BwADAAIAAABZAP7/BwADAAMAAABZAP//BwADAAQAAABZAAAABwADAAUAAABZAAEABwADAAYAAABZAAIABwADAAcAAABaAPv/BwAEAAAAAABaAPz/BwAEAAEAAABaAP3/BwAEAAIAAABaAP7/BwAEAAMAAABaAP//BwAEAAQAAABaAAAABwAEAAUAAABaAAEABwAEAAYAAABaAAIABwAEAAcAAABbAPv/BwAFAAAAAABbAPz/BwAFAAEAAABbAP3/BwAFAAIAAABbAP7/BwAFAAMAAABbAP//BwAFAAQAAABbAAAABwAFAAUAAABbAAEABwAFAAYAAABcAPv/BwAGAAAAAABcAPz/BwAGAAEAAABcAP3/BwAGAAIAAABcAP7/BwAGAAMAAABcAP//BwAGAAQAAABcAAAABwAGAAUAAABcAAEABwAGAAYAAABdAPv/BwAHAAAAAABdAPz/BwAHAAEAAABdAP3/BwAHAAIAAABdAP7/BwAHAAMAAABdAP//BwAHAAQAAABdAAAABwAHAAUAAABdAAEABwAHAAYAAABdAAIABwAHAAcAAABeAPv/BwAIAAAAAABeAPz/BwAIAAEAAABeAP3/BwAIAAIAAABeAP7/BwAIAAMAAABeAP//BwAIAAQAAABeAAAABwAIAAUAAABeAAEABwAIAAYAAABeAAIABwAIAAcAAABfAPv/BwAJAAAAAABfAPz/BwAJAAEAAABfAP3/BwAJAAIAAABfAP7/BwAJAAMAAABfAP//BwAJAAQAAABfAAAABwAJAAUAAABfAAEABwAJAAYAAABgAPv/BwAKAAAAAABgAPz/BwAKAAEAAABgAP3/BwAKAAIAAABgAP7/BwAKAAMAAABgAP//BwAKAAQAAABgAAAABwAKAAUAAABgAAEABwAKAAYAAAA=")
 tile_set = SubResource("TileSet_83hjc")
 
 [node name="CameraLimits" type="Node2D" parent="." unique_id=892348123]
@@ -9781,10 +9787,10 @@ shape = SubResource("RectangleShape2D_20iwf")
 [node name="Enemies" type="Node2D" parent="Map_1/Zone_1" unique_id=813659041]
 
 [node name="FlyEnemy1" parent="Map_1/Zone_1/Enemies" unique_id=1638441390 instance=ExtResource("ext_fly_enemy")]
-position = Vector2(615, -77)
+position = Vector2(958, -131)
 
 [node name="FlyEnemy2" parent="Map_1/Zone_1/Enemies" unique_id=15248226 instance=ExtResource("ext_fly_enemy")]
-position = Vector2(335, -78)
+position = Vector2(305, -76)
 
 [node name="Decoration" type="Node2D" parent="Map_1/Zone_1" unique_id=502415217]
 
@@ -10145,24 +10151,34 @@ z_index = 1
 position = Vector2(856, -121)
 texture = ExtResource("60_j8p8j")
 
+[node name="FungPlatFloat04" type="Sprite2D" parent="Map_1/Zone_3" unique_id=387165234]
+position = Vector2(916, -194)
+texture = ExtResource("15_ydf3q")
+
+[node name="FungPlatFloat05" type="Sprite2D" parent="Map_1/Zone_3" unique_id=1997732535]
+position = Vector2(919, -379)
+texture = ExtResource("15_ydf3q")
+
+[node name="FungPlatFloat06" type="Sprite2D" parent="Map_1/Zone_3" unique_id=563741025]
+position = Vector2(914, -529)
+texture = ExtResource("15_ydf3q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1/Zone_3/FungPlatFloat06" unique_id=1633574146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_1/Zone_3/FungPlatFloat06/StaticBody2D" unique_id=1471782666]
+position = Vector2(2.5, 140)
+shape = SubResource("RectangleShape2D_2q7ej")
+
 [node name="TeleporterToLevel2" parent="Map_1" unique_id=90962396 instance=ExtResource("ext_teleporter")]
-position = Vector2(807, -208)
+position = Vector2(802, -168)
 target_scene_path = "res://scenes/levels/map_2.tscn"
 
-[node name="TreasureChest1" parent="." unique_id=990102050 instance=ExtResource("ext_chest")]
-position = Vector2(1993, 116)
-
-[node name="TreasureChest2" parent="." unique_id=990102051 instance=ExtResource("ext_chest")]
-position = Vector2(501, 116)
+[node name="DoorSprite" parent="Map_1/TeleporterToLevel2" index="0"]
+position = Vector2(0, 1.9999999)
+texture = ExtResource("65_eroup")
 
 [node name="TukNPC" parent="." unique_id=981273918 instance=ExtResource("ext_tuk_npc")]
-position = Vector2(-120, 63)
-
-[node name="EmilitiaNPC" parent="." instance=ExtResource("ext_emilitia_npc")]
-position = Vector2(280, 63)
-
-[node name="NailMasterNPC" parent="." instance=ExtResource("ext_nailmaster_npc")]
-position = Vector2(680, 63)
+position = Vector2(-374, 33)
 
 [node name="PlayerController" parent="." unique_id=494526030 instance=ExtResource("2_jm60u")]
 position = Vector2(-241, 63)
@@ -10173,6 +10189,19 @@ room_size = Vector2(3566, 567)
 
 [node name="CollisionShape2D" parent="RoomArea2" index="0"]
 position = Vector2(100, 13.5)
-shape = SubResource("RectangleShape2D_5r40x")
+shape = SubResource("RectangleShape2D_eroup")
 
+[node name="Mosscreep" parent="." unique_id=736133534 instance=ExtResource("68_4evsx")]
+position = Vector2(1986, 118)
+
+[node name="TreasureChest" parent="." unique_id=526176300 instance=ExtResource("ext_chest")]
+position = Vector2(1150, -47)
+
+[node name="Mosscreep2" parent="." unique_id=1182010812 instance=ExtResource("68_4evsx")]
+position = Vector2(2537, 149)
+
+[node name="WaypointPillar" parent="." unique_id=1419513833 instance=ExtResource("70_4evsx")]
+position = Vector2(-492, -32)
+
+[editable path="Map_1/TeleporterToLevel2"]
 [editable path="RoomArea2"]

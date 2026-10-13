@@ -83,6 +83,10 @@ const HITS_TO_STAGGER: int = 14
 # Chiêu thức đã thực hiện gần đây để tránh lặp lại cùng 1 đòn
 var last_attack: String = ""
 
+# Nhấp nhô lơ lửng khi Idle
+var _idle_bob_time: float = 0.0
+var _idle_anchor_y: float = -9999.0
+
 
 func _on_enemy_ready() -> void:
 	is_boss = true
@@ -135,6 +139,12 @@ func _physics_process(delta: float) -> void:
 		
 	if not player_target or not is_instance_valid(player_target):
 		_find_player()
+		
+	if state == BossState.IDLE_HOVER and not is_dead:
+		_idle_bob_time += delta
+		_look_at_player()
+		if _idle_anchor_y > -8000.0:
+			global_position.y = _idle_anchor_y + sin(_idle_bob_time * 3.5) * 6.0
 		
 	if state == BossState.DORMANT and not is_dead:
 		if wait_for_trigger:
@@ -351,14 +361,27 @@ func _next_attack_cycle() -> void:
 			animated_sprite.play("idle")
 		return
 		
-	# Thời gian bay lơ lửng chờ giữa các đòn: Tăng lên 1.2s - 1.8s ở Phase 2
+	# 1. Chuyển Boss về trạng thái IDLE_HOVER trong suốt khoảng thời gian nghỉ/hồi chiêu
 	state = BossState.IDLE_HOVER
-	var rest_time = randf_range(1.2, 1.8) if current_phase == 2 else 0.85
+	_idle_anchor_y = global_position.y
+	_idle_bob_time = 0.0
+	
+	# 2. Tắt hoàn toàn hitbox gây sát thương của chiêu thức trước đó
+	if attack_collision:
+		attack_collision.set_deferred("disabled", true)
+		
+	# 3. Phát animation "idle" (Boss lơ lửng, thở và quan sát người chơi)
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("idle"):
+		animated_sprite.play("idle")
+	_look_at_player()
+	
+	# 4. Khoảng thời gian hồi chiêu/nghỉ (cooldown): 1.2s - 1.5s ở Phase 2, 0.85s - 1.0s ở Phase 1
+	var rest_time = randf_range(1.2, 1.5) if current_phase == 2 else randf_range(0.85, 1.0)
 	await get_tree().create_timer(rest_time).timeout
 	if is_dead or not is_inside_tree() or state == BossState.STAGGER or state == BossState.TRANSITION:
 		return
 		
-	# Chọn chiêu thức không trùng với chiêu vừa ra
+	# 5. Hết thời gian chờ: Chọn chiêu thức mới (không trùng chiêu cũ) và bắt đầu wind-up chiêu đó
 	var pool = ["orb_shot", "orb_shield", "slam", "dash"]
 	if last_attack != "" and pool.has(last_attack):
 		pool.erase(last_attack)
@@ -378,6 +401,7 @@ func _next_attack_cycle() -> void:
 
 # ==================== DỊCH CHUYỂN (TELEPORT) ====================
 func _teleport_to(target_pos: Vector2, play_sound: bool = true) -> void:
+	var prev_state = state
 	state = BossState.TELEPORTING
 	is_invulnerable = true
 	if hurtbox:
@@ -413,6 +437,8 @@ func _teleport_to(target_pos: Vector2, play_sound: bool = true) -> void:
 		hurtbox.set_deferred("monitoring", true)
 		hurtbox.set_deferred("monitorable", true)
 	is_invulnerable = false
+	if state == BossState.TELEPORTING:
+		state = prev_state
 
 
 func _look_at_player() -> void:
@@ -464,9 +490,10 @@ func _attack_orb_shot() -> void:
 			if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 				return
 			
-	# Khoảng dừng khựng lại (Recover / Wind-down) ít nhất 1.0s sau khi bắn cầu
-	var post_delay = 1.05 if current_phase == 2 else 1.0
-	await get_tree().create_timer(post_delay).timeout
+	# Kết thúc bắn cầu: khựng ngắn 0.1s hoàn tất đòn rồi chuyển ngay sang IDLE nghỉ ngơi
+	await get_tree().create_timer(0.1).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
 	_next_attack_cycle()
 
 
@@ -523,9 +550,10 @@ func _attack_orb_shield_pass() -> void:
 			var out_dir = Vector2(cos(o.orbit_angle), sin(o.orbit_angle))
 			o.release_shield_orb(out_dir, release_speed)
 			
-	# Khoảng dừng khựng lại (Recover / Wind-down) ít nhất 1.0s sau khi lướt khiên cầu
-	var shield_recover = 1.05 if current_phase == 2 else 1.0
-	await get_tree().create_timer(shield_recover).timeout
+	# Kết thúc lướt khiên cầu: khựng ngắn 0.1s rồi chuyển ngay sang IDLE nghỉ ngơi
+	await get_tree().create_timer(0.1).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
 	_next_attack_cycle()
 
 
@@ -613,9 +641,17 @@ func _attack_slam_dive(_is_second_slam: bool = false) -> void:
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
 		
-	# Khựng lại hồi phục (Recover / Wind-down) ít nhất 1.0s trên sàn
-	var recover_time = 1.05 if current_phase == 2 else 1.0
-	await get_tree().create_timer(recover_time).timeout
+	# Khựng lại trên sàn 0.15s rồi nhấc người bay lơ lửng lên vào thế IDLE nghỉ ngơi
+	await get_tree().create_timer(0.15).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
+		
+	var tw_rise = create_tween()
+	tw_rise.tween_property(self, "global_position:y", arena_ground_y - 100.0, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	await tw_rise.finished
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
+		
 	_next_attack_cycle()
 
 
@@ -666,9 +702,17 @@ func _attack_dash_lunge() -> void:
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# Khựng lại hồi phục (Recover / Wind-down) ít nhất 1.0s sau khi lướt
-	var dash_recover = 1.05 if current_phase == 2 else 1.0
-	await get_tree().create_timer(dash_recover).timeout
+	# Khựng lại 0.12s sau khi lướt xong rồi nhấc người bay lơ lửng lên vào thế IDLE nghỉ ngơi
+	await get_tree().create_timer(0.12).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
+		
+	var tw_float = create_tween()
+	tw_float.tween_property(self, "global_position:y", arena_ground_y - 100.0, 0.22).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	await tw_float.finished
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
+		
 	_next_attack_cycle()
 
 
