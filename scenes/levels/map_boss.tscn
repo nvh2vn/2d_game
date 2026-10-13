@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b33v5a25q36qw" path="res://assets/env/abyss/_0173_Layer-425.png" id="2_mspvc"]
 [ext_resource type="PackedScene" uid="uid://bimrbusqh5ikp" path="res://scenes/prefabs/player/player_controller(pixel).tscn" id="3_0ot1f"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/environment/room_area.tscn" id="4_mspvc"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/enemies/nightmare_boss.tscn" id="7_y185h"]
+[ext_resource type="PackedScene" uid="uid://soul_master_boss_scene_01" path="res://scenes/enemies/soul_master.tscn" id="7_y185h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh3le"]
 size = Vector2(1353, 30)
@@ -109,7 +109,10 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossTriggerArea" unique_id=184920185]
 shape = SubResource("RectangleShape2D_trigger")
 
-[node name="NightmareBoss" parent="." unique_id=1698653507 instance=ExtResource("7_y185h")]
+[node name="SoulMaster" parent="." unique_id=1698653507 instance=ExtResource("7_y185h")]
 position = Vector2(833, 546)
+arena_left_x = 80.0
+arena_right_x = 1220.0
+arena_ground_y = 610.0
 
 [editable path="RoomArea"]

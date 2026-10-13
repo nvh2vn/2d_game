@@ -68,6 +68,43 @@ func _apply_setup() -> void:
 		tw.tween_property(container, "modulate:a", 1.0, 0.7).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 
 
+func setup_phase_2(p_max_health: int, p_phase_title: String = "SOUL MASTER - CUỒNG NỘ") -> void:
+	max_hp = p_max_health
+	current_hp = p_max_health
+	boss_title = p_phase_title
+	_resolve_nodes()
+	
+	if boss_name_label:
+		boss_name_label.text = boss_title
+		var tw_label = create_tween()
+		tw_label.tween_property(boss_name_label, "modulate", Color(1.35, 0.45, 1.25, 1.0), 0.5)
+		
+	if health_bar:
+		health_bar.max_value = float(max_hp)
+		health_bar.value = 0.0
+		var style = health_bar.get_theme_stylebox("fill")
+		if style:
+			var new_style = style.duplicate()
+			if new_style is StyleBoxFlat:
+				new_style.bg_color = Color(0.72, 0.12, 0.88, 0.98)
+				new_style.shadow_color = Color(0.35, 0.02, 0.55, 0.85)
+				new_style.shadow_size = 4
+				health_bar.add_theme_stylebox_override("fill", new_style)
+				
+		var tw_fill = create_tween()
+		tw_fill.tween_property(health_bar, "value", float(max_hp), 1.4)\
+			.set_trans(Tween.TRANS_QUAD)\
+			.set_ease(Tween.EASE_OUT)
+			
+	if damage_bar:
+		damage_bar.max_value = float(max_hp)
+		damage_bar.value = 0.0
+		var tw_dmg = create_tween()
+		tw_dmg.tween_property(damage_bar, "value", float(max_hp), 1.4)\
+			.set_trans(Tween.TRANS_QUAD)\
+			.set_ease(Tween.EASE_OUT)
+
+
 func update_health(new_health: int) -> void:
 	current_hp = clampi(new_health, 0, max_hp)
 	_resolve_nodes()

@@ -20,6 +20,7 @@ enum BossState {
 	ATTACK_SLAM,
 	ATTACK_DASH_LUNGE,
 	STAGGER,
+	TRANSITION,
 	DEATH
 }
 
@@ -35,6 +36,10 @@ signal boss_defeated()
 @export var arena_right_x: float = 9999.0
 @export var arena_ground_y: float = 9999.0
 
+@export_group("Phase & Health Settings")
+@export var phase_1_max_health: int = 40
+@export var phase_2_max_health: int = 50
+
 @export_group("Combat Prefabs")
 @export var orb_scene: PackedScene = preload("res://scenes/enemies/soul_orb.tscn")
 @export var shockwave_scene: PackedScene = preload("res://scenes/enemies/soul_shockwave.tscn")
@@ -47,6 +52,7 @@ signal boss_defeated()
 @export var cast_alt_sfx: AudioStream = preload("res://assets/audio/soul_master/cast_1.mp3")
 @export var roar_sfx: AudioStream = preload("res://assets/audio/soul_master/roar.mp3")
 @export var angry_sfx: AudioStream = preload("res://assets/audio/soul_master/angry_0.mp3")
+@export var rumble_sfx: AudioStream = preload("res://assets/audio/soul_master/rumble.mp3")
 @export var slam_ground_sfx: AudioStream = preload("res://assets/audio/soul_master/ground.mp3")
 @export var slash_sfx: AudioStream = preload("res://assets/audio/soul_master/slash.mp3")
 @export var start_stun_sfx: AudioStream = preload("res://assets/audio/soul_master/startstun.mp3")
@@ -58,11 +64,14 @@ signal boss_defeated()
 @onready var attack_hitbox: Area2D = get_node_or_null("AttackHitbox")
 @onready var attack_collision: CollisionShape2D = get_node_or_null("AttackHitbox/CollisionShape2D")
 @onready var sfx_player: AudioStreamPlayer2D = get_node_or_null("AudioStreamPlayer2D")
+@onready var dark_aura_particles: CPUParticles2D = get_node_or_null("%DarkAuraParticles")
+@onready var dark_burst_particles: CPUParticles2D = get_node_or_null("%DarkBurstParticles")
 
 var state: BossState = BossState.DORMANT
 var current_phase: int = 1
 var is_invulnerable: bool = false
 var damage_cooldown: float = 0.0
+var _aura_pulse_timer: float = 0.0
 var facing_dir: float = -1.0
 var player_target: Node2D = null
 var boss_health_bar_inst: Node = null
@@ -78,10 +87,13 @@ var last_attack: String = ""
 func _on_enemy_ready() -> void:
 	is_boss = true
 	enemy_journal_id = "mage_lord"
-	max_health = 45
+	current_phase = 1
+	max_health = phase_1_max_health
 	current_health = max_health
 	damage = 1
 	loot_tier = GeoDropHelper.EnemyTier.BOSS
+	
+	_set_dark_aura_continuous(false)
 	
 	if arena_ground_y > 9000.0:
 		arena_ground_y = global_position.y
@@ -118,6 +130,9 @@ func _physics_process(delta: float) -> void:
 	if damage_cooldown > 0.0:
 		damage_cooldown -= delta
 		
+	if current_phase == 2 and not is_dead and state != BossState.DEATH and state != BossState.TRANSITION:
+		_pulse_enraged_aura(delta)
+		
 	if not player_target or not is_instance_valid(player_target):
 		_find_player()
 		
@@ -149,6 +164,10 @@ func start_encounter() -> void:
 	if state != BossState.DORMANT or is_dead:
 		return
 	state = BossState.INTRO
+	current_phase = 1
+	max_health = phase_1_max_health
+	current_health = max_health
+	_set_dark_aura_continuous(false)
 	
 	# Khởi tạo thanh máu Boss HUD
 	if health_bar_scene:
@@ -168,9 +187,9 @@ func start_encounter() -> void:
 		_start_attack_loop()
 
 
-# ==================== NHẬN SÁT THƯƠNG ====================
+# ==================== NHẬN SÁT THƯƠNG (DAMAGE CAP & GATE) ====================
 func take_damage(amount: int = 1, _knockback_dir: Vector2 = Vector2.ZERO) -> void:
-	if is_invulnerable or is_dead or damage_cooldown > 0.0:
+	if is_invulnerable or is_dead or state == BossState.TRANSITION or damage_cooldown > 0.0:
 		return
 		
 	if state == BossState.DORMANT:
@@ -178,38 +197,144 @@ func take_damage(amount: int = 1, _knockback_dir: Vector2 = Vector2.ZERO) -> voi
 		if amount < 99999 and not (DebugManager and DebugManager.is_one_hit):
 			return
 		
-	if (DebugManager and DebugManager.is_one_hit) or amount >= 99999:
-		current_health = 0
-		if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
-			boss_health_bar_inst.update_health(0)
-		die()
-		return
-
 	damage_cooldown = 0.12
-	current_health -= amount
-	stagger_hits += 1
 	
-	if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
-		boss_health_bar_inst.update_health(current_health)
-		
 	# Chớp đỏ khi nhận đòn
 	if animated_sprite:
 		var tw = create_tween()
 		tw.tween_property(animated_sprite, "modulate", Color(2.5, 0.4, 0.4), 0.08)
 		tw.tween_property(animated_sprite, "modulate", Color.WHITE, 0.08)
 		
-	if current_health <= 0:
-		die()
+	var is_one_hit_strike = (DebugManager and DebugManager.is_one_hit) or (amount >= 99999)
+	
+	if current_phase == 1:
+		# ==================== GIAI ĐOẠN 1: DAMAGE CAP ====================
+		# Đòn đánh One-Hit hoặc đòn sát thương lớn chỉ trừ hết Phase 1,
+		# TUYỆT ĐỐI không trừ tràn sang Phase 2 và KHÔNG gọi die(), lập tức kích hoạt chuyển Phase!
+		if is_one_hit_strike or (current_health - amount <= 0):
+			current_health = 0
+			if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+				boss_health_bar_inst.update_health(0)
+			_trigger_phase_transition()
+			return
+		else:
+			current_health -= amount
+			stagger_hits += 1
+			if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+				boss_health_bar_inst.update_health(current_health)
+			if stagger_hits >= HITS_TO_STAGGER and state != BossState.STAGGER and state != BossState.TRANSITION:
+				stagger_hits = 0
+				_trigger_stagger()
+	else:
+		# ==================== GIAI ĐOẠN 2: ENRAGED PHASE ====================
+		# Ở Phase 2: Đòn đánh tiếp theo (One-Hit hoặc đòn thường cạn máu) mới kết liễu Boss thật sự
+		if is_one_hit_strike or (current_health - amount <= 0):
+			current_health = 0
+			if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+				boss_health_bar_inst.update_health(0)
+			die()
+			return
+		else:
+			current_health -= amount
+			stagger_hits += 1
+			if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+				boss_health_bar_inst.update_health(current_health)
+			if stagger_hits >= HITS_TO_STAGGER and state != BossState.STAGGER and state != BossState.TRANSITION:
+				stagger_hits = 0
+				_trigger_stagger()
+
+
+# ==================== CHUYỂN PHASE (PHASE TRANSITION) ====================
+func _trigger_phase_transition() -> void:
+	if state == BossState.TRANSITION or current_phase >= 2 or is_dead:
 		return
 		
-	# Đổi Phase khi còn dưới 50% HP
-	if float(current_health) / float(max_health) <= 0.5:
-		current_phase = 2
+	state = BossState.TRANSITION
+	is_invulnerable = true
+	_set_dark_aura_continuous(false)
+	
+	if attack_collision:
+		attack_collision.set_deferred("disabled", true)
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", false)
+		hurtbox.set_deferred("monitorable", false)
 		
-	# Kích hoạt kiệt sức (Stagger) khi nhận đủ số đòn
-	if stagger_hits >= HITS_TO_STAGGER and state != BossState.STAGGER:
-		stagger_hits = 0
-		_trigger_stagger()
+	# Dọn sạch toàn bộ projectiles đang bay trên sân
+	_clear_all_projectiles()
+	
+	# Tính tọa độ tâm đấu trường
+	var center_x = (arena_left_x + arena_right_x) * 0.5
+	if center_x < -5000.0 or center_x > 5000.0:
+		center_x = global_position.x
+		
+	# 1. Rơi / Teleport về giữa phòng sát sàn, khuỵu gối kiệt sức
+	await _teleport_to(Vector2(center_x, arena_ground_y), false)
+	if is_dead or not is_inside_tree():
+		return
+		
+	play_sfx(start_stun_sfx)
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("stagger_start"):
+		animated_sprite.play("stagger_start")
+	_shake_camera(4.0, 0.3)
+	
+	await get_tree().create_timer(0.4).timeout
+	if is_dead or not is_inside_tree():
+		return
+		
+	play_sfx(stun_sfx)
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("stagger"):
+		animated_sprite.play("stagger")
+		
+	await get_tree().create_timer(0.5).timeout
+	if is_dead or not is_inside_tree():
+		return
+		
+	# 2. Boss bay lơ lửng lên giữa không trung
+	var hover_y = arena_ground_y - 175.0
+	var tw_rise = create_tween()
+	tw_rise.tween_property(self, "global_position:y", hover_y, 0.45).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("cast_orb"):
+		animated_sprite.play("cast_orb")
+	play_sfx(angry_sfx)
+	await tw_rise.finished
+	if is_dead or not is_inside_tree():
+		return
+		
+	# 3. Gầm thét dữ dội, bùng nổ Sóng Hào Quang Bóng Tối (Dark Burst) tỏa 360 độ cực đại
+	play_sfx(roar_sfx)
+	play_sfx(rumble_sfx)
+	_trigger_dark_aura_burst()
+	_shake_camera(9.0, 1.5)
+	
+	if animated_sprite:
+		var tw_mod = create_tween()
+		tw_mod.tween_property(animated_sprite, "modulate", Color(1.8, 0.4, 2.2), 0.2)
+		tw_mod.tween_property(animated_sprite, "modulate", Color.WHITE, 0.35)
+		
+	# 4. Hồi đầy thanh máu Boss HUD sang Phase 2 Cuồng Nộ
+	if boss_health_bar_inst and boss_health_bar_inst.has_method("setup_phase_2"):
+		boss_health_bar_inst.setup_phase_2(phase_2_max_health, "SOUL MASTER - CUỒNG NỘ")
+		
+	# Đợi hoàn tất hoạt cảnh chuyển cảnh (~1.4s)
+	await get_tree().create_timer(1.4).timeout
+	if is_dead or not is_inside_tree():
+		return
+		
+	# 5. Kích hoạt Phase 2 chính thức
+	current_phase = 2
+	max_health = phase_2_max_health
+	current_health = phase_2_max_health
+	is_invulnerable = false
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", true)
+		hurtbox.set_deferred("monitorable", true)
+		
+	# Bật viền đen hào quang cuồng nộ liên tục
+	_set_dark_aura_continuous(true)
+	
+	# Tiếp tục chu kỳ tấn công với nhịp độ dồn dập
+	_next_attack_cycle()
 
 
 # ==================== CHU KỲ TẤN CÔNG (FSM) ====================
@@ -218,7 +343,7 @@ func _start_attack_loop() -> void:
 
 
 func _next_attack_cycle() -> void:
-	if is_dead or not is_inside_tree() or state == BossState.STAGGER:
+	if is_dead or not is_inside_tree() or state == BossState.STAGGER or state == BossState.TRANSITION:
 		return
 		
 	if player_target and ("current_health" in player_target and player_target.current_health <= 0):
@@ -226,11 +351,11 @@ func _next_attack_cycle() -> void:
 			animated_sprite.play("idle")
 		return
 		
-	# Thời gian bay lơ lửng chờ giữa các đòn
+	# Thời gian bay lơ lửng chờ giữa các đòn: Phase 2 giảm mạnh còn 0.32s
 	state = BossState.IDLE_HOVER
-	var rest_time = 0.7 if current_phase == 1 else 0.45
+	var rest_time = 0.7 if current_phase == 1 else 0.32
 	await get_tree().create_timer(rest_time).timeout
-	if is_dead or not is_inside_tree() or state == BossState.STAGGER:
+	if is_dead or not is_inside_tree() or state == BossState.STAGGER or state == BossState.TRANSITION:
 		return
 		
 	# Chọn chiêu thức không trùng với chiêu vừa ra
@@ -246,7 +371,7 @@ func _next_attack_cycle() -> void:
 		"orb_shield":
 			_attack_orb_shield_pass()
 		"slam":
-			_attack_slam_dive()
+			_attack_slam_dive(false)
 		"dash":
 			_attack_dash_lunge()
 
@@ -309,31 +434,38 @@ func _attack_orb_shot() -> void:
 	var air_y = arena_ground_y - randf_range(160.0, 220.0)
 	var air_x = clampf(global_position.x + randf_range(-180.0, 180.0), arena_left_x + 80.0, arena_right_x - 80.0)
 	await _teleport_to(Vector2(air_x, air_y))
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	play_sfx(cast_sfx)
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("cast_orb"):
 		animated_sprite.play("cast_orb")
 		
-	await get_tree().create_timer(0.35).timeout
-	if is_dead or not is_inside_tree():
+	var cast_delay = 0.28 if current_phase == 2 else 0.35
+	await get_tree().create_timer(cast_delay).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# Bắn cầu linh hồn đuổi theo người chơi
-	var orb_count = 2 if current_phase == 2 else 1
+	# Phase 1: 1 quả cầu đuổi theo người chơi; Phase 2: Burst fire 3 quả cầu dồn dập
+	var orb_count = 3 if current_phase == 2 else 1
+	var orb_speed = 390.0 if current_phase == 2 else 330.0
+	var burst_delay = 0.22 if current_phase == 2 else 0.35
+	
 	for i in range(orb_count):
 		if orb_scene and get_parent():
 			var orb = orb_scene.instantiate()
 			get_parent().add_child(orb)
 			var shoot_pos = global_position + Vector2(facing_dir * 45.0, -20.0)
 			var init_dir = (player_target.global_position - shoot_pos).normalized() if player_target else Vector2(facing_dir, 0.5)
-			orb.setup_shot(shoot_pos, init_dir, 330.0, true)
-		if orb_count > 1 and i == 0:
-			await get_tree().create_timer(0.35).timeout
-			if is_dead or not is_inside_tree(): return
+			orb.setup_shot(shoot_pos, init_dir, orb_speed, true)
+		if orb_count > 1 and i < orb_count - 1:
+			play_sfx(cast_alt_sfx)
+			await get_tree().create_timer(burst_delay).timeout
+			if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+				return
 			
-	await get_tree().create_timer(0.6).timeout
+	var post_delay = 0.35 if current_phase == 2 else 0.6
+	await get_tree().create_timer(post_delay).timeout
 	_next_attack_cycle()
 
 
@@ -351,7 +483,7 @@ func _attack_orb_shield_pass() -> void:
 	
 	# Teleport ở độ cao ngang người chơi (cần nhảy né)
 	await _teleport_to(Vector2(start_x, arena_ground_y - 75.0))
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	play_sfx(angry_sfx)
@@ -360,39 +492,42 @@ func _attack_orb_shield_pass() -> void:
 	if animated_sprite:
 		animated_sprite.flip_h = (fly_dir_x > 0)
 		
-	# Triệu hồi 4 quả cầu xoay quanh người làm khiên
+	# Phase 1: 4 quả cầu; Phase 2: 6 quả cầu xoay quanh người làm khiên
+	var orb_count = 6 if current_phase == 2 else 4
+	var shield_radius = 105.0 if current_phase == 2 else 90.0
 	var shield_orbs = []
 	if orb_scene and get_parent():
-		for i in range(4):
+		for i in range(orb_count):
 			var orb = orb_scene.instantiate()
 			get_parent().add_child(orb)
-			var angle = i * (PI / 2.0)
-			orb.setup_shield_orb(self, angle, 90.0)
+			var angle = i * ((PI * 2.0) / float(orb_count))
+			orb.setup_shield_orb(self, angle, shield_radius)
 			shield_orbs.append(orb)
 			
-	# Bay từ từ từ mép này sang mép kia sân đấu
-	var fly_duration = 3.2
+	# Bay từ từ từ mép này sang mép kia sân đấu (Phase 2 nhanh hơn: 2.3s thay vì 3.2s)
+	var fly_duration = 2.3 if current_phase == 2 else 3.2
 	var tw_fly = create_tween()
 	tw_fly.tween_property(self, "global_position:x", target_x, fly_duration).set_trans(Tween.TRANS_LINEAR)
 	await tw_fly.finished
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		for o in shield_orbs:
 			if is_instance_valid(o): o.queue_free()
 		return
 		
-	# Khi bay hết màn hình, 4 quả cầu mở rộng bán kính và bay tỏa ra ngoài
+	# Khi bay hết màn hình, các quả cầu mở rộng bán kính và bay tỏa ra ngoài
+	var release_speed = 460.0 if current_phase == 2 else 400.0
 	for i in range(shield_orbs.size()):
 		var o = shield_orbs[i]
 		if is_instance_valid(o):
 			var out_dir = Vector2(cos(o.orbit_angle), sin(o.orbit_angle))
-			o.release_shield_orb(out_dir, 400.0)
+			o.release_shield_orb(out_dir, release_speed)
 			
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.25).timeout
 	_next_attack_cycle()
 
 
 # ==================== ĐÒN 3: ĐẬP SÀN XUNG KÍCH (DESOLATE DIVE / SLAM) ====================
-func _attack_slam_dive() -> void:
+func _attack_slam_dive(is_second_slam: bool = false) -> void:
 	state = BossState.ATTACK_SLAM
 	if not player_target or not is_instance_valid(player_target):
 		_find_player()
@@ -400,74 +535,91 @@ func _attack_slam_dive() -> void:
 	
 	# Teleport lên vị trí ngay trên đầu Player
 	await _teleport_to(Vector2(p_x, arena_ground_y - 250.0))
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	# Khựng lại chuẩn bị lao xuống
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_anticipation"):
 		animated_sprite.play("slam_anticipation")
-	await get_tree().create_timer(0.32).timeout
-	if is_dead or not is_inside_tree():
+	var antic_time = 0.22 if current_phase == 2 else 0.32
+	await get_tree().create_timer(antic_time).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# CƠ CHẾ ĐÁNH LỪA (FAKE DIVE / FEINT - 30% XÁC SUẤT):
-	var is_feint = (randf() < 0.30)
+	# CƠ CHẾ ĐÁNH LỪA (FAKE DIVE / FEINT): Phase 1 30%, Phase 2 45%
+	var feint_chance = 0.45 if current_phase == 2 else 0.30
+	var is_feint = (randf() < feint_chance) and not is_second_slam
 	if is_feint:
 		# Lao xuống lưng chừng rồi đột ngột teleport biến mất!
 		if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_dive"):
 			animated_sprite.play("slam_dive")
 		var fake_tw = create_tween()
-		fake_tw.tween_property(self, "global_position:y", arena_ground_y - 120.0, 0.14).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		fake_tw.tween_property(self, "global_position:y", arena_ground_y - 120.0, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		await fake_tw.finished
-		if is_dead or not is_inside_tree(): return
+		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
 		# Teleport xuất hiện lại trên đầu vị trí mới của Player!
 		if not player_target or not is_instance_valid(player_target): _find_player()
 		var new_p_x = player_target.global_position.x if player_target else global_position.x
 		await _teleport_to(Vector2(new_p_x, arena_ground_y - 250.0))
-		if is_dead or not is_inside_tree(): return
+		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
 		if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_anticipation"):
 			animated_sprite.play("slam_anticipation")
-		await get_tree().create_timer(0.18).timeout
-		if is_dead or not is_inside_tree(): return
+		await get_tree().create_timer(0.16).timeout
+		if is_dead or not is_inside_tree() or state == BossState.TRANSITION: return
 		
-	# LAO CẮM THẲNG XUỐNG ĐẤT THẬT
+	# LAO CẮM THẲNG XUỐNG ĐẤT THẬT (Phase 2 nhanh hơn: 0.15s thay vì 0.22s)
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("slam_dive"):
 		animated_sprite.play("slam_dive")
 	if attack_collision:
 		attack_collision.set_deferred("disabled", false)
 		
+	var dive_duration = 0.15 if current_phase == 2 else 0.22
 	var dive_tw = create_tween()
-	dive_tw.tween_property(self, "global_position:y", arena_ground_y, 0.22).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	dive_tw.tween_property(self, "global_position:y", arena_ground_y, dive_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	await dive_tw.finished
 	
-	# TIẾP ĐẤT TẠO RUNG CHẤN VÀ 2 CỘT SÓNG XUNG KÍCH SANG HAI BÊN
+	# TIẾP ĐẤT TẠO RUNG CHẤN VÀ CỘT SÓNG XUNG KÍCH SANG HAI BÊN
 	play_sfx(slam_ground_sfx)
-	var cam = get_viewport().get_camera_2d()
-	if cam:
-		var tw_cam = create_tween()
-		for i in range(8):
-			tw_cam.tween_property(cam, "offset", Vector2(0, randf_range(-6.0, 6.0)), 0.04)
-		tw_cam.tween_property(cam, "offset", Vector2.ZERO, 0.04)
+	var shake_power = 9.0 if current_phase == 2 else 6.0
+	_shake_camera(shake_power, 0.35)
 		
-	# Sinh 2 sóng chấn động (trái và phải)
+	# Sinh 2 sóng chấn động (Phase 2 tốc độ 460.0 thay vì 360.0)
+	var wave_speed = 460.0 if current_phase == 2 else 360.0
 	if shockwave_scene and get_parent():
 		var sw_left = shockwave_scene.instantiate()
 		get_parent().add_child(sw_left)
-		sw_left.setup(-1.0, Vector2(global_position.x - 30.0, arena_ground_y), 360.0)
+		sw_left.setup(-1.0, Vector2(global_position.x - 30.0, arena_ground_y), wave_speed)
 		
 		var sw_right = shockwave_scene.instantiate()
 		get_parent().add_child(sw_right)
-		sw_right.setup(1.0, Vector2(global_position.x + 30.0, arena_ground_y), 360.0)
+		sw_right.setup(1.0, Vector2(global_position.x + 30.0, arena_ground_y), wave_speed)
+		
+	# Phase 2: Bắn thêm 2 quả cầu Soul Orb bay bổng lên trên khi tiếp đất!
+	if current_phase == 2 and orb_scene and get_parent():
+		var orb_left = orb_scene.instantiate()
+		get_parent().add_child(orb_left)
+		orb_left.setup_shot(Vector2(global_position.x - 24.0, arena_ground_y - 35.0), Vector2(-0.55, -0.85).normalized(), 330.0, true)
+		
+		var orb_right = orb_scene.instantiate()
+		get_parent().add_child(orb_right)
+		orb_right.setup_shot(Vector2(global_position.x + 24.0, arena_ground_y - 35.0), Vector2(0.55, -0.85).normalized(), 330.0, true)
 		
 	# Tắt va chạm đập đất sau nhịp va đập ngắn
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.12).timeout
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
 		
-	# Khựng lại trên sàn 0.3s
-	await get_tree().create_timer(0.3).timeout
+	# Phase 2: 40% TỶ LỆ ĐẬP ĐẤT 2 LẦN LIÊN TIẾP (DOUBLE SLAM)
+	if current_phase == 2 and not is_second_slam and randf() < 0.40:
+		await get_tree().create_timer(0.18).timeout
+		if not is_dead and is_inside_tree() and state != BossState.TRANSITION:
+			_attack_slam_dive(true)
+			return
+		
+	var recover_time = 0.2 if current_phase == 2 else 0.3
+	await get_tree().create_timer(recover_time).timeout
 	_next_attack_cycle()
 
 
@@ -484,7 +636,7 @@ func _attack_dash_lunge() -> void:
 	var dash_dir_x = 1.0 if start_left else -1.0
 	
 	await _teleport_to(Vector2(start_x, arena_ground_y - 30.0))
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	play_sfx(slash_sfx)
@@ -495,21 +647,25 @@ func _attack_dash_lunge() -> void:
 	if attack_collision:
 		attack_collision.set_deferred("disabled", false)
 		
-	# Lướt nhanh ngang người sang mép đối diện
+	# Lướt nhanh ngang người: Phase 2 nhanh hơn 1.5x (0.32s thay vì 0.48s)
+	var dash_duration = 0.32 if current_phase == 2 else 0.48
 	var tw_dash = create_tween()
-	tw_dash.tween_property(self, "global_position:x", dash_target_x, 0.48).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tw_dash.tween_property(self, "global_position:x", dash_target_x, dash_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	await tw_dash.finished
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	await get_tree().create_timer(0.25).timeout
+	var rest_time = 0.16 if current_phase == 2 else 0.25
+	await get_tree().create_timer(rest_time).timeout
 	_next_attack_cycle()
 
 
 # ==================== TRẠNG THÁI KIỆT SỨC (STAGGER) ====================
 func _trigger_stagger() -> void:
+	if state == BossState.TRANSITION or state == BossState.DEATH or is_dead:
+		return
 	state = BossState.STAGGER
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
@@ -523,7 +679,7 @@ func _trigger_stagger() -> void:
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("stagger_start"):
 		animated_sprite.play("stagger_start")
 	await get_tree().create_timer(0.4).timeout
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	play_sfx(stun_sfx)
@@ -532,7 +688,7 @@ func _trigger_stagger() -> void:
 		
 	# Kiệt sức trong 3.5 giây
 	await get_tree().create_timer(3.5).timeout
-	if is_dead or not is_inside_tree():
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
 	play_sfx(angry_sfx)
@@ -577,6 +733,50 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	_check_and_damage_player(area, damage)
 
 
+# ==================== HIỆU ỨNG HÀO QUANG & HỖ TRỢ ====================
+func _set_dark_aura_continuous(enable: bool) -> void:
+	if dark_aura_particles:
+		dark_aura_particles.emitting = enable
+
+
+func _trigger_dark_aura_burst() -> void:
+	if dark_burst_particles:
+		dark_burst_particles.restart()
+		dark_burst_particles.emitting = true
+
+
+func _pulse_enraged_aura(delta: float) -> void:
+	_aura_pulse_timer += delta
+	if dark_aura_particles:
+		var pulse = 1.0 + 0.22 * sin(_aura_pulse_timer * 4.5)
+		dark_aura_particles.scale_amount_min = 6.0 * pulse
+		dark_aura_particles.scale_amount_max = 12.0 * pulse
+		dark_aura_particles.speed_scale = 0.95 + 0.35 * pulse
+
+
+func _shake_camera(intensity: float = 6.0, duration: float = 0.5) -> void:
+	var cam: Camera2D = get_viewport().get_camera_2d()
+	if not cam and player_target:
+		cam = player_target.get_node_or_null("%Camera2D")
+	if not cam:
+		return
+	var orig_offset = cam.offset
+	var steps = maxi(1, int(duration / 0.04))
+	var tw = create_tween()
+	for i in range(steps):
+		var decay = 1.0 - (float(i) / float(steps))
+		var rand_offset = orig_offset + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)) * decay
+		tw.tween_property(cam, "offset", rand_offset, 0.04)
+	tw.tween_property(cam, "offset", orig_offset, 0.04)
+
+
+func _clear_all_projectiles() -> void:
+	var projs = get_tree().get_nodes_in_group("enemy_projectiles")
+	for p in projs:
+		if is_instance_valid(p):
+			p.queue_free()
+
+
 # ==================== TỬ TRẬN ====================
 func die() -> void:
 	if is_dead:
@@ -585,6 +785,10 @@ func die() -> void:
 	state = BossState.DEATH
 	is_invulnerable = true
 	boss_defeated.emit()
+	
+	# Dập tắt viền đen cuồng nộ và dọn sạch projectiles trên màn hình
+	_set_dark_aura_continuous(false)
+	_clear_all_projectiles()
 	
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
@@ -618,3 +822,4 @@ func die() -> void:
 	tw.tween_property(animated_sprite, "modulate:a", 0.0, 1.4)
 	await tw.finished
 	queue_free()
+
