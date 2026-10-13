@@ -431,6 +431,8 @@ func _on_close_pressed() -> void:
 	if is_instance_valid(current_player):
 		if "is_sitting" in current_player:
 			current_player.is_sitting = false
+		if current_player.has_method("set_cutscene_locked"):
+			current_player.set_cutscene_locked(false)
 	queue_free()
 
 ## Xóa sạch toàn bộ dữ liệu mua hàng của Shop trên đĩa và trong bộ nhớ

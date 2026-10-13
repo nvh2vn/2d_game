@@ -1,31 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctuknpcscene01"]
+[gd_scene format=3 uid="uid://ctlip3krx65c7"]
 
-[ext_resource type="Script" path="res://scripts/npc/tuk_npc.gd" id="1_tuk_npc"]
+[ext_resource type="Script" uid="uid://bmooxuakvnfat" path="res://scripts/npc/tuk_npc.gd" id="1_tuk_npc"]
 [ext_resource type="Texture2D" uid="uid://dcj53iljcwnp4" path="res://assets/sprites/npc/tuk/tuk_frame_0.png" id="2_tuk_frame0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuk"]
 size = Vector2(90, 100)
 
-[node name="TukNPC" type="Area2D"]
+[node name="TukNPC" type="Area2D" unique_id=410821887]
 collision_layer = 4
 collision_mask = 255
 script = ExtResource("1_tuk_npc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1975136743]
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_tuk_frame0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766151157]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_tuk")
 
-[node name="InteractPrompt" type="Label" parent="."]
+[node name="InteractPrompt" type="Label" parent="." unique_id=1076293579]
 offset_left = -70.0
 offset_top = -80.0
 offset_right = 70.0
 offset_bottom = -57.0
-text = "[E] Mua hàng từ Tuk"
+text = "Tuk"
 horizontal_alignment = 1
 
-[node name="TalkPosition" type="Marker2D" parent="."]
+[node name="TalkPosition" type="Marker2D" parent="." unique_id=1672910443]
 position = Vector2(0, 10)
