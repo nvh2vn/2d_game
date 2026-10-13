@@ -175,8 +175,16 @@ func take_damage(amount: int = 1, _knockback_dir: Vector2 = Vector2.ZERO) -> voi
 		
 	if state == BossState.DORMANT:
 		start_encounter()
-		return
+		if amount < 99999 and not (DebugManager and DebugManager.is_one_hit):
+			return
 		
+	if (DebugManager and DebugManager.is_one_hit) or amount >= 99999:
+		current_health = 0
+		if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+			boss_health_bar_inst.update_health(0)
+		die()
+		return
+
 	damage_cooldown = 0.12
 	current_health -= amount
 	stagger_hits += 1

@@ -164,6 +164,13 @@ func take_damage(amount: int = 1, _knockback_dir: Vector2 = Vector2.ZERO) -> voi
 		tw.tween_property(animated_sprite, "modulate", Color(3.0, 0.4, 0.4), 0.08)
 		tw.tween_property(animated_sprite, "modulate", Color.WHITE, 0.08)
 		
+	if (DebugManager and DebugManager.is_one_hit) or amount >= 99999 or current_health <= 0:
+		current_health = 0
+		if boss_health_bar_inst and boss_health_bar_inst.has_method("update_health"):
+			boss_health_bar_inst.update_health(0)
+		die()
+		return
+
 	# Kiểm tra chuyển Phase
 	var hp_pct = float(current_health) / float(max_health)
 	if hp_pct <= 0.7 and current_phase == 1:
@@ -174,9 +181,6 @@ func take_damage(amount: int = 1, _knockback_dir: Vector2 = Vector2.ZERO) -> voi
 		current_phase = 3
 		_trigger_scream_rage()
 		return
-
-	if current_health <= 0:
-		die()
 
 
 func _trigger_scream_rage() -> void:

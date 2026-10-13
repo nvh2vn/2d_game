@@ -278,6 +278,8 @@ func _on_attack_area_entered(area: Area2D) -> void:
 	var is_air := not is_on_floor()
 
 	var dmg = 2 if active_state == STATE.REMOTE_SKILL else 1
+	if DebugManager and DebugManager.is_one_hit:
+		dmg = 99999
 	var did_hit = false
 	var hit_node: Node = null
 	
@@ -671,6 +673,12 @@ func _on_blood_effect_animation_finished() -> void:
 		blood_effect.visible = false
 
 func take_damage(amount: int, source_pos: Vector2 = Vector2.ZERO) -> void:
+	# GOD MODE CHEAT: Bỏ qua hoàn toàn trừ máu, knockback nặng và chết
+	if DebugManager and DebugManager.is_god_mode:
+		current_health = max_health
+		update_hud()
+		return
+
 	if is_invincible or current_health <= 0 or active_state == STATE.DIE:
 		return
 	
@@ -879,6 +887,10 @@ func apply_slow(duration: float = 3.0, multiplier: float = 0.45) -> void:
 		animated_sprite.modulate = Color(0.65, 1.35, 0.65, 1.0)
 
 func die() -> void:
+	if DebugManager and DebugManager.is_god_mode:
+		current_health = max_health
+		update_hud()
+		return
 	if blink_tween and blink_tween.is_valid():
 		blink_tween.kill()
 	switch_state(STATE.DIE)

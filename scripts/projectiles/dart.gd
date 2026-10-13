@@ -44,11 +44,12 @@ func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target and target.is_in_group("player"):
 		return
+	var current_dmg = 99999 if (DebugManager and DebugManager.is_one_hit) else damage
 	if target and target.has_method("take_damage"):
-		target.take_damage(damage, direction)
+		target.take_damage(current_dmg, direction)
 		_destroy()
 	elif area.has_method("take_damage"):
-		area.take_damage(damage, direction)
+		area.take_damage(current_dmg, direction)
 		_destroy()
 
 func _on_body_entered(body: Node) -> void:
@@ -56,8 +57,9 @@ func _on_body_entered(body: Node) -> void:
 		return
 	if body.is_in_group("player"):
 		return
+	var current_dmg = 99999 if (DebugManager and DebugManager.is_one_hit) else damage
 	if body.has_method("take_damage"):
-		body.take_damage(damage, direction)
+		body.take_damage(current_dmg, direction)
 		_destroy()
 	elif body is TileMapLayer or body is StaticBody2D or body.is_class("TileMap") or body.is_class("TileMapLayer"):
 		_destroy()
