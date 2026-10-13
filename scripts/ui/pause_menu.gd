@@ -26,9 +26,19 @@ func _ready() -> void:
 	# Đảm bảo PauseMenu và toàn bộ cây con luôn nhận xử lý khi game bị Pause
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
+	if not pause_button:
+		pause_button = get_node_or_null("%PauseButton")
+	if not pause_button:
+		pause_button = get_node_or_null("PauseButton")
+	if not pause_button:
+		pause_button = find_child("PauseButton", true, false)
+		
 	if pause_button:
-		pause_button.pressed.connect(_on_pause_button_pressed)
+		if not pause_button.pressed.is_connected(_on_pause_button_pressed):
+			pause_button.pressed.connect(_on_pause_button_pressed)
 		pause_button.visible = true
+		pause_button.modulate = Color.WHITE
+		pause_button.self_modulate = Color.WHITE
 		
 	if pause_overlay:
 		pause_overlay.visible = false

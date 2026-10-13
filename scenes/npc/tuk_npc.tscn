@@ -24,7 +24,7 @@ offset_left = -70.0
 offset_top = -80.0
 offset_right = 70.0
 offset_bottom = -57.0
-text = "Tuk"
+text = "Talk"
 horizontal_alignment = 1
 
 [node name="TalkPosition" type="Marker2D" parent="." unique_id=1672910443]

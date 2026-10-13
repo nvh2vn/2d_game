@@ -17,7 +17,9 @@ extends "res://scripts/levels/pixel_level.gd"
 @export_group("Boss Battle Configuration")
 @export var outro_scene_path: String = "res://scenes/menu/outro_cutscene.tscn"
 @export var boss_battle_bgm: AudioStream = preload("res://assets/audio/tearcity_boss.mp3")
-@export var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+@export var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+@export var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+@export var trajan_font: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
 
 @export_group("Dialogue Content")
 @export var boss_name_text: String = "SOUL MASTER"
@@ -44,8 +46,21 @@ var pan_camera: Camera2D = null
 
 func _ready() -> void:
 	super._ready()
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
 	
 	# Đảm bảo Soul Master chờ lệnh kích hoạt từ Cutscene thay vì tự bật theo tầm nhìn
+	if not soul_master:
+		soul_master = get_node_or_null("SoulMaster")
+	if not soul_master:
+		soul_master = find_child("SoulMaster", true, false)
+	if not soul_master:
+		var bosses = get_tree().get_nodes_in_group("boss")
+		for b in bosses:
+			if b is SoulMaster:
+				soul_master = b
+				break
+
 	if soul_master and is_instance_valid(soul_master):
 		soul_master.wait_for_trigger = true
 		if not soul_master.boss_defeated.is_connected(_on_soul_master_defeated):
@@ -151,8 +166,8 @@ func _setup_dialogue_ui() -> void:
 		name_lbl.name = "DialogueNameLabel"
 		name_lbl.unique_name_in_owner = true
 		name_lbl.text = "%s (%s)" % [boss_name_text, boss_subtitle_text]
-		if trajan_font:
-			name_lbl.add_theme_font_override("font", trajan_font)
+		if font_title:
+			name_lbl.add_theme_font_override("font", font_title)
 		name_lbl.add_theme_font_size_override("font_size", 19)
 		name_lbl.add_theme_color_override("font_color", Color(1.0, 0.86, 0.55, 1.0))
 		name_lbl.add_theme_color_override("font_outline_color", Color.BLACK)
@@ -166,9 +181,10 @@ func _setup_dialogue_ui() -> void:
 		txt_lbl.unique_name_in_owner = true
 		txt_lbl.text = dialogue_text
 		txt_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		if trajan_font:
-			txt_lbl.add_theme_font_override("font", trajan_font)
-		txt_lbl.add_theme_font_size_override("font_size", 15)
+		if font_body:
+			txt_lbl.add_theme_font_override("font", font_body)
+		txt_lbl.add_theme_font_size_override("font_size", 16)
+		txt_lbl.add_theme_constant_override("line_spacing", 4)
 		txt_lbl.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96, 1.0))
 		txt_lbl.add_theme_color_override("font_outline_color", Color.BLACK)
 		txt_lbl.add_theme_constant_override("outline_size", 3)
@@ -181,9 +197,9 @@ func _setup_dialogue_ui() -> void:
 		hint_lbl.unique_name_in_owner = true
 		hint_lbl.text = "▼ Chạm màn hình hoặc bấm Enter / Space / E để tiếp tục"
 		hint_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-		if trajan_font:
-			hint_lbl.add_theme_font_override("font", trajan_font)
-		hint_lbl.add_theme_font_size_override("font_size", 12)
+		if font_body:
+			hint_lbl.add_theme_font_override("font", font_body)
+		hint_lbl.add_theme_font_size_override("font_size", 13)
 		hint_lbl.add_theme_color_override("font_color", Color(0.7, 0.75, 0.85, 0.75))
 		vbox.add_child(hint_lbl)
 		dialogue_hint_label = hint_lbl

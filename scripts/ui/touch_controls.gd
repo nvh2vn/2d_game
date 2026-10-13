@@ -36,14 +36,34 @@ static func suppress_interact(tree: SceneTree, suppressed: bool) -> void:
 static func set_controls_visible(tree: SceneTree, p_visible: bool) -> void:
 	if instance and is_instance_valid(instance):
 		instance.visible = p_visible
-	elif tree:
+		instance.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
+		if instance.control_root and is_instance_valid(instance.control_root):
+			instance.control_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		if not p_visible:
+			instance._release_joystick()
+			if instance._active_mouse_btn and instance._active_mouse_btn.action != &"":
+				Input.action_release(instance._active_mouse_btn.action)
+				instance._active_mouse_btn = null
+			var all_actions = [
+				&"move_left", &"move_right", &"move_up", &"move_down",
+				&"jump", &"attack", &"dash", &"shoot", &"special_attack", &"bind", &"interact"
+			]
+			for act in all_actions:
+				Input.action_release(act)
+	if tree:
 		var tc_nodes = tree.get_nodes_in_group("touch_controls")
 		for n in tc_nodes:
 			if n is CanvasItem:
 				n.visible = p_visible
+			if n is Node:
+				n.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
 		var tc = tree.root.find_child("TouchControls", true, false)
-		if tc and tc is CanvasItem:
-			tc.visible = p_visible
+		if tc and tc != instance:
+			if tc is CanvasItem:
+				tc.visible = p_visible
+			if tc is Node:
+				tc.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
+
 
 
 static func update_skill_buttons(tree: SceneTree) -> void:
@@ -122,12 +142,18 @@ var default_positions: Dictionary = {}
 var _original_actions: Dictionary = {}
 var _button_base_scales: Dictionary = {}
 
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+
 var _drag_target: Node = null
 var _drag_touch_id: int = -1
 var _drag_offset: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
+
 	add_to_group("touch_controls")
 
 	# Đảm bảo action interact luôn có sẵn trong InputMap

@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d16w7vwnafnhf" path="res://assets/ui/movement/button_dash.png" id="6_dash"]
 [ext_resource type="Texture2D" uid="uid://bonnt583hi1aj" path="res://assets/ui/movement/button_throw.png" id="7_throw"]
 [ext_resource type="Texture2D" uid="uid://twrd0mob1r25" path="res://assets/ui/movement/button_skill.png" id="8_skill"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="9_font"]
+[ext_resource type="FontFile" uid="uid://d00snd86y64ko" path="res://assets/fonts/Cinzel-Bold.ttf" id="9_font_title"]
+[ext_resource type="FontFile" uid="uid://2cvl0r3peflt" path="res://assets/fonts/Spectral-Bold.ttf" id="9_font_body"]
 [ext_resource type="Texture2D" uid="uid://df1rgvjbcl3rr" path="res://assets/ui/movement/button_bind.png" id="10_bind"]
 [ext_resource type="Texture2D" uid="uid://dyh85i4nb5ane" path="res://assets/ui/prompts/test_clean.png" id="11_interact"]
 
@@ -210,7 +211,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.92, 0.8, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("9_font")
+theme_override_fonts/font = ExtResource("9_font_title")
 theme_override_font_sizes/font_size = 20
 text = "CHẾ ĐỘ TÙY CHỈNH NÚT ẢO"
 horizontal_alignment = 1
@@ -218,7 +219,7 @@ horizontal_alignment = 1
 [node name="SubtitleLabel" type="Label" parent="CustomizeOverlay/CustomizeTopBar/VBox" unique_id=1010125]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.72, 0.78, 1)
-theme_override_fonts/font = ExtResource("9_font")
+theme_override_fonts/font = ExtResource("9_font_body")
 theme_override_font_sizes/font_size = 13
 text = "CHẠM VÀ KÉO CÁC NÚT ĐẾN VỊ TRÍ MONG MUỐN"
 horizontal_alignment = 1
@@ -234,7 +235,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(210, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_fonts/font = ExtResource("9_font")
+theme_override_fonts/font = ExtResource("9_font_body")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
@@ -246,7 +247,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(210, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
-theme_override_fonts/font = ExtResource("9_font")
+theme_override_fonts/font = ExtResource("9_font_body")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")

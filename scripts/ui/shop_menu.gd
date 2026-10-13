@@ -22,6 +22,14 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	if active_instance == self:
 		active_instance = null
+	if is_inside_tree() and get_tree():
+		TouchControls.set_controls_visible(get_tree(), true)
+		TouchControls.suppress_interact(get_tree(), false)
+	if is_instance_valid(current_player):
+		if "is_sitting" in current_player:
+			current_player.is_sitting = false
+		if current_player.has_method("set_cutscene_locked"):
+			current_player.set_cutscene_locked(false)
 
 var shop_items: Array[Dictionary] = [
 	{
@@ -67,13 +75,24 @@ const COLOR_HOVER := Color(1.0, 1.0, 1.0, 1.0)       # #ffffff trắng sáng
 
 var hover_sfx: AudioStream = preload("res://assets/audio/ui/ui_change_selection.mp3")
 var confirm_sfx: AudioStream = preload("res://assets/audio/ui/ui_button_confirm.mp3")
-var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+var trajan_font: FontFile = font_body
 var active_hovered_btn: Button = null
 
 func _ready() -> void:
 	layer = 110
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
+	if title_label:
+		title_label.add_theme_font_override("font", font_title)
+	if geo_label:
+		geo_label.add_theme_font_override("font", font_body)
+	if info_description:
+		info_description.add_theme_font_override("font", font_body)
 	load_shop_purchases()
 	if close_button:
+		close_button.add_theme_font_override("font", font_body)
 		close_button.pressed.connect(_on_close_pressed)
 		_setup_button_hover(close_button)
 
@@ -86,6 +105,16 @@ func open_shop(player_ref: Node2D = null, npc_title: String = "Tuk (Nhà Thu Gom
 			current_player.is_sitting = true
 		if "velocity" in current_player:
 			current_player.velocity = Vector2.ZERO
+		if current_player.has_method("set_cutscene_locked"):
+			current_player.set_cutscene_locked(true)
+		if "animated_sprite" in current_player and current_player.animated_sprite:
+			if current_player.animated_sprite.sprite_frames and current_player.animated_sprite.sprite_frames.has_animation("idle"):
+				current_player.animated_sprite.play("idle")
+				
+	if is_inside_tree() and get_tree():
+		TouchControls.set_controls_visible(get_tree(), false)
+		TouchControls.hide_interact(get_tree())
+		TouchControls.suppress_interact(get_tree(), true)
 			
 	if title_label:
 		title_label.text = "SHOP - " + npc_title.to_upper()
@@ -170,8 +199,9 @@ func populate_shop_items() -> void:
 		
 		var name_lbl = Label.new()
 		name_lbl.text = item["name"].to_upper()
-		name_lbl.add_theme_font_override("font", trajan_font)
-		name_lbl.add_theme_font_size_override("font_size", 14)
+		if font_title:
+			name_lbl.add_theme_font_override("font", font_title)
+		name_lbl.add_theme_font_size_override("font_size", 15)
 		name_lbl.add_theme_color_override("font_color", Color(0.96, 0.96, 0.98, 1))
 		detail_box.add_child(name_lbl)
 		
@@ -179,8 +209,11 @@ func populate_shop_items() -> void:
 		desc_lbl.text = item["description"]
 		desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		desc_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		desc_lbl.add_theme_font_size_override("font_size", 12)
-		desc_lbl.add_theme_color_override("font_color", Color(0.66, 0.68, 0.74, 0.85))
+		if font_body:
+			desc_lbl.add_theme_font_override("font", font_body)
+		desc_lbl.add_theme_font_size_override("font_size", 13)
+		desc_lbl.add_theme_constant_override("line_spacing", 3)
+		desc_lbl.add_theme_color_override("font_color", Color(0.76, 0.78, 0.84, 0.9))
 		detail_box.add_child(desc_lbl)
 		
 		item_row.add_child(detail_box)
@@ -188,7 +221,8 @@ func populate_shop_items() -> void:
 		# Buy Button
 		var buy_btn = Button.new()
 		buy_btn.custom_minimum_size = Vector2(160, 40)
-		buy_btn.add_theme_font_override("font", trajan_font)
+		if font_body:
+			buy_btn.add_theme_font_override("font", font_body)
 		buy_btn.add_theme_font_size_override("font_size", 13)
 		buy_btn.add_theme_stylebox_override("normal", btn_norm)
 		buy_btn.add_theme_stylebox_override("hover", btn_hov)
@@ -430,6 +464,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _on_close_pressed() -> void:
+	if is_inside_tree() and get_tree():
+		TouchControls.set_controls_visible(get_tree(), true)
+		TouchControls.suppress_interact(get_tree(), false)
 	if is_instance_valid(current_player):
 		if "is_sitting" in current_player:
 			current_player.is_sitting = false

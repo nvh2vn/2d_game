@@ -351,9 +351,9 @@ func _next_attack_cycle() -> void:
 			animated_sprite.play("idle")
 		return
 		
-	# Thời gian bay lơ lửng chờ giữa các đòn: Phase 2 được cân bằng lại gần như Phase 1 (0.6s so với 0.7s)
+	# Thời gian bay lơ lửng chờ giữa các đòn: Tăng lên 1.2s - 1.8s ở Phase 2
 	state = BossState.IDLE_HOVER
-	var rest_time = 0.7 if current_phase == 1 else 0.6
+	var rest_time = randf_range(1.2, 1.8) if current_phase == 2 else 0.85
 	await get_tree().create_timer(rest_time).timeout
 	if is_dead or not is_inside_tree() or state == BossState.STAGGER or state == BossState.TRANSITION:
 		return
@@ -446,7 +446,7 @@ func _attack_orb_shot() -> void:
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	# Giảm bớt số cầu ở Phase 2 từ 3 xuống 2 để thời gian ra chiêu gọn gàng giống Phase 1
+	# Bắn cầu: Phase 1 bắn 1 cầu, Phase 2 bắn 2 cầu
 	var orb_count = 2 if current_phase == 2 else 1
 	var orb_speed = 360.0 if current_phase == 2 else 330.0
 	var burst_delay = 0.18 if current_phase == 2 else 0.35
@@ -464,7 +464,8 @@ func _attack_orb_shot() -> void:
 			if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 				return
 			
-	var post_delay = 0.45 if current_phase == 2 else 0.6
+	# Khoảng dừng khựng lại (Recover / Wind-down) ít nhất 1.0s sau khi bắn cầu
+	var post_delay = 1.05 if current_phase == 2 else 1.0
 	await get_tree().create_timer(post_delay).timeout
 	_next_attack_cycle()
 
@@ -504,8 +505,8 @@ func _attack_orb_shield_pass() -> void:
 			orb.setup_shield_orb(self, angle, shield_radius)
 			shield_orbs.append(orb)
 			
-	# Bay ngang sân đấu: thời gian rút gọn hợp lý
-	var fly_duration = 2.6 if current_phase == 2 else 3.1
+	# Bay ngang sân đấu: thời gian di chuyển
+	var fly_duration = 2.8 if current_phase == 2 else 3.3
 	var tw_fly = create_tween()
 	tw_fly.tween_property(self, "global_position:x", target_x, fly_duration).set_trans(Tween.TRANS_LINEAR)
 	await tw_fly.finished
@@ -522,7 +523,9 @@ func _attack_orb_shield_pass() -> void:
 			var out_dir = Vector2(cos(o.orbit_angle), sin(o.orbit_angle))
 			o.release_shield_orb(out_dir, release_speed)
 			
-	await get_tree().create_timer(0.25).timeout
+	# Khoảng dừng khựng lại (Recover / Wind-down) ít nhất 1.0s sau khi lướt khiên cầu
+	var shield_recover = 1.05 if current_phase == 2 else 1.0
+	await get_tree().create_timer(shield_recover).timeout
 	_next_attack_cycle()
 
 
@@ -610,7 +613,8 @@ func _attack_slam_dive(_is_second_slam: bool = false) -> void:
 	if attack_collision:
 		attack_collision.set_deferred("disabled", true)
 		
-	var recover_time = 0.25 if current_phase == 2 else 0.3
+	# Khựng lại hồi phục (Recover / Wind-down) ít nhất 1.0s trên sàn
+	var recover_time = 1.05 if current_phase == 2 else 1.0
 	await get_tree().create_timer(recover_time).timeout
 	_next_attack_cycle()
 
@@ -631,6 +635,19 @@ func _attack_dash_lunge() -> void:
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
+	# KÉO DÀI THỜI GIAN CHUẨN BỊ (Wind-up / Telegraph):
+	# Khựng lại 0.35s và phát hiệu ứng vận skill để người chơi kịp nhìn thấy và chuẩn bị nhảy né / pogo
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("idle"):
+		animated_sprite.play("idle")
+	if animated_sprite:
+		animated_sprite.flip_h = (dash_dir_x > 0)
+		var tw_telegraph = create_tween()
+		tw_telegraph.tween_property(animated_sprite, "modulate", Color(2.0, 1.2, 2.5), 0.16)
+		tw_telegraph.tween_property(animated_sprite, "modulate", Color.WHITE, 0.18)
+	await get_tree().create_timer(0.35).timeout
+	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
+		return
+		
 	play_sfx(slash_sfx)
 	if animated_sprite and animated_sprite.sprite_frames.has_animation("dash"):
 		animated_sprite.play("dash")
@@ -639,8 +656,8 @@ func _attack_dash_lunge() -> void:
 	if attack_collision:
 		attack_collision.set_deferred("disabled", false)
 		
-	# Lướt nhanh ngang người: Thời gian cân bằng nhịp nhàng
-	var dash_duration = 0.38 if current_phase == 2 else 0.48
+	# GIẢM VẬN TỐC BAY NGANG: Tăng thời gian lướt (giảm tốc 25% - 30% so với trước)
+	var dash_duration = 0.58 if current_phase == 2 else 0.68
 	var tw_dash = create_tween()
 	tw_dash.tween_property(self, "global_position:x", dash_target_x, dash_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	await tw_dash.finished
@@ -649,8 +666,9 @@ func _attack_dash_lunge() -> void:
 	if is_dead or not is_inside_tree() or state == BossState.TRANSITION:
 		return
 		
-	var rest_time = 0.2 if current_phase == 2 else 0.25
-	await get_tree().create_timer(rest_time).timeout
+	# Khựng lại hồi phục (Recover / Wind-down) ít nhất 1.0s sau khi lướt
+	var dash_recover = 1.05 if current_phase == 2 else 1.0
+	await get_tree().create_timer(dash_recover).timeout
 	_next_attack_cycle()
 
 

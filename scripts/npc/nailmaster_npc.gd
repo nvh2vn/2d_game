@@ -57,7 +57,9 @@ var dialogue_fully_revealed: bool = false
 var type_tween: Tween = null
 var hint_tween: Tween = null
 
-var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+var trajan_font: FontFile = font_body
 var confirm_sfx: AudioStream = preload("res://assets/audio/ui/ui_button_confirm.mp3")
 var save_sfx: AudioStream = preload("res://assets/audio/ui/ui_save.mp3")
 
@@ -68,6 +70,8 @@ var anim_timer: float = 0.0
 
 
 func _ready() -> void:
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
 	add_to_group("npcs")
 	collision_layer = 4
 	collision_mask = 255
@@ -156,8 +160,9 @@ func _setup_nodes_if_missing() -> void:
 		var prompt_lbl = Label.new()
 		prompt_lbl.name = "InteractPrompt"
 		prompt_lbl.text = "[E] Nói chuyện với NailMaster"
-		if trajan_font:
-			prompt_lbl.add_theme_font_override("font", trajan_font)
+		if font_body:
+			prompt_lbl.add_theme_font_override("font", font_body)
+		prompt_lbl.add_theme_font_size_override("font_size", 14)
 		prompt_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		prompt_lbl.position = Vector2(-120, -100)
 		prompt_lbl.visible = false
@@ -215,8 +220,8 @@ func _setup_dialogue_ui() -> void:
 	# Tên NPC: "NAILMASTER (CỰU BINH BẢO VỆ)"
 	dialogue_name_label = Label.new()
 	dialogue_name_label.text = npc_name
-	if trajan_font:
-		dialogue_name_label.add_theme_font_override("font", trajan_font)
+	if font_title:
+		dialogue_name_label.add_theme_font_override("font", font_title)
 	dialogue_name_label.add_theme_font_size_override("font_size", 18)
 	dialogue_name_label.add_theme_color_override("font_color", Color(1.0, 0.86, 0.55))
 	dialogue_name_label.add_theme_color_override("font_outline_color", Color.BLACK)
@@ -226,9 +231,10 @@ func _setup_dialogue_ui() -> void:
 	# Lời thoại
 	dialogue_text_label = Label.new()
 	dialogue_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	if trajan_font:
-		dialogue_text_label.add_theme_font_override("font", trajan_font)
-	dialogue_text_label.add_theme_font_size_override("font_size", 15)
+	if font_body:
+		dialogue_text_label.add_theme_font_override("font", font_body)
+	dialogue_text_label.add_theme_font_size_override("font_size", 16)
+	dialogue_text_label.add_theme_constant_override("line_spacing", 4)
 	dialogue_text_label.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96))
 	dialogue_text_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	dialogue_text_label.add_theme_constant_override("outline_size", 3)
@@ -247,9 +253,9 @@ func _setup_dialogue_ui() -> void:
 	# 1. Nút [TRAO ĐỔI VẬT PHẨM] (Nổi bật viền vàng ánh kim)
 	trade_btn = Button.new()
 	trade_btn.text = "🎁 TRAO ĐỔI VẬT PHẨM"
-	if trajan_font:
-		trade_btn.add_theme_font_override("font", trajan_font)
-	trade_btn.add_theme_font_size_override("font_size", 13)
+	if font_body:
+		trade_btn.add_theme_font_override("font", font_body)
+	trade_btn.add_theme_font_size_override("font_size", 14)
 	trade_btn.custom_minimum_size = Vector2(180, 40)
 	trade_btn.mouse_filter = Control.MOUSE_FILTER_STOP
 	var btn_trade_sb = _create_stylebox(Color(0.18, 0.15, 0.08, 0.95), Color(1.0, 0.82, 0.35, 1.0), 1, 6, Vector4(16, 8, 16, 8))
@@ -264,8 +270,8 @@ func _setup_dialogue_ui() -> void:
 	# 2. Nút [ĐỂ SAU] (Đóng hộp thoại, không thực hiện đổi)
 	later_btn = Button.new()
 	later_btn.text = "✕ ĐỂ SAU"
-	if trajan_font:
-		later_btn.add_theme_font_override("font", trajan_font)
+	if font_body:
+		later_btn.add_theme_font_override("font", font_body)
 	later_btn.add_theme_font_size_override("font_size", 13)
 	later_btn.custom_minimum_size = Vector2(110, 40)
 	later_btn.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -281,8 +287,8 @@ func _setup_dialogue_ui() -> void:
 	# 3. Nút [RỜI ĐI] (Dùng cho TH1 và TH3)
 	leave_btn = Button.new()
 	leave_btn.text = "✕ RỜI ĐI"
-	if trajan_font:
-		leave_btn.add_theme_font_override("font", trajan_font)
+	if font_body:
+		leave_btn.add_theme_font_override("font", font_body)
 	leave_btn.add_theme_font_size_override("font_size", 13)
 	leave_btn.custom_minimum_size = Vector2(110, 40)
 	leave_btn.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -302,9 +308,9 @@ func _setup_dialogue_ui() -> void:
 	
 	dialogue_hint_label = Label.new()
 	dialogue_hint_label.text = "▼ Chạm màn hình để tiếp tục"
-	if trajan_font:
-		dialogue_hint_label.add_theme_font_override("font", trajan_font)
-	dialogue_hint_label.add_theme_font_size_override("font_size", 12)
+	if font_body:
+		dialogue_hint_label.add_theme_font_override("font", font_body)
+	dialogue_hint_label.add_theme_font_size_override("font_size", 13)
 	dialogue_hint_label.add_theme_color_override("font_color", Color(0.7, 0.75, 0.85, 0.75))
 	dialogue_hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	footer.add_child(dialogue_hint_label)
@@ -327,8 +333,8 @@ func _setup_dialogue_ui() -> void:
 	
 	reward_label = Label.new()
 	reward_label.text = "★ NHẬN ĐƯỢC: PIERCING BLAST (KỶ VẬT XẠ THỦ)"
-	if trajan_font:
-		reward_label.add_theme_font_override("font", trajan_font)
+	if font_title:
+		reward_label.add_theme_font_override("font", font_title)
 	reward_label.add_theme_font_size_override("font_size", 14)
 	reward_label.add_theme_color_override("font_color", Color(1.0, 0.92, 0.6))
 	reward_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boss_health_bar_01"]
 
 [ext_resource type="Script" path="res://scripts/ui/boss_health_bar.gd" id="1_bhb_script"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="2_font"]
+[ext_resource type="FontFile" uid="uid://d00snd86y64ko" path="res://assets/fonts/Cinzel-Bold.ttf" id="2_font"]
 [ext_resource type="Texture2D" path="res://assets/ui/journal/Nightmare King Grimm - bestiary__0000_grimm_nightmare_boss_portrait.png" id="3_mask_icon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://lr7u17lf64m6" path="res://scripts/ui/pause_menu.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://ccwinrd40b26g" path="res://assets/env/new_assets/Inventory & UI/Fleurs/pause_top_fleur0000.png" id="2_fleur"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://d00snd86y64ko" path="res://assets/fonts/Cinzel-Bold.ttf" id="3_font_title"]
+[ext_resource type="FontFile" uid="uid://2cvl0r3peflt" path="res://assets/fonts/Spectral-Bold.ttf" id="3_font_body"]
 [ext_resource type="AudioStream" uid="uid://d2e6a78tfn3ox" path="res://assets/audio/ui/ui_change_selection.mp3" id="4_hover"]
 [ext_resource type="AudioStream" uid="uid://c00askbr7rlqi" path="res://assets/audio/ui/ui_button_confirm.mp3" id="5_confirm"]
 [ext_resource type="Texture2D" uid="uid://7dympbl7eoux" path="res://assets/ui/inventory/Pointers/main_menu_pointer_anim0000.png" id="6_pointer"]
@@ -103,7 +104,7 @@ stretch_mode = 5
 [node name="TitleLabel" type="Label" parent="PauseOverlay/MenuPanel/Margin/VBox" unique_id=987002009]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.98, 1)
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_fonts/font = ExtResource("3_font_title")
 theme_override_font_sizes/font_size = 22
 text = "PAUSED"
 horizontal_alignment = 1
@@ -130,7 +131,7 @@ theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_fonts/font = ExtResource("3_font_body")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
@@ -185,7 +186,7 @@ theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_fonts/font = ExtResource("3_font_body")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
@@ -240,7 +241,7 @@ theme_override_colors/font_color = Color(0.66, 0.67, 0.7, 0.95)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_fonts/font = ExtResource("3_font_body")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")

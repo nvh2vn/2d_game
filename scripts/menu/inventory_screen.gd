@@ -80,7 +80,9 @@ var item_use_button: Button = null
 var floating_popup_panel: PanelContainer = null
 var floating_popup_label: Label = null
 var floating_popup_tween: Tween = null
-var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+var trajan_font: FontFile = font_body
 
 # --- DỮ LIỆU CỐ ĐỊNH CHO SỔ TAY THỢ SĂN (HUNTER'S JOURNAL DATABASE) ---
 const BESTIARY_DATABASE: Array[Dictionary] = [
@@ -248,11 +250,21 @@ const DEFAULT_ITEMS: Array[Dictionary] = []
 
 
 func _ready() -> void:
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 	# 1. Nút mở HUD
+	if not hud_inv_button:
+		hud_inv_button = get_node_or_null("%HUDInventoryButton")
+	if not hud_inv_button:
+		hud_inv_button = get_node_or_null("HUDInventoryButton")
+	if not hud_inv_button:
+		hud_inv_button = find_child("HUDInventoryButton", true, false)
+
 	if hud_inv_button:
-		hud_inv_button.pressed.connect(open_menu)
+		if not hud_inv_button.pressed.is_connected(open_menu):
+			hud_inv_button.pressed.connect(open_menu)
 
 	# 2. Nút đóng
 	if close_button:
@@ -288,6 +300,8 @@ func _ready() -> void:
 			menu_overlay.visible = false
 		if hud_inv_button:
 			hud_inv_button.visible = true
+			hud_inv_button.modulate = Color.WHITE
+			hud_inv_button.self_modulate = Color.WHITE
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -646,9 +660,11 @@ func _refresh_abilities() -> void:
 				var player = _get_player()
 				is_unlocked = player.get("unlock_double_jump") if player and "unlock_double_jump" in player else skills_dict.get("double_jump", false)
 			"shoot":
-				is_unlocked = GameManager.can_needle_throw if GameManager else false
+				var gm = _get_game_manager()
+				is_unlocked = gm.can_needle_throw if gm and "can_needle_throw" in gm else false
 			"special_attack":
-				is_unlocked = GameManager.can_silk_storm if GameManager else false
+				var gm = _get_game_manager()
+				is_unlocked = gm.can_silk_storm if gm and "can_silk_storm" in gm else false
 
 		var icon: TextureRect = btn.find_child("Icon", true, false)
 		if icon:
@@ -855,10 +871,11 @@ func _display_item_preview(it: Dictionary) -> void:
 	if not item_action_container:
 		_setup_item_use_ui()
 		
+	var gm = _get_game_manager()
 	if is_city_crest:
 		if item_action_container and item_use_button:
 			item_action_container.visible = true
-			if GameManager and GameManager.can_silk_storm:
+			if gm and gm.can_silk_storm:
 				item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
 				item_use_button.disabled = true
 			else:
@@ -867,7 +884,7 @@ func _display_item_preview(it: Dictionary) -> void:
 	elif is_piercing_blast:
 		if item_action_container and item_use_button:
 			item_action_container.visible = true
-			if GameManager and GameManager.can_needle_throw:
+			if gm and gm.can_needle_throw:
 				item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
 				item_use_button.disabled = true
 			else:
@@ -921,9 +938,9 @@ func _setup_item_use_ui() -> void:
 	item_use_button.custom_minimum_size = Vector2(210, 42)
 	item_use_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
-	if trajan_font:
-		item_use_button.add_theme_font_override("font", trajan_font)
-	item_use_button.add_theme_font_size_override("font_size", 13)
+	if font_body:
+		item_use_button.add_theme_font_override("font", font_body)
+	item_use_button.add_theme_font_size_override("font_size", 14)
 	item_use_button.add_theme_color_override("font_color", Color(1.0, 0.9, 0.45, 1.0))
 	item_use_button.add_theme_color_override("font_hover_color", Color(1.2, 1.1, 0.7, 1.0))
 	item_use_button.add_theme_color_override("font_disabled_color", Color(0.65, 0.7, 0.75, 0.7))
@@ -980,20 +997,21 @@ func _on_use_item_pressed() -> void:
 	var is_city_crest: bool = (item_id in ["city_crest", "city_key"] or item_name == "CITY CREST")
 	var is_piercing_blast: bool = (item_id in ["piercing_blast", "defender_crest"] or item_name == "PIERCING BLAST")
 	
-	if is_city_crest and GameManager and not GameManager.can_silk_storm:
+	var gm = _get_game_manager()
+	if is_city_crest and gm and not gm.can_silk_storm:
 		_play_sfx(click_sfx)
 		_play_sfx(page_sfx)
-		GameManager.unlock_silk_storm()
+		gm.unlock_silk_storm()
 		_show_floating_popup("ĐÃ THỨC TỈNH KỸ NĂNG: SILK STORM!")
 		if item_use_button:
 			item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
 			item_use_button.disabled = true
 		_refresh_abilities()
 		
-	elif is_piercing_blast and GameManager and not GameManager.can_needle_throw:
+	elif is_piercing_blast and gm and not gm.can_needle_throw:
 		_play_sfx(click_sfx)
 		_play_sfx(page_sfx)
-		GameManager.unlock_needle_throw()
+		gm.unlock_needle_throw()
 		_show_floating_popup("ĐÃ THỨC TỈNH KỸ NĂNG: NEEDLE THROW!")
 		if item_use_button:
 			item_use_button.text = "✓ [ĐÃ KÍCH HOẠT]"
@@ -1028,8 +1046,8 @@ func _setup_floating_popup_ui() -> void:
 	floating_popup_panel.add_theme_stylebox_override("panel", sb)
 	
 	floating_popup_label = Label.new()
-	if trajan_font:
-		floating_popup_label.add_theme_font_override("font", trajan_font)
+	if font_title:
+		floating_popup_label.add_theme_font_override("font", font_title)
 	floating_popup_label.add_theme_font_size_override("font_size", 15)
 	floating_popup_label.add_theme_color_override("font_color", Color(1.0, 0.92, 0.55, 1.0))
 	floating_popup_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -1259,3 +1277,9 @@ func _play_sfx(stream: AudioStream) -> void:
 	if sfx_player and stream:
 		sfx_player.stream = stream
 		sfx_player.play()
+
+
+func _get_game_manager() -> Node:
+	if is_inside_tree() and get_tree() and get_tree().root:
+		return get_tree().root.get_node_or_null("GameManager")
+	return null

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ditqcf55v0vrj" path="res://scripts/menu/settings_screen.gd" id="1_settings_script"]
 [ext_resource type="Texture2D" uid="uid://lrerukr11llw" path="res://assets/ui/menu/Voidheart_menu_BG.jpg" id="2_bg"]
-[ext_resource type="Texture2D" uid="uid://bi6hbgptqdaey" path="res://assets/ui/menu/Main_Menu_GG_beam.png" id="3_beam"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="4_font"]
+[ext_resource type="FontFile" uid="uid://d00snd86y64ko" path="res://assets/fonts/Cinzel-Bold.ttf" id="4_font_title"]
+[ext_resource type="FontFile" uid="uid://2cvl0r3peflt" path="res://assets/fonts/Spectral-Bold.ttf" id="4_font_body"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
 content_margin_left = 24.0
@@ -103,7 +103,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.9, 0.75, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_title")
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 horizontal_alignment = 1
@@ -119,7 +119,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/MasterRow" unique_id=2134846094]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 text = "MASTER VOLUME"
 
@@ -134,7 +134,7 @@ value = 100.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
@@ -146,7 +146,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/BGMRow" unique_id=1836029649]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 text = "MUSIC (BGM)"
 
@@ -161,7 +161,7 @@ value = 100.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
@@ -173,7 +173,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/SFXRow" unique_id=1808958435]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 text = "SOUND SFX"
 
@@ -188,7 +188,7 @@ value = 100.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 16
 text = "100%"
 horizontal_alignment = 2
@@ -200,7 +200,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/ScreenRow" unique_id=63888277]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 text = "FULLSCREEN"
 
@@ -216,7 +216,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="SettingsPanel/Margin/VBox/TouchControlsRow" unique_id=63888299]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 text = "TOUCH CONTROLS"
 
@@ -226,7 +226,7 @@ custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
@@ -248,7 +248,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
@@ -260,7 +260,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_fonts/font = ExtResource("4_font")
+theme_override_fonts/font = ExtResource("4_font_body")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")

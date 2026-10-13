@@ -45,8 +45,14 @@ var target_scene_to_load: String = ""
 var pointer_tween: Tween = null
 var active_hovered_btn: Button = null
 
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+
 
 func _ready() -> void:
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
+
 	# Thiết lập và phát nhạc nền Menu
 	if bgm_player:
 		bgm_player.bus = &"Music"

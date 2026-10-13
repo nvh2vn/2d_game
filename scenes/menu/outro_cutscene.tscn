@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://co4fgtgdk2r74" path="res://scripts/menu/outro_cutscene.gd" id="1_outro_script"]
 [ext_resource type="AudioStream" uid="uid://bjfhfhp6oaeo2" path="res://assets/audio/tearcity_o.mp3" id="2_bgm"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://d00snd86y64ko" path="res://assets/fonts/Cinzel-Bold.ttf" id="3_font_title"]
+[ext_resource type="FontFile" uid="uid://2cvl0r3peflt" path="res://assets/fonts/Spectral-Bold.ttf" id="3_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_norm"]
 content_margin_left = 18.0
@@ -205,7 +206,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.88, 0.6, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_fonts/font = ExtResource("3_font_title")
 theme_override_font_sizes/font_size = 48
 text = "THE END"
 horizontal_alignment = 1

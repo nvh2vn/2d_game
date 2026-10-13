@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://b8t5k9qm7o21x"]
 
-[ext_resource type="PackedScene" uid="uid://dmv79xk41nrv4" path="res://scenes/menu/outro_cutscene.tscn" id="1_outro_base"]
+[ext_resource type="PackedScene" uid="uid://dmv8axk41nrv4" path="res://scenes/menu/outro_cutscene.tscn" id="1_outro_base"]
 
 [node name="OutroCutsceneForwarder" instance=ExtResource("1_outro_base")]

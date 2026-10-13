@@ -53,7 +53,9 @@ var hint_tween: Tween = null
 var _current_dialogue_callback: Callable = Callable()
 var _is_showing_choices: bool = false
 
-var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+var trajan_font: FontFile = font_body
 var confirm_sfx: AudioStream = preload("res://assets/audio/ui/ui_button_confirm.mp3")
 
 # --- ANIMATION FRAMES CỦA TUK ---
@@ -64,6 +66,8 @@ var anim_timer: float = 0.0
 
 
 func _ready() -> void:
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
 	add_to_group("npcs")
 	collision_layer = 4
 	collision_mask = 255
@@ -147,8 +151,9 @@ func _setup_nodes_if_missing() -> void:
 		var prompt_lbl = Label.new()
 		prompt_lbl.name = "InteractPrompt"
 		prompt_lbl.text = "[E] Nói chuyện với Tuk"
-		if trajan_font:
-			prompt_lbl.add_theme_font_override("font", trajan_font)
+		if font_body:
+			prompt_lbl.add_theme_font_override("font", font_body)
+		prompt_lbl.add_theme_font_size_override("font_size", 14)
 		prompt_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		prompt_lbl.position = Vector2(-80, -80)
 		prompt_lbl.visible = false
@@ -204,8 +209,8 @@ func _setup_dialogue_ui() -> void:
 	# Tên người nói: "TUK (NHÀ THU GOM)"
 	dialogue_name_label = Label.new()
 	dialogue_name_label.text = "TUK (NHÀ THU GOM)"
-	if trajan_font:
-		dialogue_name_label.add_theme_font_override("font", trajan_font)
+	if font_title:
+		dialogue_name_label.add_theme_font_override("font", font_title)
 	dialogue_name_label.add_theme_font_size_override("font_size", 18)
 	dialogue_name_label.add_theme_color_override("font_color", Color(1.0, 0.86, 0.55))
 	dialogue_name_label.add_theme_color_override("font_outline_color", Color.BLACK)
@@ -215,9 +220,10 @@ func _setup_dialogue_ui() -> void:
 	# Nội dung thoại (Typewriter Effect)
 	dialogue_text_label = Label.new()
 	dialogue_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	if trajan_font:
-		dialogue_text_label.add_theme_font_override("font", trajan_font)
-	dialogue_text_label.add_theme_font_size_override("font_size", 15)
+	if font_body:
+		dialogue_text_label.add_theme_font_override("font", font_body)
+	dialogue_text_label.add_theme_font_size_override("font_size", 16)
+	dialogue_text_label.add_theme_constant_override("line_spacing", 4)
 	dialogue_text_label.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96))
 	dialogue_text_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	dialogue_text_label.add_theme_constant_override("outline_size", 3)
@@ -236,9 +242,9 @@ func _setup_dialogue_ui() -> void:
 	# Nút [🛒 MỞ CỬA HÀNG]
 	open_shop_btn = Button.new()
 	open_shop_btn.text = "🛒 MỞ CỬA HÀNG"
-	if trajan_font:
-		open_shop_btn.add_theme_font_override("font", trajan_font)
-	open_shop_btn.add_theme_font_size_override("font_size", 13)
+	if font_body:
+		open_shop_btn.add_theme_font_override("font", font_body)
+	open_shop_btn.add_theme_font_size_override("font_size", 14)
 	var btn_shop_sb = _create_stylebox(Color(0.12, 0.16, 0.22, 0.9), Color(0.85, 0.75, 0.5, 0.8), 1, 4, Vector4(14, 6, 14, 6))
 	var btn_shop_sb_h = _create_stylebox(Color(0.18, 0.26, 0.36, 0.95), Color(1.0, 0.92, 0.65, 1.0), 1, 4, Vector4(14, 6, 14, 6))
 	open_shop_btn.add_theme_stylebox_override("normal", btn_shop_sb)
@@ -251,8 +257,8 @@ func _setup_dialogue_ui() -> void:
 	# Nút [✕ RỜI ĐI]
 	leave_btn = Button.new()
 	leave_btn.text = "✕ RỜI ĐI"
-	if trajan_font:
-		leave_btn.add_theme_font_override("font", trajan_font)
+	if font_body:
+		leave_btn.add_theme_font_override("font", font_body)
 	leave_btn.add_theme_font_size_override("font_size", 13)
 	var btn_leave_sb = _create_stylebox(Color(0.14, 0.14, 0.16, 0.8), Color(0.45, 0.45, 0.5, 0.5), 1, 4, Vector4(12, 6, 12, 6))
 	var btn_leave_sb_h = _create_stylebox(Color(0.25, 0.15, 0.15, 0.9), Color(0.9, 0.4, 0.4, 0.8), 1, 4, Vector4(12, 6, 12, 6))
@@ -271,9 +277,9 @@ func _setup_dialogue_ui() -> void:
 	# Gợi ý bấm tiếp tục
 	dialogue_hint_label = Label.new()
 	dialogue_hint_label.text = "▼ Chạm màn hình hoặc bấm Enter / Space / E để tiếp tục"
-	if trajan_font:
-		dialogue_hint_label.add_theme_font_override("font", trajan_font)
-	dialogue_hint_label.add_theme_font_size_override("font_size", 12)
+	if font_body:
+		dialogue_hint_label.add_theme_font_override("font", font_body)
+	dialogue_hint_label.add_theme_font_size_override("font_size", 13)
 	dialogue_hint_label.add_theme_color_override("font_color", Color(0.7, 0.75, 0.85, 0.75))
 	dialogue_hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	footer.add_child(dialogue_hint_label)
@@ -297,6 +303,8 @@ func _update_dialogue_margins() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# 1. Khi đang hiển thị lời thoại: Nhận input lướt chữ / qua câu
 	if is_dialogue_active:
+		if _is_showing_choices and dialogue_fully_revealed:
+			return
 		var is_advance_action: bool = (
 			event.is_action_pressed("ui_accept") or
 			event.is_action_pressed("interact") or
@@ -353,10 +361,10 @@ func _start_dialogue(text: String, on_complete: Callable = Callable(), show_choi
 	dialogue_started.emit()
 	
 	# Khóa di chuyển của Hornet để đứng nghe thoại
-	if current_player and current_player.has_method("set_cutscene_locked"):
-		current_player.set_cutscene_locked(true)
-	elif current_player and "velocity" in current_player:
-		current_player.velocity = Vector2.ZERO
+	_lock_player(true)
+	
+	# Ẩn và vô hiệu hóa toàn bộ cụm nút điều khiển cảm ứng
+	_set_touch_controls_visible(false)
 		
 	# Ẩn nút tương tác cảm ứng và prompt trên đầu
 	TouchControls.hide_interact(get_tree())
@@ -402,8 +410,10 @@ func _on_text_reveal_completed() -> void:
 		return
 	if _is_showing_choices and choice_container:
 		choice_container.visible = true
+		if open_shop_btn:
+			open_shop_btn.grab_focus()
 		if dialogue_hint_label:
-			dialogue_hint_label.text = "▼ Chọn thao tác hoặc bấm để mở Shop"
+			dialogue_hint_label.text = "▼ Chọn thao tác để tiếp tục"
 			dialogue_hint_label.visible = true
 	else:
 		if dialogue_hint_label:
@@ -440,6 +450,8 @@ func _handle_dialogue_advance() -> void:
 		
 	# Nếu chữ đã hiện đầy đủ -> hoàn tất hội thoại
 	if dialogue_fully_revealed:
+		if _is_showing_choices:
+			return
 		_close_dialogue_and_execute(_current_dialogue_callback)
 
 
@@ -462,10 +474,22 @@ func _close_dialogue_and_execute(callback: Callable = Callable()) -> void:
 	
 	if callback.is_valid():
 		callback.call()
+	else:
+		var existing_menu = get_tree().current_scene.find_child("ShopMenu", true, false) if is_inside_tree() and get_tree() else null
+		if not existing_menu and not active_shop_menu:
+			_lock_player(false)
+			_set_touch_controls_visible(true)
+			TouchControls.suppress_interact(get_tree(), false)
+			if is_player_in_range:
+				TouchControls.show_interact(get_tree(), "tuk_shop")
+				if interact_prompt:
+					interact_prompt.visible = true
 
 
 func _on_touch_receiver_gui_input(event: InputEvent) -> void:
 	if not is_dialogue_active:
+		return
+	if _is_showing_choices and dialogue_fully_revealed:
 		return
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or (event is InputEventScreenTouch and event.pressed):
 		_handle_dialogue_advance()
@@ -480,8 +504,8 @@ func _on_open_shop_button_pressed() -> void:
 func _on_leave_button_pressed() -> void:
 	_play_sfx(confirm_sfx)
 	_close_dialogue_and_execute(func():
-		if current_player and current_player.has_method("set_cutscene_locked"):
-			current_player.set_cutscene_locked(false)
+		_lock_player(false)
+		_set_touch_controls_visible(true)
 		TouchControls.suppress_interact(get_tree(), false)
 		if is_player_in_range:
 			TouchControls.show_interact(get_tree(), "tuk_shop")
@@ -497,6 +521,8 @@ func _open_shop_menu() -> void:
 		return
 		
 	if shop_menu_scene:
+		_lock_player(true)
+		_set_touch_controls_visible(false)
 		TouchControls.hide_interact(get_tree())
 		TouchControls.suppress_interact(get_tree(), true)
 		if interact_prompt:
@@ -540,8 +566,8 @@ func _on_shop_menu_closed() -> void:
 	active_shop_menu = null
 	shop_closed.emit()
 	if not is_dialogue_active:
-		if current_player and current_player.has_method("set_cutscene_locked"):
-			current_player.set_cutscene_locked(false)
+		_lock_player(false)
+		_set_touch_controls_visible(true)
 		TouchControls.suppress_interact(get_tree(), false)
 		if is_player_in_range:
 			TouchControls.show_interact(get_tree(), "tuk_shop")
@@ -615,3 +641,42 @@ func _create_stylebox(bg_color: Color, border_color: Color = Color.TRANSPARENT, 
 	sb.content_margin_right = content_margin.z
 	sb.content_margin_bottom = content_margin.w
 	return sb
+
+
+func _lock_player(locked: bool) -> void:
+	if not current_player or not is_instance_valid(current_player):
+		return
+	if locked:
+		if "velocity" in current_player:
+			current_player.velocity = Vector2.ZERO
+		if current_player.has_method("set_cutscene_locked"):
+			current_player.set_cutscene_locked(true)
+		if "animated_sprite" in current_player and current_player.animated_sprite:
+			if current_player.animated_sprite.sprite_frames and current_player.animated_sprite.sprite_frames.has_animation("idle"):
+				current_player.animated_sprite.play("idle")
+	else:
+		if current_player.has_method("set_cutscene_locked"):
+			current_player.set_cutscene_locked(false)
+
+
+func _set_touch_controls_visible(p_visible: bool) -> void:
+	TouchControls.set_controls_visible(get_tree(), p_visible)
+	if is_instance_valid(current_player):
+		var tc = current_player.get_node_or_null("TouchControls")
+		if tc and tc is CanvasItem:
+			tc.visible = p_visible
+		if tc and tc is Node:
+			tc.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
+	if is_inside_tree() and get_tree():
+		var tc_nodes = get_tree().get_nodes_in_group("touch_controls")
+		for n in tc_nodes:
+			if n is CanvasItem:
+				n.visible = p_visible
+			if n is Node:
+				n.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
+		var tc_root = get_tree().root.find_child("TouchControls", true, false)
+		if tc_root and tc_root is CanvasItem:
+			tc_root.visible = p_visible
+		if tc_root and tc_root is Node:
+			tc_root.process_mode = Node.PROCESS_MODE_ALWAYS if p_visible else Node.PROCESS_MODE_DISABLED
+

@@ -13,12 +13,17 @@ const COLOR_HOVER := Color(1.0, 1.0, 1.0, 1.0)       # #ffffff trắng sáng
 
 var hover_sfx: AudioStream = preload("res://assets/audio/ui/ui_change_selection.mp3")
 var confirm_sfx: AudioStream = preload("res://assets/audio/ui/ui_button_confirm.mp3")
-var trajan_font: FontFile = preload("res://assets/ui/TrajanPro.ttf")
+var font_title: FontFile = preload("res://assets/fonts/Cinzel-Bold.ttf")
+var font_body: FontFile = preload("res://assets/fonts/Spectral-Bold.ttf")
+var trajan_font: FontFile = font_body
 var active_hovered_btn: Button = null
 
 func _ready() -> void:
 	layer = 105
+	if font_title and font_body:
+		font_title.fallbacks = [font_body]
 	if close_button:
+		close_button.add_theme_font_override("font", font_body)
 		close_button.pressed.connect(_on_close_pressed)
 		_setup_button_hover(close_button)
 
@@ -54,7 +59,8 @@ func populate_destinations() -> void:
 	if waypoints.size() == 0:
 		var empty_lbl = Label.new()
 		empty_lbl.text = "CHƯA CÓ ĐIỂM DỊCH CHUYỂN NÀO ĐƯỢC MỞ KHÓA"
-		empty_lbl.add_theme_font_override("font", trajan_font)
+		if font_body:
+			empty_lbl.add_theme_font_override("font", font_body)
 		empty_lbl.add_theme_font_size_override("font_size", 14)
 		empty_lbl.add_theme_color_override("font_color", Color(0.6, 0.62, 0.68, 0.8))
 		empty_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -86,7 +92,8 @@ func populate_destinations() -> void:
 		var btn = Button.new()
 		var is_current = (wp["id"] == current_wp_id)
 		
-		btn.add_theme_font_override("font", trajan_font)
+		if font_body:
+			btn.add_theme_font_override("font", font_body)
 		btn.add_theme_font_size_override("font_size", 14)
 		btn.add_theme_stylebox_override("normal", norm_box)
 		btn.add_theme_stylebox_override("hover", hov_box)

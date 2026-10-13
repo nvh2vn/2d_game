@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blckchunj226u" path="res://scripts/menu/intro_cutscene.gd" id="1_intro_script"]
 [ext_resource type="AudioStream" uid="uid://c5cyecusna4xm" path="res://assets/audio/tearcity_i.mp3" id="2_bgm"]
-[ext_resource type="FontFile" uid="uid://dd725ennt7p0u" path="res://assets/ui/TrajanPro.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://2cvl0r3peflt" path="res://assets/fonts/Spectral-Bold.ttf" id="3_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skip_norm"]
 content_margin_left = 18.0
